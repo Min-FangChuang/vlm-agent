@@ -1,0 +1,1 @@
+"""ScanNet scene control package."""
