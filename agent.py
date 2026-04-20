@@ -5,25 +5,27 @@ from typing import Any
 import numpy as np
 
 try:
-    from .agent_modules import GroundingDetection, GroundingDinoDetector, PATSMatcher
+    from .module.detector import GroundingDetection, YOLOWorldDetector
     from .agent_schema import CandidateMemory, CandidateObject, ObjectView, Query, View
+    from .module.matcher import PATSMatcher
     from .motion import Motion
     from .prompt import build_candidate_judgement_prompt
 except ImportError:
-    from agent_modules import GroundingDetection, GroundingDinoDetector, PATSMatcher  # type: ignore
+    from module.detector import GroundingDetection, YOLOWorldDetector  # type: ignore
     from agent_schema import CandidateMemory, CandidateObject, ObjectView, Query, View  # type: ignore
+    from module.matcher import PATSMatcher  # type: ignore
     from motion import Motion  # type: ignore
     from prompt import build_candidate_judgement_prompt  # type: ignore
 class Agent:
     def __init__(
         self,
         motion: Motion,
-        detector: GroundingDinoDetector | None = None,
+        detector: YOLOWorldDetector | None = None,
         matcher: PATSMatcher | None = None,
         mapper_2d3d: Any = None,
         view_selector: Any = None,
     ) -> None:
-        self.detector = detector or GroundingDinoDetector()
+        self.detector = detector or YOLOWorldDetector()
         self.matcher = matcher or PATSMatcher()
         self.mapper_2d3d = mapper_2d3d
         self.view_selector = view_selector

@@ -189,7 +189,7 @@ class CandidateMemory:
         for candidate in self.objects:
             if candidate.status != "active":
                 continue
-            if match_fn(object_view, candidate.object_view[candidate.best_id]):
+            if match_fn(object_view, candidate):
                 candidate.add_object_view(object_view)
                 return candidate, True
 

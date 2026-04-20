@@ -6,11 +6,11 @@ from typing import Any
 import numpy as np
 
 try:
-    from . import agent_modules
-    from .agent_modules import draw_groundingdino_bbox
+    from .module.detector import draw_bbox
+    import cv2
 except ImportError:
-    import agent_modules  # type: ignore
-    from agent_modules import draw_groundingdino_bbox  # type: ignore
+    from module.detector import draw_bbox  # type: ignore
+    import cv2  # type: ignore
 
 
 def _safe_getattr(value: Any, name: str, default: Any = None) -> Any:
@@ -37,7 +37,7 @@ def _draw_candidate_object_view(object_view: Any) -> np.ndarray:
         raise ValueError("object_view must provide `view`.")
 
     image = np.asarray(_safe_getattr(view, "rgb"), dtype=np.uint8).copy()
-    image = draw_groundingdino_bbox(
+    image = draw_bbox(
         image,
         _safe_getattr(object_view, "bbox_2d"),
         str(_safe_getattr(object_view, "label", "object")),
@@ -46,7 +46,7 @@ def _draw_candidate_object_view(object_view: Any) -> np.ndarray:
 
     references = _safe_getattr(view, "reference", []) or []
     for reference in references:
-        image = draw_groundingdino_bbox(
+        image = draw_bbox(
             image,
             _safe_getattr(reference, "bbox"),
             str(_safe_getattr(reference, "label", "reference")),
@@ -66,7 +66,7 @@ def _save_candidate_views(candidate: Any) -> Path | None:
         view = _safe_getattr(object_view, "view")
         view_id = _safe_getattr(view, "view_id", index)
         file_path = output_dir / f"{index:03d}_{view_id}.png"
-        agent_modules.cv2.imwrite(str(file_path), agent_modules.cv2.cvtColor(image, agent_modules.cv2.COLOR_RGB2BGR))
+        cv2.imwrite(str(file_path), cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
     return output_dir
 
 

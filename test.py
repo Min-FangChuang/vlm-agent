@@ -14,8 +14,8 @@ from scene_controller import SceneControlModule
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Minimal agent smoke test.")
-    parser.add_argument("--scene", default="scene0207_00", help="Scene name under vlm-agent/scannet/init")
-    parser.add_argument("--query", default="this is the closet doors in the corner of the room . a bed is present in front of the closet .", help="Search query passed to Agent.reset()")
+    parser.add_argument("--scene", default="scene0025_00", help="Scene name under vlm-agent/scannet/init")
+    parser.add_argument("--query", default="this is a small square gray pillow . it is located on a black couch .", help="Search query passed to Agent.reset()")
     parser.add_argument("--max-translation-step", type=float, default=0.1, help="Max translation step in meters")
     parser.add_argument("--max-rotation-step-deg", type=float, default=5.0, help="Max rotation step in degrees")
     parser.add_argument(
