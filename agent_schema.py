@@ -31,19 +31,19 @@ class Query:
         self.relation = self.make_relation(self.query)
 
     def make_target_object(self, query: str) -> str:
-        return "the closet doors"
+        return "window"
 
     def make_target_attributes(self, query: str) -> list[str]:
-        return "in the corner of the room"
+        return ""
 
     def make_reference_object(self, query: str) -> str:
-        return "bed"
+        return "shelves"
 
     def make_reference_attributes(self, query: str) -> list[str]:
         return ""
 
     def make_relation(self, query: str) -> str:
-        return "in front of"
+        return "left"
 
 
 class ObjectView:
@@ -91,8 +91,6 @@ class CandidateObject:
         label: str,
         score: float,
         view: ObjectView | None = None,
-        detection_2d: np.ndarray | None = None,
-        mask_2d: np.ndarray | None = None,
         points_3d: Any = None,
         status: str = "active",
         best_id: int = 0,
@@ -106,23 +104,7 @@ class CandidateObject:
         self.best_id = int(best_id)
         self.object_view = list(object_view or [])
         if view is not None:
-            if isinstance(view, ObjectView):
-                self.object_view.append(view)
-            else:
-                if detection_2d is None:
-                    raise ValueError("detection_2d is required when `view` is not an ObjectView.")
-                self.object_view.append(
-                    ObjectView(
-                        object_id=object_id,
-                        label=label,
-                        score=score,
-                        view=view,
-                        bbox_2d=detection_2d,
-                        mask_2d=mask_2d,
-                        points_3d=points_3d,
-                        status=status,
-                    )
-                )
+            self.object_view.append(view)
         if self.object_view:
             self.best_id = max(0, min(self.best_id, len(self.object_view) - 1))
 
@@ -156,12 +138,6 @@ class CandidateObject:
         )
         if new_bbox_area > current_best_bbox_area:
             self.best_id = len(self.object_view) - 1
-
-    def current_best_view(self) -> ObjectView:
-        if not self.object_view:
-            raise ValueError("CandidateObject has no object views.")
-        return self.object_view[self.best_id]
-
 
 class CandidateMemory:
     def __init__(self) -> None:
