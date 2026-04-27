@@ -4,18 +4,21 @@ from typing import Any
 
 import numpy as np
 
+
 try:
     from .module.detector import GroundingDetection, YOLOWorldDetector
     from .agent_schema import CandidateMemory, CandidateObject, ObjectView, Query, View
     from .module.matcher import PATSMatcher
     from .motion import Motion
     from .prompt import build_candidate_judgement_prompt
+    from .vlm_bridge import call_vlm_messages
 except ImportError:
     from module.detector import GroundingDetection, YOLOWorldDetector  # type: ignore
     from agent_schema import CandidateMemory, CandidateObject, ObjectView, Query, View  # type: ignore
     from module.matcher import PATSMatcher  # type: ignore
     from motion import Motion  # type: ignore
     from prompt import build_candidate_judgement_prompt  # type: ignore
+    from vlm_bridge import call_vlm_messages  # type: ignore
 class Agent:
     def __init__(
         self,
@@ -34,9 +37,8 @@ class Agent:
         self.query: Query | None = None
         self.candidates = CandidateMemory()
 
-    def vlm(self, prompt: str, **_: Any) -> Any:
-        del prompt
-        return None
+    def vlm(self, prompt, **_: Any) -> Any:
+        return call_vlm_messages(prompt)
 
     def reset(self, query_text: str) -> None:
         self.query = Query(query_text)
