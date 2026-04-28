@@ -24,26 +24,135 @@ class View:
 class Query:
     def __init__(self, query: str) -> None:
         self.query = query
+        self._parsed = self._parse_query(self.query)
+
         self.target_object = self.make_target_object(self.query)
         self.target_attributes = self.make_target_attributes(self.query)
         self.reference_object = self.make_reference_object(self.query)
         self.reference_attributes = self.make_reference_attributes(self.query)
         self.relation = self.make_relation(self.query)
 
+    def _to_lower_trim(self, value: Any) -> str:
+        return str(value or "").strip().lower()
+
+    def _strip_intro(self, text: str) -> str:
+        prefixes = [
+            "there is ",
+            "there's ",
+            "there are ",
+            "find ",
+            "locate ",
+            "look for ",
+            "search for ",
+        ]
+        result = self._to_lower_trim(text)
+        for prefix in prefixes:
+            if result.startswith(prefix):
+                result = result[len(prefix):].strip()
+                break
+        return result
+
+    def _normalize_relation(self, relation: str) -> str:
+        rel = self._to_lower_trim(relation)
+        mapping = {
+            "is next to": "next to",
+            "next_to": "next to",
+            "next to": "next to",
+            "left_of": "left of",
+            "left of": "left of",
+            "right_of": "right of",
+            "right of": "right of",
+            "in_front_of": "in front of",
+            "in front of": "in front of",
+            "on_top_of": "on top of",
+            "on top of": "on top of",
+            "behind": "behind",
+            "on": "on",
+        }
+        return mapping.get(rel, rel)
+
+    def _extract_simple_relation(self, query: str) -> str:
+        q = self._to_lower_trim(query)
+        relation_patterns = [
+            "in front of",
+            "next to",
+            "left of",
+            "right of",
+            "behind",
+            "on top of",
+            "on",
+        ]
+        for rel in relation_patterns:
+            if rel in q:
+                return rel
+        return ""
+
+    def _split_object_phrase(self, phrase: str) -> tuple[str, list[str]]:
+        text = self._to_lower_trim(phrase)
+
+        # 去掉冠詞
+        for article in ("a ", "an ", "the "):
+            if text.startswith(article):
+                text = text[len(article):].strip()
+                break
+
+        color_words = {
+            "red", "blue", "green", "black", "white", "yellow",
+            "brown", "gray", "grey", "orange", "purple", "pink",
+        }
+
+        words = [w for w in text.split() if w]
+        attributes = [w for w in words if w in color_words]
+        object_words = [w for w in words if w not in color_words]
+
+        object_name = " ".join(object_words).strip()
+        return object_name, attributes
+
+    def _parse_query(self, query: str) -> dict[str, Any]:
+        q = self._strip_intro(query)
+        relation = self._extract_simple_relation(q)
+
+        if not relation:
+            target_object, target_attributes = self._split_object_phrase(q)
+            return {
+                "raw_query": query,
+                "target_object": target_object,
+                "target_attributes": target_attributes,
+                "reference_object": "",
+                "reference_attributes": [],
+                "relation": "",
+            }
+
+        parts = q.split(relation, 1)
+        left = parts[0].strip() if len(parts) > 0 else ""
+        right = parts[1].strip() if len(parts) > 1 else ""
+
+        target_object, target_attributes = self._split_object_phrase(left)
+        reference_object, reference_attributes = self._split_object_phrase(right)
+
+        return {
+            "raw_query": query,
+            "target_object": target_object,
+            "target_attributes": target_attributes,
+            "reference_object": reference_object,
+            "reference_attributes": reference_attributes,
+            "relation": self._normalize_relation(relation),
+        }
+
     def make_target_object(self, query: str) -> str:
-        return "window"
+        return self._parse_query(query)["target_object"]
 
     def make_target_attributes(self, query: str) -> list[str]:
-        return ""
+        return self._parse_query(query)["target_attributes"]
 
     def make_reference_object(self, query: str) -> str:
-        return "shelves"
+        return self._parse_query(query)["reference_object"]
 
     def make_reference_attributes(self, query: str) -> list[str]:
-        return ""
+        return self._parse_query(query)["reference_attributes"]
 
     def make_relation(self, query: str) -> str:
-        return "left"
+        return self._parse_query(query)["relation"]
 
 
 class ObjectView:
@@ -138,6 +247,7 @@ class CandidateObject:
         )
         if new_bbox_area > current_best_bbox_area:
             self.best_id = len(self.object_view) - 1
+
 
 class CandidateMemory:
     def __init__(self) -> None:
