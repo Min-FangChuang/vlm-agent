@@ -4,21 +4,18 @@ from typing import Any
 
 import numpy as np
 
-
 try:
     from .module.detector import GroundingDetection, YOLOWorldDetector
     from .agent_schema import CandidateMemory, CandidateObject, ObjectView, Query, View
     from .module.matcher import PATSMatcher
     from .motion import Motion
     from .prompt import build_candidate_judgement_prompt
-    from .vlm_bridge import call_vlm_messages
 except ImportError:
     from module.detector import GroundingDetection, YOLOWorldDetector  # type: ignore
     from agent_schema import CandidateMemory, CandidateObject, ObjectView, Query, View  # type: ignore
     from module.matcher import PATSMatcher  # type: ignore
     from motion import Motion  # type: ignore
     from prompt import build_candidate_judgement_prompt  # type: ignore
-    from vlm_bridge import call_vlm_messages  # type: ignore
 class Agent:
     def __init__(
         self,
@@ -37,8 +34,9 @@ class Agent:
         self.query: Query | None = None
         self.candidates = CandidateMemory()
 
-    def vlm(self, prompt, **_: Any) -> Any:
-        return call_vlm_messages(prompt)
+    def vlm(self, prompt: str, **_: Any) -> Any:
+        del prompt
+        return None
 
     def reset(self, query_text: str) -> None:
         self.query = Query(query_text)
@@ -102,7 +100,7 @@ class Agent:
 
     def update_candidates(self, object_views: list[ObjectView]) -> None:
         for object_view in object_views:
-            self.candidates.add_ObjectView(object_view, self.matcher.is_same_candidate)
+            self.candidates.add_ObjectView(object_view, self.matcher.match_object_view_to_candidate)
 
     def _normalize_vlm_decision(self, result: Any) -> str:
         if isinstance(result, bool):

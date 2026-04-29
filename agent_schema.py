@@ -272,12 +272,28 @@ class CandidateMemory:
         return False
 
     def add_ObjectView(self, object_view: ObjectView, match_fn: Any) -> tuple[CandidateObject, bool]:
+        best_candidate: CandidateObject | None = None
+        best_filtered_matches = -1
+        best_total_matches = -1
+
         for candidate in self.objects:
-            if candidate.status != "active":
+            result = match_fn(object_view, candidate)
+            if not result.is_match:
                 continue
-            if match_fn(object_view, candidate):
-                candidate.add_object_view(object_view)
-                return candidate, True
+
+            filtered_matches = int(result.num_filtered_matches)
+            total_matches = int(result.total_matches)
+            if (
+                filtered_matches > best_filtered_matches
+                or (filtered_matches == best_filtered_matches and total_matches > best_total_matches)
+            ):
+                best_candidate = candidate
+                best_filtered_matches = filtered_matches
+                best_total_matches = total_matches
+
+        if best_candidate is not None:
+            best_candidate.add_object_view(object_view)
+            return best_candidate, True
 
         new_candidate = CandidateObject(
             object_id=len(self.objects),

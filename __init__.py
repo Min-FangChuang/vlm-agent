@@ -6,7 +6,7 @@ from .agent_schema import CandidateMemory, CandidateObject, ObjectView, Query, V
 from .agent import Agent
 from .motion import Motion
 from .module.detector import GroundingDetection, YOLOWorldDetector, draw_bbox
-from .module.matcher import MatchPair, ObjectViewMatchResult, PATSMatcher, ViewMatchResult
+from .module.matcher import ObjectViewMatchResult, PATSMatcher, ViewMatchResult
 
 __all__ = [
     "Agent",
@@ -14,7 +14,6 @@ __all__ = [
     "CandidateObject",
     "GroundingDetection",
     "YOLOWorldDetector",
-    "MatchPair",
     "Motion",
     "ObjectView",
     "ObjectViewMatchResult",

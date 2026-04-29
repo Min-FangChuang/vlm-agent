@@ -6,12 +6,16 @@ from dataclasses import dataclass
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
-
 import cv2
 import numpy as np
 import torch
 import yaml
 from torch.cuda.amp import autocast
+
+try:
+    from agent_schema import CandidateObject, ObjectView
+except ImportError:
+    from ..agent_schema import CandidateObject, ObjectView
 
 MODULE_ROOT = Path(__file__).resolve().parent.parent
 PATS_ROOT = MODULE_ROOT / "pats"
@@ -22,40 +26,27 @@ from models.pats import PATS  # type: ignore
 from utils.utils import Resize_img  # type: ignore
 
 DEFAULT_PATS_CONFIG = PATS_ROOT / "configs" / "test_scannet.yaml"
-
-
-@dataclass
-class MatchPair:
-    image0_xy: np.ndarray
-    image1_xy: np.ndarray
+MIN_TOTAL_MATCHES = 1000
+MIN_FINAL_MATCHES = 100
 
 
 @dataclass
 class ViewMatchResult:
-    matches: list[MatchPair]
-    image0_shape: tuple[int, int]
-    image1_shape: tuple[int, int]
+    image0_points: np.ndarray
+    image1_points: np.ndarray
 
     @property
     def num_matches(self) -> int:
-        return len(self.matches)
+        return int(len(self.image0_points))
 
 
 @dataclass
 class ObjectViewMatchResult:
-    view_match: ViewMatchResult
-    matched_object_points: np.ndarray
-    matched_candidate_points: np.ndarray
-    candidate_bbox: np.ndarray
+    total_matches: int
     num_bbox_matches: int
     num_mask_matches: int
+    num_filtered_matches: int
     is_match: bool
-
-
-def _get_attr_or_key(value: Any, name: str, default: Any = None) -> Any:
-    if isinstance(value, dict):
-        return value.get(name, default)
-    return getattr(value, name, default)
 
 
 def _normalize_rgb_image(image: np.ndarray) -> np.ndarray:
@@ -67,60 +58,25 @@ def _normalize_rgb_image(image: np.ndarray) -> np.ndarray:
     return clipped.astype(np.uint8)
 
 
-def _extract_object_view_rgb(object_view: Any) -> np.ndarray:
-    rgb = _get_attr_or_key(object_view, "rgb")
-    if rgb is None:
-        view = _get_attr_or_key(object_view, "view")
-        if view is not None:
-            rgb = _get_attr_or_key(view, "rgb")
-    if rgb is None:
-        raise ValueError("object_view must provide `rgb` or `view.rgb`.")
-    return _normalize_rgb_image(np.asarray(rgb))
+def _extract_object_view_rgb(object_view: ObjectView) -> np.ndarray:
+    return _normalize_rgb_image(np.asarray(object_view.rgb))
 
 
-def _extract_object_view_bbox(object_view: Any) -> np.ndarray:
-    bbox = _get_attr_or_key(object_view, "bbox_2d")
-    if bbox is None:
-        raise ValueError("object_view must provide `bbox_2d`.")
-    bbox_array = np.asarray(bbox, dtype=np.float32).reshape(-1)
+def _extract_object_view_bbox(object_view: ObjectView) -> np.ndarray:
+    bbox_array = np.asarray(object_view.bbox_2d, dtype=np.float32).reshape(-1)
     if bbox_array.shape[0] != 4:
         raise ValueError(f"Expected bbox with 4 values, got shape={bbox_array.shape}")
     return bbox_array
 
 
-def _extract_object_view_mask(object_view: Any) -> np.ndarray:
-    mask = _get_attr_or_key(object_view, "mask_2d")
+def _extract_object_view_mask(object_view: ObjectView) -> np.ndarray:
+    mask = object_view.mask_2d
     if mask is None:
-        mask = _get_attr_or_key(object_view, "mask")
-    if mask is None:
-        bbox = _extract_object_view_bbox(object_view)
-        rgb = _extract_object_view_rgb(object_view)
-        height, width = rgb.shape[:2]
-        x1, y1, x2, y2 = [int(round(value)) for value in bbox.tolist()]
-        x1 = max(0, min(width - 1, x1))
-        x2 = max(0, min(width - 1, x2))
-        y1 = max(0, min(height - 1, y1))
-        y2 = max(0, min(height - 1, y2))
-        mask_array = np.zeros((height, width), dtype=np.uint8)
-        if x2 >= x1 and y2 >= y1:
-            mask_array[y1 : y2 + 1, x1 : x2 + 1] = 1
-        return mask_array
+        raise ValueError("object_view.mask_2d must not be None.")
     mask_array = np.asarray(mask)
     if mask_array.ndim != 2:
         raise ValueError(f"Expected 2D mask, got shape={mask_array.shape}")
     return mask_array
-
-
-def _extract_candidate_best_object_view(candidate: Any) -> Any:
-    object_views = _get_attr_or_key(candidate, "object_view")
-    if object_views is None:
-        object_views = _get_attr_or_key(candidate, "object_views")
-    if object_views is None or len(object_views) == 0:
-        raise ValueError("candidate must provide non-empty `object_view` or `object_views`.")
-    best_id = int(_get_attr_or_key(candidate, "best_id", 0))
-    if best_id < 0 or best_id >= len(object_views):
-        raise IndexError(f"candidate.best_id out of range: {best_id}")
-    return object_views[best_id]
 
 
 def _points_inside_bbox(points_xy: np.ndarray, bbox: np.ndarray) -> np.ndarray:
@@ -160,7 +116,7 @@ class PATSMatcher:
         self.config_path = Path(config_path)
         self.device = torch.device(device or ("cuda" if torch.cuda.is_available() else "cpu"))
         self._args = self._load_config(self.config_path)
-        self._model: Any = None
+        self._model = None
 
     def _load_config(self, config_path: Path) -> SimpleNamespace:
         if not config_path.is_file():
@@ -174,7 +130,7 @@ class PATSMatcher:
         random.seed(seed)
         return args
 
-    def _build_model(self) -> Any:
+    def _build_model(self):
         model = PATS(self._args)
         model.config.checkpoint = str(PATS_ROOT / model.config.checkpoint)
         model.config.checkpoint2 = str(PATS_ROOT / model.config.checkpoint2)
@@ -250,106 +206,85 @@ class PATSMatcher:
         kp0 = result["matches_l"]
         kp1 = result["matches_r"]
         if len(kp0) == 0 or len(kp1) == 0:
-            return ViewMatchResult(matches=[], image0_shape=image0_shape, image1_shape=image1_shape)
+            empty_points = np.empty((0, 2), dtype=np.int16)
+            return ViewMatchResult(image0_points=empty_points, image1_points=empty_points.copy())
         kp0, kp1 = self._filter_matches(kp0, kp1, scale_factor0, image0_shape, image1_shape)
-        matches = [
-            MatchPair(
-                image0_xy=np.asarray([int(point0[1]), int(point0[0])], dtype=np.int16),
-                image1_xy=np.asarray([int(point1[1]), int(point1[0])], dtype=np.int16),
-            )
-            for point0, point1 in zip(kp0.tolist(), kp1.tolist())
-        ]
-        return ViewMatchResult(matches=matches, image0_shape=image0_shape, image1_shape=image1_shape)
-
-    def match_candidate_views(self, candidate_views: list[np.ndarray], query_view: np.ndarray) -> list[ViewMatchResult]:
-        return [self.match_views(candidate_view, query_view) for candidate_view in candidate_views]
-
-    def match_best_view(self, candidate_views: list[np.ndarray], query_view: np.ndarray) -> tuple[int, ViewMatchResult] | None:
-        best_index = -1
-        best_result: ViewMatchResult | None = None
-        best_score = -1
-        for index, candidate_view in enumerate(candidate_views):
-            result = self.match_views(candidate_view, query_view)
-            if result.num_matches > best_score:
-                best_index = index
-                best_result = result
-                best_score = result.num_matches
-        if best_result is None:
-            return None
-        return best_index, best_result
+        image0_points = np.asarray([[int(point0[1]), int(point0[0])] for point0 in kp0.tolist()], dtype=np.int16)
+        image1_points = np.asarray([[int(point1[1]), int(point1[0])] for point1 in kp1.tolist()], dtype=np.int16)
+        return ViewMatchResult(image0_points=image0_points, image1_points=image1_points)
 
     def match_object_views(
         self,
-        object_view: Any,
-        candidate_object_view: Any,
-        min_mask_pixels: int = 10,
+        object_view: ObjectView,
+        candidate_object_view: ObjectView,
+        min_final_matches: int = MIN_FINAL_MATCHES,
     ) -> ObjectViewMatchResult:
         object_rgb = _extract_object_view_rgb(object_view)
         candidate_rgb = _extract_object_view_rgb(candidate_object_view)
+        object_bbox = _extract_object_view_bbox(object_view)
         candidate_bbox = _extract_object_view_bbox(candidate_object_view)
-        candidate_mask = _extract_object_view_mask(candidate_object_view)
 
         view_match = self.match_views(object_rgb, candidate_rgb)
-        if view_match.num_matches == 0:
-            empty_points = np.empty((0, 2), dtype=np.int16)
+        if view_match.num_matches <= MIN_TOTAL_MATCHES:
             return ObjectViewMatchResult(
-                view_match=view_match,
-                matched_object_points=empty_points,
-                matched_candidate_points=empty_points.copy(),
-                candidate_bbox=candidate_bbox,
+                total_matches=view_match.num_matches,
                 num_bbox_matches=0,
                 num_mask_matches=0,
+                num_filtered_matches=0,
                 is_match=False,
             )
 
-        object_points = np.asarray([match.image0_xy for match in view_match.matches], dtype=np.int16)
-        candidate_points = np.asarray([match.image1_xy for match in view_match.matches], dtype=np.int16)
+        object_points = view_match.image0_points
+        candidate_points = view_match.image1_points
 
         bbox_keep = _points_inside_bbox(candidate_points, candidate_bbox)
         object_points = object_points[bbox_keep]
         candidate_points = candidate_points[bbox_keep]
+
+        object_bbox_keep = _points_inside_bbox(object_points, object_bbox)
+        object_points = object_points[object_bbox_keep]
+        candidate_points = candidate_points[object_bbox_keep]
         num_bbox_matches = int(len(candidate_points))
 
-        if num_bbox_matches == 0:
-            empty_points = np.empty((0, 2), dtype=np.int16)
+        if num_bbox_matches <= int(min_final_matches):
             return ObjectViewMatchResult(
-                view_match=view_match,
-                matched_object_points=empty_points,
-                matched_candidate_points=empty_points.copy(),
-                candidate_bbox=candidate_bbox,
-                num_bbox_matches=0,
+                total_matches=view_match.num_matches,
+                num_bbox_matches=num_bbox_matches,
                 num_mask_matches=0,
+                num_filtered_matches=num_bbox_matches,
                 is_match=False,
             )
 
-        mask_keep = _points_inside_mask(candidate_points, candidate_mask)
-        object_points = object_points[mask_keep]
-        candidate_points = candidate_points[mask_keep]
-        num_mask_matches = int(len(candidate_points))
+        if candidate_object_view.mask_2d is None:
+            num_mask_matches = num_bbox_matches
+            num_filtered_matches = num_bbox_matches
+        else:
+            candidate_mask = _extract_object_view_mask(candidate_object_view)
+            mask_keep = _points_inside_mask(candidate_points, candidate_mask)
+            object_points = object_points[mask_keep]
+            candidate_points = candidate_points[mask_keep]
+            num_mask_matches = int(len(candidate_points))
+            num_filtered_matches = num_mask_matches
 
         return ObjectViewMatchResult(
-            view_match=view_match,
-            matched_object_points=object_points,
-            matched_candidate_points=candidate_points,
-            candidate_bbox=candidate_bbox,
+            total_matches=view_match.num_matches,
             num_bbox_matches=num_bbox_matches,
             num_mask_matches=num_mask_matches,
-            is_match=num_mask_matches >= int(min_mask_pixels),
+            num_filtered_matches=num_filtered_matches,
+            is_match=num_filtered_matches > int(min_final_matches),
         )
 
     def match_object_view_to_candidate(
         self,
-        object_view: Any,
-        candidate: Any,
-        min_mask_pixels: int = 10,
+        object_view: ObjectView,
+        candidate: CandidateObject,
+        min_final_matches: int = MIN_FINAL_MATCHES,
     ) -> ObjectViewMatchResult:
-        candidate_object_view = _extract_candidate_best_object_view(candidate)
-        return self.match_object_views(object_view, candidate_object_view, min_mask_pixels=min_mask_pixels)
-
-    def is_same_candidate(
-        self,
-        object_view: Any,
-        candidate: Any,
-        min_mask_pixels: int = 10,
-    ) -> bool:
-        return self.match_object_view_to_candidate(object_view, candidate, min_mask_pixels=min_mask_pixels).is_match
+        candidate_object_views = candidate.object_view
+        if len(candidate_object_views) == 0:
+            raise ValueError("candidate.object_view must be non-empty.")
+        best_id = int(candidate.best_id)
+        if best_id < 0 or best_id >= len(candidate_object_views):
+            raise IndexError(f"candidate.best_id out of range: {best_id}")
+        candidate_object_view = candidate_object_views[best_id]
+        return self.match_object_views(object_view, candidate_object_view, min_final_matches=min_final_matches)
