@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any
 
 
-def call_vlm_messages(messages: list[dict[str, Any]]) -> dict[str, Any]:
+def call_vlm_messages(messages: list[dict[str, Any]]) -> Any:
     repo_root = Path(__file__).resolve().parent
     script_path = repo_root / "backend" / "vlm_messages.js"
 
@@ -31,6 +31,10 @@ def call_vlm_messages(messages: list[dict[str, Any]]) -> dict[str, Any]:
     stdout = result.stdout.strip()
     stderr = result.stderr.strip()
 
+    if stderr:
+        print("[vlm_bridge] backend stderr:")
+        print(stderr)
+
     if not stdout:
         raise RuntimeError(f"VLM backend returned empty stdout. stderr={stderr}")
 
@@ -44,15 +48,4 @@ def call_vlm_messages(messages: list[dict[str, Any]]) -> dict[str, Any]:
     if not data.get("success", False):
         raise RuntimeError(data.get("error", "Unknown VLM backend error."))
 
-    output = data.get("result", {})
-    if not isinstance(output, dict):
-        return {
-            "decision": "unsure",
-            "confidence": "low",
-            "reasoning": str(output),
-            "matched_conditions": [],
-            "missing_conditions": [],
-            "suggested_action": "yaw",
-        }
-
-    return output
+    return data.get("result")

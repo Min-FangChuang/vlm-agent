@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from typing import Any
 
 import numpy as np
@@ -10,12 +11,14 @@ try:
     from .module.matcher import PATSMatcher
     from .motion import Motion
     from .prompt import build_candidate_judgement_prompt
+    from .vlm_bridge import call_vlm_messages
 except ImportError:
     from module.detector import GroundingDetection, YOLOWorldDetector  # type: ignore
     from agent_schema import CandidateMemory, CandidateObject, ObjectView, Query, View  # type: ignore
     from module.matcher import PATSMatcher  # type: ignore
     from motion import Motion  # type: ignore
     from prompt import build_candidate_judgement_prompt  # type: ignore
+    from vlm_bridge import call_vlm_messages 
 class Agent:
     def __init__(
         self,
@@ -24,19 +27,20 @@ class Agent:
         matcher: PATSMatcher | None = None,
         mapper_2d3d: Any = None,
         view_selector: Any = None,
+        debug: bool = True,
     ) -> None:
         self.detector = detector or YOLOWorldDetector()
         self.matcher = matcher or PATSMatcher()
         self.mapper_2d3d = mapper_2d3d
         self.view_selector = view_selector
         self.motion = motion
+        self.debug = debug
         self.current_view: View | None = None
         self.query: Query | None = None
         self.candidates = CandidateMemory()
 
-    def vlm(self, prompt: str, **_: Any) -> Any:
-        del prompt
-        return None
+    def vlm(self, prompt, **_: Any) -> Any:
+        return call_vlm_messages(prompt)
 
     def reset(self, query_text: str) -> None:
         self.query = Query(query_text)
@@ -105,10 +109,6 @@ class Agent:
     def _normalize_vlm_decision(self, result: Any) -> str:
         if isinstance(result, bool):
             return "true" if result else "false"
-        if isinstance(result, str):
-            lowered = result.strip().lower()
-            if lowered in {"true", "false", "unsure"}:
-                return lowered
         if isinstance(result, dict):
             decision = result.get("decision") or result.get("answer") or result.get("result")
             if isinstance(decision, str):
@@ -117,10 +117,39 @@ class Agent:
                     return lowered
         return "unsure"
 
+    def _normalize_vlm_result(self, result: Any) -> Any:
+        if isinstance(result, dict):
+            return result
+
+        text = "" if result is None else str(result).strip()
+        try:
+            return json.loads(text)
+        except json.JSONDecodeError:
+            return {
+                "decision": "unsure",
+                "confidence": "low",
+                "reasoning": text or "Model returned non-JSON output.",
+                "matched_conditions": [],
+                "missing_conditions": [],
+                "suggested_action": "yaw",
+            }
+
+    def _debug_print(self, title: str, payload: Any) -> None:
+        if not self.debug or title not in {"vlm_raw_result", "vlm_normalized_decision"}:
+            return
+        print(f"[Agent] {title}")
+        if isinstance(payload, (dict, list)):
+            print(json.dumps(payload, ensure_ascii=False, indent=2))
+        else:
+            print(payload)
+
     def evaluate_candidate(self, candidate: CandidateObject) -> str:
         prompt = build_candidate_judgement_prompt(self._require_query(), candidate)
-        result = self.vlm(prompt, candidate=candidate)
-        return self._normalize_vlm_decision(result)
+        result = self._normalize_vlm_result(self.vlm(prompt, candidate=candidate))
+        self._debug_print("vlm_raw_result", result)
+        decision = self._normalize_vlm_decision(result)
+        self._debug_print("vlm_normalized_decision", decision)
+        return decision
 
     def evaluate_candidates(self) -> tuple[CandidateObject | None, str]:
         saw_unsure = False

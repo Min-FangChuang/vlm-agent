@@ -26,6 +26,8 @@ if __name__ == "__main__":
 
     total_views = 0
     total_object_views = 0
+    selected_candidate = None
+    final_decision = "false"
     for unit_index in range(args.max_units):
         views = reader.find()
         if not views:
@@ -41,10 +43,21 @@ if __name__ == "__main__":
         print(f"object_views={len(object_views)}")
         print(f"candidates={len(agent.candidates.values())}")
 
+        decision_candidate, decision = agent.evaluate_candidates()
+        final_decision = decision
+        print(f"decision={decision}")
+        if decision_candidate is not None:
+            selected_candidate = decision_candidate
+            print(f"selected_candidate={build_candidate_summary(decision_candidate)}")
+            break
+
     print(f"scene={args.scene}")
     print(f"query={args.query}")
     print(f"total_views={total_views}")
     print(f"total_object_views={total_object_views}")
     print(f"total_candidates={len(agent.candidates.values())}")
+    print(f"final_decision={final_decision}")
+    if selected_candidate is not None:
+        print(f"final_selected_candidate={build_candidate_summary(selected_candidate)}")
     for index, candidate in enumerate(agent.candidates.values(), start=1):
         print(f"candidate[{index}] {build_candidate_summary(candidate)}")

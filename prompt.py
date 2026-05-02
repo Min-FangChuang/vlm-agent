@@ -7,6 +7,7 @@ import io
 import json
 
 import numpy as np
+from PIL import Image
 
 try:
     from .module.detector import draw_bbox
