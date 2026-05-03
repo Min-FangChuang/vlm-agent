@@ -31,7 +31,10 @@ if __name__ == "__main__":
         max_rotation_step_deg=args.max_rotation_step_deg,
     )
     controller.look_up(10.0)
-    agent = Agent(motion=Motion(controller))
+    agent = Agent(
+        motion=Motion(controller),
+        intrinsic_matrix=controller.scene.color_camera.intrinsic_matrix,
+    )
 
     try:
         agent.reset(args.query)

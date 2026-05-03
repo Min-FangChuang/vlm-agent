@@ -19,6 +19,8 @@ class Read:
         if not self.scene_dir.is_dir():
             raise FileNotFoundError(f"Posed image scene directory does not exist: {self.scene_dir}")
 
+        self.intrinsic_matrix = self._read_intrinsic_matrix()
+
         self.frame_ids = self._discover_frame_ids()
         if not self.frame_ids:
             raise FileNotFoundError(f"No posed frames found under: {self.scene_dir}")
@@ -59,6 +61,14 @@ class Read:
         matrix = np.asarray(matrix, dtype=np.float32)
         if matrix.shape != (4, 4):
             raise ValueError(f"Expected 4x4 pose matrix in {pose_path}, got {matrix.shape}")
+        return matrix
+
+    def _read_intrinsic_matrix(self) -> np.ndarray:
+        intrinsic_path = self.scene_dir / "intrinsic.txt"
+        matrix = np.loadtxt(str(intrinsic_path), dtype=np.float32)
+        matrix = np.asarray(matrix, dtype=np.float32)
+        if matrix.shape != (4, 4):
+            raise ValueError(f"Expected 4x4 intrinsic matrix in {intrinsic_path}, got {matrix.shape}")
         return matrix
 
     def _build_view(self, frame_id: str) -> View:

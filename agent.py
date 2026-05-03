@@ -22,16 +22,20 @@ except ImportError:
 class Agent:
     def __init__(
         self,
-        motion: Motion,
+        motion: Motion | Any,
         detector: YOLOWorldDetector | None = None,
+        segmenter: Any = None,
         matcher: PATSMatcher | None = None,
         mapper_2d3d: Any = None,
+        intrinsic_matrix: Any = None,
         view_selector: Any = None,
         debug: bool = True,
     ) -> None:
         self.detector = detector or YOLOWorldDetector()
+        self.segmenter = segmenter
         self.matcher = matcher or PATSMatcher()
         self.mapper_2d3d = mapper_2d3d
+        self.intrinsic_matrix = intrinsic_matrix
         self.view_selector = view_selector
         self.motion = motion
         self.debug = debug
@@ -46,17 +50,6 @@ class Agent:
         self.query = Query(query_text)
         self.current_view = None
         self.candidates = CandidateMemory()
-
-    def _observation_to_view(self, observation: dict[str, Any]) -> View:
-        view_id = observation.get("frame_index")
-        if not isinstance(view_id, (str, int)):
-            view_id = -1
-        return View(
-            rgb=observation["rgb"],
-            depth=observation["depth"],
-            camera_to_world=observation["camera_to_world"],
-            view_id=view_id,
-        )
 
     def observe(self) -> View:
         return self.motion._current_view()
@@ -104,7 +97,8 @@ class Agent:
 
     def update_candidates(self, object_views: list[ObjectView]) -> None:
         for object_view in object_views:
-            self.candidates.add_ObjectView(object_view, self.matcher.match_object_view_to_candidate)
+            candidate, _ = self.candidates.add_ObjectView(object_view, self.matcher.match_object_view_to_candidate)
+            self.ensure_candidate_best_view_mask(candidate)
 
     def _normalize_vlm_decision(self, result: Any) -> str:
         if isinstance(result, bool):
@@ -150,6 +144,60 @@ class Agent:
         decision = self._normalize_vlm_decision(result)
         self._debug_print("vlm_normalized_decision", decision)
         return decision
+
+    def complete_candidate_masks(self, candidate: CandidateObject) -> None:
+        if self.segmenter is None:
+            raise ValueError("segmenter is not configured.")
+
+        for object_view in candidate.object_view:
+            if object_view.mask_2d is not None:
+                continue
+
+            mask = self.segmenter.segment_from_box(
+                object_view.view.rgb,
+                np.asarray(object_view.bbox_2d, dtype=np.float32).reshape(4),
+            )
+            object_view.mask_2d = np.asarray(mask, dtype=np.uint8)
+
+    def ensure_candidate_best_view_mask(self, candidate: CandidateObject) -> None:
+        if self.segmenter is None:
+            return
+        if not candidate.object_view:
+            return
+
+        best_id = int(candidate.best_id)
+        if best_id < 0 or best_id >= len(candidate.object_view):
+            return
+
+        best_object_view = candidate.object_view[best_id]
+        if best_object_view.mask_2d is not None:
+            return
+
+        mask = self.segmenter.segment_from_box(
+            best_object_view.view.rgb,
+            np.asarray(best_object_view.bbox_2d, dtype=np.float32).reshape(4),
+        )
+        best_object_view.mask_2d = np.asarray(mask, dtype=np.uint8)
+
+    def map_candidate_to_3d(
+        self,
+        candidate: CandidateObject,
+        *,
+        world_to_axis_align_matrix: Any = None,
+        do_post_process: bool = True,
+        use_best_only: bool = False,
+    ) -> tuple[Any, Any]:
+        if self.mapper_2d3d is None:
+            raise ValueError("mapper_2d3d is not configured.")
+        if self.intrinsic_matrix is None:
+            raise ValueError("intrinsic_matrix is not configured.")
+        return self.mapper_2d3d.update_candidate_3d(
+            candidate,
+            intrinsic_matrix=self.intrinsic_matrix,
+            world_to_axis_align_matrix=world_to_axis_align_matrix,
+            do_post_process=do_post_process,
+            use_best_only=use_best_only,
+        )
 
     def evaluate_candidates(self) -> tuple[CandidateObject | None, str]:
         saw_unsure = False

@@ -211,7 +211,7 @@ def build_candidate_text_input(query: Any, candidate: Any) -> str:
             "num_views": len(object_views_summary),
             "object_views": object_views_summary,
         },
-        "debug_candidate_summary": build_candidate_summary(candidate),
+        #"debug_candidate_summary": build_candidate_summary(candidate),
     }
 
     return json.dumps(payload, ensure_ascii=False, indent=2)
