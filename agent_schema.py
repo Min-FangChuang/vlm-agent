@@ -4,6 +4,11 @@ from typing import Any
 
 import numpy as np
 
+try:
+    from .query_parser import parse_query_with_vlm
+except ImportError:
+    from query_parser import parse_query_with_vlm  # type: ignore
+
 
 class View:
     def __init__(
@@ -24,13 +29,25 @@ class View:
 class Query:
     def __init__(self, query: str) -> None:
         self.query = query
-        self._parsed = self._parse_query(self.query)
 
-        self.target_object = self.make_target_object(self.query)
-        self.target_attributes = self.make_target_attributes(self.query)
-        self.reference_object = self.make_reference_object(self.query)
-        self.reference_attributes = self.make_reference_attributes(self.query)
-        self.relation = self.make_relation(self.query)
+        try:
+            self._parsed = parse_query_with_vlm(self.query)
+            print("[Query] VLM parsed")
+            print(self._parsed)
+
+            if not self._parsed.get("target_object"):
+                print("[Query] empty target_object, fallback to rule parser")
+                self._parsed = self._parse_query(self.query)
+
+        except Exception as exc:
+            print(f"[Query] VLM parse failed, fallback to rule parser. error={exc}")
+            self._parsed = self._parse_query(self.query)
+
+        self.target_object = self._parsed.get("target_object", "")
+        self.target_attributes = self._parsed.get("target_attributes", [])
+        self.reference_object = self._parsed.get("reference_object", "")
+        self.reference_attributes = self._parsed.get("reference_attributes", [])
+        self.relation = self._parsed.get("relation", "")
 
     def _to_lower_trim(self, value: Any) -> str:
         return str(value or "").strip().lower()

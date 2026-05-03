@@ -48,7 +48,7 @@ if __name__ == "__main__":
         print(f"decision={decision}")
         if decision_candidate is not None:
             selected_candidate = decision_candidate
-            print(f"selected_candidate={build_candidate_summary(decision_candidate)}")
+            #print(f"selected_candidate={build_candidate_summary(decision_candidate)}")
             break
 
     print(f"scene={args.scene}")
