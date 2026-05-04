@@ -138,6 +138,71 @@ def _rgb_to_base64(rgb: np.ndarray) -> str:
     image.save(buffer, format="JPEG")
     return base64.b64encode(buffer.getvalue()).decode("utf-8")
 
+def _resize_rgb_image(rgb: np.ndarray, size: tuple[int, int]) -> np.ndarray:
+    image = np.asarray(rgb)
+    if image.dtype != np.uint8:
+        image = np.clip(image, 0, 255).astype(np.uint8)
+
+    if image.ndim == 2:
+        image = np.stack([image, image, image], axis=-1)
+
+    if image.shape[-1] == 4:
+        image = image[..., :3]
+
+    width, height = size
+    return cv2.resize(image, (width, height), interpolation=cv2.INTER_AREA)
+
+
+def _stitch_candidate_object_views(
+    object_views: list[Any],
+    max_views: int = 6,
+    tile_size: tuple[int, int] = (384, 288),
+    columns: int = 3,
+) -> tuple[np.ndarray | None, list[str]]:
+    selected_views = list(object_views or [])[:max_views]
+    if not selected_views:
+        return None, []
+
+    tile_width, tile_height = tile_size
+    rows = int(np.ceil(len(selected_views) / columns))
+
+    canvas = np.full(
+        (rows * tile_height, columns * tile_width, 3),
+        235,
+        dtype=np.uint8,
+    )
+
+    tile_descriptions: list[str] = []
+
+    for index, object_view in enumerate(selected_views):
+        try:
+            drawn_image = _draw_candidate_object_view(object_view)
+        except Exception as exc:
+            print(f"[Prompt] failed to draw object view {index}: {exc}")
+            continue
+
+        tile = _resize_rgb_image(drawn_image, tile_size)
+
+        row = index // columns
+        col = index % columns
+        y1 = row * tile_height
+        x1 = col * tile_width
+        canvas[y1:y1 + tile_height, x1:x1 + tile_width] = tile
+
+        view = _safe_getattr(object_view, "view")
+        view_id = _safe_getattr(view, "view_id", index)
+        label = _safe_getattr(object_view, "label", "object")
+        score = float(_safe_getattr(object_view, "score", 0.0))
+
+        tile_descriptions.append(
+            f"tile {index}: view_index={index}, view_id={view_id}, label={label}, score={score:.3f}"
+        )
+
+    if not tile_descriptions:
+        return None, []
+
+    return canvas, tile_descriptions
+
 
 def _normalize_reference(reference: Any) -> Any:
     if reference is None:
@@ -219,38 +284,51 @@ def build_candidate_text_input(query: Any, candidate: Any) -> str:
 def build_candidate_judgement_prompt(query: Any, candidate: Any):
     object_views = _safe_getattr(candidate, "object_view", []) or []
     gpt_input = build_candidate_text_input(query, candidate)
-    base64_frames = []
 
-    for object_view in object_views:
-        view = _safe_getattr(object_view, "view")
-        if view is None:
-            continue
+    stitched_image, tile_descriptions = _stitch_candidate_object_views(
+        object_views,
+        max_views=6,
+        tile_size=(384, 288),
+        columns=3,
+    )
 
-        rgb = np.asarray(_safe_getattr(view, "rgb"))
-        base64_frames.append(_rgb_to_base64(rgb))
+    content: list[dict[str, Any]] = [
+        {
+            "type": "text",
+            "text": (
+                gpt_input
+                + "\n\nVisual evidence format:\n"
+                + "- The attached image is a stitched grid of candidate object views.\n"
+                + "- Green boxes indicate the candidate target object.\n"
+                + "- Red boxes indicate detected reference objects, if any.\n"
+                + "- Use tile labels and the JSON object_views view_index to refer to evidence.\n"
+                + "- If a required reference object or spatial relation is not visually confirmed, return unsure.\n\n"
+                + "Tile descriptions:\n"
+                + ("\n".join(tile_descriptions) if tile_descriptions else "No stitched visual evidence available.")
+            ),
+        }
+    ]
+
+    if stitched_image is not None:
+        content.append(
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": f"data:image/jpeg;base64,{_rgb_to_base64(stitched_image)}",
+                    "detail": "high",
+                },
+            }
+        )
 
     messages = [
         {"role": "system", "content": CANDIDATE_VERIFY_SYSTEM_PROMPT},
         {
             "role": "user",
-            "content": [
-                {"type": "text", "text": gpt_input},
-                *[
-                    {
-                        "type": "image_url",
-                        "image_url": {
-                            "url": f"data:image/jpeg;base64,{frame}",
-                            "detail": "high",
-                        },
-                    }
-                    for frame in base64_frames
-                ],
-            ],
+            "content": content,
         },
     ]
 
     return messages
-
 
 def build_reference_detection_prompt(query: Any) -> str:
     reference_object = _safe_getattr(query, "reference_object", "")
