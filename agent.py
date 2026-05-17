@@ -28,6 +28,7 @@ class Agent:
         matcher: PATSMatcher | None = None,
         mapper_2d3d: Any = None,
         intrinsic_matrix: Any = None,
+        world_to_axis_align_matrix: Any = None,
         view_selector: Any = None,
         debug: bool = True,
     ) -> None:
@@ -36,12 +37,15 @@ class Agent:
         self.matcher = matcher or PATSMatcher()
         self.mapper_2d3d = mapper_2d3d
         self.intrinsic_matrix = intrinsic_matrix
+        self.world_to_axis_align_matrix = world_to_axis_align_matrix
         self.view_selector = view_selector
         self.motion = motion
         self.debug = debug
         self.current_view: View | None = None
         self.query: Query | None = None
         self.candidates = CandidateMemory()
+        self.detector_call_count = 0
+        self.vlm_image_counts: list[int] = []
 
     def vlm(self, prompt, **_: Any) -> Any:
         return call_vlm_messages(prompt)
@@ -50,6 +54,8 @@ class Agent:
         self.query = Query(query_text)
         self.current_view = None
         self.candidates = CandidateMemory()
+        self.detector_call_count = 0
+        self.vlm_image_counts = []
 
     def observe(self) -> View:
         return self.motion._current_view()
@@ -61,13 +67,31 @@ class Agent:
 
     def detect_target_objects(self, view: View) -> list[GroundingDetection]:
         query = self._require_query()
+        self.detector_call_count += 1
         return self.detector.detect_detections(view.rgb, query.target_object)
 
     def detect_reference_objects(self, view: View) -> list[GroundingDetection]:
         query = self._require_query()
         if not query.reference_object:
             return []
+        self.detector_call_count += 1
         return self.detector.detect_detections(view.rgb, query.reference_object)
+
+    @staticmethod
+    def _count_prompt_images(prompt: Any) -> int:
+        if not isinstance(prompt, list):
+            return 0
+        total = 0
+        for message in prompt:
+            if not isinstance(message, dict):
+                continue
+            content = message.get("content")
+            if not isinstance(content, list):
+                continue
+            for item in content:
+                if isinstance(item, dict) and item.get("type") == "image_url":
+                    total += 1
+        return total
 
     def attach_reference(self, view: View) -> None:
         view.reference = self.detect_reference_objects(view)
@@ -90,7 +114,7 @@ class Agent:
             detections = self.detect_target_objects(view)
             if not detections:
                 continue
-            self.attach_reference(view)
+            #self.attach_reference(view)
             for index, detection in enumerate(detections):
                 object_views.append(self.build_object_view(view, detection, f"{view.view_id}_{index}"))
         return object_views
@@ -139,6 +163,9 @@ class Agent:
 
     def evaluate_candidate(self, candidate: CandidateObject) -> str:
         prompt = build_candidate_judgement_prompt(self._require_query(), candidate)
+        image_count = self._count_prompt_images(prompt)
+        self.vlm_image_counts.append(image_count)
+        print(f"[Agent] vlm_stitched_image_count={image_count}")
         result = self._normalize_vlm_result(self.vlm(prompt, candidate=candidate))
         self._debug_print("vlm_raw_result", result)
         decision = self._normalize_vlm_decision(result)
@@ -191,10 +218,13 @@ class Agent:
             raise ValueError("mapper_2d3d is not configured.")
         if self.intrinsic_matrix is None:
             raise ValueError("intrinsic_matrix is not configured.")
+        align_matrix = world_to_axis_align_matrix
+        if align_matrix is None:
+            align_matrix = self.world_to_axis_align_matrix
         return self.mapper_2d3d.update_candidate_3d(
             candidate,
             intrinsic_matrix=self.intrinsic_matrix,
-            world_to_axis_align_matrix=world_to_axis_align_matrix,
+            world_to_axis_align_matrix=align_matrix,
             do_post_process=do_post_process,
             use_best_only=use_best_only,
         )
@@ -202,11 +232,15 @@ class Agent:
     def evaluate_candidates(self) -> tuple[CandidateObject | None, str]:
         saw_unsure = False
         for candidate in self.candidates.values():
+            if getattr(candidate, "status", "active") != "active":
+                continue
             decision = self.evaluate_candidate(candidate)
             if decision == "true":
                 return candidate, "true"
             if decision == "unsure":
                 saw_unsure = True
+            if decision == "false":
+                candidate.status = "false"
         return None, "unsure" if saw_unsure else "false"
 
     def initial_scan(self) -> list[View]:
