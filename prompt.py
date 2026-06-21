@@ -131,28 +131,33 @@ Allowed values:
 - suggested_action: forward / yaw / stop
 """
 
-MULTI_CANDIDATE_SELECT_SYSTEM_PROMPT = """You are a visual grounding selector for indoor environments.
+MULTI_CANDIDATE_SELECT_SYSTEM_PROMPT = """Imagine you are in a room and you are asked to find one object.
 
-You are given:
-1. the full user request and a compact extraction of its key conditions
-2. multiple candidate objects, each represented by one stitched image made from several viewpoints of the same object
+Given a natural language query and several stitched images of possible objects, you need to analyze the images and choose the single image that best matches the query.
 
-The green boxes in each stitched image indicate the object being evaluated for that choice. Your task is to choose the single best candidate that satisfies the query.
+Each stitched image is composed of multiple views of the same candidate object. The green box in each view highlights the candidate object, but the box may also include other irrelevant objects. You must identify the correct object by combining the object inside the green box with the surrounding environment across different views.
 
-Rules:
-- Compare all candidates against the full original request.
-- Use the stitched image for each candidate as the primary visual evidence.
-- For each choice, first check whether the green-boxed object itself matches the requested object and attributes, then check whether any needed nearby reference object or alternative object is supported, and then check whether the spatial relation or comparison is satisfied.
-- After comparing all choices, do one final pass against the full original request and make sure no explicit requirement was missed.
+Important instructions:
+- Compare all candidate images against the full original query.
+- Use the stitched image as the primary visual evidence for each candidate.
+- Do not focus only on the object appearance inside the green box. Use the surrounding scene context to judge nearby reference objects and spatial relations.
+- If the query includes relative references such as left-most, right-most, closest, farthest, biggest, or smallest, first identify the relevant reference object in the scene context, then judge the target object's relation to it.
+- If multiple candidates partially match, choose the one whose reference-object evidence and spatial relation are best supported by the views.
 - Do not rely on detector confidence or class names beyond what is visually supported.
-- You must choose exactly one candidate, even if the evidence is imperfect. Select the candidate that best satisfies the query overall.
+- You must choose exactly one candidate, even if the evidence is imperfect. Select the most suitable candidate overall.
 
 Return structured JSON only with this schema:
 {
   "selected_index": 0,
   "reasoning": "brief evidence-based reasoning"
 }
+
+Rules for output:
 - selected_index must be a zero-based candidate index.
+- Return exactly one JSON object.
+- Do not use markdown.
+- Do not use code fences such as ```json.
+- Do not output any text before or after the JSON.
 """
 QUERY_DECOMPOSE_SYSTEM_PROMPT = """
 You are a query decomposition assistant for indoor visual grounding.
@@ -398,22 +403,10 @@ def build_multi_candidate_selection_prompt(query: Any, candidates: list[Any]):
                 }
             )
 
-    payload = {
-        "task": "choose the single best matching object",
-        "request": {
-            "full_text": _safe_getattr(query, "query", ""),
-            "requested_object": _safe_getattr(query, "target_object", ""),
-            "requested_object_attributes": _safe_getattr(query, "target_attributes", []),
-            "reference_object": _safe_getattr(query, "reference_object", ""),
-            "reference_object_attributes": _safe_getattr(query, "reference_attributes", []),
-            "spatial_relation": _safe_getattr(query, "relation", ""),
-        },
-        "number_of_choices": len(candidates),
-    }
-
     text = (
-        json.dumps(payload, ensure_ascii=False, indent=2)
-        + "\n\nChoice images:\n"
+        f"Query: {_safe_getattr(query, 'query', '')}\n"
+        f"Here are the images of {len(candidates)} possible objects.\n"
+        "Choice images:\n"
         + "\n".join(candidate_summaries)
     )
 

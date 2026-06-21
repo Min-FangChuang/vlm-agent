@@ -15,7 +15,7 @@ def call_vlm_messages(messages: list[dict[str, Any]]) -> Any:
 
     payload = {
         "messages": messages,
-        "model": "gpt-5.2",
+        "model": "gpt-5.4",
         "max_output_tokens": 300,
     }
 

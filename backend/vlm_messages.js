@@ -75,62 +75,6 @@ function normalizeMessagesToResponsesInput(messages) {
   });
 }
 
-function mergeSystemPromptIntoUserMessages(messages) {
-  const systemText = messages
-    .filter(message => message.role === "system")
-    .map(message => String(message.content ?? "").trim())
-    .filter(Boolean)
-    .join("\n\n");
-
-  const nonSystemMessages = messages
-    .filter(message => message.role !== "system")
-    .map(message => {
-      if (Array.isArray(message.content)) {
-        return {
-          ...message,
-          content: [...message.content]
-        };
-      }
-
-      return { ...message };
-    });
-
-  if (!systemText) {
-    return nonSystemMessages;
-  }
-
-  const firstUserMessage = nonSystemMessages.find(message => message.role === "user");
-
-  if (!firstUserMessage) {
-    return [{ role: "user", content: systemText }, ...nonSystemMessages];
-  }
-
-  if (typeof firstUserMessage.content === "string") {
-    firstUserMessage.content = `${systemText}\n\n${firstUserMessage.content}`;
-    return nonSystemMessages;
-  }
-
-  if (Array.isArray(firstUserMessage.content)) {
-    const firstTextIndex = firstUserMessage.content.findIndex(item => item.type === "text");
-
-    if (firstTextIndex >= 0) {
-      const firstTextItem = firstUserMessage.content[firstTextIndex];
-      firstUserMessage.content[firstTextIndex] = {
-        ...firstTextItem,
-        text: `${systemText}\n\n${String(firstTextItem.text ?? "")}`
-      };
-      return nonSystemMessages;
-    }
-
-    firstUserMessage.content.unshift({
-      type: "text",
-      text: systemText
-    });
-  }
-
-  return nonSystemMessages;
-}
-
 async function main() {
   try {
     const raw = await readStdin();
@@ -151,11 +95,13 @@ async function main() {
 
     const client = new CodexClient(store, { codexMode: true });
 
-    const mergedMessages = mergeSystemPromptIntoUserMessages(messages);
-
     const requestPayload = {
-      model: payload.model || "gpt-5.2",
-      input: normalizeMessagesToResponsesInput(mergedMessages),
+      model: payload.model || "gpt-5.4",
+      instructions:
+        messages.find(message => message.role === "system")?.content || "",
+      input: normalizeMessagesToResponsesInput(
+        messages.filter(message => message.role !== "system")
+      ),
       max_output_tokens: payload.max_output_tokens || 300
     };
 
@@ -166,6 +112,8 @@ async function main() {
     }
 
     const parsed = await client.parseJsonResponse(response);
+    //console.error("[vlm_messages] parsed response:");
+    //console.error(JSON.stringify(parsed, null, 2));
     const text =
       parsed?.text ??
       parsed?.output_text ??

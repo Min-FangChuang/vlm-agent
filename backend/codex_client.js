@@ -66,12 +66,59 @@ export class CodexClient {
 
     return await handleSuccessResponse(response, payload.stream === true);
   }
-  async parseJsonResponse(response) {
-    const data = await response.json();
-    const text = data?.output?.find(item => item.type === "message")
+
+  _extractTextFromJsonPayload(data) {
+    return data?.output?.find(item => item.type === "message")
       ?.content?.find(item => item.type === "output_text")?.text ?? null;
+  }
+
+  _parseSseBody(body) {
+    let text = "";
+
+    for (const line of body.split(/\r?\n/)) {
+      if (!line.startsWith("data: ")) {
+        continue;
+      }
+
+      const raw = line.slice(6).trim();
+
+      if (!raw || raw === "[DONE]") {
+        continue;
+      }
+
+      try {
+        const data = JSON.parse(raw);
+
+        if (data?.type === "response.output_text.delta") {
+          text += data.delta ?? "";
+          continue;
+        }
+
+        const outputText = this._extractTextFromJsonPayload(data);
+        if (outputText) {
+          text = outputText;
+        }
+      } catch {
+        continue;
+      }
+    }
+
+    return { data: null, text: text || null };
+  }
+
+  async parseJsonResponse(response) {
+    const body = await response.text();
+    const trimmedBody = body.trimStart();
+
+    if (trimmedBody.startsWith("event:")) {
+      return this._parseSseBody(trimmedBody);
+    }
+
+    const data = JSON.parse(body);
+    const text = this._extractTextFromJsonPayload(data);
     return { data, text };
   }
+
   async infer(payload) {
     return await this.send({ ...payload, stream: false });
   }

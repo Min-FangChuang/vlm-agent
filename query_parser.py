@@ -1,39 +1,15 @@
 from __future__ import annotations
 
 import json
+import re
 from typing import Any
 
 try:
+    from .prompt import QUERY_DECOMPOSE_SYSTEM_PROMPT
     from .vlm_bridge import call_vlm_messages
 except ImportError:
+    from prompt import QUERY_DECOMPOSE_SYSTEM_PROMPT  # type: ignore
     from vlm_bridge import call_vlm_messages  # type: ignore
-
-
-QUERY_DECOMPOSE_SYSTEM_PROMPT = """
-You are a query decomposition assistant for indoor visual grounding.
-
-Analyze a natural language query and extract only explicitly stated information.
-
-Return valid JSON only. Do not use markdown.
-
-Rules:
-1. Do not hallucinate missing details.
-2. The target_object is the main object being searched for.
-3. The reference_object is the object used as a spatial anchor.
-4. Extract visual attributes such as color, material, size, state, or shape.
-5. Extract spatial relation if explicitly stated.
-6. If something is missing, use an empty string or an empty list.
-
-Output schema:
-{
-  "raw_query": "<original query>",
-  "target_object": "<main object>",
-  "target_attributes": [],
-  "reference_object": "",
-  "reference_attributes": [],
-  "relation": ""
-}
-""".strip()
 
 
 def _fallback_parse(raw_query: str) -> dict[str, Any]:
@@ -77,12 +53,23 @@ def _as_text(value: Any) -> str:
     return str(value or "").strip().lower()
 
 
+def _normalize_object_name(value: Any) -> str:
+    text = _as_text(value)
+    if not text:
+        return ""
+
+    parts = [part for part in re.split(r"[^a-z]+", text) if part]
+    if not parts:
+        return text
+    return parts[-1]
+
+
 def _normalize(raw_query: str, data: dict[str, Any]) -> dict[str, Any]:
     return {
         "raw_query": raw_query,
-        "target_object": _as_text(data.get("target_object")),
+        "target_object": _normalize_object_name(data.get("target_object")),
         "target_attributes": _as_list(data.get("target_attributes")),
-        "reference_object": _as_text(data.get("reference_object")),
+        "reference_object": _normalize_object_name(data.get("reference_object")),
         "reference_attributes": _as_list(data.get("reference_attributes")),
         "relation": _as_text(data.get("relation")),
     }

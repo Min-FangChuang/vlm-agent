@@ -28,6 +28,14 @@ class PointFilterConfig:
     filter_type: str = "statistical"  # statistical | truncated | none
     nb_neighbors: int = 20
     std_ratio: float = 1.0
+    keep_largest_cluster: bool = False
+    cluster_eps: float = 0.08
+    cluster_min_points: int = 20
+    max_cluster_points: int = 30000
+    cluster_downsample_voxel_size: float = 0.03
+    percentile_bbox_fallback: bool = True
+    percentile_low: float = 2.0
+    percentile_high: float = 98.0
     tx: float = 0.05
     ty: float = 0.05
     tz: float = 0.05
@@ -143,6 +151,8 @@ class TwoDToThreeDTool:
 
         inputs: list[ProjectionInput] = []
         for object_view in object_views:
+            if getattr(object_view, "status", "active") != "active":
+                continue
             if getattr(object_view, "mask_2d", None) is None:
                 continue
             view = getattr(object_view, "view", None)
@@ -319,7 +329,16 @@ class TwoDToThreeDTool:
         if cfg.filter_type == "none":
             return points
         if cfg.filter_type == "statistical":
-            return self.remove_statistical_outliers(points, cfg.nb_neighbors, cfg.std_ratio)
+            filtered = self.remove_statistical_outliers(points, cfg.nb_neighbors, cfg.std_ratio)
+            if cfg.keep_largest_cluster:
+                filtered = self.keep_largest_3d_cluster(
+                    filtered,
+                    eps=cfg.cluster_eps,
+                    min_points=cfg.cluster_min_points,
+                    max_points=cfg.max_cluster_points,
+                    voxel_size=cfg.cluster_downsample_voxel_size,
+                )
+            return filtered
         if cfg.filter_type == "truncated":
             return self.remove_truncated_outliers(points, cfg.tx, cfg.ty, cfg.tz)
         raise NotImplementedError(f"Unknown filter_type: {cfg.filter_type}")
@@ -360,11 +379,73 @@ class TwoDToThreeDTool:
         return point_cloud_data[valid_idx]
 
     @staticmethod
+    def keep_largest_3d_cluster(
+        point_cloud_data: ArrayLike,
+        eps: float = 0.08,
+        min_points: int = 20,
+        max_points: int = 30000,
+        voxel_size: float = 0.03,
+    ) -> ArrayLike:
+        if point_cloud_data.shape[0] == 0:
+            return point_cloud_data
+        if o3d is None:
+            raise ImportError(
+                "open3d is required for largest-cluster filtering. "
+                "Install it or disable keep_largest_cluster."
+            )
+
+        sample_points = point_cloud_data
+        if point_cloud_data.shape[0] > max_points:
+            pcd_full = o3d.geometry.PointCloud()
+            pcd_full.points = o3d.utility.Vector3dVector(point_cloud_data[:, :3])
+            pcd_down = pcd_full.voxel_down_sample(voxel_size=max(voxel_size, 1e-3))
+            down_xyz = np.asarray(pcd_down.points)
+            if down_xyz.shape[0] > 0:
+                sample_points = down_xyz
+            if sample_points.shape[0] > max_points:
+                indices = np.linspace(0, sample_points.shape[0] - 1, max_points, dtype=int)
+                sample_points = sample_points[indices]
+
+        pcd = o3d.geometry.PointCloud()
+        pcd.points = o3d.utility.Vector3dVector(sample_points[:, :3])
+        labels = np.asarray(pcd.cluster_dbscan(eps=eps, min_points=min_points, print_progress=False))
+        if labels.size == 0:
+            return point_cloud_data
+
+        valid_labels = labels[labels >= 0]
+        if valid_labels.size == 0:
+            return point_cloud_data
+
+        unique_labels, counts = np.unique(valid_labels, return_counts=True)
+        largest_label = unique_labels[np.argmax(counts)]
+        cluster_xyz = sample_points[labels == largest_label, :3]
+        if cluster_xyz.shape[0] == 0:
+            return point_cloud_data
+
+        cluster_min = np.min(cluster_xyz, axis=0) - eps
+        cluster_max = np.max(cluster_xyz, axis=0) + eps
+        xyz = point_cloud_data[:, :3]
+        keep_mask = np.all((xyz >= cluster_min) & (xyz <= cluster_max), axis=1)
+        kept = point_cloud_data[keep_mask]
+        return kept if kept.shape[0] > 0 else point_cloud_data
+
+    @staticmethod
     def calculate_aabb(point_cloud_data: ArrayLike) -> ArrayLike:
         if point_cloud_data.shape[0] == 0:
             raise ValueError("Cannot calculate AABB from empty point cloud")
         min_corner = np.min(point_cloud_data[:, :3], axis=0)
         max_corner = np.max(point_cloud_data[:, :3], axis=0)
+        center = (max_corner + min_corner) / 2.0
+        dimensions = max_corner - min_corner
+        return np.concatenate([center, dimensions])
+
+    @staticmethod
+    def calculate_percentile_aabb(point_cloud_data: ArrayLike, low: float = 2.0, high: float = 98.0) -> ArrayLike:
+        if point_cloud_data.shape[0] == 0:
+            raise ValueError("Cannot calculate AABB from empty point cloud")
+        xyz = point_cloud_data[:, :3]
+        min_corner = np.percentile(xyz, low, axis=0)
+        max_corner = np.percentile(xyz, high, axis=0)
         center = (max_corner + min_corner) / 2.0
         dimensions = max_corner - min_corner
         return np.concatenate([center, dimensions])
@@ -414,7 +495,16 @@ class TwoDToThreeDTool:
                 )
         points = self.project_views_to_3d(processed_views)
         filtered_points = self.filter_points(points)
-        bbox = self.calculate_aabb(filtered_points)
+        cfg = self.point_filter
+        try:
+            bbox = self.calculate_aabb(filtered_points)
+        except Exception:
+            if not cfg.percentile_bbox_fallback:
+                raise
+            bbox = self.calculate_percentile_aabb(points, cfg.percentile_low, cfg.percentile_high)
+            return points, bbox
+        if cfg.percentile_bbox_fallback and filtered_points.shape[0] > cfg.max_cluster_points * 2:
+            bbox = self.calculate_percentile_aabb(filtered_points, cfg.percentile_low, cfg.percentile_high)
         return filtered_points, bbox
 
     @staticmethod

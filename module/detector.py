@@ -70,7 +70,7 @@ def draw_bbox(
 class YOLOWorldDetector:
     def __init__(
         self,
-        model: str = "yolov8s-worldv2.pt",
+        model: str = "yolov8x-worldv2.pt",
         score_threshold: float = 0.25,
     ) -> None:
         self.model = model

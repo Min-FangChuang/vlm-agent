@@ -5,12 +5,20 @@ from typing import Any
 
 import numpy as np
 
+MIN_BBOX_AREA_PX = 400.0
+MIN_BBOX_AREA_RATIO = 0.02
+MAX_BBOX_ASPECT_RATIO = 6.0
+MIN_EXCLUSIVE_AREA_RATIO = 0.5
+ACTIVE_EXCLUSIVE_AREA_RATIO = 0.8
+EDGE_TOUCH_MARGIN_PX = 2.0
+
 try:
     from .module.detector import GroundingDetection, YOLOWorldDetector
     from .agent_schema import CandidateMemory, CandidateObject, ObjectView, Query, View
     from .module.matcher import PATSMatcher
     from .motion import Motion
     from .prompt import build_candidate_judgement_prompt
+    from .vlm_api_bridge import call_vlm_api_messages
     from .vlm_bridge import call_vlm_messages
 except ImportError:
     from module.detector import GroundingDetection, YOLOWorldDetector  # type: ignore
@@ -18,7 +26,10 @@ except ImportError:
     from module.matcher import PATSMatcher  # type: ignore
     from motion import Motion  # type: ignore
     from prompt import build_candidate_judgement_prompt  # type: ignore
-    from vlm_bridge import call_vlm_messages 
+    from vlm_bridge import call_vlm_messages  # type: ignore
+    from vlm_api_bridge import call_vlm_api_messages  # type: ignore
+
+
 class Agent:
     def __init__(
         self,
@@ -48,6 +59,8 @@ class Agent:
         self.vlm_image_counts: list[int] = []
 
     def vlm(self, prompt, **_: Any) -> Any:
+        # OpenAI API route manual switch:
+        # return call_vlm_api_messages(prompt)
         return call_vlm_messages(prompt)
 
     def reset(self, query_text: str) -> None:
@@ -62,7 +75,9 @@ class Agent:
 
     def _require_query(self) -> Query:
         if self.query is None:
-            raise ValueError("Agent query is not initialized. Call `reset(query_text)` first.")
+            raise ValueError(
+                "Agent query is not initialized. Call `reset(query_text)` first."
+            )
         return self.query
 
     def detect_target_objects(self, view: View) -> list[GroundingDetection]:
@@ -96,7 +111,9 @@ class Agent:
     def attach_reference(self, view: View) -> None:
         view.reference = self.detect_reference_objects(view)
 
-    def build_object_view(self, view: View, detection: GroundingDetection, object_id: str | int) -> ObjectView:
+    def build_object_view(
+        self, view: View, detection: GroundingDetection, object_id: str | int
+    ) -> ObjectView:
         bbox = np.asarray(detection.bbox, dtype=np.float32).reshape(4)
         return ObjectView(
             object_id=object_id,
@@ -108,27 +125,151 @@ class Agent:
             points_3d=None,
         )
 
-    def collect_object_views(self, views: list[View]) -> list[ObjectView]:
-        object_views: list[ObjectView] = []
-        for view in views:
-            detections = self.detect_target_objects(view)
-            if not detections:
+    @staticmethod
+    def _build_object_view_status(
+        detections: list[GroundingDetection], keep_index: int
+    ) -> str:
+        bbox = np.asarray(detections[keep_index].bbox, dtype=np.float32).reshape(4)
+        x1, y1, x2, y2 = bbox.tolist()
+        bbox_area = max(0.0, float(x2 - x1)) * max(0.0, float(y2 - y1))
+        overlap_area = 0.0
+        for index, detection in enumerate(detections):
+            if index == keep_index:
                 continue
-            #self.attach_reference(view)
-            for index, detection in enumerate(detections):
-                object_views.append(self.build_object_view(view, detection, f"{view.view_id}_{index}"))
+            other_bbox = np.asarray(detection.bbox, dtype=np.float32).reshape(4)
+            ox1, oy1, ox2, oy2 = other_bbox.tolist()
+            inter_w = max(0.0, float(min(x2, ox2) - max(x1, ox1)))
+            inter_h = max(0.0, float(min(y2, oy2) - max(y1, oy1)))
+            overlap_area += inter_w * inter_h
+        exclusive_ratio = max(0.0, bbox_area - overlap_area) / max(bbox_area, 1.0)
+        return (
+            "support_only"
+            if exclusive_ratio < ACTIVE_EXCLUSIVE_AREA_RATIO
+            else "active"
+        )
+
+    @staticmethod
+    def _other_detection_bboxes(
+        detections: list[GroundingDetection],
+        keep_index: int,
+    ) -> list[np.ndarray]:
+        others: list[np.ndarray] = []
+        for index, detection in enumerate(detections):
+            if index == keep_index:
+                continue
+            others.append(np.asarray(detection.bbox, dtype=np.float32).reshape(4))
+        return others
+
+    def _filter_detections_for_object_views(
+        self,
+        view: View,
+        detections: list[GroundingDetection],
+    ) -> list[tuple[int, GroundingDetection]]:
+        image_shape = tuple(np.asarray(view.rgb).shape[:2])
+        boxes = [
+            np.asarray(detection.bbox, dtype=np.float32).reshape(4)
+            for detection in detections
+        ]
+        kept: list[tuple[int, GroundingDetection]] = []
+        for index, bbox in enumerate(boxes):
+            x1, y1, x2, y2 = bbox.tolist()
+            width = max(0.0, float(x2 - x1))
+            height = max(0.0, float(y2 - y1))
+            bbox_area = width * height
+            overlap_area = 0.0
+            max_iou = 0.0
+            for other_index, other_bbox in enumerate(boxes):
+                if index == other_index:
+                    continue
+                ox1, oy1, ox2, oy2 = other_bbox.tolist()
+                inter_w = max(0.0, float(min(x2, ox2) - max(x1, ox1)))
+                inter_h = max(0.0, float(min(y2, oy2) - max(y1, oy1)))
+                inter_area = inter_w * inter_h
+                overlap_area += inter_area
+                other_area = max(0.0, float(ox2 - ox1)) * max(0.0, float(oy2 - oy1))
+                union_area = max(bbox_area + other_area - inter_area, 1.0)
+                max_iou = max(max_iou, inter_area / union_area)
+
+            exclusive_area = max(0.0, bbox_area - overlap_area)
+            exclusive_ratio = exclusive_area / max(bbox_area, 1.0)
+
+            bbox_area_ratio = bbox_area / max(
+                float(image_shape[0] * image_shape[1]), 1.0
+            )
+            short_side = max(min(width, height), 1.0)
+            aspect_ratio = max(width, height) / short_side
+            edge_touch_count = (
+                int(x1 <= EDGE_TOUCH_MARGIN_PX)
+                + int(y1 <= EDGE_TOUCH_MARGIN_PX)
+                + int(x2 >= image_shape[1] - EDGE_TOUCH_MARGIN_PX)
+                + int(y2 >= image_shape[0] - EDGE_TOUCH_MARGIN_PX)
+            )
+
+            keep = (
+                bbox_area >= MIN_BBOX_AREA_PX
+                and bbox_area_ratio >= MIN_BBOX_AREA_RATIO
+                and aspect_ratio <= MAX_BBOX_ASPECT_RATIO
+                and exclusive_ratio >= MIN_EXCLUSIVE_AREA_RATIO
+                and edge_touch_count <= 1
+            )
+            if keep:
+                kept.append((index, detections[index]))
+        return kept
+
+    def collect_view_object_views(
+        self, view: View, detections: list[GroundingDetection]
+    ) -> list[ObjectView]:
+        object_views: list[ObjectView] = []
+        # filtered_detections = self._filter_detections_for_object_views(view, detections)
+        filtered_detections = list(enumerate(detections))
+        for detection_index, detection in filtered_detections:
+            object_view = self.build_object_view(
+                view, detection, f"{view.view_id}_{detection_index}"
+            )
+            object_view.status = self._build_object_view_status(
+                detections, detection_index
+            )
+            object_views.append(object_view)
         return object_views
 
-    def update_candidates(self, object_views: list[ObjectView]) -> None:
+    def update_candidates_for_view(
+        self,
+        object_views: list[ObjectView],
+        detections: list[GroundingDetection],
+    ) -> None:
         for object_view in object_views:
-            candidate, _ = self.candidates.add_ObjectView(object_view, self.matcher.match_object_view_to_candidate)
+            current_object_id = str(object_view.object_id)
+            current_detection_index = (
+                int(current_object_id.rsplit("_", 1)[1])
+                if "_" in current_object_id
+                else -1
+            )
+            candidate, _ = self.candidates.add_ObjectView(
+                object_view,
+                lambda incoming_object_view, candidate_obj: (
+                    self.matcher.match_object_view_to_candidate(
+                        incoming_object_view,
+                        candidate_obj,
+                    )
+                ),
+            )
             self.ensure_candidate_best_view_mask(candidate)
+
+    def consume_view(self, view: View) -> None:
+        detections = self.detect_target_objects(view)
+        self.attach_reference(view)
+        if not detections:
+            return
+        object_views = self.collect_view_object_views(view, detections)
+        self.update_candidates_for_view(object_views, detections)
 
     def _normalize_vlm_decision(self, result: Any) -> str:
         if isinstance(result, bool):
             return "true" if result else "false"
         if isinstance(result, dict):
-            decision = result.get("decision") or result.get("answer") or result.get("result")
+            decision = (
+                result.get("decision") or result.get("answer") or result.get("result")
+            )
             if isinstance(decision, str):
                 lowered = decision.strip().lower()
                 if lowered in {"true", "false", "unsure"}:
@@ -162,6 +303,11 @@ class Agent:
             print(payload)
 
     def evaluate_candidate(self, candidate: CandidateObject) -> str:
+        object_views = getattr(candidate, "object_view", []) or []
+        if len(object_views) <= 0:
+            print(f"[Agent] skip_vlm_candidate_views={len(object_views)}")
+            return "unsure"
+
         prompt = build_candidate_judgement_prompt(self._require_query(), candidate)
         image_count = self._count_prompt_images(prompt)
         self.vlm_image_counts.append(image_count)
@@ -176,7 +322,49 @@ class Agent:
         if self.segmenter is None:
             raise ValueError("segmenter is not configured.")
 
-        for object_view in candidate.object_view:
+        active_object_views = [
+            object_view
+            for object_view in candidate.object_view
+            if getattr(object_view, "status", "active") == "active"
+        ]
+        if len(active_object_views) < 2:
+            ranked_object_views = sorted(
+                candidate.object_view,
+                key=lambda object_view: (
+                    max(
+                        0.0,
+                        float(
+                            np.asarray(object_view.bbox_2d, dtype=np.float32).reshape(
+                                4
+                            )[2]
+                            - np.asarray(object_view.bbox_2d, dtype=np.float32).reshape(
+                                4
+                            )[0]
+                        ),
+                    )
+                    * max(
+                        0.0,
+                        float(
+                            np.asarray(object_view.bbox_2d, dtype=np.float32).reshape(
+                                4
+                            )[3]
+                            - np.asarray(object_view.bbox_2d, dtype=np.float32).reshape(
+                                4
+                            )[1]
+                        ),
+                    )
+                ),
+                reverse=True,
+            )
+            for object_view in ranked_object_views[:2]:
+                object_view.status = "active"
+            active_object_views = [
+                object_view
+                for object_view in candidate.object_view
+                if getattr(object_view, "status", "active") == "active"
+            ]
+
+        for object_view in active_object_views:
             if object_view.mask_2d is not None:
                 continue
 
@@ -249,8 +437,8 @@ class Agent:
     def consume_views(self, views: list[View]) -> None:
         if views:
             self.current_view = views[-1]
-        object_views = self.collect_object_views(views)
-        self.update_candidates(object_views)
+        for view in views:
+            self.consume_view(view)
 
     def select_fallback_motion(self, decision: str):
         if decision == "unsure":

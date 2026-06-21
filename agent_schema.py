@@ -156,22 +156,6 @@ class Query:
             "relation": self._normalize_relation(relation),
         }
 
-    def make_target_object(self, query: str) -> str:
-        return self._parse_query(query)["target_object"]
-
-    def make_target_attributes(self, query: str) -> list[str]:
-        return self._parse_query(query)["target_attributes"]
-
-    def make_reference_object(self, query: str) -> str:
-        return self._parse_query(query)["reference_object"]
-
-    def make_reference_attributes(self, query: str) -> list[str]:
-        return self._parse_query(query)["reference_attributes"]
-
-    def make_relation(self, query: str) -> str:
-        return self._parse_query(query)["relation"]
-
-
 class ObjectView:
     def __init__(
         self,
@@ -215,7 +199,6 @@ class CandidateObject:
         self,
         object_id: str | int,
         label: str,
-        score: float,
         view: ObjectView | None = None,
         points_3d: Any = None,
         status: str = "active",
@@ -224,7 +207,6 @@ class CandidateObject:
     ) -> None:
         self.object_id = object_id
         self.label = label
-        self.score = float(score)
         self.points_3d = points_3d
         self.status = status
         self.best_id = int(best_id)
@@ -252,6 +234,8 @@ class CandidateObject:
 
     def add_object_view(self, object_view: ObjectView) -> None:
         self.object_view.append(object_view)
+        if getattr(object_view, "status", "active") != "active":
+            return
         current_best_bbox = np.asarray(self.object_view[self.best_id].bbox_2d, dtype=np.float32).reshape(4)
         new_bbox = np.asarray(object_view.bbox_2d, dtype=np.float32).reshape(4)
         current_best_bbox_area = max(0.0, float(current_best_bbox[2] - current_best_bbox[0])) * max(
@@ -294,6 +278,8 @@ class CandidateMemory:
         best_total_matches = -1
 
         for candidate in self.objects:
+            if any(existing_object_view.view.view_id == object_view.view.view_id for existing_object_view in candidate.object_view):
+                continue
             result = match_fn(object_view, candidate)
             if not result.is_match:
                 continue
@@ -315,7 +301,6 @@ class CandidateMemory:
         new_candidate = CandidateObject(
             object_id=len(self.objects),
             label=object_view.label,
-            score=object_view.score,
             view=object_view,
             best_id=0,
             points_3d=object_view.points_3d,

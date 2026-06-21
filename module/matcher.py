@@ -15,7 +15,7 @@ from torch.cuda.amp import autocast
 try:
     from agent_schema import CandidateObject, ObjectView
 except ImportError:
-    from ..agent_schema import CandidateObject, ObjectView
+    from ..agent_schema import CandidateObject, ObjectView  # type: ignore
 
 MODULE_ROOT = Path(__file__).resolve().parent.parent
 PATS_ROOT = MODULE_ROOT / "pats"
@@ -28,6 +28,7 @@ from utils.utils import Resize_img  # type: ignore
 DEFAULT_PATS_CONFIG = PATS_ROOT / "configs" / "test_scannet.yaml"
 MIN_TOTAL_MATCHES = 1000
 MIN_FINAL_MATCHES = 100
+MIN_MASK_BACK_PROJECT_COVERAGE = 0.8
 
 
 @dataclass
@@ -46,6 +47,7 @@ class ObjectViewMatchResult:
     num_bbox_matches: int
     num_mask_matches: int
     num_filtered_matches: int
+    mask_back_project_coverage: float
     is_match: bool
 
 
@@ -107,6 +109,26 @@ def _points_inside_mask(points_xy: np.ndarray, mask: np.ndarray) -> np.ndarray:
     return hits
 
 
+def _bbox_from_points(points_xy: np.ndarray) -> np.ndarray | None:
+    if len(points_xy) == 0:
+        return None
+    min_xy = np.min(points_xy, axis=0).astype(np.float32)
+    max_xy = np.max(points_xy, axis=0).astype(np.float32)
+    return np.asarray([min_xy[0], min_xy[1], max_xy[0], max_xy[1]], dtype=np.float32)
+
+
+def _bbox_coverage(bbox_to_cover: np.ndarray, covering_bbox: np.ndarray) -> float:
+    ax1, ay1, ax2, ay2 = np.asarray(bbox_to_cover, dtype=np.float32).reshape(4)
+    bx1, by1, bx2, by2 = np.asarray(covering_bbox, dtype=np.float32).reshape(4)
+    inter_w = max(0.0, float(min(ax2, bx2) - max(ax1, bx1)))
+    inter_h = max(0.0, float(min(ay2, by2) - max(ay1, by1)))
+    inter_area = inter_w * inter_h
+    area_a = max(0.0, float(ax2 - ax1)) * max(0.0, float(ay2 - ay1))
+    if area_a <= 0.0:
+        return 0.0
+    return inter_area / area_a
+
+
 class PATSMatcher:
     def __init__(
         self,
@@ -114,7 +136,9 @@ class PATSMatcher:
         device: str | None = None,
     ) -> None:
         self.config_path = Path(config_path)
-        self.device = torch.device(device or ("cuda" if torch.cuda.is_available() else "cpu"))
+        self.device = torch.device(
+            device or ("cuda" if torch.cuda.is_available() else "cpu")
+        )
         self._args = self._load_config(self.config_path)
         self._model = None
 
@@ -144,15 +168,21 @@ class PATSMatcher:
             self._model = self._build_model()
         return self._model
 
-    def _preprocess_image(self, rgb: np.ndarray, size: int = 640) -> tuple[np.ndarray, float, tuple[int, int]]:
+    def _preprocess_image(
+        self, rgb: np.ndarray, size: int = 640
+    ) -> tuple[np.ndarray, float, tuple[int, int]]:
         image_rgb = _normalize_rgb_image(rgb)
         ori_h, ori_w = image_rgb.shape[:2]
         max_shape = max(ori_h, ori_w)
         scale_factor = size / max_shape
-        resized = Resize_img(image_rgb, np.array([int(ori_w * scale_factor), int(ori_h * scale_factor)]))
+        resized = Resize_img(
+            image_rgb, np.array([int(ori_w * scale_factor), int(ori_h * scale_factor)])
+        )
         resized_h, resized_w = resized.shape[:2]
         if resized_h > 480 or resized_w > 640:
-            raise ValueError(f"Image becomes larger than 480x640 after resizing: {image_rgb.shape}")
+            raise ValueError(
+                f"Image becomes larger than 480x640 after resizing: {image_rgb.shape}"
+            )
         padded = cv2.copyMakeBorder(
             resized,
             0,
@@ -192,12 +222,20 @@ class PATSMatcher:
         image0_input, scale_factor0, image0_shape = self._preprocess_image(rgb0)
         image1_input, scale_factor1, image1_shape = self._preprocess_image(rgb1)
         if abs(scale_factor0 - scale_factor1) > 1e-6:
-            raise ValueError("The two images must produce the same scale factor, matching PATS preprocessing behavior.")
+            raise ValueError(
+                "The two images must produce the same scale factor, matching PATS preprocessing behavior."
+            )
         data = {
             "image0_name": ["view0"],
-            "image0": torch.from_numpy(image0_input).unsqueeze(0).float().to(self.device),
+            "image0": torch.from_numpy(image0_input)
+            .unsqueeze(0)
+            .float()
+            .to(self.device),
             "image1_name": ["view1"],
-            "image1": torch.from_numpy(image1_input).unsqueeze(0).float().to(self.device),
+            "image1": torch.from_numpy(image1_input)
+            .unsqueeze(0)
+            .float()
+            .to(self.device),
         }
         with torch.no_grad():
             model = self.model
@@ -207,10 +245,20 @@ class PATSMatcher:
         kp1 = result["matches_r"]
         if len(kp0) == 0 or len(kp1) == 0:
             empty_points = np.empty((0, 2), dtype=np.int16)
-            return ViewMatchResult(image0_points=empty_points, image1_points=empty_points.copy())
-        kp0, kp1 = self._filter_matches(kp0, kp1, scale_factor0, image0_shape, image1_shape)
-        image0_points = np.asarray([[int(point0[1]), int(point0[0])] for point0 in kp0.tolist()], dtype=np.int16)
-        image1_points = np.asarray([[int(point1[1]), int(point1[0])] for point1 in kp1.tolist()], dtype=np.int16)
+            return ViewMatchResult(
+                image0_points=empty_points, image1_points=empty_points.copy()
+            )
+        kp0, kp1 = self._filter_matches(
+            kp0, kp1, scale_factor0, image0_shape, image1_shape
+        )
+        image0_points = np.asarray(
+            [[int(point0[1]), int(point0[0])] for point0 in kp0.tolist()],
+            dtype=np.int16,
+        )
+        image1_points = np.asarray(
+            [[int(point1[1]), int(point1[0])] for point1 in kp1.tolist()],
+            dtype=np.int16,
+        )
         return ViewMatchResult(image0_points=image0_points, image1_points=image1_points)
 
     def match_object_views(
@@ -231,6 +279,7 @@ class PATSMatcher:
                 num_bbox_matches=0,
                 num_mask_matches=0,
                 num_filtered_matches=0,
+                mask_back_project_coverage=0.0,
                 is_match=False,
             )
 
@@ -246,18 +295,22 @@ class PATSMatcher:
         candidate_points = candidate_points[object_bbox_keep]
         num_bbox_matches = int(len(candidate_points))
 
+        has_candidate_mask = candidate_object_view.mask_2d is not None
+
         if num_bbox_matches <= int(min_final_matches):
             return ObjectViewMatchResult(
                 total_matches=view_match.num_matches,
                 num_bbox_matches=num_bbox_matches,
-                num_mask_matches=0,
+                num_mask_matches=num_bbox_matches if not has_candidate_mask else 0,
                 num_filtered_matches=num_bbox_matches,
+                mask_back_project_coverage=0.0,
                 is_match=False,
             )
 
-        if candidate_object_view.mask_2d is None:
+        if not has_candidate_mask:
             num_mask_matches = num_bbox_matches
             num_filtered_matches = num_bbox_matches
+            mask_back_project_coverage = 1.0
         else:
             candidate_mask = _extract_object_view_mask(candidate_object_view)
             mask_keep = _points_inside_mask(candidate_points, candidate_mask)
@@ -266,12 +319,31 @@ class PATSMatcher:
             num_mask_matches = int(len(candidate_points))
             num_filtered_matches = num_mask_matches
 
+            object_mask_bbox = _bbox_from_points(object_points)
+            if object_mask_bbox is None:
+                mask_back_project_coverage = 0.0
+            else:
+                mask_back_project_coverage = _bbox_coverage(
+                    object_mask_bbox, object_bbox
+                )
+
+            if mask_back_project_coverage < MIN_MASK_BACK_PROJECT_COVERAGE:
+                return ObjectViewMatchResult(
+                    total_matches=view_match.num_matches,
+                    num_bbox_matches=num_bbox_matches,
+                    num_mask_matches=num_mask_matches,
+                    num_filtered_matches=num_filtered_matches,
+                    mask_back_project_coverage=mask_back_project_coverage,
+                    is_match=False,
+                )
+
         return ObjectViewMatchResult(
             total_matches=view_match.num_matches,
             num_bbox_matches=num_bbox_matches,
             num_mask_matches=num_mask_matches,
             num_filtered_matches=num_filtered_matches,
-            is_match=num_filtered_matches > int(min_final_matches),
+            mask_back_project_coverage=mask_back_project_coverage,
+            is_match=(num_filtered_matches > int(min_final_matches)),
         )
 
     def match_object_view_to_candidate(
@@ -287,4 +359,8 @@ class PATSMatcher:
         if best_id < 0 or best_id >= len(candidate_object_views):
             raise IndexError(f"candidate.best_id out of range: {best_id}")
         candidate_object_view = candidate_object_views[best_id]
-        return self.match_object_views(object_view, candidate_object_view, min_final_matches=min_final_matches)
+        return self.match_object_views(
+            object_view,
+            candidate_object_view,
+            min_final_matches=min_final_matches,
+        )
