@@ -14,6 +14,7 @@ try:
     from module.segmenter import SAMSegmenter
     from prompt import build_candidate_summary, build_multi_candidate_selection_prompt
     from read import Read
+    from read.scannet_more_view import complete_candidate_with_more_views
 except ImportError:
     from .agent import Agent
     from .benchmark.utils import calc_iou, load_pc
@@ -21,6 +22,56 @@ except ImportError:
     from .module.segmenter import SAMSegmenter
     from .prompt import build_candidate_summary, build_multi_candidate_selection_prompt
     from .read import Read
+    from .read.scannet_more_view import complete_candidate_with_more_views
+
+
+MIN_VLM_CANDIDATE_VIEWS = 1
+
+
+def _candidate_meets_vlm_threshold(candidate: Any) -> bool:
+    object_views = getattr(candidate, "object_view", []) or []
+    return len(object_views) >= MIN_VLM_CANDIDATE_VIEWS
+
+
+def _bbox_to_list(bbox: Any) -> list[float]:
+    return [
+        round(float(value), 2)
+        for value in np.asarray(bbox, dtype=np.float32).reshape(4).tolist()
+    ]
+
+
+def _candidate_snapshot(candidate: Any) -> dict[str, Any]:
+    return {
+        "candidate_id": int(getattr(candidate, "object_id", -1)),
+        "label": str(getattr(candidate, "label", "")),
+        "status": str(getattr(candidate, "status", "")),
+        "verification_round": int(getattr(candidate, "verification_round", 0)),
+        "best_id": int(getattr(candidate, "best_id", 0)),
+        "num_object_views": len(getattr(candidate, "object_view", []) or []),
+        "bbox_3d": None
+        if getattr(candidate, "bbox_3d", None) is None
+        else [
+            round(float(value), 4)
+            for value in np.asarray(candidate.bbox_3d, dtype=np.float64)
+            .reshape(-1)
+            .tolist()
+        ],
+        "object_views": [
+            {
+                "object_view_id": str(getattr(object_view, "object_id", "")),
+                "view_id": str(
+                    getattr(getattr(object_view, "view", None), "view_id", "")
+                ),
+                "bbox_2d": _bbox_to_list(
+                    getattr(object_view, "bbox_2d", np.zeros((4,), dtype=np.float32))
+                ),
+                "status": str(getattr(object_view, "status", "")),
+                "source": str(getattr(object_view, "source", "detected")),
+                "score": round(float(getattr(object_view, "score", 0.0)), 4),
+            }
+            for object_view in (getattr(candidate, "object_view", []) or [])
+        ],
+    }
 
 
 def _normalize_multi_candidate_selection(result: Any) -> int | None:
@@ -40,9 +91,11 @@ def _select_unsure_candidate(agent: Agent):
     active_candidates = [
         candidate
         for candidate in agent.candidates.values()
-        if getattr(candidate, "status", "active") == "active"
+        if getattr(candidate, "status", "new") in {"new", "expanded", "unsure", "true"}
+        and _candidate_meets_vlm_threshold(candidate)
     ]
     if not active_candidates:
+        print("fallback_no_candidates_meet_vlm_threshold")
         return None
     if len(active_candidates) == 1:
         print("fallback_selected_single_unsure_candidate")
@@ -56,14 +109,20 @@ def _select_unsure_candidate(agent: Agent):
     image_count = agent._count_prompt_images(prompt)
     agent.vlm_image_counts.append(image_count)
     print(f"[Agent] vlm_stitched_image_count={image_count}")
-    result = agent._normalize_vlm_result(agent.vlm(prompt, candidates=active_candidates))
+    result = agent._normalize_vlm_result(
+        agent.vlm(prompt, candidates=active_candidates)
+    )
     print("[Agent] vlm_multi_candidate_result")
     if isinstance(result, (dict, list)):
         print(json.dumps(result, ensure_ascii=False, indent=2))
     else:
         print(result)
     selected_index = _normalize_multi_candidate_selection(result)
-    if selected_index is None or selected_index < 0 or selected_index >= len(active_candidates):
+    if (
+        selected_index is None
+        or selected_index < 0
+        or selected_index >= len(active_candidates)
+    ):
         print("fallback_multi_candidate_selection_unsure")
         return None
     print(f"fallback_selected_candidate_index={selected_index}")
@@ -108,7 +167,7 @@ def run_one_case(
     while max_units < 0 or unit_index < max_units:
         views = reader.find()
         if not views:
-            if final_decision == "unsure" and agent.candidates.exist():
+            if agent.candidates.exist():
                 print("fallback_no_more_frames_with_unsure_candidates")
                 selected_candidate = _select_unsure_candidate(agent)
                 if selected_candidate is not None:
@@ -116,59 +175,77 @@ def run_one_case(
             break
 
         total_views += len(views)
-        object_views = agent.collect_object_views(views)
-        total_object_views += len(object_views)
-        agent.update_candidates(object_views)
+        object_views_before = sum(
+            len(candidate.object_view) for candidate in agent.candidates.values()
+        )
+        agent.consume_views(views)
+        object_views_after = sum(
+            len(candidate.object_view) for candidate in agent.candidates.values()
+        )
+        object_views = object_views_after - object_views_before
+        total_object_views += max(0, object_views)
 
         print(f"unit={unit_index}")
         print(f"views={len(views)}")
-        print(f"object_views={len(object_views)}")
+        print(f"object_views={object_views}")
         print(f"candidates={len(agent.candidates.values())}")
 
-        if selected_candidate is not None:
-            selected_object_views = len(selected_candidate.object_view)
-            print(f"selected_object_views={selected_object_views}")
-            if selected_object_views < min_selected_object_views:
-                print("decision=skip_vlm_collect_more_views")
-                continue
-            final_decision = "true"
-            print("decision=selected_candidate_ready")
-            break
+        processed_any_candidate = False
+        while True:
+            pending_candidate = agent.pick_candidate_for_verification()
+            if pending_candidate is None:
+                if not processed_any_candidate:
+                    print("decision=no_pending_candidate_read_next_unit")
+                break
 
-        vlm_used = True
-        decision_candidate, decision = agent.evaluate_candidates()
-        final_decision = decision
-        print(f"decision={decision}")
-        if decision_candidate is not None:
-            selected_candidate = decision_candidate
-            if len(selected_candidate.object_view) < min_selected_object_views:
-                print(f"selected_object_views={len(selected_candidate.object_view)}")
-                print("decision=collect_more_views_before_stop")
-                unit_index += 1
-                continue
+            processed_any_candidate = True
+            vlm_used = True
+            decision = agent.verify_candidate_once(pending_candidate)
+            if decision == "unsure" and agent.can_retry_candidate(pending_candidate):
+                pending_candidate = complete_candidate_with_more_views(
+                    agent=agent,
+                    candidate=pending_candidate,
+                )
+                decision = agent.verify_candidate_once(pending_candidate)
+                if decision not in {"true", "false"}:
+                    pending_candidate.status = "unsure"
+            final_decision = decision
+            print(f"decision={decision}")
+            if decision == "true":
+                selected_candidate = pending_candidate
+                break
+
+        if selected_candidate is not None:
             break
 
         unit_index += 1
 
     bbox_3d = None
     if selected_candidate is not None:
-        try:
-            print("before_complete_candidate_masks")
-            agent.complete_candidate_masks(selected_candidate)
-            print("after_complete_candidate_masks")
-            print("before_map_candidate_to_3d")
-            points_3d, bbox_3d = agent.map_candidate_to_3d(selected_candidate)
-            print("after_map_candidate_to_3d")
-            print(f"bbox_3d={bbox_3d.tolist()}")
+        if not _candidate_meets_vlm_threshold(selected_candidate):
+            print("selected_candidate_below_vlm_threshold_skip_projection")
+            selected_candidate = None
+        else:
             try:
-                TwoDToThreeDTool.visualize_points_and_aabb(points_3d, bbox_3d)
-            except ImportError as exc:
-                print(f"visualization_skipped={exc}")
-        except ValueError as exc:
-            print(f"projection_skipped={exc}")
+                print("before_complete_candidate_masks")
+                agent.complete_candidate_masks(selected_candidate)
+                print("after_complete_candidate_masks")
+                print("before_map_candidate_to_3d")
+                points_3d, bbox_3d = agent.map_candidate_to_3d(selected_candidate)
+                print("after_map_candidate_to_3d")
+                print(f"bbox_3d={bbox_3d.tolist()}")
+                try:
+                    TwoDToThreeDTool.visualize_points_and_aabb(points_3d, bbox_3d)
+                except ImportError as exc:
+                    print(f"visualization_skipped={exc}")
+            except ValueError as exc:
+                print(f"projection_skipped={exc}")
     elif final_decision == "unsure":
         print("saving_all_candidates_for_unsure_case")
         for index, candidate in enumerate(agent.candidates.values(), start=1):
+            if not _candidate_meets_vlm_threshold(candidate):
+                print(f"unsure_candidate[{index}] skipped_below_vlm_threshold")
+                continue
             print(f"unsure_candidate[{index}] {build_candidate_summary(candidate)}")
 
     return {
@@ -185,18 +262,66 @@ def run_one_case(
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Evaluate read_test.py style pipeline on ScanRefer benchmark tasks.")
-    parser.add_argument("--data-path", default="benchmark/scanrefer_250.json", help="Path to the benchmark json file")
-    parser.add_argument("--case-index", type=int, default=-1, help="Run only one benchmark case by 0-based index")
-    parser.add_argument("--max-cases", type=int, default=-1, help="Maximum number of benchmark cases to run")
-    parser.add_argument("--query-field", choices=["caption", "obj_name"], default="caption", help="Which field to use as query")
-    parser.add_argument("--max-frames", type=int, default=10, help="Maximum frames per read unit")
-    parser.add_argument("--frame-skip", type=int, default=4, help="Sample every Nth frame when building views")
-    parser.add_argument("--max-units", type=int, default=-1, help="Maximum read units to process per case; use -1 to read until exhausted")
-    parser.add_argument("--min-selected-object-views", type=int, default=5, help="Minimum selected candidate object views before stopping")
-    parser.add_argument("--sam-checkpoint", default="checkpoints/SAM/sam_vit_h_4b8939.pth", help="Path to the SAM checkpoint file")
-    parser.add_argument("--sam-model-type", default="vit_h", help="SAM model type passed to sam_model_registry")
-    parser.add_argument("--sam-device", default="cpu", help="Device for SAM inference, e.g. cpu or cuda")
+    parser = argparse.ArgumentParser(
+        description="Evaluate read_test.py style pipeline on ScanRefer benchmark tasks."
+    )
+    parser.add_argument(
+        "--data-path",
+        default="benchmark/scanrefer_250.json",
+        help="Path to the benchmark json file",
+    )
+    parser.add_argument(
+        "--case-index",
+        type=int,
+        default=-1,
+        help="Run only one benchmark case by 0-based index",
+    )
+    parser.add_argument(
+        "--max-cases",
+        type=int,
+        default=-1,
+        help="Maximum number of benchmark cases to run",
+    )
+    parser.add_argument(
+        "--query-field",
+        choices=["caption", "obj_name"],
+        default="caption",
+        help="Which field to use as query",
+    )
+    parser.add_argument(
+        "--max-frames", type=int, default=20, help="Maximum frames per read unit"
+    )
+    parser.add_argument(
+        "--frame-skip",
+        type=int,
+        default=4,
+        help="Sample every Nth frame when building views",
+    )
+    parser.add_argument(
+        "--max-units",
+        type=int,
+        default=-1,
+        help="Maximum read units to process per case; use -1 to read until exhausted",
+    )
+    parser.add_argument(
+        "--min-selected-object-views",
+        type=int,
+        default=5,
+        help="Minimum selected candidate object views before stopping",
+    )
+    parser.add_argument(
+        "--sam-checkpoint",
+        default="checkpoints/SAM/sam_vit_h_4b8939.pth",
+        help="Path to the SAM checkpoint file",
+    )
+    parser.add_argument(
+        "--sam-model-type",
+        default="vit_h",
+        help="SAM model type passed to sam_model_registry",
+    )
+    parser.add_argument(
+        "--sam-device", default="cpu", help="Device for SAM inference, e.g. cpu or cuda"
+    )
     args = parser.parse_args()
 
     data_path = Path(args.data_path)
@@ -262,7 +387,9 @@ if __name__ == "__main__":
             pred_box = result["bbox_3d"]
             selected_candidate = result["selected_candidate"]
             if selected_candidate is not None:
-                print(f"final_selected_candidate={build_candidate_summary(selected_candidate)}")
+                print(
+                    f"final_selected_candidate={build_candidate_summary(selected_candidate)}"
+                )
             if pred_box is None:
                 except_total += 1
             else:
@@ -285,10 +412,16 @@ if __name__ == "__main__":
             "Overall@50: {:.3f}".format(correct_50 / total),
             "Unique@25: {:.3f}".format(unique_25 / (unique_total + eps)),
             "Unique@50: {:.3f}".format(unique_50 / (unique_total + eps)),
-            "Multiple@25: {:.3f}".format((correct_25 - unique_25) / (total - unique_total + eps)),
-            "Multiple@50: {:.3f}".format((correct_50 - unique_50) / (total - unique_total + eps)),
+            "Multiple@25: {:.3f}".format(
+                (correct_25 - unique_25) / (total - unique_total + eps)
+            ),
+            "Multiple@50: {:.3f}".format(
+                (correct_50 - unique_50) / (total - unique_total + eps)
+            ),
             "Unique Ratio: {} / {}".format(unique_25, unique_total),
-            "Multiple Ratio: {} / {}".format(correct_25 - unique_25, total - unique_total),
+            "Multiple Ratio: {} / {}".format(
+                correct_25 - unique_25, total - unique_total
+            ),
             "Except Ratio: {} / {}".format(except_total, total),
             "VLM Usage Ratio: {} / {}".format(vlm_total, total),
             "",

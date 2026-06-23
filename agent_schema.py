@@ -65,7 +65,7 @@ class Query:
         result = self._to_lower_trim(text)
         for prefix in prefixes:
             if result.startswith(prefix):
-                result = result[len(prefix):].strip()
+                result = result[len(prefix) :].strip()
                 break
         return result
 
@@ -110,12 +110,22 @@ class Query:
         # 去掉冠詞
         for article in ("a ", "an ", "the "):
             if text.startswith(article):
-                text = text[len(article):].strip()
+                text = text[len(article) :].strip()
                 break
 
         color_words = {
-            "red", "blue", "green", "black", "white", "yellow",
-            "brown", "gray", "grey", "orange", "purple", "pink",
+            "red",
+            "blue",
+            "green",
+            "black",
+            "white",
+            "yellow",
+            "brown",
+            "gray",
+            "grey",
+            "orange",
+            "purple",
+            "pink",
         }
 
         words = [w for w in text.split() if w]
@@ -156,6 +166,7 @@ class Query:
             "relation": self._normalize_relation(relation),
         }
 
+
 class ObjectView:
     def __init__(
         self,
@@ -167,6 +178,7 @@ class ObjectView:
         mask_2d: np.ndarray | None = None,
         points_3d: Any = None,
         status: str = "active",
+        source: str = "detected",
     ) -> None:
         self.object_id = object_id
         self.label = label
@@ -176,8 +188,11 @@ class ObjectView:
         self.mask_2d = None if mask_2d is None else np.asarray(mask_2d)
         self.points_3d = points_3d
         self.status = status
+        self.source = source
         if self.bbox_2d.shape[0] != 4:
-            raise ValueError(f"bbox_2d must have 4 values, got shape={self.bbox_2d.shape}")
+            raise ValueError(
+                f"bbox_2d must have 4 values, got shape={self.bbox_2d.shape}"
+            )
         if self.mask_2d is not None and self.mask_2d.ndim != 2:
             raise ValueError(f"mask_2d must be 2D, got shape={self.mask_2d.shape}")
 
@@ -201,14 +216,18 @@ class CandidateObject:
         label: str,
         view: ObjectView | None = None,
         points_3d: Any = None,
-        status: str = "active",
+        status: str = "new",
         best_id: int = 0,
         object_view: list[ObjectView] | None = None,
+        bbox_3d: Any = None,
+        verification_round: int = 0,
     ) -> None:
         self.object_id = object_id
         self.label = label
         self.points_3d = points_3d
+        self.bbox_3d = bbox_3d
         self.status = status
+        self.verification_round = int(verification_round)
         self.best_id = int(best_id)
         self.object_view = list(object_view or [])
         if view is not None:
@@ -236,9 +255,13 @@ class CandidateObject:
         self.object_view.append(object_view)
         if getattr(object_view, "status", "active") != "active":
             return
-        current_best_bbox = np.asarray(self.object_view[self.best_id].bbox_2d, dtype=np.float32).reshape(4)
+        current_best_bbox = np.asarray(
+            self.object_view[self.best_id].bbox_2d, dtype=np.float32
+        ).reshape(4)
         new_bbox = np.asarray(object_view.bbox_2d, dtype=np.float32).reshape(4)
-        current_best_bbox_area = max(0.0, float(current_best_bbox[2] - current_best_bbox[0])) * max(
+        current_best_bbox_area = max(
+            0.0, float(current_best_bbox[2] - current_best_bbox[0])
+        ) * max(
             0.0,
             float(current_best_bbox[3] - current_best_bbox[1]),
         )
@@ -268,17 +291,22 @@ class CandidateMemory:
 
     def exist(self) -> bool:
         for candidate in self.objects:
-            if candidate.status == "active":
+            if candidate.status != "false":
                 return True
         return False
 
-    def add_ObjectView(self, object_view: ObjectView, match_fn: Any) -> tuple[CandidateObject, bool]:
+    def add_ObjectView(
+        self, object_view: ObjectView, match_fn: Any
+    ) -> tuple[CandidateObject, bool]:
         best_candidate: CandidateObject | None = None
         best_filtered_matches = -1
         best_total_matches = -1
 
         for candidate in self.objects:
-            if any(existing_object_view.view.view_id == object_view.view.view_id for existing_object_view in candidate.object_view):
+            if any(
+                existing_object_view.view.view_id == object_view.view.view_id
+                for existing_object_view in candidate.object_view
+            ):
                 continue
             result = match_fn(object_view, candidate)
             if not result.is_match:
@@ -286,9 +314,9 @@ class CandidateMemory:
 
             filtered_matches = int(result.num_filtered_matches)
             total_matches = int(result.total_matches)
-            if (
-                filtered_matches > best_filtered_matches
-                or (filtered_matches == best_filtered_matches and total_matches > best_total_matches)
+            if filtered_matches > best_filtered_matches or (
+                filtered_matches == best_filtered_matches
+                and total_matches > best_total_matches
             ):
                 best_candidate = candidate
                 best_filtered_matches = filtered_matches
@@ -312,4 +340,6 @@ class CandidateMemory:
         return [obj for obj in self.objects if obj.label == label]
 
     def remove(self, object_id: str | int) -> None:
-        self.objects = [candidate for candidate in self.objects if candidate.object_id != object_id]
+        self.objects = [
+            candidate for candidate in self.objects if candidate.object_id != object_id
+        ]

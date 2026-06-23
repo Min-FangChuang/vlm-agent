@@ -57,6 +57,7 @@ class Agent:
         self.candidates = CandidateMemory()
         self.detector_call_count = 0
         self.vlm_image_counts: list[int] = []
+        self.max_verification_rounds = 2
 
     def vlm(self, prompt, **_: Any) -> Any:
         # OpenAI API route manual switch:
@@ -123,6 +124,7 @@ class Agent:
             bbox_2d=bbox,
             mask_2d=None,
             points_3d=None,
+            source="detected",
         )
 
     @staticmethod
@@ -220,8 +222,7 @@ class Agent:
         self, view: View, detections: list[GroundingDetection]
     ) -> list[ObjectView]:
         object_views: list[ObjectView] = []
-        # filtered_detections = self._filter_detections_for_object_views(view, detections)
-        filtered_detections = list(enumerate(detections))
+        filtered_detections = self._filter_detections_for_object_views(view, detections)
         for detection_index, detection in filtered_detections:
             object_view = self.build_object_view(
                 view, detection, f"{view.view_id}_{detection_index}"
@@ -304,7 +305,7 @@ class Agent:
 
     def evaluate_candidate(self, candidate: CandidateObject) -> str:
         object_views = getattr(candidate, "object_view", []) or []
-        if len(object_views) <= 0:
+        if len(object_views) <= 1:
             print(f"[Agent] skip_vlm_candidate_views={len(object_views)}")
             return "unsure"
 
@@ -316,6 +317,34 @@ class Agent:
         self._debug_print("vlm_raw_result", result)
         decision = self._normalize_vlm_decision(result)
         self._debug_print("vlm_normalized_decision", decision)
+        return decision
+
+    def can_retry_candidate(self, candidate: CandidateObject) -> bool:
+        return int(getattr(candidate, "verification_round", 0)) < int(
+            self.max_verification_rounds
+        )
+
+    def pick_candidate_for_verification(self) -> CandidateObject | None:
+        pending_candidates = [
+            candidate
+            for candidate in self.candidates.values()
+            if getattr(candidate, "status", "new") in {"new", "expanded", "unsure"}
+            and self.can_retry_candidate(candidate)
+        ]
+        if not pending_candidates:
+            return None
+        pending_candidates.sort(
+            key=lambda candidate: len(getattr(candidate, "object_view", []) or []),
+            reverse=True,
+        )
+        return pending_candidates[0]
+
+    def verify_candidate_once(self, candidate: CandidateObject) -> str:
+        decision = self.evaluate_candidate(candidate)
+        candidate.verification_round = (
+            int(getattr(candidate, "verification_round", 0)) + 1
+        )
+        candidate.status = decision
         return decision
 
     def complete_candidate_masks(self, candidate: CandidateObject) -> None:
@@ -417,20 +446,6 @@ class Agent:
             use_best_only=use_best_only,
         )
 
-    def evaluate_candidates(self) -> tuple[CandidateObject | None, str]:
-        saw_unsure = False
-        for candidate in self.candidates.values():
-            if getattr(candidate, "status", "active") != "active":
-                continue
-            decision = self.evaluate_candidate(candidate)
-            if decision == "true":
-                return candidate, "true"
-            if decision == "unsure":
-                saw_unsure = True
-            if decision == "false":
-                candidate.status = "false"
-        return None, "unsure" if saw_unsure else "false"
-
     def initial_scan(self) -> list[View]:
         return self.motion.look_around()
 
@@ -449,9 +464,13 @@ class Agent:
         views = self.initial_scan()
         self.consume_views(views)
 
-        candidate, decision = self.evaluate_candidates()
-        if candidate is not None:
-            return candidate
+        pending_candidate = self.pick_candidate_for_verification()
+        if pending_candidate is not None:
+            decision = self.verify_candidate_once(pending_candidate)
+            if decision == "true":
+                return pending_candidate
+        else:
+            decision = "unsure"
 
         next_motion = self.select_fallback_motion(decision)
         next_views = next_motion()
