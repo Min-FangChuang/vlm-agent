@@ -286,6 +286,15 @@ class PATSMatcher:
         object_points = view_match.image0_points
         candidate_points = view_match.image1_points
 
+        has_candidate_mask = candidate_object_view.mask_2d is not None
+        if has_candidate_mask:
+            candidate_mask = _extract_object_view_mask(candidate_object_view)
+            all_mask_keep = _points_inside_mask(candidate_points, candidate_mask)
+            all_object_mask_points = object_points[all_mask_keep]
+            object_mask_bbox = _bbox_from_points(all_object_mask_points)
+        else:
+            object_mask_bbox = object_bbox.copy()
+
         bbox_keep = _points_inside_bbox(candidate_points, candidate_bbox)
         object_points = object_points[bbox_keep]
         candidate_points = candidate_points[bbox_keep]
@@ -294,8 +303,6 @@ class PATSMatcher:
         object_points = object_points[object_bbox_keep]
         candidate_points = candidate_points[object_bbox_keep]
         num_bbox_matches = int(len(candidate_points))
-
-        has_candidate_mask = candidate_object_view.mask_2d is not None
 
         if num_bbox_matches <= int(min_final_matches):
             return ObjectViewMatchResult(
@@ -312,14 +319,12 @@ class PATSMatcher:
             num_filtered_matches = num_bbox_matches
             mask_back_project_coverage = 1.0
         else:
-            candidate_mask = _extract_object_view_mask(candidate_object_view)
             mask_keep = _points_inside_mask(candidate_points, candidate_mask)
             object_points = object_points[mask_keep]
             candidate_points = candidate_points[mask_keep]
             num_mask_matches = int(len(candidate_points))
             num_filtered_matches = num_mask_matches
 
-            object_mask_bbox = _bbox_from_points(object_points)
             if object_mask_bbox is None:
                 mask_back_project_coverage = 0.0
             else:
