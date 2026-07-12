@@ -28,14 +28,11 @@ class PointFilterConfig:
     filter_type: str = "statistical"  # statistical | truncated | none
     nb_neighbors: int = 20
     std_ratio: float = 1.0
-    keep_largest_cluster: bool = False
+    keep_largest_cluster: bool = True
     cluster_eps: float = 0.08
     cluster_min_points: int = 20
     max_cluster_points: int = 30000
     cluster_downsample_voxel_size: float = 0.03
-    percentile_bbox_fallback: bool = True
-    percentile_low: float = 2.0
-    percentile_high: float = 98.0
     tx: float = 0.05
     ty: float = 0.05
     tz: float = 0.05
@@ -97,7 +94,10 @@ class TwoDToThreeDTool:
                     for label in range(1, num_labels)
                 ]
                 component_areas.sort(key=lambda x: x[1], reverse=True)
-                kept = [label for label, _ in component_areas[: self.morphology.num_components]]
+                kept = [
+                    label
+                    for label, _ in component_areas[: self.morphology.num_components]
+                ]
                 img = np.isin(labels_im, kept).astype(np.uint8) * 255
 
         return img.astype(bool)
@@ -156,7 +156,11 @@ class TwoDToThreeDTool:
             if getattr(object_view, "mask_2d", None) is None:
                 continue
             view = getattr(object_view, "view", None)
-            if view is None or getattr(view, "depth", None) is None or getattr(view, "camera_to_world", None) is None:
+            if (
+                view is None
+                or getattr(view, "depth", None) is None
+                or getattr(view, "camera_to_world", None) is None
+            ):
                 continue
             inputs.append(
                 self.build_projection_input_from_object_view(
@@ -184,7 +188,9 @@ class TwoDToThreeDTool:
             use_best_only=use_best_only,
         )
         if not inputs:
-            raise ValueError("Candidate does not contain any projectable object views with mask_2d.")
+            raise ValueError(
+                "Candidate does not contain any projectable object views with mask_2d."
+            )
         return self.run_multi_view(inputs, do_post_process=do_post_process)
 
     def update_candidate_3d(
@@ -217,7 +223,9 @@ class TwoDToThreeDTool:
 
         bbox_array = np.asarray(bbox, dtype=np.float64).reshape(-1)
         if bbox_array.shape[0] != 6:
-            raise ValueError("bbox must contain 6 values: center_x, center_y, center_z, dx, dy, dz.")
+            raise ValueError(
+                "bbox must contain 6 values: center_x, center_y, center_z, dx, dy, dz."
+            )
 
         center = bbox_array[:3]
         dimensions = bbox_array[3:]
@@ -227,9 +235,13 @@ class TwoDToThreeDTool:
         point_cloud = o3d.geometry.PointCloud()
         point_cloud.points = o3d.utility.Vector3dVector(xyz[:, :3])
         if xyz.shape[1] >= 6:
-            point_cloud.colors = o3d.utility.Vector3dVector(np.clip(xyz[:, 3:6] / 255.0, 0.0, 1.0))
+            point_cloud.colors = o3d.utility.Vector3dVector(
+                np.clip(xyz[:, 3:6] / 255.0, 0.0, 1.0)
+            )
 
-        aabb = o3d.geometry.AxisAlignedBoundingBox(min_bound=min_corner, max_bound=max_corner)
+        aabb = o3d.geometry.AxisAlignedBoundingBox(
+            min_bound=min_corner, max_bound=max_corner
+        )
         aabb.color = (1.0, 0.0, 0.0)
         o3d.visualization.draw_geometries([point_cloud, aabb])
 
@@ -244,7 +256,11 @@ class TwoDToThreeDTool:
         color_image = self._load_color(data.color_image) if self.project_color else None
 
         if data.mask is None:
-            ref_h, ref_w = color_image.shape[:2] if color_image is not None else depth_image.shape[:2]
+            ref_h, ref_w = (
+                color_image.shape[:2]
+                if color_image is not None
+                else depth_image.shape[:2]
+            )
             mask = np.ones((ref_h, ref_w), dtype=bool)
         else:
             mask = np.asarray(data.mask).astype(bool)
@@ -254,14 +270,20 @@ class TwoDToThreeDTool:
 
         intrinsic = np.asarray(data.intrinsic_matrix, dtype=np.float64)
         extrinsic = np.asarray(data.extrinsic_matrix, dtype=np.float64)
-        axis_align = None if data.world_to_axis_align_matrix is None else np.asarray(data.world_to_axis_align_matrix, dtype=np.float64)
+        axis_align = (
+            None
+            if data.world_to_axis_align_matrix is None
+            else np.asarray(data.world_to_axis_align_matrix, dtype=np.float64)
+        )
 
         if intrinsic.shape != (4, 4):
             raise ValueError(f"intrinsic_matrix must be 4x4, got {intrinsic.shape}")
         if extrinsic.shape != (4, 4):
             raise ValueError(f"extrinsic_matrix must be 4x4, got {extrinsic.shape}")
         if axis_align is not None and axis_align.shape != (4, 4):
-            raise ValueError(f"world_to_axis_align_matrix must be 4x4, got {axis_align.shape}")
+            raise ValueError(
+                f"world_to_axis_align_matrix must be 4x4, got {axis_align.shape}"
+            )
 
         scale_y = depth_image.shape[0] / mask.shape[0]
         scale_x = depth_image.shape[1] / mask.shape[1]
@@ -276,7 +298,9 @@ class TwoDToThreeDTool:
         depth_y = np.clip(depth_y, 0, depth_image.shape[0] - 1)
         depth_x = np.clip(depth_x, 0, depth_image.shape[1] - 1)
 
-        depth_values = depth_image[depth_y, depth_x].astype(np.float64) * self.depth_scale
+        depth_values = (
+            depth_image[depth_y, depth_x].astype(np.float64) * self.depth_scale
+        )
         valid = depth_values > 0
         depth_values = depth_values[valid]
         mask_x = mask_x[valid]
@@ -286,12 +310,14 @@ class TwoDToThreeDTool:
             feature_dim = 6 if color_image is not None else 3
             return np.empty((0, feature_dim), dtype=np.float64)
 
-        homogeneous_pixels = np.vstack([
-            mask_x * depth_values,
-            mask_y * depth_values,
-            depth_values,
-            np.ones_like(depth_values),
-        ])
+        homogeneous_pixels = np.vstack(
+            [
+                mask_x * depth_values,
+                mask_y * depth_values,
+                depth_values,
+                np.ones_like(depth_values),
+            ]
+        )
 
         cam_coords = np.linalg.inv(intrinsic) @ homogeneous_pixels
         world_coords = extrinsic @ cam_coords
@@ -329,7 +355,9 @@ class TwoDToThreeDTool:
         if cfg.filter_type == "none":
             return points
         if cfg.filter_type == "statistical":
-            filtered = self.remove_statistical_outliers(points, cfg.nb_neighbors, cfg.std_ratio)
+            filtered = self.remove_statistical_outliers(
+                points, cfg.nb_neighbors, cfg.std_ratio
+            )
             if cfg.keep_largest_cluster:
                 filtered = self.keep_largest_3d_cluster(
                     filtered,
@@ -344,7 +372,9 @@ class TwoDToThreeDTool:
         raise NotImplementedError(f"Unknown filter_type: {cfg.filter_type}")
 
     @staticmethod
-    def remove_statistical_outliers(point_cloud_data: ArrayLike, nb_neighbors: int = 20, std_ratio: float = 1.0) -> ArrayLike:
+    def remove_statistical_outliers(
+        point_cloud_data: ArrayLike, nb_neighbors: int = 20, std_ratio: float = 1.0
+    ) -> ArrayLike:
         if point_cloud_data.shape[0] == 0:
             return point_cloud_data
         if o3d is None:
@@ -358,7 +388,9 @@ class TwoDToThreeDTool:
         return point_cloud_data[ind, :]
 
     @staticmethod
-    def remove_truncated_outliers(point_cloud_data: ArrayLike, tx: float, ty: float, tz: float) -> ArrayLike:
+    def remove_truncated_outliers(
+        point_cloud_data: ArrayLike, tx: float, ty: float, tz: float
+    ) -> ArrayLike:
         if point_cloud_data.shape[0] == 0:
             return point_cloud_data
         if not (0 <= tx < 0.5 and 0 <= ty < 0.5 and 0 <= tz < 0.5):
@@ -403,12 +435,16 @@ class TwoDToThreeDTool:
             if down_xyz.shape[0] > 0:
                 sample_points = down_xyz
             if sample_points.shape[0] > max_points:
-                indices = np.linspace(0, sample_points.shape[0] - 1, max_points, dtype=int)
+                indices = np.linspace(
+                    0, sample_points.shape[0] - 1, max_points, dtype=int
+                )
                 sample_points = sample_points[indices]
 
         pcd = o3d.geometry.PointCloud()
         pcd.points = o3d.utility.Vector3dVector(sample_points[:, :3])
-        labels = np.asarray(pcd.cluster_dbscan(eps=eps, min_points=min_points, print_progress=False))
+        labels = np.asarray(
+            pcd.cluster_dbscan(eps=eps, min_points=min_points, print_progress=False)
+        )
         if labels.size == 0:
             return point_cloud_data
 
@@ -440,12 +476,27 @@ class TwoDToThreeDTool:
         return np.concatenate([center, dimensions])
 
     @staticmethod
-    def calculate_percentile_aabb(point_cloud_data: ArrayLike, low: float = 2.0, high: float = 98.0) -> ArrayLike:
-        if point_cloud_data.shape[0] == 0:
-            raise ValueError("Cannot calculate AABB from empty point cloud")
-        xyz = point_cloud_data[:, :3]
-        min_corner = np.percentile(xyz, low, axis=0)
-        max_corner = np.percentile(xyz, high, axis=0)
+    def combine_filtered_xy_with_raw_z(
+        filtered_points: ArrayLike,
+        raw_points: ArrayLike,
+    ) -> ArrayLike:
+        if filtered_points.shape[0] == 0:
+            raise ValueError("Cannot calculate bbox from empty filtered point cloud")
+        if raw_points.shape[0] == 0:
+            raise ValueError("Cannot calculate bbox from empty raw point cloud")
+
+        filtered_xyz = filtered_points[:, :3]
+        raw_xyz = raw_points[:, :3]
+
+        min_x = np.min(filtered_xyz[:, 0])
+        max_x = np.max(filtered_xyz[:, 0])
+        min_y = np.min(filtered_xyz[:, 1])
+        max_y = np.max(filtered_xyz[:, 1])
+        min_z = np.min(raw_xyz[:, 2])
+        max_z = np.max(raw_xyz[:, 2])
+
+        min_corner = np.asarray([min_x, min_y, min_z], dtype=np.float64)
+        max_corner = np.asarray([max_x, max_y, max_z], dtype=np.float64)
         center = (max_corner + min_corner) / 2.0
         dimensions = max_corner - min_corner
         return np.concatenate([center, dimensions])
@@ -461,7 +512,11 @@ class TwoDToThreeDTool:
         color_image: Optional[Union[str, ArrayLike]] = None,
         do_post_process: bool = True,
     ) -> Tuple[ArrayLike, ArrayLike]:
-        clean_mask = self.post_process_mask(mask) if do_post_process else np.asarray(mask).astype(bool)
+        clean_mask = (
+            self.post_process_mask(mask)
+            if do_post_process
+            else np.asarray(mask).astype(bool)
+        )
         points = self.project_mask_to_3d(
             ProjectionInput(
                 depth_image=depth_image,
@@ -473,16 +528,24 @@ class TwoDToThreeDTool:
             )
         )
         filtered_points = self.filter_points(points)
-        bbox = self.calculate_aabb(filtered_points)
+        if filtered_points.shape[0] == 0:
+            filtered_points = points
+        bbox = self.combine_filtered_xy_with_raw_z(filtered_points, points)
         return filtered_points, bbox
 
-    def run_multi_view(self, views: Sequence[ProjectionInput], do_post_process: bool = True) -> Tuple[ArrayLike, ArrayLike]:
+    def run_multi_view(
+        self, views: Sequence[ProjectionInput], do_post_process: bool = True
+    ) -> Tuple[ArrayLike, ArrayLike]:
         processed_views: List[ProjectionInput] = []
         for view in views:
             if view.mask is None:
                 processed_views.append(view)
             else:
-                clean_mask = self.post_process_mask(view.mask) if do_post_process else np.asarray(view.mask).astype(bool)
+                clean_mask = (
+                    self.post_process_mask(view.mask)
+                    if do_post_process
+                    else np.asarray(view.mask).astype(bool)
+                )
                 processed_views.append(
                     ProjectionInput(
                         depth_image=view.depth_image,
@@ -495,16 +558,9 @@ class TwoDToThreeDTool:
                 )
         points = self.project_views_to_3d(processed_views)
         filtered_points = self.filter_points(points)
-        cfg = self.point_filter
-        try:
-            bbox = self.calculate_aabb(filtered_points)
-        except Exception:
-            if not cfg.percentile_bbox_fallback:
-                raise
-            bbox = self.calculate_percentile_aabb(points, cfg.percentile_low, cfg.percentile_high)
-            return points, bbox
-        if cfg.percentile_bbox_fallback and filtered_points.shape[0] > cfg.max_cluster_points * 2:
-            bbox = self.calculate_percentile_aabb(filtered_points, cfg.percentile_low, cfg.percentile_high)
+        if filtered_points.shape[0] == 0:
+            filtered_points = points
+        bbox = self.combine_filtered_xy_with_raw_z(filtered_points, points)
         return filtered_points, bbox
 
     @staticmethod
@@ -517,7 +573,9 @@ class TwoDToThreeDTool:
         return np.asarray(depth_image)
 
     @staticmethod
-    def _load_color(color_image: Optional[Union[str, ArrayLike]]) -> Optional[ArrayLike]:
+    def _load_color(
+        color_image: Optional[Union[str, ArrayLike]],
+    ) -> Optional[ArrayLike]:
         if color_image is None:
             return None
         if isinstance(color_image, str):

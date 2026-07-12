@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 from pathlib import Path
 from typing import Any
@@ -10,6 +11,7 @@ import numpy as np
 try:
     from agent import Agent
     from benchmark.utils import calc_iou, load_pc
+    from module.detector_yoloe import YOLOEDetector
     from module.projection import TwoDToThreeDTool
     from module.segmenter import SAMSegmenter
     from prompt import build_candidate_summary, build_multi_candidate_selection_prompt
@@ -18,6 +20,7 @@ try:
 except ImportError:
     from .agent import Agent
     from .benchmark.utils import calc_iou, load_pc
+    from .module.detector_yoloe import YOLOEDetector
     from .module.projection import TwoDToThreeDTool
     from .module.segmenter import SAMSegmenter
     from .prompt import build_candidate_summary, build_multi_candidate_selection_prompt
@@ -140,8 +143,10 @@ def run_one_case(
     frame_skip: int,
     max_units: int,
     min_selected_object_views: int,
+    detector_model: str | None,
 ) -> dict[str, Any]:
     reader = Read(scene, max_frames_per_find=max_frames, frame_skip=frame_skip)
+    detector = YOLOEDetector(model=detector_model or "yoloe-11s-seg.pt")
     segmenter = SAMSegmenter(
         checkpoint_path=sam_checkpoint,
         model_type=sam_model_type,
@@ -149,6 +154,7 @@ def run_one_case(
     )
     agent = Agent(
         motion=reader,
+        detector=detector,
         segmenter=segmenter,
         mapper_2d3d=TwoDToThreeDTool(),
         intrinsic_matrix=reader.intrinsic_matrix,
@@ -201,6 +207,11 @@ def run_one_case(
             processed_any_candidate = True
             vlm_used = True
             decision = agent.verify_candidate_once(pending_candidate)
+            if decision == "true":
+                pending_candidate = complete_candidate_with_more_views(
+                    agent=agent,
+                    candidate=pending_candidate,
+                )
             if decision == "unsure" and agent.can_retry_candidate(pending_candidate):
                 pending_candidate = complete_candidate_with_more_views(
                     agent=agent,
@@ -234,10 +245,10 @@ def run_one_case(
                 points_3d, bbox_3d = agent.map_candidate_to_3d(selected_candidate)
                 print("after_map_candidate_to_3d")
                 print(f"bbox_3d={bbox_3d.tolist()}")
-                try:
-                    TwoDToThreeDTool.visualize_points_and_aabb(points_3d, bbox_3d)
-                except ImportError as exc:
-                    print(f"visualization_skipped={exc}")
+                #try:
+                #    TwoDToThreeDTool.visualize_points_and_aabb(points_3d, bbox_3d)
+                #except ImportError as exc:
+                #    print(f"visualization_skipped={exc}")
             except ValueError as exc:
                 print(f"projection_skipped={exc}")
     elif final_decision == "unsure":
@@ -289,7 +300,7 @@ if __name__ == "__main__":
         help="Which field to use as query",
     )
     parser.add_argument(
-        "--max-frames", type=int, default=20, help="Maximum frames per read unit"
+        "--max-frames", type=int, default=10, help="Maximum frames per read unit"
     )
     parser.add_argument(
         "--frame-skip",
@@ -322,6 +333,11 @@ if __name__ == "__main__":
     parser.add_argument(
         "--sam-device", default="cpu", help="Device for SAM inference, e.g. cpu or cuda"
     )
+    parser.add_argument(
+        "--detector-model",
+        default=None,
+        help="Optional YOLOE checkpoint name or path.",
+    )
     args = parser.parse_args()
 
     data_path = Path(args.data_path)
@@ -342,8 +358,10 @@ if __name__ == "__main__":
     except_total = 0
     vlm_total = 0
     eps = 1e-6
+    case_iou_rows: list[dict[str, Any]] = []
 
     for case_index, task in enumerate(eval_data):
+        original_case_index = args.case_index if args.case_index >= 0 else case_index
         scene_id = str(task["scan_id"])
         target_id = int(task["target_id"])
         query = str(task[args.query_field])
@@ -376,6 +394,7 @@ if __name__ == "__main__":
                 frame_skip=args.frame_skip,
                 max_units=args.max_units,
                 min_selected_object_views=args.min_selected_object_views,
+                detector_model=args.detector_model,
             )
 
             if result["vlm_used"]:
@@ -392,9 +411,21 @@ if __name__ == "__main__":
                 )
             if pred_box is None:
                 except_total += 1
+                case_iou_rows.append(
+                    {
+                        "case_id": int(original_case_index),
+                        "iou": "",
+                    }
+                )
             else:
                 iou = float(calc_iou(pred_box, target_box))
                 print(f"IoU: {iou:.3f}")
+                case_iou_rows.append(
+                    {
+                        "case_id": int(original_case_index),
+                        "iou": round(iou, 6),
+                    }
+                )
                 if iou >= 0.25:
                     correct_25 += 1
                     if unique:
@@ -406,6 +437,12 @@ if __name__ == "__main__":
         except Exception as exc:
             except_total += 1
             print(f"case_error={exc}")
+            case_iou_rows.append(
+                {
+                    "case_id": int(original_case_index),
+                    "iou": "",
+                }
+            )
 
         accuracy_msgs = [
             "Overall@25: {:.3f}".format(correct_25 / total),
@@ -427,3 +464,11 @@ if __name__ == "__main__":
             "",
         ]
         print("\n".join(accuracy_msgs))
+
+    if args.max_cases > 0:
+        csv_path = Path(f"eval_max_cases_{args.max_cases}_ious.csv")
+        with csv_path.open("w", newline="", encoding="utf-8-sig") as file:
+            writer = csv.DictWriter(file, fieldnames=["case_id", "iou"])
+            writer.writeheader()
+            writer.writerows(case_iou_rows)
+        print(f"saved_case_iou_csv={csv_path}")

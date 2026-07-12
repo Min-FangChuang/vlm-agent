@@ -29,6 +29,7 @@ DEFAULT_PATS_CONFIG = PATS_ROOT / "configs" / "test_scannet.yaml"
 MIN_TOTAL_MATCHES = 1000
 MIN_FINAL_MATCHES = 100
 MIN_MASK_BACK_PROJECT_COVERAGE = 0.8
+MIN_MASK_BACK_PROJECT_SUPPORT_RATIO = 1.0 / 3.0
 
 
 @dataclass
@@ -48,6 +49,7 @@ class ObjectViewMatchResult:
     num_mask_matches: int
     num_filtered_matches: int
     mask_back_project_coverage: float
+    mask_back_project_support_ratio: float
     is_match: bool
 
 
@@ -127,6 +129,19 @@ def _bbox_coverage(bbox_to_cover: np.ndarray, covering_bbox: np.ndarray) -> floa
     if area_a <= 0.0:
         return 0.0
     return inter_area / area_a
+
+
+def _bbox_area(bbox: np.ndarray) -> float:
+    x1, y1, x2, y2 = np.asarray(bbox, dtype=np.float32).reshape(4)
+    return max(0.0, float(x2 - x1)) * max(0.0, float(y2 - y1))
+
+
+def _bbox_intersection(bbox_a: np.ndarray, bbox_b: np.ndarray) -> float:
+    ax1, ay1, ax2, ay2 = np.asarray(bbox_a, dtype=np.float32).reshape(4)
+    bx1, by1, bx2, by2 = np.asarray(bbox_b, dtype=np.float32).reshape(4)
+    inter_w = max(0.0, float(min(ax2, bx2) - max(ax1, bx1)))
+    inter_h = max(0.0, float(min(ay2, by2) - max(ay1, by1)))
+    return inter_w * inter_h
 
 
 class PATSMatcher:
@@ -280,6 +295,7 @@ class PATSMatcher:
                 num_mask_matches=0,
                 num_filtered_matches=0,
                 mask_back_project_coverage=0.0,
+                mask_back_project_support_ratio=0.0,
                 is_match=False,
             )
 
@@ -311,6 +327,7 @@ class PATSMatcher:
                 num_mask_matches=num_bbox_matches if not has_candidate_mask else 0,
                 num_filtered_matches=num_bbox_matches,
                 mask_back_project_coverage=0.0,
+                mask_back_project_support_ratio=0.0,
                 is_match=False,
             )
 
@@ -318,6 +335,7 @@ class PATSMatcher:
             num_mask_matches = num_bbox_matches
             num_filtered_matches = num_bbox_matches
             mask_back_project_coverage = 1.0
+            mask_back_project_support_ratio = 1.0
         else:
             mask_keep = _points_inside_mask(candidate_points, candidate_mask)
             object_points = object_points[mask_keep]
@@ -327,18 +345,27 @@ class PATSMatcher:
 
             if object_mask_bbox is None:
                 mask_back_project_coverage = 0.0
+                mask_back_project_support_ratio = 0.0
             else:
                 mask_back_project_coverage = _bbox_coverage(
                     object_mask_bbox, object_bbox
                 )
+                projected_area = max(_bbox_area(object_mask_bbox), 1e-6)
+                incoming_area = max(_bbox_area(object_bbox), 1e-6)
+                intersection_area = _bbox_intersection(object_mask_bbox, object_bbox)
+                mask_back_project_support_ratio = intersection_area / incoming_area
 
-            if mask_back_project_coverage < MIN_MASK_BACK_PROJECT_COVERAGE:
+            if (
+                mask_back_project_coverage < MIN_MASK_BACK_PROJECT_COVERAGE
+                or mask_back_project_support_ratio < MIN_MASK_BACK_PROJECT_SUPPORT_RATIO
+            ):
                 return ObjectViewMatchResult(
                     total_matches=view_match.num_matches,
                     num_bbox_matches=num_bbox_matches,
                     num_mask_matches=num_mask_matches,
                     num_filtered_matches=num_filtered_matches,
                     mask_back_project_coverage=mask_back_project_coverage,
+                    mask_back_project_support_ratio=mask_back_project_support_ratio,
                     is_match=False,
                 )
 
@@ -348,6 +375,7 @@ class PATSMatcher:
             num_mask_matches=num_mask_matches,
             num_filtered_matches=num_filtered_matches,
             mask_back_project_coverage=mask_back_project_coverage,
+            mask_back_project_support_ratio=mask_back_project_support_ratio,
             is_match=(num_filtered_matches > int(min_final_matches)),
         )
 

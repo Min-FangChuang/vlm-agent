@@ -13,6 +13,7 @@ class ProjectedView:
     projected_bbox_2d: np.ndarray
     bbox_area: float
     camera_xy: np.ndarray
+    image_size: tuple[int, int] = (0, 0)
     projected_points_total: int = 0
     projected_points_in_frame: int = 0
     visible_projected_points: int = 0
@@ -33,6 +34,29 @@ def bbox_to_array(bbox: Any) -> np.ndarray:
     return np.asarray(bbox, dtype=np.float32).reshape(4)
 
 
+def bbox3d_to_corners(bbox_3d: Any) -> np.ndarray:
+    bbox = np.asarray(bbox_3d, dtype=np.float64).reshape(-1)
+    if bbox.shape[0] != 6:
+        raise ValueError("bbox_3d must contain 6 values")
+    center = bbox[:3]
+    dims = bbox[3:]
+    half = dims / 2.0
+    signs = np.asarray(
+        [
+            [-1, -1, -1],
+            [-1, -1, 1],
+            [-1, 1, -1],
+            [-1, 1, 1],
+            [1, -1, -1],
+            [1, -1, 1],
+            [1, 1, -1],
+            [1, 1, 1],
+        ],
+        dtype=np.float64,
+    )
+    return center + signs * half
+
+
 def bbox_from_mask(mask: np.ndarray) -> np.ndarray | None:
     mask_array = np.asarray(mask).astype(bool)
     ys, xs = np.where(mask_array)
@@ -45,6 +69,14 @@ def bbox_from_mask(mask: np.ndarray) -> np.ndarray | None:
     if x2 <= x1 or y2 <= y1:
         return None
     return np.asarray([x1, y1, x2, y2], dtype=np.float32)
+
+
+def bbox_intersection(bbox_a: np.ndarray, bbox_b: np.ndarray) -> float:
+    ax1, ay1, ax2, ay2 = bbox_to_array(bbox_a).tolist()
+    bx1, by1, bx2, by2 = bbox_to_array(bbox_b).tolist()
+    inter_w = max(0.0, min(ax2, bx2) - max(ax1, bx1))
+    inter_h = max(0.0, min(ay2, by2) - max(ay1, by1))
+    return float(inter_w * inter_h)
 
 
 def bbox_iou(bbox_a: np.ndarray, bbox_b: np.ndarray) -> float:
@@ -74,6 +106,7 @@ def bbox_center_distance(bbox_a: np.ndarray, bbox_b: np.ndarray) -> float:
 def choose_detection_for_projected_bbox(
     detections: list[Any],
     projected_bbox: np.ndarray,
+    min_projected_coverage: float = 0.75,
 ) -> tuple[Any | None, dict[str, Any]]:
     if not detections:
         return None, {"found": False, "reason": "no_detections"}
@@ -81,12 +114,17 @@ def choose_detection_for_projected_bbox(
     best_detection = None
     best_metrics = None
     best_score = None
+    projected_area = max(bbox_area(projected_bbox), 1e-6)
     for detection in detections:
         detection_bbox = bbox_to_array(detection.bbox)
+        coverage = bbox_intersection(projected_bbox, detection_bbox) / projected_area
+        if coverage < min_projected_coverage:
+            continue
         iou = bbox_iou(projected_bbox, detection_bbox)
         center_distance = bbox_center_distance(projected_bbox, detection_bbox)
         metrics = {
             "found": True,
+            "projected_coverage": round(float(coverage), 4),
             "iou_with_projected": round(float(iou), 4),
             "center_distance": round(float(center_distance), 2),
             "detection_bbox_2d": detection_bbox.tolist(),
@@ -99,7 +137,11 @@ def choose_detection_for_projected_bbox(
             best_metrics = metrics
 
     if best_detection is None or best_metrics is None:
-        return None, {"found": False, "reason": "no_valid_detection"}
+        return None, {
+            "found": False,
+            "reason": "no_detection_covers_projected_bbox",
+            "min_projected_coverage": float(min_projected_coverage),
+        }
     return best_detection, best_metrics
 
 
@@ -132,9 +174,47 @@ def bbox_area(bbox: np.ndarray) -> float:
     return max(0.0, float(x2 - x1)) * max(0.0, float(y2 - y1))
 
 
-def camera_xy(view: Any) -> np.ndarray:
+def project_bbox3d_to_view(
+    bbox_3d: Any,
+    *,
+    view: Any,
+    intrinsic_matrix: np.ndarray,
+    world_to_axis_align_matrix: np.ndarray | None,
+) -> np.ndarray | None:
+    corners = bbox3d_to_corners(bbox_3d)
+    uv = project_points_to_view(
+        corners,
+        intrinsic_matrix,
+        np.asarray(view.camera_to_world, dtype=np.float64),
+        None
+        if world_to_axis_align_matrix is None
+        else np.asarray(world_to_axis_align_matrix, dtype=np.float64),
+    )
+    return bbox_from_projected_points(uv, tuple(view.rgb.shape), min_inside_points=1)
+
+
+def camera_xyz(
+    view: Any,
+    world_to_axis_align_matrix: np.ndarray | None = None,
+) -> np.ndarray:
     camera_to_world = np.asarray(view.camera_to_world, dtype=np.float64)
-    return np.asarray(camera_to_world[:2, 3], dtype=np.float64)
+    camera_position = np.asarray(camera_to_world[:3, 3], dtype=np.float64)
+    if world_to_axis_align_matrix is None:
+        return camera_position
+    camera_position_h = np.concatenate(
+        [camera_position, np.ones((1,), dtype=np.float64)]
+    )
+    aligned_camera_position = (
+        np.asarray(world_to_axis_align_matrix, dtype=np.float64) @ camera_position_h
+    )[:3]
+    return np.asarray(aligned_camera_position, dtype=np.float64)
+
+
+def camera_xy(
+    view: Any,
+    world_to_axis_align_matrix: np.ndarray | None = None,
+) -> np.ndarray:
+    return camera_xyz(view, world_to_axis_align_matrix)[:2]
 
 
 def view_angle_relative_to_object(
@@ -363,7 +443,8 @@ def reproject_candidate_to_scene_views(
                 image_file=f"{view.view_id}.jpg",
                 projected_bbox_2d=np.asarray(bbox, dtype=np.float32),
                 bbox_area=bbox_area(bbox),
-                camera_xy=camera_xy(view),
+                camera_xy=camera_xy(view, world_to_axis_align_matrix),
+                image_size=(int(view.rgb.shape[1]), int(view.rgb.shape[0])),
                 projected_points_total=int(visibility_stats["projected_points_total"]),
                 projected_points_in_frame=int(
                     visibility_stats["projected_points_in_frame"]
@@ -389,96 +470,125 @@ def reproject_candidate_to_scene_views(
 def select_distinct_position_views(
     projected_views: list[ProjectedView],
     num_views: int,
-    position_threshold: float,
     object_center_xy: np.ndarray | None = None,
     angle_threshold_rad: float = np.pi / 6.0,
+    existing_view_ids: set[str] | None = None,
+    existing_angles: list[float] | None = None,
+    max_fallback_distance: float | None = None,
 ) -> list[ProjectedView]:
+    def _bbox_side_score(projected_view: ProjectedView) -> float:
+        bbox = np.asarray(projected_view.projected_bbox_2d, dtype=np.float32).reshape(4)
+        frame_width = max(float(projected_view.image_size[0]), 1.0)
+        center_x = float((bbox[0] + bbox[2]) / 2.0)
+        horizontal_side = _bbox_horizontal_side(projected_view)
+        if horizontal_side == "left":
+            return center_x
+        if horizontal_side == "right":
+            return max(frame_width - center_x, 0.0)
+        return abs(center_x - (frame_width / 2.0))
+
+    def _target_distance(projected_view: ProjectedView) -> float:
+        if object_center_xy is None:
+            return float("inf")
+        return float(
+            np.linalg.norm(
+                np.asarray(projected_view.camera_xy, dtype=np.float64)
+                - np.asarray(object_center_xy, dtype=np.float64)
+            )
+        )
+
+    def _bbox_horizontal_side(projected_view: ProjectedView) -> str:
+        bbox = np.asarray(projected_view.projected_bbox_2d, dtype=np.float32).reshape(4)
+        frame_width = max(float(projected_view.image_size[0]), 1.0)
+        center_x = float((bbox[0] + bbox[2]) / 2.0)
+        normalized_x = center_x / frame_width
+        if normalized_x <= 0.25:
+            return "left"
+        if normalized_x >= 0.75:
+            return "right"
+        return "center"
+
     sorted_views = sorted(
         projected_views, key=lambda item: item.bbox_area, reverse=True
     )
-    max_bbox_area = max((float(item.bbox_area) for item in sorted_views), default=1.0)
     selected: list[ProjectedView] = []
-    selected_positions: list[np.ndarray] = []
-    selected_angles: list[float] = []
-    used_view_ids: set[str] = set()
-
-    while len(selected) < int(num_views):
-        best_item = None
-        best_angle = None
-        best_score = None
-
-        for item in sorted_views:
-            if item.view_id in used_view_ids:
-                continue
-
-            too_close = any(
-                np.linalg.norm(item.camera_xy - existing_xy) < position_threshold
-                for existing_xy in selected_positions
-            )
-            if object_center_xy is not None:
-                item_angle = view_angle_relative_to_object(
-                    item.camera_xy, object_center_xy
-                )
-                angle_gaps = [
-                    abs(
-                        np.arctan2(
-                            np.sin(item_angle - existing_angle),
-                            np.cos(item_angle - existing_angle),
+    selected_angles: list[float] = [float(angle) for angle in (existing_angles or [])]
+    used_view_ids: set[str] = set(existing_view_ids or set())
+    selected_horizontal_sides: set[str] = set()
+    for item in sorted_views:
+        if len(selected) >= int(num_views):
+            break
+        if item.view_id in used_view_ids:
+            continue
+        if object_center_xy is not None:
+            item_angle = view_angle_relative_to_object(item.camera_xy, object_center_xy)
+            min_angle = min(
+                (
+                    float(
+                        abs(
+                            np.arctan2(
+                                np.sin(item_angle - existing_angle),
+                                np.cos(item_angle - existing_angle),
+                            )
                         )
                     )
                     for existing_angle in selected_angles
-                ]
-                min_angle_gap = min(angle_gaps) if angle_gaps else np.pi
-                angle_conflict = (
-                    bool(selected_angles) and min_angle_gap < angle_threshold_rad
-                )
-            else:
-                item_angle = None
-                min_angle_gap = 0.0
-                angle_conflict = False
-
-            if too_close or angle_conflict:
-                continue
-
-            area_score = np.sqrt(float(item.bbox_area) / max(max_bbox_area, 1e-6))
-            if object_center_xy is not None:
-                angle_score = float(min_angle_gap / np.pi)
-            else:
-                angle_score = 0.0
-
-            candidate_score = 0.3 * area_score + 0.7 * angle_score
-
-            if best_score is None or candidate_score > best_score:
-                best_score = candidate_score
-                best_item = item
-                best_angle = item_angle
-
-        if best_item is None:
-            break
-
+                ),
+                default=float("inf"),
+            )
+            angle_conflict = min_angle < angle_threshold_rad
+        else:
+            item_angle = None
+            min_angle = float("nan")
+            angle_conflict = False
+        if angle_conflict:
+            continue
         selected.append(
             ProjectedView(
-                view_id=best_item.view_id,
-                image_file=best_item.image_file,
-                projected_bbox_2d=np.asarray(
-                    best_item.projected_bbox_2d, dtype=np.float32
-                ),
-                bbox_area=float(best_item.bbox_area),
-                camera_xy=np.asarray(best_item.camera_xy, dtype=np.float64),
-                selection_reason="distinct_camera_xy_angle_scored",
+                view_id=item.view_id,
+                image_file=item.image_file,
+                projected_bbox_2d=np.asarray(item.projected_bbox_2d, dtype=np.float32),
+                bbox_area=float(item.bbox_area),
+                camera_xy=np.asarray(item.camera_xy, dtype=np.float64),
+                image_size=(int(item.image_size[0]), int(item.image_size[1])),
+                selection_reason="distinct_angle",
             )
         )
-        selected_positions.append(best_item.camera_xy)
-        if best_angle is not None:
-            selected_angles.append(best_angle)
-        used_view_ids.add(best_item.view_id)
+        if item_angle is not None:
+            selected_angles.append(item_angle)
+        used_view_ids.add(item.view_id)
+        selected_horizontal_sides.add(_bbox_horizontal_side(item))
 
     if len(selected) < int(num_views):
-        for item in sorted_views:
+        remaining_items = [
+            item for item in sorted_views if item.view_id not in used_view_ids
+        ]
+        while len(selected) < int(num_views) and remaining_items:
+            gated_remaining_items = remaining_items
+            if max_fallback_distance is not None and object_center_xy is not None:
+                gated_remaining_items = [
+                    item
+                    for item in remaining_items
+                    if _target_distance(item) <= float(max_fallback_distance)
+                ]
+            ranking_items = gated_remaining_items or remaining_items
+            fallback_sorted_views = sorted(
+                ranking_items,
+                key=lambda item: (
+                    _bbox_horizontal_side(item) in selected_horizontal_sides,
+                    _bbox_side_score(item),
+                    -float(item.bbox_area),
+                ),
+            )
+            item = fallback_sorted_views[0]
+            remaining_items = [
+                candidate_item
+                for candidate_item in remaining_items
+                if candidate_item.view_id != item.view_id
+            ]
             if len(selected) >= int(num_views):
                 break
-            if item.view_id in used_view_ids:
-                continue
+            horizontal_side = _bbox_horizontal_side(item)
             selected.append(
                 ProjectedView(
                     view_id=item.view_id,
@@ -488,10 +598,12 @@ def select_distinct_position_views(
                     ),
                     bbox_area=float(item.bbox_area),
                     camera_xy=np.asarray(item.camera_xy, dtype=np.float64),
-                    selection_reason="bbox_area_fallback",
+                    image_size=(int(item.image_size[0]), int(item.image_size[1])),
+                    selection_reason="side_fallback",
                 )
             )
             used_view_ids.add(item.view_id)
+            selected_horizontal_sides.add(horizontal_side)
 
     return selected
 
@@ -501,8 +613,7 @@ def complete_candidate_with_more_views(
     agent: Any,
     candidate: Any,
     num_bootstrap_views: int = 3,
-    num_final_views: int = 5,
-    position_threshold: float = 0.3,
+    max_fallback_distance: float = 1.5,
 ) -> Any:
     if (
         agent.segmenter is None
@@ -520,24 +631,45 @@ def complete_candidate_with_more_views(
     candidate.points_3d = points_3d
     candidate.bbox_3d = bbox_3d
     object_center_xy = np.asarray(bbox_3d, dtype=np.float64).reshape(-1)[:2]
+    axis_align_matrix = (
+        None
+        if agent.world_to_axis_align_matrix is None
+        else np.asarray(agent.world_to_axis_align_matrix, dtype=np.float64)
+    )
+
+    object_view_type = type(candidate.object_view[0])
+    existing_view_ids: set[str] = set()
+    existing_angles: list[float] = []
+    for object_view in getattr(candidate, "object_view", []) or []:
+        view = getattr(object_view, "view", None)
+        if view is None:
+            continue
+        view_id = getattr(view, "view_id", None)
+        if view_id is not None:
+            existing_view_ids.add(str(view_id))
+        camera_position_xy = camera_xy(view, axis_align_matrix)
+        existing_angles.append(
+            view_angle_relative_to_object(camera_position_xy, object_center_xy)
+        )
 
     projected_views = reproject_candidate_to_scene_views(
         frame_ids=list(frame_ids),
         build_view_fn=build_view_fn,
         intrinsic_matrix=np.asarray(agent.intrinsic_matrix, dtype=np.float64),
-        world_to_axis_align_matrix=None
-        if agent.world_to_axis_align_matrix is None
-        else np.asarray(agent.world_to_axis_align_matrix, dtype=np.float64),
+        world_to_axis_align_matrix=axis_align_matrix,
         points_3d=np.asarray(points_3d, dtype=np.float64),
     )
+
     bootstrap_views = select_distinct_position_views(
         projected_views,
         num_views=int(num_bootstrap_views),
-        position_threshold=float(position_threshold),
         object_center_xy=object_center_xy,
+        existing_view_ids=existing_view_ids,
+        existing_angles=existing_angles,
+        max_fallback_distance=float(max_fallback_distance),
     )
 
-    bootstrap_object_views = []
+    bootstrap_object_views: list[Any] = []
     for projected_view in bootstrap_views:
         view = build_view_fn(projected_view.view_id)
         projected_bbox = np.asarray(
@@ -557,7 +689,7 @@ def complete_candidate_with_more_views(
         if final_bbox is None:
             final_bbox = refined_bbox
         bootstrap_object_views.append(
-            type(candidate.object_view[0])(
+            object_view_type(
                 object_id=f"bootstrap_{projected_view.view_id}",
                 label=str(candidate.label),
                 score=1.0,
@@ -572,57 +704,5 @@ def complete_candidate_with_more_views(
 
     for object_view in bootstrap_object_views:
         candidate.add_object_view(object_view)
-
-    agent.complete_candidate_masks(candidate)
-    points_3d, bbox_3d = agent.map_candidate_to_3d(candidate)
-    candidate.points_3d = points_3d
-    candidate.bbox_3d = bbox_3d
-    object_center_xy = np.asarray(bbox_3d, dtype=np.float64).reshape(-1)[:2]
-
-    projected_views = reproject_candidate_to_scene_views(
-        frame_ids=list(frame_ids),
-        build_view_fn=build_view_fn,
-        intrinsic_matrix=np.asarray(agent.intrinsic_matrix, dtype=np.float64),
-        world_to_axis_align_matrix=None
-        if agent.world_to_axis_align_matrix is None
-        else np.asarray(agent.world_to_axis_align_matrix, dtype=np.float64),
-        points_3d=np.asarray(points_3d, dtype=np.float64),
-    )
-    final_views = select_distinct_position_views(
-        projected_views,
-        num_views=int(num_final_views),
-        position_threshold=float(position_threshold),
-        object_center_xy=object_center_xy,
-    )
-    existing_view_ids = {
-        str(object_view.view.view_id) for object_view in candidate.object_view
-    }
-    for projected_view in final_views:
-        if projected_view.view_id in existing_view_ids:
-            continue
-        view = build_view_fn(projected_view.view_id)
-        bbox = np.asarray(projected_view.projected_bbox_2d, dtype=np.float32).reshape(4)
-        mask = agent.segmenter.segment_from_box(view.rgb, bbox.tolist())
-        final_bbox = bbox_from_mask(mask)
-        if final_bbox is None:
-            final_bbox = bbox
-        candidate.add_object_view(
-            type(candidate.object_view[0])(
-                object_id=f"projected_{projected_view.view_id}",
-                label=str(candidate.label),
-                score=1.0,
-                view=view,
-                bbox_2d=final_bbox,
-                mask_2d=np.asarray(mask, dtype=np.uint8),
-                points_3d=None,
-                status="active",
-                source="projected_final",
-            )
-        )
-
-    agent.complete_candidate_masks(candidate)
-    points_3d, bbox_3d = agent.map_candidate_to_3d(candidate)
-    candidate.points_3d = points_3d
-    candidate.bbox_3d = bbox_3d
     candidate.status = "expanded"
     return candidate

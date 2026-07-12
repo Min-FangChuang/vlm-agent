@@ -9,12 +9,12 @@ import json
 import numpy as np
 from PIL import Image
 
+import cv2
+
 try:
     from .module.detector import draw_bbox
-    import cv2
 except ImportError:
     from module.detector import draw_bbox  # type: ignore
-    import cv2  # type: ignore
 
 
 def _safe_getattr(value: Any, name: str, default: Any = None) -> Any:
@@ -65,12 +65,38 @@ def _save_candidate_views(candidate: Any) -> Path | None:
         return None
 
     output_dir = _next_candidate_output_dir(Path("output") / "test")
+    summary_payload = {
+        "label": str(_safe_getattr(candidate, "label", "unknown")),
+        "status": str(_safe_getattr(candidate, "status", "unknown")),
+        "best_id": int(_safe_getattr(candidate, "best_id", -1)),
+        "num_object_views": len(object_views),
+        "object_views": [],
+    }
     for index, object_view in enumerate(object_views):
         image = _draw_candidate_object_view(object_view)
         view = _safe_getattr(object_view, "view")
         view_id = _safe_getattr(view, "view_id", index)
         file_path = output_dir / f"{index:03d}_{view_id}.png"
         cv2.imwrite(str(file_path), cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
+        summary_payload["object_views"].append(
+            {
+                "view_id": str(view_id),
+                "bbox_2d": np.asarray(
+                    _safe_getattr(
+                        object_view,
+                        "bbox_2d",
+                        np.zeros((4,), dtype=np.float32),
+                    ),
+                    dtype=np.float32,
+                )
+                .reshape(4)
+                .tolist(),
+            }
+        )
+    (output_dir / "candidate_summary.json").write_text(
+        json.dumps(summary_payload, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
     return output_dir
 
 
@@ -85,6 +111,7 @@ def build_candidate_summary(candidate: Any) -> str:
         f"label={label}, status={status}, "
         f"best_id={best_id}, num_object_views={num_views}, saved_dir={saved_dir}"
     )
+
 
 CANDIDATE_VERIFY_SYSTEM_PROMPT = """You are a visual grounding verifier for indoor environments.
 
@@ -141,7 +168,10 @@ Important instructions:
 - Compare all candidate images against the full original query.
 - Use the stitched image as the primary visual evidence for each candidate.
 - Do not focus only on the object appearance inside the green box. Use the surrounding scene context to judge nearby reference objects and spatial relations.
-- If the query includes relative references such as left-most, right-most, closest, farthest, biggest, or smallest, first identify the relevant reference object in the scene context, then judge the target object's relation to it.
+- Different candidates may all look similar in object category, color, or shape. If that happens, do not choose based mainly on appearance. Use reference-object evidence and spatial relation evidence as the main basis for selection.
+- If the query includes relative references such as left-most, right-most, closest, farthest, biggest, or smallest, first identify the relevant reference object in the visible scene context for each candidate, then judge the target object's relation to it.
+- For spatial or relational queries, prefer the candidate whose views give the clearest and strongest evidence for the required relation, not the candidate whose target object only looks more similar in isolation.
+- When comparing candidates, explicitly determine what evidence supports or weakens each one before choosing the best match.
 - If multiple candidates partially match, choose the one whose reference-object evidence and spatial relation are best supported by the views.
 - Do not rely on detector confidence or class names beyond what is visually supported.
 - You must choose exactly one candidate, even if the evidence is imperfect. Select the most suitable candidate overall.
@@ -185,6 +215,7 @@ Output schema:
 }
 """.strip()
 
+
 def _rgb_to_base64(rgb: np.ndarray) -> str:
     rgb = np.asarray(rgb)
     if rgb.dtype != np.uint8:
@@ -194,6 +225,7 @@ def _rgb_to_base64(rgb: np.ndarray) -> str:
     buffer = io.BytesIO()
     image.save(buffer, format="JPEG")
     return base64.b64encode(buffer.getvalue()).decode("utf-8")
+
 
 def _resize_rgb_image(rgb: np.ndarray, size: tuple[int, int]) -> np.ndarray:
     image = np.asarray(rgb)
@@ -243,19 +275,18 @@ def _stitch_candidate_object_views(
         col = local_index % columns
         y1 = row * tile_height
         x1 = col * tile_width
-        canvas[y1:y1 + tile_height, x1:x1 + tile_width] = tile
+        canvas[y1 : y1 + tile_height, x1 : x1 + tile_width] = tile
 
         view = _safe_getattr(object_view, "view")
         view_id = _safe_getattr(view, "view_id", local_index)
 
-        tile_descriptions.append(
-            f"tile {local_index}: view_id={view_id}"
-        )
+        tile_descriptions.append(f"tile {local_index}: view_id={view_id}")
 
     if not tile_descriptions:
         return None, []
 
     return canvas, tile_descriptions
+
 
 def _stitch_candidate_object_view_batches(
     object_views: list[Any],
@@ -267,7 +298,7 @@ def _stitch_candidate_object_view_batches(
     stitched_batches: list[tuple[np.ndarray, list[str]]] = []
 
     for start in range(0, len(all_views), views_per_stitched_image):
-        batch_views = all_views[start:start + views_per_stitched_image]
+        batch_views = all_views[start : start + views_per_stitched_image]
 
         stitched_image, tile_descriptions = _stitch_candidate_object_views(
             batch_views,
@@ -279,6 +310,7 @@ def _stitch_candidate_object_view_batches(
             stitched_batches.append((stitched_image, tile_descriptions))
 
     return stitched_batches
+
 
 def _normalize_reference(reference: Any) -> Any:
     if reference is None:
@@ -313,14 +345,19 @@ def build_candidate_text_input(query: Any, candidate: Any) -> str:
         "request": {
             "full_text": _safe_getattr(query, "query", ""),
             "requested_object": _safe_getattr(query, "target_object", ""),
-            "requested_object_attributes": _safe_getattr(query, "target_attributes", []),
+            "requested_object_attributes": _safe_getattr(
+                query, "target_attributes", []
+            ),
             "reference_object": _safe_getattr(query, "reference_object", ""),
-            "reference_object_attributes": _safe_getattr(query, "reference_attributes", []),
+            "reference_object_attributes": _safe_getattr(
+                query, "reference_attributes", []
+            ),
             "spatial_relation": _safe_getattr(query, "relation", ""),
         },
     }
 
     return json.dumps(payload, ensure_ascii=False, indent=2)
+
 
 def build_candidate_judgement_prompt(query: Any, candidate: Any):
     object_views = _safe_getattr(candidate, "object_view", []) or []
@@ -363,7 +400,11 @@ def build_candidate_judgement_prompt(query: Any, candidate: Any):
                 + "- Tile numbers are local to each stitched image.\n"
                 + "- If a required reference object or spatial relation is not visually confirmed, return unsure.\n\n"
                 + "Tile descriptions:\n"
-                + ("\n".join(all_tile_descriptions) if all_tile_descriptions else "No stitched visual evidence available.")
+                + (
+                    "\n".join(all_tile_descriptions)
+                    if all_tile_descriptions
+                    else "No stitched visual evidence available."
+                )
             ),
         },
         *image_contents,
@@ -406,8 +447,7 @@ def build_multi_candidate_selection_prompt(query: Any, candidates: list[Any]):
     text = (
         f"Query: {_safe_getattr(query, 'query', '')}\n"
         f"Here are the images of {len(candidates)} possible objects.\n"
-        "Choice images:\n"
-        + "\n".join(candidate_summaries)
+        "Choice images:\n" + "\n".join(candidate_summaries)
     )
 
     return [

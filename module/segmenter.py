@@ -33,7 +33,9 @@ class SAMSegmenter:
         - binary mask: np.ndarray of shape (H, W), dtype uint8
     """
 
-    def __init__(self, checkpoint_path: str, model_type: str = "vit_h", device: str = "cpu") -> None:
+    def __init__(
+        self, checkpoint_path: str, model_type: str = "vit_h", device: str = "cpu"
+    ) -> None:
         self.config = SAMConfig(
             checkpoint_path=checkpoint_path,
             model_type=model_type,

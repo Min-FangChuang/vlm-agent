@@ -1,31 +1,28 @@
 from __future__ import annotations
 
 import json
+from pathlib import Path
 from typing import Any
 
+import cv2
 import numpy as np
 
-MIN_BBOX_AREA_PX = 400.0
-MIN_BBOX_AREA_RATIO = 0.02
-MAX_BBOX_ASPECT_RATIO = 6.0
-MIN_EXCLUSIVE_AREA_RATIO = 0.5
-ACTIVE_EXCLUSIVE_AREA_RATIO = 0.8
-EDGE_TOUCH_MARGIN_PX = 2.0
-
 try:
-    from .module.detector import GroundingDetection, YOLOWorldDetector
+    from .module.detector import GroundingDetection, YOLOWorldDetector, draw_bbox
     from .agent_schema import CandidateMemory, CandidateObject, ObjectView, Query, View
-    from .module.matcher import PATSMatcher
+    from .module.matcher import PATSMatcher, ObjectViewMatchResult
     from .motion import Motion
     from .prompt import build_candidate_judgement_prompt
+    from .read.scannet_more_view import project_bbox3d_to_view
     from .vlm_api_bridge import call_vlm_api_messages
     from .vlm_bridge import call_vlm_messages
 except ImportError:
-    from module.detector import GroundingDetection, YOLOWorldDetector  # type: ignore
+    from module.detector import GroundingDetection, YOLOWorldDetector, draw_bbox  # type: ignore
     from agent_schema import CandidateMemory, CandidateObject, ObjectView, Query, View  # type: ignore
-    from module.matcher import PATSMatcher  # type: ignore
+    from module.matcher import PATSMatcher, ObjectViewMatchResult  # type: ignore
     from motion import Motion  # type: ignore
     from prompt import build_candidate_judgement_prompt  # type: ignore
+    from read.scannet_more_view import project_bbox3d_to_view  # type: ignore
     from vlm_bridge import call_vlm_messages  # type: ignore
     from vlm_api_bridge import call_vlm_api_messages  # type: ignore
 
@@ -34,7 +31,7 @@ class Agent:
     def __init__(
         self,
         motion: Motion | Any,
-        detector: YOLOWorldDetector | None = None,
+        detector: Any = None,
         segmenter: Any = None,
         matcher: PATSMatcher | None = None,
         mapper_2d3d: Any = None,
@@ -58,6 +55,7 @@ class Agent:
         self.detector_call_count = 0
         self.vlm_image_counts: list[int] = []
         self.max_verification_rounds = 2
+        self.bbox3d_precheck_center_distance_threshold = 200.0
 
     def vlm(self, prompt, **_: Any) -> Any:
         # OpenAI API route manual switch:
@@ -128,29 +126,6 @@ class Agent:
         )
 
     @staticmethod
-    def _build_object_view_status(
-        detections: list[GroundingDetection], keep_index: int
-    ) -> str:
-        bbox = np.asarray(detections[keep_index].bbox, dtype=np.float32).reshape(4)
-        x1, y1, x2, y2 = bbox.tolist()
-        bbox_area = max(0.0, float(x2 - x1)) * max(0.0, float(y2 - y1))
-        overlap_area = 0.0
-        for index, detection in enumerate(detections):
-            if index == keep_index:
-                continue
-            other_bbox = np.asarray(detection.bbox, dtype=np.float32).reshape(4)
-            ox1, oy1, ox2, oy2 = other_bbox.tolist()
-            inter_w = max(0.0, float(min(x2, ox2) - max(x1, ox1)))
-            inter_h = max(0.0, float(min(y2, oy2) - max(y1, oy1)))
-            overlap_area += inter_w * inter_h
-        exclusive_ratio = max(0.0, bbox_area - overlap_area) / max(bbox_area, 1.0)
-        return (
-            "support_only"
-            if exclusive_ratio < ACTIVE_EXCLUSIVE_AREA_RATIO
-            else "active"
-        )
-
-    @staticmethod
     def _other_detection_bboxes(
         detections: list[GroundingDetection],
         keep_index: int,
@@ -162,73 +137,13 @@ class Agent:
             others.append(np.asarray(detection.bbox, dtype=np.float32).reshape(4))
         return others
 
-    def _filter_detections_for_object_views(
-        self,
-        view: View,
-        detections: list[GroundingDetection],
-    ) -> list[tuple[int, GroundingDetection]]:
-        image_shape = tuple(np.asarray(view.rgb).shape[:2])
-        boxes = [
-            np.asarray(detection.bbox, dtype=np.float32).reshape(4)
-            for detection in detections
-        ]
-        kept: list[tuple[int, GroundingDetection]] = []
-        for index, bbox in enumerate(boxes):
-            x1, y1, x2, y2 = bbox.tolist()
-            width = max(0.0, float(x2 - x1))
-            height = max(0.0, float(y2 - y1))
-            bbox_area = width * height
-            overlap_area = 0.0
-            max_iou = 0.0
-            for other_index, other_bbox in enumerate(boxes):
-                if index == other_index:
-                    continue
-                ox1, oy1, ox2, oy2 = other_bbox.tolist()
-                inter_w = max(0.0, float(min(x2, ox2) - max(x1, ox1)))
-                inter_h = max(0.0, float(min(y2, oy2) - max(y1, oy1)))
-                inter_area = inter_w * inter_h
-                overlap_area += inter_area
-                other_area = max(0.0, float(ox2 - ox1)) * max(0.0, float(oy2 - oy1))
-                union_area = max(bbox_area + other_area - inter_area, 1.0)
-                max_iou = max(max_iou, inter_area / union_area)
-
-            exclusive_area = max(0.0, bbox_area - overlap_area)
-            exclusive_ratio = exclusive_area / max(bbox_area, 1.0)
-
-            bbox_area_ratio = bbox_area / max(
-                float(image_shape[0] * image_shape[1]), 1.0
-            )
-            short_side = max(min(width, height), 1.0)
-            aspect_ratio = max(width, height) / short_side
-            edge_touch_count = (
-                int(x1 <= EDGE_TOUCH_MARGIN_PX)
-                + int(y1 <= EDGE_TOUCH_MARGIN_PX)
-                + int(x2 >= image_shape[1] - EDGE_TOUCH_MARGIN_PX)
-                + int(y2 >= image_shape[0] - EDGE_TOUCH_MARGIN_PX)
-            )
-
-            keep = (
-                bbox_area >= MIN_BBOX_AREA_PX
-                and bbox_area_ratio >= MIN_BBOX_AREA_RATIO
-                and aspect_ratio <= MAX_BBOX_ASPECT_RATIO
-                and exclusive_ratio >= MIN_EXCLUSIVE_AREA_RATIO
-                and edge_touch_count <= 1
-            )
-            if keep:
-                kept.append((index, detections[index]))
-        return kept
-
     def collect_view_object_views(
         self, view: View, detections: list[GroundingDetection]
     ) -> list[ObjectView]:
         object_views: list[ObjectView] = []
-        filtered_detections = self._filter_detections_for_object_views(view, detections)
-        for detection_index, detection in filtered_detections:
+        for detection_index, detection in enumerate(detections):
             object_view = self.build_object_view(
                 view, detection, f"{view.view_id}_{detection_index}"
-            )
-            object_view.status = self._build_object_view_status(
-                detections, detection_index
             )
             object_views.append(object_view)
         return object_views
@@ -245,16 +160,124 @@ class Agent:
                 if "_" in current_object_id
                 else -1
             )
-            candidate, _ = self.candidates.add_ObjectView(
-                object_view,
-                lambda incoming_object_view, candidate_obj: (
-                    self.matcher.match_object_view_to_candidate(
+
+            def _match_with_optional_precheck(
+                incoming_object_view: ObjectView,
+                candidate_obj: CandidateObject,
+            ) -> ObjectViewMatchResult:
+                if getattr(candidate_obj, "bbox_3d", None) is None:
+                    return self.matcher.match_object_view_to_candidate(
                         incoming_object_view,
                         candidate_obj,
                     )
-                ),
+
+                if self.intrinsic_matrix is not None:
+                    best_view = candidate_obj.object_view[int(candidate_obj.best_id)]
+                    incoming_bbox = np.asarray(
+                        incoming_object_view.bbox_2d, dtype=np.float32
+                    ).reshape(4)
+                    projected_bbox = project_bbox3d_to_view(
+                        candidate_obj.bbox_3d,
+                        view=incoming_object_view.view,
+                        intrinsic_matrix=np.asarray(
+                            self.intrinsic_matrix, dtype=np.float64
+                        ),
+                        world_to_axis_align_matrix=None
+                        if self.world_to_axis_align_matrix is None
+                        else np.asarray(
+                            self.world_to_axis_align_matrix, dtype=np.float64
+                        ),
+                    )
+                    if projected_bbox is None:
+                        return ObjectViewMatchResult(
+                            total_matches=0,
+                            num_bbox_matches=0,
+                            num_mask_matches=0,
+                            num_filtered_matches=0,
+                            mask_back_project_coverage=0.0,
+                            mask_back_project_support_ratio=0.0,
+                            is_match=False,
+                        )
+
+                    projected_center = np.asarray(
+                        [
+                            (projected_bbox[0] + projected_bbox[2]) / 2.0,
+                            (projected_bbox[1] + projected_bbox[3]) / 2.0,
+                        ],
+                        dtype=np.float32,
+                    )
+                    incoming_center = np.asarray(
+                        [
+                            (incoming_bbox[0] + incoming_bbox[2]) / 2.0,
+                            (incoming_bbox[1] + incoming_bbox[3]) / 2.0,
+                        ],
+                        dtype=np.float32,
+                    )
+                    center_distance = float(
+                        np.linalg.norm(projected_center - incoming_center)
+                    )
+                    overlap_x = min(projected_bbox[2], incoming_bbox[2]) - max(
+                        projected_bbox[0], incoming_bbox[0]
+                    )
+                    overlap_y = min(projected_bbox[3], incoming_bbox[3]) - max(
+                        projected_bbox[1], incoming_bbox[1]
+                    )
+                    has_overlap = overlap_x > 0 and overlap_y > 0
+                    if (
+                        not has_overlap
+                        and center_distance
+                        > self.bbox3d_precheck_center_distance_threshold
+                    ):
+                        return ObjectViewMatchResult(
+                            total_matches=0,
+                            num_bbox_matches=0,
+                            num_mask_matches=0,
+                            num_filtered_matches=0,
+                            mask_back_project_coverage=0.0,
+                            mask_back_project_support_ratio=0.0,
+                            is_match=False,
+                        )
+
+                return self.matcher.match_object_view_to_candidate(
+                    incoming_object_view,
+                    candidate_obj,
+                )
+
+            candidate, _ = self.candidates.add_ObjectView(
+                object_view,
+                _match_with_optional_precheck,
             )
             self.ensure_candidate_best_view_mask(candidate)
+            if (
+                self.mapper_2d3d is not None
+                and self.intrinsic_matrix is not None
+                and getattr(candidate, "object_view", None)
+            ):
+                try:
+                    best_id = int(getattr(candidate, "best_id", 0))
+                    best_object_view = candidate.object_view[best_id]
+                    if best_object_view.mask_2d is None:
+                        continue
+                    projection_input = (
+                        self.mapper_2d3d.build_projection_input_from_object_view(
+                            best_object_view,
+                            intrinsic_matrix=np.asarray(
+                                self.intrinsic_matrix, dtype=np.float64
+                            ),
+                            world_to_axis_align_matrix=None
+                            if self.world_to_axis_align_matrix is None
+                            else np.asarray(
+                                self.world_to_axis_align_matrix, dtype=np.float64
+                            ),
+                            project_color=self.mapper_2d3d.project_color,
+                        )
+                    )
+                    points_3d = self.mapper_2d3d.project_mask_to_3d(projection_input)
+                    bbox_3d = self.mapper_2d3d.calculate_aabb(points_3d)
+                    candidate.points_3d = points_3d
+                    candidate.bbox_3d = bbox_3d
+                except Exception:
+                    pass
 
     def consume_view(self, view: View) -> None:
         detections = self.detect_target_objects(view)

@@ -303,11 +303,11 @@ class CandidateMemory:
         best_total_matches = -1
 
         for candidate in self.objects:
-            if any(
-                existing_object_view.view.view_id == object_view.view.view_id
-                for existing_object_view in candidate.object_view
-            ):
-                continue
+            # if any(
+            #     existing_object_view.view.view_id == object_view.view.view_id
+            #     for existing_object_view in candidate.object_view
+            # ):
+            #     continue
             result = match_fn(object_view, candidate)
             if not result.is_match:
                 continue
