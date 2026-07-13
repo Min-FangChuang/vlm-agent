@@ -16,7 +16,7 @@ class YOLOEDetector:
         self,
         model: str = "yoloe-11s-seg.pt",
         score_threshold: float = 0.25,
-        brightness_enable: bool = True,
+        brightness_enable: bool = False,
         brightness_mean_threshold: float = 40.0,
         brightness_alpha: float = 1.2,
         brightness_beta: float = 20.0,

@@ -12,7 +12,9 @@ except ImportError:
 
 
 class Read:
-    def __init__(self, scene_name: str, max_frames_per_find: int = 10, frame_skip: int = 1) -> None:
+    def __init__(
+        self, scene_name: str, max_frames_per_find: int = 10, frame_skip: int = 1
+    ) -> None:
         self.scene_name = scene_name
         self.max_frames_per_find = int(max_frames_per_find)
         self.frame_skip = max(1, int(frame_skip))
@@ -20,7 +22,9 @@ class Read:
         self.scene_dir = scannet_root / "posed_images" / scene_name
         self.alignment_dir = scannet_root / "alignment" / scene_name
         if not self.scene_dir.is_dir():
-            raise FileNotFoundError(f"Posed image scene directory does not exist: {self.scene_dir}")
+            raise FileNotFoundError(
+                f"Posed image scene directory does not exist: {self.scene_dir}"
+            )
 
         self.intrinsic_matrix = self._read_intrinsic_matrix()
         self.world_to_axis_align_matrix = self._read_world_to_axis_align_matrix()
@@ -48,7 +52,11 @@ class Read:
         image_bgr = cv2.imread(str(rgb_path), cv2.IMREAD_COLOR)
         if image_bgr is None:
             raise FileNotFoundError(f"Failed to read RGB image: {rgb_path}")
-        return cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
+        image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
+        gray = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2GRAY)
+        if float(gray.mean()) < 40.0:
+            image_rgb = cv2.convertScaleAbs(image_rgb, alpha=1.2, beta=20.0)
+        return image_rgb
 
     def _read_depth(self, frame_id: str) -> np.ndarray | None:
         depth_path = self.scene_dir / f"{frame_id}.png"
@@ -64,7 +72,9 @@ class Read:
         matrix = np.loadtxt(str(pose_path), dtype=np.float32)
         matrix = np.asarray(matrix, dtype=np.float32)
         if matrix.shape != (4, 4):
-            raise ValueError(f"Expected 4x4 pose matrix in {pose_path}, got {matrix.shape}")
+            raise ValueError(
+                f"Expected 4x4 pose matrix in {pose_path}, got {matrix.shape}"
+            )
         return matrix
 
     def _read_intrinsic_matrix(self) -> np.ndarray:
@@ -72,7 +82,9 @@ class Read:
         matrix = np.loadtxt(str(intrinsic_path), dtype=np.float32)
         matrix = np.asarray(matrix, dtype=np.float32)
         if matrix.shape != (4, 4):
-            raise ValueError(f"Expected 4x4 intrinsic matrix in {intrinsic_path}, got {matrix.shape}")
+            raise ValueError(
+                f"Expected 4x4 intrinsic matrix in {intrinsic_path}, got {matrix.shape}"
+            )
         return matrix
 
     def _read_world_to_axis_align_matrix(self) -> np.ndarray | None:
@@ -93,7 +105,9 @@ class Read:
         if axis_values is None:
             raise ValueError(f"axisAlignment not found in {alignment_path}")
         if len(axis_values) != 16:
-            raise ValueError(f"Expected 16 axisAlignment values in {alignment_path}, got {len(axis_values)}")
+            raise ValueError(
+                f"Expected 16 axisAlignment values in {alignment_path}, got {len(axis_values)}"
+            )
 
         matrix = np.asarray(axis_values, dtype=np.float32).reshape(4, 4)
         return matrix
@@ -115,9 +129,15 @@ class Read:
         if self._cursor >= len(self.frame_ids):
             return []
 
-        limit = self.max_frames_per_find if max_frames is None else min(int(max_frames), self.max_frames_per_find)
+        limit = (
+            self.max_frames_per_find
+            if max_frames is None
+            else min(int(max_frames), self.max_frames_per_find)
+        )
         limit = max(0, limit)
-        selected_ids = self.frame_ids[self._cursor : self._cursor + limit * self.frame_skip : self.frame_skip]
+        selected_ids = self.frame_ids[
+            self._cursor : self._cursor + limit * self.frame_skip : self.frame_skip
+        ]
         self._cursor += limit * self.frame_skip
         self._cursor = min(self._cursor, len(self.frame_ids))
         return [self._build_view(frame_id) for frame_id in selected_ids]
