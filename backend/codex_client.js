@@ -107,8 +107,24 @@ export class CodexClient {
   }
 
   async parseJsonResponse(response) {
+    const contentType = response.headers.get("content-type") || "";
+    if (contentType.toLowerCase().includes("text/html")) {
+      const body = await response.text();
+      const preview = body.slice(0, 300).replace(/\s+/g, " ").trim();
+      throw new Error(
+        `Expected JSON response but received HTML. content-type=${contentType} body_preview=${preview}`
+      );
+    }
+
     const body = await response.text();
     const trimmedBody = body.trimStart();
+
+    if (trimmedBody.startsWith("<html") || trimmedBody.startsWith("<!doctype html")) {
+      const preview = body.slice(0, 300).replace(/\s+/g, " ").trim();
+      throw new Error(
+        `Expected JSON response but received HTML body. content-type=${contentType || "unknown"} body_preview=${preview}`
+      );
+    }
 
     if (trimmedBody.startsWith("event:")) {
       return this._parseSseBody(trimmedBody);

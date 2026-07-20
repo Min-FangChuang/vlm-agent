@@ -174,6 +174,141 @@ def bbox_area(bbox: np.ndarray) -> float:
     return max(0.0, float(x2 - x1)) * max(0.0, float(y2 - y1))
 
 
+def _bbox_edge_side(projected_view: ProjectedView) -> str:
+    bbox = np.asarray(projected_view.projected_bbox_2d, dtype=np.float32).reshape(4)
+    frame_width = max(float(projected_view.image_size[0]), 1.0)
+    frame_height = max(float(projected_view.image_size[1]), 1.0)
+    center_x = float((bbox[0] + bbox[2]) / 2.0)
+    center_y = float((bbox[1] + bbox[3]) / 2.0)
+    center = np.asarray([center_x, center_y], dtype=np.float32)
+    edge_centers = {
+        "left": np.asarray([0.0, frame_height / 2.0], dtype=np.float32),
+        "right": np.asarray([frame_width, frame_height / 2.0], dtype=np.float32),
+        "top": np.asarray([frame_width / 2.0, 0.0], dtype=np.float32),
+        "bottom": np.asarray([frame_width / 2.0, frame_height], dtype=np.float32),
+    }
+    distances = {
+        side: float(np.linalg.norm(center - edge_center))
+        for side, edge_center in edge_centers.items()
+    }
+    return sorted(distances.items(), key=lambda pair: pair[1])[0][0]
+
+
+def _bbox_region(projected_view: ProjectedView) -> str:
+    bbox = np.asarray(projected_view.projected_bbox_2d, dtype=np.float32).reshape(4)
+    frame_width = max(float(projected_view.image_size[0]), 1.0)
+    frame_height = max(float(projected_view.image_size[1]), 1.0)
+    center_x = float((bbox[0] + bbox[2]) / 2.0)
+    center_y = float((bbox[1] + bbox[3]) / 2.0)
+    center = np.asarray([center_x, center_y], dtype=np.float32)
+    anchors = {
+        "left": np.asarray([0.0, frame_height / 2.0], dtype=np.float32),
+        "right": np.asarray([frame_width, frame_height / 2.0], dtype=np.float32),
+        "top": np.asarray([frame_width / 2.0, 0.0], dtype=np.float32),
+        "bottom": np.asarray([frame_width / 2.0, frame_height], dtype=np.float32),
+        "center": np.asarray([frame_width / 2.0, frame_height / 2.0], dtype=np.float32),
+    }
+    distances = {
+        name: float(np.linalg.norm(center - anchor)) for name, anchor in anchors.items()
+    }
+    return sorted(distances.items(), key=lambda pair: pair[1])[0][0]
+
+
+def _bbox_region_score(projected_view: ProjectedView) -> float:
+    bbox = np.asarray(projected_view.projected_bbox_2d, dtype=np.float32).reshape(4)
+    frame_width = max(float(projected_view.image_size[0]), 1.0)
+    frame_height = max(float(projected_view.image_size[1]), 1.0)
+    center_x = float((bbox[0] + bbox[2]) / 2.0)
+    center_y = float((bbox[1] + bbox[3]) / 2.0)
+    anchors = {
+        "left": np.asarray([0.0, frame_height / 2.0], dtype=np.float32),
+        "right": np.asarray([frame_width, frame_height / 2.0], dtype=np.float32),
+        "top": np.asarray([frame_width / 2.0, 0.0], dtype=np.float32),
+        "bottom": np.asarray([frame_width / 2.0, frame_height], dtype=np.float32),
+        "center": np.asarray([frame_width / 2.0, frame_height / 2.0], dtype=np.float32),
+    }
+    center = np.asarray([center_x, center_y], dtype=np.float32)
+    region = _bbox_region(projected_view)
+    return float(np.linalg.norm(center - anchors[region]))
+
+
+def _bbox_missing_edges(
+    projected_view: ProjectedView, margin: float = 16.0
+) -> set[str]:
+    bbox = np.asarray(projected_view.projected_bbox_2d, dtype=np.float32).reshape(4)
+    frame_width = max(float(projected_view.image_size[0]), 1.0)
+    frame_height = max(float(projected_view.image_size[1]), 1.0)
+    x1, y1, x2, y2 = bbox.tolist()
+    edges: set[str] = set()
+    if x1 <= margin:
+        edges.add("left")
+    if x2 >= frame_width - margin:
+        edges.add("right")
+    if y1 <= margin:
+        edges.add("top")
+    if y2 >= frame_height - margin:
+        edges.add("bottom")
+    return edges
+
+
+def _bbox_covered_edges(
+    projected_view: ProjectedView, margin: float = 16.0
+) -> set[str]:
+    return {"left", "right", "top", "bottom"} - _bbox_missing_edges(
+        projected_view, margin=margin
+    )
+
+
+def _is_full_in_frame(projected_view: ProjectedView, margin: float = 16.0) -> bool:
+    return len(_bbox_missing_edges(projected_view, margin=margin)) == 0
+
+
+def _bbox_dimensions(bbox: np.ndarray) -> tuple[float, float]:
+    x1, y1, x2, y2 = bbox_to_array(bbox).tolist()
+    return max(0.0, float(x2 - x1)), max(0.0, float(y2 - y1))
+
+
+def _is_edge_touching_small_bbox(
+    projected_view: ProjectedView,
+    *,
+    min_side_threshold: float = 100.0,
+    margin: float = 16.0,
+) -> bool:
+    if not _bbox_missing_edges(projected_view, margin=margin):
+        return False
+    width, height = _bbox_dimensions(projected_view.projected_bbox_2d)
+    return width < float(min_side_threshold) or height < float(min_side_threshold)
+
+
+def _expand_bbox_toward_edges(
+    bbox: np.ndarray,
+    *,
+    target_edges: set[str],
+    image_size: tuple[int, int],
+    scale: float = 0.5,
+) -> np.ndarray:
+    bbox_array = bbox_to_array(bbox)
+    x1, y1, x2, y2 = bbox_array.tolist()
+    width, height = _bbox_dimensions(bbox_array)
+    frame_width = max(int(image_size[0]), 1)
+    frame_height = max(int(image_size[1]), 1)
+
+    if "left" in target_edges:
+        x1 -= width * float(scale)
+    if "right" in target_edges:
+        x2 += width * float(scale)
+    if "top" in target_edges:
+        y1 -= height * float(scale)
+    if "bottom" in target_edges:
+        y2 += height * float(scale)
+
+    x1 = float(np.clip(x1, 0.0, frame_width - 1.0))
+    y1 = float(np.clip(y1, 0.0, frame_height - 1.0))
+    x2 = float(np.clip(x2, 0.0, frame_width - 1.0))
+    y2 = float(np.clip(y2, 0.0, frame_height - 1.0))
+    return np.asarray([x1, y1, x2, y2], dtype=np.float32)
+
+
 def project_bbox3d_to_view(
     bbox_3d: Any,
     *,
@@ -300,6 +435,8 @@ def _depth_visibility_stats(
                 "depth_missing_points": 0,
                 "visible_ratio": 0.0,
                 "occluded_ratio": 0.0,
+                "projected_depths": np.empty((0,), dtype=np.float64),
+                "sampled_depths": np.empty((0,), dtype=np.float64),
             },
         )
 
@@ -331,6 +468,8 @@ def _depth_visibility_stats(
                 "depth_missing_points": 0,
                 "visible_ratio": 0.0,
                 "occluded_ratio": 0.0,
+                "projected_depths": np.full((uv.shape[0],), np.nan, dtype=np.float64),
+                "sampled_depths": np.full((uv.shape[0],), np.nan, dtype=np.float64),
             },
         )
 
@@ -353,10 +492,13 @@ def _depth_visibility_stats(
     nearest_iy = iy[nearest_local_indices]
     nearest_z = in_frame_z[nearest_local_indices]
 
-    depth_values = np.asarray(
-        depth_image[nearest_iy, nearest_ix], dtype=np.float64
-    ) * float(depth_scale)
-    depth_missing = depth_values <= 0
+    raw_depth_values = np.asarray(depth_image[nearest_iy, nearest_ix], dtype=np.float64)
+    valid_depth_values = np.isfinite(raw_depth_values) & (raw_depth_values > 0)
+    depth_values = np.full(raw_depth_values.shape, np.nan, dtype=np.float64)
+    depth_values[valid_depth_values] = raw_depth_values[valid_depth_values] * float(
+        depth_scale
+    )
+    depth_missing = (~np.isfinite(depth_values)) | (depth_values <= 0)
     occluded = (~depth_missing) & (depth_values < (nearest_z - visibility_margin))
     visible = (~depth_missing) & (~occluded)
 
@@ -389,6 +531,8 @@ def _depth_visibility_stats(
             "depth_missing_points": missing_count,
             "visible_ratio": float(visible_count / max(in_frame_count, 1)),
             "occluded_ratio": float(occluded_count / max(in_frame_count, 1)),
+            "projected_depths": projected_depths,
+            "sampled_depths": sampled_depths,
         },
     )
 
@@ -467,81 +611,138 @@ def reproject_candidate_to_scene_views(
     return projected_views
 
 
-def select_distinct_position_views(
+def select_projected_views_forward(
     projected_views: list[ProjectedView],
     num_views: int,
-    object_center_xy: np.ndarray | None = None,
-    angle_threshold_rad: float = np.pi / 6.0,
-    existing_view_ids: set[str] | None = None,
-    existing_angles: list[float] | None = None,
-    max_fallback_distance: float | None = None,
+    object_center_xy: np.ndarray,
+    existing_view_ids: set[str],
+    existing_angles: list[float],
+    covered_edges: set[str],
+    max_fallback_distance: float,
 ) -> list[ProjectedView]:
-    def _bbox_side_score(projected_view: ProjectedView) -> float:
-        bbox = np.asarray(projected_view.projected_bbox_2d, dtype=np.float32).reshape(4)
-        frame_width = max(float(projected_view.image_size[0]), 1.0)
-        center_x = float((bbox[0] + bbox[2]) / 2.0)
-        horizontal_side = _bbox_horizontal_side(projected_view)
-        if horizontal_side == "left":
-            return center_x
-        if horizontal_side == "right":
-            return max(frame_width - center_x, 0.0)
-        return abs(center_x - (frame_width / 2.0))
-
-    def _target_distance(projected_view: ProjectedView) -> float:
-        if object_center_xy is None:
-            return float("inf")
-        return float(
-            np.linalg.norm(
-                np.asarray(projected_view.camera_xy, dtype=np.float64)
-                - np.asarray(object_center_xy, dtype=np.float64)
-            )
-        )
-
-    def _bbox_horizontal_side(projected_view: ProjectedView) -> str:
-        bbox = np.asarray(projected_view.projected_bbox_2d, dtype=np.float32).reshape(4)
-        frame_width = max(float(projected_view.image_size[0]), 1.0)
-        center_x = float((bbox[0] + bbox[2]) / 2.0)
-        normalized_x = center_x / frame_width
-        if normalized_x <= 0.25:
-            return "left"
-        if normalized_x >= 0.75:
-            return "right"
-        return "center"
-
     sorted_views = sorted(
         projected_views, key=lambda item: item.bbox_area, reverse=True
     )
+    used_view_ids = set(existing_view_ids)
     selected: list[ProjectedView] = []
-    selected_angles: list[float] = [float(angle) for angle in (existing_angles or [])]
-    used_view_ids: set[str] = set(existing_view_ids or set())
-    selected_horizontal_sides: set[str] = set()
+    selected_angles: list[float] = [float(angle) for angle in existing_angles]
+
+    def angle_novelty(item: ProjectedView) -> float:
+        item_angle = view_angle_relative_to_object(item.camera_xy, object_center_xy)
+        if not selected_angles:
+            return float(np.pi)
+        return min(
+            float(
+                abs(
+                    np.arctan2(
+                        np.sin(item_angle - existing_angle),
+                        np.cos(item_angle - existing_angle),
+                    )
+                )
+            )
+            for existing_angle in selected_angles
+        )
+
+    remaining = [item for item in sorted_views if item.view_id not in used_view_ids]
+
+    while len(selected) < int(num_views) and remaining:
+        missing_edges = {"left", "right", "top", "bottom"} - covered_edges
+
+        item = None
+        if missing_edges:
+            edge_candidates = [
+                item for item in remaining if _bbox_covered_edges(item) & missing_edges
+            ]
+            if edge_candidates:
+                item = sorted(
+                    edge_candidates,
+                    key=lambda view: (
+                        -len(_bbox_covered_edges(view) & missing_edges),
+                        not _is_full_in_frame(view),
+                        -float(view.bbox_area),
+                    ),
+                )[0]
+
+        if item is None:
+            candidates = remaining
+            angle_candidates = [
+                item for item in candidates if angle_novelty(item) >= np.pi / 6.0
+            ]
+            if angle_candidates:
+                item = sorted(
+                    angle_candidates,
+                    key=lambda view: (
+                        not _is_full_in_frame(view),
+                        -angle_novelty(view),
+                        -float(view.bbox_area),
+                    ),
+                )[0]
+            else:
+                full_views = [item for item in candidates if _is_full_in_frame(item)]
+                if full_views:
+                    item = sorted(full_views, key=lambda view: -float(view.bbox_area))[
+                        0
+                    ]
+                else:
+                    item = sorted(candidates, key=lambda view: -float(view.bbox_area))[
+                        0
+                    ]
+
+        if item is None:
+            break
+
+        selected.append(
+            ProjectedView(
+                view_id=item.view_id,
+                image_file=item.image_file,
+                projected_bbox_2d=np.asarray(item.projected_bbox_2d, dtype=np.float32),
+                bbox_area=float(item.bbox_area),
+                camera_xy=np.asarray(item.camera_xy, dtype=np.float64),
+                image_size=(int(item.image_size[0]), int(item.image_size[1])),
+                selection_reason="forward_priority",
+            )
+        )
+        used_view_ids.add(item.view_id)
+        covered_edges.update(_bbox_covered_edges(item))
+        selected_angles.append(
+            view_angle_relative_to_object(item.camera_xy, object_center_xy)
+        )
+        remaining = [
+            candidate for candidate in remaining if candidate.view_id != item.view_id
+        ]
+
+    return selected
+
+
+def select_projected_views_yaw(
+    projected_views: list[ProjectedView],
+    num_views: int,
+    object_center_xy: np.ndarray,
+    existing_view_ids: set[str],
+    max_fallback_distance: float,
+) -> list[ProjectedView]:
+    filtered_views = [
+        item
+        for item in projected_views
+        if float(
+            np.linalg.norm(
+                np.asarray(item.camera_xy, dtype=np.float64)
+                - np.asarray(object_center_xy, dtype=np.float64)
+            )
+        )
+        <= float(max_fallback_distance)
+    ]
+    sorted_views = sorted(filtered_views or projected_views, key=_bbox_region_score)
+    selected: list[ProjectedView] = []
+    used_view_ids = set(existing_view_ids)
+    covered_regions: set[str] = set()
     for item in sorted_views:
         if len(selected) >= int(num_views):
             break
         if item.view_id in used_view_ids:
             continue
-        if object_center_xy is not None:
-            item_angle = view_angle_relative_to_object(item.camera_xy, object_center_xy)
-            min_angle = min(
-                (
-                    float(
-                        abs(
-                            np.arctan2(
-                                np.sin(item_angle - existing_angle),
-                                np.cos(item_angle - existing_angle),
-                            )
-                        )
-                    )
-                    for existing_angle in selected_angles
-                ),
-                default=float("inf"),
-            )
-            angle_conflict = min_angle < angle_threshold_rad
-        else:
-            item_angle = None
-            min_angle = float("nan")
-            angle_conflict = False
-        if angle_conflict:
+        region = _bbox_region(item)
+        if region in covered_regions:
             continue
         selected.append(
             ProjectedView(
@@ -551,44 +752,18 @@ def select_distinct_position_views(
                 bbox_area=float(item.bbox_area),
                 camera_xy=np.asarray(item.camera_xy, dtype=np.float64),
                 image_size=(int(item.image_size[0]), int(item.image_size[1])),
-                selection_reason="distinct_angle",
+                selection_reason="yaw_region_priority",
             )
         )
-        if item_angle is not None:
-            selected_angles.append(item_angle)
         used_view_ids.add(item.view_id)
-        selected_horizontal_sides.add(_bbox_horizontal_side(item))
+        covered_regions.add(region)
 
     if len(selected) < int(num_views):
-        remaining_items = [
-            item for item in sorted_views if item.view_id not in used_view_ids
-        ]
-        while len(selected) < int(num_views) and remaining_items:
-            gated_remaining_items = remaining_items
-            if max_fallback_distance is not None and object_center_xy is not None:
-                gated_remaining_items = [
-                    item
-                    for item in remaining_items
-                    if _target_distance(item) <= float(max_fallback_distance)
-                ]
-            ranking_items = gated_remaining_items or remaining_items
-            fallback_sorted_views = sorted(
-                ranking_items,
-                key=lambda item: (
-                    _bbox_horizontal_side(item) in selected_horizontal_sides,
-                    _bbox_side_score(item),
-                    -float(item.bbox_area),
-                ),
-            )
-            item = fallback_sorted_views[0]
-            remaining_items = [
-                candidate_item
-                for candidate_item in remaining_items
-                if candidate_item.view_id != item.view_id
-            ]
+        for item in sorted_views:
             if len(selected) >= int(num_views):
                 break
-            horizontal_side = _bbox_horizontal_side(item)
+            if item.view_id in used_view_ids:
+                continue
             selected.append(
                 ProjectedView(
                     view_id=item.view_id,
@@ -599,12 +774,10 @@ def select_distinct_position_views(
                     bbox_area=float(item.bbox_area),
                     camera_xy=np.asarray(item.camera_xy, dtype=np.float64),
                     image_size=(int(item.image_size[0]), int(item.image_size[1])),
-                    selection_reason="side_fallback",
+                    selection_reason="yaw_fallback",
                 )
             )
             used_view_ids.add(item.view_id)
-            selected_horizontal_sides.add(horizontal_side)
-
     return selected
 
 
@@ -614,6 +787,7 @@ def complete_candidate_with_more_views(
     candidate: Any,
     num_bootstrap_views: int = 3,
     max_fallback_distance: float = 1.5,
+    action_mode: str = "forward",
 ) -> Any:
     if (
         agent.segmenter is None
@@ -640,6 +814,7 @@ def complete_candidate_with_more_views(
     object_view_type = type(candidate.object_view[0])
     existing_view_ids: set[str] = set()
     existing_angles: list[float] = []
+    covered_edges: set[str] = set()
     for object_view in getattr(candidate, "object_view", []) or []:
         view = getattr(object_view, "view", None)
         if view is None:
@@ -651,6 +826,19 @@ def complete_candidate_with_more_views(
         existing_angles.append(
             view_angle_relative_to_object(camera_position_xy, object_center_xy)
         )
+        if getattr(object_view, "bbox_2d", None) is not None:
+            proxy_view = ProjectedView(
+                view_id=str(view.view_id),
+                image_file=f"{view.view_id}.jpg",
+                projected_bbox_2d=np.asarray(object_view.bbox_2d, dtype=np.float32),
+                bbox_area=float(bbox_area(object_view.bbox_2d)),
+                camera_xy=np.asarray(camera_position_xy, dtype=np.float64),
+                image_size=(int(view.rgb.shape[1]), int(view.rgb.shape[0])),
+            )
+            covered_edges.update(_bbox_covered_edges(proxy_view))
+
+    original_missing_edges = {"left", "right", "top", "bottom"} - covered_edges
+    should_segment_bootstrap_views = bool(original_missing_edges)
 
     projected_views = reproject_candidate_to_scene_views(
         frame_ids=list(frame_ids),
@@ -660,14 +848,24 @@ def complete_candidate_with_more_views(
         points_3d=np.asarray(points_3d, dtype=np.float64),
     )
 
-    bootstrap_views = select_distinct_position_views(
-        projected_views,
-        num_views=int(num_bootstrap_views),
-        object_center_xy=object_center_xy,
-        existing_view_ids=existing_view_ids,
-        existing_angles=existing_angles,
-        max_fallback_distance=float(max_fallback_distance),
-    )
+    if action_mode == "yaw":
+        bootstrap_views = select_projected_views_yaw(
+            projected_views,
+            num_views=int(num_bootstrap_views),
+            object_center_xy=object_center_xy,
+            existing_view_ids=existing_view_ids,
+            max_fallback_distance=float(max_fallback_distance),
+        )
+    else:
+        bootstrap_views = select_projected_views_forward(
+            projected_views,
+            num_views=int(num_bootstrap_views),
+            object_center_xy=object_center_xy,
+            existing_view_ids=existing_view_ids,
+            existing_angles=existing_angles,
+            covered_edges=covered_edges,
+            max_fallback_distance=float(max_fallback_distance),
+        )
 
     bootstrap_object_views: list[Any] = []
     for projected_view in bootstrap_views:
@@ -675,19 +873,56 @@ def complete_candidate_with_more_views(
         projected_bbox = np.asarray(
             projected_view.projected_bbox_2d, dtype=np.float32
         ).reshape(4)
-        detections = agent.detect_target_objects(view)
-        chosen_detection, _ = choose_detection_for_projected_bbox(
-            detections, projected_bbox
-        )
-        refined_bbox = (
-            bbox_to_array(chosen_detection.bbox)
-            if chosen_detection is not None
-            else projected_bbox
-        )
-        mask = agent.segmenter.segment_from_box(view.rgb, refined_bbox.tolist())
-        final_bbox = bbox_from_mask(mask)
-        if final_bbox is None:
-            final_bbox = refined_bbox
+        is_yaw = action_mode == "yaw"
+        is_support_only = _is_edge_touching_small_bbox(projected_view)
+
+        if is_support_only:
+            final_bbox = projected_bbox
+            mask = None
+            status = "support_only"
+            source = (
+                "projected_yaw_support_only"
+                if is_yaw
+                else "projected_bootstrap_support_only"
+            )
+        else:
+            detections = agent.detect_target_objects(view)
+            chosen_detection, _ = choose_detection_for_projected_bbox(
+                detections, projected_bbox
+            )
+            if chosen_detection is not None:
+                refined_bbox = bbox_to_array(chosen_detection.bbox)
+            else:
+                refined_bbox = projected_bbox
+
+            if should_segment_bootstrap_views and chosen_detection is None:
+                segment_bbox = _expand_bbox_toward_edges(
+                    refined_bbox,
+                    target_edges=original_missing_edges,
+                    image_size=(int(view.rgb.shape[1]), int(view.rgb.shape[0])),
+                    scale=0.5,
+                )
+                mask = agent.segmenter.segment_from_box(view.rgb, segment_bbox.tolist())
+                final_bbox = bbox_from_mask(mask)
+                if final_bbox is None:
+                    final_bbox = refined_bbox
+            else:
+                mask = None
+                final_bbox = refined_bbox
+
+            status = "active"
+            if is_yaw:
+                source = (
+                    "projected_yaw_segmented"
+                    if mask is not None
+                    else "projected_yaw_refined"
+                )
+            else:
+                source = (
+                    "projected_bootstrap_segmented"
+                    if mask is not None
+                    else "projected_bootstrap_refined"
+                )
         bootstrap_object_views.append(
             object_view_type(
                 object_id=f"bootstrap_{projected_view.view_id}",
@@ -695,14 +930,15 @@ def complete_candidate_with_more_views(
                 score=1.0,
                 view=view,
                 bbox_2d=final_bbox,
-                mask_2d=np.asarray(mask, dtype=np.uint8),
+                mask_2d=None if mask is None else np.asarray(mask, dtype=np.uint8),
                 points_3d=None,
-                status="active",
-                source="projected_bootstrap",
+                status=status,
+                source=source,
             )
         )
 
     for object_view in bootstrap_object_views:
         candidate.add_object_view(object_view)
+    agent.ensure_candidate_best_view_mask(candidate)
     candidate.status = "expanded"
     return candidate

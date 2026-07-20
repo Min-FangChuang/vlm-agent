@@ -13,12 +13,12 @@ try:
         _candidate_snapshot,
         _select_unsure_candidate,
     )
-    from module.detector import YOLOWorldDetector
+    from module.detector_yoloe import YOLOEDetector
     from module.projection import TwoDToThreeDTool
     from module.segmenter import SAMSegmenter
+    from path_utils import slugify_query
     from prompt import build_candidate_summary
     from read import Read
-    from read.scannet_more_view import complete_candidate_with_more_views
 except ImportError:
     from .agent import Agent
     from .eval_read_test import (
@@ -26,12 +26,12 @@ except ImportError:
         _candidate_snapshot,
         _select_unsure_candidate,
     )
-    from .module.detector import YOLOWorldDetector
+    from .module.detector_yoloe import YOLOEDetector
     from .module.projection import TwoDToThreeDTool
     from .module.segmenter import SAMSegmenter
+    from .path_utils import slugify_query
     from .prompt import build_candidate_summary
     from .read import Read
-    from .read.scannet_more_view import complete_candidate_with_more_views
 
 
 if __name__ == "__main__":
@@ -57,7 +57,7 @@ if __name__ == "__main__":
         help="Sample every Nth frame when building views",
     )
     parser.add_argument(
-        "--max-units", type=int, default=8, help="Maximum read units to process"
+        "--max-units", type=int, default=4, help="Maximum read units to process"
     )
     parser.add_argument(
         "--sam-checkpoint",
@@ -76,15 +76,20 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--detector-model",
-        default="yolov8x-worldv2.pt",
-        help="YOLO-World model checkpoint name or path",
+        default="yoloe-11s-seg.pt",
+        help="YOLOE checkpoint name or path",
+    )
+    parser.add_argument(
+        "--visualize-raw-3d",
+        action="store_true",
+        help="Visualize raw projected 3D points for the final selected candidate before filtering.",
     )
     args = parser.parse_args()
 
     reader = Read(
         args.scene, max_frames_per_find=args.max_frames, frame_skip=args.frame_skip
     )
-    detector = YOLOWorldDetector(model=args.detector_model)
+    detector = YOLOEDetector(model=args.detector_model or "yoloe-11s-seg.pt")
     segmenter = SAMSegmenter(
         checkpoint_path=args.sam_checkpoint,
         model_type=args.sam_model_type,
@@ -101,7 +106,7 @@ if __name__ == "__main__":
     )
     agent.reset(args.query)
     debug_output_dir = (
-        Path("output") / "candidate_debug" / args.scene / "_".join(args.query.split())
+        Path("output") / "candidate_debug" / args.scene / slugify_query(args.query)
     )
 
     def save_candidate_snapshot(prefix: str, candidate) -> None:
@@ -161,27 +166,7 @@ if __name__ == "__main__":
                 break
 
             processed_any_candidate = True
-            decision = agent.verify_candidate_once(pending_candidate)
-            if decision == "unsure" and agent.can_retry_candidate(pending_candidate):
-                save_candidate_snapshot(
-                    f"unit_{unit_index:03d}_before_more_view",
-                    pending_candidate,
-                )
-                pending_candidate = complete_candidate_with_more_views(
-                    agent=agent,
-                    candidate=pending_candidate,
-                )
-                save_candidate_snapshot(
-                    f"unit_{unit_index:03d}_after_more_view",
-                    pending_candidate,
-                )
-                decision = agent.verify_candidate_once(pending_candidate)
-                if decision not in {"true", "false"}:
-                    pending_candidate.status = "unsure"
-                save_candidate_snapshot(
-                    f"unit_{unit_index:03d}_after_retry",
-                    pending_candidate,
-                )
+            pending_candidate, decision = agent.verify_candidate_once(pending_candidate)
             final_decision = decision
             print(f"decision={decision}")
             if decision == "true":
@@ -211,11 +196,29 @@ if __name__ == "__main__":
                 print("before_complete_candidate_masks")
                 agent.complete_candidate_masks(selected_candidate)
                 print("after_complete_candidate_masks")
+                if args.visualize_raw_3d:
+                    projection_inputs = (
+                        agent.mapper_2d3d.build_projection_inputs_from_candidate(
+                            selected_candidate,
+                            intrinsic_matrix=agent.intrinsic_matrix,
+                            world_to_axis_align_matrix=agent.world_to_axis_align_matrix,
+                        )
+                    )
+                    raw_points = agent.mapper_2d3d.project_views_to_3d(
+                        projection_inputs
+                    )
+                    raw_bbox = agent.mapper_2d3d.calculate_aabb(raw_points)
+                    try:
+                        print("visualize_raw_points")
+                        TwoDToThreeDTool.visualize_points_and_aabb(raw_points, raw_bbox)
+                    except ImportError as exc:
+                        print(f"raw_visualization_skipped={exc}")
                 print("before_map_candidate_to_3d")
                 points_3d, bbox_3d = agent.map_candidate_to_3d(selected_candidate)
                 selected_candidate.points_3d = points_3d
                 selected_candidate.bbox_3d = bbox_3d
                 print("after_map_candidate_to_3d")
+                print(f"final_bbox={np.asarray(bbox_3d).tolist()}")
                 print(f"bbox_3d={np.asarray(bbox_3d).tolist()}")
                 try:
                     TwoDToThreeDTool.visualize_points_and_aabb(points_3d, bbox_3d)

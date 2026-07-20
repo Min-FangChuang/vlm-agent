@@ -12,9 +12,9 @@ from PIL import Image
 import cv2
 
 try:
-    from .module.detector import draw_bbox
+    from .module.detector_yoloe import draw_bbox
 except ImportError:
-    from module.detector import draw_bbox  # type: ignore
+    from module.detector_yoloe import draw_bbox  # type: ignore
 
 
 def _safe_getattr(value: Any, name: str, default: Any = None) -> Any:
@@ -59,6 +59,65 @@ def _draw_candidate_object_view(object_view: Any) -> np.ndarray:
     return image
 
 
+def _bbox_to_list(bbox: Any) -> list[float] | None:
+    if bbox is None:
+        return None
+    try:
+        return np.asarray(bbox, dtype=np.float32).reshape(4).tolist()
+    except Exception:
+        return None
+
+
+def _infer_object_view_analysis(object_view: Any) -> dict[str, Any]:
+    source = str(_safe_getattr(object_view, "source", "detected"))
+    status = str(_safe_getattr(object_view, "status", "active"))
+    mask = _safe_getattr(object_view, "mask_2d")
+    mask_present = mask is not None
+
+    support_only_sources = {
+        "projected_yaw_support_only",
+        "projected_bootstrap_support_only",
+    }
+    segmented_sources = {
+        "projected_bootstrap_segmented",
+        "projected_yaw_segmented",
+    }
+    refined_sources = {
+        "projected_bootstrap_refined",
+        "projected_yaw_refined",
+    }
+
+    if source == "detected":
+        did_detect = True
+        did_segment = bool(mask_present)
+        refine_mode = "detected"
+    elif source in segmented_sources:
+        did_detect = True
+        did_segment = True
+        refine_mode = "segment_from_refined_bbox"
+    elif source in refined_sources:
+        did_detect = True
+        did_segment = False
+        refine_mode = "detection_or_projected_bbox"
+    elif source in support_only_sources or status == "support_only":
+        did_detect = False
+        did_segment = False
+        refine_mode = "none"
+    else:
+        did_detect = bool(mask_present)
+        did_segment = bool(mask_present)
+        refine_mode = "none"
+
+    return {
+        "source": source,
+        "status": status,
+        "mask_present": bool(mask_present),
+        "did_detect": bool(did_detect),
+        "did_segment": bool(did_segment),
+        "refine_mode": refine_mode,
+    }
+
+
 def _save_candidate_views(candidate: Any) -> Path | None:
     object_views = _safe_getattr(candidate, "object_view", []) or []
     if not object_views:
@@ -69,6 +128,8 @@ def _save_candidate_views(candidate: Any) -> Path | None:
         "label": str(_safe_getattr(candidate, "label", "unknown")),
         "status": str(_safe_getattr(candidate, "status", "unknown")),
         "best_id": int(_safe_getattr(candidate, "best_id", -1)),
+        "verification_round": int(_safe_getattr(candidate, "verification_round", 0)),
+        "last_suggested_action": _safe_getattr(candidate, "last_suggested_action"),
         "num_object_views": len(object_views),
         "object_views": [],
     }
@@ -78,21 +139,23 @@ def _save_candidate_views(candidate: Any) -> Path | None:
         view_id = _safe_getattr(view, "view_id", index)
         file_path = output_dir / f"{index:03d}_{view_id}.png"
         cv2.imwrite(str(file_path), cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
-        summary_payload["object_views"].append(
-            {
-                "view_id": str(view_id),
-                "bbox_2d": np.asarray(
-                    _safe_getattr(
-                        object_view,
-                        "bbox_2d",
-                        np.zeros((4,), dtype=np.float32),
-                    ),
-                    dtype=np.float32,
+        object_view_summary = {
+            "index": int(index),
+            "view_id": str(view_id),
+            "bbox_2d": _bbox_to_list(
+                _safe_getattr(
+                    object_view,
+                    "bbox_2d",
+                    np.zeros((4,), dtype=np.float32),
                 )
-                .reshape(4)
-                .tolist(),
-            }
-        )
+            ),
+            "image_file": file_path.name,
+            "label": str(_safe_getattr(object_view, "label", "object")),
+            "score": float(_safe_getattr(object_view, "score", 0.0)),
+            "is_best_view": bool(index == int(_safe_getattr(candidate, "best_id", -1))),
+        }
+        object_view_summary.update(_infer_object_view_analysis(object_view))
+        summary_payload["object_views"].append(object_view_summary)
     (output_dir / "candidate_summary.json").write_text(
         json.dumps(summary_payload, ensure_ascii=False, indent=2),
         encoding="utf-8",
@@ -156,6 +219,11 @@ Allowed values:
 - decision: true / false / unsure
 - confidence: high / medium / low
 - suggested_action: forward / yaw / stop
+
+Suggested action semantics:
+- forward: request more complete target views or additional target-centered viewpoints from different angles
+- yaw: request nearby environment/context views around the target object to better judge surrounding reference objects or relations
+- stop: no additional view request is needed
 """
 
 MULTI_CANDIDATE_SELECT_SYSTEM_PROMPT = """Imagine you are in a room and you are asked to find one object.

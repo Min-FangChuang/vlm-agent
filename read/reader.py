@@ -7,8 +7,14 @@ import numpy as np
 
 try:
     from ..agent_schema import View
+    from .scannet_more_view import (
+        complete_candidate_with_more_views as _complete_candidate_with_more_views,
+    )
 except ImportError:
     from agent_schema import View  # type: ignore
+    from read.scannet_more_view import (
+        complete_candidate_with_more_views as _complete_candidate_with_more_views,
+    )  # type: ignore
 
 
 class Read:
@@ -39,8 +45,17 @@ class Read:
         for jpg_path in sorted(self.scene_dir.glob("*.jpg")):
             frame_id = jpg_path.stem
             txt_path = self.scene_dir / f"{frame_id}.txt"
-            if txt_path.is_file():
-                frame_ids.append(frame_id)
+            if not txt_path.is_file():
+                continue
+            try:
+                pose = self._read_camera_to_world(frame_id)
+            except Exception as exc:
+                print(f"[Read] skip frame_id={frame_id} invalid_pose_read={exc}")
+                continue
+            if not np.all(np.isfinite(pose)):
+                print(f"[Read] skip frame_id={frame_id} invalid_pose_nonfinite")
+                continue
+            frame_ids.append(frame_id)
         frame_ids.sort(key=int)
         return frame_ids
 
@@ -75,6 +90,8 @@ class Read:
             raise ValueError(
                 f"Expected 4x4 pose matrix in {pose_path}, got {matrix.shape}"
             )
+        if not np.all(np.isfinite(matrix)):
+            raise ValueError(f"Pose matrix contains non-finite values: {pose_path}")
         return matrix
 
     def _read_intrinsic_matrix(self) -> np.ndarray:
@@ -144,3 +161,15 @@ class Read:
 
     def look_around(self) -> list[View]:
         return self.find()
+
+    def complete_candidate_with_more_views(
+        self,
+        agent: object,
+        candidate: object,
+        action_mode: str = "forward",
+    ):
+        return _complete_candidate_with_more_views(
+            agent=agent,
+            candidate=candidate,
+            action_mode=action_mode,
+        )

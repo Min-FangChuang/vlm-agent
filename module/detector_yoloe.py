@@ -1,14 +1,72 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Any
 
 import cv2
 import numpy as np
 
-try:
-    from .detector import GroundingDetection, YOLOWorldDetector, _normalize_rgb_image
-except ImportError:
-    from detector import GroundingDetection, YOLOWorldDetector, _normalize_rgb_image  # type: ignore
+
+def _normalize_rgb_image(image: np.ndarray) -> np.ndarray:
+    if image.ndim != 3 or image.shape[2] != 3:
+        raise ValueError(f"Expected HxWx3 RGB image, got shape={image.shape}")
+    if image.dtype == np.uint8:
+        return image
+    clipped = np.clip(image, 0, 255)
+    return clipped.astype(np.uint8)
+
+
+@dataclass
+class GroundingDetection:
+    bbox: np.ndarray
+    label: str
+    score: float
+
+
+def draw_bbox(
+    rgb: np.ndarray,
+    bbox: np.ndarray | list[float] | tuple[float, float, float, float],
+    target_object: str,
+    color: tuple[int, int, int] = (0, 255, 0),
+    thickness: int = 2,
+) -> np.ndarray:
+    image_rgb = _normalize_rgb_image(rgb).copy()
+    box = np.asarray(bbox, dtype=np.float32).reshape(-1)
+    if box.shape[0] != 4:
+        raise ValueError(f"Expected bbox with 4 values, got shape={box.shape}")
+
+    x1, y1, x2, y2 = [int(round(value)) for value in box.tolist()]
+    image_bgr = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2BGR)
+    cv2.rectangle(image_bgr, (x1, y1), (x2, y2), color, thickness)
+
+    label = str(target_object)
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    font_scale = 0.6
+    text_thickness = max(1, thickness)
+    (text_width, text_height), baseline = cv2.getTextSize(
+        label, font, font_scale, text_thickness
+    )
+
+    text_x = max(0, x1)
+    text_y = y1 - 8
+    if text_y - text_height - baseline < 0:
+        text_y = min(image_bgr.shape[0] - baseline - 1, y1 + text_height + 8)
+
+    bg_x2 = min(image_bgr.shape[1] - 1, text_x + text_width + 8)
+    bg_y1 = max(0, text_y - text_height - baseline - 4)
+    bg_y2 = min(image_bgr.shape[0] - 1, text_y + 4)
+    cv2.rectangle(image_bgr, (text_x, bg_y1), (bg_x2, bg_y2), color, -1)
+    cv2.putText(
+        image_bgr,
+        label,
+        (text_x + 4, max(text_height, text_y - 2)),
+        font,
+        font_scale,
+        (0, 0, 0),
+        text_thickness,
+        cv2.LINE_AA,
+    )
+    return cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
 
 
 class YOLOEDetector:
@@ -51,6 +109,22 @@ class YOLOEDetector:
         inter_w = max(0.0, min(ax2, bx2) - max(ax1, bx1))
         inter_h = max(0.0, min(ay2, by2) - max(ay1, by1))
         return inter_w * inter_h
+
+    @staticmethod
+    def _resolve_label(names: Any, class_id: int, default: str) -> str:
+        if isinstance(names, dict):
+            return str(names.get(class_id, default))
+        if isinstance(names, (list, tuple)) and 0 <= class_id < len(names):
+            return str(names[class_id])
+        return default
+
+    @staticmethod
+    def _to_numpy(value: Any) -> np.ndarray:
+        if hasattr(value, "detach"):
+            value = value.detach()
+        if hasattr(value, "cpu"):
+            value = value.cpu()
+        return np.asarray(value)
 
     def _filter_detections_like_agent(
         self,
@@ -153,9 +227,9 @@ class YOLOEDetector:
         if boxes is None:
             return []
 
-        xyxy = YOLOWorldDetector._to_numpy(boxes.xyxy)
-        confidences = YOLOWorldDetector._to_numpy(boxes.conf).reshape(-1)
-        class_ids = YOLOWorldDetector._to_numpy(boxes.cls).reshape(-1).astype(np.int32)
+        xyxy = self._to_numpy(boxes.xyxy)
+        confidences = self._to_numpy(boxes.conf).reshape(-1)
+        class_ids = self._to_numpy(boxes.cls).reshape(-1).astype(np.int32)
         names = getattr(result, "names", {})
 
         detections: list[GroundingDetection] = []
@@ -164,11 +238,9 @@ class YOLOEDetector:
             detections.append(
                 GroundingDetection(
                     bbox=bbox_array,
-                    label=YOLOWorldDetector._resolve_label(
-                        names, int(class_id), prompt
-                    ),
+                    label=self._resolve_label(names, int(class_id), prompt),
                     score=float(score),
                 )
             )
         detections = self._filter_detections_like_agent(detections, image.shape)
-        return detections
+        return self._suppress_containing_large_boxes(detections)

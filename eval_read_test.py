@@ -11,24 +11,25 @@ import numpy as np
 try:
     from agent import Agent
     from benchmark.utils import calc_iou, load_pc
+    from module.detector_pkl import PKLDetector
     from module.detector_yoloe import YOLOEDetector
     from module.projection import TwoDToThreeDTool
     from module.segmenter import SAMSegmenter
     from prompt import build_candidate_summary, build_multi_candidate_selection_prompt
     from read import Read
-    from read.scannet_more_view import complete_candidate_with_more_views
 except ImportError:
     from .agent import Agent
     from .benchmark.utils import calc_iou, load_pc
+    from .module.detector_pkl import PKLDetector
     from .module.detector_yoloe import YOLOEDetector
     from .module.projection import TwoDToThreeDTool
     from .module.segmenter import SAMSegmenter
     from .prompt import build_candidate_summary, build_multi_candidate_selection_prompt
     from .read import Read
-    from .read.scannet_more_view import complete_candidate_with_more_views
 
 
 MIN_VLM_CANDIDATE_VIEWS = 1
+SKIP_CASE_INDICES = set()
 
 
 def _candidate_meets_vlm_threshold(candidate: Any) -> bool:
@@ -144,19 +145,17 @@ def run_one_case(
     max_units: int,
     min_selected_object_views: int,
     detector_model: str | None,
+    detector_pkl: str | None,
+    shared_detector: Any,
+    shared_segmenter: Any,
+    shared_mapper_2d3d: Any,
 ) -> dict[str, Any]:
     reader = Read(scene, max_frames_per_find=max_frames, frame_skip=frame_skip)
-    detector = YOLOEDetector(model=detector_model or "yoloe-11s-seg.pt")
-    segmenter = SAMSegmenter(
-        checkpoint_path=sam_checkpoint,
-        model_type=sam_model_type,
-        device=sam_device,
-    )
     agent = Agent(
         motion=reader,
-        detector=detector,
-        segmenter=segmenter,
-        mapper_2d3d=TwoDToThreeDTool(),
+        detector=shared_detector,
+        segmenter=shared_segmenter,
+        mapper_2d3d=shared_mapper_2d3d,
         intrinsic_matrix=reader.intrinsic_matrix,
         world_to_axis_align_matrix=reader.world_to_axis_align_matrix,
         debug=True,
@@ -206,20 +205,7 @@ def run_one_case(
 
             processed_any_candidate = True
             vlm_used = True
-            decision = agent.verify_candidate_once(pending_candidate)
-            if decision == "true":
-                pending_candidate = complete_candidate_with_more_views(
-                    agent=agent,
-                    candidate=pending_candidate,
-                )
-            if decision == "unsure" and agent.can_retry_candidate(pending_candidate):
-                pending_candidate = complete_candidate_with_more_views(
-                    agent=agent,
-                    candidate=pending_candidate,
-                )
-                decision = agent.verify_candidate_once(pending_candidate)
-                if decision not in {"true", "false"}:
-                    pending_candidate.status = "unsure"
+            pending_candidate, decision = agent.verify_candidate_once(pending_candidate)
             final_decision = decision
             print(f"decision={decision}")
             if decision == "true":
@@ -305,7 +291,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--frame-skip",
         type=int,
-        default=4,
+        default=2,
         help="Sample every Nth frame when building views",
     )
     parser.add_argument(
@@ -338,6 +324,11 @@ if __name__ == "__main__":
         default=None,
         help="Optional YOLOE checkpoint name or path.",
     )
+    parser.add_argument(
+        "--detector-pkl",
+        default=None,
+        help="Optional detection.pkl path for PKL-backed detector.",
+    )
     args = parser.parse_args()
 
     data_path = Path(args.data_path)
@@ -360,6 +351,17 @@ if __name__ == "__main__":
     eps = 1e-6
     case_iou_rows: list[dict[str, Any]] = []
 
+    if args.detector_pkl:
+        shared_detector = PKLDetector(pkl_path=args.detector_pkl)
+    else:
+        shared_detector = YOLOEDetector(model=args.detector_model or "yoloe-11s-seg.pt")
+    shared_segmenter = SAMSegmenter(
+        checkpoint_path=args.sam_checkpoint,
+        model_type=args.sam_model_type,
+        device=args.sam_device,
+    )
+    shared_mapper_2d3d = TwoDToThreeDTool()
+
     for case_index, task in enumerate(eval_data):
         original_case_index = args.case_index if args.case_index >= 0 else case_index
         scene_id = str(task["scan_id"])
@@ -370,6 +372,17 @@ if __name__ == "__main__":
         print(f"scene_id: {scene_id}")
         print(f"query: {query}")
         print(f"target_id: {target_id}")
+
+        if original_case_index in SKIP_CASE_INDICES:
+            print(f"skip_case={original_case_index}")
+            total += 1
+            case_iou_rows.append(
+                {
+                    "case_id": int(original_case_index),
+                    "iou": "",
+                }
+            )
+            continue
 
         total += 1
 
@@ -395,6 +408,10 @@ if __name__ == "__main__":
                 max_units=args.max_units,
                 min_selected_object_views=args.min_selected_object_views,
                 detector_model=args.detector_model,
+                detector_pkl=args.detector_pkl,
+                shared_detector=shared_detector,
+                shared_segmenter=shared_segmenter,
+                shared_mapper_2d3d=shared_mapper_2d3d,
             )
 
             if result["vlm_used"]:

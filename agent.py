@@ -8,7 +8,7 @@ import cv2
 import numpy as np
 
 try:
-    from .module.detector import GroundingDetection, YOLOWorldDetector, draw_bbox
+    from .module.detector_yoloe import GroundingDetection, YOLOEDetector, draw_bbox
     from .agent_schema import CandidateMemory, CandidateObject, ObjectView, Query, View
     from .module.matcher import PATSMatcher, ObjectViewMatchResult
     from .motion import Motion
@@ -17,7 +17,7 @@ try:
     from .vlm_api_bridge import call_vlm_api_messages
     from .vlm_bridge import call_vlm_messages
 except ImportError:
-    from module.detector import GroundingDetection, YOLOWorldDetector, draw_bbox  # type: ignore
+    from module.detector_yoloe import GroundingDetection, YOLOEDetector, draw_bbox  # type: ignore
     from agent_schema import CandidateMemory, CandidateObject, ObjectView, Query, View  # type: ignore
     from module.matcher import PATSMatcher, ObjectViewMatchResult  # type: ignore
     from motion import Motion  # type: ignore
@@ -40,7 +40,7 @@ class Agent:
         view_selector: Any = None,
         debug: bool = True,
     ) -> None:
-        self.detector = detector or YOLOWorldDetector()
+        self.detector = detector or YOLOEDetector()
         self.segmenter = segmenter
         self.matcher = matcher or PATSMatcher()
         self.mapper_2d3d = mapper_2d3d
@@ -84,12 +84,18 @@ class Agent:
         self.detector_call_count += 1
         return self.detector.detect_detections(view.rgb, query.target_object)
 
-    def detect_reference_objects(self, view: View) -> list[GroundingDetection]:
-        query = self._require_query()
-        if not query.reference_object:
-            return []
-        self.detector_call_count += 1
-        return self.detector.detect_detections(view.rgb, query.reference_object)
+    # def detect_reference_objects(self, view: View) -> list[GroundingDetection]:
+    #     query = self._require_query()
+    #     if not query.reference_object:
+    #         return []
+    #     self.detector_call_count += 1
+    #     if hasattr(self.detector, "set_view_context"):
+    #         scene_id = getattr(self.motion, "scene_name", None)
+    #         self.detector.set_view_context(
+    #             scene_id="" if scene_id is None else str(scene_id),
+    #             view_id=str(getattr(view, "view_id", "")),
+    #         )
+    #     return self.detector.detect_detections(view.rgb, query.reference_object)
 
     @staticmethod
     def _count_prompt_images(prompt: Any) -> int:
@@ -107,8 +113,8 @@ class Agent:
                     total += 1
         return total
 
-    def attach_reference(self, view: View) -> None:
-        view.reference = self.detect_reference_objects(view)
+    # def attach_reference(self, view: View) -> None:
+    #     view.reference = self.detect_reference_objects(view)
 
     def build_object_view(
         self, view: View, detection: GroundingDetection, object_id: str | int
@@ -281,7 +287,7 @@ class Agent:
 
     def consume_view(self, view: View) -> None:
         detections = self.detect_target_objects(view)
-        self.attach_reference(view)
+        # self.attach_reference(view)
         if not detections:
             return
         object_views = self.collect_view_object_views(view, detections)
@@ -300,6 +306,34 @@ class Agent:
                     return lowered
         return "unsure"
 
+    def select_more_view_mode(
+        self,
+        decision: str,
+        suggested_action: str | None = None,
+    ) -> str:
+        if decision != "unsure":
+            return "forward"
+        if (suggested_action or "").strip().lower() == "yaw":
+            return "yaw"
+        return "forward"
+
+    def complete_candidate_with_more_views_if_needed(
+        self,
+        candidate: CandidateObject,
+        decision: str,
+        suggested_action: str | None = None,
+    ) -> CandidateObject:
+        if decision not in {"true", "unsure"}:
+            return candidate
+        if not hasattr(self.motion, "complete_candidate_with_more_views"):
+            return candidate
+        action_mode = self.select_more_view_mode(decision, suggested_action)
+        return self.motion.complete_candidate_with_more_views(
+            self,
+            candidate,
+            action_mode=action_mode,
+        )
+
     def _normalize_vlm_result(self, result: Any) -> Any:
         if isinstance(result, dict):
             return result
@@ -317,6 +351,13 @@ class Agent:
                 "suggested_action": "yaw",
             }
 
+    def _extract_suggested_action(self, result: Any) -> str | None:
+        if isinstance(result, dict):
+            suggested_action = result.get("suggested_action")
+            if isinstance(suggested_action, str) and suggested_action.strip():
+                return suggested_action.strip().lower()
+        return None
+
     def _debug_print(self, title: str, payload: Any) -> None:
         if not self.debug or title not in {"vlm_raw_result", "vlm_normalized_decision"}:
             return
@@ -326,10 +367,11 @@ class Agent:
         else:
             print(payload)
 
-    def evaluate_candidate(self, candidate: CandidateObject) -> str:
+    def _evaluate_candidate_once(self, candidate: CandidateObject) -> str:
         object_views = getattr(candidate, "object_view", []) or []
         if len(object_views) <= 1:
             print(f"[Agent] skip_vlm_candidate_views={len(object_views)}")
+            candidate.last_suggested_action = "forward"
             return "unsure"
 
         prompt = build_candidate_judgement_prompt(self._require_query(), candidate)
@@ -340,6 +382,7 @@ class Agent:
         self._debug_print("vlm_raw_result", result)
         decision = self._normalize_vlm_decision(result)
         self._debug_print("vlm_normalized_decision", decision)
+        candidate.last_suggested_action = self._extract_suggested_action(result)
         return decision
 
     def can_retry_candidate(self, candidate: CandidateObject) -> bool:
@@ -362,13 +405,42 @@ class Agent:
         )
         return pending_candidates[0]
 
-    def verify_candidate_once(self, candidate: CandidateObject) -> str:
-        decision = self.evaluate_candidate(candidate)
+    def verify_candidate_once(
+        self,
+        candidate: CandidateObject,
+        suggested_action: str | None = None,
+    ) -> tuple[CandidateObject, str]:
+        decision = self._evaluate_candidate_once(candidate)
         candidate.verification_round = (
             int(getattr(candidate, "verification_round", 0)) + 1
         )
         candidate.status = decision
-        return decision
+        if decision == "true":
+            candidate = self.complete_candidate_with_more_views_if_needed(
+                candidate,
+                decision=decision,
+                suggested_action=suggested_action
+                or getattr(candidate, "last_suggested_action", None),
+            )
+            return candidate, decision
+
+        if decision == "unsure" and self.can_retry_candidate(candidate):
+            candidate = self.complete_candidate_with_more_views_if_needed(
+                candidate,
+                decision=decision,
+                suggested_action=suggested_action
+                or getattr(candidate, "last_suggested_action", None),
+            )
+            decision = self._evaluate_candidate_once(candidate)
+            candidate.verification_round = (
+                int(getattr(candidate, "verification_round", 0)) + 1
+            )
+            candidate.status = decision
+            if decision not in {"true", "false"}:
+                candidate.status = "unsure"
+            return candidate, decision
+
+        return candidate, decision
 
     def complete_candidate_masks(self, candidate: CandidateObject) -> None:
         if self.segmenter is None:
