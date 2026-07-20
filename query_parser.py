@@ -1,13 +1,13 @@
 from __future__ import annotations
 
-import json
-import re
 from typing import Any
 
 try:
+    from .json_utils import extract_first_json_object
     from .prompt import QUERY_DECOMPOSE_SYSTEM_PROMPT
     from .vlm_bridge import call_vlm_messages
 except ImportError:
+    from json_utils import extract_first_json_object  # type: ignore
     from prompt import QUERY_DECOMPOSE_SYSTEM_PROMPT  # type: ignore
     from vlm_bridge import call_vlm_messages  # type: ignore
 
@@ -22,20 +22,6 @@ def _fallback_parse(raw_query: str) -> dict[str, Any]:
         "reference_attributes": [],
         "relation": "",
     }
-
-
-def _clean_json_text(text: str) -> str:
-    text = str(text or "").strip()
-
-    if text.startswith("```json"):
-        text = text[len("```json"):].strip()
-    elif text.startswith("```"):
-        text = text[len("```"):].strip()
-
-    if text.endswith("```"):
-        text = text[:-3].strip()
-
-    return text.strip()
 
 
 def _as_list(value: Any) -> list[str]:
@@ -53,23 +39,12 @@ def _as_text(value: Any) -> str:
     return str(value or "").strip().lower()
 
 
-def _normalize_object_name(value: Any) -> str:
-    text = _as_text(value)
-    if not text:
-        return ""
-
-    parts = [part for part in re.split(r"[^a-z]+", text) if part]
-    if not parts:
-        return text
-    return parts[-1]
-
-
 def _normalize(raw_query: str, data: dict[str, Any]) -> dict[str, Any]:
     return {
         "raw_query": raw_query,
-        "target_object": _normalize_object_name(data.get("target_object")),
+        "target_object": _as_text(data.get("target_object")),
         "target_attributes": _as_list(data.get("target_attributes")),
-        "reference_object": _normalize_object_name(data.get("reference_object")),
+        "reference_object": _as_text(data.get("reference_object")),
         "reference_attributes": _as_list(data.get("reference_attributes")),
         "relation": _as_text(data.get("relation")),
     }
@@ -94,15 +69,17 @@ def parse_query_with_vlm(raw_query: str) -> dict[str, Any]:
 
     try:
         result = call_vlm_messages(messages)
+        result_text = "" if result is None else str(result)
 
         print("[QueryParser] raw result")
-        print(result)
+        print(result_text if result_text.strip() else "<empty>")
 
         if isinstance(result, dict):
             parsed = result
         else:
-            text = _clean_json_text(str(result))
-            parsed = json.loads(text)
+            if not result_text.strip():
+                raise ValueError("Empty VLM response.")
+            parsed = extract_first_json_object(result_text)
 
         normalized = _normalize(raw_query, parsed)
 
