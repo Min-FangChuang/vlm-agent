@@ -284,6 +284,12 @@ class TwoDToThreeDTool:
             raise ValueError(
                 f"world_to_axis_align_matrix must be 4x4, got {axis_align.shape}"
             )
+        if not np.all(np.isfinite(intrinsic)):
+            raise ValueError("intrinsic_matrix contains non-finite values")
+        if not np.all(np.isfinite(extrinsic)):
+            raise ValueError("extrinsic_matrix contains non-finite values")
+        if axis_align is not None and not np.all(np.isfinite(axis_align)):
+            raise ValueError("world_to_axis_align_matrix contains non-finite values")
 
         scale_y = depth_image.shape[0] / mask.shape[0]
         scale_x = depth_image.shape[1] / mask.shape[1]
@@ -301,7 +307,7 @@ class TwoDToThreeDTool:
         depth_values = (
             depth_image[depth_y, depth_x].astype(np.float64) * self.depth_scale
         )
-        valid = depth_values > 0
+        valid = np.isfinite(depth_values) & (depth_values > 0)
         depth_values = depth_values[valid]
         mask_x = mask_x[valid]
         mask_y = mask_y[valid]
@@ -318,16 +324,26 @@ class TwoDToThreeDTool:
                 np.ones_like(depth_values),
             ]
         )
+        if not np.all(np.isfinite(homogeneous_pixels)):
+            raise ValueError("homogeneous_pixels contains non-finite values")
 
         cam_coords = np.linalg.inv(intrinsic) @ homogeneous_pixels
+        if not np.all(np.isfinite(cam_coords)):
+            raise ValueError("cam_coords contains non-finite values")
         world_coords = extrinsic @ cam_coords
+        if not np.all(np.isfinite(world_coords)):
+            raise ValueError("world_coords contains non-finite values")
 
         if axis_align is not None:
             world_coords = axis_align @ world_coords
+            if not np.all(np.isfinite(world_coords)):
+                raise ValueError("axis-aligned world_coords contains non-finite values")
 
         xyz = world_coords[:3].T
+        finite_xyz = np.all(np.isfinite(xyz), axis=1)
+        xyz = xyz[finite_xyz]
         if color_image is not None:
-            rgb = color_image[mask_y, mask_x]
+            rgb = color_image[mask_y, mask_x][finite_xyz]
             return np.hstack((xyz, rgb))
         return xyz
 

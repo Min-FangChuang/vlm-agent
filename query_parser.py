@@ -1,13 +1,12 @@
 from __future__ import annotations
 
+import json
 from typing import Any
 
 try:
-    from .json_utils import extract_first_json_object
     from .prompt import QUERY_DECOMPOSE_SYSTEM_PROMPT
     from .vlm_bridge import call_vlm_messages
 except ImportError:
-    from json_utils import extract_first_json_object  # type: ignore
     from prompt import QUERY_DECOMPOSE_SYSTEM_PROMPT  # type: ignore
     from vlm_bridge import call_vlm_messages  # type: ignore
 
@@ -37,6 +36,20 @@ def _as_list(value: Any) -> list[str]:
 
 def _as_text(value: Any) -> str:
     return str(value or "").strip().lower()
+
+
+def _clean_json_text(text: str) -> str:
+    text = str(text or "").strip()
+
+    if text.startswith("```json"):
+        text = text[len("```json") :].strip()
+    elif text.startswith("```"):
+        text = text[len("```") :].strip()
+
+    if text.endswith("```"):
+        text = text[:-3].strip()
+
+    return text.strip()
 
 
 def _normalize(raw_query: str, data: dict[str, Any]) -> dict[str, Any]:
@@ -79,7 +92,7 @@ def parse_query_with_vlm(raw_query: str) -> dict[str, Any]:
         else:
             if not result_text.strip():
                 raise ValueError("Empty VLM response.")
-            parsed = extract_first_json_object(result_text)
+            parsed = json.loads(_clean_json_text(result_text))
 
         normalized = _normalize(raw_query, parsed)
 

@@ -11,7 +11,6 @@ import numpy as np
 try:
     from agent import Agent
     from benchmark.utils import calc_iou, load_pc
-    from module.detector_pkl import PKLDetector
     from module.detector_yoloe import YOLOEDetector
     from module.projection import TwoDToThreeDTool
     from module.segmenter import SAMSegmenter
@@ -20,7 +19,6 @@ try:
 except ImportError:
     from .agent import Agent
     from .benchmark.utils import calc_iou, load_pc
-    from .module.detector_pkl import PKLDetector
     from .module.detector_yoloe import YOLOEDetector
     from .module.projection import TwoDToThreeDTool
     from .module.segmenter import SAMSegmenter
@@ -145,7 +143,6 @@ def run_one_case(
     max_units: int,
     min_selected_object_views: int,
     detector_model: str | None,
-    detector_pkl: str | None,
     shared_detector: Any,
     shared_segmenter: Any,
     shared_mapper_2d3d: Any,
@@ -291,7 +288,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--frame-skip",
         type=int,
-        default=2,
+        default=4,
         help="Sample every Nth frame when building views",
     )
     parser.add_argument(
@@ -324,11 +321,6 @@ if __name__ == "__main__":
         default=None,
         help="Optional YOLOE checkpoint name or path.",
     )
-    parser.add_argument(
-        "--detector-pkl",
-        default=None,
-        help="Optional detection.pkl path for PKL-backed detector.",
-    )
     args = parser.parse_args()
 
     data_path = Path(args.data_path)
@@ -351,10 +343,7 @@ if __name__ == "__main__":
     eps = 1e-6
     case_iou_rows: list[dict[str, Any]] = []
 
-    if args.detector_pkl:
-        shared_detector = PKLDetector(pkl_path=args.detector_pkl)
-    else:
-        shared_detector = YOLOEDetector(model=args.detector_model or "yoloe-11s-seg.pt")
+    shared_detector = YOLOEDetector(model=args.detector_model or "yoloe-11s-seg.pt")
     shared_segmenter = SAMSegmenter(
         checkpoint_path=args.sam_checkpoint,
         model_type=args.sam_model_type,
@@ -408,7 +397,6 @@ if __name__ == "__main__":
                 max_units=args.max_units,
                 min_selected_object_views=args.min_selected_object_views,
                 detector_model=args.detector_model,
-                detector_pkl=args.detector_pkl,
                 shared_detector=shared_detector,
                 shared_segmenter=shared_segmenter,
                 shared_mapper_2d3d=shared_mapper_2d3d,
