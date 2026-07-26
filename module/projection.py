@@ -19,8 +19,6 @@ class MorphologyConfig:
     erosion: bool = True
     dilation: bool = False
     kernel_size: int = 3
-    keep_largest_components: bool = True
-    num_components: int = 1
 
 
 @dataclass
@@ -28,7 +26,11 @@ class PointFilterConfig:
     filter_type: str = "statistical"  # statistical | truncated | none
     nb_neighbors: int = 20
     std_ratio: float = 1.0
-    keep_largest_cluster: bool = True
+    statistical_passes: int = 1
+    debug_raw_points: bool = False
+    keep_clusters_above_ratio: bool = True
+    cluster_keep_ratio: float = 0.1
+    debug_cluster_filter: bool = True
     cluster_eps: float = 0.08
     cluster_min_points: int = 20
     max_cluster_points: int = 30000
@@ -69,7 +71,7 @@ class TwoDToThreeDTool:
         self.depth_scale = depth_scale
 
     def post_process_mask(self, mask: ArrayLike) -> ArrayLike:
-        """Clean a binary mask with morphology and connected-components filtering."""
+        """Clean a binary mask with morphology."""
         if mask is None:
             raise ValueError("mask must not be None")
 
@@ -85,20 +87,6 @@ class TwoDToThreeDTool:
             img = cv2.erode(img, kernel, iterations=1)
         if self.morphology.dilation:
             img = cv2.dilate(img, kernel, iterations=1)
-
-        if self.morphology.keep_largest_components:
-            num_labels, labels_im = cv2.connectedComponents(img)
-            if num_labels > 1:
-                component_areas = [
-                    (label, int(np.sum(labels_im == label)))
-                    for label in range(1, num_labels)
-                ]
-                component_areas.sort(key=lambda x: x[1], reverse=True)
-                kept = [
-                    label
-                    for label, _ in component_areas[: self.morphology.num_components]
-                ]
-                img = np.isin(labels_im, kept).astype(np.uint8) * 255
 
         return img.astype(bool)
 
@@ -371,17 +359,30 @@ class TwoDToThreeDTool:
         if cfg.filter_type == "none":
             return points
         if cfg.filter_type == "statistical":
-            filtered = self.remove_statistical_outliers(
-                points, cfg.nb_neighbors, cfg.std_ratio
-            )
-            if cfg.keep_largest_cluster:
-                filtered = self.keep_largest_3d_cluster(
+            filtered = points
+            for _ in range(max(0, int(cfg.statistical_passes))):
+                if filtered.shape[0] == 0:
+                    break
+                filtered = self.remove_statistical_outliers(
+                    filtered, cfg.nb_neighbors, cfg.std_ratio
+                )
+            if cfg.keep_clusters_above_ratio:
+                before_cluster_points = int(filtered.shape[0])
+                filtered = self.keep_clusters_above_ratio(
                     filtered,
+                    keep_ratio=cfg.cluster_keep_ratio,
+                    debug=cfg.debug_cluster_filter,
                     eps=cfg.cluster_eps,
                     min_points=cfg.cluster_min_points,
                     max_points=cfg.max_cluster_points,
                     voxel_size=cfg.cluster_downsample_voxel_size,
                 )
+                if cfg.debug_cluster_filter:
+                    print(
+                        "[Projection] cluster_filter_result "
+                        f"before_points={before_cluster_points} "
+                        f"after_points={int(filtered.shape[0])}"
+                    )
             return filtered
         if cfg.filter_type == "truncated":
             return self.remove_truncated_outliers(points, cfg.tx, cfg.ty, cfg.tz)
@@ -427,8 +428,10 @@ class TwoDToThreeDTool:
         return point_cloud_data[valid_idx]
 
     @staticmethod
-    def keep_largest_3d_cluster(
+    def keep_clusters_above_ratio(
         point_cloud_data: ArrayLike,
+        keep_ratio: float = 0.1,
+        debug: bool = True,
         eps: float = 0.08,
         min_points: int = 20,
         max_points: int = 30000,
@@ -438,11 +441,14 @@ class TwoDToThreeDTool:
             return point_cloud_data
         if o3d is None:
             raise ImportError(
-                "open3d is required for largest-cluster filtering. "
-                "Install it or disable keep_largest_cluster."
+                "open3d is required for cluster-ratio filtering. "
+                "Install it or disable keep_clusters_above_ratio."
             )
+        if not (0.0 <= float(keep_ratio) <= 1.0):
+            raise ValueError("keep_ratio must be in [0, 1]")
 
         sample_points = point_cloud_data
+        sample_source = "raw"
         if point_cloud_data.shape[0] > max_points:
             pcd_full = o3d.geometry.PointCloud()
             pcd_full.points = o3d.utility.Vector3dVector(point_cloud_data[:, :3])
@@ -450,11 +456,13 @@ class TwoDToThreeDTool:
             down_xyz = np.asarray(pcd_down.points)
             if down_xyz.shape[0] > 0:
                 sample_points = down_xyz
+                sample_source = "voxel_downsample"
             if sample_points.shape[0] > max_points:
                 indices = np.linspace(
                     0, sample_points.shape[0] - 1, max_points, dtype=int
                 )
                 sample_points = sample_points[indices]
+                sample_source = f"{sample_source}+linspace_sample"
 
         pcd = o3d.geometry.PointCloud()
         pcd.points = o3d.utility.Vector3dVector(sample_points[:, :3])
@@ -466,18 +474,53 @@ class TwoDToThreeDTool:
 
         valid_labels = labels[labels >= 0]
         if valid_labels.size == 0:
+            if debug:
+                print("[Projection] cluster_filter no_valid_clusters")
             return point_cloud_data
 
         unique_labels, counts = np.unique(valid_labels, return_counts=True)
-        largest_label = unique_labels[np.argmax(counts)]
-        cluster_xyz = sample_points[labels == largest_label, :3]
-        if cluster_xyz.shape[0] == 0:
+        largest_count = int(np.max(counts))
+        min_keep_count = max(1, int(np.ceil(largest_count * float(keep_ratio))))
+        kept_labels = unique_labels[counts >= min_keep_count]
+        if debug:
+            cluster_items = sorted(
+                (
+                    (int(label), int(count))
+                    for label, count in zip(unique_labels, counts)
+                ),
+                key=lambda item: item[1],
+                reverse=True,
+            )
+            print(
+                "[Projection] cluster_filter "
+                f"raw_total_points={int(point_cloud_data.shape[0])} "
+                f"sample_total_points={int(sample_points.shape[0])} "
+                f"sample_source={sample_source} "
+                f"num_clusters={len(cluster_items)} "
+                f"largest_count={largest_count} "
+                f"keep_ratio={float(keep_ratio):.3f} "
+                f"min_keep_count={min_keep_count} "
+                f"clusters={cluster_items} "
+                f"kept_labels={[int(label) for label in kept_labels.tolist()]}"
+            )
+        if kept_labels.size == 0:
             return point_cloud_data
 
-        cluster_min = np.min(cluster_xyz, axis=0) - eps
-        cluster_max = np.max(cluster_xyz, axis=0) + eps
+        keep_boxes: list[tuple[np.ndarray, np.ndarray]] = []
+        for label in kept_labels.tolist():
+            cluster_xyz = sample_points[labels == label, :3]
+            if cluster_xyz.shape[0] == 0:
+                continue
+            cluster_min = np.min(cluster_xyz, axis=0) - eps
+            cluster_max = np.max(cluster_xyz, axis=0) + eps
+            keep_boxes.append((cluster_min, cluster_max))
+        if not keep_boxes:
+            return point_cloud_data
+
         xyz = point_cloud_data[:, :3]
-        keep_mask = np.all((xyz >= cluster_min) & (xyz <= cluster_max), axis=1)
+        keep_mask = np.zeros((xyz.shape[0],), dtype=bool)
+        for cluster_min, cluster_max in keep_boxes:
+            keep_mask |= np.all((xyz >= cluster_min) & (xyz <= cluster_max), axis=1)
         kept = point_cloud_data[keep_mask]
         return kept if kept.shape[0] > 0 else point_cloud_data
 
@@ -573,6 +616,8 @@ class TwoDToThreeDTool:
                     )
                 )
         points = self.project_views_to_3d(processed_views)
+        if self.point_filter.debug_raw_points:
+            print(f"[Projection] raw_points_before_filter={int(points.shape[0])}")
         filtered_points = self.filter_points(points)
         if filtered_points.shape[0] == 0:
             filtered_points = points
