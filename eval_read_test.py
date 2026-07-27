@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import traceback
 from pathlib import Path
 from typing import Any
 
@@ -135,6 +136,7 @@ def run_one_case(
     *,
     scene: str,
     query: str,
+    query_analysis: dict[str, Any] | None,
     sam_checkpoint: str,
     sam_model_type: str,
     sam_device: str,
@@ -157,7 +159,7 @@ def run_one_case(
         world_to_axis_align_matrix=reader.world_to_axis_align_matrix,
         debug=True,
     )
-    agent.reset(query)
+    agent.reset(query, parsed_query=query_analysis)
 
     total_views = 0
     total_object_views = 0
@@ -228,10 +230,10 @@ def run_one_case(
                 points_3d, bbox_3d = agent.map_candidate_to_3d(selected_candidate)
                 print("after_map_candidate_to_3d")
                 print(f"bbox_3d={bbox_3d.tolist()}")
-                #try:
-                #    TwoDToThreeDTool.visualize_points_and_aabb(points_3d, bbox_3d)
-                #except ImportError as exc:
-                #    print(f"visualization_skipped={exc}")
+                try:
+                    TwoDToThreeDTool.visualize_points_and_aabb(points_3d, bbox_3d)
+                except ImportError as exc:
+                    print(f"visualization_skipped={exc}")
             except ValueError as exc:
                 print(f"projection_skipped={exc}")
     elif final_decision == "unsure":
@@ -261,7 +263,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--data-path",
-        default="benchmark/scanrefer_250.json",
+        default="benchmark/scanrefer_250_with_query_analysis.json",
         help="Path to the benchmark json file",
     )
     parser.add_argument(
@@ -277,10 +279,10 @@ if __name__ == "__main__":
         help="Maximum number of benchmark cases to run",
     )
     parser.add_argument(
-        "--query-field",
-        choices=["caption", "obj_name"],
-        default="caption",
-        help="Which field to use as query",
+        "--eval-mode",
+        choices=["scanrefer", "nr3d"],
+        default="scanrefer",
+        help="Evaluation summary mode",
     )
     parser.add_argument(
         "--max-frames", type=int, default=10, help="Maximum frames per read unit"
@@ -288,7 +290,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--frame-skip",
         type=int,
-        default=4,
+        default=2,
         help="Sample every Nth frame when building views",
     )
     parser.add_argument(
@@ -336,8 +338,16 @@ if __name__ == "__main__":
     correct_50 = 0
     unique_25 = 0
     unique_50 = 0
+    correct_easy_25 = 0
+    correct_hard_25 = 0
+    correct_dep_25 = 0
+    correct_indep_25 = 0
     total = 0
     unique_total = 0
+    easy_total = 0
+    hard_total = 0
+    dep_total = 0
+    indep_total = 0
     except_total = 0
     vlm_total = 0
     eps = 1e-6
@@ -355,7 +365,7 @@ if __name__ == "__main__":
         original_case_index = args.case_index if args.case_index >= 0 else case_index
         scene_id = str(task["scan_id"])
         target_id = int(task["target_id"])
-        query = str(task[args.query_field])
+        query = str(task["caption"])
 
         print(f"Case: {case_index}")
         print(f"scene_id: {scene_id}")
@@ -376,6 +386,18 @@ if __name__ == "__main__":
         total += 1
 
         try:
+            is_easy = bool(task.get("easy", False))
+            is_dep = bool(task.get("view_dep", False))
+            if args.eval_mode == "nr3d":
+                if is_easy:
+                    easy_total += 1
+                else:
+                    hard_total += 1
+                if is_dep:
+                    dep_total += 1
+                else:
+                    indep_total += 1
+
             obj_ids, obj_labels, obj_locs = load_pc(scene_id)
             target_index = obj_ids.index(target_id)
             target_box = np.asarray(obj_locs[target_index], dtype=np.float64)
@@ -386,9 +408,14 @@ if __name__ == "__main__":
             if unique:
                 unique_total += 1
 
+            query_analysis = task.get("query_analysis")
+            if not isinstance(query_analysis, dict):
+                query_analysis = None
+
             result = run_one_case(
                 scene=scene_id,
                 query=query,
+                query_analysis=query_analysis,
                 sam_checkpoint=args.sam_checkpoint,
                 sam_model_type=args.sam_model_type,
                 sam_device=args.sam_device,
@@ -435,6 +462,15 @@ if __name__ == "__main__":
                     correct_25 += 1
                     if unique:
                         unique_25 += 1
+                    if args.eval_mode == "nr3d":
+                        if is_easy:
+                            correct_easy_25 += 1
+                        else:
+                            correct_hard_25 += 1
+                        if is_dep:
+                            correct_dep_25 += 1
+                        else:
+                            correct_indep_25 += 1
                 if iou >= 0.5:
                     correct_50 += 1
                     if unique:
@@ -442,6 +478,7 @@ if __name__ == "__main__":
         except Exception as exc:
             except_total += 1
             print(f"case_error={exc}")
+            traceback.print_exc()
             case_iou_rows.append(
                 {
                     "case_id": int(original_case_index),
@@ -452,22 +489,46 @@ if __name__ == "__main__":
         accuracy_msgs = [
             "Overall@25: {:.3f}".format(correct_25 / total),
             "Overall@50: {:.3f}".format(correct_50 / total),
-            "Unique@25: {:.3f}".format(unique_25 / (unique_total + eps)),
-            "Unique@50: {:.3f}".format(unique_50 / (unique_total + eps)),
-            "Multiple@25: {:.3f}".format(
-                (correct_25 - unique_25) / (total - unique_total + eps)
-            ),
-            "Multiple@50: {:.3f}".format(
-                (correct_50 - unique_50) / (total - unique_total + eps)
-            ),
-            "Unique Ratio: {} / {}".format(unique_25, unique_total),
-            "Multiple Ratio: {} / {}".format(
-                correct_25 - unique_25, total - unique_total
-            ),
-            "Except Ratio: {} / {}".format(except_total, total),
-            "VLM Usage Ratio: {} / {}".format(vlm_total, total),
-            "",
         ]
+        if args.eval_mode == "nr3d":
+            accuracy_msgs.extend(
+                [
+                    "Easy@25: {:.3f}".format(correct_easy_25 / (easy_total + eps)),
+                    "Hard@25: {:.3f}".format(correct_hard_25 / (hard_total + eps)),
+                    "ViewDep@25: {:.3f}".format(correct_dep_25 / (dep_total + eps)),
+                    "ViewIndep@25: {:.3f}".format(
+                        correct_indep_25 / (indep_total + eps)
+                    ),
+                    "Easy Ratio: {} / {}".format(correct_easy_25, easy_total),
+                    "Hard Ratio: {} / {}".format(correct_hard_25, hard_total),
+                    "ViewDep Ratio: {} / {}".format(correct_dep_25, dep_total),
+                    "ViewIndep Ratio: {} / {}".format(correct_indep_25, indep_total),
+                ]
+            )
+        else:
+            accuracy_msgs.extend(
+                [
+                    "Unique@25: {:.3f}".format(unique_25 / (unique_total + eps)),
+                    "Unique@50: {:.3f}".format(unique_50 / (unique_total + eps)),
+                    "Multiple@25: {:.3f}".format(
+                        (correct_25 - unique_25) / (total - unique_total + eps)
+                    ),
+                    "Multiple@50: {:.3f}".format(
+                        (correct_50 - unique_50) / (total - unique_total + eps)
+                    ),
+                    "Unique Ratio: {} / {}".format(unique_25, unique_total),
+                    "Multiple Ratio: {} / {}".format(
+                        correct_25 - unique_25, total - unique_total
+                    ),
+                ]
+            )
+        accuracy_msgs.extend(
+            [
+                "Except Ratio: {} / {}".format(except_total, total),
+                "VLM Usage Ratio: {} / {}".format(vlm_total, total),
+                "",
+            ]
+        )
         print("\n".join(accuracy_msgs))
 
     if args.max_cases > 0:

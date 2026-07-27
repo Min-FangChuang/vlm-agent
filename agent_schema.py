@@ -27,21 +27,26 @@ class View:
 
 
 class Query:
-    def __init__(self, query: str) -> None:
+    def __init__(self, query: str, parsed: dict[str, Any] | None = None) -> None:
         self.query = query
 
-        try:
-            self._parsed = parse_query_with_vlm(self.query)
-            print("[Query] VLM parsed")
+        if parsed is not None:
+            self._parsed = dict(parsed)
+            print("[Query] using precomputed query_analysis")
             print(self._parsed)
+        else:
+            try:
+                self._parsed = parse_query_with_vlm(self.query)
+                print("[Query] VLM parsed")
+                print(self._parsed)
 
-            if not self._parsed.get("target_object"):
-                print("[Query] empty target_object, fallback to rule parser")
+                if not self._parsed.get("target_object"):
+                    print("[Query] empty target_object, fallback to rule parser")
+                    self._parsed = self._parse_query(self.query)
+
+            except Exception as exc:
+                print(f"[Query] VLM parse failed, fallback to rule parser. error={exc}")
                 self._parsed = self._parse_query(self.query)
-
-        except Exception as exc:
-            print(f"[Query] VLM parse failed, fallback to rule parser. error={exc}")
-            self._parsed = self._parse_query(self.query)
 
         self.target_object = self._parsed.get("target_object", "")
         self.target_attributes = self._parsed.get("target_attributes", [])

@@ -62,8 +62,10 @@ class Agent:
         # return call_vlm_api_messages(prompt)
         return call_vlm_messages(prompt)
 
-    def reset(self, query_text: str) -> None:
-        self.query = Query(query_text)
+    def reset(
+        self, query_text: str, parsed_query: dict[str, Any] | None = None
+    ) -> None:
+        self.query = Query(query_text, parsed=parsed_query)
         self.current_view = None
         self.candidates = CandidateMemory()
         self.detector_call_count = 0
