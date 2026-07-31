@@ -1614,11 +1614,15 @@
     "caption": "the couch has a pillow on the left side of it . there is a fire extinguisher on the wall behind the couch .",
     "query_analysis": {
       "raw_query": "the couch has a pillow on the left side of it . there is a fire extinguisher on the wall behind the couch .",
-      "target_object": "fire extinguisher",
-      "target_attributes": [],
-      "reference_object": "couch",
-      "reference_attributes": [],
-      "relation": "on the wall behind"
+      "target_object": "couch",
+      "target_attributes": [
+        "with a pillow on the left side"
+      ],
+      "reference_object": "fire extinguisher",
+      "reference_attributes": [
+        "on the wall"
+      ],
+      "relation": "in front of"
     }
   },
   {
@@ -2624,15 +2628,15 @@
     "caption": "the shelf is black . there is a white lamp on top of it .",
     "query_analysis": {
       "raw_query": "the shelf is black . there is a white lamp on top of it .",
-      "target_object": "lamp",
+      "target_object": "shelf",
       "target_attributes": [
-        "white"
-      ],
-      "reference_object": "shelf",
-      "reference_attributes": [
         "black"
       ],
-      "relation": "on top of"
+      "reference_object": "lamp",
+      "reference_attributes": [
+        "white"
+      ],
+      "relation": "under"
     }
   },
   {
