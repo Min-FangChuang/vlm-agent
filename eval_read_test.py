@@ -28,7 +28,7 @@ except ImportError:
 
 
 MIN_VLM_CANDIDATE_VIEWS = 1
-SKIP_CASE_INDICES = set()
+SKIP_CASE_INDICES = {66}
 
 
 def _candidate_meets_vlm_threshold(candidate: Any) -> bool:
@@ -132,6 +132,55 @@ def _select_unsure_candidate(agent: Agent):
     return active_candidates[selected_index]
 
 
+def _select_fallback_candidate(agent: Agent):
+    nonfalse_candidates = [
+        candidate
+        for candidate in agent.candidates.values()
+        if getattr(candidate, "status", "new") in {"new", "expanded", "unsure", "true"}
+        and _candidate_meets_vlm_threshold(candidate)
+    ]
+    if nonfalse_candidates:
+        return _select_unsure_candidate(agent)
+
+    false_candidates = [
+        candidate
+        for candidate in agent.candidates.values()
+        if getattr(candidate, "status", "new") == "false"
+        and _candidate_meets_vlm_threshold(candidate)
+    ]
+    if not false_candidates:
+        print("fallback_no_candidates_meet_vlm_threshold")
+        return None
+    if len(false_candidates) == 1:
+        print("fallback_selected_single_false_candidate")
+        return false_candidates[0]
+
+    print("saving_false_candidates_for_multi_candidate_selection")
+    for index, candidate in enumerate(false_candidates, start=1):
+        print(f"false_candidate[{index}] {build_candidate_summary(candidate)}")
+
+    prompt = build_multi_candidate_selection_prompt(agent.query, false_candidates)
+    image_count = agent._count_prompt_images(prompt)
+    agent.vlm_image_counts.append(image_count)
+    print(f"[Agent] vlm_stitched_image_count={image_count}")
+    result = agent._normalize_vlm_result(agent.vlm(prompt, candidates=false_candidates))
+    print("[Agent] vlm_multi_candidate_result")
+    if isinstance(result, (dict, list)):
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+    else:
+        print(result)
+    selected_index = _normalize_multi_candidate_selection(result)
+    if (
+        selected_index is None
+        or selected_index < 0
+        or selected_index >= len(false_candidates)
+    ):
+        print("fallback_multi_candidate_selection_unsure")
+        return None
+    print(f"fallback_selected_candidate_index={selected_index}")
+    return false_candidates[selected_index]
+
+
 def run_one_case(
     *,
     scene: str,
@@ -172,8 +221,8 @@ def run_one_case(
         views = reader.find()
         if not views:
             if agent.candidates.exist():
-                print("fallback_no_more_frames_with_unsure_candidates")
-                selected_candidate = _select_unsure_candidate(agent)
+                print("fallback_no_more_frames_with_candidates")
+                selected_candidate = _select_fallback_candidate(agent)
                 if selected_candidate is not None:
                     final_decision = "true"
             break
@@ -230,10 +279,10 @@ def run_one_case(
                 points_3d, bbox_3d = agent.map_candidate_to_3d(selected_candidate)
                 print("after_map_candidate_to_3d")
                 print(f"bbox_3d={bbox_3d.tolist()}")
-                try:
-                    TwoDToThreeDTool.visualize_points_and_aabb(points_3d, bbox_3d)
-                except ImportError as exc:
-                    print(f"visualization_skipped={exc}")
+                #try:
+                #    TwoDToThreeDTool.visualize_points_and_aabb(points_3d, bbox_3d)
+                #except ImportError as exc:
+                #    print(f"visualization_skipped={exc}")
             except ValueError as exc:
                 print(f"projection_skipped={exc}")
     elif final_decision == "unsure":
@@ -452,17 +501,34 @@ if __name__ == "__main__":
             else:
                 iou = float(calc_iou(pred_box, target_box))
                 print(f"IoU: {iou:.3f}")
-                case_iou_rows.append(
-                    {
-                        "case_id": int(original_case_index),
-                        "iou": round(iou, 6),
-                    }
-                )
-                if iou >= 0.25:
-                    correct_25 += 1
-                    if unique:
-                        unique_25 += 1
-                    if args.eval_mode == "nr3d":
+                if args.eval_mode == "nr3d":
+                    scene_centers = np.asarray(obj_locs, dtype=np.float64)[:, :3]
+                    pred_center = np.asarray(pred_box, dtype=np.float64)[:3]
+                    center_distances = np.linalg.norm(
+                        scene_centers - pred_center, axis=1
+                    )
+                    nearest_index = int(np.argmin(center_distances))
+                    nearest_target_id = int(obj_ids[nearest_index])
+                    min_center_distance = float(center_distances[nearest_index])
+                    acc = int(nearest_target_id == target_id)
+                    case_iou_rows.append(
+                        {
+                            "case_id": int(original_case_index),
+                            "iou": round(iou, 6),
+                            "nearest_target_id": nearest_target_id,
+                            "min_center_distance": round(min_center_distance, 6),
+                            "acc": acc,
+                            "acc_tf": "T" if acc else "F",
+                        }
+                    )
+                    print(f"nearest_target_id: {nearest_target_id}")
+                    print(f"min_center_distance: {min_center_distance:.4f}")
+                    print(f"Acc: {acc}")
+
+                    if acc:
+                        correct_25 += 1
+                        if unique:
+                            unique_25 += 1
                         if is_easy:
                             correct_easy_25 += 1
                         else:
@@ -471,10 +537,21 @@ if __name__ == "__main__":
                             correct_dep_25 += 1
                         else:
                             correct_indep_25 += 1
-                if iou >= 0.5:
-                    correct_50 += 1
-                    if unique:
-                        unique_50 += 1
+                else:
+                    case_iou_rows.append(
+                        {
+                            "case_id": int(original_case_index),
+                            "iou": round(iou, 6),
+                        }
+                    )
+                    if iou >= 0.25:
+                        correct_25 += 1
+                        if unique:
+                            unique_25 += 1
+                    if iou >= 0.5:
+                        correct_50 += 1
+                        if unique:
+                            unique_50 += 1
         except Exception as exc:
             except_total += 1
             print(f"case_error={exc}")
@@ -487,22 +564,30 @@ if __name__ == "__main__":
             )
 
         accuracy_msgs = [
-            "Overall@25: {:.3f}".format(correct_25 / total),
-            "Overall@50: {:.3f}".format(correct_50 / total),
+            (
+                "Acc: {:.3f}".format(correct_25 / total)
+                if args.eval_mode == "nr3d"
+                else "Overall@25: {:.3f}".format(correct_25 / total)
+            ),
+            (
+                "Overall@50: {:.3f}".format(correct_50 / total)
+                if args.eval_mode != "nr3d"
+                else "Overall@50(obs): {:.3f}".format(correct_50 / total)
+            ),
         ]
         if args.eval_mode == "nr3d":
             accuracy_msgs.extend(
                 [
-                    "Easy@25: {:.3f}".format(correct_easy_25 / (easy_total + eps)),
-                    "Hard@25: {:.3f}".format(correct_hard_25 / (hard_total + eps)),
-                    "ViewDep@25: {:.3f}".format(correct_dep_25 / (dep_total + eps)),
-                    "ViewIndep@25: {:.3f}".format(
+                    "EasyAcc: {:.3f}".format(correct_easy_25 / (easy_total + eps)),
+                    "HardAcc: {:.3f}".format(correct_hard_25 / (hard_total + eps)),
+                    "ViewDepAcc: {:.3f}".format(correct_dep_25 / (dep_total + eps)),
+                    "ViewIndepAcc: {:.3f}".format(
                         correct_indep_25 / (indep_total + eps)
                     ),
-                    "Easy Ratio: {} / {}".format(correct_easy_25, easy_total),
-                    "Hard Ratio: {} / {}".format(correct_hard_25, hard_total),
-                    "ViewDep Ratio: {} / {}".format(correct_dep_25, dep_total),
-                    "ViewIndep Ratio: {} / {}".format(correct_indep_25, indep_total),
+                    "EasyAcc Ratio: {} / {}".format(correct_easy_25, easy_total),
+                    "HardAcc Ratio: {} / {}".format(correct_hard_25, hard_total),
+                    "ViewDepAcc Ratio: {} / {}".format(correct_dep_25, dep_total),
+                    "ViewIndepAcc Ratio: {} / {}".format(correct_indep_25, indep_total),
                 ]
             )
         else:
@@ -534,7 +619,17 @@ if __name__ == "__main__":
     if args.max_cases > 0:
         csv_path = Path(f"eval_max_cases_{args.max_cases}_ious.csv")
         with csv_path.open("w", newline="", encoding="utf-8-sig") as file:
-            writer = csv.DictWriter(file, fieldnames=["case_id", "iou"])
+            fieldnames = ["case_id", "iou"]
+            if args.eval_mode == "nr3d":
+                fieldnames = [
+                    "case_id",
+                    "iou",
+                    "nearest_target_id",
+                    "min_center_distance",
+                    "acc",
+                    "acc_tf",
+                ]
+            writer = csv.DictWriter(file, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(case_iou_rows)
         print(f"saved_case_iou_csv={csv_path}")

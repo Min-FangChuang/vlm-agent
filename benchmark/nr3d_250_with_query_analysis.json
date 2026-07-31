@@ -327,14 +327,13 @@
     "easy": true,
     "view_dep": true,
     "query_analysis": {
-      "raw_query": "the sink is to the right of the metal thing on the wall and on the right of the sink on the wall is so meting white and elongated also to the right of the sink are plastic containers",
-      "target_object": "something",
-      "target_attributes": [
-        "white",
-        "elongated"
+      "raw_query": "the sink is to the right of the metal thing on the wall and on the right of the sink on the wall is something white and elongated also to the right of the sink are plastic containers",
+      "target_object": "sink",
+      "target_attributes": [],
+      "reference_object": "metal thing",
+      "reference_attributes": [
+        "on the wall"
       ],
-      "reference_object": "sink",
-      "reference_attributes": [],
       "relation": "to the right of"
     }
   },
@@ -1024,13 +1023,13 @@
     "view_dep": false,
     "query_analysis": {
       "raw_query": "box surrounds door with glass inset",
-      "target_object": "box",
-      "target_attributes": [],
-      "reference_object": "door",
-      "reference_attributes": [
+      "target_object": "door",
+      "target_attributes": [
         "glass inset"
       ],
-      "relation": "surrounds"
+      "reference_object": "box",
+      "reference_attributes": [],
+      "relation": "surrounded by"
     }
   },
   {
@@ -1123,15 +1122,15 @@
     "view_dep": true,
     "query_analysis": {
       "raw_query": "find the box with the longest set of bookcases then choose the smaller one in the corner next to it on the left",
-      "target_object": "box",
+      "target_object": "bookshelf",
       "target_attributes": [
         "smaller"
       ],
-      "reference_object": "box",
+      "reference_object": "bookshelf",
       "reference_attributes": [
-        "with the longest set of bookcases"
+        "the longer one"
       ],
-      "relation": "in the corner next to it on the left"
+      "relation": "in the corner to the left of"
     }
   },
   {
@@ -1311,9 +1310,11 @@
     "view_dep": false,
     "query_analysis": {
       "raw_query": "the kitchen cabinets sink and counter plus part of the floor",
-      "target_object": "kitchen cabinets sink and counter plus part of the floor",
-      "target_attributes": [],
-      "reference_object": "",
+      "target_object": "counter",
+      "target_attributes": [
+        "kitchen"
+      ],
+      "reference_object": "sink",
       "reference_attributes": [],
       "relation": ""
     }
@@ -1837,11 +1838,11 @@
     "view_dep": true,
     "query_analysis": {
       "raw_query": "standing at the window facing the doors it is the one on the left",
-      "target_object": "standing at the window facing the doors it is the one on the left",
+      "target_object": "door",
       "target_attributes": [],
-      "reference_object": "",
+      "reference_object": "window",
       "reference_attributes": [],
-      "relation": ""
+      "relation": "on the left when standing at the window facing the doors"
     }
   },
   {
@@ -1871,7 +1872,7 @@
       "target_attributes": [],
       "reference_object": "sinks",
       "reference_attributes": [],
-      "relation": "on the right"
+      "relation": "on the right when facing the sinks"
     }
   },
   {
@@ -1933,13 +1934,15 @@
     "view_dep": false,
     "query_analysis": {
       "raw_query": "white item resting on top of paper towel dispenser close to the door",
-      "target_object": "item",
+      "target_object": "toilet paper",
       "target_attributes": [
         "white"
       ],
       "reference_object": "paper towel dispenser",
-      "reference_attributes": [],
-      "relation": "resting on top of"
+      "reference_attributes": [
+        "close to the door"
+      ],
+      "relation": "on top of"
     }
   },
   {
@@ -2133,11 +2136,11 @@
     "view_dep": true,
     "query_analysis": {
       "raw_query": "facing the chairs this is the one on the left",
-      "target_object": "facing the chairs this is the one on the left",
+      "target_object": "chair",
       "target_attributes": [],
-      "reference_object": "",
+      "reference_object": "chairs",
       "reference_attributes": [],
-      "relation": ""
+      "relation": "on the left when facing the chairs"
     }
   },
   {
@@ -2244,11 +2247,11 @@
     "view_dep": true,
     "query_analysis": {
       "raw_query": "when standing in the middle of the room facing the plants the correct one is on the left above the tv",
-      "target_object": "when standing in the middle of the room facing the plants the correct one is on the left above the tv",
+      "target_object": "plant",
       "target_attributes": [],
-      "reference_object": "",
+      "reference_object": "tv",
       "reference_attributes": [],
-      "relation": ""
+      "relation": "on the left and above the tv when facing the plants"
     }
   },
   {
@@ -2499,11 +2502,11 @@
     "view_dep": true,
     "query_analysis": {
       "raw_query": "if facing the doors the one on your left",
-      "target_object": "if facing the doors the one on your left",
+      "target_object": "door",
       "target_attributes": [],
-      "reference_object": "",
+      "reference_object": "doors",
       "reference_attributes": [],
-      "relation": ""
+      "relation": "on your left when facing the doors"
     }
   },
   {
@@ -2762,11 +2765,11 @@
     "view_dep": true,
     "query_analysis": {
       "raw_query": "when facing the wall of bookshelves choose the box to the left",
-      "target_object": "box",
+      "target_object": "bookshelf",
       "target_attributes": [],
       "reference_object": "wall of bookshelves",
       "reference_attributes": [],
-      "relation": "to the left"
+      "relation": "to the left when facing the wall of bookshelves"
     }
   },
   {
@@ -2873,7 +2876,7 @@
     "view_dep": false,
     "query_analysis": {
       "raw_query": "the middle option near the paper towels",
-      "target_object": "option",
+      "target_object": "toilet paper",
       "target_attributes": [
         "middle"
       ],
@@ -3453,9 +3456,9 @@
     "view_dep": true,
     "query_analysis": {
       "raw_query": "there is a table in front of this armchair",
-      "target_object": "table",
+      "target_object": "armchair",
       "target_attributes": [],
-      "reference_object": "armchair",
+      "reference_object": "table",
       "reference_attributes": [],
       "relation": "in front of"
     }
