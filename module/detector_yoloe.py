@@ -26,7 +26,7 @@ class GroundingDetection:
 def draw_bbox(
     rgb: np.ndarray,
     bbox: np.ndarray | list[float] | tuple[float, float, float, float],
-    target_object: str,
+    target_object: str = "",
     color: tuple[int, int, int] = (0, 255, 0),
     thickness: int = 2,
 ) -> np.ndarray:
@@ -39,7 +39,9 @@ def draw_bbox(
     image_bgr = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2BGR)
     cv2.rectangle(image_bgr, (x1, y1), (x2, y2), color, thickness)
 
-    label = str(target_object)
+    label = str(target_object or "").strip()
+    if not label:
+        return cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
     font = cv2.FONT_HERSHEY_SIMPLEX
     font_scale = 0.6
     text_thickness = max(1, thickness)

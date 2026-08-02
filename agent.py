@@ -55,6 +55,7 @@ class Agent:
         self.detector_call_count = 0
         self.vlm_image_counts: list[int] = []
         self.max_verification_rounds = 2
+        self.preapply_turn_around_before_verify = True
         self.bbox3d_precheck_center_distance_threshold = 200.0
 
     def vlm(self, prompt, **_: Any) -> Any:
@@ -150,6 +151,7 @@ class Agent:
     ) -> list[ObjectView]:
         object_views: list[ObjectView] = []
         for detection_index, detection in enumerate(detections):
+            view.reference = self._other_detection_bboxes(detections, detection_index)
             object_view = self.build_object_view(
                 view, detection, f"{view.view_id}_{detection_index}"
             )
@@ -315,8 +317,13 @@ class Agent:
     ) -> str:
         if decision != "unsure":
             return "forward"
-        if (suggested_action or "").strip().lower() == "yaw":
+        normalized_action = (suggested_action or "").strip().lower()
+        if normalized_action == "yaw":
             return "yaw"
+        if normalized_action == "backward":
+            return "backward"
+        if normalized_action == "turn_around":
+            return "turn_around"
         return "forward"
 
     def complete_candidate_with_more_views_if_needed(
@@ -325,11 +332,13 @@ class Agent:
         decision: str,
         suggested_action: str | None = None,
     ) -> CandidateObject:
-        if decision not in {"true", "unsure"}:
-            return candidate
-        if not hasattr(self.motion, "complete_candidate_with_more_views"):
+        if decision not in {"new", "true", "unsure"}:
             return candidate
         action_mode = self.select_more_view_mode(decision, suggested_action)
+        if action_mode and action_mode not in getattr(candidate, "done_actions", []):
+            candidate.done_actions.append(action_mode)
+        if not hasattr(self.motion, "complete_candidate_with_more_views"):
+            return candidate
         return self.motion.complete_candidate_with_more_views(
             self,
             candidate,
@@ -360,6 +369,16 @@ class Agent:
                 return suggested_action.strip().lower()
         return None
 
+    def _extract_missing_conditions(self, result: Any) -> list[str]:
+        if not isinstance(result, dict):
+            return []
+        missing_conditions = result.get("missing_conditions")
+        if isinstance(missing_conditions, list):
+            return [
+                str(item).strip() for item in missing_conditions if str(item).strip()
+            ]
+        return []
+
     def _debug_print(self, title: str, payload: Any) -> None:
         if not self.debug or title not in {"vlm_raw_result", "vlm_normalized_decision"}:
             return
@@ -370,12 +389,6 @@ class Agent:
             print(payload)
 
     def _evaluate_candidate_once(self, candidate: CandidateObject) -> str:
-        object_views = getattr(candidate, "object_view", []) or []
-        if len(object_views) <= 1:
-            print(f"[Agent] skip_vlm_candidate_views={len(object_views)}")
-            candidate.last_suggested_action = "forward"
-            return "unsure"
-
         prompt = build_candidate_judgement_prompt(self._require_query(), candidate)
         image_count = self._count_prompt_images(prompt)
         self.vlm_image_counts.append(image_count)
@@ -384,6 +397,7 @@ class Agent:
         self._debug_print("vlm_raw_result", result)
         decision = self._normalize_vlm_decision(result)
         self._debug_print("vlm_normalized_decision", decision)
+        candidate.missing_conditions = self._extract_missing_conditions(result)
         candidate.last_suggested_action = self._extract_suggested_action(result)
         return decision
 
@@ -412,37 +426,93 @@ class Agent:
         candidate: CandidateObject,
         suggested_action: str | None = None,
     ) -> tuple[CandidateObject, str]:
-        decision = self._evaluate_candidate_once(candidate)
-        candidate.verification_round = (
-            int(getattr(candidate, "verification_round", 0)) + 1
+        should_preapply_turn_around = (
+            self.preapply_turn_around_before_verify
+            and "turn_around" not in getattr(candidate, "done_actions", [])
         )
-        candidate.status = decision
-        if decision == "true":
+        if (
+            should_preapply_turn_around
+            and getattr(candidate, "bbox_3d", None) is not None
+        ):
+            object_views = list(getattr(candidate, "object_view", []) or [])
+            best_id = int(getattr(candidate, "best_id", 0))
+            if 0 <= best_id < len(object_views):
+                best_view = getattr(object_views[best_id], "view", None)
+                best_camera_to_world = getattr(best_view, "camera_to_world", None)
+                if best_camera_to_world is not None:
+                    camera_position = np.asarray(
+                        best_camera_to_world[:3, 3], dtype=np.float64
+                    )
+                    target_center = np.asarray(
+                        candidate.bbox_3d, dtype=np.float64
+                    ).reshape(-1)[:3]
+                    distance_to_target = float(
+                        np.linalg.norm(camera_position - target_center)
+                    )
+                    if distance_to_target > 2.0:
+                        print(
+                            "[Agent] skip_preapply_turn_around_distance "
+                            f"candidate_id={getattr(candidate, 'object_id', '')} "
+                            f"label={getattr(candidate, 'label', '')} "
+                            f"distance={distance_to_target:.3f}"
+                        )
+                        should_preapply_turn_around = False
+        if should_preapply_turn_around:
+            print(
+                "[Agent] preapply_turn_around "
+                f"candidate_id={getattr(candidate, 'object_id', '')} "
+                f"label={getattr(candidate, 'label', '')} "
+                f"status={getattr(candidate, 'status', '')} "
+                f"best_id={getattr(candidate, 'best_id', '')} "
+                f"num_object_views={len(getattr(candidate, 'object_view', []) or [])} "
+                f"done_actions={getattr(candidate, 'done_actions', [])}"
+            )
             candidate = self.complete_candidate_with_more_views_if_needed(
                 candidate,
-                decision=decision,
-                suggested_action=suggested_action
-                or getattr(candidate, "last_suggested_action", None),
+                decision="unsure",
+                suggested_action="turn_around",
             )
-            return candidate, decision
-
-        if decision == "unsure" and self.can_retry_candidate(candidate):
-            candidate = self.complete_candidate_with_more_views_if_needed(
-                candidate,
-                decision=decision,
-                suggested_action=suggested_action
-                or getattr(candidate, "last_suggested_action", None),
+            print(
+                "[Agent] preapply_turn_around_done "
+                f"candidate_id={getattr(candidate, 'object_id', '')} "
+                f"num_object_views={len(getattr(candidate, 'object_view', []) or [])} "
+                f"done_actions={getattr(candidate, 'done_actions', [])}"
             )
+        while True:
             decision = self._evaluate_candidate_once(candidate)
             candidate.verification_round = (
                 int(getattr(candidate, "verification_round", 0)) + 1
             )
             candidate.status = decision
-            if decision not in {"true", "false"}:
-                candidate.status = "unsure"
-            return candidate, decision
+            effective_action = suggested_action or getattr(
+                candidate, "last_suggested_action", None
+            )
 
-        return candidate, decision
+            if decision == "true":
+                current_round = int(getattr(candidate, "verification_round", 0))
+                candidate.verification_round = int(self.max_verification_rounds)
+                if current_round != 1:
+                    return candidate, decision
+                candidate = self.complete_candidate_with_more_views_if_needed(
+                    candidate,
+                    decision=decision,
+                    suggested_action="forward",
+                )
+                return candidate, decision
+
+            if decision != "unsure":
+                return candidate, decision
+
+            if not self.can_retry_candidate(candidate):
+                candidate.status = "unsure"
+                return candidate, decision
+
+            candidate = self.complete_candidate_with_more_views_if_needed(
+                candidate,
+                decision=decision,
+                suggested_action=effective_action,
+            )
+            suggested_action = None
 
     def complete_candidate_masks(self, candidate: CandidateObject) -> None:
         if self.segmenter is None:

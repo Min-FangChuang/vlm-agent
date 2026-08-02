@@ -40,20 +40,25 @@ def _draw_candidate_object_view(object_view: Any) -> np.ndarray:
     if view is None:
         raise ValueError("object_view must provide `view`.")
 
+    source = str(_safe_getattr(object_view, "source", ""))
+    if source == "turn_around":
+        image = np.asarray(_safe_getattr(view, "rgb"), dtype=np.uint8).copy()
+        return image
+
     image = np.asarray(_safe_getattr(view, "rgb"), dtype=np.uint8).copy()
-    # references = _safe_getattr(view, "reference", []) or []
-    # for reference in references:
-    #     image = draw_bbox(
-    #         image,
-    #         _safe_getattr(reference, "bbox"),
-    #         str(_safe_getattr(reference, "label", "reference")),
-    #         color=(0, 0, 255),
-    #     )
+    references = _safe_getattr(view, "reference", []) or []
+    for reference in references:
+        image = draw_bbox(
+            image,
+            reference,
+            "",
+            color=(255, 0, 0),
+        )
 
     image = draw_bbox(
         image,
         _safe_getattr(object_view, "bbox_2d"),
-        str(_safe_getattr(object_view, "label", "object")),
+        "",
         color=(0, 255, 0),
     )
     return image
@@ -77,6 +82,7 @@ def _infer_object_view_analysis(object_view: Any) -> dict[str, Any]:
     support_only_sources = {
         "projected_yaw_support_only",
         "projected_bootstrap_support_only",
+        "turn_around",
     }
     segmented_sources = {
         "projected_bootstrap_segmented",
@@ -176,78 +182,76 @@ def build_candidate_summary(candidate: Any) -> str:
     )
 
 
-CANDIDATE_VERIFY_SYSTEM_PROMPT = """You are a visual grounding verifier for indoor environments.
+CANDIDATE_VERIFY_SYSTEM_PROMPT = """You are a visual grounding verifier for indoor environments. The green boxes always indicate the candidate currently being evaluated.
 
-You are given:
-1. the full user request and a compact extraction of its key conditions
-2. several photos of the same candidate object from different viewpoints
-3. the surrounding scene context visible in those photos
+The green-boxed candidate is only a coarse candidate, not a confirmed match. You must first verify whether it is genuinely the requested object category itself, not merely an object that loosely looks similar in shape, color, layout, or partial appearance.
 
-The green boxes always indicate the object being evaluated. Your task is to determine whether this green-boxed object fully satisfies the request among the plausible objects in the scene.
+This verifier operates inside a multi-round evidence-gathering loop. The currently provided views may be only part of the final evidence for this candidate. Your job is not only to judge the candidate from the current images, but also to decide whether the current evidence is already sufficient for a reliable final decision.
 
-Rules:
-- Use all provided viewpoints as evidence.
-- First verify that the green-boxed object itself matches the requested object category and stated attributes.
-- Allow reasonable tolerance for attributes that may look slightly different because of occlusion, lighting, perspective, or other visual ambiguity, as long as the object could still plausibly satisfy the description. If an attribute is clearly contradicted by the evidence, return false.
-- Then verify that any required nearby reference object or alternative object is visually supported and matches the requested role in the description.
-- Then verify that the spatial relation, comparison, or relation chain is satisfied. This includes comparative or superlative requirements such as closest, farthest, leftmost, rightmost, biggest, smallest, or similar relative descriptions.
-- For relative comparisons involving nearby objects, confirm the surrounding context is sufficient before deciding. Verify that the views contain enough nearby evidence to compare the green-boxed object against relevant alternative objects and reference objects, rather than judging from an isolated crop.
-- Spatial relations are especially sensitive to incomplete viewpoints. Before deciding a relation, confirm that the views provide enough surrounding coverage of the green-boxed object and the relevant nearby objects needed for that judgment. If the relation cannot be judged reliably because the needed surrounding views are incomplete, return unsure.
-- After checking the extracted conditions, do one final pass against the full original request and make sure no explicit requirement was missed.
-- Do not hallucinate unsupported details.
-- Only return true when the evidence is strong enough that the green-boxed object is the correct match, not just a partially matching object.
-- If evidence is insufficient, return "unsure" instead of "true".
+Use the full natural-language request as the main thing to verify. The request may involve object identity, attributes, nearby reference objects, spatial relations, comparisons, or relation chains. Natural-language descriptions may also be ambiguous, incomplete, or dependent on scene context, orientation, or nearby alternatives. You must interpret the request against the actual environment shown in the views, rather than treating each phrase as an isolated rigid rule. Your decision should reflect whether the boxed object satisfies the whole request in the scene, not only part of it.
 
-You must evaluate:
-- object category
-- object attributes
-- reference-object existence if required
-- spatial relation if required
-- whether current evidence is sufficient
+ Pay special attention to left/right language in the query: determine whether it refers to the object's intrinsic left/right side or to observer/image-relative left/right, and do not treat those two reference frames as equivalent.
+
+Visual evidence is provided as stitched images. Each regular stitched image is a grid made by combining up to 6 observed views of the same candidate object into one image. The green box indicates the candidate being evaluated in the corresponding tile.
+
+Blue boxes indicate other detector results in the same RGB view. They are not the current candidate, but you may use them to judge relative relations, nearby alternatives, and whether the green-boxed candidate is really the best-matching target in that local scene.
+
+If turn_around evidence is available, it is provided as one separate stitched image. Interpret it as a turn-in-place sequence around the currently evaluated candidate: imagine facing the candidate at 0 deg and then rotating around that same location while reconstructing the surrounding layout relative to the candidate. The 0 deg tile denotes the current best target view and the candidate currently being evaluated, and this 0 deg tile is the one where the candidate itself is marked by the green box. Non-zero-degree tiles show what lies around that candidate from other headings. For example, objects near +180 deg or -180 deg are roughly behind the current 0 deg viewing direction, so use those angles to imagine what lies around the candidate from the viewer's backside perspective. Do not read the angle labels as isolated tags; use them to mentally reconstruct the local spatial arrangement and the positions of nearby objects relative to the evaluated candidate. Turnaround tiles may emphasize surrounding context and orientation rather than always showing a complete target box, so use them mainly to understand nearby layout, reference objects, relative orientation, and whether additional evidence exists around the candidate. If another object seen in a non-zero-degree turnaround tile appears to satisfy the query better than the 0 deg candidate, treat that as evidence that the current candidate may not be the best match.
+
+If the reference object is unclear, or if the relation cannot be judged reliably, do not overcommit.
+
+Do not rationalize object identity, semantic meaning, or spatial relations around the green-boxed candidate just because it looks plausible. Judge the full scene evidence as evenly as possible, including nearby alternatives and the overall spatial layout.
+
+Return unsure when the current candidate may still be correct but the current evidence is not yet sufficient to confirm the full request. In that case, use suggested_action to indicate what kind of additional evidence should be collected next. The purpose of suggested_action is to request the next kind of information that would most reduce the current uncertainty. It is not a candidate choice.
+
+If a blue-boxed candidate in the same image could also satisfy the query and the current evidence is not sufficient to distinguish it reliably from the green-boxed candidate, return unsure.
+
+If `history_missing_conditions` is provided, it is only a brief summary of what the previous verification round found missing. Use it as historical context, not as the sole basis for the current decision. The current decision must still be based primarily on the full request and the currently available visual evidence.
+
+Use forward when more direct, target-centered views are needed to confirm the candidate itself.
+
+Use yaw when more nearby viewpoints are needed to keep the same candidate in view and obtain a more complete or less partial view of that candidate.
+
+Use backward when the current candidate likely needs a slightly wider and slightly more pulled-back local view so that more of the candidate itself can be seen together. Backward only provides limited extra space.
+
+Use stop only when no additional view request is needed.
+
+Return false only when the current candidate is clearly contradicted, clearly fails an essential requirement, or another nearby candidate clearly satisfies the request better. Return true only when the current evidence is already sufficient to confirm the full request with strong evidence and no meaningful condition-level doubt remains.
+
+Do not hallucinate unsupported details. In reasoning, explicitly mention which stitched image and tile(s) provide the relevant evidence whenever visual evidence is cited.
 
 Return structured JSON only with this schema:
 {
   "decision": "true",
-  "confidence": "high",
+  "confidence": 95,
   "reasoning": "brief evidence-based reasoning",
   "matched_conditions": [],
   "missing_conditions": [],
   "suggested_action": "forward"
 }
 
-Allowed values:
-- decision: true / false / unsure
-- confidence: high / medium / low
-- suggested_action: forward / yaw / stop
-
-Suggested action semantics:
-- forward: request more complete target views or additional target-centered viewpoints from different angles
-- yaw: request nearby environment/context views around the target object to better judge surrounding reference objects or relations
-- stop: no additional view request is needed
+Rules for output:
+- decision must be one of: true, false, unsure
+- confidence must be an integer from 0 to 100
+- confidence should reflect how certain you are that the decision is correct
+- if evidence is insufficient, use decision="unsure" rather than forcing true or false
+- suggested_action must be one of: forward, yaw, backward, stop
 """
 
-MULTI_CANDIDATE_SELECT_SYSTEM_PROMPT = """Imagine you are in a room and you are asked to find one object.
+MULTI_CANDIDATE_SELECT_SYSTEM_PROMPT = """You are selecting the best candidate object for a visual grounding query in an indoor environment.
 
-Given a natural language query and several stitched images of possible objects, you need to analyze the images and choose the single image that best matches the query.
+Each stitched image corresponds to one candidate hypothesis. The green box in each tile indicates the candidate being evaluated in that stitched image. A candidate may look similar to the requested object but still be wrong. Different candidates are not guaranteed to correspond to different physical objects. Some candidates may be alternative boxes, alternative viewpoints, or alternative hypotheses for the same underlying object. Your task is to choose the single candidate that provides the most reliable and best-supported match to the full natural-language request.
 
-Each stitched image is composed of multiple views of the same candidate object. The green box in each view highlights the candidate object, but the box may also include other irrelevant objects. You must identify the correct object by combining the object inside the green box with the surrounding environment across different views.
+Use the full query as the main thing to verify. The query may involve object identity, attributes, nearby reference objects, spatial relations, comparisons, or relation chains. Natural-language descriptions may also be ambiguous or depend on scene context, orientation, or nearby alternatives, so evaluate each candidate in the context of the whole scene description rather than isolated object appearance alone.
 
-Important instructions:
-- Compare all candidate images against the full original query.
-- Use the stitched image as the primary visual evidence for each candidate.
-- Do not focus only on the object appearance inside the green box. Use the surrounding scene context to judge nearby reference objects and spatial relations.
-- Different candidates may all look similar in object category, color, or shape. If that happens, do not choose based mainly on appearance. Use reference-object evidence and spatial relation evidence as the main basis for selection.
-- If the query includes relative references such as left-most, right-most, closest, farthest, biggest, or smallest, first identify the relevant reference object in the visible scene context for each candidate, then judge the target object's relation to it.
-- For spatial or relational queries, prefer the candidate whose views give the clearest and strongest evidence for the required relation, not the candidate whose target object only looks more similar in isolation.
-- When comparing candidates, explicitly determine what evidence supports or weakens each one before choosing the best match.
-- If multiple candidates partially match, choose the one whose reference-object evidence and spatial relation are best supported by the views.
-- Do not rely on detector confidence or class names beyond what is visually supported.
-- You must choose exactly one candidate, even if the evidence is imperfect. Select the most suitable candidate overall.
+For each candidate, first verify whether the boxed object itself is genuinely the requested object category, not merely something that loosely looks similar. Then compare candidates by checking which one best satisfies the requested attributes, reference-object constraints, spatial relations, comparisons, and surrounding scene context. Similar target objects and similar reference objects may both appear multiple times in the scene, so make sure you are selecting the candidate that matches the correct target-reference pairing rather than any arbitrary similar object.
+
+You must select exactly one candidate from the provided candidates. Do not reject all candidates and do not return an empty choice. Even if the evidence is imperfect, choose the candidate that is the strongest overall match relative to the other candidates. If several candidates appear to refer to the same underlying object, prefer the candidate whose views, framing, and surrounding evidence support the request more clearly and more completely.
 
 Return structured JSON only with this schema:
 {
   "selected_index": 0,
-  "reasoning": "brief evidence-based reasoning"
+  "reasoning": "brief evidence-based comparison"
 }
 
 Rules for output:
@@ -380,6 +384,29 @@ def _stitch_candidate_object_view_batches(
     return stitched_batches
 
 
+def _collect_turn_around_batch(candidate: Any) -> tuple[Any, list[str]]:
+    object_views = _safe_getattr(candidate, "object_view", []) or []
+    for object_view in object_views:
+        if str(_safe_getattr(object_view, "source", "")) != "turn_around":
+            continue
+        view = _safe_getattr(object_view, "view")
+        stitched_image = _safe_getattr(view, "rgb")
+        reference = _safe_getattr(view, "reference", {}) or {}
+        if isinstance(reference, dict):
+            tile_descriptions = list(reference.get("tile_descriptions", []) or [])
+        else:
+            tile_descriptions = list(
+                _safe_getattr(reference, "tile_descriptions", []) or []
+            )
+        if stitched_image is None:
+            continue
+        image_array = np.asarray(stitched_image, dtype=np.uint8)
+        if image_array.ndim != 3 or image_array.shape[2] != 3:
+            continue
+        return image_array, tile_descriptions
+    return None, []
+
+
 def _normalize_reference(reference: Any) -> Any:
     if reference is None:
         return []
@@ -408,20 +435,24 @@ def _normalize_reference(reference: Any) -> Any:
 
 
 def build_candidate_text_input(query: Any, candidate: Any) -> str:
+    request_payload = {
+        "full_text": _safe_getattr(query, "query", ""),
+        "requested_object": _safe_getattr(query, "target_object", ""),
+        "requested_object_attributes": _safe_getattr(query, "target_attributes", []),
+        "reference_object": _safe_getattr(query, "reference_object", ""),
+        "reference_object_attributes": _safe_getattr(query, "reference_attributes", []),
+        "done_actions": _safe_getattr(candidate, "done_actions", []),
+        # "spatial_relation": _safe_getattr(query, "relation", ""),
+    }
+    history_missing_conditions = list(
+        _safe_getattr(candidate, "missing_conditions", []) or []
+    )
+    if history_missing_conditions:
+        request_payload["history_missing_conditions"] = history_missing_conditions
+
     payload = {
         "task": "verify whether the green-boxed object is the requested object",
-        "request": {
-            "full_text": _safe_getattr(query, "query", ""),
-            "requested_object": _safe_getattr(query, "target_object", ""),
-            "requested_object_attributes": _safe_getattr(
-                query, "target_attributes", []
-            ),
-            "reference_object": _safe_getattr(query, "reference_object", ""),
-            "reference_object_attributes": _safe_getattr(
-                query, "reference_attributes", []
-            ),
-            "spatial_relation": _safe_getattr(query, "relation", ""),
-        },
+        "request": request_payload,
     }
 
     return json.dumps(payload, ensure_ascii=False, indent=2)
@@ -432,19 +463,39 @@ def build_candidate_judgement_prompt(query: Any, candidate: Any):
     gpt_input = build_candidate_text_input(query, candidate)
 
     stitched_batches = _stitch_candidate_object_view_batches(
-        object_views,
+        [
+            object_view
+            for object_view in object_views
+            if str(_safe_getattr(object_view, "source", "")) != "turn_around"
+        ],
         views_per_stitched_image=6,
         tile_size=(384, 288),
         columns=3,
     )
+    turn_around_image, turn_around_descriptions = _collect_turn_around_batch(candidate)
+    if turn_around_image is not None:
+        stitched_batches.append((turn_around_image, turn_around_descriptions))
+
+    turn_around_text = ""
+    if turn_around_image is not None:
+        turn_around_text = (
+            "- A turnaround image may appear as one separate stitched panel showing nearby environment/context views around the best view.\n"
+            "- Tiles in the turnaround image may not contain the target object; use them mainly to inspect nearby context, reference objects, and relations.\n"
+            "- Each turnaround tile has an angle label printed on the image, and 0 deg denotes the best current view.\n"
+        )
 
     all_tile_descriptions: list[str] = []
     image_contents: list[dict[str, Any]] = []
 
     for batch_index, (stitched_image, tile_descriptions) in enumerate(stitched_batches):
-        all_tile_descriptions.append(
-            f"stitched image {batch_index}: contains {', '.join(tile_descriptions)}"
-        )
+        if batch_index == len(stitched_batches) - 1 and turn_around_image is not None:
+            all_tile_descriptions.append(
+                f"turnaround image {batch_index}: contains {', '.join(tile_descriptions)}"
+            )
+        else:
+            all_tile_descriptions.append(
+                f"stitched image {batch_index}: contains {', '.join(tile_descriptions)}"
+            )
 
         image_contents.append(
             {
@@ -465,6 +516,7 @@ def build_candidate_judgement_prompt(query: Any, candidate: Any):
                 + "- The attached images are stitched grids made from multiple photos of the same green-boxed object.\n"
                 + "- Each stitched image contains up to 6 viewpoints.\n"
                 + "- Green boxes indicate the object currently being evaluated.\n"
+                + turn_around_text
                 + "- Tile numbers are local to each stitched image.\n"
                 + "- If a required reference object or spatial relation is not visually confirmed, return unsure.\n\n"
                 + "Tile descriptions:\n"
@@ -494,7 +546,11 @@ def build_multi_candidate_selection_prompt(query: Any, candidates: list[Any]):
     image_contents: list[dict[str, Any]] = []
 
     for candidate_index, candidate in enumerate(candidates):
-        object_views = (_safe_getattr(candidate, "object_view", []) or [])[:6]
+        object_views = [
+            object_view
+            for object_view in (_safe_getattr(candidate, "object_view", []) or [])
+            if str(_safe_getattr(object_view, "source", "")) != "turn_around"
+        ][:6]
         stitched_image, tile_descriptions = _stitch_candidate_object_views(
             object_views,
             tile_size=(384, 288),

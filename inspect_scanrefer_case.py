@@ -10,11 +10,11 @@ import torch
 
 try:
     from benchmark.utils import BENCHMARK_DIR, load_pc
-    from module.detector import draw_bbox
+    from module.detector_yoloe import draw_bbox
     from read import Read
 except ImportError:
     from .benchmark.utils import BENCHMARK_DIR, load_pc
-    from .module.detector import draw_bbox
+    from .module.detector_yoloe import draw_bbox
     from .read import Read
 
 

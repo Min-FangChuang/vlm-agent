@@ -5,6 +5,15 @@ from typing import Any, Callable
 
 import numpy as np
 
+import cv2
+
+try:
+    from ..agent_schema import View
+    from ..module.detector_yoloe import draw_bbox
+except ImportError:
+    from agent_schema import View  # type: ignore
+    from module.detector_yoloe import draw_bbox  # type: ignore
+
 
 @dataclass
 class ProjectedView:
@@ -781,6 +790,112 @@ def select_projected_views_yaw(
     return selected
 
 
+def select_projected_views_backward(
+    projected_views: list[ProjectedView],
+    num_views: int,
+    object_center_xy: np.ndarray,
+    existing_view_ids: set[str],
+    existing_angles: list[float],
+    covered_edges: set[str],
+    max_fallback_distance: float,
+) -> list[ProjectedView]:
+    del existing_angles, covered_edges, max_fallback_distance
+    remaining = [
+        item for item in projected_views if item.view_id not in existing_view_ids
+    ]
+    sorted_views = sorted(
+        remaining,
+        key=lambda item: float(
+            np.linalg.norm(
+                np.asarray(item.camera_xy, dtype=np.float64)
+                - np.asarray(object_center_xy, dtype=np.float64)
+            )
+        ),
+        reverse=True,
+    )
+    selected: list[ProjectedView] = []
+    for item in sorted_views[: int(num_views)]:
+        selected.append(
+            ProjectedView(
+                view_id=item.view_id,
+                image_file=item.image_file,
+                projected_bbox_2d=np.asarray(item.projected_bbox_2d, dtype=np.float32),
+                bbox_area=float(item.bbox_area),
+                camera_xy=np.asarray(item.camera_xy, dtype=np.float64),
+                image_size=(int(item.image_size[0]), int(item.image_size[1])),
+                selection_reason="backward_distance_priority",
+            )
+        )
+    return selected
+
+
+def select_projected_views_yaw(
+    projected_views: list[ProjectedView],
+    num_views: int,
+    object_center_xy: np.ndarray,
+    existing_view_ids: set[str],
+    max_fallback_distance: float,
+) -> list[ProjectedView]:
+    filtered_views = [
+        item
+        for item in projected_views
+        if float(
+            np.linalg.norm(
+                np.asarray(item.camera_xy, dtype=np.float64)
+                - np.asarray(object_center_xy, dtype=np.float64)
+            )
+        )
+        <= float(max_fallback_distance)
+    ]
+    sorted_views = sorted(filtered_views or projected_views, key=_bbox_region_score)
+    selected: list[ProjectedView] = []
+    used_view_ids = set(existing_view_ids)
+    covered_regions: set[str] = set()
+    for item in sorted_views:
+        if len(selected) >= int(num_views):
+            break
+        if item.view_id in used_view_ids:
+            continue
+        region = _bbox_region(item)
+        if region in covered_regions:
+            continue
+        selected.append(
+            ProjectedView(
+                view_id=item.view_id,
+                image_file=item.image_file,
+                projected_bbox_2d=np.asarray(item.projected_bbox_2d, dtype=np.float32),
+                bbox_area=float(item.bbox_area),
+                camera_xy=np.asarray(item.camera_xy, dtype=np.float64),
+                image_size=(int(item.image_size[0]), int(item.image_size[1])),
+                selection_reason="yaw_region_priority",
+            )
+        )
+        used_view_ids.add(item.view_id)
+        covered_regions.add(region)
+
+    if len(selected) < int(num_views):
+        for item in sorted_views:
+            if len(selected) >= int(num_views):
+                break
+            if item.view_id in used_view_ids:
+                continue
+            selected.append(
+                ProjectedView(
+                    view_id=item.view_id,
+                    image_file=item.image_file,
+                    projected_bbox_2d=np.asarray(
+                        item.projected_bbox_2d, dtype=np.float32
+                    ),
+                    bbox_area=float(item.bbox_area),
+                    camera_xy=np.asarray(item.camera_xy, dtype=np.float64),
+                    image_size=(int(item.image_size[0]), int(item.image_size[1])),
+                    selection_reason="yaw_fallback",
+                )
+            )
+            used_view_ids.add(item.view_id)
+    return selected
+
+
 def complete_candidate_with_more_views(
     *,
     agent: Any,
@@ -816,6 +931,9 @@ def complete_candidate_with_more_views(
     existing_angles: list[float] = []
     covered_edges: set[str] = set()
     for object_view in getattr(candidate, "object_view", []) or []:
+        source = str(getattr(object_view, "source", ""))
+        if "turn_around" in source:
+            continue
         view = getattr(object_view, "view", None)
         if view is None:
             continue
@@ -856,6 +974,16 @@ def complete_candidate_with_more_views(
             existing_view_ids=existing_view_ids,
             max_fallback_distance=float(max_fallback_distance),
         )
+    elif action_mode == "backward":
+        bootstrap_views = select_projected_views_backward(
+            projected_views,
+            num_views=int(num_bootstrap_views),
+            object_center_xy=object_center_xy,
+            existing_view_ids=existing_view_ids,
+            existing_angles=existing_angles,
+            covered_edges=covered_edges,
+            max_fallback_distance=float(max_fallback_distance),
+        )
     else:
         bootstrap_views = select_projected_views_forward(
             projected_views,
@@ -874,6 +1002,7 @@ def complete_candidate_with_more_views(
             projected_view.projected_bbox_2d, dtype=np.float32
         ).reshape(4)
         is_yaw = action_mode == "yaw"
+        is_backward = action_mode == "backward"
         is_support_only = _is_edge_touching_small_bbox(projected_view)
 
         if is_support_only:
@@ -883,6 +1012,8 @@ def complete_candidate_with_more_views(
             source = (
                 "projected_yaw_support_only"
                 if is_yaw
+                else "projected_backward_support_only"
+                if is_backward
                 else "projected_bootstrap_support_only"
             )
         else:
@@ -890,6 +1021,19 @@ def complete_candidate_with_more_views(
             chosen_detection, _ = choose_detection_for_projected_bbox(
                 detections, projected_bbox
             )
+            chosen_index = -1
+            if chosen_detection is not None:
+                for detection_index, detection in enumerate(detections):
+                    if detection is chosen_detection:
+                        chosen_index = detection_index
+                        break
+            if chosen_index >= 0:
+                view.reference = agent._other_detection_bboxes(detections, chosen_index)
+            else:
+                view.reference = [
+                    np.asarray(detection.bbox, dtype=np.float32).reshape(4)
+                    for detection in detections
+                ]
             if chosen_detection is not None:
                 refined_bbox = bbox_to_array(chosen_detection.bbox)
             else:
@@ -917,6 +1061,12 @@ def complete_candidate_with_more_views(
                     if mask is not None
                     else "projected_yaw_refined"
                 )
+            elif is_backward:
+                source = (
+                    "projected_backward_segmented"
+                    if mask is not None
+                    else "projected_backward_refined"
+                )
             else:
                 source = (
                     "projected_bootstrap_segmented"
@@ -940,5 +1090,208 @@ def complete_candidate_with_more_views(
     for object_view in bootstrap_object_views:
         candidate.add_object_view(object_view)
     agent.ensure_candidate_best_view_mask(candidate)
+    candidate.status = "expanded"
+    return candidate
+
+
+def complete_candidate_with_turn_around_views(
+    *,
+    agent: Any,
+    candidate: Any,
+    max_distance: float = 1,
+    angle_step: float = 45.0,
+) -> Any:
+    object_views = list(getattr(candidate, "object_view", []) or [])
+    if not object_views:
+        return candidate
+
+    best_id = int(getattr(candidate, "best_id", 0))
+    if best_id < 0 or best_id >= len(object_views):
+        best_id = 0
+    best_object_view = object_views[best_id]
+    best_view = getattr(best_object_view, "view", None)
+    if best_view is None or getattr(best_view, "camera_to_world", None) is None:
+        return candidate
+
+    frame_ids = getattr(agent.motion, "frame_ids", [])
+    build_view_fn = getattr(agent.motion, "_build_view", None)
+    if not frame_ids or build_view_fn is None:
+        return candidate
+
+    reference_position = np.asarray(best_view.camera_to_world[:3, 3], dtype=np.float64)
+    reference_forward = np.asarray(
+        best_view.camera_to_world[:3, :3], dtype=np.float64
+    ) @ np.asarray([0.0, 0.0, 1.0], dtype=np.float64)
+    forward_norm = float(np.linalg.norm(reference_forward))
+    if forward_norm <= 1e-8:
+        return candidate
+    reference_forward = reference_forward / forward_norm
+    reference_yaw = float(
+        np.degrees(np.arctan2(reference_forward[1], reference_forward[0]))
+    )
+
+    centers: list[float] = []
+    current = 180.0 - float(angle_step)
+    while current > 0.0:
+        centers.append(current)
+        current -= float(angle_step)
+    centers.append(0.0)
+    current = -float(angle_step)
+    while current >= -180.0 + 1e-6:
+        centers.append(current)
+        current -= float(angle_step)
+
+    half_step = float(angle_step) * 0.5
+    chosen: list[tuple[float, Any, float, float]] = []
+    used_view_ids: set[str] = {str(getattr(best_view, "view_id", ""))}
+
+    for center in centers:
+        if abs(center) < 1e-6:
+            chosen.append((0.0, best_view, 0.0, 0.0))
+            continue
+
+        matches: list[tuple[float, float, Any, float]] = []
+        for frame_id in frame_ids:
+            view = build_view_fn(str(frame_id))
+            if getattr(view, "camera_to_world", None) is None:
+                continue
+            view_id = str(getattr(view, "view_id", frame_id))
+            if view_id in used_view_ids:
+                continue
+
+            position = np.asarray(view.camera_to_world[:3, 3], dtype=np.float64)
+            distance_m = float(np.linalg.norm(position - reference_position))
+            if distance_m > float(max_distance):
+                continue
+
+            forward = np.asarray(
+                view.camera_to_world[:3, :3], dtype=np.float64
+            ) @ np.asarray([0.0, 0.0, 1.0], dtype=np.float64)
+            norm = float(np.linalg.norm(forward))
+            if norm <= 1e-8:
+                continue
+            forward = forward / norm
+            yaw = float(np.degrees(np.arctan2(forward[1], forward[0])))
+            yaw_delta = float(((yaw - reference_yaw + 180.0) % 360.0) - 180.0)
+            diff = abs(float(((yaw_delta - center + 180.0) % 360.0) - 180.0))
+            if diff > half_step:
+                continue
+            matches.append((diff, distance_m, view, yaw_delta))
+
+        if not matches:
+            continue
+
+        matches.sort(
+            key=lambda item: (item[0], item[1], str(getattr(item[2], "view_id", "")))
+        )
+        _, distance_m, selected_view, yaw_delta = matches[0]
+        used_view_ids.add(str(getattr(selected_view, "view_id", "")))
+        chosen.append(
+            (float(center), selected_view, float(yaw_delta), float(distance_m))
+        )
+
+    existing_turn_around_indices = [
+        index
+        for index, item in enumerate(list(getattr(candidate, "object_view", []) or []))
+        if str(getattr(item, "source", "")) == "turn_around"
+    ]
+    for index in reversed(existing_turn_around_indices):
+        del candidate.object_view[index]
+
+    if len(chosen) <= 1:
+        return candidate
+
+    object_view_type = type(best_object_view)
+    best_bbox = np.asarray(best_object_view.bbox_2d, dtype=np.float32).reshape(4)
+    stitched_tiles: list[np.ndarray] = []
+
+    for center, view, yaw_delta, _distance_m in chosen:
+        image_rgb = np.asarray(view.rgb, dtype=np.uint8).copy()
+        if abs(center) < 1e-6:
+            image_rgb = draw_bbox(
+                image_rgb,
+                best_bbox,
+                "",
+                color=(0, 255, 0),
+            )
+        image_bgr = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2BGR)
+        label = f"{yaw_delta:+.0f} deg"
+        cv2.putText(
+            image_bgr,
+            label,
+            (20, 52),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            1.3,
+            (0, 0, 0),
+            5,
+            cv2.LINE_AA,
+        )
+        cv2.putText(
+            image_bgr,
+            label,
+            (20, 52),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            1.3,
+            (255, 255, 255),
+            2,
+            cv2.LINE_AA,
+        )
+        stitched_tiles.append(cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB))
+
+    if stitched_tiles:
+        count = len(stitched_tiles)
+        if count <= 3:
+            columns, rows = 3, 1
+        elif count <= 4:
+            columns, rows = 2, 2
+        elif count <= 6:
+            columns, rows = 3, 2
+        elif count <= 8:
+            columns, rows = 4, 2
+        else:
+            columns = 4
+            rows = int(np.ceil(count / columns))
+        tile_height = max(tile.shape[0] for tile in stitched_tiles)
+        tile_width = max(tile.shape[1] for tile in stitched_tiles)
+        canvas = np.zeros((rows * tile_height, columns * tile_width, 3), dtype=np.uint8)
+        for index, tile in enumerate(stitched_tiles):
+            row = index // columns
+            col = index % columns
+            y1 = row * tile_height
+            x1 = col * tile_width
+            resized = tile
+            if tile.shape[0] != tile_height or tile.shape[1] != tile_width:
+                resized = cv2.resize(
+                    tile, (tile_width, tile_height), interpolation=cv2.INTER_AREA
+                )
+            canvas[y1 : y1 + tile_height, x1 : x1 + tile_width] = resized
+        turn_around_tile_descriptions = [
+            f"tile {index}: view_id={getattr(view, 'view_id', '')}, delta_deg={yaw_delta:.1f}"
+            for index, (_center, view, yaw_delta, _distance_m) in enumerate(chosen)
+        ]
+        stitched_view = View(
+            rgb=canvas,
+            depth=None,
+            camera_to_world=None,
+            view_id="turn_around_stitched",
+            reference={
+                "tile_descriptions": turn_around_tile_descriptions,
+                "reference_view_id": str(getattr(best_view, "view_id", "")),
+            },
+        )
+        candidate.object_view.append(
+            object_view_type(
+                object_id="turn_around_stitched",
+                label=str(candidate.label),
+                score=1.0,
+                view=stitched_view,
+                bbox_2d=best_bbox,
+                mask_2d=None,
+                points_3d=None,
+                status="support_only",
+                source="turn_around",
+            )
+        )
+
     candidate.status = "expanded"
     return candidate

@@ -226,6 +226,8 @@ class CandidateObject:
         object_view: list[ObjectView] | None = None,
         bbox_3d: Any = None,
         verification_round: int = 0,
+        missing_conditions: list[str] | None = None,
+        done_actions: list[str] | None = None,
     ) -> None:
         self.object_id = object_id
         self.label = label
@@ -233,6 +235,8 @@ class CandidateObject:
         self.bbox_3d = bbox_3d
         self.status = status
         self.verification_round = int(verification_round)
+        self.missing_conditions = list(missing_conditions or [])
+        self.done_actions = list(done_actions or [])
         self.best_id = int(best_id)
         self.object_view = list(object_view or [])
         if view is not None:
