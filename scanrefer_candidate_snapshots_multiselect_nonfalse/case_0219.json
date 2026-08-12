@@ -1,0 +1,263 @@
+{
+  "case_id": 219,
+  "scene_id": "scene0377_00",
+  "query": "this is a janitor cart holding supplies . its front is facing away fron the viewer .",
+  "query_analysis": {
+    "raw_query": "this is a janitor cart holding supplies . its front is facing away fron the viewer .",
+    "target_object": "janitor cart",
+    "target_attributes": [
+      "holding supplies",
+      "front facing away from the viewer"
+    ],
+    "reference_object": "viewer",
+    "reference_attributes": [],
+    "relation": "facing away from"
+  },
+  "gt": {
+    "target_id": 2,
+    "gt_label": "furnace",
+    "gt_bbox_3d": [
+      -0.307652,
+      -0.344743,
+      0.610414,
+      0.772235,
+      1.17051,
+      1.283173
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -0.251215,
+      -0.242645,
+      1.142869,
+      0.603668,
+      0.839854,
+      1.62359
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      2
+    ],
+    "detector_call_count": 29,
+    "total_views": 23,
+    "total_object_views": 3,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "janitor cart",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "need clear confirmation that the green-boxed object itself is a janitor cart",
+        "need visible evidence that it is holding supplies",
+        "need reliable view to determine whether its front is facing away from the viewer"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.0671,
+        -0.9054,
+        1.3088,
+        0.3494,
+        2.036,
+        1.2917
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            1065.33,
+            128.21,
+            1284.05,
+            957.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2886
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            752.0,
+            11.0,
+            1288.0,
+            961.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            447.0,
+            8.0,
+            567.0,
+            229.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            407.0,
+            99.0,
+            816.0,
+            959.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "janitor cart",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "front facing away from the viewer is not clearly confirmed"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.28,
+        -0.0672,
+        0.5354,
+        0.6481,
+        0.6489,
+        1.126
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            876.92,
+            43.83,
+            1271.97,
+            742.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3366
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            461.0,
+            839.0,
+            814.0,
+            959.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            523.14,
+            13.64,
+            1024.23,
+            774.19
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00016",
+          "view_id": "00016",
+          "bbox_2d": [
+            1122.0,
+            414.0,
+            1289.0,
+            961.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "janitor cart",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "is a janitor cart",
+        "front facing away from the viewer"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.0999,
+        2.9077,
+        0.3724,
+        0.9757,
+        0.5092,
+        0.8154
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            11.44,
+            366.51,
+            255.45,
+            955.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2712
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            11.44,
+            366.51,
+            255.45,
+            955.31
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

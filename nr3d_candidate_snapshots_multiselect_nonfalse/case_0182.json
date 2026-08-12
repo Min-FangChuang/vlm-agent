@@ -1,0 +1,1144 @@
+{
+  "case_id": 182,
+  "scene_id": "scene0149_00",
+  "query": "the kitchen cabinet located above the oven",
+  "query_analysis": {
+    "raw_query": "the kitchen cabinet located above the oven",
+    "target_object": "kitchen cabinet",
+    "target_attributes": [],
+    "reference_object": "oven",
+    "reference_attributes": [],
+    "relation": "above"
+  },
+  "gt": {
+    "target_id": 8,
+    "gt_label": "kitchen cabinets",
+    "gt_bbox_3d": [
+      -1.668205,
+      -0.036507,
+      1.845925,
+      0.350441,
+      1.343938,
+      0.988252
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 10,
+    "bbox_3d": [
+      -0.259549,
+      1.734872,
+      1.79586,
+      0.881138,
+      0.173723,
+      0.959481
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3
+    ],
+    "detector_call_count": 47,
+    "total_views": 35,
+    "total_object_views": 29,
+    "total_candidates": 17
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.4755,
+        -0.9573,
+        1.967,
+        0.1065,
+        0.6155,
+        0.77
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            147.04,
+            0.0,
+            635.46,
+            421.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4242
+        },
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            80.28,
+            36.51,
+            588.27,
+            588.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.452
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            80.28,
+            36.51,
+            588.27,
+            588.5
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00043",
+          "view_id": "00043",
+          "bbox_2d": [
+            266.49,
+            18.52,
+            773.84,
+            487.13
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            164.07,
+            55.21,
+            638.9,
+            581.45
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00044",
+          "view_id": "00044",
+          "bbox_2d": [
+            485.96,
+            5.34,
+            987.78,
+            472.3
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "located above the oven",
+        "best matching cabinet for the above-oven description"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -1.6641,
+        -0.5304,
+        1.9561,
+        0.3674,
+        0.3271,
+        0.7093
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00004_1",
+          "view_id": "00004",
+          "bbox_2d": [
+            520.93,
+            4.64,
+            796.42,
+            507.43
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2834
+        },
+        {
+          "object_view_id": "00006_1",
+          "view_id": "00006",
+          "bbox_2d": [
+            475.99,
+            197.6,
+            752.35,
+            702.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2726
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            475.99,
+            197.6,
+            752.35,
+            702.66
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "kitchen cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "an oven must be visibly identified",
+        "the cabinet must be confirmed to be above that oven"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.4688,
+        1.7351,
+        1.7938,
+        0.4685,
+        0.1764,
+        0.9344
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            229.57,
+            0.24,
+            590.47,
+            289.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3378
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            393.85,
+            217.86,
+            713.52,
+            560.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2959
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            380.24,
+            90.62,
+            708.03,
+            445.97
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            220.68,
+            160.75,
+            549.86,
+            516.41
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00058",
+          "view_id": "00058",
+          "bbox_2d": [
+            14.0,
+            0.0,
+            202.0,
+            651.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "kitchen cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "oven is not clearly visible",
+        "cannot verify that the green-boxed cabinet is above the oven"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.6236,
+        1.6814,
+        1.793,
+        0.8606,
+        0.2199,
+        0.9408
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_1",
+          "view_id": "00012",
+          "bbox_2d": [
+            580.88,
+            0.42,
+            885.73,
+            275.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3378
+        },
+        {
+          "object_view_id": "00014_1",
+          "view_id": "00014",
+          "bbox_2d": [
+            706.25,
+            214.52,
+            1005.67,
+            545.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2945
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            310.96,
+            193.38,
+            606.88,
+            536.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2903
+        },
+        {
+          "object_view_id": "bootstrap_00058",
+          "view_id": "00058",
+          "bbox_2d": [
+            576.0,
+            0.0,
+            986.0,
+            598.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00018",
+          "view_id": "00018",
+          "bbox_2d": [
+            57.0,
+            67.0,
+            383.0,
+            448.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            114.13,
+            233.32,
+            438.77,
+            590.61
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "located above the oven"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.9565,
+        -0.178,
+        1.7913,
+        0.3223,
+        0.7924,
+        0.8645
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            589.39,
+            0.0,
+            1073.2,
+            533.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2736
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            589.39,
+            0.0,
+            1073.2,
+            533.52
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a kitchen cabinet above an oven",
+        "reference oven is visually confirmed"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.1356,
+        1.4247,
+        0.408,
+        0.7137,
+        0.2031,
+        0.8327
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            0.06,
+            89.93,
+            293.96,
+            483.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2861
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is above the oven",
+        "candidate is the upper kitchen cabinet associated with the oven"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.8313,
+        -0.3224,
+        0.4342,
+        0.638,
+        0.6038,
+        0.9012
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_1",
+          "view_id": "00028",
+          "bbox_2d": [
+            651.37,
+            284.17,
+            1266.93,
+            905.32
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2764
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            168.84,
+            143.67,
+            776.55,
+            802.43
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.313
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            218.49,
+            81.47,
+            736.58,
+            638.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3485
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            168.84,
+            143.67,
+            776.55,
+            802.43
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00061_1",
+          "view_id": "00061",
+          "bbox_2d": [
+            1031.21,
+            462.38,
+            1296.0,
+            944.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3659
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "located above the oven",
+        "oven reference is not visually confirmed"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.332,
+        1.4592,
+        0.4005,
+        0.777,
+        0.1557,
+        0.8345
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            93.79,
+            98.79,
+            508.82,
+            510.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.414
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "located above the oven",
+        "reference oven is not visually confirmed near the candidate"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.3878,
+        1.0056,
+        0.4111,
+        0.4649,
+        1.0003,
+        0.8639
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_1",
+          "view_id": "00034",
+          "bbox_2d": [
+            716.75,
+            99.73,
+            1009.93,
+            626.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.364
+        },
+        {
+          "object_view_id": "00069_1",
+          "view_id": "00069",
+          "bbox_2d": [
+            0.34,
+            116.48,
+            939.22,
+            717.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4325
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is above an oven",
+        "reference oven is visible and associated with this cabinet",
+        "candidate is an upper cabinet rather than a lower base cabinet"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.2764,
+        1.4635,
+        0.3965,
+        0.4743,
+        0.1857,
+        0.8386
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_2",
+          "view_id": "00034",
+          "bbox_2d": [
+            512.29,
+            87.44,
+            711.57,
+            446.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2602
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "kitchen cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "oven is not visible",
+        "cannot verify that the cabinet is located above the oven"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.2439,
+        1.7198,
+        1.5963,
+        0.8388,
+        0.098,
+        0.5361
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            607.16,
+            0.33,
+            1043.55,
+            274.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3247
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            749.0,
+            3.0,
+            1232.0,
+            499.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00012",
+          "view_id": "00012",
+          "bbox_2d": [
+            229.57,
+            0.24,
+            590.47,
+            289.3
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            220.68,
+            160.75,
+            549.86,
+            516.41
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "located above the oven"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.4504,
+        -1.0888,
+        2.0285,
+        0.172,
+        0.7899,
+        0.5702
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            485.96,
+            5.34,
+            987.78,
+            472.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4247
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            485.96,
+            5.34,
+            987.78,
+            472.3
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "cabinet is located above the oven"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -1.3278,
+        -0.5086,
+        0.4408,
+        0.2036,
+        0.3408,
+        0.8488
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            784.67,
+            514.88,
+            1129.23,
+            965.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3258
+        },
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            85.46,
+            210.68,
+            450.35,
+            765.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3134
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            85.46,
+            210.68,
+            450.35,
+            765.93
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "located above the oven"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.6206,
+        1.8349,
+        1.5991,
+        0.9052,
+        0.3899,
+        0.499
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00057_0",
+          "view_id": "00057",
+          "bbox_2d": [
+            486.13,
+            0.0,
+            900.76,
+            350.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5762
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            486.13,
+            0.0,
+            900.76,
+            350.45
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "is a kitchen cabinet",
+        "located above the oven"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.4758,
+        0.2454,
+        0.4119,
+        0.0992,
+        0.5652,
+        0.7433
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00061_0",
+          "view_id": "00061",
+          "bbox_2d": [
+            668.74,
+            514.04,
+            1087.42,
+            966.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4046
+        },
+        {
+          "object_view_id": "00069_0",
+          "view_id": "00069",
+          "bbox_2d": [
+            871.58,
+            105.37,
+            1296.0,
+            624.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.584
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            871.58,
+            105.37,
+            1296.0,
+            624.08
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 15,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "located above the oven"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.4821,
+        0.8873,
+        0.5359,
+        0.0715,
+        0.7501,
+        0.5828
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00061_2",
+          "view_id": "00061",
+          "bbox_2d": [
+            0.0,
+            584.4,
+            663.74,
+            964.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3238
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            584.4,
+            663.74,
+            964.54
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 16,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "located above the oven"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.8104,
+        -0.2366,
+        1.8038,
+        0.4678,
+        0.7102,
+        1.0161
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00063_0",
+          "view_id": "00063",
+          "bbox_2d": [
+            544.96,
+            20.74,
+            1004.79,
+            680.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4897
+        },
+        {
+          "object_view_id": "00065_0",
+          "view_id": "00065",
+          "bbox_2d": [
+            474.47,
+            0.0,
+            958.58,
+            447.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4947
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            544.96,
+            20.74,
+            1004.79,
+            680.46
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,342 @@
+{
+  "case_id": 246,
+  "scene_id": "scene0432_00",
+  "query": "it is the chair with the towel hanging behind it",
+  "query_analysis": {
+    "raw_query": "it is the chair with the towel hanging behind it",
+    "target_object": "chair",
+    "target_attributes": [],
+    "reference_object": "towel",
+    "reference_attributes": [
+      "hanging"
+    ],
+    "relation": "behind"
+  },
+  "gt": {
+    "target_id": 2,
+    "gt_label": "sofa chair",
+    "gt_bbox_3d": [
+      0.636929,
+      0.675721,
+      0.412885,
+      0.756038,
+      0.874309,
+      0.806518
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      0.599876,
+      0.627951,
+      0.411717,
+      0.738134,
+      0.78885,
+      0.829387
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 11,
+    "total_views": 8,
+    "total_object_views": 11,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "towel is visible",
+        "towel is hanging behind the chair"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.5961,
+        -0.5118,
+        0.352,
+        1.3169,
+        0.8628,
+        0.6886
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            293.6,
+            0.0,
+            697.48,
+            511.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5143
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            745.84,
+            113.84,
+            1156.2,
+            635.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7959
+        },
+        {
+          "object_view_id": "00006_1",
+          "view_id": "00006",
+          "bbox_2d": [
+            762.27,
+            0.0,
+            1116.41,
+            375.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5213
+        },
+        {
+          "object_view_id": "00008_1",
+          "view_id": "00008",
+          "bbox_2d": [
+            738.8,
+            0.0,
+            1266.55,
+            544.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7057
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            738.8,
+            0.0,
+            1266.55,
+            544.45
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "a towel is visible",
+        "the towel is hanging",
+        "the towel is behind the chair"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.5999,
+        0.628,
+        0.4117,
+        0.7381,
+        0.7888,
+        0.8294
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_1",
+          "view_id": "00002",
+          "bbox_2d": [
+            39.86,
+            111.95,
+            510.06,
+            616.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7778
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            343.49,
+            0.0,
+            767.41,
+            358.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4855
+        },
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            124.89,
+            0.0,
+            543.89,
+            428.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7657
+        },
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            73.56,
+            0.0,
+            583.53,
+            400.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.808
+        },
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            292.57,
+            0.0,
+            803.17,
+            519.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.863
+        },
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            885.01,
+            136.03,
+            1296.0,
+            734.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.821
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "a towel is visible behind the chair",
+        "the towel is hanging",
+        "the hanging towel is behind the green-boxed chair"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.7312,
+        -0.6226,
+        0.4127,
+        0.6872,
+        0.6458,
+        0.792
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_1",
+          "view_id": "00010",
+          "bbox_2d": [
+            815.35,
+            71.41,
+            1296.0,
+            963.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2769
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            815.35,
+            71.41,
+            1296.0,
+            963.37
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00002",
+          "view_id": "00002",
+          "bbox_2d": [
+            745.84,
+            113.84,
+            1156.2,
+            635.52
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00001",
+          "view_id": "00001",
+          "bbox_2d": [
+            488.06,
+            48.22,
+            876.75,
+            562.3
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            801.0,
+            0.0,
+            1295.0,
+            802.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

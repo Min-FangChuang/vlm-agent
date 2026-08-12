@@ -1,0 +1,268 @@
+{
+  "case_id": 111,
+  "scene_id": "scene0207_00",
+  "query": "the window is tall and has a brown frame . the window is on the right of another one .",
+  "query_analysis": {
+    "raw_query": "the window is tall and has a brown frame . the window is on the right of another one .",
+    "target_object": "window",
+    "target_attributes": [
+      "tall",
+      "brown frame"
+    ],
+    "reference_object": "window",
+    "reference_attributes": [],
+    "relation": "on the right of"
+  },
+  "gt": {
+    "target_id": 13,
+    "gt_label": "window",
+    "gt_bbox_3d": [
+      0.732771,
+      3.132122,
+      1.367128,
+      0.860764,
+      0.484644,
+      1.580523
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "false",
+    "selected_candidate_id": 3,
+    "bbox_3d": [
+      0.77492,
+      3.11738,
+      1.431337,
+      0.756157,
+      0.434955,
+      1.671409
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      4
+    ],
+    "detector_call_count": 53,
+    "total_views": 50,
+    "total_object_views": 6,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "window",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "brown frame",
+        "window is on the right of another window"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.9005,
+        3.1045,
+        1.1543,
+        0.7662,
+        0.4309,
+        1.1356
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            224.06,
+            12.23,
+            577.9,
+            537.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3041
+        },
+        {
+          "object_view_id": "00084_0",
+          "view_id": "00084",
+          "bbox_2d": [
+            1017.05,
+            4.48,
+            1289.17,
+            113.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2874
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "window",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "window has a brown frame",
+        "window is on the right of another window"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.94,
+        3.0002,
+        1.2598,
+        0.6254,
+        0.4261,
+        0.9468
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            1065.5,
+            418.87,
+            1251.14,
+            677.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2675
+        },
+        {
+          "object_view_id": "bootstrap_00087",
+          "view_id": "00087",
+          "bbox_2d": [
+            40.0,
+            146.0,
+            401.0,
+            485.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00010",
+          "view_id": "00010",
+          "bbox_2d": [
+            639.0,
+            38.0,
+            944.0,
+            367.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00073",
+          "view_id": "00073",
+          "bbox_2d": [
+            1169.0,
+            190.0,
+            1285.0,
+            320.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "window",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "brown frame",
+        "on the right of another window"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.8923,
+        3.0897,
+        1.0245,
+        0.6183,
+        0.2916,
+        0.7028
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            224.97,
+            7.66,
+            538.38,
+            355.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3058
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "window",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "brown frame"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.5488,
+        2.5074,
+        1.3792,
+        1.1311,
+        1.6016,
+        1.5832
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00090_0",
+          "view_id": "00090",
+          "bbox_2d": [
+            505.91,
+            512.25,
+            771.13,
+            957.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3347
+        },
+        {
+          "object_view_id": "00092_0",
+          "view_id": "00092",
+          "bbox_2d": [
+            14.14,
+            61.22,
+            312.11,
+            799.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3278
+        }
+      ]
+    }
+  ]
+}

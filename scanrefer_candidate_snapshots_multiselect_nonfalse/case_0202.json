@@ -1,0 +1,349 @@
+{
+  "case_id": 202,
+  "scene_id": "scene0670_00",
+  "query": "this window is bright . it is facing inward .",
+  "query_analysis": {
+    "raw_query": "this window is bright . it is facing inward .",
+    "target_object": "window",
+    "target_attributes": [
+      "bright"
+    ],
+    "reference_object": "",
+    "reference_attributes": [],
+    "relation": "facing inward"
+  },
+  "gt": {
+    "target_id": 7,
+    "gt_label": "window",
+    "gt_bbox_3d": [
+      -1.564142,
+      1.075415,
+      1.530023,
+      0.360048,
+      1.786097,
+      1.292558
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -1.63207,
+      1.195973,
+      1.557841,
+      0.215389,
+      1.445479,
+      1.16818
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 82,
+    "total_views": 76,
+    "total_object_views": 6,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "window",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.3255,
+        1.1879,
+        1.5587,
+        0.9245,
+        1.4783,
+        1.1797
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            27.26,
+            0.0,
+            457.9,
+            431.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2599
+        },
+        {
+          "object_view_id": "bootstrap_00106",
+          "view_id": "00106",
+          "bbox_2d": [
+            18.0,
+            0.0,
+            68.0,
+            458.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00130",
+          "view_id": "00130",
+          "bbox_2d": [
+            326.0,
+            76.0,
+            363.0,
+            652.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00131",
+          "view_id": "00131",
+          "bbox_2d": [
+            0.69,
+            129.61,
+            712.66,
+            857.53
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00110_0",
+          "view_id": "00110",
+          "bbox_2d": [
+            0.39,
+            86.16,
+            756.26,
+            722.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3494
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "window",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a window",
+        "window is bright",
+        "window is facing inward"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.1429,
+        -1.8437,
+        1.2803,
+        0.6712,
+        1.6937,
+        0.2306
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            71.64,
+            0.0,
+            751.35,
+            147.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3342
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "window",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "clear confirmation that the green-boxed candidate itself is a specific window rather than a partial bright opening/frame",
+        "reliable evidence for the orientation condition 'facing inward'",
+        "disambiguation from other nearby bright windows/openings in the same kitchen area"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.4466,
+        0.5363,
+        1.5823,
+        0.2088,
+        0.6291,
+        0.949
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            1017.2,
+            36.42,
+            1296.0,
+            565.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3534
+        },
+        {
+          "object_view_id": "00092_0",
+          "view_id": "00092",
+          "bbox_2d": [
+            1112.55,
+            199.06,
+            1295.99,
+            804.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4278
+        },
+        {
+          "object_view_id": "bootstrap_00133",
+          "view_id": "00133",
+          "bbox_2d": [
+            3.0,
+            421.0,
+            77.0,
+            479.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00111",
+          "view_id": "00111",
+          "bbox_2d": [
+            105.0,
+            7.0,
+            478.0,
+            64.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00132",
+          "view_id": "00132",
+          "bbox_2d": [
+            7.0,
+            281.0,
+            227.0,
+            380.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "window",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "need stronger direct confirmation that the green-boxed object is a window",
+        "cannot reliably determine whether the window is facing inward from the current views"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.5173,
+        0.3667,
+        1.5364,
+        0.2419,
+        0.2271,
+        1.0291
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00094_0",
+          "view_id": "00094",
+          "bbox_2d": [
+            1161.0,
+            129.53,
+            1296.0,
+            763.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2645
+        },
+        {
+          "object_view_id": "bootstrap_00092",
+          "view_id": "00092",
+          "bbox_2d": [
+            1112.55,
+            199.06,
+            1295.99,
+            804.5
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00121",
+          "view_id": "00121",
+          "bbox_2d": [
+            1057.0,
+            0.0,
+            1149.0,
+            689.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00091",
+          "view_id": "00091",
+          "bbox_2d": [
+            1029.49,
+            41.67,
+            1295.97,
+            608.4
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

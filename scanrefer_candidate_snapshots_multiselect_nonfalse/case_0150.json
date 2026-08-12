@@ -1,0 +1,365 @@
+{
+  "case_id": 150,
+  "scene_id": "scene0697_00",
+  "query": "this is a white two drawer storage bin . it is between the bedside table and the wall .",
+  "query_analysis": {
+    "raw_query": "this is a white two drawer storage bin . it is between the bedside table and the wall .",
+    "target_object": "storage bin",
+    "target_attributes": [
+      "white",
+      "two drawer"
+    ],
+    "reference_object": "bedside table and wall",
+    "reference_attributes": [],
+    "relation": "between"
+  },
+  "gt": {
+    "target_id": 16,
+    "gt_label": "storage bin",
+    "gt_bbox_3d": [
+      1.227867,
+      -1.964888,
+      0.252478,
+      0.47534,
+      0.40156,
+      0.557575
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      1.050043,
+      -1.969056,
+      0.215737,
+      0.163836,
+      0.341917,
+      0.510664
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      1,
+      1
+    ],
+    "detector_call_count": 78,
+    "total_views": 72,
+    "total_object_views": 10,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "storage bin",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 10,
+      "bbox_3d": [
+        1.0539,
+        -1.9726,
+        0.2188,
+        0.1696,
+        0.3628,
+        0.5145
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            756.73,
+            335.66,
+            1082.93,
+            656.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6772
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            800.23,
+            500.53,
+            1119.48,
+            816.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7365
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            889.44,
+            823.37,
+            1182.9,
+            965.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4065
+        },
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            655.7,
+            781.63,
+            920.06,
+            966.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2725
+        },
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            409.37,
+            169.31,
+            720.05,
+            559.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4872
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            409.37,
+            169.31,
+            720.05,
+            559.07
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            87.0,
+            83.0,
+            468.0,
+            531.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00001",
+          "view_id": "00001",
+          "bbox_2d": [
+            771.57,
+            398.63,
+            1093.28,
+            712.39
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00061",
+          "view_id": "00061",
+          "bbox_2d": [
+            905.28,
+            446.84,
+            1223.67,
+            763.9
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00061_0",
+          "view_id": "00061",
+          "bbox_2d": [
+            905.28,
+            446.84,
+            1223.67,
+            763.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4527
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "storage bin",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a white two-drawer storage bin",
+        "candidate is between the bedside table and the wall"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.3002,
+        -1.9816,
+        0.0641,
+        0.2562,
+        0.2441,
+        0.281
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            1129.71,
+            690.11,
+            1296.0,
+            965.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4634
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            552.65,
+            427.45,
+            774.08,
+            680.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.554
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            539.7,
+            507.82,
+            745.6,
+            749.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7202
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            552.65,
+            427.45,
+            774.08,
+            680.74
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "storage bin",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "candidate is not clearly a storage bin",
+        "candidate is not clearly white",
+        "candidate is not clearly two drawer",
+        "between-the-bedside-table-and-wall relation is not satisfied by the boxed candidate"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.2649,
+        1.4097,
+        0.1361,
+        0.3198,
+        0.2419,
+        0.3086
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00137_0",
+          "view_id": "00137",
+          "bbox_2d": [
+            0.0,
+            754.2,
+            143.38,
+            939.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4442
+        },
+        {
+          "object_view_id": "bootstrap_00131",
+          "view_id": "00131",
+          "bbox_2d": [
+            119.0,
+            242.0,
+            345.0,
+            415.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00134",
+          "view_id": "00134",
+          "bbox_2d": [
+            546.0,
+            685.0,
+            690.0,
+            824.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00132",
+          "view_id": "00132",
+          "bbox_2d": [
+            493.0,
+            359.0,
+            680.0,
+            494.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

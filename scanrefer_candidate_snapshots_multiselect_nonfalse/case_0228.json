@@ -1,0 +1,602 @@
+{
+  "case_id": 228,
+  "scene_id": "scene0458_00",
+  "query": "this is a toilet . it is made of porcelain .",
+  "query_analysis": {
+    "raw_query": "this is a toilet . it is made of porcelain .",
+    "target_object": "toilet",
+    "target_attributes": [
+      "porcelain"
+    ],
+    "reference_object": "",
+    "reference_attributes": [],
+    "relation": ""
+  },
+  "gt": {
+    "target_id": 6,
+    "gt_label": "toilet",
+    "gt_bbox_3d": [
+      -0.370783,
+      -0.563921,
+      0.312775,
+      0.674353,
+      0.500541,
+      0.77239
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 2,
+    "bbox_3d": [
+      -0.385131,
+      -0.55878,
+      0.347664,
+      0.718623,
+      0.48668,
+      0.832673
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      5
+    ],
+    "detector_call_count": 65,
+    "total_views": 50,
+    "total_object_views": 10,
+    "total_candidates": 6
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "toilet",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.2109,
+        0.2837,
+        0.4265,
+        0.0252,
+        0.1912,
+        0.8789
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            126.74,
+            304.64,
+            489.71,
+            758.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4747
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            126.74,
+            304.64,
+            489.71,
+            758.88
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            151.0,
+            196.0,
+            251.0,
+            736.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00034",
+          "view_id": "00034",
+          "bbox_2d": [
+            458.0,
+            587.0,
+            634.0,
+            949.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00041",
+          "view_id": "00041",
+          "bbox_2d": [
+            436.0,
+            569.0,
+            677.0,
+            869.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "toilet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a toilet",
+        "object is visibly a porcelain toilet"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.2074,
+        0.2708,
+        0.7182,
+        0.0225,
+        0.1475,
+        0.2809
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            379.72,
+            361.87,
+            614.94,
+            627.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2868
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            379.72,
+            361.87,
+            614.94,
+            627.89
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "toilet",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -0.3639,
+        -0.5581,
+        0.3477,
+        0.677,
+        0.4814,
+        0.8327
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            307.91,
+            136.17,
+            840.57,
+            961.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9079
+        },
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            417.45,
+            0.0,
+            1029.67,
+            715.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8917
+        },
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            187.15,
+            0.0,
+            1012.05,
+            790.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8922
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            187.15,
+            0.0,
+            1012.05,
+            790.01
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00064",
+          "view_id": "00064",
+          "bbox_2d": [
+            337.76,
+            223.96,
+            1021.33,
+            965.15
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00063",
+          "view_id": "00063",
+          "bbox_2d": [
+            277.1,
+            56.08,
+            973.4,
+            937.48
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            426.89,
+            0.0,
+            1109.47,
+            874.32
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "toilet",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -0.3866,
+        -0.5911,
+        0.3208,
+        0.7166,
+        0.4225,
+        0.78
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            572.06,
+            0.0,
+            1055.97,
+            807.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.913
+        },
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            548.28,
+            0.13,
+            1105.97,
+            790.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9373
+        },
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            337.76,
+            223.96,
+            1021.33,
+            965.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.851
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            337.76,
+            223.96,
+            1021.33,
+            965.15
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00058",
+          "view_id": "00058",
+          "bbox_2d": [
+            187.15,
+            0.0,
+            1012.05,
+            790.01
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00063",
+          "view_id": "00063",
+          "bbox_2d": [
+            277.1,
+            56.08,
+            973.4,
+            937.48
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            426.89,
+            0.0,
+            1109.47,
+            874.32
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "toilet",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.5767,
+        -0.5599,
+        0.6272,
+        0.2637,
+        0.4634,
+        0.2766
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            635.71,
+            569.66,
+            1161.98,
+            964.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7608
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            635.71,
+            569.66,
+            1161.98,
+            964.62
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00064",
+          "view_id": "00064",
+          "bbox_2d": [
+            329.0,
+            97.0,
+            872.0,
+            669.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00054",
+          "view_id": "00054",
+          "bbox_2d": [
+            307.91,
+            136.17,
+            840.57,
+            961.57
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            566.0,
+            290.0,
+            1078.0,
+            840.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "toilet",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.1132,
+        -0.5563,
+        0.0959,
+        0.1561,
+        0.2028,
+        0.3606
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            1186.2,
+            489.21,
+            1296.0,
+            926.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6369
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1186.2,
+            489.21,
+            1296.0,
+            926.35
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00058",
+          "view_id": "00058",
+          "bbox_2d": [
+            187.15,
+            0.0,
+            1012.05,
+            790.01
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00063",
+          "view_id": "00063",
+          "bbox_2d": [
+            277.1,
+            56.08,
+            973.4,
+            937.48
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00060",
+          "view_id": "00060",
+          "bbox_2d": [
+            572.06,
+            0.0,
+            1055.97,
+            807.34
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

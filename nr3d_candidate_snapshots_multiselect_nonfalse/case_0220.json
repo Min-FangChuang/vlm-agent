@@ -1,0 +1,614 @@
+{
+  "case_id": 220,
+  "scene_id": "scene0251_00",
+  "query": "the trashcan next to the open doorway",
+  "query_analysis": {
+    "raw_query": "the trashcan next to the open doorway",
+    "target_object": "trashcan",
+    "target_attributes": [],
+    "reference_object": "doorway",
+    "reference_attributes": [
+      "open"
+    ],
+    "relation": "next to"
+  },
+  "gt": {
+    "target_id": 12,
+    "gt_label": "trash can",
+    "gt_bbox_3d": [
+      -0.032063,
+      4.769094,
+      0.991353,
+      0.584524,
+      0.347979,
+      0.764552
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 3,
+    "bbox_3d": [
+      -0.012228,
+      4.748813,
+      0.990088,
+      0.54395,
+      0.32854,
+      0.760044
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "detector_call_count": 51,
+    "total_views": 39,
+    "total_object_views": 22,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "trashcan",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 9,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot uniquely verify that this specific trashcan is the one next to the open doorway",
+        "open doorway is only partially visible and not clearly established relative to the candidate",
+        "nearby alternative trashcans remain plausible matches"
+      ],
+      "num_object_views": 10,
+      "bbox_3d": [
+        0.9973,
+        3.919,
+        0.9584,
+        0.4366,
+        0.3888,
+        0.7626
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            13.3,
+            17.51,
+            146.38,
+            216.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4979
+        },
+        {
+          "object_view_id": "00012_1",
+          "view_id": "00012",
+          "bbox_2d": [
+            147.65,
+            16.3,
+            269.31,
+            225.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5464
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            119.5,
+            117.81,
+            269.63,
+            376.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7112
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            585.0,
+            163.48,
+            897.01,
+            701.12
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00030",
+          "view_id": "00030",
+          "bbox_2d": [
+            1098.0,
+            338.0,
+            1290.0,
+            959.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            9.21,
+            62.99,
+            273.54,
+            630.82
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            176.61,
+            194.64,
+            332.85,
+            466.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7444
+        },
+        {
+          "object_view_id": "00022_1",
+          "view_id": "00022",
+          "bbox_2d": [
+            150.97,
+            141.62,
+            359.38,
+            494.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5994
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            11.1,
+            107.57,
+            318.86,
+            598.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5634
+        },
+        {
+          "object_view_id": "00028_1",
+          "view_id": "00028",
+          "bbox_2d": [
+            756.05,
+            232.47,
+            1106.8,
+            801.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.272
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "trashcan",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "nearby open doorway is clearly visible",
+        "the trashcan is confirmed to be next to the open doorway"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        0.5489,
+        4.7398,
+        1.0487,
+        0.6101,
+        0.33,
+        0.837
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            11.41,
+            16.18,
+            151.48,
+            198.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6094
+        },
+        {
+          "object_view_id": "bootstrap_00030",
+          "view_id": "00030",
+          "bbox_2d": [
+            588.77,
+            161.76,
+            1008.06,
+            686.14
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            381.0,
+            110.0,
+            736.0,
+            553.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            218.15,
+            9.4,
+            517.2,
+            422.81
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_2",
+          "view_id": "00020",
+          "bbox_2d": [
+            8.87,
+            157.63,
+            140.24,
+            413.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3918
+        },
+        {
+          "object_view_id": "00022_2",
+          "view_id": "00022",
+          "bbox_2d": [
+            8.16,
+            101.87,
+            109.82,
+            405.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3765
+        },
+        {
+          "object_view_id": "00028_2",
+          "view_id": "00028",
+          "bbox_2d": [
+            336.8,
+            42.57,
+            644.5,
+            483.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2691
+        },
+        {
+          "object_view_id": "00030_1",
+          "view_id": "00030",
+          "bbox_2d": [
+            588.77,
+            161.76,
+            1008.06,
+            686.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3575
+        },
+        {
+          "object_view_id": "00032_1",
+          "view_id": "00032",
+          "bbox_2d": [
+            1037.71,
+            601.34,
+            1288.83,
+            959.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6028
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "trashcan",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot clearly verify the referenced doorway is open",
+        "cannot reliably verify the green-boxed trashcan is next to that open doorway",
+        "candidate identity is inconsistent across tiles",
+        "nearby alternative trashcans are not fully disambiguated"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        1.5678,
+        3.1865,
+        0.9309,
+        0.5395,
+        0.3484,
+        0.7292
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            56.85,
+            154.8,
+            234.07,
+            380.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.445
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            42.58,
+            117.04,
+            219.89,
+            377.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4888
+        },
+        {
+          "object_view_id": "00018_1",
+          "view_id": "00018",
+          "bbox_2d": [
+            357.4,
+            179.16,
+            525.11,
+            412.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5532
+        },
+        {
+          "object_view_id": "bootstrap_00024",
+          "view_id": "00024",
+          "bbox_2d": [
+            547.78,
+            249.38,
+            976.55,
+            748.39
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            1111.0,
+            521.0,
+            1291.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            577.28,
+            195.7,
+            915.45,
+            665.08
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_1",
+          "view_id": "00020",
+          "bbox_2d": [
+            442.36,
+            212.75,
+            646.14,
+            509.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6648
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            507.03,
+            163.35,
+            785.5,
+            563.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6839
+        },
+        {
+          "object_view_id": "00024_1",
+          "view_id": "00024",
+          "bbox_2d": [
+            547.78,
+            249.38,
+            976.55,
+            748.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5539
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "trashcan",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -0.0212,
+        4.7459,
+        0.9872,
+        0.5259,
+        0.3228,
+        0.7543
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            7.05,
+            91.5,
+            356.16,
+            518.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4966
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            158.36,
+            159.35,
+            579.17,
+            664.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7902
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            640.1,
+            476.81,
+            1080.03,
+            958.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6599
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            158.36,
+            159.35,
+            579.17,
+            664.64
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            481.11,
+            271.83,
+            910.84,
+            828.62
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            7.89,
+            110.93,
+            375.69,
+            571.59
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            8.21,
+            47.97,
+            254.96,
+            453.5
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

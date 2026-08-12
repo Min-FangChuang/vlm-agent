@@ -1,0 +1,265 @@
+{
+  "case_id": 248,
+  "scene_id": "scene0500_00",
+  "query": "the window in the back of the room ( assuming the blackboard is the front ) directly across the room from the board",
+  "query_analysis": {
+    "raw_query": "the window in the back of the room ( assuming the blackboard is the front ) directly across the room from the board",
+    "target_object": "window",
+    "target_attributes": [],
+    "reference_object": "blackboard",
+    "reference_attributes": [],
+    "relation": "in the back of the room; directly across the room from the blackboard"
+  },
+  "gt": {
+    "target_id": 28,
+    "gt_label": "window",
+    "gt_bbox_3d": [
+      -1.528571,
+      5.622566,
+      1.005696,
+      1.282809,
+      0.488611,
+      1.160452
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -1.523811,
+      5.610732,
+      0.918816,
+      1.020661,
+      0.446842,
+      1.341183
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      3
+    ],
+    "detector_call_count": 59,
+    "total_views": 54,
+    "total_object_views": 5,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "window",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the visible board is the front-of-room blackboard/reference board intended by the request",
+        "cannot reliably confirm the window is at the back of the room",
+        "cannot reliably confirm the window is directly across the room from the board"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.5204,
+        5.5766,
+        0.9274,
+        1.0096,
+        0.3798,
+        1.324
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            892.57,
+            3.69,
+            1288.0,
+            463.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3155
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            678.5,
+            6.99,
+            1089.64,
+            406.56
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "window",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot confirm where the blackboard is",
+        "cannot confirm that this window is at the back of the room",
+        "cannot confirm that this window is directly across the room from the board",
+        "cannot rule out other windows in the room that may better match the request"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.0387,
+        4.5042,
+        0.7601,
+        1.0293,
+        0.8626,
+        0.7997
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            1039.38,
+            4.62,
+            1288.37,
+            218.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3107
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            535.14,
+            5.22,
+            999.45,
+            353.88
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00022",
+          "view_id": "00022",
+          "bbox_2d": [
+            303.0,
+            446.0,
+            428.0,
+            530.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            413.2,
+            3.51,
+            926.81,
+            330.78
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            535.14,
+            5.22,
+            999.45,
+            353.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3611
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            98.74,
+            5.88,
+            728.64,
+            453.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4674
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "window",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard is not visible",
+        "cannot determine which side of the room is the front/back based on the blackboard",
+        "cannot verify that this window is directly across the room from the blackboard"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.8219,
+        3.3803,
+        0.7666,
+        0.7031,
+        0.7215,
+        0.7042
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            288.8,
+            4.74,
+            684.63,
+            409.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3004
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            7.06,
+            3.57,
+            321.22,
+            628.46
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

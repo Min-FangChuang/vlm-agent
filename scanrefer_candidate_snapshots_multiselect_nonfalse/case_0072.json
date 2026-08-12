@@ -1,0 +1,1075 @@
+{
+  "case_id": 72,
+  "scene_id": "scene0412_00",
+  "query": "the recycling bin is on the floor partially under the table . it is green at the top .",
+  "query_analysis": {
+    "raw_query": "the recycling bin is on the floor partially under the table . it is green at the top .",
+    "target_object": "recycling bin",
+    "target_attributes": [
+      "green at the top"
+    ],
+    "reference_object": "table",
+    "reference_attributes": [],
+    "relation": "partially under"
+  },
+  "gt": {
+    "target_id": 16,
+    "gt_label": "recycling bin",
+    "gt_bbox_3d": [
+      0.087468,
+      1.746236,
+      0.306522,
+      0.293219,
+      0.422587,
+      0.660886
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 2,
+    "bbox_3d": [
+      -0.722379,
+      1.094838,
+      0.452842,
+      0.568774,
+      0.291005,
+      0.971783
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      5
+    ],
+    "detector_call_count": 74,
+    "total_views": 59,
+    "total_object_views": 34,
+    "total_candidates": 12
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "recycling bin",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -0.7605,
+        0.9894,
+        0.3908,
+        0.4319,
+        0.463,
+        0.8957
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            1143.15,
+            150.32,
+            1295.89,
+            419.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5194
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            896.12,
+            249.15,
+            1078.47,
+            511.32
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7884
+        },
+        {
+          "object_view_id": "00016_1",
+          "view_id": "00016",
+          "bbox_2d": [
+            597.34,
+            267.11,
+            778.69,
+            539.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3844
+        },
+        {
+          "object_view_id": "00018_1",
+          "view_id": "00018",
+          "bbox_2d": [
+            418.76,
+            321.11,
+            655.24,
+            634.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7948
+        },
+        {
+          "object_view_id": "bootstrap_00060",
+          "view_id": "00060",
+          "bbox_2d": [
+            48.0,
+            487.0,
+            529.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            650.0,
+            402.0,
+            832.0,
+            930.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            488.75,
+            367.06,
+            721.23,
+            706.16
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "recycling bin",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 7,
+      "done_actions": [],
+      "missing_conditions": [],
+      "num_object_views": 8,
+      "bbox_3d": [
+        0.1534,
+        1.7772,
+        0.3437,
+        0.3447,
+        0.7728,
+        0.7166
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            967.53,
+            227.89,
+            1093.43,
+            467.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8873
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            843.21,
+            260.61,
+            983.0,
+            529.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8957
+        },
+        {
+          "object_view_id": "00020_1",
+          "view_id": "00020",
+          "bbox_2d": [
+            723.17,
+            516.84,
+            859.51,
+            745.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2533
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            315.52,
+            439.46,
+            442.38,
+            740.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9347
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            0.0,
+            353.62,
+            86.67,
+            702.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7968
+        },
+        {
+          "object_view_id": "00052_1",
+          "view_id": "00052",
+          "bbox_2d": [
+            998.65,
+            241.24,
+            1129.69,
+            480.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4085
+        },
+        {
+          "object_view_id": "00056_2",
+          "view_id": "00056",
+          "bbox_2d": [
+            1195.08,
+            373.61,
+            1296.0,
+            726.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6853
+        },
+        {
+          "object_view_id": "00108_0",
+          "view_id": "00108",
+          "bbox_2d": [
+            209.04,
+            142.86,
+            332.34,
+            507.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.501
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "recycling bin",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -1.0392,
+        1.5012,
+        0.2906,
+        1.2024,
+        1.1044,
+        0.674
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            247.24,
+            556.74,
+            529.68,
+            928.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.775
+        },
+        {
+          "object_view_id": "00022_1",
+          "view_id": "00022",
+          "bbox_2d": [
+            0.0,
+            590.03,
+            97.78,
+            964.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4757
+        },
+        {
+          "object_view_id": "bootstrap_00057",
+          "view_id": "00057",
+          "bbox_2d": [
+            268.14,
+            383.16,
+            766.73,
+            954.63
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00056",
+          "view_id": "00056",
+          "bbox_2d": [
+            326.2,
+            360.02,
+            797.46,
+            886.73
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            658.49,
+            459.17,
+            913.37,
+            850.46
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00056_3",
+          "view_id": "00056",
+          "bbox_2d": [
+            326.2,
+            360.02,
+            797.46,
+            886.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3843
+        },
+        {
+          "object_view_id": "00058_1",
+          "view_id": "00058",
+          "bbox_2d": [
+            326.04,
+            419.55,
+            850.29,
+            964.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3665
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "recycling bin",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.4421,
+        -0.1396,
+        0.641,
+        0.4206,
+        0.4196,
+        0.3479
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_2",
+          "view_id": "00022",
+          "bbox_2d": [
+            932.65,
+            775.18,
+            1295.94,
+            964.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3769
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            932.65,
+            775.18,
+            1295.94,
+            964.5
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "recycling bin",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.1431,
+        1.7328,
+        0.3016,
+        0.3614,
+        0.7654,
+        0.6773
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            185.33,
+            538.4,
+            310.39,
+            767.42
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.316
+        },
+        {
+          "object_view_id": "bootstrap_00061",
+          "view_id": "00061",
+          "bbox_2d": [
+            927.23,
+            517.26,
+            1200.95,
+            823.78
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00062",
+          "view_id": "00062",
+          "bbox_2d": [
+            627.5,
+            628.85,
+            861.01,
+            885.67
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            0.52,
+            407.45,
+            193.48,
+            872.69
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00110_0",
+          "view_id": "00110",
+          "bbox_2d": [
+            150.23,
+            437.21,
+            339.55,
+            867.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9302
+        },
+        {
+          "object_view_id": "00112_0",
+          "view_id": "00112",
+          "bbox_2d": [
+            396.28,
+            747.93,
+            552.84,
+            965.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2601
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "recycling bin",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.7305,
+        1.0118,
+        0.3429,
+        0.4436,
+        0.3462,
+        0.7852
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            1090.43,
+            168.91,
+            1272.3,
+            438.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6479
+        },
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            616.08,
+            265.42,
+            822.4,
+            547.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8377
+        },
+        {
+          "object_view_id": "bootstrap_00060",
+          "view_id": "00060",
+          "bbox_2d": [
+            54.0,
+            548.0,
+            511.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            1002.0,
+            265.0,
+            1192.0,
+            546.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00016",
+          "view_id": "00016",
+          "bbox_2d": [
+            597.34,
+            267.11,
+            778.69,
+            539.78
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "recycling bin",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is the recycling bin",
+        "candidate has green top",
+        "candidate is the bin partially under the table"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -1.2838,
+        1.3874,
+        0.363,
+        0.7884,
+        0.8952,
+        0.7508
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            189.61,
+            291.46,
+            441.97,
+            710.49
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8506
+        },
+        {
+          "object_view_id": "00058_2",
+          "view_id": "00058",
+          "bbox_2d": [
+            250.28,
+            271.77,
+            546.57,
+            727.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2896
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            250.28,
+            271.77,
+            546.57,
+            727.53
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "recycling bin",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "is a recycling bin",
+        "green at the top",
+        "partially under the table"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -1.0866,
+        0.8204,
+        0.3035,
+        0.6307,
+        0.6579,
+        0.7318
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00056_1",
+          "view_id": "00056",
+          "bbox_2d": [
+            0.55,
+            436.85,
+            344.25,
+            964.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6937
+        },
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            0.06,
+            440.27,
+            296.7,
+            965.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6053
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.55,
+            436.85,
+            344.25,
+            964.87
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "recycling bin",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.0796,
+        1.6265,
+        0.2995,
+        0.2014,
+        0.0458,
+        0.6384
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            627.5,
+            628.85,
+            861.01,
+            885.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4117
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            627.5,
+            628.85,
+            861.01,
+            885.67
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00061",
+          "view_id": "00061",
+          "bbox_2d": [
+            927.23,
+            517.26,
+            1200.95,
+            823.78
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            0.52,
+            407.45,
+            193.48,
+            872.69
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00118",
+          "view_id": "00118",
+          "bbox_2d": [
+            411.55,
+            137.15,
+            579.11,
+            401.69
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "recycling bin",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "partially under the table",
+        "green at the top",
+        "clearly identifiable as the requested recycling bin rather than just a generic trash bin"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        2.8283,
+        2.4018,
+        0.6003,
+        1.0478,
+        0.5273,
+        0.8963
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00072_0",
+          "view_id": "00072",
+          "bbox_2d": [
+            815.61,
+            107.91,
+            930.46,
+            440.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7512
+        },
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            491.75,
+            81.02,
+            626.64,
+            517.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7195
+        },
+        {
+          "object_view_id": "00076_1",
+          "view_id": "00076",
+          "bbox_2d": [
+            221.57,
+            121.33,
+            554.11,
+            684.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3696
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            221.57,
+            121.33,
+            554.11,
+            684.83
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            310.39,
+            303.68,
+            444.68,
+            820.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3977
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "recycling bin",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate must be a recycling bin",
+        "green at the top",
+        "partially under the table"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        2.5155,
+        2.2619,
+        0.2975,
+        0.3642,
+        0.3195,
+        0.3529
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            339.14,
+            774.65,
+            479.67,
+            965.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7381
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            339.14,
+            774.65,
+            479.67,
+            965.5
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "recycling bin",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "partially under the table",
+        "green at the top is not clearly supported"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        2.8154,
+        2.3983,
+        0.9468,
+        1.0442,
+        0.5218,
+        0.486
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00076_2",
+          "view_id": "00076",
+          "bbox_2d": [
+            210.77,
+            112.3,
+            540.78,
+            348.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.366
+        },
+        {
+          "object_view_id": "00078_0",
+          "view_id": "00078",
+          "bbox_2d": [
+            168.59,
+            215.57,
+            523.99,
+            521.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3173
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            168.59,
+            215.57,
+            523.99,
+            521.69
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

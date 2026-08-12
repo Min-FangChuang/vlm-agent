@@ -1,0 +1,180 @@
+{
+  "case_id": 114,
+  "scene_id": "scene0565_00",
+  "query": "the cart is below the announcement board . the cart is to the left of the black cart .",
+  "query_analysis": {
+    "raw_query": "the cart is below the announcement board . the cart is to the left of the black cart .",
+    "target_object": "cart",
+    "target_attributes": [],
+    "reference_object": "announcement board; black cart",
+    "reference_attributes": [
+      "black"
+    ],
+    "relation": "below; to the left of"
+  },
+  "gt": {
+    "target_id": 22,
+    "gt_label": "cart",
+    "gt_bbox_3d": [
+      -1.918602,
+      1.406228,
+      0.47472,
+      0.535562,
+      0.904112,
+      0.936178
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -1.922733,
+      1.351033,
+      0.46385,
+      0.574881,
+      1.127374,
+      0.959244
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 28,
+    "total_views": 27,
+    "total_object_views": 4,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "cart",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is to the left of the black cart",
+        "candidate is the non-black target cart rather than the black cart reference"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.9421,
+        2.0292,
+        0.5209,
+        0.672,
+        1.4968,
+        1.0584
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            704.53,
+            312.36,
+            1015.6,
+            801.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4219
+        },
+        {
+          "object_view_id": "00002_1",
+          "view_id": "00002",
+          "bbox_2d": [
+            856.37,
+            247.61,
+            1296.0,
+            853.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2944
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "cart",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably identify the announcement board",
+        "cannot reliably confirm the cart is below the announcement board"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.9358,
+        1.2171,
+        0.4712,
+        0.6017,
+        1.3952,
+        0.9445
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            695.5,
+            228.31,
+            997.67,
+            648.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3114
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            977.28,
+            332.33,
+            1295.94,
+            958.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.282
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            1061.0,
+            443.0,
+            1295.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00006",
+          "view_id": "00006",
+          "bbox_2d": [
+            1265.0,
+            852.0,
+            1295.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

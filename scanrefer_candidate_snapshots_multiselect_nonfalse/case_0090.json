@@ -1,0 +1,319 @@
+{
+  "case_id": 90,
+  "scene_id": "scene0412_00",
+  "query": "there are two large wooden doors . the doors are a golden wooden color with large dark handles .",
+  "query_analysis": {
+    "raw_query": "there are two large wooden doors . the doors are a golden wooden color with large dark handles .",
+    "target_object": "doors",
+    "target_attributes": [
+      "two",
+      "large",
+      "wooden",
+      "golden wooden color",
+      "large dark handles"
+    ],
+    "reference_object": "",
+    "reference_attributes": [],
+    "relation": ""
+  },
+  "gt": {
+    "target_id": 6,
+    "gt_label": "doors",
+    "gt_bbox_3d": [
+      0.161879,
+      -3.157524,
+      0.769546,
+      1.871041,
+      0.129689,
+      1.528931
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "false",
+    "selected_candidate_id": 3,
+    "bbox_3d": [
+      3.340073,
+      1.673468,
+      0.852105,
+      0.243612,
+      0.91664,
+      1.293152
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      5
+    ],
+    "detector_call_count": 62,
+    "total_views": 59,
+    "total_object_views": 6,
+    "total_candidates": 5
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "doors",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "two doors",
+        "large wooden doors",
+        "golden wooden color"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.2103,
+        1.6767,
+        0.8243,
+        1.1374,
+        1.8109,
+        1.7013
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            619.53,
+            0.92,
+            923.35,
+            581.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3212
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "doors",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is not two doors",
+        "candidate is not wooden",
+        "candidate is not golden wooden color",
+        "candidate does not have the large dark handles described"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.4626,
+        2.1766,
+        0.5031,
+        1.0791,
+        0.2673,
+        0.9898
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            369.29,
+            1.23,
+            674.84,
+            595.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3091
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            369.29,
+            1.23,
+            674.84,
+            595.85
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "doors",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "doors",
+        "two",
+        "large",
+        "wooden",
+        "golden wooden color",
+        "large dark handles"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        2.5126,
+        2.1872,
+        0.5204,
+        1.8237,
+        0.3401,
+        0.9042
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00068_1",
+          "view_id": "00068",
+          "bbox_2d": [
+            639.03,
+            0.0,
+            816.8,
+            411.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2538
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "doors",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "two doors"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        3.3247,
+        1.6765,
+        0.8278,
+        0.2665,
+        0.9229,
+        1.2517
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            488.65,
+            0.0,
+            1069.97,
+            651.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3744
+        },
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            241.72,
+            0.0,
+            733.4,
+            630.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3732
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "doors",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "two doors",
+        "large wooden doors",
+        "golden wooden color",
+        "large dark handles"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.0922,
+        2.0275,
+        1.3509,
+        0.9016,
+        0.2037,
+        1.2016
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00114_0",
+          "view_id": "00114",
+          "bbox_2d": [
+            549.27,
+            363.07,
+            1065.54,
+            962.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2817
+        },
+        {
+          "object_view_id": "bootstrap_00113",
+          "view_id": "00113",
+          "bbox_2d": [
+            145.0,
+            122.0,
+            693.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00112",
+          "view_id": "00112",
+          "bbox_2d": [
+            47.0,
+            9.0,
+            664.0,
+            950.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00111",
+          "view_id": "00111",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            534.0,
+            695.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

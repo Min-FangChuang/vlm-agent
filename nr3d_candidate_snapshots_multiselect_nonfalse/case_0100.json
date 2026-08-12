@@ -1,0 +1,546 @@
+{
+  "case_id": 100,
+  "scene_id": "scene0670_00",
+  "query": "the towel on the left side of the oven door",
+  "query_analysis": {
+    "raw_query": "the towel on the left side of the oven door",
+    "target_object": "towel",
+    "target_attributes": [],
+    "reference_object": "oven door",
+    "reference_attributes": [],
+    "relation": "on the left side of"
+  },
+  "gt": {
+    "target_id": 13,
+    "gt_label": "towel",
+    "gt_bbox_3d": [
+      0.841268,
+      1.595396,
+      0.69067,
+      0.26686,
+      0.190382,
+      0.372035
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      0.802762,
+      1.586001,
+      0.684733,
+      0.19321,
+      0.173127,
+      0.416845
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      1,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 79,
+    "total_views": 76,
+    "total_object_views": 19,
+    "total_candidates": 6
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "towel",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 5,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "towel is on the left side of the oven door"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.7797,
+        1.5561,
+        0.7589,
+        0.0882,
+        0.1153,
+        0.2226
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            1154.62,
+            355.11,
+            1296.0,
+            579.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9169
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            1097.44,
+            453.79,
+            1245.32,
+            696.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9391
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1097.44,
+            453.79,
+            1245.32,
+            696.19
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            661.95,
+            690.97,
+            807.2,
+            945.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9416
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            506.34,
+            388.82,
+            653.21,
+            638.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9468
+        },
+        {
+          "object_view_id": "00032_2",
+          "view_id": "00032",
+          "bbox_2d": [
+            0.06,
+            750.07,
+            189.18,
+            965.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8912
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "towel",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.8039,
+        1.5955,
+        0.7099,
+        0.1879,
+        0.1529,
+        0.3335
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            264.24,
+            733.02,
+            426.31,
+            965.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9483
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            264.24,
+            733.02,
+            426.31,
+            965.74
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            294.22,
+            497.98,
+            452.49,
+            778.29
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            0.06,
+            750.07,
+            189.18,
+            965.35
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            661.95,
+            690.97,
+            807.2,
+            945.08
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "towel",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "not on the left side of the oven door",
+        "another nearby towel at the oven door area matches better than the green candidate"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        1.949,
+        1.4691,
+        0.8645,
+        0.2311,
+        0.3162,
+        1.1721
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_1",
+          "view_id": "00024",
+          "bbox_2d": [
+            1009.03,
+            241.67,
+            1167.99,
+            952.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8224
+        },
+        {
+          "object_view_id": "00030_1",
+          "view_id": "00030",
+          "bbox_2d": [
+            504.24,
+            160.32,
+            638.65,
+            780.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.919
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            402.64,
+            40.52,
+            548.91,
+            700.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9123
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            38.86,
+            5.35,
+            241.41,
+            734.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7737
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            28.7,
+            560.29,
+            162.45,
+            965.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4019
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            38.86,
+            5.35,
+            241.41,
+            734.99
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00140_0",
+          "view_id": "00140",
+          "bbox_2d": [
+            1000.94,
+            416.14,
+            1144.7,
+            964.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4938
+        },
+        {
+          "object_view_id": "00142_0",
+          "view_id": "00142",
+          "bbox_2d": [
+            449.0,
+            510.22,
+            565.08,
+            966.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8924
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "towel",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [],
+      "num_object_views": 3,
+      "bbox_3d": [
+        1.9484,
+        1.4729,
+        0.9663,
+        0.1821,
+        0.2399,
+        1.0118
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            1035.09,
+            541.9,
+            1155.65,
+            966.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.853
+        },
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            686.49,
+            501.89,
+            812.43,
+            966.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9347
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            152.15,
+            350.75,
+            271.48,
+            965.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3326
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "towel",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "not on the left side of the oven door"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        1.0861,
+        1.5736,
+        0.7268,
+        0.2286,
+        0.1001,
+        0.308
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            174.23,
+            638.06,
+            284.61,
+            892.84
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9657
+        },
+        {
+          "object_view_id": "00032_1",
+          "view_id": "00032",
+          "bbox_2d": [
+            159.31,
+            549.76,
+            268.5,
+            856.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9066
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            159.31,
+            549.76,
+            268.5,
+            856.17
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "towel",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is on the left side of the oven door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.9871,
+        1.1386,
+        1.1368,
+        0.0799,
+        0.3648,
+        0.6401
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00142_1",
+          "view_id": "00142",
+          "bbox_2d": [
+            553.3,
+            513.06,
+            729.41,
+            905.24
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.273
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            553.3,
+            513.06,
+            729.41,
+            905.24
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

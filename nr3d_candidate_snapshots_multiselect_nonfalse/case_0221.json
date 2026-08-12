@@ -1,0 +1,113 @@
+{
+  "case_id": 221,
+  "scene_id": "scene0389_00",
+  "query": "the door that has a painting to the left of it",
+  "query_analysis": {
+    "raw_query": "the door that has a painting to the left of it",
+    "target_object": "door",
+    "target_attributes": [],
+    "reference_object": "painting",
+    "reference_attributes": [],
+    "relation": "painting to the left of the door"
+  },
+  "gt": {
+    "target_id": 12,
+    "gt_label": "door",
+    "gt_bbox_3d": [
+      1.782412,
+      1.669825,
+      1.163,
+      0.645421,
+      0.244559,
+      1.083117
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "false",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      0.372535,
+      -2.912072,
+      0.898129,
+      0.919578,
+      0.075155,
+      1.99707
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2
+    ],
+    "detector_call_count": 36,
+    "total_views": 36,
+    "total_object_views": 2,
+    "total_candidates": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "painting to the left of the door"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.3902,
+        -2.916,
+        1.2322,
+        0.9158,
+        0.0455,
+        1.3389
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            327.22,
+            1.18,
+            741.13,
+            959.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3933
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            645.94,
+            85.14,
+            1111.89,
+            965.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6827
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            645.94,
+            85.14,
+            1111.89,
+            965.02
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

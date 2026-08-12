@@ -1,0 +1,665 @@
+{
+  "case_id": 227,
+  "scene_id": "scene0207_00",
+  "query": "bathroom sink next to the toilet",
+  "query_analysis": {
+    "raw_query": "bathroom sink next to the toilet",
+    "target_object": "sink",
+    "target_attributes": [
+      "bathroom"
+    ],
+    "reference_object": "toilet",
+    "reference_attributes": [],
+    "relation": "next to"
+  },
+  "gt": {
+    "target_id": 57,
+    "gt_label": "sink",
+    "gt_bbox_3d": [
+      2.107755,
+      -1.524739,
+      0.786262,
+      0.208259,
+      0.354951,
+      0.186674
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 4,
+    "bbox_3d": [
+      1.961105,
+      -1.505225,
+      0.852337,
+      0.573462,
+      0.820568,
+      0.493642
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 59,
+    "total_views": 50,
+    "total_object_views": 12,
+    "total_candidates": 9
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "sink",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a sink",
+        "bathroom context",
+        "next to a toilet"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.2762,
+        1.1482,
+        0.7275,
+        0.2448,
+        0.1634,
+        0.0785
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            162.23,
+            823.83,
+            442.99,
+            956.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2678
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            162.23,
+            823.83,
+            442.99,
+            956.79
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "sink",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "sink is in a bathroom",
+        "sink is next to a toilet"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.9948,
+        -1.1382,
+        0.7824,
+        0.4946,
+        0.5747,
+        0.2127
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            443.21,
+            249.49,
+            791.87,
+            334.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5906
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            636.93,
+            299.11,
+            1024.79,
+            427.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5974
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            666.07,
+            821.93,
+            1117.24,
+            958.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6394
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            666.07,
+            821.93,
+            1117.24,
+            958.63
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "sink",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "clear sink identity",
+        "bathroom setting",
+        "next to a toilet"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.2809,
+        -0.4225,
+        0.8024,
+        0.6526,
+        0.5306,
+        0.4405
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            651.8,
+            10.75,
+            1281.37,
+            435.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.315
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            651.8,
+            10.75,
+            1281.37,
+            435.29
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "sink",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.8859,
+        -1.5458,
+        0.7909,
+        0.4471,
+        0.5189,
+        0.4874
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            144.41,
+            8.69,
+            488.94,
+            160.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2593
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            144.41,
+            8.69,
+            488.94,
+            160.7
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            143.0,
+            11.0,
+            526.0,
+            178.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00052",
+          "view_id": "00052",
+          "bbox_2d": [
+            243.0,
+            217.0,
+            587.0,
+            417.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00053",
+          "view_id": "00053",
+          "bbox_2d": [
+            11.0,
+            525.0,
+            265.0,
+            771.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "sink",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.9593,
+        -1.4479,
+        0.8702,
+        0.5344,
+        0.7123,
+        0.458
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            125.62,
+            216.14,
+            583.91,
+            333.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3007
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            125.62,
+            216.14,
+            583.91,
+            333.15
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00049",
+          "view_id": "00049",
+          "bbox_2d": [
+            13.16,
+            301.41,
+            335.46,
+            412.87
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00053",
+          "view_id": "00053",
+          "bbox_2d": [
+            23.0,
+            521.0,
+            241.0,
+            668.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            113.0,
+            21.0,
+            498.0,
+            85.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "sink",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "bathroom context for the candidate is clearly visible",
+        "toilet is visible",
+        "the sink-to-toilet adjacency relation is confirmed"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.0342,
+        -0.4283,
+        0.4157,
+        0.133,
+        0.4643,
+        0.8968
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            11.8,
+            242.99,
+            157.22,
+            496.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3508
+        },
+        {
+          "object_view_id": "bootstrap_00041",
+          "view_id": "00041",
+          "bbox_2d": [
+            751.73,
+            117.61,
+            1283.03,
+            555.04
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00083",
+          "view_id": "00083",
+          "bbox_2d": [
+            12.63,
+            504.67,
+            1003.36,
+            956.68
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            651.8,
+            10.75,
+            1281.37,
+            435.29
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "sink",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "bathroom sink",
+        "next to the toilet"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -2.1365,
+        -1.0884,
+        0.8525,
+        0.1984,
+        0.3512,
+        0.2571
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00072_0",
+          "view_id": "00072",
+          "bbox_2d": [
+            12.19,
+            476.73,
+            311.56,
+            751.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3867
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            12.19,
+            476.73,
+            311.56,
+            751.61
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "sink",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "bathroom sink",
+        "next to the toilet"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -1.9757,
+        -1.1557,
+        0.7719,
+        0.404,
+        0.5651,
+        0.2112
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00072_1",
+          "view_id": "00072",
+          "bbox_2d": [
+            16.78,
+            588.46,
+            474.97,
+            910.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2903
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            16.78,
+            588.46,
+            474.97,
+            910.58
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            12.48,
+            308.43,
+            397.62,
+            578.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2664
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "sink",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a sink",
+        "bathroom setting",
+        "next to a toilet"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.2161,
+        1.3404,
+        0.4347,
+        1.2691,
+        0.8215,
+        0.9454
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00096_0",
+          "view_id": "00096",
+          "bbox_2d": [
+            11.39,
+            333.8,
+            850.63,
+            953.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2824
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            11.39,
+            333.8,
+            850.63,
+            953.73
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

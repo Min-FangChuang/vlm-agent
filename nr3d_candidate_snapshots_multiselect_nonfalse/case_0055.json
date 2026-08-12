@@ -1,0 +1,462 @@
+{
+  "case_id": 55,
+  "scene_id": "scene0435_00",
+  "query": "the black shoes in front of the door",
+  "query_analysis": {
+    "raw_query": "the black shoes in front of the door",
+    "target_object": "shoes",
+    "target_attributes": [
+      "black"
+    ],
+    "reference_object": "door",
+    "reference_attributes": [],
+    "relation": "in front of"
+  },
+  "gt": {
+    "target_id": 17,
+    "gt_label": "shoes",
+    "gt_bbox_3d": [
+      -1.182817,
+      -2.741223,
+      0.042568,
+      0.360971,
+      0.327216,
+      0.085633
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 3,
+    "bbox_3d": [
+      -1.126355,
+      -2.719146,
+      0.043505,
+      0.203216,
+      0.252942,
+      0.124919
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      2
+    ],
+    "detector_call_count": 91,
+    "total_views": 82,
+    "total_object_views": 6,
+    "total_candidates": 6
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "shoes",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "shoes are black"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.2734,
+        -2.4574,
+        0.0467,
+        0.2956,
+        0.3506,
+        0.1066
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00098_0",
+          "view_id": "00098",
+          "bbox_2d": [
+            782.94,
+            756.32,
+            952.88,
+            964.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3496
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            782.94,
+            756.32,
+            952.88,
+            964.91
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "shoes",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "black"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.3317,
+        -2.4933,
+        0.0531,
+        0.1807,
+        0.3916,
+        0.1118
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00100_0",
+          "view_id": "00100",
+          "bbox_2d": [
+            883.34,
+            689.8,
+            1009.75,
+            922.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4513
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            883.34,
+            689.8,
+            1009.75,
+            922.13
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "shoes",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "black"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.2213,
+        -2.4425,
+        0.0438,
+        0.1878,
+        0.3235,
+        0.1121
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00100_1",
+          "view_id": "00100",
+          "bbox_2d": [
+            785.32,
+            714.4,
+            927.23,
+            926.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4401
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            785.32,
+            714.4,
+            927.23,
+            926.95
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "shoes",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.1298,
+        -2.72,
+        0.0405,
+        0.1975,
+        0.2509,
+        0.1189
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00102_0",
+          "view_id": "00102",
+          "bbox_2d": [
+            788.49,
+            783.74,
+            990.7,
+            961.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4824
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            788.49,
+            783.74,
+            990.7,
+            961.65
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00101",
+          "view_id": "00101",
+          "bbox_2d": [
+            753.21,
+            618.43,
+            916.52,
+            778.54
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00100",
+          "view_id": "00100",
+          "bbox_2d": [
+            708.0,
+            562.0,
+            855.0,
+            708.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00099",
+          "view_id": "00099",
+          "bbox_2d": [
+            668.0,
+            566.0,
+            795.0,
+            706.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "shoes",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.2376,
+        -2.7229,
+        0.0635,
+        0.1709,
+        0.2529,
+        0.1034
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00102_1",
+          "view_id": "00102",
+          "bbox_2d": [
+            891.27,
+            796.05,
+            1068.02,
+            966.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3551
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            891.27,
+            796.05,
+            1068.02,
+            966.65
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00101",
+          "view_id": "00101",
+          "bbox_2d": [
+            845.42,
+            622.65,
+            984.25,
+            806.84
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00100",
+          "view_id": "00100",
+          "bbox_2d": [
+            793.0,
+            564.0,
+            916.0,
+            727.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00099",
+          "view_id": "00099",
+          "bbox_2d": [
+            748.0,
+            563.0,
+            854.0,
+            717.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "shoes",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "need clear confirmation that the green-boxed candidate is specifically the black shoes, not multiple pairs together",
+        "need stronger confirmation that the black shoes themselves are the pair in front of the door"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.2027,
+        -2.5646,
+        0.0458,
+        0.3642,
+        0.554,
+        0.0912
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00154_0",
+          "view_id": "00154",
+          "bbox_2d": [
+            770.15,
+            261.19,
+            975.88,
+            434.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.424
+        },
+        {
+          "object_view_id": "bootstrap_00100",
+          "view_id": "00100",
+          "bbox_2d": [
+            709.0,
+            571.0,
+            990.0,
+            920.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00150",
+          "view_id": "00150",
+          "bbox_2d": [
+            682.0,
+            630.0,
+            970.0,
+            949.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00099",
+          "view_id": "00099",
+          "bbox_2d": [
+            669.0,
+            573.0,
+            936.0,
+            886.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

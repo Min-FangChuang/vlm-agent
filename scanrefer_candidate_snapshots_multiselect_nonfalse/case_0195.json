@@ -1,0 +1,454 @@
+{
+  "case_id": 195,
+  "scene_id": "scene0552_00",
+  "query": "a wooden square table . in the middle of the room .",
+  "query_analysis": {
+    "raw_query": "a wooden square table . in the middle of the room .",
+    "target_object": "table",
+    "target_attributes": [
+      "wooden",
+      "square"
+    ],
+    "reference_object": "room",
+    "reference_attributes": [],
+    "relation": "in the middle of"
+  },
+  "gt": {
+    "target_id": 10,
+    "gt_label": "table",
+    "gt_bbox_3d": [
+      -0.06693,
+      1.078366,
+      0.696782,
+      1.013677,
+      0.960288,
+      0.115762
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -0.130568,
+      0.005979,
+      0.336597,
+      0.909261,
+      0.905873,
+      0.764409
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "detector_call_count": 29,
+    "total_views": 23,
+    "total_object_views": 14,
+    "total_candidates": 5
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [],
+      "missing_conditions": [
+        "square",
+        "in the middle of the room"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.8014,
+        0.4856,
+        0.6031,
+        0.8314,
+        1.6209,
+        0.5032
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            678.09,
+            208.04,
+            1295.29,
+            662.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3234
+        },
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            1.2,
+            409.2,
+            829.95,
+            955.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3154
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            65.57,
+            260.16,
+            1133.76,
+            746.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2896
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            0.14,
+            285.6,
+            787.19,
+            963.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.322
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "not enough evidence that this specific table is the one in the middle of the room",
+        "nearby similar square wooden table creates ambiguity"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -0.1342,
+        0.0131,
+        0.3366,
+        0.897,
+        0.8857,
+        0.7644
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            515.02,
+            446.68,
+            1296.0,
+            964.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4687
+        },
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            252.61,
+            284.12,
+            1090.01,
+            697.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4701
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            0.0,
+            410.43,
+            612.76,
+            963.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.385
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            515.02,
+            446.68,
+            1296.0,
+            964.69
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            334.27,
+            374.58,
+            1266.9,
+            791.41
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00030",
+          "view_id": "00030",
+          "bbox_2d": [
+            358.0,
+            567.0,
+            1295.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            0.05,
+            540.82,
+            243.35,
+            964.38
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [],
+      "missing_conditions": [
+        "square shape is not reliably confirmed",
+        "candidate is not in the middle of the room"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.3915,
+        1.5483,
+        0.3827,
+        1.9295,
+        1.8869,
+        0.748
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_1",
+          "view_id": "00012",
+          "bbox_2d": [
+            322.67,
+            159.83,
+            806.08,
+            304.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3406
+        },
+        {
+          "object_view_id": "00014_1",
+          "view_id": "00014",
+          "bbox_2d": [
+            0.27,
+            288.12,
+            323.17,
+            495.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2592
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            708.55,
+            159.21,
+            1295.95,
+            664.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4646
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            0.33,
+            258.33,
+            825.31,
+            850.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5482
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "object is clearly a table",
+        "object is square",
+        "object is in the middle of the room"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.1438,
+        -3.5359,
+        0.6571,
+        0.5958,
+        2.5171,
+        0.9972
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            843.67,
+            56.89,
+            1016.92,
+            305.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2651
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably verify that the table is in the middle of the room",
+        "insufficient room-wide context to rule out that it is near a side or corner instead"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.3107,
+        -0.2411,
+        0.3518,
+        1.3169,
+        1.4331,
+        0.722
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            352.61,
+            236.64,
+            1295.77,
+            819.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5201
+        },
+        {
+          "object_view_id": "bootstrap_00012",
+          "view_id": "00012",
+          "bbox_2d": [
+            252.61,
+            284.12,
+            1090.01,
+            697.36
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00044",
+          "view_id": "00044",
+          "bbox_2d": [
+            0.0,
+            488.0,
+            1295.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            0.05,
+            540.82,
+            243.35,
+            964.38
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00042_1",
+          "view_id": "00042",
+          "bbox_2d": [
+            355.5,
+            447.61,
+            1295.8,
+            965.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3516
+        }
+      ]
+    }
+  ]
+}

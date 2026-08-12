@@ -1,0 +1,4626 @@
+{
+  "case_id": 115,
+  "scene_id": "scene0496_00",
+  "query": "this is a black chair . there are many black chairs in this room . but there are only two chairs that are right in front of the blackboard . if you are looking at the blackboard give me the chair on the left . if you are standing behind the chairs it is the chair on the right .",
+  "query_analysis": {
+    "raw_query": "this is a black chair . there are many black chairs in this room . but there are only two chairs that are right in front of the blackboard . if you are looking at the blackboard give me the chair on the left . if you are standing behind the chairs it is the chair on the right .",
+    "target_object": "chair",
+    "target_attributes": [
+      "black"
+    ],
+    "reference_object": "blackboard",
+    "reference_attributes": [
+      "black"
+    ],
+    "relation": "right in front of the blackboard; the left chair when looking at the blackboard; the right chair when standing behind the chairs"
+  },
+  "gt": {
+    "target_id": 5,
+    "gt_label": "chair",
+    "gt_bbox_3d": [
+      -1.267478,
+      -0.504018,
+      0.483439,
+      0.566892,
+      0.64419,
+      0.947645
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 2,
+    "bbox_3d": [
+      -1.257841,
+      1.827663,
+      0.483393,
+      0.811655,
+      0.958405,
+      1.058052
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      3,
+      3,
+      1,
+      2,
+      2,
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      3,
+      2,
+      3,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "detector_call_count": 142,
+    "total_views": 30,
+    "total_object_views": 112,
+    "total_candidates": 48
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably determine whether the candidate is the left of the two chairs when facing the blackboard",
+        "another nearby black chair could also satisfy the request"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        -1.2102,
+        -0.5385,
+        0.4698,
+        0.8374,
+        0.539,
+        0.9753
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            776.62,
+            467.65,
+            1233.18,
+            962.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7428
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            275.61,
+            428.08,
+            670.63,
+            960.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6786
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            665.32,
+            291.26,
+            1133.19,
+            960.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7149
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            744.29,
+            326.97,
+            1286.64,
+            960.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7566
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            744.29,
+            326.97,
+            1286.64,
+            960.34
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            491.51,
+            345.18,
+            896.39,
+            960.5
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            1002.36,
+            434.66,
+            1287.97,
+            960.87
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            10.29,
+            599.21,
+            404.1,
+            962.07
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            851.25,
+            510.32,
+            1288.56,
+            962.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8217
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 8,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "black chair",
+        "specific left/right selection among the two chairs in front of the blackboard"
+      ],
+      "num_object_views": 11,
+      "bbox_3d": [
+        -0.7824,
+        2.2859,
+        0.3632,
+        0.8051,
+        0.9538,
+        0.7709
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_1",
+          "view_id": "00000",
+          "bbox_2d": [
+            771.17,
+            288.85,
+            981.06,
+            495.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7338
+        },
+        {
+          "object_view_id": "00002_2",
+          "view_id": "00002",
+          "bbox_2d": [
+            889.49,
+            640.81,
+            1118.92,
+            872.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4544
+        },
+        {
+          "object_view_id": "00014_5",
+          "view_id": "00014",
+          "bbox_2d": [
+            185.93,
+            249.9,
+            432.92,
+            482.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3263
+        },
+        {
+          "object_view_id": "00016_1",
+          "view_id": "00016",
+          "bbox_2d": [
+            658.11,
+            114.18,
+            874.78,
+            327.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6451
+        },
+        {
+          "object_view_id": "00018_2",
+          "view_id": "00018",
+          "bbox_2d": [
+            603.59,
+            57.77,
+            851.38,
+            283.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6875
+        },
+        {
+          "object_view_id": "00020_1",
+          "view_id": "00020",
+          "bbox_2d": [
+            772.6,
+            102.45,
+            1056.89,
+            389.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7343
+        },
+        {
+          "object_view_id": "00022_1",
+          "view_id": "00022",
+          "bbox_2d": [
+            985.11,
+            144.73,
+            1287.39,
+            495.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4632
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            748.42,
+            94.89,
+            1187.36,
+            476.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7811
+        },
+        {
+          "object_view_id": "00026_2",
+          "view_id": "00026",
+          "bbox_2d": [
+            219.37,
+            230.15,
+            816.43,
+            724.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5491
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            219.37,
+            230.15,
+            816.43,
+            724.3
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00028_4",
+          "view_id": "00028",
+          "bbox_2d": [
+            8.27,
+            527.08,
+            288.75,
+            959.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6445
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "chair",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 7,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 13,
+      "bbox_3d": [
+        -1.2578,
+        1.8264,
+        0.4834,
+        0.8117,
+        0.9609,
+        1.0581
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_2",
+          "view_id": "00000",
+          "bbox_2d": [
+            649.75,
+            307.8,
+            874.41,
+            523.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6853
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            768.3,
+            656.2,
+            1006.47,
+            890.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6282
+        },
+        {
+          "object_view_id": "00014_1",
+          "view_id": "00014",
+          "bbox_2d": [
+            40.23,
+            275.04,
+            325.69,
+            517.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5372
+        },
+        {
+          "object_view_id": "00016_2",
+          "view_id": "00016",
+          "bbox_2d": [
+            524.13,
+            130.71,
+            769.17,
+            368.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4872
+        },
+        {
+          "object_view_id": "00018_3",
+          "view_id": "00018",
+          "bbox_2d": [
+            458.53,
+            84.35,
+            748.68,
+            361.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5682
+        },
+        {
+          "object_view_id": "00020_3",
+          "view_id": "00020",
+          "bbox_2d": [
+            607.23,
+            137.83,
+            949.08,
+            531.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5492
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            792.53,
+            190.49,
+            1217.49,
+            742.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7381
+        },
+        {
+          "object_view_id": "00024_1",
+          "view_id": "00024",
+          "bbox_2d": [
+            547.6,
+            214.68,
+            1133.53,
+            937.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6865
+        },
+        {
+          "object_view_id": "00026_3",
+          "view_id": "00026",
+          "bbox_2d": [
+            9.94,
+            511.0,
+            902.29,
+            960.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5431
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            547.6,
+            214.68,
+            1133.53,
+            937.13
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            731.55,
+            198.44,
+            1232.85,
+            842.84
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            763.48,
+            141.76,
+            1144.76,
+            602.33
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            467.0,
+            74.0,
+            777.0,
+            377.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.1671,
+        1.7491,
+        0.4053,
+        0.7977,
+        1.0318,
+        0.752
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_3",
+          "view_id": "00000",
+          "bbox_2d": [
+            1072.35,
+            313.99,
+            1252.25,
+            497.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6266
+        },
+        {
+          "object_view_id": "00014_4",
+          "view_id": "00014",
+          "bbox_2d": [
+            505.13,
+            260.07,
+            651.01,
+            435.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3627
+        },
+        {
+          "object_view_id": "00016_3",
+          "view_id": "00016",
+          "bbox_2d": [
+            966.45,
+            96.07,
+            1157.89,
+            340.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4723
+        },
+        {
+          "object_view_id": "bootstrap_00001",
+          "view_id": "00001",
+          "bbox_2d": [
+            1140.0,
+            385.0,
+            1284.0,
+            556.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            768.0,
+            144.0,
+            897.0,
+            260.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            1104.0,
+            320.0,
+            1255.0,
+            510.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm that the green chair is the correct one of the two chairs directly in front of the blackboard",
+        "cannot reliably resolve the requested left/right relation relative to the blackboard"
+      ],
+      "num_object_views": 10,
+      "bbox_3d": [
+        -1.1773,
+        0.8411,
+        0.4756,
+        1.3359,
+        1.9968,
+        1.064
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_4",
+          "view_id": "00000",
+          "bbox_2d": [
+            645.57,
+            344.47,
+            902.65,
+            860.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5934
+        },
+        {
+          "object_view_id": "00002_1",
+          "view_id": "00002",
+          "bbox_2d": [
+            818.43,
+            711.42,
+            1078.15,
+            962.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5185
+        },
+        {
+          "object_view_id": "00014_3",
+          "view_id": "00014",
+          "bbox_2d": [
+            92.79,
+            313.17,
+            354.88,
+            848.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4379
+        },
+        {
+          "object_view_id": "00016_4",
+          "view_id": "00016",
+          "bbox_2d": [
+            524.06,
+            169.2,
+            800.66,
+            726.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4674
+        },
+        {
+          "object_view_id": "00018_1",
+          "view_id": "00018",
+          "bbox_2d": [
+            536.97,
+            144.88,
+            894.05,
+            816.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6957
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            784.69,
+            274.15,
+            1290.21,
+            961.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8526
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            575.02,
+            164.42,
+            1013.32,
+            959.5
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            1148.89,
+            381.22,
+            1286.67,
+            966.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            589.35,
+            414.56,
+            888.28,
+            960.32
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00066_2",
+          "view_id": "00066",
+          "bbox_2d": [
+            589.02,
+            365.76,
+            900.89,
+            955.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.656
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a black chair",
+        "candidate is one of the two chairs directly in front of the blackboard",
+        "candidate is the left chair when facing the blackboard"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.4607,
+        1.3042,
+        0.48,
+        1.2732,
+        1.3689,
+        0.6437
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            183.46,
+            365.4,
+            330.55,
+            543.84
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6892
+        },
+        {
+          "object_view_id": "00018_6",
+          "view_id": "00018",
+          "bbox_2d": [
+            1174.92,
+            19.42,
+            1290.71,
+            260.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2859
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard not visually confirmed",
+        "cannot verify candidate is one of the two chairs directly in front of the blackboard",
+        "cannot determine the left/right choice relative to facing the blackboard"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        2.4523,
+        -0.3119,
+        0.5992,
+        0.2773,
+        0.3436,
+        0.1436
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_1",
+          "view_id": "00012",
+          "bbox_2d": [
+            805.38,
+            379.99,
+            964.03,
+            543.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5232
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            1013.6,
+            308.9,
+            1198.58,
+            473.68
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard is not visible",
+        "cannot confirm this chair is one of the two directly in front of the blackboard",
+        "cannot determine left/right relative to facing the blackboard",
+        "nearby alternative black chairs are present and not disambiguated"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.1658,
+        0.4693,
+        0.6706,
+        0.4546,
+        0.501,
+        0.3834
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_2",
+          "view_id": "00012",
+          "bbox_2d": [
+            464.82,
+            364.85,
+            638.57,
+            660.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4553
+        },
+        {
+          "object_view_id": "00014_2",
+          "view_id": "00014",
+          "bbox_2d": [
+            946.17,
+            223.58,
+            1128.56,
+            536.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.452
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            672.56,
+            278.94,
+            835.82,
+            561.05
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            1261.0,
+            181.0,
+            1287.0,
+            296.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard is not visually confirmed",
+        "cannot verify that this chair is one of the two chairs directly in front of the blackboard",
+        "cannot determine the correct left/right chair relative to the blackboard orientation",
+        "nearby alternative black chairs are present and not disambiguated"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.2856,
+        -1.6766,
+        0.4438,
+        0.5655,
+        0.5263,
+        0.8973
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_3",
+          "view_id": "00012",
+          "bbox_2d": [
+            743.31,
+            634.19,
+            1131.86,
+            963.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3656
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            909.4,
+            720.62,
+            1289.53,
+            963.9
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            994.0,
+            804.0,
+            1089.0,
+            961.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            1249.0,
+            842.0,
+            1289.0,
+            875.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard is not visible",
+        "cannot verify this chair is one of the two chairs directly in front of the blackboard",
+        "cannot determine the left/right relation relative to the blackboard-facing direction",
+        "nearby alternative black chairs are not disambiguated"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.331,
+        -1.5318,
+        0.468,
+        0.4614,
+        0.4593,
+        0.9503
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_4",
+          "view_id": "00012",
+          "bbox_2d": [
+            789.83,
+            497.93,
+            1157.76,
+            848.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3051
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            1061.0,
+            579.0,
+            1287.0,
+            732.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            787.21,
+            635.82,
+            1098.47,
+            961.9
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "is one of the two chairs directly in front of the blackboard",
+        "is the left chair when facing the blackboard"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.2524,
+        0.6867,
+        0.3821,
+        0.4478,
+        0.1627,
+        0.6962
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_4",
+          "view_id": "00018",
+          "bbox_2d": [
+            1053.17,
+            158.77,
+            1269.77,
+            329.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5182
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            1158.0,
+            461.0,
+            1287.0,
+            553.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            569.0,
+            317.0,
+            701.0,
+            398.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00012",
+          "view_id": "00012",
+          "bbox_2d": [
+            47.0,
+            488.0,
+            211.0,
+            587.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "green chair is not verified as one of the two chairs directly in front of the blackboard",
+        "green chair does not match the described left/right member of that pair"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.3595,
+        1.1684,
+        0.3922,
+        1.4636,
+        2.1715,
+        0.7194
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_5",
+          "view_id": "00018",
+          "bbox_2d": [
+            959.38,
+            75.48,
+            1171.7,
+            343.2
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4696
+        },
+        {
+          "object_view_id": "00020_2",
+          "view_id": "00020",
+          "bbox_2d": [
+            1188.4,
+            153.07,
+            1287.07,
+            484.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6777
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            1064.07,
+            373.39,
+            1262.45,
+            604.49
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            505.13,
+            260.07,
+            651.01,
+            435.79
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            1065.1,
+            104.76,
+            1286.84,
+            321.41
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00066_4",
+          "view_id": "00066",
+          "bbox_2d": [
+            997.93,
+            307.75,
+            1174.57,
+            529.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4968
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "candidate is not reliably the black chair",
+        "blackboard not visible",
+        "cannot confirm it is one of the two chairs directly in front of the blackboard",
+        "cannot confirm left chair when facing the blackboard / right chair from behind"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.5664,
+        2.0906,
+        0.5065,
+        1.0109,
+        0.8814,
+        0.7059
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            860.72,
+            5.34,
+            1180.73,
+            490.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.739
+        },
+        {
+          "object_view_id": "bootstrap_00028",
+          "view_id": "00028",
+          "bbox_2d": [
+            353.13,
+            76.62,
+            730.87,
+            682.1
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00030",
+          "view_id": "00030",
+          "bbox_2d": [
+            7.99,
+            305.25,
+            607.62,
+            963.27
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            89.78,
+            139.92,
+            559.72,
+            877.96
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00028_2",
+          "view_id": "00028",
+          "bbox_2d": [
+            353.13,
+            76.62,
+            730.87,
+            682.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8035
+        },
+        {
+          "object_view_id": "00030_4",
+          "view_id": "00030",
+          "bbox_2d": [
+            7.99,
+            305.25,
+            607.62,
+            963.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3989
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard is not visible",
+        "cannot verify that this chair is one of the two chairs directly in front of the blackboard",
+        "cannot determine whether it is the left chair when facing the blackboard",
+        "nearby alternative black chairs are present and not disambiguated"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.6203,
+        1.6689,
+        0.3552,
+        1.6379,
+        0.9221,
+        0.8212
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_1",
+          "view_id": "00026",
+          "bbox_2d": [
+            990.65,
+            114.42,
+            1285.82,
+            712.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7187
+        },
+        {
+          "object_view_id": "bootstrap_00028",
+          "view_id": "00028",
+          "bbox_2d": [
+            575.39,
+            246.52,
+            1133.96,
+            959.9
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00030",
+          "view_id": "00030",
+          "bbox_2d": [
+            142.34,
+            535.72,
+            953.7,
+            962.12
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            794.08,
+            141.37,
+            1286.54,
+            793.43
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            575.39,
+            246.52,
+            1133.96,
+            959.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.875
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard is not visually confirmed",
+        "cannot verify this chair is one of the two chairs directly in front of the blackboard",
+        "cannot verify the left/right relation relative to the blackboard",
+        "nearby alternative black chairs are present and not ruled out"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        1.972,
+        1.0587,
+        0.4434,
+        0.7174,
+        0.6172,
+        0.9814
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_1",
+          "view_id": "00028",
+          "bbox_2d": [
+            1098.49,
+            15.22,
+            1288.63,
+            396.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.873
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            795.48,
+            5.2,
+            1091.22,
+            481.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9404
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            36.46,
+            92.14,
+            474.27,
+            655.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8688
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            201.44,
+            72.41,
+            625.98,
+            694.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8941
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            9.93,
+            153.23,
+            631.81,
+            958.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8221
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            123.48,
+            51.5,
+            636.36,
+            802.27
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            53.0,
+            262.0,
+            588.0,
+            961.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 15,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard is not visible",
+        "cannot verify this chair is one of the two directly in front of the blackboard",
+        "cannot determine left/right relative to the blackboard-facing orientation",
+        "nearby alternative chairs remain ambiguous"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.9883,
+        1.7999,
+        0.4225,
+        0.6233,
+        0.6869,
+        0.8176
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_3",
+          "view_id": "00028",
+          "bbox_2d": [
+            690.82,
+            35.16,
+            1031.21,
+            502.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7444
+        },
+        {
+          "object_view_id": "bootstrap_00030",
+          "view_id": "00030",
+          "bbox_2d": [
+            241.3,
+            174.49,
+            731.82,
+            661.27
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            10.94,
+            258.48,
+            487.12,
+            851.35
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            499.59,
+            54.5,
+            908.75,
+            594.01
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 16,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "black",
+        "chair in front of the blackboard",
+        "the left of the two chairs in front of the blackboard when facing the blackboard"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        1.0147,
+        1.8567,
+        0.4285,
+        1.4362,
+        0.7862,
+        0.8644
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_1",
+          "view_id": "00030",
+          "bbox_2d": [
+            241.3,
+            174.49,
+            731.82,
+            661.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8164
+        },
+        {
+          "object_view_id": "00032_3",
+          "view_id": "00032",
+          "bbox_2d": [
+            6.18,
+            756.62,
+            193.57,
+            961.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3563
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            241.3,
+            174.49,
+            731.82,
+            661.27
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 17,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "whether this chair is directly in front of the blackboard",
+        "whether there are exactly two chairs in front of the blackboard",
+        "whether this is the left chair when facing the blackboard / right chair when standing behind the chairs"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.1756,
+        0.4832,
+        0.47,
+        0.6616,
+        0.7135,
+        0.9702
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_2",
+          "view_id": "00030",
+          "bbox_2d": [
+            1075.79,
+            81.18,
+            1287.2,
+            713.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7465
+        },
+        {
+          "object_view_id": "00032_1",
+          "view_id": "00032",
+          "bbox_2d": [
+            553.4,
+            110.22,
+            954.85,
+            807.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.824
+        },
+        {
+          "object_view_id": "00034_1",
+          "view_id": "00034",
+          "bbox_2d": [
+            667.32,
+            173.03,
+            1211.39,
+            960.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8264
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            558.72,
+            128.08,
+            981.67,
+            868.33
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            849.42,
+            109.11,
+            1286.02,
+            796.52
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00036",
+          "view_id": "00036",
+          "bbox_2d": [
+            1001.93,
+            364.28,
+            1285.75,
+            960.76
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 18,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "whether this chair is one of the two chairs directly in front of the blackboard",
+        "which side this chair is on when facing the blackboard",
+        "whether another nearby black chair satisfies the description better once the blackboard is located"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.1877,
+        1.5672,
+        0.3844,
+        0.4149,
+        0.6178,
+        0.7823
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_3",
+          "view_id": "00030",
+          "bbox_2d": [
+            142.34,
+            535.72,
+            953.7,
+            962.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6373
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            142.34,
+            535.72,
+            953.7,
+            962.12
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            432.52,
+            343.87,
+            1072.24,
+            959.66
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00026",
+          "view_id": "00026",
+          "bbox_2d": [
+            990.65,
+            114.42,
+            1285.82,
+            712.7
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            4.8,
+            773.09,
+            549.32,
+            960.12
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 19,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "blackboard visibility",
+        "confirmation that this chair is one of the two directly in front of the blackboard",
+        "left/right disambiguation relative to facing the blackboard",
+        "comparison against the other chair in front of the blackboard"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.3742,
+        -1.2171,
+        0.3687,
+        1.2113,
+        0.7911,
+        0.7971
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_2",
+          "view_id": "00032",
+          "bbox_2d": [
+            1119.25,
+            9.51,
+            1291.13,
+            242.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5132
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            664.34,
+            327.66,
+            1256.94,
+            959.62
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00050",
+          "view_id": "00050",
+          "bbox_2d": [
+            554.63,
+            201.71,
+            1051.27,
+            899.75
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            1123.99,
+            26.86,
+            1289.95,
+            262.91
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            554.63,
+            201.71,
+            1051.27,
+            899.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7448
+        }
+      ]
+    },
+    {
+      "candidate_id": 20,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "blackboard is not visible",
+        "cannot confirm these are the two chairs directly in front of the blackboard",
+        "cannot determine left/right relative to facing the blackboard"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        2.581,
+        -0.1525,
+        0.37,
+        0.5351,
+        0.4898,
+        0.7861
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_4",
+          "view_id": "00032",
+          "bbox_2d": [
+            567.13,
+            32.19,
+            729.79,
+            307.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3397
+        },
+        {
+          "object_view_id": "00036_2",
+          "view_id": "00036",
+          "bbox_2d": [
+            776.96,
+            67.15,
+            1138.12,
+            550.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7165
+        },
+        {
+          "object_view_id": "00038_1",
+          "view_id": "00038",
+          "bbox_2d": [
+            619.45,
+            150.08,
+            1063.33,
+            801.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6742
+        },
+        {
+          "object_view_id": "00040_1",
+          "view_id": "00040",
+          "bbox_2d": [
+            421.67,
+            269.54,
+            992.09,
+            959.48
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8112
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            421.67,
+            269.54,
+            992.09,
+            959.48
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            743.87,
+            741.83,
+            1289.75,
+            960.27
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            541.66,
+            252.63,
+            944.01,
+            767.7
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            725.42,
+            111.06,
+            1149.94,
+            694.35
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 21,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard is not visible",
+        "cannot verify that this chair is one of the two chairs directly in front of the blackboard",
+        "cannot determine left/right relative to the blackboard-facing orientation",
+        "nearby alternative black chair is not ruled out"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        2.7283,
+        -0.1267,
+        0.7463,
+        0.1646,
+        0.4329,
+        0.4014
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_2",
+          "view_id": "00034",
+          "bbox_2d": [
+            790.5,
+            58.71,
+            1001.78,
+            234.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4888
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            421.67,
+            269.54,
+            992.09,
+            959.48
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00041",
+          "view_id": "00041",
+          "bbox_2d": [
+            467.8,
+            465.41,
+            886.07,
+            959.96
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            725.42,
+            111.06,
+            1149.94,
+            694.35
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 22,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 7,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard is not visible/confirmed",
+        "cannot verify that these are the two chairs directly in front of the blackboard",
+        "cannot determine the left/right relation relative to facing the blackboard"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        2.9296,
+        -1.0715,
+        0.3523,
+        0.6022,
+        0.6344,
+        0.7759
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_3",
+          "view_id": "00034",
+          "bbox_2d": [
+            1053.19,
+            10.79,
+            1275.38,
+            126.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2742
+        },
+        {
+          "object_view_id": "00036_3",
+          "view_id": "00036",
+          "bbox_2d": [
+            1089.38,
+            3.1,
+            1291.38,
+            169.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7114
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            901.25,
+            6.46,
+            1242.99,
+            276.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7694
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            761.31,
+            6.21,
+            1213.62,
+            569.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8982
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            509.51,
+            116.67,
+            1061.96,
+            865.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.896
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            509.51,
+            116.67,
+            1061.96,
+            865.53
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00047",
+          "view_id": "00047",
+          "bbox_2d": [
+            316.26,
+            720.65,
+            886.48,
+            959.63
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00043",
+          "view_id": "00043",
+          "bbox_2d": [
+            486.0,
+            145.63,
+            1086.94,
+            961.44
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            871.44,
+            54.09,
+            1268.27,
+            390.35
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 23,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard is not visible",
+        "cannot confirm this chair is one of the two chairs directly in front of the blackboard",
+        "cannot determine the left/right relation relative to the blackboard-facing direction",
+        "nearby alternative black chairs are present and not ruled out"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.3296,
+        0.4997,
+        0.4735,
+        0.3469,
+        0.427,
+        0.978
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_1",
+          "view_id": "00036",
+          "bbox_2d": [
+            1001.93,
+            364.28,
+            1285.75,
+            960.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7238
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            558.72,
+            128.08,
+            981.67,
+            868.33
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            698.24,
+            211.52,
+            1288.6,
+            959.31
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            553.4,
+            110.22,
+            954.85,
+            807.8
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 24,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard not visually confirmed",
+        "cannot verify these are the two chairs directly in front of the blackboard",
+        "cannot determine the correct left/right chair relative to facing the blackboard"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        2.6765,
+        -0.3345,
+        0.3653,
+        0.3084,
+        0.1912,
+        0.7735
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00042_1",
+          "view_id": "00042",
+          "bbox_2d": [
+            743.87,
+            741.83,
+            1289.75,
+            960.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5193
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            743.87,
+            741.83,
+            1289.75,
+            960.27
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            421.67,
+            269.54,
+            992.09,
+            959.48
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00038",
+          "view_id": "00038",
+          "bbox_2d": [
+            619.45,
+            150.08,
+            1063.33,
+            801.45
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00041",
+          "view_id": "00041",
+          "bbox_2d": [
+            694.0,
+            465.0,
+            1287.0,
+            775.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 25,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard is not visually confirmed",
+        "cannot verify this chair is one of the only two chairs right in front of the blackboard",
+        "cannot verify it is the left chair when facing the blackboard / right chair when standing behind the chairs"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        2.9342,
+        -1.0903,
+        0.3566,
+        0.593,
+        0.5962,
+        0.7744
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            546.46,
+            208.66,
+            1183.03,
+            960.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9253
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            546.46,
+            208.66,
+            1183.03,
+            960.18
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00047",
+          "view_id": "00047",
+          "bbox_2d": [
+            316.26,
+            720.65,
+            886.48,
+            959.63
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00043",
+          "view_id": "00043",
+          "bbox_2d": [
+            486.0,
+            145.63,
+            1086.94,
+            961.44
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            761.31,
+            6.21,
+            1213.62,
+            569.08
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 26,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard not visible/confirmed",
+        "cannot verify this chair is one of the two chairs directly in front of the blackboard",
+        "cannot determine whether it is the left chair when facing the blackboard / right chair from behind"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        2.9228,
+        -1.1549,
+        0.3651,
+        0.5082,
+        0.4486,
+        0.7747
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            98.77,
+            569.14,
+            952.97,
+            959.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.874
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            98.77,
+            569.14,
+            952.97,
+            959.63
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00047",
+          "view_id": "00047",
+          "bbox_2d": [
+            620.0,
+            878.0,
+            870.0,
+            961.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00043",
+          "view_id": "00043",
+          "bbox_2d": [
+            486.0,
+            145.63,
+            1086.94,
+            961.44
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00041",
+          "view_id": "00041",
+          "bbox_2d": [
+            611.07,
+            35.38,
+            1111.91,
+            552.97
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 27,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot visually confirm the blackboard",
+        "cannot confirm this chair is one of the two chairs directly in front of the blackboard",
+        "cannot determine which of the two chairs is on the left when facing the blackboard",
+        "nearby alternative black chairs are present and not fully disambiguated"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.3506,
+        -1.4118,
+        0.3756,
+        1.3221,
+        0.5966,
+        0.7781
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_1",
+          "view_id": "00046",
+          "bbox_2d": [
+            771.53,
+            3.97,
+            1085.97,
+            488.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4726
+        },
+        {
+          "object_view_id": "bootstrap_00050",
+          "view_id": "00050",
+          "bbox_2d": [
+            547.67,
+            26.2,
+            900.74,
+            565.93
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00047",
+          "view_id": "00047",
+          "bbox_2d": [
+            665.0,
+            5.58,
+            982.62,
+            556.38
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00049",
+          "view_id": "00049",
+          "bbox_2d": [
+            523.31,
+            68.12,
+            929.05,
+            710.89
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            628.7,
+            6.75,
+            1013.87,
+            611.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5771
+        }
+      ]
+    },
+    {
+      "candidate_id": 28,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard is not visible",
+        "cannot verify that this chair is one of the two chairs directly in front of the blackboard",
+        "cannot determine which chair is on the left when facing the blackboard",
+        "cannot fully rule out nearby alternative black chairs as the better match"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.0575,
+        -1.2166,
+        0.3617,
+        1.4656,
+        0.9119,
+        0.8212
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_2",
+          "view_id": "00046",
+          "bbox_2d": [
+            1006.62,
+            4.01,
+            1258.59,
+            165.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2814
+        },
+        {
+          "object_view_id": "bootstrap_00049",
+          "view_id": "00049",
+          "bbox_2d": [
+            557.5,
+            6.14,
+            863.55,
+            237.05
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            601.97,
+            56.79,
+            1010.76,
+            737.42
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00050",
+          "view_id": "00050",
+          "bbox_2d": [
+            547.67,
+            26.2,
+            900.74,
+            565.93
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00050_1",
+          "view_id": "00050",
+          "bbox_2d": [
+            547.67,
+            26.2,
+            900.74,
+            565.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3828
+        },
+        {
+          "object_view_id": "00052_3",
+          "view_id": "00052",
+          "bbox_2d": [
+            796.76,
+            365.28,
+            1284.78,
+            960.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3697
+        }
+      ]
+    },
+    {
+      "candidate_id": 29,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard is not visible",
+        "cannot confirm this chair is one of the two chairs directly in front of the blackboard",
+        "cannot determine left/right relative to the blackboard-facing orientation",
+        "cannot reliably distinguish this chair from nearby alternative black chairs"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.0772,
+        -1.3746,
+        0.3478,
+        0.4383,
+        0.2867,
+        0.6976
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00048_1",
+          "view_id": "00048",
+          "bbox_2d": [
+            809.61,
+            8.99,
+            1041.84,
+            196.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.291
+        },
+        {
+          "object_view_id": "bootstrap_00049",
+          "view_id": "00049",
+          "bbox_2d": [
+            557.5,
+            6.14,
+            863.55,
+            237.05
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            601.97,
+            56.79,
+            1010.76,
+            737.42
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00052",
+          "view_id": "00052",
+          "bbox_2d": [
+            796.76,
+            365.28,
+            1284.78,
+            960.59
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 30,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "whether this chair is one of the two chairs directly in front of the blackboard",
+        "whether it is the left chair when facing the blackboard",
+        "whether nearby alternative chairs might satisfy the request better"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.1563,
+        -0.5199,
+        0.4525,
+        0.6219,
+        0.4576,
+        0.8764
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            923.08,
+            5.14,
+            1105.07,
+            196.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.502
+        },
+        {
+          "object_view_id": "00054_3",
+          "view_id": "00054",
+          "bbox_2d": [
+            942.71,
+            90.98,
+            1144.35,
+            322.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3945
+        },
+        {
+          "object_view_id": "bootstrap_00056",
+          "view_id": "00056",
+          "bbox_2d": [
+            977.0,
+            113.0,
+            1223.0,
+            373.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            849.55,
+            54.04,
+            1075.4,
+            305.79
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00057",
+          "view_id": "00057",
+          "bbox_2d": [
+            1004.0,
+            67.0,
+            1263.0,
+            351.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 31,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "blackboard not visible relative to the candidate",
+        "cannot verify candidate is one of the two chairs directly in front of the blackboard",
+        "cannot verify left/right choice when facing the blackboard",
+        "nearby alternative black chairs remain insufficiently disambiguated"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.3574,
+        -1.6487,
+        0.4519,
+        0.5132,
+        0.5503,
+        0.8951
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_1",
+          "view_id": "00052",
+          "bbox_2d": [
+            575.31,
+            85.78,
+            742.11,
+            509.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4844
+        },
+        {
+          "object_view_id": "00054_2",
+          "view_id": "00054",
+          "bbox_2d": [
+            552.5,
+            214.02,
+            777.59,
+            728.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6163
+        },
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            555.71,
+            305.92,
+            928.21,
+            957.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8225
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            1183.0,
+            829.0,
+            1291.0,
+            924.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            491.02,
+            231.45,
+            772.01,
+            803.23
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00053",
+          "view_id": "00053",
+          "bbox_2d": [
+            622.68,
+            253.25,
+            813.41,
+            710.25
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 32,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "blackboard is not clearly visible",
+        "cannot verify this chair is one of the two chairs directly in front of the blackboard",
+        "cannot verify the requested left/right choice relative to the blackboard orientation",
+        "nearby alternative black chairs remain plausible"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.35,
+        -1.4577,
+        0.4833,
+        0.4923,
+        0.5655,
+        0.9783
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_2",
+          "view_id": "00052",
+          "bbox_2d": [
+            668.91,
+            107.47,
+            1072.67,
+            773.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.409
+        },
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            683.96,
+            266.9,
+            1126.78,
+            957.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6645
+        },
+        {
+          "object_view_id": "bootstrap_00053",
+          "view_id": "00053",
+          "bbox_2d": [
+            733.55,
+            288.96,
+            1116.56,
+            904.41
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            486.58,
+            5.21,
+            867.62,
+            493.2
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            686.62,
+            306.58,
+            1216.33,
+            959.63
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 33,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "blackboard is not clearly visible as a reference object",
+        "cannot verify which two chairs are directly in front of the blackboard",
+        "cannot determine whether the candidate is the left chair when facing the blackboard"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.4153,
+        0.177,
+        0.4929,
+        0.454,
+        0.4245,
+        0.909
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_4",
+          "view_id": "00052",
+          "bbox_2d": [
+            1121.37,
+            3.51,
+            1289.97,
+            263.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3432
+        },
+        {
+          "object_view_id": "00054_4",
+          "view_id": "00054",
+          "bbox_2d": [
+            1133.8,
+            58.96,
+            1287.8,
+            397.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3924
+        },
+        {
+          "object_view_id": "00056_3",
+          "view_id": "00056",
+          "bbox_2d": [
+            1143.89,
+            53.02,
+            1288.69,
+            432.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3219
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            1036.74,
+            6.78,
+            1237.35,
+            364.57
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00053",
+          "view_id": "00053",
+          "bbox_2d": [
+            1209.0,
+            97.0,
+            1289.0,
+            227.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00057",
+          "view_id": "00057",
+          "bbox_2d": [
+            1253.0,
+            3.0,
+            1293.0,
+            180.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 34,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard is not visible or confirmed",
+        "cannot verify that this is one of the two chairs directly in front of the blackboard",
+        "cannot verify the left/right relation relative to facing the blackboard",
+        "nearby alternative black chairs are not ruled out"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.9744,
+        -1.3797,
+        0.3838,
+        0.3411,
+        0.4793,
+        0.7663
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00054_1",
+          "view_id": "00054",
+          "bbox_2d": [
+            904.53,
+            674.54,
+            1290.04,
+            960.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6549
+        },
+        {
+          "object_view_id": "bootstrap_00050",
+          "view_id": "00050",
+          "bbox_2d": [
+            547.67,
+            26.2,
+            900.74,
+            565.93
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00052",
+          "view_id": "00052",
+          "bbox_2d": [
+            668.91,
+            107.47,
+            1072.67,
+            773.03
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00053",
+          "view_id": "00053",
+          "bbox_2d": [
+            899.88,
+            599.91,
+            1286.87,
+            960.17
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 35,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard not visually confirmed",
+        "cannot verify this chair is directly in front of the blackboard",
+        "cannot verify there are only two chairs in front of the blackboard",
+        "cannot determine whether this is the left chair when facing the blackboard / right chair when standing behind the chairs",
+        "nearby alternative black chair visible and not distinguishable from current evidence"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.3278,
+        -1.5768,
+        0.715,
+        0.4636,
+        0.1482,
+        0.5244
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00056_1",
+          "view_id": "00056",
+          "bbox_2d": [
+            863.03,
+            449.15,
+            1288.39,
+            961.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7952
+        },
+        {
+          "object_view_id": "bootstrap_00054",
+          "view_id": "00054",
+          "bbox_2d": [
+            683.96,
+            266.9,
+            1126.78,
+            957.81
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00057",
+          "view_id": "00057",
+          "bbox_2d": [
+            1053.18,
+            564.99,
+            1288.59,
+            961.04
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            686.62,
+            306.58,
+            1216.33,
+            959.63
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 36,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "is a chair",
+        "is one of the two chairs directly in front of the blackboard",
+        "is the left chair when facing the blackboard"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.2647,
+        -0.5766,
+        0.7398,
+        0.4655,
+        0.6148,
+        0.3398
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00056_2",
+          "view_id": "00056",
+          "bbox_2d": [
+            973.0,
+            97.65,
+            1156.45,
+            259.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3892
+        }
+      ]
+    },
+    {
+      "candidate_id": 37,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard is clearly identified",
+        "chair is directly in front of the blackboard",
+        "chair is one of the two chairs in front of the blackboard",
+        "chair is the left one when facing the blackboard / right one when standing behind the chairs"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.3472,
+        -1.5253,
+        0.4514,
+        0.574,
+        0.5204,
+        0.9083
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            540.76,
+            396.06,
+            1214.17,
+            959.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8182
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            491.02,
+            231.45,
+            772.01,
+            803.23
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            536.39,
+            728.91,
+            1034.06,
+            960.07
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00056",
+          "view_id": "00056",
+          "bbox_2d": [
+            555.71,
+            305.92,
+            928.21,
+            957.59
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 38,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "blackboard not clearly and fully confirmed relative to the candidate",
+        "cannot verify the candidate is one of the two chairs directly in front of the blackboard",
+        "cannot reliably determine left/right ordering when facing the blackboard",
+        "nearby alternative chair not ruled out"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.4414,
+        -0.4879,
+        0.7244,
+        0.1567,
+        0.46,
+        0.3618
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_1",
+          "view_id": "00058",
+          "bbox_2d": [
+            911.84,
+            5.25,
+            1116.36,
+            210.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6472
+        },
+        {
+          "object_view_id": "bootstrap_00016",
+          "view_id": "00016",
+          "bbox_2d": [
+            665.32,
+            291.26,
+            1133.19,
+            960.1
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            10.29,
+            599.21,
+            404.1,
+            962.07
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00061",
+          "view_id": "00061",
+          "bbox_2d": [
+            803.14,
+            154.85,
+            1186.21,
+            768.19
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 39,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "reliable confirmation that this is the correct left/right chair relative to the blackboard",
+        "clear disambiguation from the adjacent other black chair"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -1.5473,
+        0.216,
+        0.4936,
+        0.1942,
+        0.3663,
+        0.5772
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_2",
+          "view_id": "00058",
+          "bbox_2d": [
+            1129.35,
+            4.0,
+            1290.78,
+            162.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4524
+        },
+        {
+          "object_view_id": "bootstrap_00064",
+          "view_id": "00064",
+          "bbox_2d": [
+            739.21,
+            430.39,
+            1084.52,
+            959.5
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            1223.0,
+            717.0,
+            1291.0,
+            965.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 40,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm this is one of exactly the two chairs right in front of the blackboard",
+        "cannot determine whether it is the left chair when facing the blackboard",
+        "cannot reliably distinguish it from the adjacent other black chair using the requested relation"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.3942,
+        -0.4945,
+        0.4886,
+        0.2571,
+        0.4978,
+        0.9054
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            907.98,
+            99.69,
+            1245.51,
+            485.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6417
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            491.51,
+            345.18,
+            896.39,
+            960.5
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00063",
+          "view_id": "00063",
+          "bbox_2d": [
+            834.91,
+            299.25,
+            1287.98,
+            960.6
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            10.29,
+            599.21,
+            404.1,
+            962.07
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 41,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm which two chairs are the ones directly in front of the blackboard",
+        "cannot reliably determine whether the green chair is the left chair when facing the blackboard",
+        "nearby alternative chair may also satisfy the description"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.4481,
+        0.2257,
+        0.7247,
+        0.5303,
+        0.5217,
+        0.5003
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_1",
+          "view_id": "00060",
+          "bbox_2d": [
+            1086.52,
+            6.77,
+            1277.33,
+            236.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2636
+        },
+        {
+          "object_view_id": "00062_2",
+          "view_id": "00062",
+          "bbox_2d": [
+            884.12,
+            137.84,
+            1184.14,
+            486.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3705
+        },
+        {
+          "object_view_id": "bootstrap_00018",
+          "view_id": "00018",
+          "bbox_2d": [
+            536.97,
+            144.88,
+            894.05,
+            816.71
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            1219.0,
+            467.0,
+            1289.0,
+            950.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            575.02,
+            164.42,
+            1013.32,
+            959.5
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 42,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the candidate is one of the two chairs directly in front of the blackboard",
+        "cannot reliably determine the left/right distinction relative to facing the blackboard",
+        "nearby alternative black chair is not yet clearly ruled out"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.3003,
+        -0.497,
+        0.4731,
+        0.4098,
+        0.5265,
+        0.9601
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            731.0,
+            287.13,
+            1177.45,
+            960.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7554
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            491.51,
+            345.18,
+            896.39,
+            960.5
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00061",
+          "view_id": "00061",
+          "bbox_2d": [
+            803.14,
+            154.85,
+            1186.21,
+            768.19
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00002",
+          "view_id": "00002",
+          "bbox_2d": [
+            1028.0,
+            873.0,
+            1083.0,
+            961.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 43,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm which two chairs are the specific pair right in front of the blackboard",
+        "cannot reliably determine whether the green chair is the left one when facing the blackboard",
+        "a nearby blue-boxed chair may satisfy the description equally well from current evidence"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.2822,
+        1.7012,
+        0.4916,
+        0.7566,
+        0.8431,
+        0.9857
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00062_1",
+          "view_id": "00062",
+          "bbox_2d": [
+            1090.64,
+            118.16,
+            1287.14,
+            407.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6867
+        },
+        {
+          "object_view_id": "00064_2",
+          "view_id": "00064",
+          "bbox_2d": [
+            826.36,
+            374.93,
+            1094.85,
+            618.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6274
+        },
+        {
+          "object_view_id": "00066_3",
+          "view_id": "00066",
+          "bbox_2d": [
+            546.7,
+            311.75,
+            798.6,
+            548.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6084
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            8.69,
+            326.93,
+            616.76,
+            956.51
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00026",
+          "view_id": "00026",
+          "bbox_2d": [
+            9.94,
+            511.0,
+            902.29,
+            960.31
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 44,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "reliable confirmation that the candidate is the correct left/right choice among the two chairs directly in front of the blackboard"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.2821,
+        -0.5065,
+        0.7144,
+        0.4575,
+        0.4329,
+        0.507
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            938.81,
+            588.92,
+            1289.86,
+            964.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7365
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            938.81,
+            588.92,
+            1289.86,
+            964.93
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            491.51,
+            345.18,
+            896.39,
+            960.5
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00063",
+          "view_id": "00063",
+          "bbox_2d": [
+            834.91,
+            299.25,
+            1287.98,
+            960.6
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            10.29,
+            599.21,
+            404.1,
+            962.07
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 45,
+      "label": "chair",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.7965,
+        1.9936,
+        0.3559,
+        0.7551,
+        0.8221,
+        0.6931
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00064_1",
+          "view_id": "00064",
+          "bbox_2d": [
+            976.96,
+            352.89,
+            1229.0,
+            621.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7099
+        },
+        {
+          "object_view_id": "00066_1",
+          "view_id": "00066",
+          "bbox_2d": [
+            673.86,
+            289.25,
+            896.86,
+            490.06
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7592
+        },
+        {
+          "object_view_id": "bootstrap_00018",
+          "view_id": "00018",
+          "bbox_2d": [
+            603.59,
+            57.77,
+            851.38,
+            283.7
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            747.26,
+            60.76,
+            972.85,
+            294.22
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            740.28,
+            340.29,
+            966.49,
+            572.16
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 46,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "confirm that the candidate is one of the only two chairs directly in front of the blackboard",
+        "confirm the left/right distinction relative to facing the blackboard",
+        "rule out the adjacent black chair as the better match"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.5324,
+        0.2038,
+        0.4849,
+        0.6268,
+        0.5175,
+        1.0311
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00064_3",
+          "view_id": "00064",
+          "bbox_2d": [
+            739.21,
+            430.39,
+            1084.52,
+            959.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6096
+        },
+        {
+          "object_view_id": "bootstrap_00018",
+          "view_id": "00018",
+          "bbox_2d": [
+            536.97,
+            144.88,
+            894.05,
+            816.71
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            1212.0,
+            452.0,
+            1287.0,
+            963.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            575.02,
+            164.42,
+            1013.32,
+            959.5
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 47,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "whether the candidate is one of the two chairs directly in front of the blackboard",
+        "which of those two front-of-blackboard chairs is the left one when facing the blackboard",
+        "clear disambiguation from nearby alternative black chairs"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.2779,
+        0.6717,
+        0.398,
+        0.4303,
+        0.1932,
+        0.6654
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00066_5",
+          "view_id": "00066",
+          "bbox_2d": [
+            1069.08,
+            383.8,
+            1271.58,
+            798.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4512
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            1154.0,
+            464.0,
+            1287.0,
+            559.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            561.0,
+            320.0,
+            701.0,
+            402.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00012",
+          "view_id": "00012",
+          "bbox_2d": [
+            42.0,
+            494.0,
+            207.0,
+            594.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

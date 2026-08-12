@@ -1,0 +1,139 @@
+{
+  "case_id": 135,
+  "scene_id": "scene0565_00",
+  "query": "it is the door located in the corner of the room next to the long table",
+  "query_analysis": {
+    "raw_query": "it is the door located in the corner of the room next to the long table",
+    "target_object": "door",
+    "target_attributes": [],
+    "reference_object": "table",
+    "reference_attributes": [
+      "long"
+    ],
+    "relation": "next to"
+  },
+  "gt": {
+    "target_id": 19,
+    "gt_label": "door",
+    "gt_bbox_3d": [
+      -1.501558,
+      -2.912406,
+      0.716531,
+      0.526122,
+      0.158917,
+      1.396013
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -1.619709,
+      -2.94037,
+      0.974004,
+      0.815317,
+      0.305306,
+      1.975216
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1
+    ],
+    "detector_call_count": 30,
+    "total_views": 27,
+    "total_object_views": 2,
+    "total_candidates": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "door",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.5939,
+        -2.7121,
+        0.974,
+        0.8763,
+        0.7938,
+        1.9752
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            70.35,
+            33.16,
+            273.26,
+            409.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6014
+        },
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            574.87,
+            0.0,
+            789.01,
+            382.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3666
+        },
+        {
+          "object_view_id": "bootstrap_00010",
+          "view_id": "00010",
+          "bbox_2d": [
+            1016.0,
+            0.0,
+            1295.0,
+            655.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00012",
+          "view_id": "00012",
+          "bbox_2d": [
+            1097.0,
+            3.0,
+            1295.0,
+            922.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            1098.0,
+            3.0,
+            1295.0,
+            847.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

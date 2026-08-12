@@ -1,0 +1,868 @@
+{
+  "case_id": 103,
+  "scene_id": "scene0338_00",
+  "query": "there is a rectangular gray cabinet . it is on a wall next to a shelf .",
+  "query_analysis": {
+    "raw_query": "there is a rectangular gray cabinet . it is on a wall next to a shelf .",
+    "target_object": "cabinet",
+    "target_attributes": [
+      "rectangular",
+      "gray"
+    ],
+    "reference_object": "shelf",
+    "reference_attributes": [],
+    "relation": "next to"
+  },
+  "gt": {
+    "target_id": 15,
+    "gt_label": "cabinets",
+    "gt_bbox_3d": [
+      -1.353698,
+      -0.95099,
+      1.592219,
+      0.165628,
+      1.88218,
+      0.784592
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 6,
+    "bbox_3d": [
+      -1.312406,
+      0.274379,
+      0.475101,
+      0.744005,
+      2.755982,
+      0.982136
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 36,
+    "total_views": 21,
+    "total_object_views": 23,
+    "total_candidates": 10
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 5,
+      "done_actions": [],
+      "missing_conditions": [
+        "gray",
+        "next to a shelf"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.5554,
+        1.4183,
+        0.6599,
+        0.6577,
+        0.5935,
+        0.7474
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            789.85,
+            39.13,
+            1251.24,
+            576.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4098
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            369.98,
+            333.42,
+            789.34,
+            889.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3732
+        },
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            0.0,
+            309.07,
+            202.46,
+            964.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4406
+        },
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            870.11,
+            0.0,
+            1258.14,
+            485.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5819
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            283.38,
+            139.03,
+            811.79,
+            835.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2547
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            0.05,
+            263.87,
+            528.41,
+            964.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3405
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a cabinet",
+        "cabinet is on a wall",
+        "cabinet is next to a shelf"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        1.4781,
+        -0.4901,
+        0.6126,
+        1.2271,
+        1.508,
+        1.2067
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_1",
+          "view_id": "00006",
+          "bbox_2d": [
+            835.9,
+            118.79,
+            1296.0,
+            964.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2778
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            835.9,
+            118.79,
+            1296.0,
+            964.59
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00034_1",
+          "view_id": "00034",
+          "bbox_2d": [
+            280.62,
+            41.02,
+            1085.86,
+            965.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2917
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a cabinet",
+        "on a wall next to a shelf"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        1.3977,
+        -0.4222,
+        0.4836,
+        1.0611,
+        1.2131,
+        1.0322
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            165.53,
+            580.11,
+            836.93,
+            966.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3379
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            165.53,
+            580.11,
+            836.93,
+            966.28
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            0.0,
+            3.81,
+            551.85,
+            964.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6615
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [],
+      "missing_conditions": [
+        "cabinet",
+        "rectangular gray cabinet",
+        "next to a shelf"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.1258,
+        -1.653,
+        0.447,
+        0.6274,
+        0.5495,
+        0.9187
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            356.63,
+            234.38,
+            757.5,
+            770.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.385
+        },
+        {
+          "object_view_id": "00012_1",
+          "view_id": "00012",
+          "bbox_2d": [
+            0.01,
+            307.96,
+            123.32,
+            923.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4768
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            1152.84,
+            88.49,
+            1296.0,
+            600.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6164
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            881.18,
+            198.93,
+            1296.0,
+            944.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2877
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "clearly gray",
+        "next to a shelf"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.1412,
+        -1.5815,
+        0.4837,
+        0.2567,
+        0.5572,
+        0.901
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            1169.68,
+            153.81,
+            1295.96,
+            771.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5039
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            33.55,
+            243.12,
+            1296.0,
+            963.86
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            601.0,
+            351.0,
+            877.0,
+            841.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            845.03,
+            322.57,
+            1296.0,
+            964.19
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "cabinet",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.0889,
+        -1.6656,
+        0.4018,
+        0.2135,
+        0.4924,
+        0.7602
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            269.14,
+            503.16,
+            582.78,
+            961.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3156
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            269.14,
+            503.16,
+            582.78,
+            961.72
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            33.55,
+            243.12,
+            1296.0,
+            963.86
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            600.0,
+            422.0,
+            782.0,
+            841.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            845.03,
+            322.57,
+            1296.0,
+            964.19
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "cabinet",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.3035,
+        0.4596,
+        0.4857,
+        0.7266,
+        2.3354,
+        0.9466
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            2.42,
+            460.41,
+            1215.75,
+            962.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.348
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            2.16,
+            508.78,
+            1024.58,
+            964.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5527
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            0.01,
+            154.58,
+            327.04,
+            964.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8729
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            0.0,
+            321.0,
+            1295.0,
+            962.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            0.02,
+            263.15,
+            801.78,
+            964.29
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            0.0,
+            580.0,
+            1109.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "green-boxed object is a cabinet",
+        "green-boxed object is gray cabinet rather than open shelf unit"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.4197,
+        0.7458,
+        1.3784,
+        0.535,
+        1.856,
+        1.0489
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_1",
+          "view_id": "00020",
+          "bbox_2d": [
+            360.26,
+            0.66,
+            1101.3,
+            560.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3116
+        },
+        {
+          "object_view_id": "00022_1",
+          "view_id": "00022",
+          "bbox_2d": [
+            5.37,
+            0.0,
+            889.04,
+            712.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2914
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "next to a shelf"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.6463,
+        0.9113,
+        0.5544,
+        0.4705,
+        0.5121,
+        0.8262
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_1",
+          "view_id": "00032",
+          "bbox_2d": [
+            477.45,
+            276.15,
+            947.6,
+            965.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2506
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            477.45,
+            276.15,
+            947.6,
+            965.16
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            454.0,
+            288.0,
+            805.0,
+            863.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            0.05,
+            372.14,
+            184.52,
+            965.36
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            852.0,
+            252.0,
+            1295.0,
+            889.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "is actually a cabinet rather than part of a copier/printer",
+        "on a wall",
+        "next to a shelf"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.1614,
+        -0.6249,
+        0.3856,
+        0.5391,
+        0.3914,
+        0.7162
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_1",
+          "view_id": "00036",
+          "bbox_2d": [
+            499.15,
+            249.03,
+            750.44,
+            731.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5393
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            499.15,
+            249.03,
+            750.44,
+            731.59
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            459.34,
+            675.18,
+            677.95,
+            965.91
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            740.0,
+            345.0,
+            915.0,
+            740.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00034",
+          "view_id": "00034",
+          "bbox_2d": [
+            1051.0,
+            484.0,
+            1184.0,
+            843.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

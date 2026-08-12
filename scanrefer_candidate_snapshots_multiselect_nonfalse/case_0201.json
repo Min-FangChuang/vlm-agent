@@ -1,0 +1,164 @@
+{
+  "case_id": 201,
+  "scene_id": "scene0664_00",
+  "query": "this is a framed picture on the wall in the bathroom . it is above the toilet .",
+  "query_analysis": {
+    "raw_query": "this is a framed picture on the wall in the bathroom . it is above the toilet .",
+    "target_object": "framed picture",
+    "target_attributes": [],
+    "reference_object": "toilet",
+    "reference_attributes": [],
+    "relation": "above"
+  },
+  "gt": {
+    "target_id": 20,
+    "gt_label": "picture",
+    "gt_bbox_3d": [
+      0.770277,
+      0.174193,
+      1.503883,
+      0.03283,
+      0.428237,
+      0.531686
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      0.761265,
+      0.171814,
+      1.498639,
+      0.036814,
+      0.403298,
+      0.508207
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2
+    ],
+    "detector_call_count": 39,
+    "total_views": 36,
+    "total_object_views": 3,
+    "total_candidates": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "framed picture",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        0.7676,
+        0.1742,
+        1.4805,
+        0.0445,
+        0.4142,
+        0.4787
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            804.17,
+            250.41,
+            1199.75,
+            755.43
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7537
+        },
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            787.8,
+            0.0,
+            1226.0,
+            488.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6509
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            787.8,
+            0.0,
+            1226.0,
+            488.27
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            749.46,
+            200.87,
+            1143.55,
+            688.07
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            862.57,
+            130.3,
+            1295.97,
+            648.5
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00071",
+          "view_id": "00071",
+          "bbox_2d": [
+            754.81,
+            0.34,
+            1212.13,
+            497.03
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00070_0",
+          "view_id": "00070",
+          "bbox_2d": [
+            626.21,
+            0.0,
+            1078.27,
+            381.06
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5796
+        }
+      ]
+    }
+  ]
+}

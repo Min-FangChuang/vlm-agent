@@ -1,0 +1,320 @@
+{
+  "case_id": 72,
+  "scene_id": "scene0251_00",
+  "query": "the open door by the trash cans leading into a room with white flooring",
+  "query_analysis": {
+    "raw_query": "the open door by the trash cans leading into a room with white flooring",
+    "target_object": "door",
+    "target_attributes": [
+      "open"
+    ],
+    "reference_object": "trash cans",
+    "reference_attributes": [],
+    "relation": "by"
+  },
+  "gt": {
+    "target_id": 14,
+    "gt_label": "door",
+    "gt_bbox_3d": [
+      -1.20729,
+      5.466136,
+      1.240939,
+      0.282915,
+      0.987322,
+      1.274212
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -1.158961,
+      5.407627,
+      1.224751,
+      0.220014,
+      0.869771,
+      1.25968
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "detector_call_count": 47,
+    "total_views": 39,
+    "total_object_views": 4,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "door",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.1434,
+        5.3826,
+        1.2113,
+        0.1907,
+        0.7932,
+        1.2327
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            340.74,
+            7.18,
+            638.52,
+            620.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4422
+        },
+        {
+          "object_view_id": "bootstrap_00034",
+          "view_id": "00034",
+          "bbox_2d": [
+            1014.0,
+            6.0,
+            1291.0,
+            606.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            731.0,
+            8.0,
+            1056.0,
+            560.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            82.47,
+            6.23,
+            412.39,
+            478.91
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "door",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.5245,
+        4.0629,
+        1.1843,
+        0.4016,
+        0.7576,
+        1.3734
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            979.76,
+            4.12,
+            1285.22,
+            745.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3528
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            8.0,
+            8.0,
+            511.0,
+            708.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            1272.0,
+            782.0,
+            1287.0,
+            829.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00034",
+          "view_id": "00034",
+          "bbox_2d": [
+            411.0,
+            9.0,
+            853.0,
+            673.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "door",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "trash cans near the door are not visible",
+        "cannot reliably confirm that the door leads into a room with white flooring"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.4236,
+        -3.2478,
+        0.46,
+        0.7796,
+        0.6798,
+        1.2222
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            386.28,
+            7.24,
+            685.79,
+            466.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4399
+        },
+        {
+          "object_view_id": "bootstrap_00077",
+          "view_id": "00077",
+          "bbox_2d": [
+            6.0,
+            6.0,
+            131.0,
+            886.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00071",
+          "view_id": "00071",
+          "bbox_2d": [
+            1189.0,
+            11.0,
+            1291.0,
+            454.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00073",
+          "view_id": "00073",
+          "bbox_2d": [
+            702.0,
+            8.0,
+            1022.0,
+            401.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "door is open",
+        "door is by trash cans",
+        "door leads into a room with white flooring"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.6973,
+        -3.712,
+        0.6644,
+        0.9475,
+        0.6196,
+        1.8171
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            208.24,
+            21.29,
+            536.15,
+            665.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5537
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1835 @@
+{
+  "case_id": 105,
+  "scene_id": "scene0621_00",
+  "query": "this is a simple dark square table with four chairs pushed up to it . it is near the end of the room . the chair on its right side is a rolling office chair .",
+  "query_analysis": {
+    "raw_query": "this is a simple dark square table with four chairs pushed up to it . it is near the end of the room . the chair on its right side is a rolling office chair .",
+    "target_object": "table",
+    "target_attributes": [
+      "simple",
+      "dark",
+      "square"
+    ],
+    "reference_object": "end of the room",
+    "reference_attributes": [],
+    "relation": "near"
+  },
+  "gt": {
+    "target_id": 3,
+    "gt_label": "table",
+    "gt_bbox_3d": [
+      0.233032,
+      2.390069,
+      0.695018,
+      1.239693,
+      1.172179,
+      0.155225
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 4,
+    "bbox_3d": [
+      0.311526,
+      2.711185,
+      0.346092,
+      1.120586,
+      1.920942,
+      0.860434
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      1,
+      2,
+      2,
+      2,
+      3
+    ],
+    "detector_call_count": 106,
+    "total_views": 67,
+    "total_object_views": 46,
+    "total_candidates": 21
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "the chair on the table's right side is a rolling office chair"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.1384,
+        -2.8377,
+        0.4834,
+        1.502,
+        2.2181,
+        0.8422
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            0.12,
+            21.7,
+            554.67,
+            753.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.378
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            0.0,
+            117.19,
+            478.97,
+            830.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5243
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.12,
+            21.7,
+            554.67,
+            753.68
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00098_0",
+          "view_id": "00098",
+          "bbox_2d": [
+            177.25,
+            45.45,
+            1294.42,
+            831.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4695
+        },
+        {
+          "object_view_id": "00100_0",
+          "view_id": "00100",
+          "bbox_2d": [
+            839.86,
+            368.28,
+            1295.99,
+            921.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3797
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "whether the table is square rather than rectangular",
+        "whether there are four chairs pushed up to this exact table",
+        "whether the chair on the table's right side is a rolling office chair",
+        "whether this table is near the end of the room",
+        "whether a nearby alternative table matches the request better"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.2359,
+        -1.0668,
+        0.35,
+        1.2377,
+        1.3916,
+        0.8904
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            0.88,
+            11.32,
+            904.1,
+            637.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3882
+        },
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            451.79,
+            71.36,
+            1296.0,
+            876.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4822
+        },
+        {
+          "object_view_id": "00012_1",
+          "view_id": "00012",
+          "bbox_2d": [
+            835.45,
+            352.35,
+            1295.93,
+            958.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3268
+        },
+        {
+          "object_view_id": "bootstrap_00079",
+          "view_id": "00079",
+          "bbox_2d": [
+            0.06,
+            268.24,
+            853.73,
+            950.13
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            1063.0,
+            491.0,
+            1295.0,
+            912.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00080",
+          "view_id": "00080",
+          "bbox_2d": [
+            17.0,
+            317.0,
+            366.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 4,
+      "done_actions": [],
+      "missing_conditions": [
+        "chair on the table's right side is a rolling office chair",
+        "clear evidence of four chairs pushed up to this table",
+        "clear confirmation that this specific table is the one near the end of the room"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.1261,
+        1.6653,
+        0.2891,
+        2.5906,
+        3.9966,
+        0.8663
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_1",
+          "view_id": "00010",
+          "bbox_2d": [
+            0.09,
+            43.31,
+            177.27,
+            516.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4795
+        },
+        {
+          "object_view_id": "00012_2",
+          "view_id": "00012",
+          "bbox_2d": [
+            0.0,
+            272.82,
+            496.36,
+            812.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2893
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            0.0,
+            400.13,
+            691.39,
+            964.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4609
+        },
+        {
+          "object_view_id": "00122_0",
+          "view_id": "00122",
+          "bbox_2d": [
+            0.08,
+            286.17,
+            874.85,
+            780.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4084
+        },
+        {
+          "object_view_id": "00124_0",
+          "view_id": "00124",
+          "bbox_2d": [
+            139.11,
+            48.57,
+            1295.01,
+            835.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4268
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the table is square",
+        "cannot reliably confirm there are exactly four chairs pushed up to this table",
+        "cannot fully disambiguate which nearby chairs belong to this table versus adjacent tables"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        0.627,
+        2.8335,
+        0.3665,
+        0.7902,
+        1.7863,
+        0.7487
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            115.52,
+            155.58,
+            503.06,
+            312.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4001
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            0.0,
+            375.17,
+            371.22,
+            639.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2743
+        },
+        {
+          "object_view_id": "00018_1",
+          "view_id": "00018",
+          "bbox_2d": [
+            226.17,
+            143.58,
+            779.63,
+            490.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4136
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            799.0,
+            165.0,
+            1113.0,
+            345.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00062",
+          "view_id": "00062",
+          "bbox_2d": [
+            0.07,
+            354.05,
+            489.13,
+            965.47
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00066",
+          "view_id": "00066",
+          "bbox_2d": [
+            0.0,
+            244.17,
+            601.25,
+            964.28
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            0.0,
+            244.17,
+            601.25,
+            964.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4622
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "table",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.0433,
+        2.7797,
+        0.3461,
+        1.8021,
+        1.9826,
+        0.8604
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            0.46,
+            100.76,
+            620.73,
+            547.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4708
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            184.34,
+            177.65,
+            996.98,
+            739.48
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4343
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            137.0,
+            22.0,
+            959.0,
+            849.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00061",
+          "view_id": "00061",
+          "bbox_2d": [
+            489.0,
+            387.0,
+            732.0,
+            841.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            317.1,
+            183.65,
+            1233.89,
+            848.51
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "table is reliably square",
+        "exactly four chairs pushed up to the table are clearly confirmed",
+        "table is near the end of the room is clearly confirmed"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.4919,
+        2.0156,
+        0.4684,
+        0.7575,
+        0.3331,
+        0.5971
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            251.23,
+            118.86,
+            1296.0,
+            531.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.254
+        },
+        {
+          "object_view_id": "bootstrap_00068",
+          "view_id": "00068",
+          "bbox_2d": [
+            34.0,
+            490.0,
+            176.0,
+            539.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00022",
+          "view_id": "00022",
+          "bbox_2d": [
+            184.34,
+            177.65,
+            996.98,
+            739.48
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00026",
+          "view_id": "00026",
+          "bbox_2d": [
+            902.0,
+            428.0,
+            1295.0,
+            639.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "table being square is not clearly confirmed",
+        "exactly four chairs pushed up to this table is not confirmed",
+        "the chair on the table's right side being a rolling office chair is not confirmed",
+        "location near the end of the room is not confirmed",
+        "nearby alternative table in the same scene is not fully ruled out"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.739,
+        -0.2445,
+        0.3021,
+        2.5492,
+        2.4066,
+        0.8062
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            0.37,
+            273.32,
+            718.49,
+            965.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4829
+        },
+        {
+          "object_view_id": "bootstrap_00133",
+          "view_id": "00133",
+          "bbox_2d": [
+            325.6,
+            414.34,
+            1295.97,
+            965.93
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00128",
+          "view_id": "00128",
+          "bbox_2d": [
+            239.0,
+            478.0,
+            794.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00028",
+          "view_id": "00028",
+          "bbox_2d": [
+            0.0,
+            461.0,
+            385.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00130_0",
+          "view_id": "00130",
+          "bbox_2d": [
+            1022.71,
+            514.19,
+            1296.0,
+            964.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3106
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "whether the table is square",
+        "whether there are four chairs pushed up to it",
+        "whether the chair on the table's right side is the rolling office chair",
+        "whether the table is near the end of the room"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.6488,
+        0.6518,
+        0.2998,
+        0.5504,
+        0.8315,
+        0.8506
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            0.06,
+            306.23,
+            811.46,
+            965.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4902
+        },
+        {
+          "object_view_id": "bootstrap_00133",
+          "view_id": "00133",
+          "bbox_2d": [
+            369.0,
+            898.0,
+            1092.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00030",
+          "view_id": "00030",
+          "bbox_2d": [
+            0.37,
+            273.32,
+            718.49,
+            965.26
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00036",
+          "view_id": "00036",
+          "bbox_2d": [
+            0.0,
+            813.0,
+            241.0,
+            966.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "table",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "the table is square",
+        "four chairs are pushed up to it",
+        "the chair on the table's right side is a rolling office chair",
+        "the table is near the end of the room"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.115,
+        1.4581,
+        0.3016,
+        1.9113,
+        3.2617,
+        0.7581
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            0.01,
+            412.42,
+            512.17,
+            965.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5124
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            0.06,
+            306.23,
+            811.46,
+            965.58
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00120",
+          "view_id": "00120",
+          "bbox_2d": [
+            332.04,
+            307.37,
+            1295.67,
+            965.74
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00046",
+          "view_id": "00046",
+          "bbox_2d": [
+            964.0,
+            876.0,
+            1295.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00120_0",
+          "view_id": "00120",
+          "bbox_2d": [
+            332.04,
+            307.37,
+            1295.67,
+            965.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5267
+        },
+        {
+          "object_view_id": "00126_0",
+          "view_id": "00126",
+          "bbox_2d": [
+            557.54,
+            148.92,
+            1295.46,
+            791.48
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5159
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.497,
+        -3.4806,
+        0.4082,
+        1.3531,
+        5.0101,
+        0.8664
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            363.11,
+            107.66,
+            813.39,
+            384.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2771
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "whether the table is square",
+        "whether there are four chairs pushed up to it",
+        "whether the chair on the table's right side is the rolling office chair",
+        "whether the table is near the end of the room"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.4495,
+        0.3646,
+        0.2965,
+        0.9202,
+        0.9577,
+        0.7662
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            0.0,
+            388.25,
+            1172.24,
+            964.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.462
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            0.06,
+            341.11,
+            528.29,
+            965.28
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00045",
+          "view_id": "00045",
+          "bbox_2d": [
+            19.0,
+            522.0,
+            1295.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00120",
+          "view_id": "00120",
+          "bbox_2d": [
+            332.04,
+            307.37,
+            1295.67,
+            965.74
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm four chairs are pushed up to this table",
+        "cannot reliably confirm the chair on the table's right side is a rolling office chair",
+        "cannot reliably confirm the table is near the end of the room"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        0.6884,
+        2.7224,
+        0.3657,
+        2.1103,
+        1.8788,
+        0.7694
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            0.17,
+            327.59,
+            657.2,
+            678.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3365
+        },
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            238.69,
+            205.49,
+            1266.58,
+            604.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4661
+        },
+        {
+          "object_view_id": "bootstrap_00053",
+          "view_id": "00053",
+          "bbox_2d": [
+            1207.0,
+            411.0,
+            1294.0,
+            470.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00049",
+          "view_id": "00049",
+          "bbox_2d": [
+            10.06,
+            240.3,
+            970.56,
+            587.24
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00131",
+          "view_id": "00131",
+          "bbox_2d": [
+            98.0,
+            557.0,
+            168.0,
+            622.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            0.07,
+            354.05,
+            489.13,
+            965.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3662
+        },
+        {
+          "object_view_id": "00128_0",
+          "view_id": "00128",
+          "bbox_2d": [
+            316.21,
+            203.88,
+            992.73,
+            630.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4161
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "four chairs pushed up to it are not fully confirmed",
+        "the chair on its right side being a rolling office chair is not reliably confirmed"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.0108,
+        2.5987,
+        0.5557,
+        0.7759,
+        0.8237,
+        0.4772
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            545.0,
+            72.11,
+            1296.0,
+            598.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5217
+        },
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            484.44,
+            283.91,
+            1296.0,
+            885.2
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5391
+        },
+        {
+          "object_view_id": "bootstrap_00058",
+          "view_id": "00058",
+          "bbox_2d": [
+            185.0,
+            187.0,
+            1295.0,
+            661.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00061",
+          "view_id": "00061",
+          "bbox_2d": [
+            0.0,
+            410.0,
+            378.0,
+            696.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00057",
+          "view_id": "00057",
+          "bbox_2d": [
+            325.18,
+            282.37,
+            1295.81,
+            861.93
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "table",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot confirm four chairs pushed up to this table",
+        "right-side chair is not shown as a rolling office chair for this candidate",
+        "candidate does not appear to be the best match for the table near the end of the room"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.0569,
+        2.1793,
+        0.3538,
+        0.8339,
+        0.7021,
+        0.7922
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            0.01,
+            248.68,
+            945.6,
+            959.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5802
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.01,
+            248.68,
+            945.6,
+            959.74
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00054",
+          "view_id": "00054",
+          "bbox_2d": [
+            545.0,
+            72.11,
+            1296.0,
+            598.67
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            0.0,
+            77.0,
+            1118.0,
+            584.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00062",
+          "view_id": "00062",
+          "bbox_2d": [
+            0.07,
+            354.05,
+            489.13,
+            965.47
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "chair on the table's right side is a rolling office chair",
+        "four chairs pushed up to the table are not fully confirmed"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.0178,
+        -2.289,
+        0.354,
+        1.5868,
+        3.9471,
+        0.8697
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            118.49,
+            115.74,
+            1055.64,
+            733.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3984
+        }
+      ]
+    },
+    {
+      "candidate_id": 15,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "right-side chair is a rolling office chair",
+        "four chairs pushed up to the table are not confirmed",
+        "square shape is not reliably confirmed from this view",
+        "near the end of the room is not supported for this candidate"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.9761,
+        -2.3818,
+        0.3586,
+        1.6915,
+        3.6794,
+        0.8442
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00078_0",
+          "view_id": "00078",
+          "bbox_2d": [
+            0.0,
+            272.3,
+            1036.0,
+            727.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4842
+        }
+      ]
+    },
+    {
+      "candidate_id": 16,
+      "label": "table",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 8,
+      "bbox_3d": [
+        1.0494,
+        -3.3712,
+        0.4809,
+        1.393,
+        1.3505,
+        0.8864
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            345.8,
+            99.81,
+            1061.34,
+            289.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3613
+        },
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            18.33,
+            103.85,
+            1059.04,
+            474.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3714
+        },
+        {
+          "object_view_id": "00088_0",
+          "view_id": "00088",
+          "bbox_2d": [
+            0.27,
+            137.99,
+            939.64,
+            591.24
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3943
+        },
+        {
+          "object_view_id": "00090_0",
+          "view_id": "00090",
+          "bbox_2d": [
+            0.07,
+            181.41,
+            707.57,
+            961.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3533
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.07,
+            181.41,
+            707.57,
+            961.63
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            23.0,
+            99.0,
+            788.0,
+            729.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00004",
+          "view_id": "00004",
+          "bbox_2d": [
+            302.0,
+            70.0,
+            1235.0,
+            753.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00087",
+          "view_id": "00087",
+          "bbox_2d": [
+            0.0,
+            152.52,
+            970.95,
+            553.69
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 17,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "square table is not reliably confirmed for the green candidate",
+        "four chairs pushed up to the green candidate are not supported",
+        "right-side chair being a rolling office chair fits the rear table, not the green candidate",
+        "near the end of the room fits the rear table better than the green candidate"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.1967,
+        -2.0739,
+        0.3928,
+        1.2681,
+        1.7464,
+        0.7665
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00082_1",
+          "view_id": "00082",
+          "bbox_2d": [
+            0.0,
+            380.48,
+            743.05,
+            965.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2828
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            380.48,
+            743.05,
+            965.46
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 18,
+      "label": "table",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.514,
+        -1.763,
+        0.355,
+        1.2972,
+        1.4312,
+        1.0459
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00104_0",
+          "view_id": "00104",
+          "bbox_2d": [
+            361.52,
+            118.19,
+            1256.34,
+            449.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3426
+        },
+        {
+          "object_view_id": "00106_0",
+          "view_id": "00106",
+          "bbox_2d": [
+            237.55,
+            65.87,
+            1217.63,
+            429.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3591
+        },
+        {
+          "object_view_id": "00108_0",
+          "view_id": "00108",
+          "bbox_2d": [
+            0.1,
+            53.71,
+            958.32,
+            611.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4246
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            189.0,
+            89.0,
+            524.0,
+            279.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00112",
+          "view_id": "00112",
+          "bbox_2d": [
+            0.0,
+            118.45,
+            394.78,
+            770.69
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00105",
+          "view_id": "00105",
+          "bbox_2d": [
+            427.9,
+            51.56,
+            1293.95,
+            408.13
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 19,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "need reliable confirmation that exactly four chairs are pushed up to this table",
+        "need reliable confirmation that the chair on the table's right side is the rolling office chair"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.4964,
+        -1.6514,
+        0.3941,
+        1.2316,
+        0.7604,
+        0.8101
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00110_0",
+          "view_id": "00110",
+          "bbox_2d": [
+            0.19,
+            119.68,
+            794.84,
+            818.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5408
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.19,
+            119.68,
+            794.84,
+            818.37
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00115",
+          "view_id": "00115",
+          "bbox_2d": [
+            0.0,
+            231.0,
+            272.0,
+            924.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00109",
+          "view_id": "00109",
+          "bbox_2d": [
+            0.09,
+            62.72,
+            967.24,
+            927.71
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00114",
+          "view_id": "00114",
+          "bbox_2d": [
+            0.0,
+            227.0,
+            348.0,
+            845.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 20,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "the chair on its right side is a rolling office chair"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.5455,
+        -1.4191,
+        0.3964,
+        1.2721,
+        0.4554,
+        0.7828
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00112_0",
+          "view_id": "00112",
+          "bbox_2d": [
+            0.0,
+            118.45,
+            394.78,
+            770.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2688
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            118.45,
+            394.78,
+            770.69
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,480 @@
+{
+  "case_id": 118,
+  "scene_id": "scene0353_00",
+  "query": "the object referenced here is a long black couch against a wall in the room . it has various pillows on it and is near a hanging orange sweater and a whiteboard .",
+  "query_analysis": {
+    "raw_query": "the object referenced here is a long black couch against a wall in the room . it has various pillows on it and is near a hanging orange sweater and a whiteboard .",
+    "target_object": "couch",
+    "target_attributes": [
+      "long",
+      "black"
+    ],
+    "reference_object": "wall",
+    "reference_attributes": [],
+    "relation": "against"
+  },
+  "gt": {
+    "target_id": 11,
+    "gt_label": "couch",
+    "gt_bbox_3d": [
+      -1.083021,
+      -1.139173,
+      0.352447,
+      1.031248,
+      2.176352,
+      0.931612
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -0.92825,
+      -1.097149,
+      0.326187,
+      1.015928,
+      2.104899,
+      1.002142
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 83,
+    "total_views": 75,
+    "total_object_views": 13,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "couch",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 14,
+      "bbox_3d": [
+        -0.9196,
+        -0.9087,
+        0.2828,
+        1.0062,
+        1.7327,
+        0.9154
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            795.42,
+            65.47,
+            1296.0,
+            965.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8828
+        },
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            407.81,
+            2.03,
+            1296.0,
+            963.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8704
+        },
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            5.45,
+            142.62,
+            1296.0,
+            965.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8838
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            2.58,
+            222.61,
+            898.2,
+            965.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8445
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            5.45,
+            142.62,
+            1296.0,
+            965.26
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            0.0,
+            35.0,
+            1295.0,
+            961.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00012",
+          "view_id": "00012",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            1295.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            0.0,
+            3.0,
+            1149.0,
+            879.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            0.0,
+            346.87,
+            822.43,
+            965.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7557
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            0.06,
+            220.21,
+            497.93,
+            965.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6279
+        },
+        {
+          "object_view_id": "00078_0",
+          "view_id": "00078",
+          "bbox_2d": [
+            342.48,
+            125.96,
+            1296.0,
+            961.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.915
+        },
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            311.65,
+            161.73,
+            1296.0,
+            921.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9017
+        },
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            0.08,
+            426.56,
+            876.17,
+            965.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.875
+        },
+        {
+          "object_view_id": "00146_0",
+          "view_id": "00146",
+          "bbox_2d": [
+            706.26,
+            258.14,
+            1296.0,
+            965.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8549
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "couch",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "Green-boxed candidate is the couch itself"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.3414,
+        -1.8,
+        0.4795,
+        0.7496,
+        0.305,
+        0.3935
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            134.47,
+            631.19,
+            817.66,
+            966.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.283
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            134.47,
+            631.19,
+            817.66,
+            966.65
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "couch",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.6743,
+        -1.5532,
+        0.2042,
+        0.2512,
+        0.9503,
+        0.6702
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00144_0",
+          "view_id": "00144",
+          "bbox_2d": [
+            1121.55,
+            333.93,
+            1296.0,
+            961.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8734
+        },
+        {
+          "object_view_id": "bootstrap_00008",
+          "view_id": "00008",
+          "bbox_2d": [
+            407.81,
+            2.03,
+            1296.0,
+            963.98
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00082",
+          "view_id": "00082",
+          "bbox_2d": [
+            311.65,
+            161.73,
+            1296.0,
+            921.91
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            27.0,
+            421.0,
+            857.0,
+            961.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "couch",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "full long couch not clearly visible end-to-end",
+        "various pillows on the couch not clearly confirmed",
+        "orange sweater is not clearly verified as hanging near the couch"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.9928,
+        -1.715,
+        0.5424,
+        0.8383,
+        0.7991,
+        0.5246
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00148_0",
+          "view_id": "00148",
+          "bbox_2d": [
+            555.02,
+            595.09,
+            1296.0,
+            965.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9271
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            555.02,
+            595.09,
+            1296.0,
+            965.72
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            249.55,
+            202.78,
+            1295.98,
+            964.79
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00070",
+          "view_id": "00070",
+          "bbox_2d": [
+            1199.0,
+            307.0,
+            1295.0,
+            456.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00018",
+          "view_id": "00018",
+          "bbox_2d": [
+            248.0,
+            915.0,
+            571.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

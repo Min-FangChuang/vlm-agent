@@ -1,0 +1,606 @@
+{
+  "case_id": 173,
+  "scene_id": "scene0653_00",
+  "query": "the whiteboard that has a blue note on top",
+  "query_analysis": {
+    "raw_query": "the whiteboard that has a blue note on top",
+    "target_object": "whiteboard",
+    "target_attributes": [],
+    "reference_object": "note",
+    "reference_attributes": [
+      "blue"
+    ],
+    "relation": "on top"
+  },
+  "gt": {
+    "target_id": 11,
+    "gt_label": "board",
+    "gt_bbox_3d": [
+      1.599003,
+      -1.066892,
+      1.014244,
+      0.62313,
+      0.090487,
+      1.183298
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 4,
+    "bbox_3d": [
+      0.15327,
+      -1.066085,
+      1.104377,
+      0.267639,
+      0.050313,
+      0.922616
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      4
+    ],
+    "detector_call_count": 111,
+    "total_views": 97,
+    "total_object_views": 9,
+    "total_candidates": 6
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "whiteboard",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.0161,
+        -1.0639,
+        1.0245,
+        0.6068,
+        0.0727,
+        1.0916
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            101.6,
+            53.38,
+            530.99,
+            964.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5192
+        },
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            311.76,
+            0.0,
+            727.73,
+            484.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5325
+        },
+        {
+          "object_view_id": "bootstrap_00034",
+          "view_id": "00034",
+          "bbox_2d": [
+            22.0,
+            302.0,
+            96.0,
+            603.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00080",
+          "view_id": "00080",
+          "bbox_2d": [
+            1097.0,
+            94.0,
+            1295.0,
+            928.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00063",
+          "view_id": "00063",
+          "bbox_2d": [
+            1253.0,
+            637.0,
+            1295.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "whiteboard",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.4435,
+        -1.6276,
+        1.2817,
+        0.1599,
+        0.2175,
+        0.4265
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_1",
+          "view_id": "00044",
+          "bbox_2d": [
+            0.0,
+            192.43,
+            118.87,
+            419.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3699
+        },
+        {
+          "object_view_id": "bootstrap_00088",
+          "view_id": "00088",
+          "bbox_2d": [
+            1083.0,
+            73.0,
+            1295.0,
+            429.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00068",
+          "view_id": "00068",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            285.0,
+            166.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00063",
+          "view_id": "00063",
+          "bbox_2d": [
+            434.0,
+            7.0,
+            531.0,
+            220.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "whiteboard",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the green-boxed object is a whiteboard rather than a partial board edge/panel",
+        "need a fuller candidate-centered view to verify the blue note is attached on top of that whiteboard"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        2.0237,
+        -1.6449,
+        1.2478,
+        1.6169,
+        1.7393,
+        1.2037
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            59.37,
+            0.0,
+            353.51,
+            256.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2734
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            59.37,
+            0.0,
+            353.51,
+            256.18
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00086",
+          "view_id": "00086",
+          "bbox_2d": [
+            25.28,
+            0.0,
+            512.2,
+            430.55
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00088",
+          "view_id": "00088",
+          "bbox_2d": [
+            728.18,
+            18.06,
+            1074.95,
+            718.09
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            2.0,
+            0.0,
+            289.0,
+            542.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            25.28,
+            0.0,
+            512.2,
+            430.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3874
+        },
+        {
+          "object_view_id": "00088_0",
+          "view_id": "00088",
+          "bbox_2d": [
+            728.18,
+            18.06,
+            1074.95,
+            718.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5574
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "whiteboard",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.0088,
+        -1.9446,
+        1.1707,
+        0.0951,
+        1.1786,
+        1.0053
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            709.86,
+            109.05,
+            1158.38,
+            852.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8319
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            709.86,
+            109.05,
+            1158.38,
+            852.21
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            463.0,
+            147.0,
+            1021.0,
+            715.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00077",
+          "view_id": "00077",
+          "bbox_2d": [
+            708.54,
+            50.03,
+            1288.11,
+            868.43
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00043",
+          "view_id": "00043",
+          "bbox_2d": [
+            495.0,
+            163.0,
+            995.0,
+            751.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "whiteboard",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.1565,
+        -1.06,
+        1.1296,
+        0.2123,
+        0.0376,
+        0.8722
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00076_1",
+          "view_id": "00076",
+          "bbox_2d": [
+            1137.42,
+            44.55,
+            1296.0,
+            964.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2873
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1137.42,
+            44.55,
+            1296.0,
+            964.75
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00077",
+          "view_id": "00077",
+          "bbox_2d": [
+            1206.0,
+            27.0,
+            1295.0,
+            953.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            10.0,
+            407.0,
+            32.0,
+            474.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00053",
+          "view_id": "00053",
+          "bbox_2d": [
+            471.0,
+            3.0,
+            656.0,
+            791.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "whiteboard",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm a blue note on top of the whiteboard"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        2.8239,
+        -0.321,
+        1.545,
+        0.1164,
+        1.7632,
+        1.2352
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00096_0",
+          "view_id": "00096",
+          "bbox_2d": [
+            201.17,
+            87.96,
+            1292.61,
+            894.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.782
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            201.17,
+            87.96,
+            1292.61,
+            894.07
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00097",
+          "view_id": "00097",
+          "bbox_2d": [
+            95.23,
+            101.25,
+            1214.01,
+            938.25
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00095",
+          "view_id": "00095",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            1102.0,
+            767.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00098",
+          "view_id": "00098",
+          "bbox_2d": [
+            81.0,
+            2.0,
+            1295.0,
+            547.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

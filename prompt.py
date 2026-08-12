@@ -212,8 +212,6 @@ Use forward when more direct, target-centered views are needed to confirm the ca
 
 Use yaw when more nearby viewpoints are needed to keep the same candidate in view and obtain a more complete or less partial view of that candidate.
 
-Use backward when the current candidate likely needs a slightly wider and slightly more pulled-back local view so that more of the candidate itself can be seen together. Backward only provides limited extra space.
-
 Use stop only when no additional view request is needed.
 
 Return false only when the current candidate is clearly contradicted, clearly fails an essential requirement, or another nearby candidate clearly satisfies the request better. Return true only when the current evidence is already sufficient to confirm the full request with strong evidence and no meaningful condition-level doubt remains.
@@ -235,18 +233,22 @@ Rules for output:
 - confidence must be an integer from 0 to 100
 - confidence should reflect how certain you are that the decision is correct
 - if evidence is insufficient, use decision="unsure" rather than forcing true or false
-- suggested_action must be one of: forward, yaw, backward, stop
+- suggested_action must be one of: forward, yaw, stop
 """
 
 MULTI_CANDIDATE_SELECT_SYSTEM_PROMPT = """You are selecting the best candidate object for a visual grounding query in an indoor environment.
 
-Each stitched image corresponds to one candidate hypothesis. The green box in each tile indicates the candidate being evaluated in that stitched image. A candidate may look similar to the requested object but still be wrong. Different candidates are not guaranteed to correspond to different physical objects. Some candidates may be alternative boxes, alternative viewpoints, or alternative hypotheses for the same underlying object. Your task is to choose the single candidate that provides the most reliable and best-supported match to the full natural-language request.
+All candidates come from the same scene. Different candidates may look very similar, so your task is to compare them carefully and choose the single candidate that best matches the full natural-language request.
+
+Each stitched image corresponds to one candidate unit. The green box in each tile indicates the current candidate in that tile, and all green-boxed tiles within the same stitched image are different views of the same candidate from different angles. Blue boxes indicate other detector results in the same RGB view. Use the blue boxes as local comparison and context evidence, especially for nearby alternatives, reference objects, and relative relations.
 
 Use the full query as the main thing to verify. The query may involve object identity, attributes, nearby reference objects, spatial relations, comparisons, or relation chains. Natural-language descriptions may also be ambiguous or depend on scene context, orientation, or nearby alternatives, so evaluate each candidate in the context of the whole scene description rather than isolated object appearance alone.
 
-For each candidate, first verify whether the boxed object itself is genuinely the requested object category, not merely something that loosely looks similar. Then compare candidates by checking which one best satisfies the requested attributes, reference-object constraints, spatial relations, comparisons, and surrounding scene context. Similar target objects and similar reference objects may both appear multiple times in the scene, so make sure you are selecting the candidate that matches the correct target-reference pairing rather than any arbitrary similar object.
+For each candidate, first verify whether the green-boxed object itself is genuinely the requested object category, not merely something that loosely looks similar. Then compare candidates by checking which one best satisfies the requested attributes, reference-object constraints, spatial relations, comparisons, and surrounding scene context.
 
-You must select exactly one candidate from the provided candidates. Do not reject all candidates and do not return an empty choice. Even if the evidence is imperfect, choose the candidate that is the strongest overall match relative to the other candidates. If several candidates appear to refer to the same underlying object, prefer the candidate whose views, framing, and surrounding evidence support the request more clearly and more completely.
+Because all candidates come from the same scene, you may use the scene information visible across different candidate views to infer the likely environment layout and better interpret the intended meaning of the query, as long as the inference remains visually grounded and does not rely on unsupported hallucination.
+
+You must select exactly one candidate from the provided candidates. Do not reject all candidates and do not return an empty choice. Even if the evidence is imperfect, choose the candidate that is the strongest overall match relative to the other candidates.
 
 Return structured JSON only with this schema:
 {

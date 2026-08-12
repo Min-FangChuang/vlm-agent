@@ -1,0 +1,1296 @@
+{
+  "case_id": 81,
+  "scene_id": "scene0231_00",
+  "query": "this is a grey patterned couch . its on the wall where the entry way is on the left .",
+  "query_analysis": {
+    "raw_query": "this is a grey patterned couch . its on the wall where the entry way is on the left .",
+    "target_object": "couch",
+    "target_attributes": [
+      "grey",
+      "patterned"
+    ],
+    "reference_object": "entry way",
+    "reference_attributes": [
+      "left"
+    ],
+    "relation": "on the wall where"
+  },
+  "gt": {
+    "target_id": 78,
+    "gt_label": "couch",
+    "gt_bbox_3d": [
+      -2.983444,
+      -0.507043,
+      0.47147,
+      1.943491,
+      0.977023,
+      0.972331
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 7,
+    "bbox_3d": [
+      -2.748473,
+      -0.357804,
+      0.474063,
+      1.914576,
+      1.211343,
+      0.974215
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 133,
+    "total_views": 111,
+    "total_object_views": 47,
+    "total_candidates": 12
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "couch",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a couch",
+        "on the wall where the entry way is on the left"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        -3.0912,
+        1.9328,
+        0.6313,
+        1.4057,
+        1.1408,
+        1.0779
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            94.28,
+            123.17,
+            598.77,
+            681.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3773
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            729.19,
+            0.41,
+            1190.58,
+            379.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8805
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            638.36,
+            205.79,
+            1139.31,
+            764.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8434
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            729.64,
+            426.17,
+            1295.59,
+            965.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7188
+        },
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            300.75,
+            432.31,
+            829.46,
+            964.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4842
+        },
+        {
+          "object_view_id": "00164_1",
+          "view_id": "00164",
+          "bbox_2d": [
+            804.99,
+            398.09,
+            1173.9,
+            738.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3514
+        },
+        {
+          "object_view_id": "00210_2",
+          "view_id": "00210",
+          "bbox_2d": [
+            655.17,
+            0.0,
+            960.26,
+            312.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4311
+        },
+        {
+          "object_view_id": "00220_1",
+          "view_id": "00220",
+          "bbox_2d": [
+            876.82,
+            623.11,
+            1296.0,
+            965.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3541
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "couch",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the green-boxed object itself is the couch rather than nearby similar seating",
+        "entry way is not clearly visible",
+        "cannot confirm the couch is on the wall where the entry way is on the left"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        -4.0859,
+        0.3645,
+        0.5167,
+        1.0124,
+        0.7959,
+        0.8277
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            0.0,
+            2.06,
+            278.91,
+            415.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8067
+        },
+        {
+          "object_view_id": "00018_1",
+          "view_id": "00018",
+          "bbox_2d": [
+            144.9,
+            0.0,
+            508.21,
+            274.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8469
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            1149.0,
+            436.0,
+            1295.0,
+            842.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            608.41,
+            675.02,
+            1102.43,
+            965.84
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            972.19,
+            259.77,
+            1295.99,
+            964.07
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_1",
+          "view_id": "00020",
+          "bbox_2d": [
+            5.49,
+            149.28,
+            403.65,
+            616.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7128
+        },
+        {
+          "object_view_id": "00022_1",
+          "view_id": "00022",
+          "bbox_2d": [
+            72.45,
+            384.32,
+            483.86,
+            882.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3531
+        },
+        {
+          "object_view_id": "00040_1",
+          "view_id": "00040",
+          "bbox_2d": [
+            972.19,
+            259.77,
+            1295.99,
+            964.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2634
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "couch",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "is a couch",
+        "on the wall where the entry way is on the left"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -3.1073,
+        1.8001,
+        0.4067,
+        0.9999,
+        0.8744,
+        0.6797
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_1",
+          "view_id": "00014",
+          "bbox_2d": [
+            508.79,
+            114.24,
+            857.76,
+            456.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3578
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "couch",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot consistently verify the green-boxed candidate is the couch rather than a nearby matching chair/armchair",
+        "cannot confirm the couch is on the wall where the entry way is on the left",
+        "nearby alternative seating objects remain insufficiently disambiguated"
+      ],
+      "num_object_views": 13,
+      "bbox_3d": [
+        -2.9549,
+        -0.5562,
+        0.4846,
+        1.898,
+        1.1128,
+        0.9552
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_2",
+          "view_id": "00018",
+          "bbox_2d": [
+            0.0,
+            58.07,
+            208.26,
+            883.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7961
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            0.07,
+            121.18,
+            1134.71,
+            963.28
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            0.0,
+            183.5,
+            955.74,
+            960.63
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00075",
+          "view_id": "00075",
+          "bbox_2d": [
+            73.07,
+            2.83,
+            766.83,
+            741.96
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00030_1",
+          "view_id": "00030",
+          "bbox_2d": [
+            0.14,
+            467.01,
+            596.11,
+            964.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8595
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            0.07,
+            121.18,
+            1134.71,
+            963.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4374
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            420.52,
+            154.91,
+            1295.95,
+            963.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9367
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            271.28,
+            796.94,
+            1202.96,
+            966.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3573
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            0.0,
+            183.5,
+            955.74,
+            960.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3636
+        },
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            53.01,
+            405.9,
+            721.98,
+            964.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.738
+        },
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            0.05,
+            465.7,
+            600.63,
+            964.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6543
+        },
+        {
+          "object_view_id": "00088_1",
+          "view_id": "00088",
+          "bbox_2d": [
+            0.17,
+            22.05,
+            713.23,
+            964.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4507
+        },
+        {
+          "object_view_id": "00166_0",
+          "view_id": "00166",
+          "bbox_2d": [
+            186.98,
+            645.07,
+            694.86,
+            964.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.846
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "couch",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [],
+      "missing_conditions": [
+        "requested object is a couch",
+        "on the wall where the entry way is on the left"
+      ],
+      "num_object_views": 11,
+      "bbox_3d": [
+        -4.1119,
+        0.3706,
+        0.6096,
+        1.0483,
+        1.1775,
+        0.9665
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            158.31,
+            686.67,
+            586.6,
+            965.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3581
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            660.22,
+            453.23,
+            1296.0,
+            964.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8664
+        },
+        {
+          "object_view_id": "00074_1",
+          "view_id": "00074",
+          "bbox_2d": [
+            777.72,
+            307.32,
+            1105.91,
+            704.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3086
+        },
+        {
+          "object_view_id": "00086_1",
+          "view_id": "00086",
+          "bbox_2d": [
+            607.06,
+            355.33,
+            1172.4,
+            962.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5684
+        },
+        {
+          "object_view_id": "00088_0",
+          "view_id": "00088",
+          "bbox_2d": [
+            801.45,
+            79.14,
+            1295.51,
+            434.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6032
+        },
+        {
+          "object_view_id": "00160_1",
+          "view_id": "00160",
+          "bbox_2d": [
+            637.86,
+            143.77,
+            849.37,
+            398.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.263
+        },
+        {
+          "object_view_id": "00162_1",
+          "view_id": "00162",
+          "bbox_2d": [
+            330.94,
+            107.8,
+            574.96,
+            397.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.339
+        },
+        {
+          "object_view_id": "00164_2",
+          "view_id": "00164",
+          "bbox_2d": [
+            403.46,
+            372.0,
+            652.18,
+            666.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3015
+        },
+        {
+          "object_view_id": "00166_1",
+          "view_id": "00166",
+          "bbox_2d": [
+            754.33,
+            599.91,
+            1012.03,
+            917.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2841
+        },
+        {
+          "object_view_id": "00208_0",
+          "view_id": "00208",
+          "bbox_2d": [
+            807.97,
+            236.47,
+            1034.64,
+            495.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3076
+        },
+        {
+          "object_view_id": "00220_0",
+          "view_id": "00220",
+          "bbox_2d": [
+            152.62,
+            572.81,
+            568.75,
+            965.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6213
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "couch",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "full couch identity is not clearly confirmed from the boxed partial views",
+        "grey attribute is not clearly confirmed",
+        "entry way is not visible",
+        "cannot verify that this couch is on the wall where the entry way is on the left"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -3.932,
+        1.6747,
+        0.6831,
+        0.6305,
+        0.9003,
+        0.4469
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            128.05,
+            801.16,
+            607.09,
+            964.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3611
+        },
+        {
+          "object_view_id": "bootstrap_00083",
+          "view_id": "00083",
+          "bbox_2d": [
+            374.0,
+            903.0,
+            859.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00018",
+          "view_id": "00018",
+          "bbox_2d": [
+            552.0,
+            0.0,
+            892.0,
+            65.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            528.0,
+            402.0,
+            914.0,
+            593.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "couch",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "clear confirmation that the left-side door/opening is the referenced entry way",
+        "clear confirmation of the couch's relation to that entry way on the left"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -2.4715,
+        -0.3882,
+        0.5294,
+        1.5557,
+        1.1243,
+        0.8207
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00154_0",
+          "view_id": "00154",
+          "bbox_2d": [
+            288.48,
+            191.9,
+            582.25,
+            342.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.921
+        },
+        {
+          "object_view_id": "00156_0",
+          "view_id": "00156",
+          "bbox_2d": [
+            913.43,
+            260.32,
+            1260.71,
+            479.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6406
+        },
+        {
+          "object_view_id": "00158_0",
+          "view_id": "00158",
+          "bbox_2d": [
+            989.74,
+            171.41,
+            1295.92,
+            460.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8468
+        },
+        {
+          "object_view_id": "bootstrap_00036",
+          "view_id": "00036",
+          "bbox_2d": [
+            271.28,
+            796.94,
+            1202.96,
+            966.23
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            0.07,
+            121.18,
+            1134.71,
+            963.28
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00038",
+          "view_id": "00038",
+          "bbox_2d": [
+            13.0,
+            818.0,
+            343.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "couch",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -2.7528,
+        -0.3578,
+        0.4642,
+        1.9244,
+        1.2164,
+        0.9545
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00160_0",
+          "view_id": "00160",
+          "bbox_2d": [
+            161.42,
+            181.12,
+            579.81,
+            540.84
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8908
+        },
+        {
+          "object_view_id": "00162_0",
+          "view_id": "00162",
+          "bbox_2d": [
+            0.02,
+            170.73,
+            279.24,
+            649.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8145
+        },
+        {
+          "object_view_id": "00164_0",
+          "view_id": "00164",
+          "bbox_2d": [
+            0.0,
+            435.09,
+            344.46,
+            960.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8591
+        },
+        {
+          "object_view_id": "00168_0",
+          "view_id": "00168",
+          "bbox_2d": [
+            717.27,
+            707.14,
+            1181.05,
+            965.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6053
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            0.07,
+            121.18,
+            1134.71,
+            963.28
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00208",
+          "view_id": "00208",
+          "bbox_2d": [
+            697.0,
+            370.0,
+            1021.0,
+            756.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00210",
+          "view_id": "00210",
+          "bbox_2d": [
+            67.47,
+            256.84,
+            541.41,
+            712.23
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "couch",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "green-boxed object is a couch",
+        "grey",
+        "patterned",
+        "on the wall where the entry way is on the left"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.9143,
+        -3.1785,
+        0.5457,
+        0.663,
+        0.603,
+        0.8551
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00202_0",
+          "view_id": "00202",
+          "bbox_2d": [
+            34.33,
+            0.0,
+            254.79,
+            289.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4593
+        },
+        {
+          "object_view_id": "bootstrap_00204",
+          "view_id": "00204",
+          "bbox_2d": [
+            113.0,
+            172.0,
+            287.0,
+            503.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00205",
+          "view_id": "00205",
+          "bbox_2d": [
+            212.0,
+            168.0,
+            368.0,
+            513.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00203",
+          "view_id": "00203",
+          "bbox_2d": [
+            5.0,
+            103.0,
+            198.0,
+            440.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "couch",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the green-boxed object is a couch",
+        "grey color is not clearly visible",
+        "patterned attribute is not visible",
+        "full spatial relation to the wall and left-side entryway is not sufficiently confirmed"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -3.7108,
+        -4.0505,
+        0.8204,
+        4.7593,
+        3.9152,
+        0.9768
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00204_0",
+          "view_id": "00204",
+          "bbox_2d": [
+            147.03,
+            103.59,
+            423.66,
+            240.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2711
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "couch",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "green-boxed object is a couch",
+        "green-boxed object is the couch on the wall by the entry way"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -3.9188,
+        0.5196,
+        0.6488,
+        0.8336,
+        0.8194,
+        1.0715
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00210_0",
+          "view_id": "00210",
+          "bbox_2d": [
+            153.46,
+            0.52,
+            491.82,
+            311.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4828
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            1150.0,
+            435.0,
+            1295.0,
+            841.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            608.41,
+            675.02,
+            1102.43,
+            965.84
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            847.22,
+            257.74,
+            1295.96,
+            965.61
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "couch",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the referenced entry way",
+        "cannot clearly verify that the couch is on the wall where the entry way is on the left"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -2.5469,
+        -0.4411,
+        0.4768,
+        1.0996,
+        0.7626,
+        0.9128
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00210_1",
+          "view_id": "00210",
+          "bbox_2d": [
+            67.47,
+            256.84,
+            541.41,
+            712.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4628
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            0.5,
+            250.79,
+            793.23,
+            965.62
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00089",
+          "view_id": "00089",
+          "bbox_2d": [
+            18.0,
+            453.0,
+            101.0,
+            662.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00041",
+          "view_id": "00041",
+          "bbox_2d": [
+            220.0,
+            159.0,
+            952.0,
+            760.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "case_id": 132,
+  "scene_id": "scene0086_00",
+  "query": "middle of the bar directly above the toilet flushing part",
+  "query_analysis": {
+    "raw_query": "middle of the bar directly above the toilet flushing part",
+    "target_object": "bar",
+    "target_attributes": [
+      "middle"
+    ],
+    "reference_object": "toilet flushing part",
+    "reference_attributes": [],
+    "relation": "directly above"
+  },
+  "gt": {
+    "target_id": 16,
+    "gt_label": "rail",
+    "gt_bbox_3d": [
+      -0.92454,
+      -2.162931,
+      0.839025,
+      0.082869,
+      0.314763,
+      0.026468
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -0.919393,
+      -2.172678,
+      0.854423,
+      0.159505,
+      1.042838,
+      0.105781
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1
+    ],
+    "detector_call_count": 39,
+    "total_views": 36,
+    "total_object_views": 1,
+    "total_candidates": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "bar",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.9214,
+        -2.1727,
+        0.8624,
+        0.1556,
+        1.0428,
+        0.0593
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            242.53,
+            51.45,
+            725.82,
+            147.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.357
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            40.38,
+            24.4,
+            600.02,
+            133.12
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00054",
+          "view_id": "00054",
+          "bbox_2d": [
+            593.0,
+            89.0,
+            1032.0,
+            186.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            610.0,
+            143.0,
+            1050.0,
+            238.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

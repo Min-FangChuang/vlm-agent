@@ -1,0 +1,214 @@
+{
+  "case_id": 173,
+  "scene_id": "scene0671_00",
+  "query": "this cabinet is on the other side . its green in color .",
+  "query_analysis": {
+    "raw_query": "this cabinet is on the other side . its green in color .",
+    "target_object": "cabinet",
+    "target_attributes": [
+      "green"
+    ],
+    "reference_object": "",
+    "reference_attributes": [],
+    "relation": "on the other side"
+  },
+  "gt": {
+    "target_id": 7,
+    "gt_label": "cabinet",
+    "gt_bbox_3d": [
+      1.64537,
+      -0.528779,
+      0.634701,
+      0.371626,
+      1.478391,
+      1.251112
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      1.709651,
+      -1.420463,
+      0.455388,
+      0.29716,
+      0.524045,
+      0.822708
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 22,
+    "total_views": 20,
+    "total_object_views": 4,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "clear confirmation that the green-boxed object itself is a cabinet",
+        "stronger scene evidence tying this exact boxed object to the 'other side' description"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.6652,
+        -1.3286,
+        0.4554,
+        0.3907,
+        0.342,
+        0.8227
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            1006.7,
+            1.53,
+            1282.79,
+            422.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3663
+        },
+        {
+          "object_view_id": "bootstrap_00001",
+          "view_id": "00001",
+          "bbox_2d": [
+            1113.0,
+            0.0,
+            1295.0,
+            407.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00002",
+          "view_id": "00002",
+          "bbox_2d": [
+            1220.0,
+            149.0,
+            1295.0,
+            486.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00036",
+          "view_id": "00036",
+          "bbox_2d": [
+            1032.0,
+            0.0,
+            1287.0,
+            231.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "green color",
+        "the phrase 'on the other side' is not confirmed from the current view"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.6605,
+        -0.3177,
+        0.3761,
+        0.5789,
+        0.5481,
+        0.8413
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            0.0,
+            237.87,
+            157.87,
+            669.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2683
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -2.0901,
+        -0.0759,
+        0.3529,
+        1.2964,
+        1.7732,
+        0.7942
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            409.19,
+            0.0,
+            1111.74,
+            296.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2749
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            933.11,
+            0.0,
+            1265.14,
+            355.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4998
+        }
+      ]
+    }
+  ]
+}

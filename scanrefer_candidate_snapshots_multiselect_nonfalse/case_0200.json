@@ -1,0 +1,1181 @@
+{
+  "case_id": 200,
+  "scene_id": "scene0353_00",
+  "query": "the chair is black and oriented beside another surface . it is spatially facing about 330 degrees in relation to the viewer .",
+  "query_analysis": {
+    "raw_query": "the chair is black and oriented beside another surface . it is spatially facing about 330 degrees in relation to the viewer .",
+    "target_object": "chair",
+    "target_attributes": [
+      "black",
+      "facing about 330 degrees in relation to the viewer"
+    ],
+    "reference_object": "surface",
+    "reference_attributes": [],
+    "relation": "beside"
+  },
+  "gt": {
+    "target_id": 5,
+    "gt_label": "chair",
+    "gt_bbox_3d": [
+      -0.172636,
+      -1.938892,
+      0.258843,
+      0.634188,
+      0.563858,
+      0.781395
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 10,
+    "bbox_3d": [
+      0.285785,
+      1.379521,
+      0.428059,
+      0.767504,
+      0.64458,
+      0.996827
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 89,
+    "total_views": 75,
+    "total_object_views": 42,
+    "total_candidates": 12
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a chair",
+        "candidate is black",
+        "candidate is facing about 330 degrees relative to the viewer"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.2164,
+        -2.3851,
+        0.5822,
+        0.6034,
+        0.5955,
+        0.3692
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            701.07,
+            395.47,
+            1007.4,
+            666.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6059
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            747.6,
+            680.41,
+            1073.28,
+            966.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7231
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            396.22,
+            697.88,
+            706.39,
+            965.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6859
+        },
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            577.07,
+            193.71,
+            859.43,
+            511.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6262
+        },
+        {
+          "object_view_id": "00148_1",
+          "view_id": "00148",
+          "bbox_2d": [
+            697.4,
+            536.47,
+            979.54,
+            742.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6153
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a chair",
+        "facing about 330 degrees in relation to the viewer"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.3073,
+        -1.6825,
+        0.6653,
+        0.2426,
+        0.8032,
+        0.2745
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00004_1",
+          "view_id": "00004",
+          "bbox_2d": [
+            711.09,
+            772.96,
+            1296.0,
+            965.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5168
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            711.09,
+            772.96,
+            1296.0,
+            965.89
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "black",
+        "facing about 330 degrees in relation to the viewer"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        -0.2588,
+        -2.1688,
+        0.2764,
+        0.7899,
+        1.1213,
+        0.8104
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            239.88,
+            262.94,
+            798.74,
+            873.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4842
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            239.88,
+            262.94,
+            798.74,
+            873.77
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00070_0",
+          "view_id": "00070",
+          "bbox_2d": [
+            688.89,
+            236.6,
+            1200.27,
+            753.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5583
+        },
+        {
+          "object_view_id": "00072_0",
+          "view_id": "00072",
+          "bbox_2d": [
+            216.72,
+            680.12,
+            769.53,
+            965.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5159
+        },
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            188.64,
+            683.01,
+            776.68,
+            966.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2619
+        },
+        {
+          "object_view_id": "00144_0",
+          "view_id": "00144",
+          "bbox_2d": [
+            695.78,
+            302.79,
+            1120.62,
+            740.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6317
+        },
+        {
+          "object_view_id": "00146_0",
+          "view_id": "00146",
+          "bbox_2d": [
+            273.76,
+            393.97,
+            699.23,
+            857.43
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2563
+        },
+        {
+          "object_view_id": "00148_0",
+          "view_id": "00148",
+          "bbox_2d": [
+            37.03,
+            779.93,
+            548.28,
+            966.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6459
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "chair",
+        "facing about 330 degrees in relation to the viewer",
+        "beside another surface as specified for the requested chair"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.1097,
+        -0.5744,
+        0.4988,
+        0.9938,
+        0.976,
+        0.6618
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            0.0,
+            222.12,
+            898.0,
+            965.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5113
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            222.12,
+            898.0,
+            965.38
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            0.12,
+            346.94,
+            823.37,
+            964.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.718
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            0.02,
+            219.18,
+            498.05,
+            965.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7871
+        },
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            0.0,
+            425.83,
+            875.38,
+            965.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4258
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 9,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "facing about 330 degrees in relation to the viewer is not reliably confirmed",
+        "full chair orientation is still partially occluded"
+      ],
+      "num_object_views": 11,
+      "bbox_3d": [
+        -0.306,
+        1.9485,
+        0.4559,
+        0.6549,
+        1.1205,
+        0.8473
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            1171.75,
+            340.38,
+            1296.0,
+            965.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3188
+        },
+        {
+          "object_view_id": "bootstrap_00105",
+          "view_id": "00105",
+          "bbox_2d": [
+            854.08,
+            237.83,
+            1293.67,
+            967.64
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00104",
+          "view_id": "00104",
+          "bbox_2d": [
+            903.17,
+            51.81,
+            1296.0,
+            779.03
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00100",
+          "view_id": "00100",
+          "bbox_2d": [
+            963.28,
+            355.93,
+            1296.0,
+            962.07
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00088_0",
+          "view_id": "00088",
+          "bbox_2d": [
+            1053.66,
+            70.4,
+            1295.8,
+            525.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7691
+        },
+        {
+          "object_view_id": "00090_1",
+          "view_id": "00090",
+          "bbox_2d": [
+            735.34,
+            165.61,
+            1058.53,
+            683.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7097
+        },
+        {
+          "object_view_id": "00092_0",
+          "view_id": "00092",
+          "bbox_2d": [
+            728.15,
+            404.85,
+            1140.03,
+            963.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6852
+        },
+        {
+          "object_view_id": "00100_0",
+          "view_id": "00100",
+          "bbox_2d": [
+            963.28,
+            355.93,
+            1296.0,
+            962.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9257
+        },
+        {
+          "object_view_id": "00104_0",
+          "view_id": "00104",
+          "bbox_2d": [
+            903.17,
+            51.81,
+            1296.0,
+            779.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8957
+        },
+        {
+          "object_view_id": "00106_0",
+          "view_id": "00106",
+          "bbox_2d": [
+            685.61,
+            284.62,
+            1236.11,
+            964.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8555
+        },
+        {
+          "object_view_id": "00108_0",
+          "view_id": "00108",
+          "bbox_2d": [
+            7.09,
+            364.7,
+            524.36,
+            963.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5848
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "black",
+        "facing about 330 degrees in relation to the viewer"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.3023,
+        1.8673,
+        0.4587,
+        0.6967,
+        1.226,
+        0.875
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            1093.7,
+            195.19,
+            1296.0,
+            727.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6949
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            825.18,
+            503.19,
+            1154.23,
+            965.43
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5095
+        },
+        {
+          "object_view_id": "00036_1",
+          "view_id": "00036",
+          "bbox_2d": [
+            206.05,
+            357.45,
+            515.23,
+            835.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4671
+        },
+        {
+          "object_view_id": "00038_1",
+          "view_id": "00038",
+          "bbox_2d": [
+            0.0,
+            94.57,
+            259.04,
+            638.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8922
+        },
+        {
+          "object_view_id": "00102_0",
+          "view_id": "00102",
+          "bbox_2d": [
+            1106.03,
+            158.3,
+            1296.0,
+            785.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5713
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "boxed object must be a chair",
+        "black chair not confirmed because the boxed item appears to be a bag or hanging fabric/object instead",
+        "chair orientation of about 330 degrees cannot be evaluated for this boxed object"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.2727,
+        1.9768,
+        0.4734,
+        0.9257,
+        1.1368,
+        0.8897
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_1",
+          "view_id": "00032",
+          "bbox_2d": [
+            1050.82,
+            539.94,
+            1296.0,
+            964.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4033
+        },
+        {
+          "object_view_id": "00034_1",
+          "view_id": "00034",
+          "bbox_2d": [
+            469.31,
+            568.33,
+            916.13,
+            966.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3523
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "facing about 330 degrees in relation to the viewer"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        0.2578,
+        1.6506,
+        0.594,
+        0.732,
+        1.1546,
+        0.6668
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            734.84,
+            590.02,
+            1212.25,
+            965.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8071
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            484.84,
+            361.48,
+            913.28,
+            965.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8924
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            223.28,
+            79.55,
+            691.4,
+            724.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9287
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            395.58,
+            225.77,
+            829.87,
+            841.32
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00089",
+          "view_id": "00089",
+          "bbox_2d": [
+            1135.94,
+            144.69,
+            1296.0,
+            883.19
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00109",
+          "view_id": "00109",
+          "bbox_2d": [
+            217.4,
+            508.48,
+            1014.05,
+            965.22
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00110_0",
+          "view_id": "00110",
+          "bbox_2d": [
+            183.06,
+            402.64,
+            1117.78,
+            965.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.45
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "reliable confirmation that the chair is facing about 330 degrees relative to the viewer",
+        "more direct full-view evidence of the chair to verify orientation confidently"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.1541,
+        1.474,
+        0.664,
+        0.5143,
+        0.4095,
+        0.5286
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            0.0,
+            495.07,
+            157.6,
+            932.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4269
+        },
+        {
+          "object_view_id": "bootstrap_00038",
+          "view_id": "00038",
+          "bbox_2d": [
+            223.28,
+            79.55,
+            691.4,
+            724.85
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00114",
+          "view_id": "00114",
+          "bbox_2d": [
+            487.0,
+            779.0,
+            773.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00045",
+          "view_id": "00045",
+          "bbox_2d": [
+            0.0,
+            648.0,
+            37.0,
+            687.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00090_0",
+          "view_id": "00090",
+          "bbox_2d": [
+            997.96,
+            184.39,
+            1295.99,
+            958.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8205
+        },
+        {
+          "object_view_id": "00108_1",
+          "view_id": "00108",
+          "bbox_2d": [
+            480.24,
+            394.49,
+            1148.63,
+            967.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4363
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "black",
+        "facing about 330 degrees in relation to the viewer"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.3414,
+        -1.8,
+        0.4795,
+        0.7496,
+        0.305,
+        0.3935
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00076_1",
+          "view_id": "00076",
+          "bbox_2d": [
+            134.44,
+            631.93,
+            817.8,
+            967.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2956
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            134.44,
+            631.93,
+            817.8,
+            967.15
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "chair",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.3235,
+        1.3627,
+        0.3336,
+        0.5427,
+        0.6109,
+        0.7449
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00112_0",
+          "view_id": "00112",
+          "bbox_2d": [
+            356.79,
+            131.81,
+            928.23,
+            962.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4388
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            356.79,
+            131.81,
+            928.23,
+            962.9
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00038",
+          "view_id": "00038",
+          "bbox_2d": [
+            223.28,
+            79.55,
+            691.4,
+            724.85
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            395.58,
+            225.77,
+            829.87,
+            841.32
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00128",
+          "view_id": "00128",
+          "bbox_2d": [
+            0.0,
+            524.0,
+            308.0,
+            924.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "reliable confirmation that the chair is facing about 330 degrees relative to the viewer"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.238,
+        1.1187,
+        0.5448,
+        0.1338,
+        0.1058,
+        0.2296
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00126_0",
+          "view_id": "00126",
+          "bbox_2d": [
+            299.55,
+            695.85,
+            603.96,
+            965.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3263
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            299.55,
+            695.85,
+            603.96,
+            965.12
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            395.58,
+            225.77,
+            829.87,
+            841.32
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00090",
+          "view_id": "00090",
+          "bbox_2d": [
+            1239.0,
+            535.0,
+            1295.0,
+            580.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00113",
+          "view_id": "00113",
+          "bbox_2d": [
+            0.0,
+            301.29,
+            758.07,
+            964.94
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

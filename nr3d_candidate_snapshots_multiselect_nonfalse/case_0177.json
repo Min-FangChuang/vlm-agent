@@ -1,0 +1,267 @@
+{
+  "case_id": 177,
+  "scene_id": "scene0685_00",
+  "query": "box in front of another",
+  "query_analysis": {
+    "raw_query": "box in front of another",
+    "target_object": "box",
+    "target_attributes": [],
+    "reference_object": "another",
+    "reference_attributes": [],
+    "relation": "in front of"
+  },
+  "gt": {
+    "target_id": 16,
+    "gt_label": "box",
+    "gt_bbox_3d": [
+      0.610948,
+      -0.289345,
+      0.748816,
+      0.25452,
+      1.033618,
+      0.358678
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      0.602055,
+      -0.055877,
+      0.752755,
+      0.229265,
+      0.553787,
+      0.245823
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      1,
+      2
+    ],
+    "detector_call_count": 54,
+    "total_views": 49,
+    "total_object_views": 3,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "box",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.9419,
+        0.0461,
+        0.7438,
+        0.167,
+        0.3437,
+        0.1569
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            897.33,
+            776.39,
+            1296.0,
+            965.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.586
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            897.33,
+            776.39,
+            1296.0,
+            965.66
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00068",
+          "view_id": "00068",
+          "bbox_2d": [
+            1257.0,
+            353.0,
+            1295.0,
+            464.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            35.0,
+            426.0,
+            139.0,
+            713.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            584.39,
+            204.27,
+            1046.8,
+            500.86
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "box",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.6296,
+        0.1637,
+        0.7194,
+        0.1696,
+        0.1122,
+        0.1669
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            1055.72,
+            447.64,
+            1295.98,
+            855.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3513
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1055.72,
+            447.64,
+            1295.98,
+            855.91
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00057",
+          "view_id": "00057",
+          "bbox_2d": [
+            129.0,
+            371.0,
+            505.0,
+            698.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00058",
+          "view_id": "00058",
+          "bbox_2d": [
+            424.0,
+            275.0,
+            759.0,
+            610.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            746.2,
+            335.72,
+            1296.0,
+            732.2
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "box",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a box",
+        "candidate is in front of another similar/reference object"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.6923,
+        2.2772,
+        0.2336,
+        0.4698,
+        0.427,
+        0.4284
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            917.34,
+            493.18,
+            1152.75,
+            745.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3218
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "case_id": 109,
+  "scene_id": "scene0462_00",
+  "query": "the door is to the right of the mail cubbies . it is directly across from the cabinets .",
+  "query_analysis": {
+    "raw_query": "the door is to the right of the mail cubbies . it is directly across from the cabinets .",
+    "target_object": "door",
+    "target_attributes": [],
+    "reference_object": "mail cubbies; cabinets",
+    "reference_attributes": [],
+    "relation": "to the right of; directly across from"
+  },
+  "gt": {
+    "target_id": 6,
+    "gt_label": "door",
+    "gt_bbox_3d": [
+      -0.769998,
+      2.036593,
+      1.050339,
+      1.1598,
+      0.414076,
+      2.140131
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 2,
+    "bbox_3d": [
+      -2.93237,
+      3.502503,
+      1.151567,
+      1.06851,
+      1.824623,
+      2.110644
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      3
+    ],
+    "detector_call_count": 34,
+    "total_views": 29,
+    "total_object_views": 6,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "door",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "mail cubbies are not visible/confirmed",
+        "cannot verify the door is to the right of the mail cubbies",
+        "cabinets are not clearly visible/confirmed",
+        "cannot verify the door is directly across from the cabinets"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.3535,
+        -2.6481,
+        0.6969,
+        0.9011,
+        0.1438,
+        1.5524
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            1049.07,
+            16.91,
+            1295.99,
+            859.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5374
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            989.0,
+            0.0,
+            1295.0,
+            618.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00050",
+          "view_id": "00050",
+          "bbox_2d": [
+            1028.0,
+            0.0,
+            1295.0,
+            421.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            89.98,
+            0.0,
+            579.88,
+            699.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3876
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "door",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "mail cubbies are not visible, so 'to the right of the mail cubbies' cannot be verified",
+        "the spatial relation 'directly across from the cabinets' is not reliably established from the current views"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.7015,
+        2.0053,
+        0.894,
+        0.8216,
+        0.3287,
+        1.7425
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            196.77,
+            0.52,
+            796.18,
+            923.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3549
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            173.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            0.0,
+            3.0,
+            382.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            0.0,
+            3.0,
+            476.0,
+            901.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "door",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "whether the door is directly across from the cabinets"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -2.9324,
+        3.5025,
+        1.1516,
+        1.0685,
+        1.8246,
+        2.1106
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_1",
+          "view_id": "00024",
+          "bbox_2d": [
+            0.0,
+            11.7,
+            225.59,
+            681.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3513
+        },
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            1076.91,
+            233.79,
+            1233.77,
+            747.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5386
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "door is to the right of the mail cubbies",
+        "door is directly across from the cabinets"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.6077,
+        -2.6359,
+        0.9306,
+        0.4293,
+        0.2547,
+        2.1234
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            0.0,
+            50.52,
+            175.39,
+            958.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2781
+        }
+      ]
+    }
+  ]
+}

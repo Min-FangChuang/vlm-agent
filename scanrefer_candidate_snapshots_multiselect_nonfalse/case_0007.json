@@ -1,0 +1,657 @@
+{
+  "case_id": 7,
+  "scene_id": "scene0203_00",
+  "query": "the coffee table is black and on top of an area rug that has 2 semi - circles on it . the coffee table has a book on it and is in front of a couch and across from a bookshelf .",
+  "query_analysis": {
+    "raw_query": "the coffee table is black and on top of an area rug that has 2 semi - circles on it . the coffee table has a book on it and is in front of a couch and across from a bookshelf .",
+    "target_object": "coffee table",
+    "target_attributes": [
+      "black"
+    ],
+    "reference_object": "area rug",
+    "reference_attributes": [
+      "2 semi-circles on it"
+    ],
+    "relation": "on top of"
+  },
+  "gt": {
+    "target_id": 4,
+    "gt_label": "coffee table",
+    "gt_bbox_3d": [
+      -0.414336,
+      -0.625745,
+      0.22526,
+      0.651078,
+      0.926659,
+      0.499355
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 7,
+    "bbox_3d": [
+      -0.367732,
+      -0.355536,
+      0.185292,
+      0.87939,
+      1.303397,
+      0.6021
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 51,
+    "total_views": 37,
+    "total_object_views": 10,
+    "total_candidates": 8
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "coffee table",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.3709,
+        -0.5571,
+        0.1771,
+        0.5561,
+        0.7289,
+        0.5829
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            0.1,
+            239.59,
+            557.56,
+            781.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8267
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            15.51,
+            716.26,
+            722.44,
+            968.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3348
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.1,
+            239.59,
+            557.56,
+            781.75
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            445.0,
+            397.0,
+            1295.0,
+            962.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            578.2,
+            160.44,
+            1158.97,
+            771.44
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            50.0,
+            944.0,
+            253.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "coffee table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is black",
+        "candidate is the coffee table",
+        "candidate is on the area rug with 2 semi-circles",
+        "candidate has a book on it",
+        "candidate is the table across from the bookshelf"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -1.6629,
+        0.4466,
+        0.3877,
+        1.5106,
+        0.6243,
+        0.8453
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            579.45,
+            622.69,
+            1053.59,
+            964.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5619
+        },
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            667.39,
+            367.99,
+            1290.84,
+            965.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6813
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            667.39,
+            367.99,
+            1290.84,
+            965.8
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "coffee table",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "candidate is a coffee table",
+        "black color",
+        "book on top",
+        "on an area rug with 2 semi-circles",
+        "in front of a couch",
+        "across from a bookshelf"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -3.1832,
+        -1.6971,
+        0.2244,
+        0.3301,
+        0.6796,
+        0.3844
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            200.94,
+            698.71,
+            460.45,
+            869.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3726
+        },
+        {
+          "object_view_id": "bootstrap_00034",
+          "view_id": "00034",
+          "bbox_2d": [
+            575.0,
+            281.0,
+            780.0,
+            369.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            13.01,
+            94.68,
+            276.68,
+            250.65
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00010",
+          "view_id": "00010",
+          "bbox_2d": [
+            178.0,
+            111.0,
+            403.0,
+            246.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "coffee table",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "candidate is not reliably a coffee table",
+        "black coffee table attribute not satisfied",
+        "not on top of the described area rug with 2 semi-circles",
+        "book on the table not visible",
+        "in front of a couch not confirmed for this candidate",
+        "across from a bookshelf not confirmed"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.1916,
+        1.566,
+        0.1837,
+        0.8313,
+        0.4366,
+        0.5443
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            173.87,
+            603.77,
+            483.0,
+            792.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3304
+        },
+        {
+          "object_view_id": "bootstrap_00041",
+          "view_id": "00041",
+          "bbox_2d": [
+            177.0,
+            638.0,
+            530.0,
+            904.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            459.0,
+            357.0,
+            755.0,
+            563.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00047",
+          "view_id": "00047",
+          "bbox_2d": [
+            179.0,
+            326.0,
+            438.0,
+            510.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "coffee table",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "candidate is a coffee table",
+        "candidate is black coffee table rather than a couch/seat edge",
+        "book on top of the candidate",
+        "candidate on area rug with 2 semi-circles",
+        "candidate in front of the couch and across from the bookshelf"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.6024,
+        -3.7864,
+        0.5771,
+        0.3614,
+        0.5275,
+        0.4197
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            1125.38,
+            522.54,
+            1296.0,
+            766.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2749
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            936.0,
+            693.0,
+            1160.0,
+            919.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            295.0,
+            79.0,
+            515.0,
+            302.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00024",
+          "view_id": "00024",
+          "bbox_2d": [
+            635.0,
+            436.0,
+            822.0,
+            631.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "coffee table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "is a coffee table",
+        "black",
+        "on an area rug with 2 semi-circles",
+        "has a book on it",
+        "across from a bookshelf"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.3625,
+        0.1699,
+        0.5489,
+        0.5837,
+        0.1292,
+        0.3047
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            1138.51,
+            444.29,
+            1295.98,
+            858.43
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4897
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1138.51,
+            444.29,
+            1295.98,
+            858.43
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "coffee table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "is a coffee table",
+        "on top of an area rug with 2 semi-circles",
+        "book on it",
+        "in front of a couch",
+        "across from a bookshelf"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -3.2719,
+        0.6188,
+        0.2585,
+        0.3872,
+        0.8391,
+        0.5097
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            155.54,
+            577.37,
+            504.46,
+            795.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4259
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "coffee table",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.3258,
+        -0.3354,
+        0.3552,
+        0.4401,
+        0.4701,
+        0.0995
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            926.12,
+            475.88,
+            1296.0,
+            965.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2824
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            926.12,
+            475.88,
+            1296.0,
+            965.55
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00048",
+          "view_id": "00048",
+          "bbox_2d": [
+            101.0,
+            593.0,
+            753.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00000",
+          "view_id": "00000",
+          "bbox_2d": [
+            0.1,
+            239.59,
+            557.56,
+            781.75
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00001",
+          "view_id": "00001",
+          "bbox_2d": [
+            0.23,
+            294.58,
+            663.92,
+            939.7
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

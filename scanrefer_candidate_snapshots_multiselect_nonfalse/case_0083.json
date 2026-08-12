@@ -1,0 +1,125 @@
+{
+  "case_id": 83,
+  "scene_id": "scene0329_00",
+  "query": "the whiteboard is on the white wall . it is to the right of the doors .",
+  "query_analysis": {
+    "raw_query": "the whiteboard is on the white wall . it is to the right of the doors .",
+    "target_object": "whiteboard",
+    "target_attributes": [],
+    "reference_object": "doors",
+    "reference_attributes": [],
+    "relation": "to the right of"
+  },
+  "gt": {
+    "target_id": 43,
+    "gt_label": "whiteboard",
+    "gt_bbox_3d": [
+      -3.092197,
+      1.977502,
+      1.350804,
+      0.286091,
+      3.033877,
+      1.417522
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -3.153572,
+      1.927185,
+      1.359903,
+      0.260601,
+      2.487068,
+      1.311798
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1
+    ],
+    "detector_call_count": 41,
+    "total_views": 39,
+    "total_object_views": 1,
+    "total_candidates": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "whiteboard",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -3.114,
+        2.0976,
+        1.3599,
+        0.3411,
+        2.5586,
+        1.3118
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            1.12,
+            67.04,
+            1258.77,
+            742.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7057
+        },
+        {
+          "object_view_id": "bootstrap_00024",
+          "view_id": "00024",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            1295.0,
+            961.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            1267.0,
+            579.0,
+            1295.0,
+            698.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00076",
+          "view_id": "00076",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            1295.0,
+            950.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

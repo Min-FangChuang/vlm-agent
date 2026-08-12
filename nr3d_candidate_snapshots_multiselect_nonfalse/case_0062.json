@@ -1,0 +1,100 @@
+{
+  "case_id": 62,
+  "scene_id": "scene0565_00",
+  "query": "box surrounds door with glass inset",
+  "query_analysis": {
+    "raw_query": "box surrounds door with glass inset",
+    "target_object": "door",
+    "target_attributes": [
+      "glass inset"
+    ],
+    "reference_object": "box",
+    "reference_attributes": [],
+    "relation": "surrounded by"
+  },
+  "gt": {
+    "target_id": 20,
+    "gt_label": "door",
+    "gt_bbox_3d": [
+      -2.264243,
+      -0.051853,
+      0.803092,
+      0.168317,
+      0.757614,
+      1.554065
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "false",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -1.593932,
+      -2.712098,
+      0.974004,
+      0.876329,
+      0.793803,
+      1.975216
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1
+    ],
+    "detector_call_count": 27,
+    "total_views": 27,
+    "total_object_views": 2,
+    "total_candidates": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "glass inset on the green-boxed door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.6037,
+        -2.5857,
+        0.7476,
+        0.8749,
+        1.054,
+        1.5475
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            70.35,
+            33.16,
+            273.26,
+            409.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6014
+        },
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            574.87,
+            0.0,
+            789.01,
+            382.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3666
+        }
+      ]
+    }
+  ]
+}

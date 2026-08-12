@@ -1,0 +1,267 @@
+{
+  "case_id": 81,
+  "scene_id": "scene0607_00",
+  "query": "the sink on the right hand side",
+  "query_analysis": {
+    "raw_query": "the sink on the right hand side",
+    "target_object": "sink",
+    "target_attributes": [],
+    "reference_object": "",
+    "reference_attributes": [],
+    "relation": "on the right hand side"
+  },
+  "gt": {
+    "target_id": 16,
+    "gt_label": "sink",
+    "gt_bbox_3d": [
+      1.552404,
+      -0.594781,
+      0.823342,
+      0.409273,
+      0.360032,
+      0.190737
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      1.67847,
+      -0.565421,
+      0.834829,
+      0.202212,
+      0.412652,
+      0.169348
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 28,
+    "total_views": 25,
+    "total_object_views": 5,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "sink",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.7482,
+        -0.5857,
+        0.85,
+        0.0412,
+        0.3339,
+        0.1391
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            1.02,
+            353.53,
+            262.77,
+            500.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6133
+        },
+        {
+          "object_view_id": "00038_1",
+          "view_id": "00038",
+          "bbox_2d": [
+            555.11,
+            494.84,
+            839.7,
+            608.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4722
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1.02,
+            353.53,
+            262.77,
+            500.27
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00016",
+          "view_id": "00016",
+          "bbox_2d": [
+            355.0,
+            70.0,
+            445.0,
+            108.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            846.78,
+            523.9,
+            1189.93,
+            653.09
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            293.1,
+            376.18,
+            709.82,
+            552.41
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "sink",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate must be a sink",
+        "candidate must correspond to the right-hand sink"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.5457,
+        -0.4185,
+        0.8491,
+        0.4171,
+        0.1854,
+        0.1339
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_1",
+          "view_id": "00036",
+          "bbox_2d": [
+            0.0,
+            446.82,
+            157.84,
+            652.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2731
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            446.82,
+            157.84,
+            652.28
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "sink",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is the sink on the right-hand side"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        1.5465,
+        -0.1798,
+        0.8455,
+        0.4215,
+        0.3701,
+        0.2007
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            127.2,
+            515.2,
+            580.85,
+            733.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7797
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            127.2,
+            515.2,
+            580.85,
+            733.4
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            709.61,
+            477.82,
+            1159.15,
+            739.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4642
+        }
+      ]
+    }
+  ]
+}

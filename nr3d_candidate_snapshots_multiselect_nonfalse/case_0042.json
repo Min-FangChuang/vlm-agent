@@ -1,0 +1,443 @@
+{
+  "case_id": 42,
+  "scene_id": "scene0458_00",
+  "query": "the toilet paper on the right hand side of the toilet",
+  "query_analysis": {
+    "raw_query": "the toilet paper on the right hand side of the toilet",
+    "target_object": "toilet paper",
+    "target_attributes": [],
+    "reference_object": "toilet",
+    "reference_attributes": [],
+    "relation": "on the right hand side of"
+  },
+  "gt": {
+    "target_id": 4,
+    "gt_label": "toilet paper",
+    "gt_bbox_3d": [
+      -0.604326,
+      -0.394425,
+      0.646998,
+      0.210202,
+      0.162408,
+      0.193045
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -0.609031,
+      -0.41504,
+      0.649776,
+      0.216218,
+      0.128992,
+      0.205779
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 59,
+    "total_views": 50,
+    "total_object_views": 9,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "toilet paper",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "not on the right-hand side of the toilet"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        -0.229,
+        -1.0612,
+        0.3386,
+        0.262,
+        0.1373,
+        0.5012
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            0.0,
+            421.94,
+            133.34,
+            718.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2523
+        },
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            0.0,
+            27.5,
+            220.47,
+            355.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4992
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            27.5,
+            220.47,
+            355.12
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00060",
+          "view_id": "00060",
+          "bbox_2d": [
+            19.63,
+            268.97,
+            304.27,
+            602.71
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00062",
+          "view_id": "00062",
+          "bbox_2d": [
+            233.49,
+            442.54,
+            441.67,
+            699.1
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00061",
+          "view_id": "00061",
+          "bbox_2d": [
+            197.14,
+            304.76,
+            439.77,
+            589.57
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            19.63,
+            268.97,
+            304.27,
+            602.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5921
+        },
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            233.49,
+            442.54,
+            441.67,
+            699.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7415
+        },
+        {
+          "object_view_id": "00072_0",
+          "view_id": "00072",
+          "bbox_2d": [
+            1069.18,
+            442.93,
+            1290.56,
+            740.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3626
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "toilet paper",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "unambiguous confirmation of which left/right reference frame should be used for 'right hand side of the toilet'",
+        "disambiguation from the other toilet paper roll on the opposite side"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.5907,
+        -0.4183,
+        0.6654,
+        0.1188,
+        0.123,
+        0.1734
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            705.35,
+            82.27,
+            858.58,
+            263.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7704
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            705.35,
+            82.27,
+            858.58,
+            263.68
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00054",
+          "view_id": "00054",
+          "bbox_2d": [
+            674.0,
+            180.0,
+            796.0,
+            337.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00066",
+          "view_id": "00066",
+          "bbox_2d": [
+            994.43,
+            606.62,
+            1161.09,
+            807.69
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            921.96,
+            287.74,
+            1083.44,
+            519.08
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "toilet paper",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "being the toilet paper on the right-hand side of the toilet"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -0.6321,
+        -0.6313,
+        0.7004,
+        0.1274,
+        0.1346,
+        0.1393
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00064_1",
+          "view_id": "00064",
+          "bbox_2d": [
+            455.34,
+            100.45,
+            600.44,
+            296.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7627
+        },
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            742.5,
+            561.39,
+            877.28,
+            756.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6255
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            455.34,
+            100.45,
+            600.44,
+            296.46
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "toilet paper",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "unambiguous confirmation that this is the intended 'right hand side' roll under the correct left/right reference frame rather than the opposite roll"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.6244,
+        -0.4135,
+        0.6913,
+        0.1856,
+        0.124,
+        0.1228
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00066_1",
+          "view_id": "00066",
+          "bbox_2d": [
+            994.43,
+            606.62,
+            1161.09,
+            807.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3305
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            994.43,
+            606.62,
+            1161.09,
+            807.69
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00054",
+          "view_id": "00054",
+          "bbox_2d": [
+            671.0,
+            178.0,
+            829.0,
+            341.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00064",
+          "view_id": "00064",
+          "bbox_2d": [
+            705.35,
+            82.27,
+            858.58,
+            263.68
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            921.96,
+            287.74,
+            1083.44,
+            519.08
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1079 @@
+{
+  "case_id": 162,
+  "scene_id": "scene0343_00",
+  "query": "i am shelves beside the yellow price tag",
+  "query_analysis": {
+    "raw_query": "i am shelves beside the yellow price tag",
+    "target_object": "shelves",
+    "target_attributes": [],
+    "reference_object": "price tag",
+    "reference_attributes": [
+      "yellow"
+    ],
+    "relation": "beside"
+  },
+  "gt": {
+    "target_id": 5,
+    "gt_label": "shelf",
+    "gt_bbox_3d": [
+      -2.44855,
+      -0.393574,
+      1.603245,
+      0.239341,
+      0.831396,
+      0.935603
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 6,
+    "bbox_3d": [
+      -2.445749,
+      -0.444981,
+      1.416827,
+      0.320565,
+      0.580683,
+      0.398731
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 52,
+    "total_views": 31,
+    "total_object_views": 24,
+    "total_candidates": 13
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "shelves",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "insufficient evidence that the green-boxed shelves are the specific shelves intended among multiple nearby shelves beside the yellow tag"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        2.4505,
+        1.3965,
+        1.4119,
+        0.3135,
+        0.9456,
+        1.0562
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            267.02,
+            0.48,
+            409.94,
+            249.84
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2898
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            241.3,
+            25.67,
+            380.25,
+            476.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5892
+        },
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            936.93,
+            0.98,
+            1130.29,
+            432.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6788
+        },
+        {
+          "object_view_id": "bootstrap_00045",
+          "view_id": "00045",
+          "bbox_2d": [
+            433.0,
+            7.0,
+            571.0,
+            159.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00054",
+          "view_id": "00054",
+          "bbox_2d": [
+            1270.0,
+            122.0,
+            1295.0,
+            443.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00048",
+          "view_id": "00048",
+          "bbox_2d": [
+            181.64,
+            132.01,
+            330.36,
+            590.6
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            429.89,
+            6.57,
+            559.26,
+            210.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3832
+        },
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            181.64,
+            132.01,
+            330.36,
+            590.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4953
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "shelves",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "a clearly visible yellow price tag near the candidate",
+        "reliable confirmation that the shelves are beside that yellow price tag rather than another nearby tag/object"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        2.3394,
+        -0.9709,
+        0.5853,
+        0.4593,
+        1.0662,
+        1.29
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            844.9,
+            2.73,
+            1296.0,
+            965.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4061
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            844.9,
+            2.73,
+            1296.0,
+            965.97
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00050",
+          "view_id": "00050",
+          "bbox_2d": [
+            729.0,
+            6.0,
+            1295.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00000",
+          "view_id": "00000",
+          "bbox_2d": [
+            733.0,
+            27.0,
+            1295.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00001",
+          "view_id": "00001",
+          "bbox_2d": [
+            694.0,
+            75.0,
+            1262.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00048_1",
+          "view_id": "00048",
+          "bbox_2d": [
+            657.66,
+            151.3,
+            1295.81,
+            963.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3399
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "shelves",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is clearly shelves",
+        "beside a yellow price tag"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.239,
+        1.7129,
+        0.3511,
+        0.5507,
+        0.6499,
+        0.9249
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00004_1",
+          "view_id": "00004",
+          "bbox_2d": [
+            0.0,
+            268.84,
+            178.51,
+            578.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3992
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "shelves",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "yellow price tag is not clearly visible/identifiable",
+        "beside relation between the shelves and the yellow price tag is not reliably confirmed",
+        "nearby shelf alternatives are not fully disambiguated using the reference object"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        1.549,
+        1.8288,
+        1.464,
+        0.5617,
+        0.298,
+        1.1664
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00004_2",
+          "view_id": "00004",
+          "bbox_2d": [
+            0.76,
+            9.37,
+            236.12,
+            233.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3565
+        },
+        {
+          "object_view_id": "00006_1",
+          "view_id": "00006",
+          "bbox_2d": [
+            529.42,
+            51.22,
+            719.41,
+            424.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6269
+        },
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            736.86,
+            2.89,
+            996.59,
+            290.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2842
+        },
+        {
+          "object_view_id": "bootstrap_00057",
+          "view_id": "00057",
+          "bbox_2d": [
+            458.0,
+            7.0,
+            727.0,
+            85.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00002",
+          "view_id": "00002",
+          "bbox_2d": [
+            0.0,
+            77.0,
+            52.0,
+            450.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00054",
+          "view_id": "00054",
+          "bbox_2d": [
+            774.56,
+            35.14,
+            1012.14,
+            474.67
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00046_2",
+          "view_id": "00046",
+          "bbox_2d": [
+            48.37,
+            1.99,
+            240.48,
+            196.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3672
+        },
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            413.27,
+            2.73,
+            601.78,
+            230.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3039
+        },
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            774.56,
+            35.14,
+            1012.14,
+            474.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3434
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "shelves",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "yellow price tag is not clearly visible",
+        "beside relation to the yellow price tag is not visually confirmed",
+        "cannot reliably distinguish this shelves candidate from other nearby shelf-like objects"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        2.1535,
+        1.3191,
+        0.2835,
+        0.564,
+        1.1871,
+        0.8455
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_1",
+          "view_id": "00008",
+          "bbox_2d": [
+            1019.47,
+            356.94,
+            1296.0,
+            917.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2674
+        },
+        {
+          "object_view_id": "bootstrap_00056",
+          "view_id": "00056",
+          "bbox_2d": [
+            910.0,
+            11.0,
+            1295.0,
+            519.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00057",
+          "view_id": "00057",
+          "bbox_2d": [
+            760.72,
+            164.06,
+            1296.0,
+            962.54
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00053",
+          "view_id": "00053",
+          "bbox_2d": [
+            858.0,
+            376.0,
+            1179.0,
+            791.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "shelves",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "beside the yellow price tag",
+        "best matching shelves among nearby alternatives"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.6474,
+        1.1207,
+        0.4047,
+        0.9711,
+        1.7289,
+        0.9453
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            902.73,
+            180.35,
+            1296.0,
+            782.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2716
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            902.73,
+            180.35,
+            1296.0,
+            782.03
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "shelves",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -2.4492,
+        -0.4357,
+        1.4168,
+        0.3136,
+        0.5617,
+        0.3986
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            200.71,
+            205.92,
+            417.24,
+            344.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3067
+        },
+        {
+          "object_view_id": "00022_2",
+          "view_id": "00022",
+          "bbox_2d": [
+            294.25,
+            316.93,
+            547.23,
+            470.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3139
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            423.0,
+            258.0,
+            672.0,
+            439.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            91.6,
+            243.74,
+            348.81,
+            398.48
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            284.0,
+            52.0,
+            484.0,
+            200.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "shelves",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "not enough evidence that the green-boxed shelves are specifically beside the yellow price tag",
+        "nearby alternative shelf also appears compatible with the same description"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -2.2784,
+        1.1423,
+        0.6213,
+        0.4598,
+        0.4875,
+        0.7584
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            982.27,
+            592.38,
+            1252.3,
+            968.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6141
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            660.0,
+            0.0,
+            824.0,
+            252.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00024",
+          "view_id": "00024",
+          "bbox_2d": [
+            1201.0,
+            537.0,
+            1295.0,
+            808.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            775.0,
+            439.0,
+            975.0,
+            756.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "shelves",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably determine which yellow price tag is the intended reference",
+        "cannot reliably confirm the green-boxed shelf is the best/unique shelf beside that yellow price tag compared with nearby shelf candidates"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -2.3422,
+        0.6116,
+        0.6453,
+        0.6664,
+        0.6122,
+        0.8343
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_1",
+          "view_id": "00022",
+          "bbox_2d": [
+            709.44,
+            557.84,
+            967.55,
+            966.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3313
+        },
+        {
+          "object_view_id": "bootstrap_00026",
+          "view_id": "00026",
+          "bbox_2d": [
+            1221.0,
+            387.0,
+            1295.0,
+            592.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            564.0,
+            411.0,
+            789.0,
+            764.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00016",
+          "view_id": "00016",
+          "bbox_2d": [
+            585.0,
+            0.0,
+            784.0,
+            248.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "shelves",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "yellow price tag is not clearly visible/identifiable near the candidate",
+        "cannot reliably verify that the green-boxed shelves are beside the yellow price tag",
+        "nearby alternative shelf units are present, so the exact target remains ambiguous"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -2.3179,
+        -0.0409,
+        0.5922,
+        0.4247,
+        0.4892,
+        0.7856
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            603.06,
+            294.45,
+            854.51,
+            713.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2858
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            1239.0,
+            425.0,
+            1295.0,
+            502.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            427.45,
+            281.59,
+            585.45,
+            556.4
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00016",
+          "view_id": "00016",
+          "bbox_2d": [
+            407.0,
+            10.0,
+            555.0,
+            218.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "shelves",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "beside the yellow price tag"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.968,
+        1.9589,
+        -0.2537,
+        0.488,
+        4.7306,
+        2.1568
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_1",
+          "view_id": "00046",
+          "bbox_2d": [
+            0.0,
+            338.2,
+            188.37,
+            937.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3697
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "shelves",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "object is shelves",
+        "beside a yellow price tag"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        2.2355,
+        1.354,
+        0.2954,
+        0.6638,
+        1.3425,
+        0.8708
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_1",
+          "view_id": "00052",
+          "bbox_2d": [
+            678.55,
+            278.27,
+            941.82,
+            657.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2554
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "shelves",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "clearer target-centered confirmation that the green-boxed object is truly shelves",
+        "stronger evidence that this shelf unit, rather than another visible shelving unit, is the intended target"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.7827,
+        1.712,
+        1.6974,
+        0.9381,
+        0.219,
+        0.6045
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            748.06,
+            0.0,
+            1035.84,
+            207.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3158
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            479.0,
+            0.0,
+            730.0,
+            333.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00058",
+          "view_id": "00058",
+          "bbox_2d": [
+            118.0,
+            0.0,
+            375.0,
+            184.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00054",
+          "view_id": "00054",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            139.0,
+            334.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

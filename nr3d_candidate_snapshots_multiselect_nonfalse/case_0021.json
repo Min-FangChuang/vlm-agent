@@ -1,0 +1,562 @@
+{
+  "case_id": 21,
+  "scene_id": "scene0697_00",
+  "query": "from the foot of the bed choose the dresser that is to your right it is the shorter dresser with eight drawers",
+  "query_analysis": {
+    "raw_query": "from the foot of the bed choose the dresser that is to your right it is the shorter dresser with eight drawers",
+    "target_object": "dresser",
+    "target_attributes": [
+      "shorter",
+      "eight drawers"
+    ],
+    "reference_object": "bed",
+    "reference_attributes": [
+      "foot"
+    ],
+    "relation": "to your right from the foot of the bed"
+  },
+  "gt": {
+    "target_id": 11,
+    "gt_label": "dresser",
+    "gt_bbox_3d": [
+      -1.119646,
+      -1.787949,
+      0.442503,
+      1.603212,
+      0.519338,
+      0.988117
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 4,
+    "bbox_3d": [
+      -1.455761,
+      -1.745667,
+      0.45118,
+      0.850112,
+      0.452126,
+      0.821878
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      1,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 78,
+    "total_views": 72,
+    "total_object_views": 19,
+    "total_candidates": 5
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "dresser",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "dresser with eight drawers",
+        "shorter dresser"
+      ],
+      "num_object_views": 11,
+      "bbox_3d": [
+        1.2503,
+        -1.5621,
+        0.337,
+        0.4619,
+        0.7365,
+        0.7727
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            138.3,
+            70.94,
+            822.47,
+            738.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4225
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            227.35,
+            255.19,
+            869.13,
+            895.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4335
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            328.91,
+            571.67,
+            925.2,
+            966.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.446
+        },
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            27.13,
+            605.46,
+            661.76,
+            965.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3176
+        },
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            0.0,
+            4.08,
+            500.67,
+            791.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3804
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            138.3,
+            70.94,
+            822.47,
+            738.74
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00047_0",
+          "view_id": "00047",
+          "bbox_2d": [
+            982.68,
+            331.65,
+            1295.75,
+            707.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4947
+        },
+        {
+          "object_view_id": "00061_0",
+          "view_id": "00061",
+          "bbox_2d": [
+            441.9,
+            211.63,
+            977.16,
+            738.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3603
+        },
+        {
+          "object_view_id": "00063_0",
+          "view_id": "00063",
+          "bbox_2d": [
+            474.25,
+            508.7,
+            980.86,
+            964.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4662
+        },
+        {
+          "object_view_id": "00065_0",
+          "view_id": "00065",
+          "bbox_2d": [
+            325.01,
+            162.94,
+            824.86,
+            695.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3217
+        },
+        {
+          "object_view_id": "00067_0",
+          "view_id": "00067",
+          "bbox_2d": [
+            0.02,
+            134.99,
+            299.01,
+            724.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4716
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "dresser",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "shorter dresser",
+        "eight drawers",
+        "best match relative to the bed context"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -1.6389,
+        0.9304,
+        0.7737,
+        0.4978,
+        1.2627,
+        1.2518
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00029_0",
+          "view_id": "00029",
+          "bbox_2d": [
+            447.19,
+            272.69,
+            1295.86,
+            964.49
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3439
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            447.19,
+            272.69,
+            1295.86,
+            964.49
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00101_0",
+          "view_id": "00101",
+          "bbox_2d": [
+            255.63,
+            602.56,
+            1296.0,
+            965.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2516
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "dresser",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "dresser",
+        "shorter dresser",
+        "eight drawers",
+        "to your right from the foot of the bed"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.2379,
+        0.8413,
+        0.3865,
+        0.4615,
+        0.6311,
+        0.562
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00039_0",
+          "view_id": "00039",
+          "bbox_2d": [
+            849.17,
+            463.26,
+            1275.86,
+            902.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3839
+        },
+        {
+          "object_view_id": "00041_0",
+          "view_id": "00041",
+          "bbox_2d": [
+            376.16,
+            565.61,
+            755.66,
+            921.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3773
+        },
+        {
+          "object_view_id": "00131_0",
+          "view_id": "00131",
+          "bbox_2d": [
+            321.14,
+            0.0,
+            694.02,
+            268.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.37
+        },
+        {
+          "object_view_id": "00133_0",
+          "view_id": "00133",
+          "bbox_2d": [
+            793.78,
+            276.24,
+            1172.15,
+            636.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3227
+        },
+        {
+          "object_view_id": "00135_0",
+          "view_id": "00135",
+          "bbox_2d": [
+            723.56,
+            652.4,
+            1090.52,
+            966.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3395
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "dresser",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably verify that the dresser has eight drawers",
+        "cannot reliably confirm it is the shorter dresser relative to other dresser options"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.3938,
+        -1.7695,
+        0.4709,
+        1.0064,
+        0.4853,
+        0.9266
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00079_0",
+          "view_id": "00079",
+          "bbox_2d": [
+            0.0,
+            317.62,
+            825.11,
+            964.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3743
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            317.62,
+            825.11,
+            964.26
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            0.0,
+            245.0,
+            1240.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00072",
+          "view_id": "00072",
+          "bbox_2d": [
+            842.0,
+            178.0,
+            1295.0,
+            671.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00080",
+          "view_id": "00080",
+          "bbox_2d": [
+            0.0,
+            597.0,
+            766.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "dresser",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.6129,
+        -1.6463,
+        0.6739,
+        0.5397,
+        0.2542,
+        0.3765
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00081_0",
+          "view_id": "00081",
+          "bbox_2d": [
+            0.2,
+            687.59,
+            485.24,
+            964.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5635
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.2,
+            687.59,
+            485.24,
+            964.82
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00022",
+          "view_id": "00022",
+          "bbox_2d": [
+            0.0,
+            377.0,
+            810.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            377.0,
+            322.0,
+            1240.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00077",
+          "view_id": "00077",
+          "bbox_2d": [
+            515.0,
+            77.0,
+            1192.0,
+            392.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

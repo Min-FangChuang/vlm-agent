@@ -1,0 +1,371 @@
+{
+  "case_id": 143,
+  "scene_id": "scene0221_00",
+  "query": "looking at the beds head on the bag nearest to the bed on the left",
+  "query_analysis": {
+    "raw_query": "looking at the beds head on the bag nearest to the bed on the left",
+    "target_object": "bag",
+    "target_attributes": [],
+    "reference_object": "bed",
+    "reference_attributes": [],
+    "relation": "nearest to the bed on the left"
+  },
+  "gt": {
+    "target_id": 19,
+    "gt_label": "bag",
+    "gt_bbox_3d": [
+      -1.635495,
+      -1.206591,
+      0.256195,
+      0.307309,
+      0.354077,
+      0.376178
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -1.642719,
+      -1.20561,
+      0.264609,
+      0.370083,
+      0.305681,
+      0.415122
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      4
+    ],
+    "detector_call_count": 34,
+    "total_views": 25,
+    "total_object_views": 6,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "bag",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably determine the beds in a head-on view",
+        "cannot confirm which bed is the bed on the left",
+        "cannot confirm this is the bag nearest to that left bed",
+        "scene context is insufficient to rule out nearby alternative bag placements"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.4894,
+        -1.4701,
+        0.2726,
+        0.4029,
+        0.2883,
+        0.3631
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            886.45,
+            483.95,
+            1076.34,
+            728.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5446
+        },
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            199.14,
+            692.18,
+            414.35,
+            962.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5078
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            707.0,
+            855.0,
+            896.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            205.51,
+            432.13,
+            412.26,
+            663.84
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "bag",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot confirm a head-on view of the beds",
+        "cannot reliably identify which bed is the bed on the left",
+        "cannot reliably determine that the green-boxed bag is the nearest bag to that left bed rather than a nearby blue-boxed bag"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.6517,
+        -1.2054,
+        0.2605,
+        0.3521,
+        0.3005,
+        0.3851
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_1",
+          "view_id": "00006",
+          "bbox_2d": [
+            379.58,
+            632.71,
+            563.75,
+            889.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2973
+        },
+        {
+          "object_view_id": "bootstrap_00004",
+          "view_id": "00004",
+          "bbox_2d": [
+            1072.0,
+            485.0,
+            1258.0,
+            717.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            379.0,
+            388.0,
+            550.0,
+            619.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            891.0,
+            841.0,
+            1073.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "bag",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot clearly confirm a head-on view of the beds",
+        "cannot determine which bed is the bed on the left",
+        "cannot reliably confirm this bag is the nearest bag to that left bed"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.9514,
+        -0.2215,
+        0.1082,
+        0.3044,
+        0.3523,
+        0.3661
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            708.09,
+            636.71,
+            861.04,
+            879.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5446
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            671.0,
+            621.0,
+            765.0,
+            820.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00034",
+          "view_id": "00034",
+          "bbox_2d": [
+            831.0,
+            447.0,
+            927.0,
+            615.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            996.0,
+            438.0,
+            1078.0,
+            575.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "bag",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably verify that this bag is nearest to the bed on the left when viewing the beds head-on",
+        "cannot clearly compare this candidate against the other nearby bag relative to the left bed"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.4821,
+        -0.2504,
+        0.6742,
+        0.256,
+        0.2743,
+        0.39
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_1",
+          "view_id": "00036",
+          "bbox_2d": [
+            402.49,
+            334.6,
+            584.55,
+            550.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4534
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            230.03,
+            598.66,
+            521.78,
+            944.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3218
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            230.03,
+            598.66,
+            521.78,
+            944.1
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            252.27,
+            328.64,
+            494.51,
+            595.85
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

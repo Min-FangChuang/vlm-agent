@@ -1,0 +1,1435 @@
+{
+  "case_id": 204,
+  "scene_id": "scene0616_00",
+  "query": "choose the round table that is not in the corner",
+  "query_analysis": {
+    "raw_query": "choose the round table that is not in the corner",
+    "target_object": "table",
+    "target_attributes": [
+      "round"
+    ],
+    "reference_object": "corner",
+    "reference_attributes": [],
+    "relation": "not in"
+  },
+  "gt": {
+    "target_id": 4,
+    "gt_label": "table",
+    "gt_bbox_3d": [
+      -0.245343,
+      1.161227,
+      0.33841,
+      1.12536,
+      1.078161,
+      0.715494
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 5,
+    "bbox_3d": [
+      -0.18135,
+      1.15721,
+      0.343089,
+      1.098921,
+      1.065417,
+      0.758989
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      4
+    ],
+    "detector_call_count": 99,
+    "total_views": 76,
+    "total_object_views": 45,
+    "total_candidates": 16
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -2.3976,
+        1.4004,
+        0.3386,
+        1.3097,
+        1.2107,
+        0.7491
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            308.44,
+            350.69,
+            911.21,
+            900.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.683
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            146.69,
+            55.62,
+            855.91,
+            622.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6986
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            228.74,
+            8.49,
+            914.5,
+            555.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.621
+        },
+        {
+          "object_view_id": "00072_0",
+          "view_id": "00072",
+          "bbox_2d": [
+            38.32,
+            3.78,
+            758.05,
+            503.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5307
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "table",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -0.7571,
+        1.2161,
+        0.3341,
+        2.142,
+        1.1902,
+        0.7403
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            816.98,
+            333.16,
+            1289.42,
+            547.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.259
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            5.8,
+            452.34,
+            598.18,
+            790.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2848
+        },
+        {
+          "object_view_id": "bootstrap_00145",
+          "view_id": "00145",
+          "bbox_2d": [
+            7.99,
+            126.47,
+            924.27,
+            957.3
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00105",
+          "view_id": "00105",
+          "bbox_2d": [
+            45.0,
+            527.0,
+            414.0,
+            835.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00101",
+          "view_id": "00101",
+          "bbox_2d": [
+            7.74,
+            176.35,
+            330.9,
+            510.09
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00145_0",
+          "view_id": "00145",
+          "bbox_2d": [
+            7.99,
+            126.47,
+            924.27,
+            957.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6741
+        },
+        {
+          "object_view_id": "00147_0",
+          "view_id": "00147",
+          "bbox_2d": [
+            4.36,
+            571.39,
+            979.74,
+            959.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6398
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 8,
+      "done_actions": [],
+      "missing_conditions": [],
+      "num_object_views": 10,
+      "bbox_3d": [
+        -2.2053,
+        1.3671,
+        0.3449,
+        1.3948,
+        1.1795,
+        0.7273
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            310.93,
+            436.26,
+            989.99,
+            734.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.508
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            102.19,
+            194.39,
+            815.1,
+            460.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.319
+        },
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            308.42,
+            155.13,
+            966.41,
+            403.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4771
+        },
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            413.75,
+            127.39,
+            1066.6,
+            361.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3776
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            417.14,
+            7.2,
+            1048.05,
+            209.24
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4623
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            453.46,
+            595.56,
+            1043.96,
+            852.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3752
+        },
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            531.72,
+            7.35,
+            1104.44,
+            218.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.431
+        },
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            420.79,
+            458.3,
+            1181.29,
+            797.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2657
+        },
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            466.95,
+            3.75,
+            1292.66,
+            641.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5955
+        },
+        {
+          "object_view_id": "00078_0",
+          "view_id": "00078",
+          "bbox_2d": [
+            9.13,
+            119.33,
+            562.95,
+            960.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4172
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "need stronger confirmation of the candidate's full shape and placement in the room",
+        "need to distinguish this candidate from the other nearby round table candidate"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.609,
+        1.174,
+        0.3437,
+        1.8591,
+        1.0907,
+        0.7181
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            3.02,
+            869.44,
+            424.46,
+            959.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3607
+        },
+        {
+          "object_view_id": "bootstrap_00142",
+          "view_id": "00142",
+          "bbox_2d": [
+            460.36,
+            324.92,
+            1290.94,
+            955.27
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00107",
+          "view_id": "00107",
+          "bbox_2d": [
+            4.45,
+            616.2,
+            360.08,
+            901.77
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00101",
+          "view_id": "00101",
+          "bbox_2d": [
+            7.74,
+            176.35,
+            330.9,
+            510.09
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00141_0",
+          "view_id": "00141",
+          "bbox_2d": [
+            631.41,
+            773.58,
+            1291.64,
+            960.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6102
+        },
+        {
+          "object_view_id": "00151_0",
+          "view_id": "00151",
+          "bbox_2d": [
+            2.95,
+            615.69,
+            1178.63,
+            959.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6329
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "table",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.4085,
+        1.2479,
+        0.3027,
+        1.7605,
+        1.5739,
+        0.7487
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            506.97,
+            616.59,
+            1051.73,
+            959.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6103
+        },
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            349.44,
+            6.46,
+            941.25,
+            377.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4966
+        },
+        {
+          "object_view_id": "bootstrap_00145",
+          "view_id": "00145",
+          "bbox_2d": [
+            7.99,
+            126.47,
+            924.27,
+            957.3
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00104",
+          "view_id": "00104",
+          "bbox_2d": [
+            45.0,
+            212.0,
+            357.0,
+            749.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00116",
+          "view_id": "00116",
+          "bbox_2d": [
+            0.0,
+            10.47,
+            1287.98,
+            958.14
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00116_0",
+          "view_id": "00116",
+          "bbox_2d": [
+            0.0,
+            10.47,
+            1287.98,
+            958.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4559
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "table",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.6042,
+        1.3111,
+        0.3322,
+        1.8574,
+        1.1489,
+        0.739
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            6.67,
+            4.99,
+            457.71,
+            426.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3048
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            330.27,
+            389.93,
+            949.91,
+            919.22
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00108",
+          "view_id": "00108",
+          "bbox_2d": [
+            8.03,
+            328.02,
+            235.77,
+            587.56
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00143",
+          "view_id": "00143",
+          "bbox_2d": [
+            270.51,
+            4.85,
+            1289.12,
+            678.55
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00143_0",
+          "view_id": "00143",
+          "bbox_2d": [
+            270.51,
+            4.85,
+            1289.12,
+            678.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6334
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "is a table",
+        "is round",
+        "is not in the corner"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.4448,
+        0.3151,
+        0.3473,
+        2.1132,
+        2.2533,
+        0.807
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            5.07,
+            5.06,
+            1269.72,
+            958.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2844
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            5.07,
+            5.06,
+            1269.72,
+            958.79
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -2.445,
+        1.3593,
+        0.4044,
+        1.2159,
+        1.1419,
+        0.6571
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00070_0",
+          "view_id": "00070",
+          "bbox_2d": [
+            382.55,
+            396.66,
+            958.9,
+            618.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5149
+        },
+        {
+          "object_view_id": "00147_1",
+          "view_id": "00147",
+          "bbox_2d": [
+            619.32,
+            277.03,
+            1037.97,
+            429.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4775
+        },
+        {
+          "object_view_id": "00149_0",
+          "view_id": "00149",
+          "bbox_2d": [
+            459.33,
+            653.23,
+            868.62,
+            805.84
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6228
+        },
+        {
+          "object_view_id": "00151_1",
+          "view_id": "00151",
+          "bbox_2d": [
+            636.99,
+            287.49,
+            1056.19,
+            408.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4206
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "round",
+        "not in the corner"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.3147,
+        1.3398,
+        0.3061,
+        2.5659,
+        1.121,
+        0.7894
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00078_1",
+          "view_id": "00078",
+          "bbox_2d": [
+            998.53,
+            5.12,
+            1291.5,
+            503.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3102
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm this round table is not in a corner",
+        "cannot reliably compare this candidate against nearby alternative round tables for the 'not in the corner' requirement"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -2.052,
+        1.4612,
+        0.6971,
+        0.3721,
+        0.6516,
+        0.0199
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            1.1,
+            686.37,
+            977.73,
+            959.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4968
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1.1,
+            686.37,
+            977.73,
+            959.03
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00072",
+          "view_id": "00072",
+          "bbox_2d": [
+            606.0,
+            13.0,
+            742.0,
+            104.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00002",
+          "view_id": "00002",
+          "bbox_2d": [
+            9.0,
+            447.0,
+            181.0,
+            665.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            5.97,
+            423.9,
+            591.01,
+            735.54
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "table",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 8,
+      "bbox_3d": [
+        -0.2382,
+        1.1569,
+        0.3299,
+        0.9984,
+        1.1054,
+        0.7764
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00082_1",
+          "view_id": "00082",
+          "bbox_2d": [
+            1010.14,
+            4.23,
+            1290.26,
+            533.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4217
+        },
+        {
+          "object_view_id": "00084_0",
+          "view_id": "00084",
+          "bbox_2d": [
+            661.08,
+            405.52,
+            1272.61,
+            950.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5673
+        },
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            8.28,
+            60.07,
+            600.3,
+            501.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5798
+        },
+        {
+          "object_view_id": "00092_0",
+          "view_id": "00092",
+          "bbox_2d": [
+            3.67,
+            6.41,
+            1096.52,
+            881.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.694
+        },
+        {
+          "object_view_id": "00094_0",
+          "view_id": "00094",
+          "bbox_2d": [
+            381.88,
+            134.93,
+            1243.6,
+            826.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6422
+        },
+        {
+          "object_view_id": "bootstrap_00145",
+          "view_id": "00145",
+          "bbox_2d": [
+            7.99,
+            126.47,
+            924.27,
+            957.3
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00103",
+          "view_id": "00103",
+          "bbox_2d": [
+            10.2,
+            53.4,
+            394.5,
+            830.47
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00099",
+          "view_id": "00099",
+          "bbox_2d": [
+            9.04,
+            202.92,
+            422.28,
+            876.34
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object must be a table",
+        "object must be round",
+        "boxed candidate should be the round table not in the corner"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.3928,
+        0.5069,
+        0.3192,
+        2.1778,
+        1.6035,
+        0.7276
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00090_0",
+          "view_id": "00090",
+          "bbox_2d": [
+            21.84,
+            6.19,
+            1229.38,
+            957.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3929
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            21.84,
+            6.19,
+            1229.38,
+            957.37
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm that the table is not in a corner"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.2017,
+        1.1107,
+        0.3476,
+        1.0651,
+        0.9996,
+        0.7462
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00096_0",
+          "view_id": "00096",
+          "bbox_2d": [
+            337.46,
+            82.89,
+            1139.25,
+            703.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6452
+        },
+        {
+          "object_view_id": "00098_0",
+          "view_id": "00098",
+          "bbox_2d": [
+            8.61,
+            178.57,
+            614.71,
+            915.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5284
+        },
+        {
+          "object_view_id": "bootstrap_00092",
+          "view_id": "00092",
+          "bbox_2d": [
+            3.67,
+            6.41,
+            1096.52,
+            881.22
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00135",
+          "view_id": "00135",
+          "bbox_2d": [
+            1153.0,
+            46.0,
+            1293.0,
+            819.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00111",
+          "view_id": "00111",
+          "bbox_2d": [
+            635.0,
+            11.0,
+            851.0,
+            94.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm that the table is not in a corner"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.0793,
+        1.1914,
+        0.5692,
+        0.8601,
+        0.972,
+        0.3095
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00104_0",
+          "view_id": "00104",
+          "bbox_2d": [
+            8.0,
+            202.99,
+            409.63,
+            531.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2685
+        },
+        {
+          "object_view_id": "00106_0",
+          "view_id": "00106",
+          "bbox_2d": [
+            3.74,
+            754.15,
+            418.77,
+            959.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4833
+        },
+        {
+          "object_view_id": "bootstrap_00141",
+          "view_id": "00141",
+          "bbox_2d": [
+            636.0,
+            926.0,
+            746.0,
+            961.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00108",
+          "view_id": "00108",
+          "bbox_2d": [
+            8.03,
+            328.02,
+            235.77,
+            587.56
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00145",
+          "view_id": "00145",
+          "bbox_2d": [
+            7.99,
+            126.47,
+            924.27,
+            957.3
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the table is not in the corner",
+        "cannot fully distinguish this table from other nearby round tables based on the non-corner condition"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.1289,
+        1.2555,
+        0.5821,
+        0.4807,
+        0.7762,
+        0.2636
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00108_0",
+          "view_id": "00108",
+          "bbox_2d": [
+            8.03,
+            328.02,
+            235.77,
+            587.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4956
+        },
+        {
+          "object_view_id": "bootstrap_00135",
+          "view_id": "00135",
+          "bbox_2d": [
+            1166.0,
+            252.0,
+            1289.0,
+            526.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00145",
+          "view_id": "00145",
+          "bbox_2d": [
+            7.99,
+            126.47,
+            924.27,
+            957.3
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00093",
+          "view_id": "00093",
+          "bbox_2d": [
+            516.0,
+            16.0,
+            1151.0,
+            79.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 15,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a table",
+        "table is round",
+        "table is not in the corner"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.3029,
+        0.7071,
+        0.3339,
+        1.6544,
+        2.2505,
+        0.7646
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00112_0",
+          "view_id": "00112",
+          "bbox_2d": [
+            4.3,
+            5.19,
+            1275.29,
+            968.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3287
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            4.3,
+            5.19,
+            1275.29,
+            968.0
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

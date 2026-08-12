@@ -1,0 +1,184 @@
+{
+  "case_id": 133,
+  "scene_id": "scene0246_00",
+  "query": "it is a white toilet with the lid up at the end of the bathroom . there is a toilet on the right side hanging up .",
+  "query_analysis": {
+    "raw_query": "it is a white toilet with the lid up at the end of the bathroom . there is a toilet on the right side hanging up .",
+    "target_object": "toilet",
+    "target_attributes": [
+      "white",
+      "lid up"
+    ],
+    "reference_object": "bathroom",
+    "reference_attributes": [],
+    "relation": "at the end of"
+  },
+  "gt": {
+    "target_id": 6,
+    "gt_label": "toilet",
+    "gt_bbox_3d": [
+      -0.16648,
+      1.101403,
+      0.353123,
+      0.569059,
+      0.717957,
+      0.77753
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -0.180023,
+      1.064031,
+      0.351447,
+      0.561271,
+      0.748353,
+      0.826204
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2
+    ],
+    "detector_call_count": 77,
+    "total_views": 74,
+    "total_object_views": 4,
+    "total_candidates": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "toilet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 7,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the referenced 'toilet on the right side hanging up'",
+        "full scene relation on the candidate's right side remains unclear"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        -0.2177,
+        1.0846,
+        0.3598,
+        0.4714,
+        0.692,
+        0.8095
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            753.64,
+            398.77,
+            983.64,
+            856.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9347
+        },
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            790.3,
+            0.0,
+            1034.73,
+            273.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6867
+        },
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            196.75,
+            0.12,
+            517.28,
+            535.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9047
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            196.75,
+            0.12,
+            517.28,
+            535.74
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00057",
+          "view_id": "00057",
+          "bbox_2d": [
+            0.03,
+            171.26,
+            195.43,
+            946.05
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            575.11,
+            0.0,
+            821.17,
+            304.32
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00071",
+          "view_id": "00071",
+          "bbox_2d": [
+            993.09,
+            7.06,
+            1296.0,
+            786.36
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00070_0",
+          "view_id": "00070",
+          "bbox_2d": [
+            838.52,
+            88.5,
+            1277.47,
+            847.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9613
+        }
+      ]
+    }
+  ]
+}

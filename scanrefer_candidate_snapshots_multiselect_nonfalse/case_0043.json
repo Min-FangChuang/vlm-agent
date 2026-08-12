@@ -1,0 +1,547 @@
+{
+  "case_id": 43,
+  "scene_id": "scene0207_00",
+  "query": "the refrigerator is in a corner and left of the oven . the refrigerator is a white , boxy prism .",
+  "query_analysis": {
+    "raw_query": "the refrigerator is in a corner and left of the oven . the refrigerator is a white , boxy prism .",
+    "target_object": "refrigerator",
+    "target_attributes": [
+      "white",
+      "boxy",
+      "prism"
+    ],
+    "reference_object": "oven",
+    "reference_attributes": [],
+    "relation": "left of"
+  },
+  "gt": {
+    "target_id": 6,
+    "gt_label": "refrigerator",
+    "gt_bbox_3d": [
+      -1.751028,
+      -3.093144,
+      0.603282,
+      0.387667,
+      0.614543,
+      1.242657
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -1.87998,
+      -3.069986,
+      0.69997,
+      0.73667,
+      0.67042,
+      1.454054
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2
+    ],
+    "detector_call_count": 56,
+    "total_views": 50,
+    "total_object_views": 13,
+    "total_candidates": 8
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "refrigerator",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "object is a refrigerator",
+        "object is a white boxy prism appliance",
+        "object is in a corner",
+        "object is left of the oven"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.4173,
+        -0.3884,
+        1.5468,
+        1.7013,
+        1.0219,
+        1.1238
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            75.87,
+            325.39,
+            822.74,
+            957.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8589
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "refrigerator",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.8492,
+        -3.0547,
+        0.7108,
+        0.7058,
+        0.6915,
+        1.3965
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            220.13,
+            395.1,
+            527.35,
+            948.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8592
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            640.96,
+            626.58,
+            904.29,
+            954.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.525
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            885.45,
+            334.72,
+            1240.95,
+            856.36
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            368.08,
+            149.01,
+            658.01,
+            683.27
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00034",
+          "view_id": "00034",
+          "bbox_2d": [
+            237.0,
+            19.0,
+            522.0,
+            466.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            1015.95,
+            7.6,
+            1285.43,
+            544.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6615
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "refrigerator",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "green-boxed object is a refrigerator",
+        "green-boxed object is left of the oven",
+        "green-boxed object is the white boxy prism appliance in the corner"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.9928,
+        -3.4036,
+        1.1398,
+        0.8999,
+        0.1857,
+        1.6543
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_1",
+          "view_id": "00036",
+          "bbox_2d": [
+            12.51,
+            175.95,
+            194.17,
+            904.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3552
+        },
+        {
+          "object_view_id": "00038_1",
+          "view_id": "00038",
+          "bbox_2d": [
+            258.21,
+            383.98,
+            622.65,
+            956.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2743
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "refrigerator",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "is a refrigerator",
+        "white boxy prism appearance",
+        "in a corner",
+        "left of the oven"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.4891,
+        -2.7529,
+        0.6487,
+        1.0733,
+        1.6331,
+        1.4156
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            584.67,
+            7.68,
+            1260.01,
+            947.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2841
+        },
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            650.99,
+            8.68,
+            1251.44,
+            953.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3429
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "refrigerator",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a refrigerator",
+        "candidate is white and boxy",
+        "candidate is the refrigerator left of the oven/in a corner"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.1213,
+        -2.248,
+        0.5534,
+        0.2649,
+        0.642,
+        1.1779
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            623.5,
+            7.69,
+            1285.28,
+            952.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3395
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            623.5,
+            7.69,
+            1285.28,
+            952.39
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "refrigerator",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "refrigerator is left of the oven"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.1216,
+        -0.7289,
+        0.5959,
+        0.623,
+        1.0893,
+        1.2485
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            12.1,
+            6.82,
+            507.9,
+            696.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3804
+        },
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            692.15,
+            8.46,
+            1282.31,
+            910.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4617
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            692.15,
+            8.46,
+            1282.31,
+            910.88
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "refrigerator",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the green-boxed object is a refrigerator",
+        "cannot verify the refrigerator is in a corner",
+        "cannot verify the refrigerator is left of the oven",
+        "oven is not clearly visible/identified"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.5395,
+        -1.2474,
+        0.4859,
+        0.8497,
+        0.2356,
+        1.0087
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00066_1",
+          "view_id": "00066",
+          "bbox_2d": [
+            467.96,
+            8.48,
+            848.33,
+            648.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3638
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            228.16,
+            6.85,
+            641.92,
+            682.93
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00064",
+          "view_id": "00064",
+          "bbox_2d": [
+            8.0,
+            7.0,
+            343.0,
+            731.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00067",
+          "view_id": "00067",
+          "bbox_2d": [
+            845.0,
+            8.0,
+            1286.0,
+            709.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "refrigerator",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "requested object must be a refrigerator",
+        "left of the oven relation is not satisfied by the green-boxed object",
+        "corner placement is not satisfied by the green-boxed object"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -2.1056,
+        -0.5675,
+        1.9421,
+        0.8379,
+        1.9653,
+        1.4465
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            115.53,
+            9.04,
+            929.93,
+            931.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3553
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            115.53,
+            9.04,
+            929.93,
+            931.97
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

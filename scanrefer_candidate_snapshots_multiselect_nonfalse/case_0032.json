@@ -1,0 +1,177 @@
+{
+  "case_id": 32,
+  "scene_id": "scene0221_00",
+  "query": "this picture is located on the back wall of the room . it is above the left bed .",
+  "query_analysis": {
+    "raw_query": "this picture is located on the back wall of the room . it is above the left bed .",
+    "target_object": "picture",
+    "target_attributes": [],
+    "reference_object": "bed",
+    "reference_attributes": [
+      "left"
+    ],
+    "relation": "above"
+  },
+  "gt": {
+    "target_id": 21,
+    "gt_label": "picture",
+    "gt_bbox_3d": [
+      -1.819081,
+      0.057657,
+      1.500287,
+      0.133194,
+      0.903737,
+      1.036871
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "false",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -1.740306,
+      2.063049,
+      1.278117,
+      0.106298,
+      0.72951,
+      0.513436
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      2
+    ],
+    "detector_call_count": 27,
+    "total_views": 25,
+    "total_object_views": 3,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "picture",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "above the left bed"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.7425,
+        2.0101,
+        1.1616,
+        0.1098,
+        0.7059,
+        0.2998
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            960.66,
+            0.0,
+            1172.91,
+            130.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.901
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "picture",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.7476,
+        2.0592,
+        1.2453,
+        0.0927,
+        0.7322,
+        0.4251
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            531.75,
+            0.0,
+            786.61,
+            254.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9114
+        },
+        {
+          "object_view_id": "bootstrap_00022",
+          "view_id": "00022",
+          "bbox_2d": [
+            438.72,
+            0.0,
+            815.0,
+            308.13
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00024",
+          "view_id": "00024",
+          "bbox_2d": [
+            1198.0,
+            1.0,
+            1295.0,
+            37.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            686.43,
+            0.0,
+            1087.71,
+            219.73
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            438.72,
+            0.0,
+            815.0,
+            308.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7566
+        }
+      ]
+    }
+  ]
+}

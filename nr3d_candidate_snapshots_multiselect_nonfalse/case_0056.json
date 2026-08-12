@@ -1,0 +1,624 @@
+{
+  "case_id": 56,
+  "scene_id": "scene0462_00",
+  "query": "printer on left shelving on right you want the back option of the two boxes",
+  "query_analysis": {
+    "raw_query": "printer on left shelving on right you want the back option of the two boxes",
+    "target_object": "box",
+    "target_attributes": [],
+    "reference_object": "printer and shelving",
+    "reference_attributes": [],
+    "relation": "back"
+  },
+  "gt": {
+    "target_id": 21,
+    "gt_label": "box",
+    "gt_bbox_3d": [
+      0.03612,
+      -2.552915,
+      0.261389,
+      0.405842,
+      0.210956,
+      0.13718
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 6,
+    "bbox_3d": [
+      -0.818833,
+      -2.033404,
+      0.651699,
+      0.152318,
+      0.497727,
+      0.228997
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      1
+    ],
+    "detector_call_count": 37,
+    "total_views": 29,
+    "total_object_views": 17,
+    "total_candidates": 7
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "box",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm shelving on the right",
+        "cannot reliably verify the two-box comparison",
+        "cannot confirm the green-boxed candidate is specifically the back box"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        0.0236,
+        -2.4087,
+        0.1175,
+        0.4338,
+        0.2529,
+        0.4132
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            999.25,
+            732.55,
+            1199.1,
+            902.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5108
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            1128.31,
+            205.66,
+            1295.92,
+            431.43
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4014
+        },
+        {
+          "object_view_id": "bootstrap_00050",
+          "view_id": "00050",
+          "bbox_2d": [
+            905.02,
+            265.64,
+            1243.86,
+            535.01
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00049",
+          "view_id": "00049",
+          "bbox_2d": [
+            971.0,
+            113.0,
+            1260.0,
+            399.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            824.0,
+            424.0,
+            1165.0,
+            795.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            127.22,
+            627.2,
+            383.96,
+            844.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3909
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            582.54,
+            384.25,
+            800.26,
+            576.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4718
+        },
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            1187.74,
+            554.48,
+            1295.98,
+            813.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5771
+        },
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            905.02,
+            265.64,
+            1243.86,
+            535.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5889
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "box",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot clearly verify the two relevant boxes",
+        "cannot clearly verify that the green-boxed candidate is the back option of the two boxes",
+        "left/right relation between printer and shelving is still not fully disambiguated from the intended reference frame"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.2332,
+        2.0933,
+        1.128,
+        0.471,
+        0.5637,
+        0.4143
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            340.04,
+            25.3,
+            677.78,
+            306.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5089
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            625.65,
+            302.31,
+            965.76,
+            575.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3313
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            889.15,
+            292.01,
+            1256.37,
+            567.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4731
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            889.15,
+            292.01,
+            1256.37,
+            567.03
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            449.0,
+            417.0,
+            780.0,
+            717.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            830.79,
+            230.96,
+            1209.74,
+            518.51
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "box",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a box",
+        "candidate is the back one of the two boxes"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.7781,
+        0.1779,
+        0.4269,
+        0.3881,
+        0.3009,
+        0.2865
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            113.94,
+            715.21,
+            433.3,
+            965.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4774
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            393.28,
+            696.81,
+            674.83,
+            913.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2767
+        },
+        {
+          "object_view_id": "00034_1",
+          "view_id": "00034",
+          "bbox_2d": [
+            942.43,
+            655.18,
+            1291.07,
+            886.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2908
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            942.43,
+            655.18,
+            1291.07,
+            886.28
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "box",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "not the back option of the two boxes",
+        "does not match the pair of boxes located between printer and shelving"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.7422,
+        0.7306,
+        0.4455,
+        0.2964,
+        0.2535,
+        0.2569
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_1",
+          "view_id": "00028",
+          "bbox_2d": [
+            763.74,
+            615.86,
+            955.91,
+            748.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3148
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            763.74,
+            615.86,
+            955.91,
+            748.51
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "box",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a box",
+        "candidate is the back one of two boxes",
+        "candidate matches the printer-left / shelving-right box description"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.7654,
+        0.5174,
+        0.4371,
+        0.3249,
+        0.3858,
+        0.2714
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_2",
+          "view_id": "00028",
+          "bbox_2d": [
+            439.26,
+            641.51,
+            809.73,
+            840.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2949
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            439.26,
+            641.51,
+            809.73,
+            840.83
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "box",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is the back one of the two boxes",
+        "candidate is the best match for the described box"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -0.5444,
+        -0.9989,
+        0.0446,
+        0.5091,
+        0.7022,
+        0.3039
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            287.67,
+            556.17,
+            580.04,
+            818.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4645
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            441.83,
+            565.18,
+            868.26,
+            965.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5303
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            441.83,
+            565.18,
+            868.26,
+            965.7
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "box",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.8157,
+        -2.0239,
+        0.6283,
+        0.1374,
+        0.4788,
+        0.1821
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00042_1",
+          "view_id": "00042",
+          "bbox_2d": [
+            1114.59,
+            209.02,
+            1281.78,
+            385.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3445
+        },
+        {
+          "object_view_id": "bootstrap_00041",
+          "view_id": "00041",
+          "bbox_2d": [
+            939.0,
+            476.0,
+            1074.0,
+            648.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00038",
+          "view_id": "00038",
+          "bbox_2d": [
+            323.0,
+            16.0,
+            460.0,
+            168.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            560.0,
+            188.0,
+            686.0,
+            335.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

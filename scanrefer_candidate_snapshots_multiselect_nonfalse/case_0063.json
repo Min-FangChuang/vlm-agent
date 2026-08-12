@@ -1,0 +1,593 @@
+{
+  "case_id": 63,
+  "scene_id": "scene0304_00",
+  "query": "the cabinet is in the middle of the room . the cabinet is a white prism with a blue top .",
+  "query_analysis": {
+    "raw_query": "the cabinet is in the middle of the room . the cabinet is a white prism with a blue top .",
+    "target_object": "the cabinet is in the middle of the room",
+    "target_attributes": [
+      "white",
+      "prism",
+      "blue top"
+    ],
+    "reference_object": "room",
+    "reference_attributes": [],
+    "relation": "in the middle of"
+  },
+  "gt": {
+    "target_id": 9,
+    "gt_label": "cabinet",
+    "gt_bbox_3d": [
+      -0.036464,
+      1.212839,
+      0.568577,
+      0.826441,
+      1.917738,
+      1.138995
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 4,
+    "bbox_3d": [
+      -0.194771,
+      1.912804,
+      0.670922,
+      0.512553,
+      0.463065,
+      0.889218
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      2
+    ],
+    "detector_call_count": 53,
+    "total_views": 45,
+    "total_object_views": 12,
+    "total_candidates": 8
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "the cabinet is in the middle of the room",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "cabinet identity",
+        "in the middle of the room",
+        "white",
+        "prism",
+        "blue top"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.5481,
+        0.3738,
+        0.8349,
+        0.1597,
+        3.9596,
+        1.4188
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            200.8,
+            0.0,
+            1292.68,
+            964.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.343
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            0.0,
+            8.3,
+            898.03,
+            701.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4161
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "the cabinet is in the middle of the room",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "white",
+        "clearly in the middle of the room"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.5325,
+        -0.3525,
+        0.7209,
+        1.9634,
+        4.1365,
+        0.7365
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            0.0,
+            692.18,
+            607.81,
+            965.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.279
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "the cabinet is in the middle of the room",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "clearly confirmed to be in the middle of the room"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.4321,
+        1.8557,
+        0.7662,
+        0.0407,
+        0.387,
+        0.5431
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            0.0,
+            691.75,
+            713.16,
+            965.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6582
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            691.75,
+            713.16,
+            965.03
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00012",
+          "view_id": "00012",
+          "bbox_2d": [
+            256.0,
+            561.0,
+            631.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00078",
+          "view_id": "00078",
+          "bbox_2d": [
+            780.75,
+            391.97,
+            1296.0,
+            964.53
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00077",
+          "view_id": "00077",
+          "bbox_2d": [
+            57.0,
+            270.0,
+            335.0,
+            630.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00078_0",
+          "view_id": "00078",
+          "bbox_2d": [
+            780.75,
+            391.97,
+            1296.0,
+            964.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.603
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "the cabinet is in the middle of the room",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "in the middle of the room"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.1849,
+        1.8997,
+        0.789,
+        0.4826,
+        0.4369,
+        0.653
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            0.34,
+            541.56,
+            563.66,
+            964.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6605
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.34,
+            541.56,
+            563.66,
+            964.99
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            1128.0,
+            532.0,
+            1295.0,
+            570.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00016",
+          "view_id": "00016",
+          "bbox_2d": [
+            0.0,
+            783.0,
+            308.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00022",
+          "view_id": "00022",
+          "bbox_2d": [
+            317.0,
+            314.0,
+            635.0,
+            724.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "the cabinet is in the middle of the room",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.2308,
+        2.0995,
+        0.8823,
+        0.4398,
+        0.033,
+        0.3381
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            0.41,
+            571.88,
+            767.3,
+            962.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3098
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.41,
+            571.88,
+            767.3,
+            962.35
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            0.0,
+            321.0,
+            320.0,
+            961.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00044",
+          "view_id": "00044",
+          "bbox_2d": [
+            0.34,
+            541.56,
+            563.66,
+            964.99
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00010",
+          "view_id": "00010",
+          "bbox_2d": [
+            0.0,
+            456.0,
+            317.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "the cabinet is in the middle of the room",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "in the middle of the room"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.0355,
+        2.104,
+        0.8618,
+        0.6211,
+        0.0311,
+        0.3951
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            571.35,
+            587.45,
+            1295.75,
+            963.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5468
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            571.35,
+            587.45,
+            1295.75,
+            963.37
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "the cabinet is in the middle of the room",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "in the middle of the room"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.2306,
+        2.1099,
+        0.5057,
+        0.4575,
+        3.1351,
+        1.0364
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00072_0",
+          "view_id": "00072",
+          "bbox_2d": [
+            747.09,
+            44.61,
+            1296.0,
+            965.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4985
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "the cabinet is in the middle of the room",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "in the middle of the room"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.0399,
+        1.8411,
+        0.5169,
+        0.7729,
+        0.6449,
+        1.0804
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            742.75,
+            178.75,
+            1296.0,
+            963.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7764
+        },
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            444.77,
+            144.07,
+            1295.46,
+            965.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4669
+        },
+        {
+          "object_view_id": "00084_0",
+          "view_id": "00084",
+          "bbox_2d": [
+            647.11,
+            81.31,
+            1295.81,
+            965.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3816
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            444.77,
+            144.07,
+            1295.46,
+            965.07
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

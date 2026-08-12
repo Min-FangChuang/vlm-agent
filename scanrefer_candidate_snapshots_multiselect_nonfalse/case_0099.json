@@ -1,0 +1,257 @@
+{
+  "case_id": 99,
+  "scene_id": "scene0658_00",
+  "query": "there is a black desk with a clear rectangular glass . the desk is located near the window , and has a office chair pulled up to it .",
+  "query_analysis": {
+    "raw_query": "there is a black desk with a clear rectangular glass . the desk is located near the window , and has a office chair pulled up to it .",
+    "target_object": "desk",
+    "target_attributes": [
+      "black"
+    ],
+    "reference_object": "window",
+    "reference_attributes": [],
+    "relation": "near"
+  },
+  "gt": {
+    "target_id": 3,
+    "gt_label": "desk",
+    "gt_bbox_3d": [
+      1.221676,
+      -1.415538,
+      0.397407,
+      0.876161,
+      1.396938,
+      0.814564
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      1.282959,
+      -1.371413,
+      0.416484,
+      0.846864,
+      1.553459,
+      0.799715
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      2
+    ],
+    "detector_call_count": 17,
+    "total_views": 14,
+    "total_object_views": 8,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "desk",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        1.283,
+        -1.3714,
+        0.4165,
+        0.8469,
+        1.5535,
+        0.7997
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            938.25,
+            225.04,
+            1282.73,
+            767.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8393
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            558.46,
+            288.67,
+            1057.29,
+            796.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7624
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            446.85,
+            160.1,
+            978.31,
+            700.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8437
+        },
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            232.4,
+            8.5,
+            874.24,
+            664.84
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6512
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            483.4,
+            61.03,
+            1125.98,
+            681.93
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            474.45,
+            316.97,
+            966.9,
+            822.81
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00001",
+          "view_id": "00001",
+          "bbox_2d": [
+            878.28,
+            286.84,
+            1281.06,
+            817.15
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "desk is the one near the window",
+        "desk has an office chair pulled up to it",
+        "green candidate is the best match among nearby similar desks"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.3976,
+        -0.5897,
+        0.5006,
+        0.5884,
+        1.1779,
+        0.612
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_1",
+          "view_id": "00000",
+          "bbox_2d": [
+            605.7,
+            254.0,
+            1035.01,
+            760.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.698
+        },
+        {
+          "object_view_id": "00002_1",
+          "view_id": "00002",
+          "bbox_2d": [
+            247.12,
+            355.22,
+            667.56,
+            891.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5232
+        },
+        {
+          "object_view_id": "00004_1",
+          "view_id": "00004",
+          "bbox_2d": [
+            111.09,
+            226.82,
+            577.1,
+            807.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7547
+        },
+        {
+          "object_view_id": "00006_1",
+          "view_id": "00006",
+          "bbox_2d": [
+            12.46,
+            173.92,
+            498.96,
+            893.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3523
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            12.46,
+            173.92,
+            498.96,
+            893.39
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

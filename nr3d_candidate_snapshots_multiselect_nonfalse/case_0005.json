@@ -1,0 +1,191 @@
+{
+  "case_id": 5,
+  "scene_id": "scene0527_00",
+  "query": "it is the towel on the wall that is the farthest from the sinks",
+  "query_analysis": {
+    "raw_query": "it is the towel on the wall that is the farthest from the sinks",
+    "target_object": "towel",
+    "target_attributes": [],
+    "reference_object": "sinks",
+    "reference_attributes": [],
+    "relation": "on the wall and farthest from"
+  },
+  "gt": {
+    "target_id": 23,
+    "gt_label": "towel",
+    "gt_bbox_3d": [
+      -1.183878,
+      -0.606447,
+      1.018005,
+      0.178499,
+      0.27885,
+      1.083629
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -1.162401,
+      -0.620616,
+      0.867363,
+      0.249003,
+      0.757874,
+      1.684794
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 19,
+    "total_views": 17,
+    "total_object_views": 2,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "towel",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "on the wall",
+        "confirmed as the farthest wall towel from the sinks"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.3756,
+        -0.5453,
+        0.2837,
+        0.4179,
+        0.1131,
+        0.222
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            1025.93,
+            325.75,
+            1296.0,
+            559.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4416
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1025.93,
+            325.75,
+            1296.0,
+            559.62
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "towel",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.1539,
+        -0.601,
+        1.1885,
+        0.2226,
+        0.7187,
+        0.9834
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            216.33,
+            277.64,
+            711.02,
+            964.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.298
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            216.33,
+            277.64,
+            711.02,
+            964.93
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            15.0,
+            466.0,
+            36.0,
+            520.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            279.0,
+            3.0,
+            740.0,
+            959.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00022",
+          "view_id": "00022",
+          "bbox_2d": [
+            581.0,
+            0.0,
+            1056.0,
+            650.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

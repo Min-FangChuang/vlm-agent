@@ -1,0 +1,165 @@
+{
+  "case_id": 162,
+  "scene_id": "scene0084_00",
+  "query": "the radiator on the wall . the radiator is next to the toilet .",
+  "query_analysis": {
+    "raw_query": "the radiator on the wall . the radiator is next to the toilet .",
+    "target_object": "radiator",
+    "target_attributes": [
+      "on the wall"
+    ],
+    "reference_object": "toilet",
+    "reference_attributes": [],
+    "relation": "next to"
+  },
+  "gt": {
+    "target_id": 33,
+    "gt_label": "radiator",
+    "gt_bbox_3d": [
+      -2.512291,
+      1.122527,
+      0.320241,
+      0.133012,
+      0.777699,
+      0.613194
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -2.505064,
+      1.121252,
+      0.375982,
+      0.1582,
+      0.771177,
+      0.519818
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1
+    ],
+    "detector_call_count": 53,
+    "total_views": 50,
+    "total_object_views": 4,
+    "total_candidates": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "radiator",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -2.5087,
+        1.1245,
+        0.3263,
+        0.1543,
+        0.7776,
+        0.619
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            1003.86,
+            186.22,
+            1285.18,
+            466.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7951
+        },
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            745.51,
+            320.25,
+            1152.68,
+            638.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9316
+        },
+        {
+          "object_view_id": "bootstrap_00080",
+          "view_id": "00080",
+          "bbox_2d": [
+            31.0,
+            121.0,
+            150.0,
+            594.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00075",
+          "view_id": "00075",
+          "bbox_2d": [
+            330.0,
+            101.0,
+            975.0,
+            688.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00076",
+          "view_id": "00076",
+          "bbox_2d": [
+            48.0,
+            83.0,
+            625.0,
+            728.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00070_0",
+          "view_id": "00070",
+          "bbox_2d": [
+            1053.97,
+            234.6,
+            1284.57,
+            604.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5974
+        },
+        {
+          "object_view_id": "00072_0",
+          "view_id": "00072",
+          "bbox_2d": [
+            801.85,
+            237.58,
+            1283.53,
+            602.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3301
+        }
+      ]
+    }
+  ]
+}

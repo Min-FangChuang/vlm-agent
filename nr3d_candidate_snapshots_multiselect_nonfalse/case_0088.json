@@ -1,0 +1,114 @@
+{
+  "case_id": 88,
+  "scene_id": "scene0222_00",
+  "query": "the window on the right that has a fan in front of the middle of it",
+  "query_analysis": {
+    "raw_query": "the window on the right that has a fan in front of the middle of it",
+    "target_object": "window",
+    "target_attributes": [],
+    "reference_object": "fan",
+    "reference_attributes": [],
+    "relation": "in front of the middle of it"
+  },
+  "gt": {
+    "target_id": 29,
+    "gt_label": "window",
+    "gt_bbox_3d": [
+      -1.696702,
+      -0.234171,
+      1.341917,
+      0.234716,
+      1.240181,
+      1.379049
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "false",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -1.774859,
+      -0.590775,
+      1.23322,
+      0.124494,
+      0.5174,
+      1.099113
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2
+    ],
+    "detector_call_count": 135,
+    "total_views": 135,
+    "total_object_views": 2,
+    "total_candidates": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "window",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "window on the right",
+        "fan in front of the middle of it"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -1.6408,
+        -0.5925,
+        1.2318,
+        0.3559,
+        0.5209,
+        1.1071
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00141_0",
+          "view_id": "00141",
+          "bbox_2d": [
+            468.21,
+            0.0,
+            918.01,
+            596.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2512
+        },
+        {
+          "object_view_id": "00147_0",
+          "view_id": "00147",
+          "bbox_2d": [
+            9.02,
+            0.0,
+            501.28,
+            870.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2779
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            9.02,
+            0.0,
+            501.28,
+            870.7
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

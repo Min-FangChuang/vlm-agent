@@ -1,0 +1,1026 @@
+{
+  "case_id": 144,
+  "scene_id": "scene0648_00",
+  "query": "looking at both books on the desk it is the book on the right",
+  "query_analysis": {
+    "raw_query": "looking at both books on the desk it is the book on the right",
+    "target_object": "book",
+    "target_attributes": [],
+    "reference_object": "desk",
+    "reference_attributes": [],
+    "relation": "on the right"
+  },
+  "gt": {
+    "target_id": 6,
+    "gt_label": "book",
+    "gt_bbox_3d": [
+      -1.434405,
+      -0.758626,
+      0.788739,
+      0.214668,
+      0.141736,
+      0.267146
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 3,
+    "bbox_3d": [
+      -1.445969,
+      -0.752627,
+      0.783887,
+      0.255858,
+      0.144561,
+      0.282669
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3
+    ],
+    "detector_call_count": 120,
+    "total_views": 105,
+    "total_object_views": 24,
+    "total_candidates": 11
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "book",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot clearly confirm the green-boxed object is a book",
+        "cannot reliably confirm the reference object is the desk mentioned in the request",
+        "cannot verify that there are exactly two books on the desk",
+        "cannot determine that the candidate is the book on the right among the two"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        1.0142,
+        0.7318,
+        0.6773,
+        0.2826,
+        0.3263,
+        0.0854
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            0.0,
+            639.14,
+            247.34,
+            782.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4426
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            438.96,
+            578.58,
+            686.09,
+            705.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.558
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            639.14,
+            247.34,
+            782.64
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00185",
+          "view_id": "00185",
+          "bbox_2d": [
+            1071.0,
+            914.0,
+            1213.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00183",
+          "view_id": "00183",
+          "bbox_2d": [
+            684.88,
+            275.21,
+            1143.44,
+            673.65
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00182",
+          "view_id": "00182",
+          "bbox_2d": [
+            621.27,
+            189.05,
+            1043.85,
+            522.54
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            867.27,
+            623.62,
+            1252.61,
+            890.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4343
+        },
+        {
+          "object_view_id": "00180_0",
+          "view_id": "00180",
+          "bbox_2d": [
+            848.64,
+            108.37,
+            1228.78,
+            369.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4634
+        },
+        {
+          "object_view_id": "00182_0",
+          "view_id": "00182",
+          "bbox_2d": [
+            621.27,
+            189.05,
+            1043.85,
+            522.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4768
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "book",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a book",
+        "object is on the desk",
+        "object is the right one of two books on the desk"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        2.0411,
+        -0.4273,
+        2.1055,
+        0.101,
+        0.8628,
+        0.5916
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            556.66,
+            104.87,
+            1146.25,
+            493.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3159
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            556.66,
+            104.87,
+            1146.25,
+            493.82
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "book",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 9,
+      "bbox_3d": [
+        -1.1525,
+        -0.4894,
+        0.6366,
+        0.3186,
+        0.273,
+        0.0218
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            16.33,
+            352.99,
+            252.9,
+            483.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.445
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            16.33,
+            352.99,
+            252.9,
+            483.4
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00103",
+          "view_id": "00103",
+          "bbox_2d": [
+            849.21,
+            511.49,
+            1294.95,
+            781.98
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00119",
+          "view_id": "00119",
+          "bbox_2d": [
+            106.45,
+            496.1,
+            526.78,
+            778.09
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00105",
+          "view_id": "00105",
+          "bbox_2d": [
+            654.78,
+            567.73,
+            1062.22,
+            868.19
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            869.06,
+            0.29,
+            1144.03,
+            125.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.686
+        },
+        {
+          "object_view_id": "00104_0",
+          "view_id": "00104",
+          "bbox_2d": [
+            729.48,
+            443.15,
+            1147.15,
+            706.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7511
+        },
+        {
+          "object_view_id": "00106_0",
+          "view_id": "00106",
+          "bbox_2d": [
+            577.54,
+            642.17,
+            896.18,
+            916.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6866
+        },
+        {
+          "object_view_id": "00120_0",
+          "view_id": "00120",
+          "bbox_2d": [
+            0.0,
+            254.88,
+            307.42,
+            499.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5665
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "book",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.4296,
+        -0.759,
+        0.8175,
+        0.2262,
+        0.1324,
+        0.3287
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00084_0",
+          "view_id": "00084",
+          "bbox_2d": [
+            1090.78,
+            442.43,
+            1242.64,
+            839.42
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3233
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1090.78,
+            442.43,
+            1242.64,
+            839.42
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00102",
+          "view_id": "00102",
+          "bbox_2d": [
+            506.0,
+            510.0,
+            674.0,
+            841.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00103",
+          "view_id": "00103",
+          "bbox_2d": [
+            530.0,
+            215.0,
+            711.0,
+            546.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00085",
+          "view_id": "00085",
+          "bbox_2d": [
+            1110.0,
+            538.0,
+            1260.0,
+            923.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00106_1",
+          "view_id": "00106",
+          "bbox_2d": [
+            395.95,
+            210.87,
+            557.89,
+            559.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3556
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "book",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot clearly verify both books on the desk are simultaneously visible",
+        "cannot reliably compare candidate with the other book to confirm it is the book on the right"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.4484,
+        -0.5218,
+        1.0375,
+        0.1927,
+        0.1535,
+        0.087
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00098_0",
+          "view_id": "00098",
+          "bbox_2d": [
+            948.3,
+            784.45,
+            1166.13,
+            968.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5926
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            948.3,
+            784.45,
+            1166.13,
+            968.0
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00109",
+          "view_id": "00109",
+          "bbox_2d": [
+            602.0,
+            925.0,
+            769.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00118",
+          "view_id": "00118",
+          "bbox_2d": [
+            42.0,
+            391.0,
+            188.0,
+            519.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00107",
+          "view_id": "00107",
+          "bbox_2d": [
+            660.0,
+            357.0,
+            837.0,
+            460.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00100_0",
+          "view_id": "00100",
+          "bbox_2d": [
+            732.55,
+            392.83,
+            947.11,
+            554.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2602
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "book",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "is the book on the right when comparing the two books on the desk"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.3917,
+        -0.9087,
+        1.1541,
+        0.1938,
+        0.1113,
+        0.2999
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00098_1",
+          "view_id": "00098",
+          "bbox_2d": [
+            482.68,
+            736.67,
+            638.51,
+            965.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4104
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            482.68,
+            736.67,
+            638.51,
+            965.95
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "book",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is one of the two books on the desk",
+        "candidate is the right book when comparing the two books on the desk"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.414,
+        -0.8488,
+        0.7861,
+        0.1577,
+        0.1132,
+        0.2561
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00102_0",
+          "view_id": "00102",
+          "bbox_2d": [
+            378.13,
+            529.26,
+            561.75,
+            871.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2811
+        },
+        {
+          "object_view_id": "00104_1",
+          "view_id": "00104",
+          "bbox_2d": [
+            331.55,
+            125.94,
+            512.73,
+            450.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.406
+        },
+        {
+          "object_view_id": "00106_2",
+          "view_id": "00106",
+          "bbox_2d": [
+            290.67,
+            220.02,
+            455.77,
+            531.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3243
+        },
+        {
+          "object_view_id": "00108_0",
+          "view_id": "00108",
+          "bbox_2d": [
+            394.51,
+            663.18,
+            507.6,
+            961.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3138
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            378.13,
+            529.26,
+            561.75,
+            871.72
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "book",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.4242,
+        -0.778,
+        0.7733,
+        0.1583,
+        0.0799,
+        0.2483
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00104_2",
+          "view_id": "00104",
+          "bbox_2d": [
+            434.19,
+            154.47,
+            573.79,
+            432.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2692
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            434.19,
+            154.47,
+            573.79,
+            432.71
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00108",
+          "view_id": "00108",
+          "bbox_2d": [
+            460.0,
+            740.0,
+            516.0,
+            965.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00103",
+          "view_id": "00103",
+          "bbox_2d": [
+            537.47,
+            278.61,
+            656.4,
+            540.45
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00105",
+          "view_id": "00105",
+          "bbox_2d": [
+            406.7,
+            235.97,
+            521.93,
+            515.27
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "book",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.0093,
+        0.7299,
+        0.8088,
+        0.253,
+        0.3057,
+        0.3443
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00142_0",
+          "view_id": "00142",
+          "bbox_2d": [
+            203.51,
+            1.0,
+            518.98,
+            130.43
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5924
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            203.51,
+            1.0,
+            518.98,
+            130.43
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00183",
+          "view_id": "00183",
+          "bbox_2d": [
+            684.88,
+            275.21,
+            1143.44,
+            673.65
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00182",
+          "view_id": "00182",
+          "bbox_2d": [
+            621.27,
+            189.05,
+            1043.85,
+            522.54
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00044",
+          "view_id": "00044",
+          "bbox_2d": [
+            867.27,
+            623.62,
+            1252.61,
+            890.38
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "book",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "is a book",
+        "is on the desk",
+        "is the book on the right when comparing the two books on the desk"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.3539,
+        0.1011,
+        1.0832,
+        0.2215,
+        0.1537,
+        0.0332
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00194_0",
+          "view_id": "00194",
+          "bbox_2d": [
+            515.72,
+            244.04,
+            737.27,
+            396.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2595
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            515.72,
+            244.04,
+            737.27,
+            396.52
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "book",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is on the desk",
+        "there are both books on the desk visible for comparison",
+        "candidate is the book on the right among the books on the desk"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.6366,
+        -0.7495,
+        0.9793,
+        0.6662,
+        0.8882,
+        0.3274
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00200_0",
+          "view_id": "00200",
+          "bbox_2d": [
+            380.03,
+            471.33,
+            1012.53,
+            812.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4208
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            380.03,
+            471.33,
+            1012.53,
+            812.76
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

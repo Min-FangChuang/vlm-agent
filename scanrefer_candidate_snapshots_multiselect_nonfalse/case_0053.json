@@ -1,0 +1,1999 @@
+{
+  "case_id": 53,
+  "scene_id": "scene0653_00",
+  "query": "the file cabinet is below the center desk on the right side of the room . the file cabinet is a dark gray box .",
+  "query_analysis": {
+    "raw_query": "the file cabinet is below the center desk on the right side of the room . the file cabinet is a dark gray box .",
+    "target_object": "file cabinet",
+    "target_attributes": [
+      "dark gray",
+      "box"
+    ],
+    "reference_object": "center desk",
+    "reference_attributes": [],
+    "relation": "below"
+  },
+  "gt": {
+    "target_id": 44,
+    "gt_label": "file cabinet",
+    "gt_bbox_3d": [
+      -0.57969,
+      -2.293588,
+      0.273148,
+      0.23314,
+      0.407026,
+      0.604014
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -2.587338,
+      -0.758867,
+      0.446102,
+      0.64692,
+      0.474136,
+      0.714594
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      3,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      12
+    ],
+    "detector_call_count": 133,
+    "total_views": 97,
+    "total_object_views": 59,
+    "total_candidates": 20
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "file cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm that the desk associated with the candidate is the center desk",
+        "cannot fully rule out other file cabinets in the room as better matches for the described right-side/center-desk location"
+      ],
+      "num_object_views": 15,
+      "bbox_3d": [
+        -2.4653,
+        -0.8446,
+        0.4738,
+        0.9533,
+        0.6665,
+        0.7453
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            869.89,
+            440.79,
+            1168.34,
+            895.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8555
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            776.11,
+            420.31,
+            1296.0,
+            962.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6982
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            546.32,
+            324.5,
+            1005.66,
+            807.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7698
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            868.06,
+            391.63,
+            1296.0,
+            765.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.492
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            776.11,
+            420.31,
+            1296.0,
+            962.63
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            597.97,
+            376.73,
+            1072.25,
+            865.14
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00001",
+          "view_id": "00001",
+          "bbox_2d": [
+            911.78,
+            474.25,
+            1211.59,
+            928.2
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00186",
+          "view_id": "00186",
+          "bbox_2d": [
+            911.69,
+            381.9,
+            1253.86,
+            819.85
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            1113.37,
+            544.45,
+            1295.79,
+            897.49
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5333
+        },
+        {
+          "object_view_id": "00178_0",
+          "view_id": "00178",
+          "bbox_2d": [
+            27.15,
+            313.14,
+            355.7,
+            708.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7898
+        },
+        {
+          "object_view_id": "00180_0",
+          "view_id": "00180",
+          "bbox_2d": [
+            0.0,
+            342.63,
+            342.94,
+            742.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.687
+        },
+        {
+          "object_view_id": "00182_0",
+          "view_id": "00182",
+          "bbox_2d": [
+            254.38,
+            317.05,
+            555.35,
+            701.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7742
+        },
+        {
+          "object_view_id": "00184_0",
+          "view_id": "00184",
+          "bbox_2d": [
+            614.43,
+            468.33,
+            877.13,
+            913.32
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6397
+        },
+        {
+          "object_view_id": "00186_0",
+          "view_id": "00186",
+          "bbox_2d": [
+            911.69,
+            381.9,
+            1253.86,
+            819.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7694
+        },
+        {
+          "object_view_id": "00188_0",
+          "view_id": "00188",
+          "bbox_2d": [
+            939.35,
+            106.55,
+            1296.0,
+            505.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6188
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "file cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot confirm the referenced desk is the center desk",
+        "cannot confirm this desk/file cabinet is on the right side of the room"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -2.3734,
+        -0.7942,
+        0.3785,
+        0.146,
+        0.3735,
+        0.5273
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            886.07,
+            267.67,
+            1146.74,
+            587.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3048
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            834.64,
+            273.55,
+            1056.21,
+            549.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2806
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            643.07,
+            304.84,
+            1068.1,
+            695.6
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            1001.91,
+            308.14,
+            1252.68,
+            708.79
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00177",
+          "view_id": "00177",
+          "bbox_2d": [
+            0.0,
+            558.0,
+            67.0,
+            849.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "file cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot verify that the desk is the center desk",
+        "cannot verify that this desk is on the right side of the room"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        -0.6553,
+        -2.2376,
+        0.3276,
+        0.2365,
+        0.7197,
+        0.6712
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            598.86,
+            394.62,
+            771.88,
+            765.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3583
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            265.18,
+            342.07,
+            479.13,
+            702.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2749
+        },
+        {
+          "object_view_id": "00032_1",
+          "view_id": "00032",
+          "bbox_2d": [
+            933.35,
+            575.47,
+            1148.48,
+            947.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2992
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            856.36,
+            585.92,
+            1028.38,
+            960.42
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.358
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            736.16,
+            599.86,
+            916.16,
+            963.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2633
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            504.92,
+            409.3,
+            691.45,
+            776.69
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            1065.9,
+            416.91,
+            1293.48,
+            790.82
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            919.0,
+            677.0,
+            1072.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_1",
+          "view_id": "00040",
+          "bbox_2d": [
+            1065.9,
+            416.91,
+            1293.48,
+            790.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3494
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "file cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 10,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the green-boxed object is specifically a file cabinet",
+        "cannot reliably confirm the referenced desk is the center desk",
+        "cannot reliably confirm this is the intended desk on the right side of the room",
+        "nearby alternative dark cabinet-like object creates ambiguity"
+      ],
+      "num_object_views": 11,
+      "bbox_3d": [
+        0.8458,
+        -1.1113,
+        0.1563,
+        0.5928,
+        0.8341,
+        0.5392
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            0.02,
+            592.94,
+            123.16,
+            837.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4936
+        },
+        {
+          "object_view_id": "00036_1",
+          "view_id": "00036",
+          "bbox_2d": [
+            290.6,
+            402.21,
+            485.47,
+            601.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4426
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            296.92,
+            400.39,
+            608.9,
+            736.51
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00052",
+          "view_id": "00052",
+          "bbox_2d": [
+            0.0,
+            508.0,
+            154.0,
+            813.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00054",
+          "view_id": "00054",
+          "bbox_2d": [
+            251.6,
+            452.93,
+            555.59,
+            759.79
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            0.0,
+            337.94,
+            207.4,
+            579.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6005
+        },
+        {
+          "object_view_id": "00054_1",
+          "view_id": "00054",
+          "bbox_2d": [
+            251.6,
+            452.93,
+            555.59,
+            759.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2731
+        },
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            304.3,
+            479.65,
+            651.6,
+            889.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3929
+        },
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            475.26,
+            644.23,
+            866.21,
+            964.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2879
+        },
+        {
+          "object_view_id": "00060_1",
+          "view_id": "00060",
+          "bbox_2d": [
+            574.08,
+            596.83,
+            955.58,
+            965.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3191
+        },
+        {
+          "object_view_id": "00084_0",
+          "view_id": "00084",
+          "bbox_2d": [
+            371.98,
+            357.56,
+            822.07,
+            963.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2562
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "file cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.2452,
+        -1.4113,
+        0.7874,
+        0.5774,
+        0.64,
+        0.3015
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            503.82,
+            247.33,
+            855.06,
+            586.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5279
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            503.82,
+            247.33,
+            855.06,
+            586.83
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_2",
+          "view_id": "00040",
+          "bbox_2d": [
+            362.98,
+            201.5,
+            728.3,
+            528.48
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3015
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            396.67,
+            659.11,
+            769.77,
+            967.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5751
+        },
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            326.34,
+            1.93,
+            539.3,
+            228.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3384
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "file cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the referenced desk is the center desk",
+        "cannot reliably confirm this desk area is on the right side of the room",
+        "cannot fully rule out nearby alternative cabinet-like objects from current local context"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.4484,
+        -1.1397,
+        0.2007,
+        1.3514,
+        0.9608,
+        0.6263
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00042_1",
+          "view_id": "00042",
+          "bbox_2d": [
+            0.0,
+            692.56,
+            98.33,
+            965.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2656
+        },
+        {
+          "object_view_id": "bootstrap_00062",
+          "view_id": "00062",
+          "bbox_2d": [
+            0.43,
+            505.81,
+            639.5,
+            964.99
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00061",
+          "view_id": "00061",
+          "bbox_2d": [
+            373.64,
+            562.9,
+            766.68,
+            965.29
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00057",
+          "view_id": "00057",
+          "bbox_2d": [
+            384.29,
+            624.69,
+            747.48,
+            965.68
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            0.43,
+            505.81,
+            639.5,
+            964.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5376
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "file cabinet",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "candidate is a file cabinet",
+        "candidate is a dark gray box",
+        "candidate is below the center desk on the right side of the room"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.34,
+        -1.5637,
+        0.8943,
+        0.337,
+        0.3616,
+        0.5361
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            0.0,
+            406.7,
+            131.56,
+            641.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2816
+        },
+        {
+          "object_view_id": "bootstrap_00068",
+          "view_id": "00068",
+          "bbox_2d": [
+            0.0,
+            189.0,
+            386.0,
+            555.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00067",
+          "view_id": "00067",
+          "bbox_2d": [
+            381.0,
+            183.0,
+            705.0,
+            514.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00066",
+          "view_id": "00066",
+          "bbox_2d": [
+            567.0,
+            179.0,
+            847.0,
+            493.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "file cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "file cabinet is dark gray",
+        "confirmed to be the center desk on the right side of the room"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.5758,
+        -1.0979,
+        0.1313,
+        0.5535,
+        0.7306,
+        0.3157
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00050_1",
+          "view_id": "00050",
+          "bbox_2d": [
+            1021.74,
+            530.64,
+            1296.0,
+            857.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2568
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "file cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot confirm the referenced desk is the center desk",
+        "cannot confirm this desk/cabinet is on the right side of the room",
+        "cabinet-desk relation is not unambiguous relative to nearby under-desk alternatives"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.5098,
+        -1.4071,
+        0.2124,
+        0.8097,
+        1.5333,
+        0.5863
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            56.17,
+            371.92,
+            419.56,
+            693.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.285
+        },
+        {
+          "object_view_id": "bootstrap_00087",
+          "view_id": "00087",
+          "bbox_2d": [
+            371.0,
+            911.0,
+            865.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            344.48,
+            371.26,
+            851.37,
+            828.74
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00056",
+          "view_id": "00056",
+          "bbox_2d": [
+            74.0,
+            417.0,
+            488.0,
+            782.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            275.72,
+            493.45,
+            756.12,
+            946.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3421
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "file cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "is a file cabinet",
+        "dark gray",
+        "below the center desk on the right side of the room"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.292,
+        -0.8641,
+        0.715,
+        0.2576,
+        0.2561,
+        0.3989
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            0.0,
+            499.87,
+            380.73,
+            964.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8115
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            499.87,
+            380.73,
+            964.27
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "file cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "not confirmed to be below the center desk",
+        "another nearby file-cabinet-like object matches the described desk relation better"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.4208,
+        -1.5521,
+        0.8924,
+        0.2462,
+        0.6588,
+        0.4783
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00088_0",
+          "view_id": "00088",
+          "bbox_2d": [
+            1120.94,
+            398.64,
+            1296.0,
+            714.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4448
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1120.94,
+            398.64,
+            1296.0,
+            714.28
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "file cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "need clearer confirmation that the desk above it is the specific center desk",
+        "need more reliable confirmation that this desk/file cabinet location is on the right side of the room in the intended scene layout"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        1.9275,
+        1.3473,
+        0.2504,
+        1.1377,
+        1.269,
+        0.6367
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00102_0",
+          "view_id": "00102",
+          "bbox_2d": [
+            0.0,
+            635.14,
+            449.5,
+            964.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5034
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            635.14,
+            449.5,
+            964.56
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00122",
+          "view_id": "00122",
+          "bbox_2d": [
+            259.79,
+            310.41,
+            801.1,
+            853.04
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00120",
+          "view_id": "00120",
+          "bbox_2d": [
+            576.0,
+            853.0,
+            646.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00103",
+          "view_id": "00103",
+          "bbox_2d": [
+            0.0,
+            449.65,
+            392.52,
+            897.52
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00122_0",
+          "view_id": "00122",
+          "bbox_2d": [
+            259.79,
+            310.41,
+            801.1,
+            853.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6935
+        },
+        {
+          "object_view_id": "00124_0",
+          "view_id": "00124",
+          "bbox_2d": [
+            677.08,
+            428.67,
+            1133.48,
+            936.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2988
+        },
+        {
+          "object_view_id": "00126_0",
+          "view_id": "00126",
+          "bbox_2d": [
+            945.94,
+            556.11,
+            1295.89,
+            964.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4194
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "file cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "the desk is confirmed to be the center desk",
+        "the candidate is confirmed to be on the right side of the room"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.5393,
+        0.8035,
+        0.2438,
+        0.3728,
+        0.2968,
+        0.6407
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00104_0",
+          "view_id": "00104",
+          "bbox_2d": [
+            10.47,
+            348.88,
+            521.18,
+            938.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.339
+        },
+        {
+          "object_view_id": "bootstrap_00120",
+          "view_id": "00120",
+          "bbox_2d": [
+            598.0,
+            904.0,
+            643.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00122",
+          "view_id": "00122",
+          "bbox_2d": [
+            259.79,
+            310.41,
+            801.1,
+            853.04
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00103",
+          "view_id": "00103",
+          "bbox_2d": [
+            0.0,
+            449.65,
+            392.52,
+            897.52
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "file cabinet",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "is a file cabinet",
+        "box-like file cabinet form",
+        "below the center desk",
+        "on the right side of the room as described for the target"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        2.7109,
+        -0.1504,
+        0.1967,
+        0.41,
+        0.1194,
+        0.5016
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00120_0",
+          "view_id": "00120",
+          "bbox_2d": [
+            1222.68,
+            427.31,
+            1296.0,
+            796.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4015
+        },
+        {
+          "object_view_id": "bootstrap_00092",
+          "view_id": "00092",
+          "bbox_2d": [
+            236.0,
+            415.0,
+            473.0,
+            769.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00101",
+          "view_id": "00101",
+          "bbox_2d": [
+            1177.0,
+            429.0,
+            1295.0,
+            825.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00090",
+          "view_id": "00090",
+          "bbox_2d": [
+            315.0,
+            520.0,
+            472.0,
+            848.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "file cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "requested object must be a file cabinet",
+        "requested object should be dark gray",
+        "requested object should be the box below the desk"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.5857,
+        1.4685,
+        0.8088,
+        0.4323,
+        0.3769,
+        0.2505
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00122_1",
+          "view_id": "00122",
+          "bbox_2d": [
+            83.93,
+            0.0,
+            491.11,
+            228.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2506
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            83.93,
+            0.0,
+            491.11,
+            228.91
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 15,
+      "label": "file cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm that the desk above it is the 'center desk'",
+        "cannot reliably confirm that this referenced desk is on the right side of the room"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        0.3468,
+        0.7657,
+        0.2621,
+        0.7266,
+        0.4747,
+        0.7237
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00130_0",
+          "view_id": "00130",
+          "bbox_2d": [
+            120.09,
+            424.88,
+            655.46,
+            965.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6072
+        },
+        {
+          "object_view_id": "00132_0",
+          "view_id": "00132",
+          "bbox_2d": [
+            168.96,
+            487.61,
+            655.09,
+            966.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8151
+        },
+        {
+          "object_view_id": "00134_0",
+          "view_id": "00134",
+          "bbox_2d": [
+            442.9,
+            474.47,
+            910.95,
+            964.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3453
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            120.09,
+            424.88,
+            655.46,
+            965.45
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00139",
+          "view_id": "00139",
+          "bbox_2d": [
+            500.0,
+            897.0,
+            725.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00133",
+          "view_id": "00133",
+          "bbox_2d": [
+            221.8,
+            433.45,
+            701.52,
+            964.51
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00123",
+          "view_id": "00123",
+          "bbox_2d": [
+            0.0,
+            685.0,
+            190.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 16,
+      "label": "file cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "not below the center desk",
+        "reference relation to the center desk on the right side of the room is contradicted by the candidate being on top of a desk"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -2.0703,
+        1.3559,
+        0.4243,
+        2.1901,
+        1.6303,
+        0.6649
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00142_0",
+          "view_id": "00142",
+          "bbox_2d": [
+            224.61,
+            346.36,
+            475.76,
+            477.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3515
+        },
+        {
+          "object_view_id": "00144_0",
+          "view_id": "00144",
+          "bbox_2d": [
+            19.37,
+            346.8,
+            373.22,
+            557.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4417
+        }
+      ]
+    },
+    {
+      "candidate_id": 17,
+      "label": "file cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably verify this is below the center desk",
+        "cannot identify the referenced center desk with enough certainty",
+        "cannot verify this is on the right side of the room"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        -2.4204,
+        1.7192,
+        0.4845,
+        0.935,
+        0.6306,
+        0.6484
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00146_0",
+          "view_id": "00146",
+          "bbox_2d": [
+            0.0,
+            249.28,
+            95.37,
+            561.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3638
+        },
+        {
+          "object_view_id": "bootstrap_00174",
+          "view_id": "00174",
+          "bbox_2d": [
+            1007.0,
+            348.0,
+            1152.0,
+            517.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00173",
+          "view_id": "00173",
+          "bbox_2d": [
+            692.11,
+            262.39,
+            1153.11,
+            643.72
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00172",
+          "view_id": "00172",
+          "bbox_2d": [
+            551.73,
+            265.95,
+            980.26,
+            621.88
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00162_0",
+          "view_id": "00162",
+          "bbox_2d": [
+            0.01,
+            538.9,
+            350.45,
+            965.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7256
+        },
+        {
+          "object_view_id": "00164_0",
+          "view_id": "00164",
+          "bbox_2d": [
+            46.46,
+            619.62,
+            516.76,
+            967.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9282
+        },
+        {
+          "object_view_id": "00172_0",
+          "view_id": "00172",
+          "bbox_2d": [
+            551.73,
+            265.95,
+            980.26,
+            621.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4903
+        },
+        {
+          "object_view_id": "00176_0",
+          "view_id": "00176",
+          "bbox_2d": [
+            937.12,
+            447.97,
+            1295.97,
+            880.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4816
+        }
+      ]
+    },
+    {
+      "candidate_id": 18,
+      "label": "file cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "below the center desk",
+        "on the right side of the room",
+        "confirmation that the nearby desk is the referenced center desk"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -2.6246,
+        1.5786,
+        0.5197,
+        0.467,
+        0.3072,
+        0.5691
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00174_0",
+          "view_id": "00174",
+          "bbox_2d": [
+            732.52,
+            247.55,
+            848.22,
+            542.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2931
+        },
+        {
+          "object_view_id": "bootstrap_00172",
+          "view_id": "00172",
+          "bbox_2d": [
+            551.73,
+            265.95,
+            980.26,
+            621.88
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00177",
+          "view_id": "00177",
+          "bbox_2d": [
+            1085.0,
+            392.0,
+            1214.0,
+            621.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00163",
+          "view_id": "00163",
+          "bbox_2d": [
+            19.33,
+            564.65,
+            529.99,
+            958.59
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 19,
+      "label": "file cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the referenced desk is the center desk",
+        "cannot reliably confirm the cabinet is on the right side of the room",
+        "cannot rule out other nearby desk/cabinet pairings from current context"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -2.3768,
+        -0.7897,
+        0.3742,
+        0.1417,
+        0.3674,
+        0.5551
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00190_0",
+          "view_id": "00190",
+          "bbox_2d": [
+            1004.33,
+            424.94,
+            1282.64,
+            769.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5291
+        },
+        {
+          "object_view_id": "00192_0",
+          "view_id": "00192",
+          "bbox_2d": [
+            1171.82,
+            599.07,
+            1296.0,
+            946.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4193
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            643.07,
+            304.84,
+            1068.1,
+            695.6
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            1001.91,
+            308.14,
+            1252.68,
+            708.79
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00177",
+          "view_id": "00177",
+          "bbox_2d": [
+            0.0,
+            551.0,
+            70.0,
+            847.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "case_id": 73,
+  "scene_id": "scene0648_00",
+  "query": "the dresser underneath the bed with a purple covering",
+  "query_analysis": {
+    "raw_query": "the dresser underneath the bed with a purple covering",
+    "target_object": "dresser",
+    "target_attributes": [],
+    "reference_object": "bed",
+    "reference_attributes": [
+      "purple covering"
+    ],
+    "relation": "underneath"
+  },
+  "gt": {
+    "target_id": 28,
+    "gt_label": "dresser",
+    "gt_bbox_3d": [
+      1.245178,
+      -0.256937,
+      0.324079,
+      0.240808,
+      0.792829,
+      0.818187
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      1.16002,
+      -0.013508,
+      0.280334,
+      0.052347,
+      0.288808,
+      0.682295
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 108,
+    "total_views": 105,
+    "total_object_views": 2,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "dresser",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is clearly a dresser",
+        "candidate is underneath the bed",
+        "candidate is the dresser associated with the bed that has purple covering"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.5185,
+        -0.3495,
+        1.2971,
+        0.4465,
+        0.6478,
+        0.1511
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00116_0",
+          "view_id": "00116",
+          "bbox_2d": [
+            0.03,
+            797.39,
+            688.22,
+            965.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.288
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.03,
+            797.39,
+            688.22,
+            965.5
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "dresser",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.1668,
+        0.0651,
+        0.39,
+        0.0389,
+        0.1316,
+        0.4629
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00140_0",
+          "view_id": "00140",
+          "bbox_2d": [
+            1149.19,
+            665.91,
+            1295.97,
+            965.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2738
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1149.19,
+            665.91,
+            1295.97,
+            965.99
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00170",
+          "view_id": "00170",
+          "bbox_2d": [
+            106.0,
+            42.0,
+            540.0,
+            488.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00171",
+          "view_id": "00171",
+          "bbox_2d": [
+            905.0,
+            166.0,
+            1065.0,
+            652.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00141",
+          "view_id": "00141",
+          "bbox_2d": [
+            969.0,
+            399.0,
+            1149.0,
+            818.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

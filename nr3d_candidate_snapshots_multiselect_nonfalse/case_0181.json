@@ -1,0 +1,138 @@
+{
+  "case_id": 181,
+  "scene_id": "scene0063_00",
+  "query": "the microwave on the light brown desk",
+  "query_analysis": {
+    "raw_query": "the microwave on the light brown desk",
+    "target_object": "microwave",
+    "target_attributes": [],
+    "reference_object": "desk",
+    "reference_attributes": [
+      "light brown"
+    ],
+    "relation": "on"
+  },
+  "gt": {
+    "target_id": 3,
+    "gt_label": "microwave",
+    "gt_bbox_3d": [
+      -2.487446,
+      -0.924949,
+      1.1145,
+      0.4155,
+      0.469799,
+      0.348079
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "false",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -2.487121,
+      -0.918614,
+      1.090339,
+      0.430642,
+      0.478519,
+      0.305462
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      2
+    ],
+    "detector_call_count": 15,
+    "total_views": 15,
+    "total_object_views": 3,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "microwave",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "object is a microwave"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -2.553,
+        -0.8667,
+        1.0925,
+        0.5526,
+        0.5673,
+        0.3114
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            576.4,
+            125.38,
+            851.63,
+            298.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9035
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            117.45,
+            366.64,
+            419.71,
+            560.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7917
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "microwave",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "microwave is on a desk",
+        "the desk is light brown"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        2.3626,
+        1.0247,
+        1.1912,
+        0.3399,
+        0.6528,
+        0.3524
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            925.47,
+            420.15,
+            1124.34,
+            588.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2544
+        }
+      ]
+    }
+  ]
+}

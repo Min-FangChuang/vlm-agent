@@ -1,0 +1,930 @@
+{
+  "case_id": 210,
+  "scene_id": "scene0535_00",
+  "query": "the black chair is located in front of the wooden door . the chair is also located to the right of a white shelving unit .",
+  "query_analysis": {
+    "raw_query": "the black chair is located in front of the wooden door . the chair is also located to the right of a white shelving unit .",
+    "target_object": "chair",
+    "target_attributes": [
+      "black"
+    ],
+    "reference_object": "door; shelving unit",
+    "reference_attributes": [
+      "wooden",
+      "white"
+    ],
+    "relation": "in front of; to the right of"
+  },
+  "gt": {
+    "target_id": 9,
+    "gt_label": "chair",
+    "gt_bbox_3d": [
+      0.270418,
+      -2.372946,
+      0.417932,
+      0.480987,
+      0.457666,
+      0.138413
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 10,
+    "bbox_3d": [
+      0.270695,
+      -2.393836,
+      0.190315,
+      0.43275,
+      0.419438,
+      0.998222
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 35,
+    "total_views": 18,
+    "total_object_views": 20,
+    "total_candidates": 13
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "chair is in front of the wooden door"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.4405,
+        -1.9445,
+        0.1749,
+        0.9346,
+        1.1435,
+        0.9184
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            1005.4,
+            338.27,
+            1286.07,
+            945.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8463
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably identify a wooden door",
+        "cannot reliably confirm the chair is in front of the wooden door"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.6006,
+        -1.4705,
+        0.0793,
+        0.3689,
+        0.7682,
+        0.556
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_1",
+          "view_id": "00000",
+          "bbox_2d": [
+            472.17,
+            276.47,
+            703.22,
+            617.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7644
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            605.51,
+            229.27,
+            830.98,
+            553.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2567
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            682.0,
+            306.0,
+            929.0,
+            752.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            35.0,
+            223.0,
+            302.0,
+            664.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00006",
+          "view_id": "00006",
+          "bbox_2d": [
+            991.0,
+            316.0,
+            1287.0,
+            802.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00032_1",
+          "view_id": "00032",
+          "bbox_2d": [
+            7.49,
+            357.43,
+            307.87,
+            883.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3771
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm that the chair is in front of a wooden door",
+        "local layout around the chair is still incomplete for the full relation chain"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -0.3794,
+        -0.7989,
+        0.5251,
+        0.3506,
+        0.5435,
+        0.9295
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_2",
+          "view_id": "00000",
+          "bbox_2d": [
+            586.04,
+            31.45,
+            853.96,
+            462.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5392
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            178.65,
+            7.81,
+            1255.99,
+            956.08
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            996.0,
+            367.0,
+            1276.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "object is black",
+        "confirmed as the specific black chair in front of the wooden door"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.0514,
+        0.1477,
+        0.869,
+        0.6873,
+        2.3855,
+        0.4778
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_3",
+          "view_id": "00000",
+          "bbox_2d": [
+            661.67,
+            7.16,
+            853.54,
+            173.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5296
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "chair is black",
+        "chair is clearly the one located in front of the wooden door"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -0.7003,
+        -1.1337,
+        0.3413,
+        0.9064,
+        0.9637,
+        0.8608
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            430.67,
+            9.83,
+            1283.71,
+            918.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3278
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            430.67,
+            9.83,
+            1283.71,
+            918.11
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            453.82,
+            40.89,
+            1160.71,
+            760.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6129
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is clearly black",
+        "candidate is located in front of the wooden door",
+        "candidate is located to the right of a white shelving unit",
+        "no meaningful nearby alternative chair matches better"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.6573,
+        -1.3699,
+        0.1942,
+        0.4869,
+        0.4583,
+        0.6442
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_1",
+          "view_id": "00008",
+          "bbox_2d": [
+            646.3,
+            549.84,
+            1096.71,
+            958.24
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3091
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            646.3,
+            549.84,
+            1096.71,
+            958.24
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "clear confirmation that the nearby white object is a white shelving unit",
+        "reliable confirmation of the chair being to the right of that shelving unit in the scene"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.0339,
+        -0.1663,
+        0.6646,
+        0.2748,
+        0.1608,
+        0.9445
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            1077.24,
+            163.6,
+            1285.7,
+            593.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6897
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            947.76,
+            4.0,
+            1289.11,
+            211.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5094
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            1167.0,
+            52.0,
+            1290.0,
+            607.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            3.51,
+            617.02,
+            413.49,
+            961.13
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            878.16,
+            6.12,
+            1286.6,
+            361.11
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "clear confirmation that the reference object is a wooden door",
+        "clear confirmation that the chair is in front of that wooden door"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.3265,
+        0.8225,
+        0.7782,
+        0.8135,
+        1.8401,
+        0.9885
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            1085.48,
+            673.84,
+            1286.96,
+            961.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5327
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1085.48,
+            673.84,
+            1286.96,
+            961.08
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            434.77,
+            415.01,
+            817.94,
+            950.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            3.51,
+            617.02,
+            413.49,
+            961.13
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            434.77,
+            415.01,
+            817.94,
+            950.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8839
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            19.61,
+            653.12,
+            449.96,
+            960.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9204
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "chair",
+        "black",
+        "in front of the wooden door",
+        "to the right of a white shelving unit"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.4376,
+        1.604,
+        0.6635,
+        0.6208,
+        0.3652,
+        0.6977
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_1",
+          "view_id": "00020",
+          "bbox_2d": [
+            7.72,
+            502.48,
+            393.51,
+            928.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6185
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm a wooden door near/behind the chair",
+        "cannot clearly identify a white shelving unit",
+        "cannot verify the chair is to the right of the white shelving unit"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.3223,
+        1.1252,
+        0.6504,
+        0.3869,
+        1.0913,
+        0.6621
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            92.09,
+            528.54,
+            326.92,
+            804.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3816
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            434.77,
+            415.01,
+            817.94,
+            950.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            171.93,
+            323.32,
+            593.99,
+            957.9
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "chair",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.2708,
+        -2.3889,
+        0.1903,
+        0.4337,
+        0.4185,
+        0.9982
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            472.92,
+            367.61,
+            1286.6,
+            957.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4935
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            767.81,
+            456.77,
+            1286.87,
+            958.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4755
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            472.92,
+            367.61,
+            1286.6,
+            957.59
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            538.99,
+            399.63,
+            1279.4,
+            958.32
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            394.0,
+            412.0,
+            1289.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the candidate itself as a full chair from current partial views",
+        "wooden door is not clearly visible",
+        "cannot confirm the chair is in front of the wooden door",
+        "nearby alternative chair-like object still creates some ambiguity"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.058,
+        0.2402,
+        0.3655,
+        0.6571,
+        2.3947,
+        0.8317
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_1",
+          "view_id": "00034",
+          "bbox_2d": [
+            1037.12,
+            7.22,
+            1286.94,
+            574.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4509
+        },
+        {
+          "object_view_id": "bootstrap_00012",
+          "view_id": "00012",
+          "bbox_2d": [
+            1063.0,
+            549.0,
+            1285.0,
+            615.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            408.06,
+            5.08,
+            1255.23,
+            907.38
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            621.0,
+            13.0,
+            1285.0,
+            772.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a chair",
+        "candidate is black chair",
+        "candidate is in front of the wooden door",
+        "candidate is to the right of a white shelving unit"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.535,
+        -1.2761,
+        0.701,
+        1.0195,
+        1.6637,
+        0.583
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_2",
+          "view_id": "00034",
+          "bbox_2d": [
+            152.65,
+            5.88,
+            380.56,
+            282.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2596
+        }
+      ]
+    }
+  ]
+}

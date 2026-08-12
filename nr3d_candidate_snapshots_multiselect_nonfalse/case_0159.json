@@ -1,0 +1,269 @@
+{
+  "case_id": 159,
+  "scene_id": "scene0278_00",
+  "query": "trash can closest to the copier",
+  "query_analysis": {
+    "raw_query": "trash can closest to the copier",
+    "target_object": "trash can",
+    "target_attributes": [],
+    "reference_object": "copier",
+    "reference_attributes": [],
+    "relation": "closest to"
+  },
+  "gt": {
+    "target_id": 4,
+    "gt_label": "trash can",
+    "gt_bbox_3d": [
+      0.88321,
+      -1.339921,
+      0.263266,
+      0.248288,
+      0.308232,
+      0.388778
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      0.87674,
+      -2.069893,
+      0.341731,
+      0.253264,
+      0.243262,
+      0.446981
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      2
+    ],
+    "detector_call_count": 26,
+    "total_views": 20,
+    "total_object_views": 4,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "trash can",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.9045,
+        -2.1795,
+        0.3379,
+        0.3321,
+        0.443,
+        0.4503
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            333.34,
+            541.95,
+            458.09,
+            763.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3837
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            270.0,
+            436.0,
+            418.0,
+            706.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00026",
+          "view_id": "00026",
+          "bbox_2d": [
+            637.77,
+            540.53,
+            763.57,
+            827.39
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00001",
+          "view_id": "00001",
+          "bbox_2d": [
+            445.0,
+            545.0,
+            547.0,
+            742.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00026_1",
+          "view_id": "00026",
+          "bbox_2d": [
+            637.77,
+            540.53,
+            763.57,
+            827.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3032
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "trash can",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "copier is not visually confirmed",
+        "cannot determine this trash can's distance to the copier",
+        "cannot compare this candidate against other possible trash cans near the copier"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.643,
+        2.7644,
+        0.3948,
+        0.283,
+        0.4869,
+        0.9333
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            448.59,
+            254.5,
+            610.41,
+            618.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2509
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            0.0,
+            256.0,
+            168.0,
+            638.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            641.1,
+            184.08,
+            800.31,
+            529.73
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            225.53,
+            740.37,
+            445.3,
+            965.42
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "trash can",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is clearly a trash can",
+        "candidate is the trash can closest to the copier"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.9168,
+        -1.4137,
+        0.4044,
+        0.3062,
+        0.6102,
+        0.4252
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            269.95,
+            842.38,
+            545.52,
+            966.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5012
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            269.95,
+            842.38,
+            545.52,
+            966.26
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

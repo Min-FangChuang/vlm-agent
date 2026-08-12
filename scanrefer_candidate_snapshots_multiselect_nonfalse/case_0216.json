@@ -1,0 +1,145 @@
+{
+  "case_id": 216,
+  "scene_id": "scene0221_00",
+  "query": "the sink is white and has a wide counter around it . the sink is in between two walls .",
+  "query_analysis": {
+    "raw_query": "the sink is white and has a wide counter around it . the sink is in between two walls .",
+    "target_object": "sink",
+    "target_attributes": [
+      "white"
+    ],
+    "reference_object": "walls",
+    "reference_attributes": [],
+    "relation": "in between"
+  },
+  "gt": {
+    "target_id": 15,
+    "gt_label": "sink",
+    "gt_bbox_3d": [
+      1.277813,
+      -3.622947,
+      0.860463,
+      0.207513,
+      0.116529,
+      0.116265
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      1.295785,
+      -3.558252,
+      0.819553,
+      0.521166,
+      1.058988,
+      0.815075
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2
+    ],
+    "detector_call_count": 28,
+    "total_views": 25,
+    "total_object_views": 1,
+    "total_candidates": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "sink",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot clearly verify the boxed object is a sink",
+        "cannot clearly confirm sink basin or faucet",
+        "cannot reliably confirm the full sink-with-wide-counter configuration centered on the boxed candidate"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.2881,
+        -3.5545,
+        0.9316,
+        0.4943,
+        1.033,
+        0.591
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            637.69,
+            246.82,
+            884.47,
+            537.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7407
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            637.69,
+            246.82,
+            884.47,
+            537.83
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00047",
+          "view_id": "00047",
+          "bbox_2d": [
+            894.88,
+            167.94,
+            1176.68,
+            439.89
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00043",
+          "view_id": "00043",
+          "bbox_2d": [
+            864.87,
+            420.99,
+            995.41,
+            648.06
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            635.0,
+            351.0,
+            713.0,
+            526.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

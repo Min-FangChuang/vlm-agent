@@ -1,0 +1,153 @@
+{
+  "case_id": 143,
+  "scene_id": "scene0222_00",
+  "query": "the window has blinds on it . it is to the right of the bed in the room .",
+  "query_analysis": {
+    "raw_query": "the window has blinds on it . it is to the right of the bed in the room .",
+    "target_object": "window",
+    "target_attributes": [
+      "has blinds on it"
+    ],
+    "reference_object": "bed",
+    "reference_attributes": [],
+    "relation": "to the right of"
+  },
+  "gt": {
+    "target_id": 28,
+    "gt_label": "window",
+    "gt_bbox_3d": [
+      -1.668974,
+      -1.567093,
+      1.352292,
+      0.262842,
+      1.375556,
+      1.365009
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -1.772093,
+      -0.574412,
+      1.301523,
+      0.130542,
+      0.55021,
+      1.248553
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2
+    ],
+    "detector_call_count": 138,
+    "total_views": 135,
+    "total_object_views": 2,
+    "total_candidates": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "window",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.7749,
+        -0.5908,
+        1.2332,
+        0.1245,
+        0.5174,
+        1.0991
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00141_0",
+          "view_id": "00141",
+          "bbox_2d": [
+            468.21,
+            0.0,
+            918.01,
+            596.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2512
+        },
+        {
+          "object_view_id": "00147_0",
+          "view_id": "00147",
+          "bbox_2d": [
+            9.02,
+            0.0,
+            501.28,
+            870.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2779
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            9.02,
+            0.0,
+            501.28,
+            870.7
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00145",
+          "view_id": "00145",
+          "bbox_2d": [
+            829.0,
+            3.0,
+            1286.0,
+            942.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00247",
+          "view_id": "00247",
+          "bbox_2d": [
+            846.0,
+            0.0,
+            961.0,
+            320.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00120",
+          "view_id": "00120",
+          "bbox_2d": [
+            918.0,
+            15.0,
+            1097.0,
+            583.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

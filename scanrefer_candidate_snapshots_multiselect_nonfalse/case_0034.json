@@ -1,0 +1,556 @@
+{
+  "case_id": 34,
+  "scene_id": "scene0050_00",
+  "query": "a brown ottoman with two black knapsacks and a tissue box on it sits in front of a matching brown leather sofa , which is up against a wall . to its left is a black piano .",
+  "query_analysis": {
+    "raw_query": "a brown ottoman with two black knapsacks and a tissue box on it sits in front of a matching brown leather sofa , which is up against a wall . to its left is a black piano .",
+    "target_object": "ottoman",
+    "target_attributes": [
+      "brown"
+    ],
+    "reference_object": "sofa",
+    "reference_attributes": [
+      "brown",
+      "leather",
+      "matching"
+    ],
+    "relation": "in front of"
+  },
+  "gt": {
+    "target_id": 11,
+    "gt_label": "ottoman",
+    "gt_bbox_3d": [
+      -0.562991,
+      -0.467584,
+      0.238356,
+      0.706963,
+      1.199047,
+      0.523601
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 6,
+    "bbox_3d": [
+      -0.403294,
+      -0.691365,
+      0.232981,
+      0.78086,
+      0.782034,
+      0.560834
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 123,
+    "total_views": 117,
+    "total_object_views": 12,
+    "total_candidates": 7
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "ottoman",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is an ottoman",
+        "candidate is brown",
+        "candidate has two black knapsacks on it",
+        "candidate has a tissue box on it",
+        "candidate sits in front of a matching brown leather sofa against a wall"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.4089,
+        -1.4922,
+        0.2251,
+        1.0292,
+        0.521,
+        0.5139
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            830.9,
+            413.16,
+            1243.55,
+            965.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2608
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            468.11,
+            322.85,
+            822.33,
+            854.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2789
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            830.9,
+            413.16,
+            1243.55,
+            965.64
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            755.69,
+            419.12,
+            1296.0,
+            961.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3354
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "ottoman",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is an ottoman",
+        "candidate is brown",
+        "candidate has two black knapsacks and a tissue box on it",
+        "candidate sits in front of the matching brown leather sofa"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.4637,
+        -1.5218,
+        0.0321,
+        0.3024,
+        0.3913,
+        0.1225
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            218.84,
+            785.7,
+            466.36,
+            965.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2708
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            218.84,
+            785.7,
+            466.36,
+            965.03
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "ottoman",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate does not have two black knapsacks on it",
+        "candidate does not have a tissue box on it",
+        "the described loaded ottoman is likely the adjacent brown seat/ottoman to the right rather than the green-boxed one"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.0758,
+        -0.0316,
+        0.3445,
+        0.7678,
+        1.3445,
+        0.6753
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            0.0,
+            90.88,
+            649.25,
+            965.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6017
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            90.88,
+            649.25,
+            965.97
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "ottoman",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "green-boxed object is an ottoman",
+        "green-boxed object is the brown ottoman in front of the sofa"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.3806,
+        -0.4258,
+        0.339,
+        1.3625,
+        1.1292,
+        0.6693
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00080_1",
+          "view_id": "00080",
+          "bbox_2d": [
+            156.74,
+            0.0,
+            1136.24,
+            644.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2594
+        },
+        {
+          "object_view_id": "00094_0",
+          "view_id": "00094",
+          "bbox_2d": [
+            356.96,
+            462.1,
+            1295.24,
+            965.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3834
+        },
+        {
+          "object_view_id": "00096_0",
+          "view_id": "00096",
+          "bbox_2d": [
+            0.27,
+            385.2,
+            799.01,
+            964.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4785
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            156.74,
+            0.0,
+            1136.24,
+            644.83
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "ottoman",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "black piano to the ottoman's left is not visible or confirmed",
+        "sofa being up against a wall is not fully confirmed from current views"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.6315,
+        -0.1279,
+        0.3422,
+        0.2967,
+        0.5108,
+        0.3596
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            1002.86,
+            723.64,
+            1295.89,
+            964.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4241
+        },
+        {
+          "object_view_id": "bootstrap_00146",
+          "view_id": "00146",
+          "bbox_2d": [
+            7.0,
+            418.0,
+            809.0,
+            966.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00136",
+          "view_id": "00136",
+          "bbox_2d": [
+            648.0,
+            199.0,
+            1253.0,
+            600.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00142",
+          "view_id": "00142",
+          "bbox_2d": [
+            716.0,
+            379.0,
+            1140.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "ottoman",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is an ottoman",
+        "candidate has two black knapsacks and a tissue box on it",
+        "candidate is the low object in front of the sofa"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        1.0398,
+        -0.117,
+        0.4106,
+        1.475,
+        1.2358,
+        0.844
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00102_0",
+          "view_id": "00102",
+          "bbox_2d": [
+            166.36,
+            89.02,
+            1103.25,
+            809.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7244
+        },
+        {
+          "object_view_id": "00104_0",
+          "view_id": "00104",
+          "bbox_2d": [
+            160.13,
+            2.93,
+            1153.77,
+            619.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2989
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            166.36,
+            89.02,
+            1103.25,
+            809.71
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "ottoman",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.4344,
+        -0.7727,
+        0.1968,
+        0.3797,
+        0.5855,
+        0.4411
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00230_0",
+          "view_id": "00230",
+          "bbox_2d": [
+            844.27,
+            233.53,
+            1296.0,
+            593.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.354
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            844.27,
+            233.53,
+            1296.0,
+            593.75
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00131",
+          "view_id": "00131",
+          "bbox_2d": [
+            238.0,
+            603.0,
+            930.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00142",
+          "view_id": "00142",
+          "bbox_2d": [
+            4.0,
+            55.0,
+            313.0,
+            395.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00135",
+          "view_id": "00135",
+          "bbox_2d": [
+            0.0,
+            333.0,
+            788.0,
+            874.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

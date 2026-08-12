@@ -1,0 +1,332 @@
+{
+  "case_id": 231,
+  "scene_id": "scene0221_00",
+  "query": "there is a square beige table . it is next to a large rectangular table at the side of the room .",
+  "query_analysis": {
+    "raw_query": "there is a square beige table . it is next to a large rectangular table at the side of the room .",
+    "target_object": "table",
+    "target_attributes": [
+      "square",
+      "beige"
+    ],
+    "reference_object": "table",
+    "reference_attributes": [
+      "large",
+      "rectangular"
+    ],
+    "relation": "next to"
+  },
+  "gt": {
+    "target_id": 47,
+    "gt_label": "table",
+    "gt_bbox_3d": [
+      1.306647,
+      -0.195933,
+      0.29171,
+      0.606085,
+      0.76324,
+      0.468933
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 3,
+    "bbox_3d": [
+      1.252009,
+      0.0415,
+      0.325771,
+      0.729197,
+      1.172804,
+      0.762019
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      1,
+      2,
+      2
+    ],
+    "detector_call_count": 30,
+    "total_views": 25,
+    "total_object_views": 5,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a table",
+        "object is square",
+        "object is beige",
+        "object is next to a large rectangular table at the side of the room"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.729,
+        0.2343,
+        0.3087,
+        1.6983,
+        2.2324,
+        0.6691
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            176.56,
+            5.75,
+            1296.0,
+            963.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2808
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            176.56,
+            5.75,
+            1296.0,
+            963.75
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "table",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "candidate is square"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.1894,
+        3.0238,
+        0.3789,
+        0.8691,
+        0.848,
+        0.7331
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            355.58,
+            335.13,
+            861.19,
+            862.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5698
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            274.59,
+            149.35,
+            959.66,
+            852.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4371
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            274.59,
+            149.35,
+            959.66,
+            852.76
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            703.65,
+            394.04,
+            1296.0,
+            963.3
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            21.0,
+            427.0,
+            572.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            23.0,
+            817.0,
+            211.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "square",
+        "next to a large rectangular table at the side of the room"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.2109,
+        0.977,
+        0.3283,
+        0.6917,
+        2.4495,
+        0.8479
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            576.5,
+            328.37,
+            1159.84,
+            953.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3478
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "square shape of the candidate is not reliably confirmed",
+        "a large rectangular table next to the candidate is not visually confirmed",
+        "the next-to relation between the candidate and the reference table is not established"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.2749,
+        -0.2767,
+        0.3963,
+        0.5494,
+        0.5365,
+        0.277
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            211.81,
+            767.4,
+            828.35,
+            967.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2919
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            211.81,
+            767.4,
+            828.35,
+            967.56
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00036",
+          "view_id": "00036",
+          "bbox_2d": [
+            452.0,
+            477.0,
+            785.0,
+            679.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            1.04,
+            489.54,
+            739.26,
+            964.86
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

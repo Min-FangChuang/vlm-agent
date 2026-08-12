@@ -1,0 +1,533 @@
+{
+  "case_id": 56,
+  "scene_id": "scene0474_00",
+  "query": "there is a rectangular computer tower . it is on a stand with wheels next to a sofa .",
+  "query_analysis": {
+    "raw_query": "there is a rectangular computer tower . it is on a stand with wheels next to a sofa .",
+    "target_object": "computer tower",
+    "target_attributes": [
+      "rectangular"
+    ],
+    "reference_object": "sofa",
+    "reference_attributes": [],
+    "relation": "next to"
+  },
+  "gt": {
+    "target_id": 40,
+    "gt_label": "computer tower",
+    "gt_bbox_3d": [
+      -0.97655,
+      0.626465,
+      0.312136,
+      0.245992,
+      0.370858,
+      0.500009
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 2,
+    "bbox_3d": [
+      -1.121123,
+      0.902635,
+      0.272301,
+      0.570117,
+      0.941733,
+      0.707332
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 49,
+    "total_views": 41,
+    "total_object_views": 13,
+    "total_candidates": 5
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "computer tower",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "green-boxed object is a computer tower",
+        "green-boxed object is on a stand with wheels",
+        "green-boxed object is next to a sofa"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.3355,
+        -0.7655,
+        0.8447,
+        0.234,
+        0.3541,
+        0.2743
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            703.97,
+            802.59,
+            962.37,
+            957.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.364
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            703.97,
+            802.59,
+            962.37,
+            957.51
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "computer tower",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a computer tower",
+        "candidate is on a stand with wheels",
+        "candidate is next to a sofa"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.2982,
+        -0.7925,
+        0.4716,
+        0.3157,
+        0.3854,
+        0.9963
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            207.81,
+            298.01,
+            580.4,
+            955.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2727
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            207.81,
+            298.01,
+            580.4,
+            955.12
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "computer tower",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 10,
+      "bbox_3d": [
+        -1.1272,
+        0.7029,
+        0.2899,
+        0.569,
+        0.6832,
+        0.6145
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            1003.49,
+            375.87,
+            1224.27,
+            671.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7128
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            171.97,
+            628.62,
+            437.99,
+            954.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9579
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            171.97,
+            628.62,
+            437.99,
+            954.45
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00075",
+          "view_id": "00075",
+          "bbox_2d": [
+            1220.0,
+            857.0,
+            1293.0,
+            966.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00052",
+          "view_id": "00052",
+          "bbox_2d": [
+            938.81,
+            88.0,
+            1157.9,
+            373.41
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            838.74,
+            635.14,
+            1052.56,
+            944.11
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            938.81,
+            88.0,
+            1157.9,
+            373.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4006
+        },
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            776.12,
+            671.29,
+            954.69,
+            955.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6791
+        },
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            607.72,
+            729.0,
+            789.02,
+            957.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2861
+        },
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            246.8,
+            501.71,
+            436.71,
+            803.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8533
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "computer tower",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "on a stand",
+        "the stand has wheels"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        0.798,
+        0.9598,
+        0.3507,
+        0.408,
+        0.2855,
+        0.6958
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            807.63,
+            688.7,
+            1026.04,
+            956.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7825
+        },
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            566.85,
+            429.25,
+            773.9,
+            790.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6507
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            566.85,
+            429.25,
+            773.9,
+            790.72
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00068",
+          "view_id": "00068",
+          "bbox_2d": [
+            994.03,
+            444.81,
+            1283.25,
+            904.44
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00069",
+          "view_id": "00069",
+          "bbox_2d": [
+            958.41,
+            510.4,
+            1191.16,
+            844.04
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00071",
+          "view_id": "00071",
+          "bbox_2d": [
+            812.11,
+            369.15,
+            1058.33,
+            772.08
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            994.03,
+            444.81,
+            1283.25,
+            904.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4696
+        },
+        {
+          "object_view_id": "00070_0",
+          "view_id": "00070",
+          "bbox_2d": [
+            990.99,
+            522.81,
+            1278.04,
+            955.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6768
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "computer tower",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.8041,
+        0.9673,
+        0.3353,
+        0.3288,
+        0.263,
+        0.7211
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00072_0",
+          "view_id": "00072",
+          "bbox_2d": [
+            380.97,
+            392.14,
+            599.93,
+            847.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6313
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            380.97,
+            392.14,
+            599.93,
+            847.73
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00069",
+          "view_id": "00069",
+          "bbox_2d": [
+            916.0,
+            393.0,
+            1205.0,
+            849.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00071",
+          "view_id": "00071",
+          "bbox_2d": [
+            812.11,
+            369.15,
+            1058.33,
+            772.08
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00026",
+          "view_id": "00026",
+          "bbox_2d": [
+            566.85,
+            429.25,
+            773.9,
+            790.72
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

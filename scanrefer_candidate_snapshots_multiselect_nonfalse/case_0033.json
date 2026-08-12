@@ -1,0 +1,1579 @@
+{
+  "case_id": 33,
+  "scene_id": "scene0231_00",
+  "query": "there are dark brown kitchen cabinet . they are beneath the counter directly to the left of the doorway .",
+  "query_analysis": {
+    "raw_query": "there are dark brown kitchen cabinet . they are beneath the counter directly to the left of the doorway .",
+    "target_object": "kitchen cabinet",
+    "target_attributes": [
+      "dark brown"
+    ],
+    "reference_object": "counter",
+    "reference_attributes": [],
+    "relation": "beneath"
+  },
+  "gt": {
+    "target_id": 46,
+    "gt_label": "kitchen cabinets",
+    "gt_bbox_3d": [
+      0.520952,
+      -2.122777,
+      0.389443,
+      1.075498,
+      0.102182,
+      0.874855
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      0.515276,
+      -2.06834,
+      0.52065,
+      1.072539,
+      0.223609,
+      1.197729
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      4
+    ],
+    "detector_call_count": 132,
+    "total_views": 111,
+    "total_object_views": 56,
+    "total_candidates": 20
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "kitchen cabinet",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.5203,
+        -2.1346,
+        0.3594,
+        1.0746,
+        0.1386,
+        0.855
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            788.25,
+            94.45,
+            963.38,
+            378.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3799
+        },
+        {
+          "object_view_id": "bootstrap_00146",
+          "view_id": "00146",
+          "bbox_2d": [
+            853.0,
+            333.0,
+            1038.0,
+            520.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00172",
+          "view_id": "00172",
+          "bbox_2d": [
+            465.34,
+            206.0,
+            921.71,
+            499.33
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00198",
+          "view_id": "00198",
+          "bbox_2d": [
+            423.72,
+            114.62,
+            1033.2,
+            611.31
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00172_0",
+          "view_id": "00172",
+          "bbox_2d": [
+            465.34,
+            206.0,
+            921.71,
+            499.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.262
+        },
+        {
+          "object_view_id": "00198_0",
+          "view_id": "00198",
+          "bbox_2d": [
+            423.72,
+            114.62,
+            1033.2,
+            611.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3335
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "directly to the left of the doorway"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.1527,
+        -0.5606,
+        0.3518,
+        0.0959,
+        0.6696,
+        0.8177
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_1",
+          "view_id": "00046",
+          "bbox_2d": [
+            458.18,
+            242.59,
+            735.28,
+            661.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2532
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "beneath the counter",
+        "directly to the left of the doorway"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        2.471,
+        1.5994,
+        1.6411,
+        3.5233,
+        0.8008,
+        0.6735
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            81.31,
+            0.58,
+            271.67,
+            155.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2806
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 4,
+      "done_actions": [],
+      "missing_conditions": [
+        "beneath the counter",
+        "directly to the left of the doorway"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        4.231,
+        -0.9629,
+        1.7214,
+        0.4666,
+        1.2898,
+        0.8262
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            1052.81,
+            138.1,
+            1295.79,
+            305.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3211
+        },
+        {
+          "object_view_id": "00112_1",
+          "view_id": "00112",
+          "bbox_2d": [
+            136.99,
+            55.02,
+            637.57,
+            395.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2739
+        },
+        {
+          "object_view_id": "00182_0",
+          "view_id": "00182",
+          "bbox_2d": [
+            162.99,
+            0.0,
+            636.52,
+            81.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3318
+        },
+        {
+          "object_view_id": "00184_0",
+          "view_id": "00184",
+          "bbox_2d": [
+            569.78,
+            0.63,
+            1025.36,
+            269.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4589
+        },
+        {
+          "object_view_id": "00192_0",
+          "view_id": "00192",
+          "bbox_2d": [
+            135.43,
+            128.85,
+            675.27,
+            535.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5814
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "directly to the left of the doorway"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.4922,
+        -2.0225,
+        0.3872,
+        1.1136,
+        0.3366,
+        0.8929
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            828.66,
+            363.97,
+            1256.96,
+            899.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3805
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "kitchen cabinet",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        2.7443,
+        -1.5666,
+        0.4341,
+        0.983,
+        1.1736,
+        0.8456
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00064_1",
+          "view_id": "00064",
+          "bbox_2d": [
+            492.17,
+            237.73,
+            609.69,
+            501.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2692
+        },
+        {
+          "object_view_id": "bootstrap_00147",
+          "view_id": "00147",
+          "bbox_2d": [
+            316.98,
+            444.88,
+            690.36,
+            776.9
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00181",
+          "view_id": "00181",
+          "bbox_2d": [
+            868.0,
+            253.0,
+            947.0,
+            364.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00146",
+          "view_id": "00146",
+          "bbox_2d": [
+            0.9,
+            443.45,
+            418.6,
+            844.76
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00146_1",
+          "view_id": "00146",
+          "bbox_2d": [
+            0.9,
+            443.45,
+            418.6,
+            844.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.263
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [
+        "beneath the counter"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.7093,
+        -2.5395,
+        1.6547,
+        0.8863,
+        0.3747,
+        0.778
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            323.21,
+            0.08,
+            683.88,
+            310.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2897
+        },
+        {
+          "object_view_id": "00104_2",
+          "view_id": "00104",
+          "bbox_2d": [
+            638.12,
+            0.0,
+            953.75,
+            377.43
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2643
+        },
+        {
+          "object_view_id": "00106_1",
+          "view_id": "00106",
+          "bbox_2d": [
+            710.76,
+            3.71,
+            1296.0,
+            821.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4108
+        },
+        {
+          "object_view_id": "00196_0",
+          "view_id": "00196",
+          "bbox_2d": [
+            626.55,
+            190.72,
+            1295.92,
+            690.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4427
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 5,
+      "done_actions": [],
+      "missing_conditions": [
+        "beneath the counter",
+        "directly to the left of the doorway"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        3.7319,
+        -2.4824,
+        1.7112,
+        1.3481,
+        0.4562,
+        0.9129
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00104_0",
+          "view_id": "00104",
+          "bbox_2d": [
+            150.47,
+            33.4,
+            367.64,
+            280.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.379
+        },
+        {
+          "object_view_id": "00106_0",
+          "view_id": "00106",
+          "bbox_2d": [
+            187.36,
+            273.39,
+            407.33,
+            535.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4496
+        },
+        {
+          "object_view_id": "00110_0",
+          "view_id": "00110",
+          "bbox_2d": [
+            800.82,
+            0.0,
+            1140.32,
+            110.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4289
+        },
+        {
+          "object_view_id": "00112_0",
+          "view_id": "00112",
+          "bbox_2d": [
+            977.58,
+            2.2,
+            1296.0,
+            488.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4603
+        },
+        {
+          "object_view_id": "00192_1",
+          "view_id": "00192",
+          "bbox_2d": [
+            903.54,
+            277.16,
+            1295.97,
+            667.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.467
+        },
+        {
+          "object_view_id": "00194_0",
+          "view_id": "00194",
+          "bbox_2d": [
+            0.0,
+            247.52,
+            543.0,
+            651.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4374
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "kitchen cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "not reliably confirmed that this cabinet is directly to the left of the doorway",
+        "nearby similar cabinets still create ambiguity about which cabinet the request refers to"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        2.6428,
+        -2.0954,
+        0.4187,
+        0.9512,
+        0.0652,
+        0.7906
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00104_1",
+          "view_id": "00104",
+          "bbox_2d": [
+            198.56,
+            451.25,
+            315.68,
+            749.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3363
+        },
+        {
+          "object_view_id": "00110_2",
+          "view_id": "00110",
+          "bbox_2d": [
+            788.92,
+            361.85,
+            973.1,
+            942.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2578
+        },
+        {
+          "object_view_id": "bootstrap_00193",
+          "view_id": "00193",
+          "bbox_2d": [
+            495.0,
+            782.0,
+            836.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00111",
+          "view_id": "00111",
+          "bbox_2d": [
+            712.0,
+            615.0,
+            935.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00112",
+          "view_id": "00112",
+          "bbox_2d": [
+            963.0,
+            791.0,
+            1110.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00182_1",
+          "view_id": "00182",
+          "bbox_2d": [
+            1101.2,
+            317.53,
+            1296.0,
+            706.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2548
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "beneath the counter",
+        "directly to the left of the doorway"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        4.0775,
+        -1.2748,
+        1.6701,
+        0.453,
+        0.2915,
+        0.7377
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00108_0",
+          "view_id": "00108",
+          "bbox_2d": [
+            0.0,
+            9.34,
+            108.46,
+            285.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4162
+        },
+        {
+          "object_view_id": "bootstrap_00113",
+          "view_id": "00113",
+          "bbox_2d": [
+            778.0,
+            63.0,
+            1005.0,
+            414.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00184",
+          "view_id": "00184",
+          "bbox_2d": [
+            569.78,
+            0.63,
+            1025.36,
+            269.69
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00048",
+          "view_id": "00048",
+          "bbox_2d": [
+            753.0,
+            0.0,
+            813.0,
+            151.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "kitchen cabinet",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        3.8285,
+        -1.4587,
+        0.4402,
+        0.1666,
+        0.9353,
+        0.806
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00110_1",
+          "view_id": "00110",
+          "bbox_2d": [
+            305.74,
+            274.17,
+            624.76,
+            545.2
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2961
+        },
+        {
+          "object_view_id": "00112_2",
+          "view_id": "00112",
+          "bbox_2d": [
+            417.56,
+            616.58,
+            771.32,
+            937.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2537
+        },
+        {
+          "object_view_id": "00118_0",
+          "view_id": "00118",
+          "bbox_2d": [
+            814.66,
+            259.58,
+            1296.0,
+            783.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2747
+        },
+        {
+          "object_view_id": "bootstrap_00181",
+          "view_id": "00181",
+          "bbox_2d": [
+            282.0,
+            125.0,
+            574.0,
+            346.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00111",
+          "view_id": "00111",
+          "bbox_2d": [
+            205.48,
+            479.41,
+            551.33,
+            773.81
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00191",
+          "view_id": "00191",
+          "bbox_2d": [
+            397.0,
+            549.0,
+            745.0,
+            814.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "beneath the counter",
+        "directly to the left of the doorway"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        4.1964,
+        0.9451,
+        1.7713,
+        0.371,
+        0.5097,
+        0.7772
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00120_0",
+          "view_id": "00120",
+          "bbox_2d": [
+            304.39,
+            1.31,
+            518.22,
+            306.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.355
+        },
+        {
+          "object_view_id": "00124_0",
+          "view_id": "00124",
+          "bbox_2d": [
+            995.45,
+            3.91,
+            1296.0,
+            462.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4383
+        },
+        {
+          "object_view_id": "00136_0",
+          "view_id": "00136",
+          "bbox_2d": [
+            877.2,
+            100.65,
+            1296.0,
+            761.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3479
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            877.2,
+            100.65,
+            1296.0,
+            761.54
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00186_0",
+          "view_id": "00186",
+          "bbox_2d": [
+            743.91,
+            0.0,
+            971.24,
+            125.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2942
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "kitchen cabinet",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        3.6201,
+        1.8142,
+        0.5193,
+        0.3245,
+        0.2145,
+        0.7572
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00120_1",
+          "view_id": "00120",
+          "bbox_2d": [
+            0.0,
+            445.72,
+            98.46,
+            714.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3402
+        },
+        {
+          "object_view_id": "00132_1",
+          "view_id": "00132",
+          "bbox_2d": [
+            1123.83,
+            180.56,
+            1295.84,
+            480.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3091
+        },
+        {
+          "object_view_id": "bootstrap_00095",
+          "view_id": "00095",
+          "bbox_2d": [
+            996.0,
+            327.0,
+            1042.0,
+            504.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00133",
+          "view_id": "00133",
+          "bbox_2d": [
+            970.0,
+            292.0,
+            1114.0,
+            576.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00125",
+          "view_id": "00125",
+          "bbox_2d": [
+            953.0,
+            520.0,
+            1075.0,
+            807.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "beneath the counter",
+        "directly to the left of the doorway"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        4.2544,
+        -0.3887,
+        1.6438,
+        0.4147,
+        0.5699,
+        0.6773
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00120_2",
+          "view_id": "00120",
+          "bbox_2d": [
+            775.25,
+            0.0,
+            987.07,
+            378.49
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2823
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "kitchen cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "doorway is not clearly visible",
+        "cannot verify that this cabinet is directly to the left of the doorway",
+        "cannot confidently rule out other similar nearby lower cabinets as better matches"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        3.7811,
+        1.2531,
+        0.4821,
+        0.1668,
+        1.1915,
+        0.8335
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00120_3",
+          "view_id": "00120",
+          "bbox_2d": [
+            110.43,
+            457.73,
+            337.03,
+            820.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2549
+        },
+        {
+          "object_view_id": "00122_2",
+          "view_id": "00122",
+          "bbox_2d": [
+            356.38,
+            652.71,
+            541.17,
+            966.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2547
+        },
+        {
+          "object_view_id": "00134_1",
+          "view_id": "00134",
+          "bbox_2d": [
+            817.9,
+            459.07,
+            1083.9,
+            964.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2515
+        },
+        {
+          "object_view_id": "bootstrap_00136",
+          "view_id": "00136",
+          "bbox_2d": [
+            532.0,
+            900.0,
+            629.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00138",
+          "view_id": "00138",
+          "bbox_2d": [
+            1183.0,
+            838.0,
+            1295.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00135",
+          "view_id": "00135",
+          "bbox_2d": [
+            610.0,
+            763.0,
+            825.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 15,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [
+        "beneath the counter",
+        "directly to the left of the doorway"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        3.1147,
+        2.0481,
+        1.9007,
+        0.7201,
+        0.3296,
+        0.436
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00122_0",
+          "view_id": "00122",
+          "bbox_2d": [
+            0.01,
+            156.17,
+            235.05,
+            334.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3627
+        },
+        {
+          "object_view_id": "00124_2",
+          "view_id": "00124",
+          "bbox_2d": [
+            396.48,
+            77.73,
+            673.1,
+            258.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3204
+        },
+        {
+          "object_view_id": "00136_1",
+          "view_id": "00136",
+          "bbox_2d": [
+            43.53,
+            149.54,
+            439.28,
+            409.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3376
+        },
+        {
+          "object_view_id": "00138_0",
+          "view_id": "00138",
+          "bbox_2d": [
+            705.48,
+            64.61,
+            1104.24,
+            315.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3933
+        }
+      ]
+    },
+    {
+      "candidate_id": 16,
+      "label": "kitchen cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 7,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "not enough evidence that this exact cabinet is directly to the left of the doorway",
+        "nearby similar lower cabinets are present, so the doorway relation is not uniquely resolved"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        3.1599,
+        1.9511,
+        0.4856,
+        0.6398,
+        0.1344,
+        0.8132
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00122_1",
+          "view_id": "00122",
+          "bbox_2d": [
+            0.0,
+            633.69,
+            245.61,
+            953.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2755
+        },
+        {
+          "object_view_id": "00124_1",
+          "view_id": "00124",
+          "bbox_2d": [
+            388.56,
+            560.39,
+            647.43,
+            844.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3541
+        },
+        {
+          "object_view_id": "00126_1",
+          "view_id": "00126",
+          "bbox_2d": [
+            998.28,
+            472.77,
+            1296.0,
+            831.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5051
+        },
+        {
+          "object_view_id": "00132_0",
+          "view_id": "00132",
+          "bbox_2d": [
+            855.33,
+            154.1,
+            1170.89,
+            464.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3532
+        },
+        {
+          "object_view_id": "00134_0",
+          "view_id": "00134",
+          "bbox_2d": [
+            394.29,
+            409.79,
+            697.2,
+            730.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3459
+        },
+        {
+          "object_view_id": "00138_1",
+          "view_id": "00138",
+          "bbox_2d": [
+            644.43,
+            701.66,
+            1012.85,
+            965.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3417
+        },
+        {
+          "object_view_id": "bootstrap_00141",
+          "view_id": "00141",
+          "bbox_2d": [
+            1167.86,
+            434.4,
+            1295.97,
+            953.27
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00140",
+          "view_id": "00140",
+          "bbox_2d": [
+            950.04,
+            380.07,
+            1296.0,
+            885.85
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00140_0",
+          "view_id": "00140",
+          "bbox_2d": [
+            950.04,
+            380.07,
+            1296.0,
+            885.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4019
+        }
+      ]
+    },
+    {
+      "candidate_id": 17,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [
+        "beneath the counter",
+        "directly to the left of the doorway"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        2.2993,
+        1.9742,
+        1.8987,
+        0.9647,
+        0.7405,
+        0.3475
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00124_3",
+          "view_id": "00124",
+          "bbox_2d": [
+            0.0,
+            37.77,
+            393.56,
+            188.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.259
+        },
+        {
+          "object_view_id": "00126_0",
+          "view_id": "00126",
+          "bbox_2d": [
+            671.83,
+            0.0,
+            1056.16,
+            102.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5258
+        },
+        {
+          "object_view_id": "00138_2",
+          "view_id": "00138",
+          "bbox_2d": [
+            164.33,
+            18.24,
+            727.3,
+            217.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3135
+        }
+      ]
+    },
+    {
+      "candidate_id": 18,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "beneath the counter"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.6768,
+        -2.6007,
+        1.4978,
+        1.1498,
+        0.4917,
+        0.6636
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00146_0",
+          "view_id": "00146",
+          "bbox_2d": [
+            619.93,
+            0.04,
+            940.66,
+            206.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5764
+        }
+      ]
+    },
+    {
+      "candidate_id": 19,
+      "label": "kitchen cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "beneath the counter",
+        "directly to the left of the doorway"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        4.2196,
+        -1.0873,
+        1.4328,
+        0.4049,
+        0.8001,
+        0.2785
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00190_0",
+          "view_id": "00190",
+          "bbox_2d": [
+            133.96,
+            0.0,
+            463.17,
+            129.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3117
+        }
+      ]
+    }
+  ]
+}

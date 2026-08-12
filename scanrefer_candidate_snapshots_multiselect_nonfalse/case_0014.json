@@ -1,0 +1,936 @@
+{
+  "case_id": 14,
+  "scene_id": "scene0690_00",
+  "query": "the chair is south of the northwestern - most bookshelf . the chair is gray and has four legs .",
+  "query_analysis": {
+    "raw_query": "the chair is south of the northwestern - most bookshelf . the chair is gray and has four legs .",
+    "target_object": "chair",
+    "target_attributes": [
+      "gray",
+      "four legs"
+    ],
+    "reference_object": "bookshelf",
+    "reference_attributes": [
+      "northwestern-most"
+    ],
+    "relation": "south of"
+  },
+  "gt": {
+    "target_id": 23,
+    "gt_label": "chair",
+    "gt_bbox_3d": [
+      0.282556,
+      -2.51878,
+      0.560959,
+      0.675568,
+      0.432344,
+      0.85078
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 5,
+    "bbox_3d": [
+      0.287307,
+      -2.715978,
+      0.511934,
+      0.637638,
+      0.786865,
+      0.87755
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      6
+    ],
+    "detector_call_count": 42,
+    "total_views": 23,
+    "total_object_views": 16,
+    "total_candidates": 12
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot clearly confirm the chair has four visible legs",
+        "cannot reliably identify which bookshelf is the northwestern-most bookshelf",
+        "cannot reliably confirm the chair is south of that specific bookshelf"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.6799,
+        -1.1482,
+        0.4073,
+        1.1293,
+        0.7723,
+        0.7761
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            117.78,
+            2.38,
+            1105.84,
+            850.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.409
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            117.78,
+            2.38,
+            1105.84,
+            850.26
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            1140.0,
+            163.0,
+            1295.0,
+            932.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00002",
+          "view_id": "00002",
+          "bbox_2d": [
+            101.0,
+            108.0,
+            1079.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            0.0,
+            170.55,
+            357.28,
+            963.84
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00034_4",
+          "view_id": "00034",
+          "bbox_2d": [
+            962.4,
+            508.91,
+            1296.0,
+            965.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3852
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot clearly confirm the full chair structure from current partial views",
+        "gray color is not reliably supported",
+        "four legs are not visible",
+        "no bookshelf is visible, so the 'south of the northwestern-most bookshelf' relation cannot be verified"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.3192,
+        -1.0467,
+        0.3463,
+        0.2928,
+        0.7441,
+        0.6014
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_1",
+          "view_id": "00000",
+          "bbox_2d": [
+            814.19,
+            65.16,
+            1276.78,
+            552.49
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3956
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            42.0,
+            70.0,
+            600.0,
+            675.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00002",
+          "view_id": "00002",
+          "bbox_2d": [
+            793.0,
+            210.0,
+            1241.0,
+            700.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            21.0,
+            129.0,
+            486.0,
+            581.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "gray",
+        "has four legs",
+        "south of the northwestern-most bookshelf is not needed to rescue the mismatch because essential attributes already fail"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -1.7714,
+        -1.116,
+        0.4576,
+        1.2458,
+        0.8763,
+        0.7559
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            0.0,
+            15.44,
+            406.93,
+            778.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4151
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            15.44,
+            406.93,
+            778.6
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00038_1",
+          "view_id": "00038",
+          "bbox_2d": [
+            556.34,
+            279.18,
+            1296.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2749
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "gray",
+        "four legs",
+        "south of the northwestern-most bookshelf"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.6829,
+        1.5566,
+        0.4457,
+        0.9806,
+        0.7853,
+        0.8104
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            1002.01,
+            70.55,
+            1295.93,
+            644.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.425
+        },
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            722.06,
+            225.59,
+            1295.76,
+            875.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3655
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            462.64,
+            0.0,
+            1140.72,
+            421.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4798
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            234.15,
+            14.4,
+            976.09,
+            657.54
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00018",
+          "view_id": "00018",
+          "bbox_2d": [
+            20.0,
+            29.0,
+            127.0,
+            597.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            1063.0,
+            1.0,
+            1295.0,
+            298.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "chair",
+        "gray",
+        "four legs",
+        "south of the northwestern-most bookshelf"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.2172,
+        2.5671,
+        0.366,
+        0.8293,
+        2.8548,
+        0.8098
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            0.02,
+            5.33,
+            356.19,
+            939.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5927
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "gray color is not clearly visible; candidate appears light wood/beige instead",
+        "which bookshelf is the northwestern-most is not established from the current views",
+        "south-of relation to the northwestern-most bookshelf is not reliably verified"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.2748,
+        -2.6684,
+        0.5122,
+        0.6025,
+        0.6767,
+        0.8393
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            718.18,
+            355.88,
+            983.94,
+            697.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7967
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            420.31,
+            32.32,
+            698.87,
+            401.17
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            0.02,
+            9.42,
+            222.91,
+            441.14
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            858.66,
+            258.65,
+            1138.85,
+            620.46
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably verify that the chair is gray",
+        "cannot reliably verify that the chair has four legs",
+        "cannot confirm that it is south of the northwestern-most bookshelf"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.8635,
+        -3.1707,
+        0.5568,
+        0.4268,
+        0.5656,
+        0.8266
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_1",
+          "view_id": "00034",
+          "bbox_2d": [
+            606.34,
+            316.75,
+            754.59,
+            602.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6917
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            740.03,
+            231.1,
+            901.72,
+            526.38
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            807.0,
+            1.0,
+            959.0,
+            141.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            320.0,
+            3.0,
+            464.0,
+            300.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "candidate is a chair",
+        "gray attribute",
+        "four legs",
+        "south of the northwestern-most bookshelf"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.5019,
+        -2.6381,
+        0.6839,
+        0.4172,
+        0.479,
+        0.4458
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_2",
+          "view_id": "00034",
+          "bbox_2d": [
+            1085.38,
+            346.14,
+            1295.44,
+            508.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6767
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            1268.0,
+            384.0,
+            1295.0,
+            407.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00038",
+          "view_id": "00038",
+          "bbox_2d": [
+            5.0,
+            218.0,
+            94.0,
+            399.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            913.39,
+            47.19,
+            1079.53,
+            206.06
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "chair is clearly gray",
+        "chair clearly has four legs",
+        "candidate is south of the northwestern-most bookshelf"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.3235,
+        -4.6118,
+        0.8977,
+        0.3613,
+        0.4729,
+        0.2092
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_3",
+          "view_id": "00034",
+          "bbox_2d": [
+            869.78,
+            258.58,
+            1084.85,
+            523.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4226
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            1015.25,
+            150.77,
+            1225.08,
+            457.2
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "chair is gray with enough certainty",
+        "chair has four legs",
+        "reference bookshelf is confirmed to be the northwestern-most bookshelf",
+        "candidate is south of that northwestern-most bookshelf"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.6806,
+        -2.6281,
+        0.7002,
+        0.2758,
+        0.2312,
+        0.4225
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            0.0,
+            195.44,
+            124.54,
+            421.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4674
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            913.39,
+            47.19,
+            1079.53,
+            206.06
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            422.0,
+            0.0,
+            579.0,
+            184.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00002",
+          "view_id": "00002",
+          "bbox_2d": [
+            190.0,
+            3.0,
+            264.0,
+            180.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "chair is gray",
+        "chair has four legs",
+        "chair is south of the northwestern-most bookshelf is not needed to rescue the mismatch and is not reliably confirmed as the decisive condition"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.9714,
+        -1.1435,
+        0.3201,
+        0.5994,
+        0.739,
+        0.6369
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            0.0,
+            69.19,
+            416.92,
+            964.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4032
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            69.19,
+            416.92,
+            964.16
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "gray",
+        "four legs clearly confirmed",
+        "south of the northwestern-most bookshelf not reliably established"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -2.1165,
+        -0.7709,
+        0.337,
+        0.8496,
+        0.2716,
+        0.631
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            0.04,
+            22.73,
+            178.39,
+            879.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3907
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.04,
+            22.73,
+            178.39,
+            879.66
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

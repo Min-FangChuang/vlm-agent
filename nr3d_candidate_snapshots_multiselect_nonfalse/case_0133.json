@@ -1,0 +1,231 @@
+{
+  "case_id": 133,
+  "scene_id": "scene0030_00",
+  "query": "when facing the three windows you need to choose the one all the way to the left",
+  "query_analysis": {
+    "raw_query": "when facing the three windows you need to choose the one all the way to the left",
+    "target_object": "window",
+    "target_attributes": [],
+    "reference_object": "three windows",
+    "reference_attributes": [],
+    "relation": "all the way to the left when facing the three windows"
+  },
+  "gt": {
+    "target_id": 26,
+    "gt_label": "window",
+    "gt_bbox_3d": [
+      2.220426,
+      -2.947345,
+      1.488618,
+      1.941256,
+      0.270463,
+      1.236393
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      1.874628,
+      -2.897735,
+      1.539297,
+      2.282109,
+      0.349229,
+      1.25666
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 65,
+    "total_views": 63,
+    "total_object_views": 7,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "window",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "object must be a window",
+        "must be part of a set of three windows",
+        "must be the one all the way to the left when facing the three windows"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        3.0141,
+        1.6995,
+        1.5056,
+        0.1499,
+        2.4593,
+        1.1917
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            269.26,
+            55.57,
+            1284.36,
+            641.24
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6931
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "window",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "the scene must clearly show the referenced set of three windows",
+        "the candidate must be confirmed as the leftmost one when facing the three windows"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        1.923,
+        -2.9923,
+        1.1686,
+        2.1926,
+        0.1938,
+        0.5264
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            957.19,
+            6.19,
+            1287.62,
+            276.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3174
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            817.91,
+            6.51,
+            1287.12,
+            330.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3054
+        },
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            366.41,
+            7.82,
+            1283.38,
+            226.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2692
+        },
+        {
+          "object_view_id": "bootstrap_00099",
+          "view_id": "00099",
+          "bbox_2d": [
+            381.0,
+            7.0,
+            949.0,
+            61.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            977.95,
+            5.17,
+            1287.73,
+            475.41
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            8.0,
+            37.0,
+            182.0,
+            71.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00090_0",
+          "view_id": "00090",
+          "bbox_2d": [
+            668.08,
+            7.91,
+            1285.8,
+            293.43
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2867
+        },
+        {
+          "object_view_id": "00092_0",
+          "view_id": "00092",
+          "bbox_2d": [
+            637.09,
+            6.46,
+            1286.16,
+            280.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2547
+        },
+        {
+          "object_view_id": "00102_0",
+          "view_id": "00102",
+          "bbox_2d": [
+            670.01,
+            7.09,
+            1285.89,
+            261.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2669
+        }
+      ]
+    }
+  ]
+}

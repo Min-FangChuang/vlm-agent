@@ -1,0 +1,279 @@
+{
+  "case_id": 174,
+  "scene_id": "scene0645_00",
+  "query": "mirror in the bathroom",
+  "query_analysis": {
+    "raw_query": "mirror in the bathroom",
+    "target_object": "mirror",
+    "target_attributes": [],
+    "reference_object": "bathroom",
+    "reference_attributes": [],
+    "relation": "in"
+  },
+  "gt": {
+    "target_id": 72,
+    "gt_label": "mirror",
+    "gt_bbox_3d": [
+      -1.049122,
+      -3.5918,
+      1.439799,
+      1.668659,
+      0.168894,
+      0.782446
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 2,
+    "bbox_3d": [
+      -1.692499,
+      -4.23487,
+      1.138344,
+      0.624085,
+      1.622921,
+      0.412654
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      2,
+      2,
+      1
+    ],
+    "detector_call_count": 116,
+    "total_views": 113,
+    "total_object_views": 7,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "mirror",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [],
+      "missing_conditions": [
+        "mirror is in a bathroom"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        5.9396,
+        -1.1997,
+        1.4209,
+        6.3315,
+        1.4643,
+        2.2437
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            1021.89,
+            8.63,
+            1285.04,
+            485.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9331
+        },
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            597.16,
+            6.69,
+            873.3,
+            277.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7795
+        },
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            294.86,
+            8.69,
+            661.07,
+            279.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5721
+        },
+        {
+          "object_view_id": "00088_0",
+          "view_id": "00088",
+          "bbox_2d": [
+            373.83,
+            9.77,
+            750.85,
+            516.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9134
+        },
+        {
+          "object_view_id": "00092_0",
+          "view_id": "00092",
+          "bbox_2d": [
+            445.05,
+            8.32,
+            841.41,
+            144.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3482
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "mirror",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "green-boxed object is not clearly confirmed as a mirror",
+        "another nearby mirror more clearly satisfies the request"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -0.3202,
+        -3.1074,
+        1.2876,
+        0.0655,
+        0.138,
+        0.0951
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00192_0",
+          "view_id": "00192",
+          "bbox_2d": [
+            775.17,
+            7.89,
+            1039.73,
+            131.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6123
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            775.17,
+            7.89,
+            1039.73,
+            131.45
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00191",
+          "view_id": "00191",
+          "bbox_2d": [
+            1164.0,
+            80.0,
+            1287.0,
+            147.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "mirror",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.85,
+        -4.3132,
+        1.1075,
+        0.3149,
+        1.4662,
+        0.351
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00206_0",
+          "view_id": "00206",
+          "bbox_2d": [
+            8.87,
+            5.03,
+            266.39,
+            179.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2802
+        },
+        {
+          "object_view_id": "bootstrap_00162",
+          "view_id": "00162",
+          "bbox_2d": [
+            6.0,
+            5.0,
+            195.0,
+            202.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00207",
+          "view_id": "00207",
+          "bbox_2d": [
+            6.87,
+            4.39,
+            240.45,
+            130.05
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00163",
+          "view_id": "00163",
+          "bbox_2d": [
+            7.0,
+            6.0,
+            135.0,
+            274.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

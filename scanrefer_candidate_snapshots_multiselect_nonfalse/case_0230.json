@@ -1,0 +1,1149 @@
+{
+  "case_id": 230,
+  "scene_id": "scene0665_00",
+  "query": "it is a white table . the white table is sitting behind the two brown desks in the far left corner of the room .",
+  "query_analysis": {
+    "raw_query": "it is a white table . the white table is sitting behind the two brown desks in the far left corner of the room .",
+    "target_object": "table",
+    "target_attributes": [
+      "white"
+    ],
+    "reference_object": "desks",
+    "reference_attributes": [
+      "two",
+      "brown"
+    ],
+    "relation": "behind"
+  },
+  "gt": {
+    "target_id": 17,
+    "gt_label": "table",
+    "gt_bbox_3d": [
+      2.086756,
+      0.812936,
+      0.908443,
+      1.874466,
+      1.889503,
+      0.140548
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 2,
+    "bbox_3d": [
+      -1.340285,
+      1.213286,
+      0.442292,
+      1.161417,
+      1.526882,
+      0.760983
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      2,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      5
+    ],
+    "detector_call_count": 41,
+    "total_views": 26,
+    "total_object_views": 40,
+    "total_candidates": 14
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is white",
+        "candidate is the white table behind the two brown desks in the far left corner"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        -1.9727,
+        0.1673,
+        0.3825,
+        2.098,
+        2.8296,
+        0.7751
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            190.59,
+            240.51,
+            1248.46,
+            959.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6762
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            72.61,
+            13.4,
+            1027.6,
+            737.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6833
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            13.62,
+            92.23,
+            833.26,
+            868.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5665
+        },
+        {
+          "object_view_id": "00006_1",
+          "view_id": "00006",
+          "bbox_2d": [
+            11.49,
+            208.94,
+            587.34,
+            557.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4123
+        },
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            1087.78,
+            442.5,
+            1284.06,
+            959.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3601
+        },
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            733.57,
+            438.39,
+            1283.94,
+            957.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.54
+        },
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            373.12,
+            327.6,
+            1285.12,
+            957.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6451
+        },
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            73.26,
+            240.52,
+            938.74,
+            954.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.672
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the reference objects are exactly two brown desks",
+        "cannot reliably confirm the white table is behind both brown desks",
+        "cannot reliably confirm this location is the far left corner of the room"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        -1.8763,
+        2.1847,
+        0.4473,
+        2.3259,
+        3.4526,
+        0.768
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_1",
+          "view_id": "00000",
+          "bbox_2d": [
+            932.21,
+            149.64,
+            1285.99,
+            351.32
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2514
+        },
+        {
+          "object_view_id": "00004_1",
+          "view_id": "00004",
+          "bbox_2d": [
+            626.15,
+            7.95,
+            1286.34,
+            210.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3633
+        },
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            435.9,
+            101.92,
+            1206.67,
+            674.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5689
+        },
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            11.67,
+            300.31,
+            874.75,
+            954.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6028
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            35.0,
+            421.0,
+            212.0,
+            649.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            12.01,
+            343.07,
+            720.88,
+            801.7
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00010",
+          "view_id": "00010",
+          "bbox_2d": [
+            11.92,
+            300.6,
+            438.93,
+            666.95
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00050_1",
+          "view_id": "00050",
+          "bbox_2d": [
+            594.44,
+            133.25,
+            1055.7,
+            335.32
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2874
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "there are clearly two brown desks",
+        "candidate is behind those two brown desks",
+        "location is the far left corner of the room"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.2587,
+        0.6315,
+        0.6916,
+        0.9994,
+        0.3632,
+        0.1948
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_1",
+          "view_id": "00002",
+          "bbox_2d": [
+            761.14,
+            6.26,
+            1214.78,
+            135.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3444
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            196.01,
+            122.15,
+            1061.74,
+            803.21
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00008",
+          "view_id": "00008",
+          "bbox_2d": [
+            11.67,
+            300.31,
+            874.75,
+            954.02
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00006",
+          "view_id": "00006",
+          "bbox_2d": [
+            435.9,
+            101.92,
+            1206.67,
+            674.57
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "sitting behind two brown desks",
+        "in the far left corner of the room"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.6662,
+        3.3088,
+        0.413,
+        0.488,
+        0.8162,
+        0.6765
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_1",
+          "view_id": "00008",
+          "bbox_2d": [
+            1161.89,
+            245.98,
+            1285.56,
+            540.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3246
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "not reliably confirmed that the table is behind the two brown desks",
+        "not reliably confirmed that this location is the far left corner of the room"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        0.0112,
+        3.336,
+        0.4678,
+        1.4687,
+        0.9819,
+        0.8448
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            716.3,
+            202.5,
+            1258.79,
+            571.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6043
+        },
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            342.61,
+            292.55,
+            846.47,
+            619.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5591
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            11.28,
+            280.18,
+            483.74,
+            648.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3056
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            12.56,
+            448.56,
+            139.62,
+            867.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3156
+        },
+        {
+          "object_view_id": "bootstrap_00008",
+          "view_id": "00008",
+          "bbox_2d": [
+            1186.0,
+            235.0,
+            1285.0,
+            495.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            496.48,
+            205.89,
+            993.11,
+            512.66
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            11.9,
+            344.28,
+            370.89,
+            739.7
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "table",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "not consistent with being behind two brown desks",
+        "not consistent with being the white table in the far left corner of the room"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.6265,
+        2.2651,
+        0.4206,
+        1.8196,
+        2.9909,
+        0.8352
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_1",
+          "view_id": "00010",
+          "bbox_2d": [
+            11.92,
+            300.6,
+            438.93,
+            666.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2985
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            12.01,
+            343.07,
+            720.88,
+            801.7
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00012",
+          "view_id": "00012",
+          "bbox_2d": [
+            11.0,
+            543.0,
+            101.0,
+            636.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            11.0,
+            402.0,
+            233.0,
+            628.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00048_1",
+          "view_id": "00048",
+          "bbox_2d": [
+            989.35,
+            244.38,
+            1284.8,
+            394.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2604
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [
+        "table is behind the two brown desks",
+        "table is in the far left corner of the room"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        2.858,
+        0.6673,
+        0.6185,
+        3.4202,
+        2.1553,
+        0.8917
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            967.14,
+            394.58,
+            1284.05,
+            958.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4137
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            684.18,
+            185.44,
+            1284.09,
+            657.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4565
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            317.73,
+            52.3,
+            1285.28,
+            687.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6334
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the green-boxed table is behind the two brown desks",
+        "cannot reliably confirm the table is in the far left corner of the room",
+        "candidate table is only partially visible"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        4.9634,
+        1.1135,
+        0.7346,
+        1.1192,
+        1.014,
+        0.5951
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_1",
+          "view_id": "00020",
+          "bbox_2d": [
+            915.02,
+            19.94,
+            1288.45,
+            180.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4236
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            618.09,
+            16.26,
+            1009.51,
+            172.39
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [],
+      "missing_conditions": [
+        "table is white",
+        "behind the two brown desks",
+        "in the far left corner of the room"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        2.1213,
+        -0.3373,
+        0.6898,
+        1.7801,
+        4.0628,
+        0.6859
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            62.41,
+            109.14,
+            1091.8,
+            443.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4247
+        },
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            13.49,
+            156.96,
+            1180.92,
+            610.06
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4154
+        },
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            14.95,
+            204.26,
+            1285.66,
+            836.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6894
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            186.98,
+            206.11,
+            1283.9,
+            954.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7431
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [],
+      "missing_conditions": [
+        "table is white",
+        "table is behind two brown desks",
+        "table is in the far left corner of the room"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.4305,
+        -2.7314,
+        0.6855,
+        1.2778,
+        2.4779,
+        0.7459
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_1",
+          "view_id": "00026",
+          "bbox_2d": [
+            729.28,
+            7.41,
+            1228.85,
+            183.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3193
+        },
+        {
+          "object_view_id": "00030_1",
+          "view_id": "00030",
+          "bbox_2d": [
+            234.88,
+            10.41,
+            748.4,
+            186.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.299
+        },
+        {
+          "object_view_id": "00032_1",
+          "view_id": "00032",
+          "bbox_2d": [
+            170.3,
+            46.84,
+            735.51,
+            379.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4026
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            11.72,
+            275.53,
+            505.16,
+            959.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6869
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "table is unambiguously white",
+        "two brown desks are visually confirmed",
+        "the table is behind those two brown desks",
+        "the table is in the far left corner of the room",
+        "cannot rule out another nearby table as a better match from current context"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        2.3737,
+        0.5853,
+        0.9411,
+        1.2541,
+        1.2939,
+        0.0892
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            597.53,
+            240.06,
+            1286.45,
+            955.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6952
+        },
+        {
+          "object_view_id": "bootstrap_00030",
+          "view_id": "00030",
+          "bbox_2d": [
+            186.98,
+            206.11,
+            1283.9,
+            954.46
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            911.64,
+            327.37,
+            1283.45,
+            957.24
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            423.35,
+            253.73,
+            1283.99,
+            956.55
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "white",
+        "behind the two brown desks",
+        "in the far left corner of the room"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.6385,
+        -5.0451,
+        0.4384,
+        5.2096,
+        7.173,
+        1.2955
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            202.29,
+            134.01,
+            901.73,
+            328.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3627
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            127.51,
+            154.5,
+            1082.12,
+            451.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.55
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "table is white",
+        "table is behind two brown desks",
+        "table is in the far left corner of the room"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.4434,
+        -2.6777,
+        0.6827,
+        2.411,
+        2.4131,
+        0.7715
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            13.32,
+            175.74,
+            794.84,
+            721.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7178
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [
+        "object is a table",
+        "object is white",
+        "object is the table behind two brown desks in the far left corner"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -2.2929,
+        -5.4311,
+        0.4266,
+        4.0332,
+        5.0825,
+        1.3512
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00038_1",
+          "view_id": "00038",
+          "bbox_2d": [
+            836.75,
+            7.71,
+            1152.8,
+            276.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2756
+        },
+        {
+          "object_view_id": "00040_1",
+          "view_id": "00040",
+          "bbox_2d": [
+            758.27,
+            34.45,
+            1075.69,
+            316.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3296
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            244.6,
+            19.28,
+            650.66,
+            493.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3334
+        }
+      ]
+    }
+  ]
+}

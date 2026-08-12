@@ -1,0 +1,1095 @@
+{
+  "case_id": 64,
+  "scene_id": "scene0644_00",
+  "query": "the keyboard that is on the little side desk on the end of the big desks and is near the shelves",
+  "query_analysis": {
+    "raw_query": "the keyboard that is on the little side desk on the end of the big desks and is near the shelves",
+    "target_object": "keyboard",
+    "target_attributes": [],
+    "reference_object": "side desk; big desks; shelves",
+    "reference_attributes": [
+      "little",
+      "big"
+    ],
+    "relation": "on; on the end of; near"
+  },
+  "gt": {
+    "target_id": 41,
+    "gt_label": "keyboard",
+    "gt_bbox_3d": [
+      0.35487,
+      1.147751,
+      0.696099,
+      0.255024,
+      0.412714,
+      0.037697
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 6,
+    "bbox_3d": [
+      0.356954,
+      1.150798,
+      0.728262,
+      0.310367,
+      0.46195,
+      0.096312
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      1,
+      1,
+      1,
+      1,
+      4
+    ],
+    "detector_call_count": 75,
+    "total_views": 51,
+    "total_object_views": 26,
+    "total_candidates": 10
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "keyboard",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "clear visual confirmation that this keyboard is near the shelves"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.3018,
+        -2.3727,
+        0.7175,
+        0.3266,
+        0.3465,
+        0.057
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            137.62,
+            433.75,
+            356.39,
+            565.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8601
+        },
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            10.67,
+            686.52,
+            273.65,
+            875.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8572
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            10.67,
+            686.52,
+            273.65,
+            875.41
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            40.0,
+            407.0,
+            170.0,
+            489.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00046",
+          "view_id": "00046",
+          "bbox_2d": [
+            551.0,
+            775.0,
+            666.0,
+            864.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00047",
+          "view_id": "00047",
+          "bbox_2d": [
+            400.0,
+            593.0,
+            511.0,
+            639.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "keyboard",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -0.2933,
+        1.0496,
+        0.6967,
+        0.5406,
+        0.259,
+        0.0765
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            465.2,
+            542.04,
+            825.47,
+            662.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9369
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            871.88,
+            580.26,
+            1283.91,
+            731.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8285
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            7.58,
+            818.91,
+            410.61,
+            960.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9183
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            871.88,
+            580.26,
+            1283.91,
+            731.74
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            529.81,
+            548.81,
+            929.83,
+            682.71
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            268.07,
+            470.65,
+            581.7,
+            563.23
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00018",
+          "view_id": "00018",
+          "bbox_2d": [
+            321.0,
+            375.0,
+            618.0,
+            441.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "keyboard",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm this is the little side desk on the end of the big desks",
+        "cannot reliably confirm proximity to shelves"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -2.0401,
+        1.1337,
+        0.6984,
+        0.4693,
+        0.2272,
+        0.0665
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            513.34,
+            638.21,
+            786.14,
+            744.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5755
+        },
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            287.6,
+            590.87,
+            566.32,
+            713.32
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9301
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            496.11,
+            671.12,
+            772.81,
+            795.08
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            136.0,
+            495.0,
+            358.0,
+            546.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            231.78,
+            626.07,
+            526.47,
+            715.86
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "keyboard",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 8,
+      "bbox_3d": [
+        -0.2862,
+        -1.4888,
+        0.7058,
+        0.4776,
+        0.2759,
+        0.031
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            97.35,
+            336.19,
+            365.58,
+            451.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.57
+        },
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            12.13,
+            421.9,
+            291.43,
+            552.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.812
+        },
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            215.58,
+            637.42,
+            607.24,
+            744.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9456
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            215.58,
+            637.42,
+            607.24,
+            744.62
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00064",
+          "view_id": "00064",
+          "bbox_2d": [
+            25.0,
+            691.0,
+            188.0,
+            753.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            902.0,
+            438.0,
+            1061.0,
+            546.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            56.27,
+            667.73,
+            512.3,
+            798.97
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            700.22,
+            638.5,
+            984.11,
+            746.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9163
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "keyboard",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -1.8883,
+        -1.7161,
+        0.7038,
+        0.4469,
+        0.2821,
+        0.0438
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            237.85,
+            476.73,
+            564.49,
+            584.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9596
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            237.85,
+            476.73,
+            564.49,
+            584.21
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            491.0,
+            193.0,
+            617.0,
+            219.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00063",
+          "view_id": "00063",
+          "bbox_2d": [
+            695.12,
+            645.39,
+            1129.78,
+            757.91
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00062",
+          "view_id": "00062",
+          "bbox_2d": [
+            614.99,
+            741.64,
+            1019.7,
+            823.23
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            614.99,
+            741.64,
+            1019.7,
+            823.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9542
+        },
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            1018.11,
+            703.88,
+            1284.75,
+            807.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8878
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "keyboard",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "green-boxed object is a keyboard"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -2.3974,
+        -1.9254,
+        0.6285,
+        0.2939,
+        0.9062,
+        0.2862
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00062_1",
+          "view_id": "00062",
+          "bbox_2d": [
+            1109.88,
+            717.66,
+            1287.09,
+            899.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4362
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1109.88,
+            717.66,
+            1287.09,
+            899.14
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "keyboard",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.3119,
+        1.143,
+        0.7053,
+        0.2355,
+        0.4591,
+        0.0492
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00078_0",
+          "view_id": "00078",
+          "bbox_2d": [
+            34.66,
+            790.89,
+            478.02,
+            958.48
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9471
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            34.66,
+            790.89,
+            478.02,
+            958.48
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            555.0,
+            714.0,
+            727.0,
+            806.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            856.0,
+            503.0,
+            1015.0,
+            592.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00085",
+          "view_id": "00085",
+          "bbox_2d": [
+            7.99,
+            782.96,
+            539.66,
+            956.64
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            370.13,
+            822.78,
+            988.34,
+            958.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9613
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "keyboard",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "near the shelves is not visually confirmed",
+        "insufficient context to rule out nearby alternative keyboards matching the description"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        -0.2864,
+        1.862,
+        0.7205,
+        0.5384,
+        0.3097,
+        0.0607
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00088_0",
+          "view_id": "00088",
+          "bbox_2d": [
+            12.19,
+            412.37,
+            205.06,
+            572.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9438
+        },
+        {
+          "object_view_id": "00090_0",
+          "view_id": "00090",
+          "bbox_2d": [
+            147.64,
+            448.12,
+            470.06,
+            564.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9496
+        },
+        {
+          "object_view_id": "00092_0",
+          "view_id": "00092",
+          "bbox_2d": [
+            519.14,
+            681.3,
+            888.48,
+            760.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9012
+        },
+        {
+          "object_view_id": "00094_0",
+          "view_id": "00094",
+          "bbox_2d": [
+            44.5,
+            693.16,
+            598.63,
+            919.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8976
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            44.5,
+            693.16,
+            598.63,
+            919.37
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00093",
+          "view_id": "00093",
+          "bbox_2d": [
+            530.15,
+            640.99,
+            945.91,
+            744.57
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00095",
+          "view_id": "00095",
+          "bbox_2d": [
+            47.0,
+            645.0,
+            236.0,
+            819.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00091",
+          "view_id": "00091",
+          "bbox_2d": [
+            324.92,
+            600.35,
+            672.64,
+            696.85
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "keyboard",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "on the little side desk",
+        "at the end of the big desks",
+        "near the shelves"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.7164,
+        2.4091,
+        0.7321,
+        0.5008,
+        0.3161,
+        0.0466
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00096_0",
+          "view_id": "00096",
+          "bbox_2d": [
+            924.48,
+            432.12,
+            1217.45,
+            566.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9412
+        },
+        {
+          "object_view_id": "00098_0",
+          "view_id": "00098",
+          "bbox_2d": [
+            637.94,
+            615.79,
+            1074.16,
+            798.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9196
+        },
+        {
+          "object_view_id": "bootstrap_00095",
+          "view_id": "00095",
+          "bbox_2d": [
+            1045.0,
+            490.0,
+            1283.0,
+            576.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00100",
+          "view_id": "00100",
+          "bbox_2d": [
+            585.76,
+            560.27,
+            1174.66,
+            747.31
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00099",
+          "view_id": "00099",
+          "bbox_2d": [
+            639.22,
+            677.28,
+            1181.8,
+            832.9
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00100_0",
+          "view_id": "00100",
+          "bbox_2d": [
+            585.76,
+            560.27,
+            1174.66,
+            747.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9502
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "keyboard",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "green-boxed object is reliably confirmed to be a keyboard",
+        "keyboard is on the little side desk",
+        "the little side desk is on the end of the big desks",
+        "the desk/keyboard is near the shelves"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -2.2126,
+        2.4177,
+        0.7045,
+        0.4259,
+        0.615,
+        0.2039
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00098_1",
+          "view_id": "00098",
+          "bbox_2d": [
+            959.07,
+            528.07,
+            1283.73,
+            709.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7952
+        },
+        {
+          "object_view_id": "bootstrap_00097",
+          "view_id": "00097",
+          "bbox_2d": [
+            1139.0,
+            433.0,
+            1283.0,
+            498.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00100",
+          "view_id": "00100",
+          "bbox_2d": [
+            1138.0,
+            483.0,
+            1283.0,
+            577.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00099",
+          "view_id": "00099",
+          "bbox_2d": [
+            1068.79,
+            584.99,
+            1285.13,
+            726.89
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00100_1",
+          "view_id": "00100",
+          "bbox_2d": [
+            1094.28,
+            461.85,
+            1284.45,
+            595.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4055
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1466 @@
+{
+  "case_id": 95,
+  "scene_id": "scene0435_00",
+  "query": "the pillow on the bed farther from the door . it is the top pillow on the side of the bed that is closer to the table between the beds .",
+  "query_analysis": {
+    "raw_query": "the pillow on the bed farther from the door . it is the top pillow on the side of the bed that is closer to the table between the beds .",
+    "target_object": "pillow",
+    "target_attributes": [
+      "top"
+    ],
+    "reference_object": "bed",
+    "reference_attributes": [
+      "farther from the door",
+      "side closer to the table between the beds"
+    ],
+    "relation": "on"
+  },
+  "gt": {
+    "target_id": 44,
+    "gt_label": "pillow",
+    "gt_bbox_3d": [
+      1.66478,
+      1.126586,
+      0.77235,
+      0.44586,
+      0.636609,
+      0.25131
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 4,
+    "bbox_3d": [
+      1.652304,
+      1.111904,
+      0.766563,
+      0.464457,
+      0.640835,
+      0.267656
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      6
+    ],
+    "detector_call_count": 100,
+    "total_views": 82,
+    "total_object_views": 50,
+    "total_candidates": 17
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "not on the bed farther from the door",
+        "not on the side of the bed closer to the table between the beds",
+        "does not appear to be the top pillow on that side"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.6396,
+        1.602,
+        0.7803,
+        0.4774,
+        0.3887,
+        0.277
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            932.51,
+            328.49,
+            1295.88,
+            481.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.825
+        },
+        {
+          "object_view_id": "bootstrap_00049",
+          "view_id": "00049",
+          "bbox_2d": [
+            0.07,
+            355.69,
+            286.03,
+            563.25
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00050",
+          "view_id": "00050",
+          "bbox_2d": [
+            0.0,
+            527.08,
+            141.22,
+            705.55
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00050_1",
+          "view_id": "00050",
+          "bbox_2d": [
+            0.0,
+            527.08,
+            141.22,
+            705.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7975
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 4,
+      "done_actions": [],
+      "missing_conditions": [
+        "not the top pillow",
+        "cannot reliably confirm from current view that this is the correct pillow on the bed farther from the door",
+        "cannot reliably confirm the side closer to the table between the beds"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.489,
+        1.663,
+        0.6835,
+        0.1261,
+        0.4923,
+        0.0894
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_1",
+          "view_id": "00032",
+          "bbox_2d": [
+            929.85,
+            409.6,
+            1247.8,
+            508.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6681
+        },
+        {
+          "object_view_id": "00040_2",
+          "view_id": "00040",
+          "bbox_2d": [
+            435.49,
+            503.59,
+            799.58,
+            589.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7991
+        },
+        {
+          "object_view_id": "00042_1",
+          "view_id": "00042",
+          "bbox_2d": [
+            72.37,
+            97.3,
+            470.91,
+            182.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4917
+        },
+        {
+          "object_view_id": "00046_3",
+          "view_id": "00046",
+          "bbox_2d": [
+            0.15,
+            258.59,
+            315.5,
+            359.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3797
+        },
+        {
+          "object_view_id": "00048_2",
+          "view_id": "00048",
+          "bbox_2d": [
+            0.0,
+            449.47,
+            318.07,
+            563.42
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5856
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "bed farther from the door",
+        "top pillow status"
+      ],
+      "num_object_views": 12,
+      "bbox_3d": [
+        1.6639,
+        1.7216,
+        0.7774,
+        0.5804,
+        0.6311,
+        0.2831
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            997.89,
+            214.94,
+            1296.0,
+            369.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7203
+        },
+        {
+          "object_view_id": "bootstrap_00043",
+          "view_id": "00043",
+          "bbox_2d": [
+            51.04,
+            95.4,
+            454.56,
+            249.55
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            433.82,
+            36.85,
+            738.99,
+            154.41
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            7.03,
+            370.97,
+            436.97,
+            520.94
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            452.65,
+            414.75,
+            807.16,
+            549.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8997
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            76.13,
+            0.0,
+            481.65,
+            136.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.674
+        },
+        {
+          "object_view_id": "00044_1",
+          "view_id": "00044",
+          "bbox_2d": [
+            0.0,
+            50.54,
+            326.23,
+            270.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6286
+        },
+        {
+          "object_view_id": "00046_1",
+          "view_id": "00046",
+          "bbox_2d": [
+            0.0,
+            149.12,
+            320.49,
+            314.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6984
+        },
+        {
+          "object_view_id": "00048_1",
+          "view_id": "00048",
+          "bbox_2d": [
+            0.04,
+            319.0,
+            326.39,
+            507.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8044
+        },
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            269.84,
+            262.28,
+            621.01,
+            400.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6966
+        },
+        {
+          "object_view_id": "00054_1",
+          "view_id": "00054",
+          "bbox_2d": [
+            601.06,
+            90.91,
+            913.72,
+            229.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7285
+        },
+        {
+          "object_view_id": "00056_1",
+          "view_id": "00056",
+          "bbox_2d": [
+            20.7,
+            50.35,
+            365.47,
+            201.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5479
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot confirm this bed is the one farther from the door",
+        "candidate does not match the 'top pillow' requirement; another pillow on the same bed appears to match that better"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.6191,
+        1.8627,
+        0.722,
+        0.3848,
+        0.5066,
+        0.1354
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00038_1",
+          "view_id": "00038",
+          "bbox_2d": [
+            963.07,
+            287.32,
+            1296.0,
+            410.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5288
+        },
+        {
+          "object_view_id": "bootstrap_00049",
+          "view_id": "00049",
+          "bbox_2d": [
+            0.07,
+            355.69,
+            286.03,
+            563.25
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "pillow",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 8,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot confirm which of the two beds is farther from the door",
+        "cannot rule out the corresponding pillow on the other bed as the true target"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        1.6544,
+        1.1089,
+        0.7666,
+        0.4606,
+        0.6372,
+        0.2677
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00040_1",
+          "view_id": "00040",
+          "bbox_2d": [
+            750.18,
+            401.36,
+            1072.83,
+            545.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8853
+        },
+        {
+          "object_view_id": "00042_2",
+          "view_id": "00042",
+          "bbox_2d": [
+            405.33,
+            0.0,
+            717.38,
+            119.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4715
+        },
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            249.17,
+            8.79,
+            575.36,
+            182.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7344
+        },
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            237.13,
+            108.45,
+            568.88,
+            265.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7294
+        },
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            256.81,
+            282.23,
+            625.76,
+            458.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.846
+        },
+        {
+          "object_view_id": "00052_1",
+          "view_id": "00052",
+          "bbox_2d": [
+            575.86,
+            281.35,
+            927.7,
+            414.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6809
+        },
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            849.96,
+            117.87,
+            1214.92,
+            256.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7311
+        },
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            304.38,
+            70.02,
+            644.51,
+            209.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6041
+        },
+        {
+          "object_view_id": "bootstrap_00050",
+          "view_id": "00050",
+          "bbox_2d": [
+            141.0,
+            490.0,
+            559.0,
+            712.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "pillow",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot confirm this is the bed farther from the door",
+        "cannot fully confirm the candidate is the top pillow"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        1.6962,
+        -0.9312,
+        0.8279,
+        0.5274,
+        1.1695,
+        0.1948
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_2",
+          "view_id": "00046",
+          "bbox_2d": [
+            780.59,
+            4.83,
+            1127.24,
+            103.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6842
+        },
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            1009.0,
+            401.12,
+            1296.0,
+            516.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8168
+        },
+        {
+          "object_view_id": "00058_2",
+          "view_id": "00058",
+          "bbox_2d": [
+            752.4,
+            391.84,
+            1103.45,
+            501.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7017
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            473.0,
+            362.0,
+            1017.0,
+            486.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00062",
+          "view_id": "00062",
+          "bbox_2d": [
+            240.0,
+            0.0,
+            653.0,
+            104.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00057",
+          "view_id": "00057",
+          "bbox_2d": [
+            961.24,
+            260.03,
+            1296.0,
+            371.43
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00060_1",
+          "view_id": "00060",
+          "bbox_2d": [
+            443.62,
+            166.29,
+            776.24,
+            291.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8306
+        },
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            241.36,
+            0.0,
+            569.5,
+            93.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4586
+        },
+        {
+          "object_view_id": "00070_0",
+          "view_id": "00070",
+          "bbox_2d": [
+            176.6,
+            337.98,
+            533.35,
+            471.06
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8839
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is the top pillow",
+        "full requested pillow identity is not matched because another pillow on the same bed side fits better"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.4988,
+        1.1359,
+        0.6792,
+        0.1185,
+        0.6017,
+        0.0891
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00050_2",
+          "view_id": "00050",
+          "bbox_2d": [
+            147.42,
+            618.72,
+            538.76,
+            708.84
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.569
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            147.42,
+            618.72,
+            538.76,
+            708.84
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "pillow",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot verify which bed is farther from the door",
+        "cannot fully confirm this pillow is uniquely the correct one versus the similar pillow on the other bed"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        1.6346,
+        0.9851,
+        0.7675,
+        0.432,
+        0.3574,
+        0.2589
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            0.0,
+            394.07,
+            214.76,
+            569.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7955
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            407.71,
+            376.48,
+            788.2,
+            546.66
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00050",
+          "view_id": "00050",
+          "bbox_2d": [
+            150.0,
+            488.0,
+            563.0,
+            695.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "pillow",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 7,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably verify that this bed is the one farther from the door"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        1.6982,
+        -1.5156,
+        0.7973,
+        0.4977,
+        1.3082,
+        0.245
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_1",
+          "view_id": "00058",
+          "bbox_2d": [
+            1051.43,
+            382.43,
+            1295.88,
+            495.42
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7393
+        },
+        {
+          "object_view_id": "bootstrap_00062",
+          "view_id": "00062",
+          "bbox_2d": [
+            589.0,
+            0.0,
+            666.0,
+            26.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00069",
+          "view_id": "00069",
+          "bbox_2d": [
+            427.64,
+            399.84,
+            739.18,
+            519.33
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00071",
+          "view_id": "00071",
+          "bbox_2d": [
+            13.0,
+            131.0,
+            251.0,
+            217.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            727.08,
+            115.92,
+            1069.16,
+            242.06
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8408
+        },
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            1.09,
+            29.93,
+            326.33,
+            161.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3394
+        },
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            122.53,
+            135.4,
+            476.31,
+            269.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6873
+        },
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            239.82,
+            404.12,
+            606.28,
+            549.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6727
+        },
+        {
+          "object_view_id": "00070_1",
+          "view_id": "00070",
+          "bbox_2d": [
+            446.96,
+            288.69,
+            720.72,
+            395.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8268
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "bed farther from the door is not visually confirmed"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.4877,
+        -0.7918,
+        0.7231,
+        0.1504,
+        0.48,
+        0.1236
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_2",
+          "view_id": "00060",
+          "bbox_2d": [
+            469.57,
+            236.96,
+            802.35,
+            330.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6584
+        },
+        {
+          "object_view_id": "00066_2",
+          "view_id": "00066",
+          "bbox_2d": [
+            0.46,
+            265.31,
+            230.7,
+            407.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3092
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is the top pillow",
+        "candidate is the best matching pillow among the nearby alternatives"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.6226,
+        -0.7233,
+        0.8189,
+        0.4368,
+        0.6499,
+        0.157
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00066_1",
+          "view_id": "00066",
+          "bbox_2d": [
+            0.0,
+            195.18,
+            199.84,
+            353.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4104
+        },
+        {
+          "object_view_id": "00068_1",
+          "view_id": "00068",
+          "bbox_2d": [
+            0.12,
+            472.63,
+            332.02,
+            659.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5087
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "pillow",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "which bed is farther from the door is not visible",
+        "whether this specific pillow is the top pillow on that side is not fully confirmed"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.4965,
+        -1.363,
+        0.7307,
+        0.0923,
+        0.6177,
+        0.0936
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00068_2",
+          "view_id": "00068",
+          "bbox_2d": [
+            360.5,
+            470.31,
+            607.78,
+            575.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3696
+        },
+        {
+          "object_view_id": "bootstrap_00069",
+          "view_id": "00069",
+          "bbox_2d": [
+            534.0,
+            465.0,
+            735.0,
+            541.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00062",
+          "view_id": "00062",
+          "bbox_2d": [
+            620.0,
+            0.0,
+            770.0,
+            42.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00058",
+          "view_id": "00058",
+          "bbox_2d": [
+            1130.0,
+            480.0,
+            1253.0,
+            514.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "pillow",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "whether this is the bed farther from the door",
+        "clear confirmation of the two-bed layout and the table between them",
+        "which side of this bed is closer to the table between the beds",
+        "whether the boxed pillow is the top pillow on that specified side"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.6006,
+        -0.7018,
+        0.7003,
+        0.3883,
+        0.6537,
+        0.0989
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00070_2",
+          "view_id": "00070",
+          "bbox_2d": [
+            207.18,
+            399.98,
+            547.0,
+            503.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7438
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            504.0,
+            443.0,
+            836.0,
+            516.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00050",
+          "view_id": "00050",
+          "bbox_2d": [
+            1036.0,
+            500.0,
+            1273.0,
+            547.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00066",
+          "view_id": "00066",
+          "bbox_2d": [
+            0.46,
+            265.31,
+            230.7,
+            407.01
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a pillow",
+        "top pillow",
+        "on the bed farther from the door",
+        "on the side of the bed closer to the table between the beds"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.4775,
+        -1.1507,
+        0.4575,
+        1.2526,
+        1.9442,
+        0.5998
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00072_0",
+          "view_id": "00072",
+          "bbox_2d": [
+            0.0,
+            114.79,
+            538.66,
+            668.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3109
+        },
+        {
+          "object_view_id": "00094_1",
+          "view_id": "00094",
+          "bbox_2d": [
+            0.02,
+            304.59,
+            196.56,
+            955.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4557
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "is a pillow",
+        "on the bed farther from the door",
+        "top pillow",
+        "on the side of the bed closer to the table between the beds"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.6745,
+        1.5764,
+        1.0874,
+        0.424,
+        0.2759,
+        0.3186
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00088_0",
+          "view_id": "00088",
+          "bbox_2d": [
+            8.17,
+            249.34,
+            184.54,
+            432.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.599
+        }
+      ]
+    },
+    {
+      "candidate_id": 15,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a pillow",
+        "on the bed farther from the door",
+        "top pillow",
+        "on the side of the bed closer to the table between the beds"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.234,
+        -1.1867,
+        0.1762,
+        0.3019,
+        0.4577,
+        0.2576
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00094_0",
+          "view_id": "00094",
+          "bbox_2d": [
+            158.22,
+            769.51,
+            439.8,
+            965.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6786
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            158.22,
+            769.51,
+            439.8,
+            965.02
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 16,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "on the bed farther from the door",
+        "top pillow on the side of that bed closer to the table between the beds"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.018,
+        -1.6043,
+        0.3521,
+        0.3316,
+        1.0331,
+        0.5794
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00154_0",
+          "view_id": "00154",
+          "bbox_2d": [
+            0.0,
+            306.04,
+            211.5,
+            957.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4476
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            306.04,
+            211.5,
+            957.04
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

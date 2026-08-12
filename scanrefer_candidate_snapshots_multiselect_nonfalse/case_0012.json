@@ -1,0 +1,258 @@
+{
+  "case_id": 12,
+  "scene_id": "scene0193_00",
+  "query": "this is a black , rolling office chair . this chair sits at the desk , at the end of the bed .",
+  "query_analysis": {
+    "raw_query": "this is a black , rolling office chair . this chair sits at the desk , at the end of the bed .",
+    "target_object": "office chair",
+    "target_attributes": [
+      "black",
+      "rolling"
+    ],
+    "reference_object": "desk",
+    "reference_attributes": [],
+    "relation": "at"
+  },
+  "gt": {
+    "target_id": 5,
+    "gt_label": "office chair",
+    "gt_bbox_3d": [
+      0.78578,
+      -0.004627,
+      0.556473,
+      0.561056,
+      0.573995,
+      0.652217
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      0.702293,
+      -0.024395,
+      0.425846,
+      0.416329,
+      0.666136,
+      0.954795
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      2
+    ],
+    "detector_call_count": 21,
+    "total_views": 18,
+    "total_object_views": 8,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "office chair",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 10,
+      "bbox_3d": [
+        0.6474,
+        -0.0331,
+        0.6039,
+        0.2852,
+        0.668,
+        0.5751
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            431.23,
+            176.08,
+            787.04,
+            811.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.784
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            458.89,
+            508.42,
+            793.31,
+            946.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7171
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            30.46,
+            588.2,
+            434.82,
+            952.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7217
+        },
+        {
+          "object_view_id": "bootstrap_00024",
+          "view_id": "00024",
+          "bbox_2d": [
+            599.72,
+            302.25,
+            1062.84,
+            906.08
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00030",
+          "view_id": "00030",
+          "bbox_2d": [
+            536.0,
+            261.0,
+            1230.0,
+            783.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            802.59,
+            201.42,
+            1279.83,
+            927.09
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00021_0",
+          "view_id": "00021",
+          "bbox_2d": [
+            376.32,
+            420.09,
+            701.08,
+            905.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7314
+        },
+        {
+          "object_view_id": "00023_0",
+          "view_id": "00023",
+          "bbox_2d": [
+            514.63,
+            392.13,
+            908.46,
+            932.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8412
+        },
+        {
+          "object_view_id": "00025_0",
+          "view_id": "00025",
+          "bbox_2d": [
+            870.56,
+            111.14,
+            1279.41,
+            803.06
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8654
+        },
+        {
+          "object_view_id": "00029_0",
+          "view_id": "00029",
+          "bbox_2d": [
+            802.59,
+            201.42,
+            1279.83,
+            927.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7798
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "office chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "requested object is an office chair",
+        "black rolling chair identity for the green-boxed object",
+        "green-boxed object sitting at the desk"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.4873,
+        -0.5613,
+        0.5704,
+        1.6239,
+        0.8604,
+        0.7413
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00023_1",
+          "view_id": "00023",
+          "bbox_2d": [
+            887.12,
+            513.38,
+            1279.92,
+            953.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2872
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            887.12,
+            513.38,
+            1279.92,
+            953.97
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "case_id": 184,
+  "scene_id": "scene0704_00",
+  "query": "the left artwork directly above the blue shredder",
+  "query_analysis": {
+    "raw_query": "the left artwork directly above the blue shredder",
+    "target_object": "artwork",
+    "target_attributes": [],
+    "reference_object": "shredder",
+    "reference_attributes": [
+      "blue"
+    ],
+    "relation": "directly above"
+  },
+  "gt": {
+    "target_id": 11,
+    "gt_label": "picture",
+    "gt_bbox_3d": [
+      2.607637,
+      -0.028703,
+      1.945385,
+      0.044727,
+      0.420153,
+      0.352723
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      1.291891,
+      -1.427484,
+      1.703257,
+      0.646923,
+      0.073085,
+      0.582722
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 62,
+    "total_views": 61,
+    "total_object_views": 2,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "artwork",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "reference object is not reliably confirmed to be a blue shredder",
+        "unclear whether the green-boxed artwork is the 'left artwork' relative to nearby alternative artwork",
+        "directly-above relation to the specified blue shredder is not reliably established"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.2813,
+        -1.4274,
+        1.7033,
+        0.6314,
+        0.0781,
+        0.5827
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            414.16,
+            0.38,
+            585.44,
+            175.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3103
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            184.0,
+            0.0,
+            283.0,
+            13.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00062",
+          "view_id": "00062",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            80.0,
+            212.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00060",
+          "view_id": "00060",
+          "bbox_2d": [
+            82.0,
+            0.0,
+            408.0,
+            146.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "artwork",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "directly above the blue shredder"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        2.6301,
+        -0.6125,
+        1.732,
+        0.1234,
+        0.5568,
+        0.4414
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_1",
+          "view_id": "00024",
+          "bbox_2d": [
+            18.37,
+            58.99,
+            141.55,
+            179.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2635
+        }
+      ]
+    }
+  ]
+}

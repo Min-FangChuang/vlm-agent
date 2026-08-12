@@ -1,0 +1,1848 @@
+{
+  "case_id": 119,
+  "scene_id": "scene0314_00",
+  "query": "the office chair is black and is pushed out from the desk . the chair is the second from the right .",
+  "query_analysis": {
+    "raw_query": "the office chair is black and is pushed out from the desk . the chair is the second from the right .",
+    "target_object": "office chair",
+    "target_attributes": [
+      "black",
+      "pushed out"
+    ],
+    "reference_object": "desk",
+    "reference_attributes": [],
+    "relation": "pushed out from; second from the right"
+  },
+  "gt": {
+    "target_id": 7,
+    "gt_label": "office chair",
+    "gt_bbox_3d": [
+      1.768416,
+      -0.297448,
+      0.539698,
+      0.823901,
+      0.831111,
+      1.120843
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 8,
+    "bbox_3d": [
+      1.854706,
+      -0.28759,
+      0.508272,
+      0.599512,
+      0.783842,
+      1.1587
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 67,
+    "total_views": 24,
+    "total_object_views": 48,
+    "total_candidates": 20
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "office chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "chair is the second from the right"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        -1.2848,
+        0.1887,
+        0.5453,
+        1.335,
+        1.6314,
+        1.2224
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            644.52,
+            39.05,
+            1262.22,
+            906.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.892
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            490.68,
+            0.0,
+            1081.12,
+            782.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9031
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            289.3,
+            1.5,
+            837.7,
+            820.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8345
+        },
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            482.97,
+            146.42,
+            1043.28,
+            936.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9005
+        },
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            831.47,
+            96.41,
+            1296.0,
+            902.48
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8928
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            348.33,
+            67.53,
+            954.05,
+            909.56
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            1120.32,
+            307.5,
+            1295.98,
+            957.67
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            349.13,
+            7.13,
+            918.72,
+            896.84
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            1121.45,
+            304.0,
+            1296.0,
+            773.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7873
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "office chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the relevant set of chairs for the ordering",
+        "cannot reliably confirm that the green chair is second from the right",
+        "nearby alternative chairs are not fully ruled out"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.2255,
+        -1.1479,
+        0.529,
+        0.4841,
+        0.4071,
+        1.1849
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_1",
+          "view_id": "00006",
+          "bbox_2d": [
+            124.54,
+            39.75,
+            330.15,
+            497.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3986
+        },
+        {
+          "object_view_id": "00008_1",
+          "view_id": "00008",
+          "bbox_2d": [
+            488.33,
+            6.7,
+            707.18,
+            396.2
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3689
+        },
+        {
+          "object_view_id": "bootstrap_00044",
+          "view_id": "00044",
+          "bbox_2d": [
+            583.0,
+            0.0,
+            718.0,
+            83.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            904.58,
+            125.3,
+            1095.72,
+            321.33
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            380.51,
+            0.0,
+            581.67,
+            411.74
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "office chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm this chair is the second from the right among the chairs by the desk",
+        "need clearer target-centered evidence distinguishing this chair from nearby chairs around the same desk"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.3924,
+        -0.6152,
+        0.5166,
+        1.3464,
+        3.4094,
+        1.1692
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_2",
+          "view_id": "00008",
+          "bbox_2d": [
+            0.0,
+            44.03,
+            113.31,
+            447.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2721
+        },
+        {
+          "object_view_id": "bootstrap_00030",
+          "view_id": "00030",
+          "bbox_2d": [
+            241.0,
+            807.0,
+            350.0,
+            863.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            769.0,
+            424.0,
+            795.0,
+            453.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            254.82,
+            252.04,
+            929.19,
+            964.49
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00034_1",
+          "view_id": "00034",
+          "bbox_2d": [
+            0.0,
+            760.55,
+            368.77,
+            965.84
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2883
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "office chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "second from the right",
+        "pushed out from the desk is not reliably confirmed for the green chair"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        2.6901,
+        -0.2037,
+        0.3597,
+        2.9883,
+        2.0674,
+        0.7644
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            0.01,
+            131.75,
+            154.3,
+            737.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7751
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "office chair",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 9,
+      "bbox_3d": [
+        1.0845,
+        -1.0282,
+        0.46,
+        2.1034,
+        2.3195,
+        1.253
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_1",
+          "view_id": "00010",
+          "bbox_2d": [
+            143.73,
+            69.14,
+            366.71,
+            553.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6661
+        },
+        {
+          "object_view_id": "00012_1",
+          "view_id": "00012",
+          "bbox_2d": [
+            281.85,
+            87.16,
+            596.89,
+            604.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8405
+        },
+        {
+          "object_view_id": "00014_1",
+          "view_id": "00014",
+          "bbox_2d": [
+            387.38,
+            23.89,
+            693.25,
+            529.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7863
+        },
+        {
+          "object_view_id": "bootstrap_00028",
+          "view_id": "00028",
+          "bbox_2d": [
+            91.74,
+            215.68,
+            627.31,
+            966.87
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            50.96,
+            145.4,
+            610.15,
+            963.28
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            113.92,
+            216.18,
+            617.11,
+            963.81
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            47.97,
+            84.34,
+            518.97,
+            794.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8592
+        },
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            132.08,
+            124.65,
+            595.83,
+            842.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8678
+        },
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            91.74,
+            215.68,
+            627.31,
+            966.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8731
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "office chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "the chair is the second from the right"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.1939,
+        -1.4867,
+        0.8242,
+        0.4712,
+        1.1399,
+        0.6001
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_2",
+          "view_id": "00010",
+          "bbox_2d": [
+            927.97,
+            95.86,
+            1123.18,
+            313.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.632
+        },
+        {
+          "object_view_id": "00012_2",
+          "view_id": "00012",
+          "bbox_2d": [
+            1100.77,
+            69.92,
+            1295.92,
+            272.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4305
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            618.91,
+            55.46,
+            812.23,
+            270.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8028
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "office chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "second from the right among the chairs at the desk"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        1.6557,
+        -0.0838,
+        0.525,
+        0.8597,
+        2.3137,
+        1.1589
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            0.0,
+            117.62,
+            403.83,
+            900.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8724
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            48.25,
+            44.15,
+            608.51,
+            878.49
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8959
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            33.69,
+            84.78,
+            719.0,
+            964.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8769
+        },
+        {
+          "object_view_id": "bootstrap_00022",
+          "view_id": "00022",
+          "bbox_2d": [
+            366.69,
+            230.09,
+            979.17,
+            965.92
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            0.0,
+            96.18,
+            529.95,
+            919.67
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            751.86,
+            280.34,
+            1292.83,
+            965.47
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            190.01,
+            207.11,
+            816.43,
+            962.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8742
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "office chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm that this chair is the second from the right among the relevant chairs around the desk"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.6785,
+        -1.0805,
+        0.5239,
+        0.9646,
+        2.3697,
+        1.1262
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            307.42,
+            0.0,
+            665.99,
+            418.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.603
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            485.35,
+            0.14,
+            794.6,
+            320.34
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00022",
+          "view_id": "00022",
+          "bbox_2d": [
+            39.55,
+            127.98,
+            487.56,
+            785.46
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            387.38,
+            23.89,
+            693.25,
+            529.53
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            39.55,
+            127.98,
+            487.56,
+            785.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9011
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "office chair",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.9367,
+        -0.4258,
+        0.5038,
+        0.4077,
+        0.4836,
+        1.1498
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_1",
+          "view_id": "00018",
+          "bbox_2d": [
+            231.54,
+            25.83,
+            645.85,
+            387.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6286
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            485.35,
+            0.14,
+            794.6,
+            320.34
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00022",
+          "view_id": "00022",
+          "bbox_2d": [
+            39.55,
+            127.98,
+            487.56,
+            785.46
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            387.38,
+            23.89,
+            693.25,
+            529.53
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "office chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "confirm this chair is the second from the right among the relevant chairs"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.9871,
+        -0.3806,
+        0.5027,
+        0.3187,
+        0.4836,
+        1.1772
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_1",
+          "view_id": "00020",
+          "bbox_2d": [
+            154.4,
+            119.05,
+            579.5,
+            489.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2924
+        },
+        {
+          "object_view_id": "bootstrap_00028",
+          "view_id": "00028",
+          "bbox_2d": [
+            91.74,
+            215.68,
+            627.31,
+            966.87
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            113.92,
+            216.18,
+            617.11,
+            963.81
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            50.96,
+            145.4,
+            610.15,
+            963.28
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "office chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "candidate must be an office chair",
+        "black office chair pushed out from the desk",
+        "second from the right among the relevant chairs"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.34,
+        -1.1904,
+        1.0266,
+        0.3934,
+        0.3315,
+        0.1512
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_2",
+          "view_id": "00020",
+          "bbox_2d": [
+            793.18,
+            84.25,
+            967.97,
+            249.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2891
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            588.0,
+            7.0,
+            656.0,
+            55.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            1.0,
+            158.0,
+            92.0,
+            208.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            618.91,
+            55.46,
+            812.23,
+            270.4
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "office chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "chair is the second from the right relative to the relevant set of chairs around the desk"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        1.6585,
+        0.7612,
+        0.521,
+        0.7033,
+        0.6768,
+        1.1589
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_1",
+          "view_id": "00022",
+          "bbox_2d": [
+            366.69,
+            230.09,
+            979.17,
+            965.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8783
+        },
+        {
+          "object_view_id": "00024_1",
+          "view_id": "00024",
+          "bbox_2d": [
+            548.57,
+            176.76,
+            1140.46,
+            964.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7118
+        },
+        {
+          "object_view_id": "00026_1",
+          "view_id": "00026",
+          "bbox_2d": [
+            652.39,
+            237.19,
+            1269.12,
+            954.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8454
+        },
+        {
+          "object_view_id": "00030_1",
+          "view_id": "00030",
+          "bbox_2d": [
+            431.62,
+            369.8,
+            1177.9,
+            965.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6376
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            254.82,
+            252.04,
+            929.19,
+            964.49
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00012",
+          "view_id": "00012",
+          "bbox_2d": [
+            0.0,
+            117.62,
+            403.83,
+            900.59
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            724.0,
+            137.0,
+            1295.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "office chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "whether the chair is clearly pushed out from the desk",
+        "whether this chair is definitively the second from the right among the relevant chairs"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.9301,
+        0.4729,
+        0.4669,
+        1.0459,
+        0.7896,
+        0.9788
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_2",
+          "view_id": "00024",
+          "bbox_2d": [
+            1063.22,
+            118.53,
+            1296.0,
+            514.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6573
+        },
+        {
+          "object_view_id": "bootstrap_00002",
+          "view_id": "00002",
+          "bbox_2d": [
+            491.0,
+            164.0,
+            985.0,
+            787.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00044",
+          "view_id": "00044",
+          "bbox_2d": [
+            1100.0,
+            756.0,
+            1264.0,
+            920.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00041",
+          "view_id": "00041",
+          "bbox_2d": [
+            1199.0,
+            754.0,
+            1295.0,
+            929.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "office chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm that this chair is the second from the right among the desk chairs"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.715,
+        -0.6591,
+        0.5003,
+        1.4332,
+        1.3924,
+        1.239
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_3",
+          "view_id": "00024",
+          "bbox_2d": [
+            440.68,
+            44.21,
+            611.51,
+            453.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4326
+        },
+        {
+          "object_view_id": "00026_2",
+          "view_id": "00026",
+          "bbox_2d": [
+            498.96,
+            50.94,
+            674.87,
+            483.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5975
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            195.69,
+            139.65,
+            458.42,
+            593.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7039
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            569.36,
+            1.19,
+            762.46,
+            425.78
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            463.5,
+            128.37,
+            708.4,
+            562.31
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            100.54,
+            99.04,
+            318.95,
+            304.49
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "office chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "whether the chair is clearly pushed out from the desk",
+        "whether this chair is the second from the right among the relevant chairs",
+        "whether another nearby chair matches the description better"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.3157,
+        -1.2013,
+        0.5059,
+        0.4567,
+        0.2941,
+        1.1687
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_1",
+          "view_id": "00028",
+          "bbox_2d": [
+            426.65,
+            119.82,
+            662.02,
+            567.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6932
+        },
+        {
+          "object_view_id": "bootstrap_00044",
+          "view_id": "00044",
+          "bbox_2d": [
+            588.0,
+            0.0,
+            684.0,
+            85.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00008",
+          "view_id": "00008",
+          "bbox_2d": [
+            488.33,
+            6.7,
+            707.18,
+            396.2
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00043",
+          "view_id": "00043",
+          "bbox_2d": [
+            762.0,
+            13.0,
+            861.0,
+            204.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 15,
+      "label": "office chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "office chair",
+        "black",
+        "pushed out from the desk",
+        "second from the right"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.9628,
+        0.4762,
+        0.5457,
+        2.033,
+        0.9456,
+        1.0883
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_2",
+          "view_id": "00028",
+          "bbox_2d": [
+            772.9,
+            353.54,
+            1296.0,
+            964.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.581
+        }
+      ]
+    },
+    {
+      "candidate_id": 16,
+      "label": "office chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 7,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably verify that the green chair is the second from the right among the relevant chairs at the desk"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        -1.2963,
+        -0.052,
+        0.5606,
+        1.3807,
+        2.0823,
+        1.2198
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_2",
+          "view_id": "00030",
+          "bbox_2d": [
+            929.61,
+            113.84,
+            1187.4,
+            353.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5019
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            764.78,
+            107.26,
+            1013.13,
+            516.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6799
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            750.1,
+            61.52,
+            1036.46,
+            528.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.846
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            859.56,
+            60.21,
+            1208.79,
+            551.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8826
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            976.44,
+            159.24,
+            1296.0,
+            672.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9199
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            349.13,
+            7.13,
+            918.72,
+            896.84
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            1120.32,
+            307.5,
+            1295.98,
+            957.67
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            348.33,
+            67.53,
+            954.05,
+            909.56
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            664.82,
+            1.0,
+            1268.87,
+            790.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8297
+        }
+      ]
+    },
+    {
+      "candidate_id": 17,
+      "label": "office chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "candidate is not an office chair",
+        "black office chair attribute cannot apply to this candidate",
+        "pushed out from the desk does not match this candidate",
+        "second from the right cannot match because the candidate is not a chair"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.3233,
+        -1.1824,
+        1.0319,
+        0.2919,
+        0.1999,
+        0.1441
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_1",
+          "view_id": "00032",
+          "bbox_2d": [
+            0.0,
+            143.9,
+            168.72,
+            347.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4629
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            618.91,
+            55.46,
+            812.23,
+            270.4
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            39.13,
+            113.67,
+            231.16,
+            591.83
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            611.0,
+            100.0,
+            753.0,
+            144.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 18,
+      "label": "office chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "the chair is the second from the right"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.2352,
+        0.1641,
+        0.3029,
+        0.5037,
+        1.2844,
+        0.6733
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_1",
+          "view_id": "00036",
+          "bbox_2d": [
+            0.0,
+            699.95,
+            314.77,
+            964.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6426
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            699.95,
+            314.77,
+            964.85
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 19,
+      "label": "office chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "second from the right among the relevant chairs around the desk"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.8168,
+        0.5232,
+        0.338,
+        0.3978,
+        0.5385,
+        0.7362
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            969.98,
+            490.11,
+            1296.0,
+            964.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5778
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            969.98,
+            490.11,
+            1296.0,
+            964.82
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00002",
+          "view_id": "00002",
+          "bbox_2d": [
+            490.68,
+            0.0,
+            1081.12,
+            782.92
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            1120.32,
+            307.5,
+            1295.98,
+            957.67
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00046",
+          "view_id": "00046",
+          "bbox_2d": [
+            664.82,
+            1.0,
+            1268.87,
+            790.92
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,495 @@
+{
+  "case_id": 96,
+  "scene_id": "scene0518_00",
+  "query": "this tv is on the left wall . it is black .",
+  "query_analysis": {
+    "raw_query": "this tv is on the left wall . it is black .",
+    "target_object": "tv",
+    "target_attributes": [
+      "black"
+    ],
+    "reference_object": "wall",
+    "reference_attributes": [
+      "left"
+    ],
+    "relation": "on"
+  },
+  "gt": {
+    "target_id": 19,
+    "gt_label": "tv",
+    "gt_bbox_3d": [
+      1.208712,
+      0.344562,
+      1.036095,
+      0.28566,
+      0.959817,
+      0.670403
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      1.161555,
+      0.331442,
+      1.065418,
+      0.250551,
+      0.975039,
+      0.716754
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      2,
+      1,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 39,
+    "total_views": 37,
+    "total_object_views": 13,
+    "total_candidates": 7
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "tv",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "object is confidently a TV rather than another screen",
+        "on the left wall relation is clearly verified"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        1.231,
+        0.4022,
+        1.0707,
+        0.3206,
+        0.986,
+        0.6136
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            107.09,
+            246.84,
+            428.17,
+            563.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6928
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            199.41,
+            444.06,
+            489.23,
+            760.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8418
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            103.22,
+            0.2,
+            505.74,
+            309.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2859
+        },
+        {
+          "object_view_id": "bootstrap_00073",
+          "view_id": "00073",
+          "bbox_2d": [
+            278.11,
+            0.0,
+            814.12,
+            102.91
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            2.0,
+            504.0,
+            143.0,
+            554.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00044",
+          "view_id": "00044",
+          "bbox_2d": [
+            466.47,
+            448.92,
+            1052.01,
+            859.35
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            466.47,
+            448.92,
+            1052.01,
+            859.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5974
+        },
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            597.04,
+            0.0,
+            1223.44,
+            236.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5512
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "tv",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "object is a tv",
+        "object is black",
+        "object is on the left wall"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.4509,
+        -1.4994,
+        1.3565,
+        0.5713,
+        0.2827,
+        0.5735
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_1",
+          "view_id": "00000",
+          "bbox_2d": [
+            1056.13,
+            80.97,
+            1286.79,
+            296.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3933
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "tv",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a tv",
+        "candidate is a black tv"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.0986,
+        -1.6624,
+        0.885,
+        0.3929,
+        0.126,
+        0.3096
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            0.0,
+            87.77,
+            205.81,
+            353.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2965
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "tv",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "is a tv",
+        "black tv"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.2406,
+        -1.6575,
+        1.5043,
+        0.6422,
+        0.0638,
+        0.5773
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            1.03,
+            102.48,
+            586.69,
+            678.24
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2793
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            309.73,
+            0.36,
+            1023.99,
+            149.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7597
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1.03,
+            102.48,
+            586.69,
+            678.24
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "tv",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "is a tv",
+        "black tv on the left wall"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.0151,
+        -1.6661,
+        0.906,
+        0.3658,
+        0.1157,
+        0.33
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_1",
+          "view_id": "00036",
+          "bbox_2d": [
+            718.13,
+            302.98,
+            1109.25,
+            594.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3316
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            718.13,
+            302.98,
+            1109.25,
+            594.96
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            183.98,
+            173.25,
+            474.37,
+            519.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3278
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "tv",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "requested object is a tv",
+        "black tv",
+        "tv on the left wall"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.2276,
+        -0.2748,
+        1.3374,
+        0.3192,
+        0.358,
+        0.3708
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            171.03,
+            209.57,
+            458.38,
+            480.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.677
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            171.03,
+            209.57,
+            458.38,
+            480.17
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "tv",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "requested object is clearly a tv",
+        "green-boxed object is the best match among nearby alternatives",
+        "on the left wall relation is not reliably established for the green candidate"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.2053,
+        0.102,
+        1.6804,
+        0.3601,
+        0.3963,
+        0.4023
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_1",
+          "view_id": "00044",
+          "bbox_2d": [
+            801.28,
+            133.44,
+            1053.08,
+            376.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2554
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            801.28,
+            133.44,
+            1053.08,
+            376.9
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

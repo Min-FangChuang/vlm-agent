@@ -1,0 +1,3280 @@
+{
+  "case_id": 48,
+  "scene_id": "scene0496_00",
+  "query": "the grey cushioned chair has wooden arms on each side . this grey cushioned chair has another beside it on the left .",
+  "query_analysis": {
+    "raw_query": "the grey cushioned chair has wooden arms on each side . this grey cushioned chair has another beside it on the left .",
+    "target_object": "chair",
+    "target_attributes": [
+      "grey",
+      "cushioned",
+      "wooden arms on each side"
+    ],
+    "reference_object": "chair",
+    "reference_attributes": [],
+    "relation": "beside it on the left"
+  },
+  "gt": {
+    "target_id": 10,
+    "gt_label": "chair",
+    "gt_bbox_3d": [
+      -0.747022,
+      2.260694,
+      0.383078,
+      0.803756,
+      0.954492,
+      0.737579
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -0.772908,
+      2.14803,
+      0.474113,
+      0.819939,
+      1.093467,
+      1.056453
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      3,
+      3,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      2,
+      1,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      5
+    ],
+    "detector_call_count": 56,
+    "total_views": 30,
+    "total_object_views": 112,
+    "total_candidates": 48
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "grey",
+        "cushioned chair appearance",
+        "wooden arms on each side",
+        "the boxed object is the chair that has another beside it on the left"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.2102,
+        -0.5385,
+        0.4698,
+        0.8374,
+        0.539,
+        0.9753
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            776.62,
+            467.65,
+            1233.18,
+            962.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7428
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            275.61,
+            428.08,
+            670.63,
+            960.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6786
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            665.32,
+            291.26,
+            1133.19,
+            960.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7149
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            744.29,
+            326.97,
+            1286.64,
+            960.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7566
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            744.29,
+            326.97,
+            1286.64,
+            960.34
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            851.25,
+            510.32,
+            1288.56,
+            962.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8217
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "chair",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 8,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 14,
+      "bbox_3d": [
+        -0.7824,
+        2.2859,
+        0.3632,
+        0.8051,
+        0.9538,
+        0.7709
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_1",
+          "view_id": "00000",
+          "bbox_2d": [
+            771.17,
+            288.85,
+            981.06,
+            495.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7338
+        },
+        {
+          "object_view_id": "00002_2",
+          "view_id": "00002",
+          "bbox_2d": [
+            889.49,
+            640.81,
+            1118.92,
+            872.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4544
+        },
+        {
+          "object_view_id": "00014_5",
+          "view_id": "00014",
+          "bbox_2d": [
+            185.93,
+            249.9,
+            432.92,
+            482.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3263
+        },
+        {
+          "object_view_id": "00016_1",
+          "view_id": "00016",
+          "bbox_2d": [
+            658.11,
+            114.18,
+            874.78,
+            327.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6451
+        },
+        {
+          "object_view_id": "00018_2",
+          "view_id": "00018",
+          "bbox_2d": [
+            603.59,
+            57.77,
+            851.38,
+            283.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6875
+        },
+        {
+          "object_view_id": "00020_1",
+          "view_id": "00020",
+          "bbox_2d": [
+            772.6,
+            102.45,
+            1056.89,
+            389.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7343
+        },
+        {
+          "object_view_id": "00022_1",
+          "view_id": "00022",
+          "bbox_2d": [
+            985.11,
+            144.73,
+            1287.39,
+            495.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4632
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            748.42,
+            94.89,
+            1187.36,
+            476.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7811
+        },
+        {
+          "object_view_id": "00026_2",
+          "view_id": "00026",
+          "bbox_2d": [
+            219.37,
+            230.15,
+            816.43,
+            724.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5491
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            219.37,
+            230.15,
+            816.43,
+            724.3
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            521.98,
+            110.1,
+            1009.67,
+            551.73
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            933.09,
+            96.13,
+            1260.29,
+            394.76
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00064",
+          "view_id": "00064",
+          "bbox_2d": [
+            976.96,
+            352.89,
+            1229.0,
+            621.73
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00028_4",
+          "view_id": "00028",
+          "bbox_2d": [
+            8.27,
+            527.08,
+            288.75,
+            959.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6445
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "chair",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 7,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 13,
+      "bbox_3d": [
+        -1.2578,
+        1.8264,
+        0.4834,
+        0.8117,
+        0.9609,
+        1.0581
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_2",
+          "view_id": "00000",
+          "bbox_2d": [
+            649.75,
+            307.8,
+            874.41,
+            523.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6853
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            768.3,
+            656.2,
+            1006.47,
+            890.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6282
+        },
+        {
+          "object_view_id": "00014_1",
+          "view_id": "00014",
+          "bbox_2d": [
+            40.23,
+            275.04,
+            325.69,
+            517.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5372
+        },
+        {
+          "object_view_id": "00016_2",
+          "view_id": "00016",
+          "bbox_2d": [
+            524.13,
+            130.71,
+            769.17,
+            368.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4872
+        },
+        {
+          "object_view_id": "00018_3",
+          "view_id": "00018",
+          "bbox_2d": [
+            458.53,
+            84.35,
+            748.68,
+            361.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5682
+        },
+        {
+          "object_view_id": "00020_3",
+          "view_id": "00020",
+          "bbox_2d": [
+            607.23,
+            137.83,
+            949.08,
+            531.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5492
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            792.53,
+            190.49,
+            1217.49,
+            742.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7381
+        },
+        {
+          "object_view_id": "00024_1",
+          "view_id": "00024",
+          "bbox_2d": [
+            547.6,
+            214.68,
+            1133.53,
+            937.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6865
+        },
+        {
+          "object_view_id": "00026_3",
+          "view_id": "00026",
+          "bbox_2d": [
+            9.94,
+            511.0,
+            902.29,
+            960.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5431
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            547.6,
+            214.68,
+            1133.53,
+            937.13
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            731.55,
+            198.44,
+            1232.85,
+            842.84
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            763.48,
+            141.76,
+            1144.76,
+            602.33
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            467.0,
+            74.0,
+            777.0,
+            377.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm wooden arms on each side",
+        "cannot reliably confirm the chair is distinctly grey cushioned rather than just dark from distance",
+        "cannot reliably confirm another matching chair is beside it on the left"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -0.3595,
+        1.1684,
+        0.3922,
+        1.4636,
+        2.1715,
+        0.7194
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_3",
+          "view_id": "00000",
+          "bbox_2d": [
+            1072.35,
+            313.99,
+            1252.25,
+            497.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6266
+        },
+        {
+          "object_view_id": "00014_4",
+          "view_id": "00014",
+          "bbox_2d": [
+            505.13,
+            260.07,
+            651.01,
+            435.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3627
+        },
+        {
+          "object_view_id": "00016_3",
+          "view_id": "00016",
+          "bbox_2d": [
+            966.45,
+            96.07,
+            1157.89,
+            340.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4723
+        },
+        {
+          "object_view_id": "bootstrap_00018",
+          "view_id": "00018",
+          "bbox_2d": [
+            959.38,
+            75.48,
+            1171.7,
+            343.2
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            1104.0,
+            320.0,
+            1255.0,
+            510.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00066",
+          "view_id": "00066",
+          "bbox_2d": [
+            1034.0,
+            256.0,
+            1171.0,
+            440.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00066_4",
+          "view_id": "00066",
+          "bbox_2d": [
+            997.93,
+            307.75,
+            1174.57,
+            529.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4968
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "chair",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 7,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 10,
+      "bbox_3d": [
+        -1.1773,
+        0.8411,
+        0.4756,
+        1.3359,
+        1.9968,
+        1.064
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_4",
+          "view_id": "00000",
+          "bbox_2d": [
+            645.57,
+            344.47,
+            902.65,
+            860.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5934
+        },
+        {
+          "object_view_id": "00002_1",
+          "view_id": "00002",
+          "bbox_2d": [
+            818.43,
+            711.42,
+            1078.15,
+            962.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5185
+        },
+        {
+          "object_view_id": "00014_3",
+          "view_id": "00014",
+          "bbox_2d": [
+            92.79,
+            313.17,
+            354.88,
+            848.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4379
+        },
+        {
+          "object_view_id": "00016_4",
+          "view_id": "00016",
+          "bbox_2d": [
+            524.06,
+            169.2,
+            800.66,
+            726.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4674
+        },
+        {
+          "object_view_id": "00018_1",
+          "view_id": "00018",
+          "bbox_2d": [
+            536.97,
+            144.88,
+            894.05,
+            816.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6957
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            784.69,
+            274.15,
+            1290.21,
+            961.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8526
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            1104.0,
+            3.0,
+            1293.0,
+            461.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            575.02,
+            164.42,
+            1013.32,
+            959.5
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00063",
+          "view_id": "00063",
+          "bbox_2d": [
+            780.75,
+            143.21,
+            1119.95,
+            631.82
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00066_2",
+          "view_id": "00066",
+          "bbox_2d": [
+            589.02,
+            365.76,
+            900.89,
+            955.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.656
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "candidate is not clearly a grey chair",
+        "candidate is not clearly cushioned",
+        "wooden arms on each side are not confirmed in the requested chair form",
+        "another matching chair beside it on the left is not confirmed"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.9214,
+        1.9437,
+        0.4156,
+        0.737,
+        0.8255,
+        0.7499
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            183.46,
+            365.4,
+            330.55,
+            543.84
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6892
+        },
+        {
+          "object_view_id": "00018_6",
+          "view_id": "00018",
+          "bbox_2d": [
+            1174.92,
+            19.42,
+            1290.71,
+            260.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2859
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            702.0,
+            216.0,
+            773.0,
+            310.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "clear confirmation that the green-boxed object itself is a grey cushioned chair",
+        "clear confirmation of wooden arms on each side",
+        "reliable confirmation that another chair is immediately beside it on the left"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        2.4523,
+        -0.3119,
+        0.5992,
+        0.2773,
+        0.3436,
+        0.1436
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_1",
+          "view_id": "00012",
+          "bbox_2d": [
+            805.38,
+            379.99,
+            964.03,
+            543.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5232
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            1013.6,
+            308.9,
+            1198.58,
+            473.68
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey",
+        "cushioned chair with wooden arms on each side",
+        "another matching chair beside it on the left"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.5681,
+        -0.1496,
+        0.4545,
+        1.5276,
+        1.5654,
+        0.8284
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_2",
+          "view_id": "00012",
+          "bbox_2d": [
+            464.82,
+            364.85,
+            638.57,
+            660.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4553
+        },
+        {
+          "object_view_id": "00014_2",
+          "view_id": "00014",
+          "bbox_2d": [
+            946.17,
+            223.58,
+            1128.56,
+            536.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.452
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "chair is grey",
+        "chair is cushioned in the described lounge-chair sense",
+        "chair has wooden arms on each side",
+        "another matching chair is beside it on the left"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.2856,
+        -1.6766,
+        0.4438,
+        0.5655,
+        0.5263,
+        0.8973
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_3",
+          "view_id": "00012",
+          "bbox_2d": [
+            743.31,
+            634.19,
+            1131.86,
+            963.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3656
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            909.4,
+            720.62,
+            1289.53,
+            963.9
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            994.0,
+            804.0,
+            1089.0,
+            961.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            1249.0,
+            842.0,
+            1289.0,
+            875.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey",
+        "cushioned",
+        "wooden arms on each side",
+        "has another chair beside it on the left"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.338,
+        -1.3776,
+        0.4692,
+        0.8529,
+        0.8682,
+        0.9572
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_4",
+          "view_id": "00012",
+          "bbox_2d": [
+            789.83,
+            497.93,
+            1157.76,
+            848.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3051
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "chair",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.2009,
+        0.6999,
+        0.3864,
+        1.7591,
+        2.0412,
+        0.6953
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_4",
+          "view_id": "00018",
+          "bbox_2d": [
+            1053.17,
+            158.77,
+            1269.77,
+            329.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5182
+        },
+        {
+          "object_view_id": "bootstrap_00012",
+          "view_id": "00012",
+          "bbox_2d": [
+            47.0,
+            488.0,
+            211.0,
+            587.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00066",
+          "view_id": "00066",
+          "bbox_2d": [
+            1069.08,
+            383.8,
+            1271.58,
+            798.33
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00016",
+          "view_id": "00016",
+          "bbox_2d": [
+            1053.0,
+            220.0,
+            1218.0,
+            312.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00066_5",
+          "view_id": "00066",
+          "bbox_2d": [
+            1069.08,
+            383.8,
+            1271.58,
+            798.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4512
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "is a grey cushioned chair",
+        "has wooden arms on each side",
+        "has another matching chair beside it on the left"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.3595,
+        1.1684,
+        0.3922,
+        1.4636,
+        2.1715,
+        0.7194
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_5",
+          "view_id": "00018",
+          "bbox_2d": [
+            959.38,
+            75.48,
+            1171.7,
+            343.2
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4696
+        },
+        {
+          "object_view_id": "00020_2",
+          "view_id": "00020",
+          "bbox_2d": [
+            1188.4,
+            153.07,
+            1287.07,
+            484.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6777
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey",
+        "cushioned",
+        "wooden arms on each side",
+        "has another beside it on the left"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.5664,
+        2.0906,
+        0.5065,
+        1.0109,
+        0.8814,
+        0.7059
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            860.72,
+            5.34,
+            1180.73,
+            490.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.739
+        },
+        {
+          "object_view_id": "00028_2",
+          "view_id": "00028",
+          "bbox_2d": [
+            353.13,
+            76.62,
+            730.87,
+            682.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8035
+        },
+        {
+          "object_view_id": "00030_4",
+          "view_id": "00030",
+          "bbox_2d": [
+            7.99,
+            305.25,
+            607.62,
+            963.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3989
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey cushioned chair",
+        "wooden arms on each side",
+        "has another chair beside it on the left"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.6203,
+        1.6689,
+        0.3552,
+        1.6379,
+        0.9221,
+        0.8212
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_1",
+          "view_id": "00026",
+          "bbox_2d": [
+            990.65,
+            114.42,
+            1285.82,
+            712.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7187
+        },
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            575.39,
+            246.52,
+            1133.96,
+            959.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.875
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "grey",
+        "wooden arms on each side",
+        "another matching chair beside it on the left"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        2.3154,
+        0.9608,
+        0.4606,
+        1.3342,
+        0.8868,
+        0.9552
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_1",
+          "view_id": "00028",
+          "bbox_2d": [
+            1098.49,
+            15.22,
+            1288.63,
+            396.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.873
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            795.48,
+            5.2,
+            1091.22,
+            481.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9404
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            36.46,
+            92.14,
+            474.27,
+            655.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8688
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            201.44,
+            72.41,
+            625.98,
+            694.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8941
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            9.93,
+            153.23,
+            631.81,
+            958.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8221
+        }
+      ]
+    },
+    {
+      "candidate_id": 15,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey",
+        "wooden arms on each side",
+        "the described grey cushioned chair with wooden arms is not the green-boxed chair"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.0314,
+        1.8001,
+        0.4247,
+        1.5892,
+        0.6997,
+        0.8258
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_3",
+          "view_id": "00028",
+          "bbox_2d": [
+            690.82,
+            35.16,
+            1031.21,
+            502.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7444
+        }
+      ]
+    },
+    {
+      "candidate_id": 16,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "grey",
+        "cushioned",
+        "wooden arms on each side",
+        "has another beside it on the left"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        1.0147,
+        1.8567,
+        0.4285,
+        1.4362,
+        0.7862,
+        0.8644
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_1",
+          "view_id": "00030",
+          "bbox_2d": [
+            241.3,
+            174.49,
+            731.82,
+            661.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8164
+        },
+        {
+          "object_view_id": "00032_3",
+          "view_id": "00032",
+          "bbox_2d": [
+            6.18,
+            756.62,
+            193.57,
+            961.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3563
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            241.3,
+            174.49,
+            731.82,
+            661.27
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 17,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey",
+        "cushioned chair matching the described style",
+        "wooden arms on each side",
+        "another matching chair beside it on the left"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        1.6197,
+        0.2423,
+        0.4732,
+        1.536,
+        1.1617,
+        0.9664
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_2",
+          "view_id": "00030",
+          "bbox_2d": [
+            1075.79,
+            81.18,
+            1287.2,
+            713.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7465
+        },
+        {
+          "object_view_id": "00032_1",
+          "view_id": "00032",
+          "bbox_2d": [
+            553.4,
+            110.22,
+            954.85,
+            807.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.824
+        },
+        {
+          "object_view_id": "00034_1",
+          "view_id": "00034",
+          "bbox_2d": [
+            667.32,
+            173.03,
+            1211.39,
+            960.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8264
+        }
+      ]
+    },
+    {
+      "candidate_id": 18,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "grey",
+        "wooden arms on each side",
+        "has another beside it on the left"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.4916,
+        1.5668,
+        0.3841,
+        1.0252,
+        0.8627,
+        0.7857
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_3",
+          "view_id": "00030",
+          "bbox_2d": [
+            142.34,
+            535.72,
+            953.7,
+            962.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6373
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            142.34,
+            535.72,
+            953.7,
+            962.12
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 19,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey",
+        "cushioned appearance is not clearly confirmed",
+        "wooden arms on each side",
+        "another matching chair beside it on the left"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.6112,
+        -1.0793,
+        0.3573,
+        1.2096,
+        1.6445,
+        0.7443
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_2",
+          "view_id": "00032",
+          "bbox_2d": [
+            1119.25,
+            9.51,
+            1291.13,
+            242.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5132
+        }
+      ]
+    },
+    {
+      "candidate_id": 20,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "grey cushioned chair with wooden arms on each side",
+        "the other chair is on the left as requested"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        2.763,
+        -0.414,
+        0.3707,
+        0.873,
+        1.1482,
+        0.7888
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_4",
+          "view_id": "00032",
+          "bbox_2d": [
+            567.13,
+            32.19,
+            729.79,
+            307.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3397
+        },
+        {
+          "object_view_id": "00036_2",
+          "view_id": "00036",
+          "bbox_2d": [
+            776.96,
+            67.15,
+            1138.12,
+            550.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7165
+        },
+        {
+          "object_view_id": "00038_1",
+          "view_id": "00038",
+          "bbox_2d": [
+            619.45,
+            150.08,
+            1063.33,
+            801.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6742
+        },
+        {
+          "object_view_id": "00040_1",
+          "view_id": "00040",
+          "bbox_2d": [
+            421.67,
+            269.54,
+            992.09,
+            959.48
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8112
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            421.67,
+            269.54,
+            992.09,
+            959.48
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 21,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey",
+        "cushioned",
+        "wooden arms on each side"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        2.4097,
+        -0.0673,
+        0.6725,
+        2.1947,
+        1.4552,
+        0.5676
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_2",
+          "view_id": "00034",
+          "bbox_2d": [
+            790.5,
+            58.71,
+            1001.78,
+            234.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4888
+        }
+      ]
+    },
+    {
+      "candidate_id": 22,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "grey appearance is not clearly supported; it looks dark/navy/black in current views",
+        "wooden arms on each side"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        2.9717,
+        -1.3845,
+        0.3532,
+        0.9328,
+        2.1603,
+        0.7776
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_3",
+          "view_id": "00034",
+          "bbox_2d": [
+            1053.19,
+            10.79,
+            1275.38,
+            126.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2742
+        },
+        {
+          "object_view_id": "00036_3",
+          "view_id": "00036",
+          "bbox_2d": [
+            1089.38,
+            3.1,
+            1291.38,
+            169.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7114
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            901.25,
+            6.46,
+            1242.99,
+            276.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7694
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            761.31,
+            6.21,
+            1213.62,
+            569.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8982
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            509.51,
+            116.67,
+            1061.96,
+            865.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.896
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            509.51,
+            116.67,
+            1061.96,
+            865.53
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 23,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "grey cushioned chair",
+        "wooden arms on each side"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.5222,
+        0.1582,
+        0.4728,
+        0.7327,
+        1.1099,
+        0.9793
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_1",
+          "view_id": "00036",
+          "bbox_2d": [
+            1001.93,
+            364.28,
+            1285.75,
+            960.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7238
+        }
+      ]
+    },
+    {
+      "candidate_id": 24,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "wooden arms on each side",
+        "requested left-side relation is not reliably satisfied from current views"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        2.5772,
+        -0.5414,
+        0.3643,
+        0.5116,
+        0.6072,
+        0.7779
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00042_1",
+          "view_id": "00042",
+          "bbox_2d": [
+            743.87,
+            741.83,
+            1289.75,
+            960.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5193
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            743.87,
+            741.83,
+            1289.75,
+            960.27
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 25,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "grey appearance is not clearly supported due to dark lighting",
+        "wooden arms on each side",
+        "another chair beside it on the left"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        2.756,
+        -1.6082,
+        0.3557,
+        1.1601,
+        1.6659,
+        0.7802
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            546.46,
+            208.66,
+            1183.03,
+            960.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9253
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            546.46,
+            208.66,
+            1183.03,
+            960.18
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 26,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "grey",
+        "wooden arms on each side",
+        "another beside it on the left is not reliably satisfied for this candidate"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        2.7177,
+        -1.3799,
+        0.3638,
+        0.9225,
+        0.9073,
+        0.7787
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            98.77,
+            569.14,
+            952.97,
+            959.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.874
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            98.77,
+            569.14,
+            952.97,
+            959.63
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 27,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "grey",
+        "cushioned",
+        "wooden arms on each side",
+        "another chair beside it on the left not reliably established for this exact candidate"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        1.3742,
+        -1.2171,
+        0.3687,
+        1.2113,
+        0.7911,
+        0.7971
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_1",
+          "view_id": "00046",
+          "bbox_2d": [
+            771.53,
+            3.97,
+            1085.97,
+            488.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4726
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            664.34,
+            327.66,
+            1256.94,
+            959.62
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            1248.0,
+            25.0,
+            1290.0,
+            72.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00050",
+          "view_id": "00050",
+          "bbox_2d": [
+            547.67,
+            26.2,
+            900.74,
+            565.93
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            628.7,
+            6.75,
+            1013.87,
+            611.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5771
+        },
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            554.63,
+            201.71,
+            1051.27,
+            899.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7448
+        },
+        {
+          "object_view_id": "00052_3",
+          "view_id": "00052",
+          "bbox_2d": [
+            796.76,
+            365.28,
+            1284.78,
+            960.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3697
+        }
+      ]
+    },
+    {
+      "candidate_id": 28,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey",
+        "cushioned",
+        "wooden arms on each side",
+        "another chair beside it on the left"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.9823,
+        -1.5845,
+        0.3455,
+        1.7367,
+        0.8078,
+        0.7027
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_2",
+          "view_id": "00046",
+          "bbox_2d": [
+            1006.62,
+            4.01,
+            1258.59,
+            165.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2814
+        }
+      ]
+    },
+    {
+      "candidate_id": 29,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey cushioned chair is not clearly visible",
+        "wooden arms on each side are not visible and the chair appears metal-framed instead",
+        "another chair beside it on the left is not confirmed"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.156,
+        -1.4387,
+        0.3464,
+        1.2522,
+        0.5207,
+        0.7004
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00048_1",
+          "view_id": "00048",
+          "bbox_2d": [
+            809.61,
+            8.99,
+            1041.84,
+            196.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.291
+        }
+      ]
+    },
+    {
+      "candidate_id": 30,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey",
+        "cushioned",
+        "wooden arms on each side",
+        "another chair beside it on the left"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.6636,
+        -1.3773,
+        0.3778,
+        2.0779,
+        0.6577,
+        0.7702
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00050_1",
+          "view_id": "00050",
+          "bbox_2d": [
+            547.67,
+            26.2,
+            900.74,
+            565.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3828
+        }
+      ]
+    },
+    {
+      "candidate_id": 31,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey",
+        "cushioned chair appearance",
+        "wooden arms on each side"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.1075,
+        -0.2852,
+        0.4555,
+        1.7067,
+        1.1731,
+        0.8824
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            923.08,
+            5.14,
+            1105.07,
+            196.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.502
+        },
+        {
+          "object_view_id": "00054_3",
+          "view_id": "00054",
+          "bbox_2d": [
+            942.71,
+            90.98,
+            1144.35,
+            322.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3945
+        }
+      ]
+    },
+    {
+      "candidate_id": 32,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey cushioned chair",
+        "wooden arms on each side",
+        "the specific described chair beside another on the left is not established for this candidate"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -1.177,
+        -1.4835,
+        0.4507,
+        2.5324,
+        0.8891,
+        0.8989
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_1",
+          "view_id": "00052",
+          "bbox_2d": [
+            575.31,
+            85.78,
+            742.11,
+            509.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4844
+        },
+        {
+          "object_view_id": "00054_2",
+          "view_id": "00054",
+          "bbox_2d": [
+            552.5,
+            214.02,
+            777.59,
+            728.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6163
+        },
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            555.71,
+            305.92,
+            928.21,
+            957.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8225
+        }
+      ]
+    },
+    {
+      "candidate_id": 33,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey",
+        "cushioned chair appearance",
+        "wooden arms on each side"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.592,
+        -1.2431,
+        0.482,
+        2.9714,
+        1.0688,
+        0.9854
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_2",
+          "view_id": "00052",
+          "bbox_2d": [
+            668.91,
+            107.47,
+            1072.67,
+            773.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.409
+        },
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            683.96,
+            266.9,
+            1126.78,
+            957.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6645
+        }
+      ]
+    },
+    {
+      "candidate_id": 34,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey",
+        "cushioned",
+        "wooden arms on each side",
+        "another beside it on the left"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -0.9639,
+        -0.2652,
+        0.4911,
+        1.3645,
+        1.157,
+        0.9189
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_4",
+          "view_id": "00052",
+          "bbox_2d": [
+            1121.37,
+            3.51,
+            1289.97,
+            263.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3432
+        },
+        {
+          "object_view_id": "00054_4",
+          "view_id": "00054",
+          "bbox_2d": [
+            1133.8,
+            58.96,
+            1287.8,
+            397.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3924
+        },
+        {
+          "object_view_id": "00056_3",
+          "view_id": "00056",
+          "bbox_2d": [
+            1143.89,
+            53.02,
+            1288.69,
+            432.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3219
+        }
+      ]
+    },
+    {
+      "candidate_id": 35,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "wooden arms on each side are not clearly confirmed",
+        "another chair beside it on the left is not reliably confirmed"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.9744,
+        -1.3797,
+        0.3838,
+        0.3411,
+        0.4793,
+        0.7663
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00054_1",
+          "view_id": "00054",
+          "bbox_2d": [
+            904.53,
+            674.54,
+            1290.04,
+            960.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6549
+        },
+        {
+          "object_view_id": "bootstrap_00050",
+          "view_id": "00050",
+          "bbox_2d": [
+            547.67,
+            26.2,
+            900.74,
+            565.93
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00052",
+          "view_id": "00052",
+          "bbox_2d": [
+            668.91,
+            107.47,
+            1072.67,
+            773.03
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00053",
+          "view_id": "00053",
+          "bbox_2d": [
+            899.88,
+            599.91,
+            1286.87,
+            960.17
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 36,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "grey",
+        "cushioned",
+        "wooden arms on each side",
+        "has another beside it on the left"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.3984,
+        -1.2516,
+        0.4932,
+        1.9161,
+        0.7986,
+        0.9684
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00056_1",
+          "view_id": "00056",
+          "bbox_2d": [
+            863.03,
+            449.15,
+            1288.39,
+            961.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7952
+        }
+      ]
+    },
+    {
+      "candidate_id": 37,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a chair",
+        "grey cushioned",
+        "wooden arms on each side",
+        "another chair beside it on the left"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.2647,
+        -0.5766,
+        0.7398,
+        0.4655,
+        0.6148,
+        0.3398
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00056_2",
+          "view_id": "00056",
+          "bbox_2d": [
+            973.0,
+            97.65,
+            1156.45,
+            259.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3892
+        }
+      ]
+    },
+    {
+      "candidate_id": 38,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "grey",
+        "cushioned",
+        "wooden arms on each side",
+        "another chair beside it on the left not confirmed for this candidate"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.9497,
+        -1.329,
+        0.4476,
+        1.779,
+        1.0401,
+        0.9159
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            540.76,
+            396.06,
+            1214.17,
+            959.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8182
+        }
+      ]
+    },
+    {
+      "candidate_id": 39,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey",
+        "cushioned",
+        "wooden arms on each side",
+        "another chair beside it on the left"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.3144,
+        -0.5855,
+        0.7266,
+        0.4164,
+        0.6644,
+        0.3662
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_1",
+          "view_id": "00058",
+          "bbox_2d": [
+            911.84,
+            5.25,
+            1116.36,
+            210.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6472
+        }
+      ]
+    },
+    {
+      "candidate_id": 40,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey",
+        "cushioned chair appearance is not clearly supported",
+        "wooden arms on each side are not present",
+        "reference relation 'another beside it on the left' is not reliably established for a matching pair"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.7299,
+        0.5115,
+        0.4875,
+        1.2791,
+        1.9693,
+        0.605
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_2",
+          "view_id": "00058",
+          "bbox_2d": [
+            1129.35,
+            4.0,
+            1290.78,
+            162.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4524
+        }
+      ]
+    },
+    {
+      "candidate_id": 41,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "wooden arms on each side",
+        "another chair beside it on the left"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.5536,
+        -0.1418,
+        0.4799,
+        0.8979,
+        1.7829,
+        0.9312
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            907.98,
+            99.69,
+            1245.51,
+            485.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6417
+        }
+      ]
+    },
+    {
+      "candidate_id": 42,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey",
+        "cushioned",
+        "wooden arms on each side",
+        "has another chair beside it on the left"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.5248,
+        0.9548,
+        0.5018,
+        0.7149,
+        2.6653,
+        0.9576
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_1",
+          "view_id": "00060",
+          "bbox_2d": [
+            1086.52,
+            6.77,
+            1277.33,
+            236.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2636
+        },
+        {
+          "object_view_id": "00062_2",
+          "view_id": "00062",
+          "bbox_2d": [
+            884.12,
+            137.84,
+            1184.14,
+            486.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3705
+        }
+      ]
+    },
+    {
+      "candidate_id": 43,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey",
+        "cushioned grey chair appearance",
+        "wooden arms on each side",
+        "another matching chair beside it on the left is not reliably satisfied for this candidate"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.3531,
+        -0.0401,
+        0.473,
+        0.5449,
+        1.8877,
+        0.9607
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            731.0,
+            287.13,
+            1177.45,
+            960.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7554
+        }
+      ]
+    },
+    {
+      "candidate_id": 44,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "another beside it on the left"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -1.2747,
+        1.078,
+        0.4879,
+        0.7691,
+        2.7587,
+        0.9932
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00062_1",
+          "view_id": "00062",
+          "bbox_2d": [
+            1090.64,
+            118.16,
+            1287.14,
+            407.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6867
+        },
+        {
+          "object_view_id": "00064_2",
+          "view_id": "00064",
+          "bbox_2d": [
+            826.36,
+            374.93,
+            1094.85,
+            618.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6274
+        },
+        {
+          "object_view_id": "00066_3",
+          "view_id": "00066",
+          "bbox_2d": [
+            546.7,
+            311.75,
+            798.6,
+            548.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6084
+        }
+      ]
+    },
+    {
+      "candidate_id": 45,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "grey",
+        "cushioned",
+        "wooden arms on each side",
+        "has another beside it on the left"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.2798,
+        -0.3857,
+        0.7144,
+        0.4668,
+        0.6746,
+        0.507
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            938.81,
+            588.92,
+            1289.86,
+            964.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7365
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            938.81,
+            588.92,
+            1289.86,
+            964.93
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 46,
+      "label": "chair",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.7965,
+        1.9936,
+        0.3559,
+        0.7551,
+        0.8221,
+        0.6931
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00064_1",
+          "view_id": "00064",
+          "bbox_2d": [
+            976.96,
+            352.89,
+            1229.0,
+            621.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7099
+        },
+        {
+          "object_view_id": "00066_1",
+          "view_id": "00066",
+          "bbox_2d": [
+            673.86,
+            289.25,
+            896.86,
+            490.06
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7592
+        },
+        {
+          "object_view_id": "bootstrap_00018",
+          "view_id": "00018",
+          "bbox_2d": [
+            603.59,
+            57.77,
+            851.38,
+            283.7
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            747.26,
+            60.76,
+            972.85,
+            294.22
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            740.28,
+            340.29,
+            966.49,
+            572.16
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 47,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "grey",
+        "cushioned",
+        "wooden arms on each side",
+        "another chair beside it on the left"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.433,
+        0.6579,
+        0.4879,
+        0.8466,
+        2.7092,
+        1.0371
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00064_3",
+          "view_id": "00064",
+          "bbox_2d": [
+            739.21,
+            430.39,
+            1084.52,
+            959.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6096
+        }
+      ]
+    }
+  ]
+}

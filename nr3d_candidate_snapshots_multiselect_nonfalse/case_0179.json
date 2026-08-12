@@ -1,0 +1,182 @@
+{
+  "case_id": 179,
+  "scene_id": "scene0077_00",
+  "query": "if facing the wall with the yellow page and mirror its the door on the right",
+  "query_analysis": {
+    "raw_query": "if facing the wall with the yellow page and mirror its the door on the right",
+    "target_object": "door",
+    "target_attributes": [],
+    "reference_object": "wall",
+    "reference_attributes": [
+      "yellow page",
+      "mirror"
+    ],
+    "relation": "on the right"
+  },
+  "gt": {
+    "target_id": 20,
+    "gt_label": "door",
+    "gt_bbox_3d": [
+      -0.872967,
+      -1.717164,
+      0.610914,
+      0.169482,
+      1.157264,
+      1.340936
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      0.971758,
+      -1.873608,
+      0.59727,
+      0.999039,
+      0.157157,
+      1.14092
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 17,
+    "total_views": 13,
+    "total_object_views": 2,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "door",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "candidate itself is not clearly confirmed as a door",
+        "wall with yellow page and mirror is not reliably visible",
+        "right-side spatial relation relative to facing that wall is not established"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.9685,
+        -1.8744,
+        0.6014,
+        0.9925,
+        0.1556,
+        1.1327
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            445.64,
+            0.36,
+            960.13,
+            603.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3036
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            587.0,
+            0.0,
+            1165.0,
+            571.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "door",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.671,
+        -1.6208,
+        0.6189,
+        0.6233,
+        0.3491,
+        1.2448
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_1",
+          "view_id": "00020",
+          "bbox_2d": [
+            19.51,
+            0.0,
+            442.42,
+            575.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2588
+        },
+        {
+          "object_view_id": "bootstrap_00018",
+          "view_id": "00018",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            366.0,
+            582.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            154.0,
+            0.0,
+            498.0,
+            624.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            176.0,
+            0.0,
+            587.0,
+            512.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

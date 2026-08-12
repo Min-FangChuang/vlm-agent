@@ -1,0 +1,160 @@
+{
+  "case_id": 246,
+  "scene_id": "scene0648_00",
+  "query": "the waist height white oscillating fan is positioned beside the bed and desk chair . if you enter the bedroom door and continue straight ahead you will run into it before reaching the bed . against the rear wall .",
+  "query_analysis": {
+    "raw_query": "the waist height white oscillating fan is positioned beside the bed and desk chair . if you enter the bedroom door and continue straight ahead you will run into it before reaching the bed . against the rear wall .",
+    "target_object": "fan",
+    "target_attributes": [
+      "waist height",
+      "white",
+      "oscillating"
+    ],
+    "reference_object": "bed, desk chair, bedroom door, rear wall",
+    "reference_attributes": [],
+    "relation": "beside the bed and desk chair; straight ahead from the bedroom door; before reaching the bed; against the rear wall"
+  },
+  "gt": {
+    "target_id": 29,
+    "gt_label": "fan",
+    "gt_bbox_3d": [
+      -0.544717,
+      0.006317,
+      0.477335,
+      0.445318,
+      0.236982,
+      1.156088
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      2.060585,
+      0.12201,
+      1.260963,
+      0.067509,
+      0.15905,
+      0.506812
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2
+    ],
+    "detector_call_count": 108,
+    "total_views": 105,
+    "total_object_views": 2,
+    "total_candidates": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "fan",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "clear confirmation that the candidate is actually a fan",
+        "clear view of its full height/base to judge approximate waist height",
+        "confirmation of the straight-ahead-from-bedroom-door-before-reaching-bed relation"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        2.0606,
+        0.1249,
+        1.2639,
+        0.0675,
+        0.1533,
+        0.4895
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            276.75,
+            309.87,
+            410.79,
+            674.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2788
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            882.2,
+            637.2,
+            1004.69,
+            963.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3796
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            276.75,
+            309.87,
+            410.79,
+            674.55
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            311.37,
+            69.8,
+            431.87,
+            427.79
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            434.31,
+            449.91,
+            545.17,
+            810.91
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00163",
+          "view_id": "00163",
+          "bbox_2d": [
+            105.0,
+            415.0,
+            194.0,
+            669.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

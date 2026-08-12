@@ -1,0 +1,492 @@
+{
+  "case_id": 44,
+  "scene_id": "scene0231_00",
+  "query": "this is a pillow . its pink in color and is on top of the pattered sofa .",
+  "query_analysis": {
+    "raw_query": "this is a pillow . its pink in color and is on top of the pattered sofa .",
+    "target_object": "pillow",
+    "target_attributes": [
+      "pink"
+    ],
+    "reference_object": "sofa",
+    "reference_attributes": [
+      "patterned"
+    ],
+    "relation": "on top of"
+  },
+  "gt": {
+    "target_id": 10,
+    "gt_label": "pillow",
+    "gt_bbox_3d": [
+      -2.385841,
+      -0.472999,
+      0.495146,
+      0.409413,
+      0.354264,
+      0.174346
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -2.365871,
+      -0.463149,
+      0.507647,
+      0.370524,
+      0.367079,
+      0.178852
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2,
+      2
+    ],
+    "detector_call_count": 117,
+    "total_views": 111,
+    "total_object_views": 11,
+    "total_candidates": 7
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "object is clearly a pillow",
+        "object is pink",
+        "distinct pillow is on top of the patterned sofa"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -4.433,
+        0.5021,
+        0.9466,
+        0.413,
+        0.6737,
+        0.3238
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            877.05,
+            452.94,
+            1288.93,
+            687.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2708
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "pillow",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 9,
+      "bbox_3d": [
+        -2.3651,
+        -0.4602,
+        0.5097,
+        0.3726,
+        0.3434,
+        0.1705
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            156.58,
+            450.87,
+            403.34,
+            628.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8035
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            572.77,
+            448.26,
+            784.79,
+            626.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9047
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            156.58,
+            450.87,
+            403.34,
+            628.01
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00076",
+          "view_id": "00076",
+          "bbox_2d": [
+            214.0,
+            153.0,
+            437.0,
+            190.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00087",
+          "view_id": "00087",
+          "bbox_2d": [
+            2.56,
+            660.88,
+            293.43,
+            825.31
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            764.13,
+            156.02,
+            988.44,
+            348.86
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            0.0,
+            513.8,
+            243.04,
+            691.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7279
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            764.13,
+            156.02,
+            988.44,
+            348.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7763
+        },
+        {
+          "object_view_id": "00088_0",
+          "view_id": "00088",
+          "bbox_2d": [
+            0.0,
+            613.28,
+            236.35,
+            786.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3673
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "green-boxed object is a pillow",
+        "green-boxed pillow is pink"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -4.1464,
+        0.1354,
+        0.5693,
+        0.8388,
+        0.3376,
+        0.183
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00040_1",
+          "view_id": "00040",
+          "bbox_2d": [
+            1036.69,
+            461.06,
+            1242.08,
+            598.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3974
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "object is a pillow",
+        "object is pink",
+        "object is on top of the patterned sofa as a separate item"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -3.4546,
+        -0.8606,
+        0.7007,
+        2.4486,
+        0.5601,
+        0.5259
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            82.44,
+            404.02,
+            511.12,
+            792.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2525
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a pillow",
+        "pillow is pink",
+        "object is on top of the patterned sofa"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        2.4545,
+        -0.1541,
+        0.8385,
+        0.18,
+        0.2669,
+        0.2225
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00128_0",
+          "view_id": "00128",
+          "bbox_2d": [
+            1138.32,
+            594.91,
+            1295.98,
+            873.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3188
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1138.32,
+            594.91,
+            1295.98,
+            873.67
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "object is a pillow",
+        "pink color",
+        "on top of the patterned sofa"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -2.847,
+        2.0976,
+        0.9098,
+        1.3323,
+        0.6988,
+        0.5946
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00164_0",
+          "view_id": "00164",
+          "bbox_2d": [
+            965.1,
+            398.87,
+            1176.91,
+            608.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3611
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "pillow",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "candidate clearly verified as a pillow",
+        "candidate clearly verified as pink",
+        "candidate clearly verified as on top of a patterned sofa"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.8804,
+        -0.757,
+        0.798,
+        0.0641,
+        0.1104,
+        0.2004
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00198_0",
+          "view_id": "00198",
+          "bbox_2d": [
+            1106.12,
+            734.85,
+            1296.0,
+            965.49
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4209
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1106.12,
+            734.85,
+            1296.0,
+            965.49
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00199",
+          "view_id": "00199",
+          "bbox_2d": [
+            763.0,
+            492.0,
+            955.0,
+            714.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00101",
+          "view_id": "00101",
+          "bbox_2d": [
+            617.0,
+            252.0,
+            715.0,
+            334.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00129",
+          "view_id": "00129",
+          "bbox_2d": [
+            464.0,
+            202.0,
+            538.0,
+            325.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

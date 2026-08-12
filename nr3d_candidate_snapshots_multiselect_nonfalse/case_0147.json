@@ -1,0 +1,131 @@
+{
+  "case_id": 147,
+  "scene_id": "scene0081_00",
+  "query": "the small blue couch that is on the end",
+  "query_analysis": {
+    "raw_query": "the small blue couch that is on the end",
+    "target_object": "couch",
+    "target_attributes": [
+      "small",
+      "blue"
+    ],
+    "reference_object": "end",
+    "reference_attributes": [],
+    "relation": "on"
+  },
+  "gt": {
+    "target_id": 8,
+    "gt_label": "couch",
+    "gt_bbox_3d": [
+      -1.184164,
+      -1.66853,
+      0.619361,
+      0.956808,
+      0.716023,
+      0.999954
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      0.838149,
+      1.247566,
+      0.591952,
+      0.712461,
+      2.90638,
+      0.962794
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1
+    ],
+    "detector_call_count": 11,
+    "total_views": 8,
+    "total_object_views": 1,
+    "total_candidates": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "couch",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "whether this couch is specifically the one 'on the end'",
+        "reliable confirmation that this is 'small' relative to nearby alternatives"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.8318,
+        1.5509,
+        0.592,
+        0.7013,
+        2.2998,
+        0.9628
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            32.23,
+            54.22,
+            1295.39,
+            849.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.671
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            1295.0,
+            520.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            124.0,
+            0.0,
+            1295.0,
+            723.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00006",
+          "view_id": "00006",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            1295.0,
+            572.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

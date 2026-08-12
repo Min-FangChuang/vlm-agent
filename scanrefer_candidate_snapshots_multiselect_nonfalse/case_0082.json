@@ -1,0 +1,282 @@
+{
+  "case_id": 82,
+  "scene_id": "scene0257_00",
+  "query": "there is one purple chair in the room the purple chair is in front of a brown wooden door . the wooden door is the item we are looking for . the brown wooden door has shiny brass hardware . the purple chair and the brown wooden door are to the right of the big desk in front of all the little desks in the room .",
+  "query_analysis": {
+    "raw_query": "there is one purple chair in the room the purple chair is in front of a brown wooden door . the wooden door is the item we are looking for . the brown wooden door has shiny brass hardware . the purple chair and the brown wooden door are to the right of the big desk in front of all the little desks in the room .",
+    "target_object": "door",
+    "target_attributes": [
+      "brown",
+      "wooden",
+      "shiny brass hardware"
+    ],
+    "reference_object": "desk",
+    "reference_attributes": [
+      "big"
+    ],
+    "relation": "to the right of"
+  },
+  "gt": {
+    "target_id": 6,
+    "gt_label": "door",
+    "gt_bbox_3d": [
+      2.74693,
+      1.503934,
+      0.660123,
+      0.749063,
+      0.969587,
+      1.554461
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "false",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      2.684389,
+      1.453049,
+      0.648796,
+      0.534722,
+      0.976598,
+      1.627766
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      3
+    ],
+    "detector_call_count": 47,
+    "total_views": 39,
+    "total_object_views": 3,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "door",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        2.6489,
+        1.4451,
+        0.6488,
+        0.5348,
+        1.0323,
+        1.6278
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            731.76,
+            0.0,
+            1019.32,
+            445.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3501
+        },
+        {
+          "object_view_id": "bootstrap_00041",
+          "view_id": "00041",
+          "bbox_2d": [
+            797.0,
+            0.0,
+            1295.0,
+            460.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00010",
+          "view_id": "00010",
+          "bbox_2d": [
+            1006.0,
+            2.0,
+            1295.0,
+            883.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00008",
+          "view_id": "00008",
+          "bbox_2d": [
+            949.0,
+            2.0,
+            1295.0,
+            722.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "door",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "purple chair in front of the door is not present; visible chair appears teal/light blue instead",
+        "shiny brass hardware is not visible",
+        "relation to all the little desks in the room is not fully confirmed"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -2.6899,
+        1.6948,
+        1.2563,
+        0.5135,
+        0.9376,
+        1.3963
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            257.13,
+            0.43,
+            530.24,
+            373.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5446
+        },
+        {
+          "object_view_id": "bootstrap_00053",
+          "view_id": "00053",
+          "bbox_2d": [
+            604.54,
+            0.85,
+            913.96,
+            454.55
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00064",
+          "view_id": "00064",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            216.0,
+            402.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00061",
+          "view_id": "00061",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            287.0,
+            330.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "door",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "wooden material is not clearly confirmed",
+        "shiny brass hardware is not visible",
+        "purple chair in front of the door is not visible",
+        "big desk reference object is not visible",
+        "cannot verify the door is to the right of the big desk",
+        "cannot verify the door is in front of the little desks as described"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        2.2407,
+        -5.5156,
+        1.9898,
+        0.9329,
+        0.444,
+        1.8072
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00081_0",
+          "view_id": "00081",
+          "bbox_2d": [
+            121.63,
+            21.52,
+            344.17,
+            434.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7697
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            326.0,
+            9.0,
+            515.0,
+            154.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00082",
+          "view_id": "00082",
+          "bbox_2d": [
+            168.0,
+            9.0,
+            369.0,
+            196.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

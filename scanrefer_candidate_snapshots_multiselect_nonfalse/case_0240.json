@@ -1,0 +1,232 @@
+{
+  "case_id": 240,
+  "scene_id": "scene0435_00",
+  "query": "this is a sink basin that is empty . it is white and tan .",
+  "query_analysis": {
+    "raw_query": "this is a sink basin that is empty . it is white and tan .",
+    "target_object": "sink basin",
+    "target_attributes": [
+      "empty",
+      "white",
+      "tan"
+    ],
+    "reference_object": "",
+    "reference_attributes": [],
+    "relation": ""
+  },
+  "gt": {
+    "target_id": 22,
+    "gt_label": "sink",
+    "gt_bbox_3d": [
+      0.522863,
+      -2.565589,
+      0.869987,
+      0.637111,
+      0.489693,
+      0.29302
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      0.060974,
+      -2.75494,
+      0.855168,
+      0.226186,
+      0.295291,
+      0.072298
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2
+    ],
+    "detector_call_count": 85,
+    "total_views": 82,
+    "total_object_views": 5,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "sink basin",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "tan"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.5452,
+        -2.5556,
+        0.8065,
+        0.6802,
+        0.5105,
+        0.175
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00128_0",
+          "view_id": "00128",
+          "bbox_2d": [
+            0.0,
+            456.16,
+            365.89,
+            941.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3612
+        },
+        {
+          "object_view_id": "00130_0",
+          "view_id": "00130",
+          "bbox_2d": [
+            0.15,
+            193.99,
+            656.6,
+            536.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.718
+        },
+        {
+          "object_view_id": "00132_0",
+          "view_id": "00132",
+          "bbox_2d": [
+            306.38,
+            101.08,
+            1053.34,
+            439.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7324
+        },
+        {
+          "object_view_id": "00134_0",
+          "view_id": "00134",
+          "bbox_2d": [
+            506.15,
+            146.57,
+            1295.51,
+            500.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6187
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            506.15,
+            146.57,
+            1295.51,
+            500.12
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "sink basin",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.0795,
+        -2.8009,
+        0.8353,
+        0.1794,
+        0.1969,
+        0.0161
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00136_0",
+          "view_id": "00136",
+          "bbox_2d": [
+            0.0,
+            248.79,
+            317.44,
+            473.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2554
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            248.79,
+            317.44,
+            473.11
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00135",
+          "view_id": "00135",
+          "bbox_2d": [
+            121.0,
+            359.0,
+            598.0,
+            643.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00134",
+          "view_id": "00134",
+          "bbox_2d": [
+            324.0,
+            404.0,
+            764.0,
+            684.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00133",
+          "view_id": "00133",
+          "bbox_2d": [
+            265.0,
+            400.0,
+            712.0,
+            682.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,536 @@
+{
+  "case_id": 24,
+  "scene_id": "scene0246_00",
+  "query": "the white towel is hanging on the wall in the bathroom . it is on the right wall next to the toilet .",
+  "query_analysis": {
+    "raw_query": "the white towel is hanging on the wall in the bathroom . it is on the right wall next to the toilet .",
+    "target_object": "towel",
+    "target_attributes": [
+      "white",
+      "hanging"
+    ],
+    "reference_object": "toilet",
+    "reference_attributes": [],
+    "relation": "next to"
+  },
+  "gt": {
+    "target_id": 20,
+    "gt_label": "towel",
+    "gt_bbox_3d": [
+      0.107385,
+      0.352853,
+      0.598288,
+      0.094425,
+      0.738756,
+      0.711353
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 2,
+    "bbox_3d": [
+      0.076359,
+      0.153344,
+      1.357684,
+      0.210443,
+      0.206672,
+      0.416731
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 79,
+    "total_views": 74,
+    "total_object_views": 9,
+    "total_candidates": 7
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "towel",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "bathroom setting",
+        "toilet present nearby",
+        "candidate next to the toilet",
+        "candidate on the bathroom's right wall"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.379,
+        0.1294,
+        0.7121,
+        0.1719,
+        0.4412,
+        0.1974
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            921.73,
+            0.2,
+            1138.11,
+            272.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3749
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            921.73,
+            0.2,
+            1138.11,
+            272.71
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "towel",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a towel",
+        "white",
+        "hanging on the wall",
+        "in the bathroom",
+        "next to the toilet",
+        "on the right wall"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.4093,
+        -0.1447,
+        0.4443,
+        0.3216,
+        0.3549,
+        0.2141
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            314.8,
+            729.31,
+            692.73,
+            965.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3828
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            314.8,
+            729.31,
+            692.73,
+            965.98
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "towel",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.0748,
+        0.1373,
+        1.3571,
+        0.2098,
+        0.1544,
+        0.4226
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            1040.33,
+            0.0,
+            1243.7,
+            302.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3353
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1040.33,
+            0.0,
+            1243.7,
+            302.74
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            572.08,
+            117.08,
+            878.75,
+            862.13
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00058",
+          "view_id": "00058",
+          "bbox_2d": [
+            478.18,
+            0.0,
+            830.03,
+            505.17
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00060",
+          "view_id": "00060",
+          "bbox_2d": [
+            802.23,
+            357.51,
+            1117.11,
+            963.47
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            802.23,
+            357.51,
+            1117.11,
+            963.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9679
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "towel",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the towel is next to the toilet",
+        "cannot reliably confirm this is specifically on the bathroom's right wall"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.061,
+        0.1237,
+        1.294,
+        0.1744,
+        0.0911,
+        0.2264
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            478.18,
+            0.0,
+            830.03,
+            505.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6469
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            478.18,
+            0.0,
+            830.03,
+            505.17
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            572.08,
+            117.08,
+            878.75,
+            862.13
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00050",
+          "view_id": "00050",
+          "bbox_2d": [
+            1237.0,
+            730.0,
+            1295.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00060",
+          "view_id": "00060",
+          "bbox_2d": [
+            802.23,
+            357.51,
+            1117.11,
+            963.47
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "towel",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "towel identity is not confirmed; looks more like clothing/scarf/cloth on a rack",
+        "in the bathroom",
+        "on the wall in the bathroom",
+        "on the right wall",
+        "next to the toilet"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -0.5134,
+        1.6645,
+        0.5885,
+        0.6147,
+        0.1698,
+        0.7449
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00112_0",
+          "view_id": "00112",
+          "bbox_2d": [
+            615.39,
+            697.94,
+            720.8,
+            964.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3509
+        },
+        {
+          "object_view_id": "00116_0",
+          "view_id": "00116",
+          "bbox_2d": [
+            393.4,
+            228.92,
+            544.56,
+            627.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3517
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            393.4,
+            228.92,
+            544.56,
+            627.85
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "towel",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a towel",
+        "object is white",
+        "object is hanging on the wall",
+        "scene is a bathroom",
+        "object is next to a toilet",
+        "object is on the right wall"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.8369,
+        0.8646,
+        0.5675,
+        0.5833,
+        0.5839,
+        0.2969
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00138_0",
+          "view_id": "00138",
+          "bbox_2d": [
+            290.33,
+            360.46,
+            1292.48,
+            966.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2611
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            290.33,
+            360.46,
+            1292.48,
+            966.08
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "towel",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a towel",
+        "object is white",
+        "object is hanging on the wall",
+        "scene is a bathroom",
+        "object is on the right wall next to the toilet"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.872,
+        0.8473,
+        0.5681,
+        0.5283,
+        0.6116,
+        0.2297
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00144_0",
+          "view_id": "00144",
+          "bbox_2d": [
+            0.08,
+            248.54,
+            592.66,
+            940.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4765
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.08,
+            248.54,
+            592.66,
+            940.83
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

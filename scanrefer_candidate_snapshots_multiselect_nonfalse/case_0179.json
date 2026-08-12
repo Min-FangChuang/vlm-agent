@@ -1,0 +1,679 @@
+{
+  "case_id": 179,
+  "scene_id": "scene0670_00",
+  "query": "the highlighted object is the kitchen refrigerator . it has a freezer on top . it appears to have stainless steel components . there are magnets and other items stuck to the front and side of it .",
+  "query_analysis": {
+    "raw_query": "the highlighted object is the kitchen refrigerator . it has a freezer on top . it appears to have stainless steel components . there are magnets and other items stuck to the front and side of it .",
+    "target_object": "refrigerator",
+    "target_attributes": [
+      "kitchen",
+      "freezer on top",
+      "stainless steel components",
+      "magnets and other items stuck to the front and side"
+    ],
+    "reference_object": "",
+    "reference_attributes": [],
+    "relation": ""
+  },
+  "gt": {
+    "target_id": 32,
+    "gt_label": "refrigerator",
+    "gt_bbox_3d": [
+      -0.980432,
+      -0.50249,
+      0.862746,
+      0.864635,
+      0.841069,
+      1.682421
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 4,
+    "bbox_3d": [
+      -0.718235,
+      -0.522523,
+      0.901794,
+      0.33737,
+      0.809611,
+      1.8862
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      3
+    ],
+    "detector_call_count": 88,
+    "total_views": 76,
+    "total_object_views": 21,
+    "total_candidates": 6
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "refrigerator",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a refrigerator",
+        "candidate has a freezer on top",
+        "candidate shows magnets/items stuck to the front and side"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.8824,
+        0.52,
+        0.5502,
+        0.1336,
+        0.1669,
+        0.6289
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            0.0,
+            543.8,
+            148.37,
+            964.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2827
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            543.8,
+            148.37,
+            964.89
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "refrigerator",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "freezer on top is not clearly confirmed",
+        "stainless steel components are not clearly visible"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        2.2362,
+        -2.5198,
+        0.747,
+        0.9276,
+        0.95,
+        1.6277
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            1109.2,
+            258.78,
+            1296.0,
+            882.06
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7947
+        },
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            746.36,
+            0.0,
+            1098.21,
+            401.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9137
+        },
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            513.71,
+            0.0,
+            827.64,
+            322.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8608
+        },
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            217.72,
+            0.0,
+            518.02,
+            289.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7526
+        },
+        {
+          "object_view_id": "bootstrap_00052",
+          "view_id": "00052",
+          "bbox_2d": [
+            867.0,
+            25.0,
+            1267.0,
+            522.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00053",
+          "view_id": "00053",
+          "bbox_2d": [
+            808.88,
+            0.0,
+            1184.29,
+            466.57
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            645.7,
+            0.0,
+            961.67,
+            367.41
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "refrigerator",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 8,
+      "bbox_3d": [
+        -1.0439,
+        -0.7486,
+        0.8309,
+        0.9011,
+        1.3129,
+        1.8294
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            727.94,
+            0.0,
+            1273.65,
+            844.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9086
+        },
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            624.54,
+            0.0,
+            1219.9,
+            776.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.859
+        },
+        {
+          "object_view_id": "00070_0",
+          "view_id": "00070",
+          "bbox_2d": [
+            597.23,
+            0.51,
+            1214.45,
+            741.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9325
+        },
+        {
+          "object_view_id": "bootstrap_00089",
+          "view_id": "00089",
+          "bbox_2d": [
+            285.94,
+            0.11,
+            930.0,
+            896.55
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00121",
+          "view_id": "00121",
+          "bbox_2d": [
+            78.64,
+            61.26,
+            788.13,
+            964.32
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00088",
+          "view_id": "00088",
+          "bbox_2d": [
+            464.79,
+            0.0,
+            1071.97,
+            873.18
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00118_0",
+          "view_id": "00118",
+          "bbox_2d": [
+            244.39,
+            22.91,
+            939.59,
+            968.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9714
+        },
+        {
+          "object_view_id": "00120_0",
+          "view_id": "00120",
+          "bbox_2d": [
+            175.05,
+            67.62,
+            856.59,
+            964.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8763
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "refrigerator",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "green-boxed object is a refrigerator",
+        "freezer on top",
+        "stainless steel refrigerator body",
+        "magnets/items attached to the refrigerator front and side"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.9342,
+        0.0721,
+        0.4384,
+        0.268,
+        0.3101,
+        0.9054
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00066_1",
+          "view_id": "00066",
+          "bbox_2d": [
+            1136.58,
+            289.59,
+            1295.96,
+            959.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2951
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1136.58,
+            289.59,
+            1295.96,
+            959.13
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "refrigerator",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "items stuck to the side are not clearly visible from the current views"
+      ],
+      "num_object_views": 12,
+      "bbox_3d": [
+        -0.7991,
+        -0.3996,
+        0.7736,
+        0.4243,
+        0.9093,
+        1.5516
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            823.81,
+            251.33,
+            1296.0,
+            965.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.967
+        },
+        {
+          "object_view_id": "00078_0",
+          "view_id": "00078",
+          "bbox_2d": [
+            702.97,
+            293.12,
+            1248.4,
+            966.32
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9789
+        },
+        {
+          "object_view_id": "bootstrap_00091",
+          "view_id": "00091",
+          "bbox_2d": [
+            313.48,
+            161.61,
+            897.46,
+            965.22
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00115",
+          "view_id": "00115",
+          "bbox_2d": [
+            31.0,
+            0.0,
+            554.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00080",
+          "view_id": "00080",
+          "bbox_2d": [
+            389.16,
+            141.09,
+            950.76,
+            965.67
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            389.16,
+            141.09,
+            950.76,
+            965.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9519
+        },
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            522.9,
+            0.96,
+            1105.08,
+            965.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9669
+        },
+        {
+          "object_view_id": "00084_0",
+          "view_id": "00084",
+          "bbox_2d": [
+            436.64,
+            0.0,
+            970.22,
+            846.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9489
+        },
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            563.15,
+            0.0,
+            1146.96,
+            903.2
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9727
+        },
+        {
+          "object_view_id": "00088_0",
+          "view_id": "00088",
+          "bbox_2d": [
+            464.79,
+            0.0,
+            1071.97,
+            873.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9428
+        },
+        {
+          "object_view_id": "00092_0",
+          "view_id": "00092",
+          "bbox_2d": [
+            371.5,
+            347.3,
+            995.15,
+            966.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9756
+        },
+        {
+          "object_view_id": "00094_0",
+          "view_id": "00094",
+          "bbox_2d": [
+            351.42,
+            290.04,
+            945.33,
+            966.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9817
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "refrigerator",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.6623,
+        -0.444,
+        0.781,
+        0.1471,
+        0.6691,
+        1.6124
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00116_0",
+          "view_id": "00116",
+          "bbox_2d": [
+            67.14,
+            0.0,
+            554.78,
+            964.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7497
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            67.14,
+            0.0,
+            554.78,
+            964.68
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00090",
+          "view_id": "00090",
+          "bbox_2d": [
+            359.0,
+            0.0,
+            899.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00100",
+          "view_id": "00100",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            204.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00074",
+          "view_id": "00074",
+          "bbox_2d": [
+            839.0,
+            0.0,
+            1295.0,
+            937.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

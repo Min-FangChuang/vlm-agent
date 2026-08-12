@@ -1,0 +1,598 @@
+{
+  "case_id": 36,
+  "scene_id": "scene0426_00",
+  "query": "there is a rectangular red pillow . it is on the right side of a bed .",
+  "query_analysis": {
+    "raw_query": "there is a rectangular red pillow . it is on the right side of a bed .",
+    "target_object": "pillow",
+    "target_attributes": [
+      "rectangular",
+      "red"
+    ],
+    "reference_object": "bed",
+    "reference_attributes": [],
+    "relation": "on the right side of"
+  },
+  "gt": {
+    "target_id": 23,
+    "gt_label": "pillow",
+    "gt_bbox_3d": [
+      -0.025274,
+      1.924197,
+      0.776009,
+      1.16144,
+      0.344969,
+      0.424545
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -0.032067,
+      1.944637,
+      0.754598,
+      1.155071,
+      0.299187,
+      0.487786
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 60,
+    "total_views": 58,
+    "total_object_views": 17,
+    "total_candidates": 8
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "pillow",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 9,
+      "bbox_3d": [
+        -0.0404,
+        1.8962,
+        0.7915,
+        1.1529,
+        0.4243,
+        0.4058
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            0.0,
+            402.55,
+            102.34,
+            715.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7497
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            402.55,
+            102.34,
+            715.03
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00071",
+          "view_id": "00071",
+          "bbox_2d": [
+            15.0,
+            446.0,
+            39.0,
+            506.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            105.33,
+            337.79,
+            814.74,
+            580.7
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00058",
+          "view_id": "00058",
+          "bbox_2d": [
+            504.4,
+            170.96,
+            1222.9,
+            462.59
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            504.4,
+            170.96,
+            1222.9,
+            462.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5977
+        },
+        {
+          "object_view_id": "00060_1",
+          "view_id": "00060",
+          "bbox_2d": [
+            701.29,
+            494.4,
+            1295.81,
+            789.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7508
+        },
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            231.22,
+            212.14,
+            957.29,
+            454.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6222
+        },
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            0.0,
+            316.65,
+            216.27,
+            593.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7863
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "red",
+        "rectangular red pillow specifically corresponds to a different nearby pillow, not the boxed one"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.4527,
+        1.7407,
+        0.5422,
+        0.5306,
+        0.6937,
+        0.4668
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_1",
+          "view_id": "00000",
+          "bbox_2d": [
+            0.0,
+            688.78,
+            176.9,
+            852.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.395
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            688.78,
+            176.9,
+            852.31
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "red",
+        "rectangular"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.5001,
+        1.4675,
+        0.5201,
+        1.0157,
+        1.2252,
+        0.5665
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            0.53,
+            348.11,
+            603.27,
+            907.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5413
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.53,
+            348.11,
+            603.27,
+            907.7
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00058_1",
+          "view_id": "00058",
+          "bbox_2d": [
+            809.31,
+            416.06,
+            1296.0,
+            869.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4807
+        },
+        {
+          "object_view_id": "00064_1",
+          "view_id": "00064",
+          "bbox_2d": [
+            664.49,
+            494.79,
+            1222.88,
+            899.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6101
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [
+        "red",
+        "confirmed as the pillow on the right side of the bed matching the full request"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -1.0505,
+        1.8117,
+        1.1923,
+        0.9318,
+        0.4818,
+        0.4448
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            908.97,
+            388.26,
+            1295.7,
+            660.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.83
+        },
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            525.9,
+            72.43,
+            1074.16,
+            330.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7852
+        },
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            129.26,
+            257.59,
+            686.18,
+            537.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9113
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "pillow is red",
+        "rectangular red pillow on the right side of the bed is not confirmed for the green-boxed candidate"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.3817,
+        1.3844,
+        0.9016,
+        0.322,
+        0.7377,
+        0.2201
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_1",
+          "view_id": "00052",
+          "bbox_2d": [
+            698.92,
+            621.36,
+            964.91,
+            766.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3138
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "pillow is red",
+        "pillow is the rectangular red pillow on the right side of the bed",
+        "green-boxed object is the requested object"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.0074,
+        1.292,
+        0.8611,
+        0.4551,
+        0.6769,
+        0.4662
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_2",
+          "view_id": "00058",
+          "bbox_2d": [
+            0.04,
+            180.15,
+            137.22,
+            693.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3054
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.04,
+            180.15,
+            137.22,
+            693.44
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a pillow",
+        "candidate is red",
+        "candidate is rectangular",
+        "candidate is the object on the right side of the bed"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.2551,
+        1.3386,
+        0.9365,
+        0.5672,
+        0.768,
+        0.2301
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_2",
+          "view_id": "00060",
+          "bbox_2d": [
+            0.13,
+            527.51,
+            313.6,
+            904.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3651
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.13,
+            527.51,
+            313.6,
+            904.72
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "pillow",
+        "red",
+        "rectangular",
+        "green-boxed object is the object on the right side of the bed"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -0.3893,
+        1.5783,
+        0.8582,
+        0.6947,
+        0.9152,
+        0.4833
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00064_2",
+          "view_id": "00064",
+          "bbox_2d": [
+            0.06,
+            197.49,
+            616.4,
+            795.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3859
+        },
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            0.0,
+            686.64,
+            225.06,
+            965.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4282
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.06,
+            197.49,
+            616.4,
+            795.87
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

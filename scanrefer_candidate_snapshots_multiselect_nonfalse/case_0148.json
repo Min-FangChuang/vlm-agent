@@ -1,0 +1,354 @@
+{
+  "case_id": 148,
+  "scene_id": "scene0081_00",
+  "query": "a red cube shaped footrest . the footrest is near the end of a large blue couch and a wooden table .",
+  "query_analysis": {
+    "raw_query": "a red cube shaped footrest . the footrest is near the end of a large blue couch and a wooden table .",
+    "target_object": "footrest",
+    "target_attributes": [
+      "red",
+      "cube shaped"
+    ],
+    "reference_object": "large blue couch and wooden table",
+    "reference_attributes": [
+      "large",
+      "blue",
+      "wooden"
+    ],
+    "relation": "near the end of"
+  },
+  "gt": {
+    "target_id": 1,
+    "gt_label": "ottoman",
+    "gt_bbox_3d": [
+      -1.633567,
+      -0.913194,
+      0.248714,
+      0.703283,
+      0.622504,
+      0.487057
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 2,
+    "bbox_3d": [
+      0.307614,
+      -0.00013,
+      0.324025,
+      0.545681,
+      0.566527,
+      0.687528
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 14,
+    "total_views": 8,
+    "total_object_views": 5,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "footrest",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.62,
+        -0.8957,
+        0.2607,
+        0.6524,
+        0.5874,
+        0.4766
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            668.12,
+            509.26,
+            1238.39,
+            965.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4686
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            780.67,
+            319.21,
+            1296.0,
+            820.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7485
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            668.12,
+            509.26,
+            1238.39,
+            965.47
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00001",
+          "view_id": "00001",
+          "bbox_2d": [
+            609.08,
+            545.26,
+            1178.29,
+            965.09
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00002",
+          "view_id": "00002",
+          "bbox_2d": [
+            777.0,
+            696.0,
+            1295.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            994.91,
+            432.34,
+            1295.86,
+            907.73
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "footrest",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a footrest",
+        "candidate is red",
+        "candidate is cube shaped"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.4329,
+        1.1016,
+        0.3385,
+        0.7454,
+        0.3819,
+        0.7065
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            628.07,
+            584.99,
+            878.21,
+            966.24
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3338
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            628.07,
+            584.99,
+            878.21,
+            966.24
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "footrest",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.2811,
+        0.0083,
+        0.2151,
+        0.4711,
+        0.5527,
+        0.4697
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            547.39,
+            488.72,
+            992.44,
+            956.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2694
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            547.39,
+            488.72,
+            992.44,
+            956.91
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            278.02,
+            403.27,
+            730.53,
+            865.13
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            638.0,
+            460.0,
+            1002.0,
+            845.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00004",
+          "view_id": "00004",
+          "bbox_2d": [
+            274.0,
+            424.0,
+            612.0,
+            785.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "footrest",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "The green-boxed object itself is a footrest",
+        "The green-boxed object itself is red",
+        "The green-boxed object itself is cube shaped"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.0596,
+        -1.243,
+        0.3303,
+        0.3691,
+        0.8302,
+        0.7373
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_1",
+          "view_id": "00014",
+          "bbox_2d": [
+            532.31,
+            258.02,
+            745.85,
+            635.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3578
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            532.31,
+            258.02,
+            745.85,
+            635.52
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

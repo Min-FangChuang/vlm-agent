@@ -1,0 +1,2964 @@
+{
+  "case_id": 16,
+  "scene_id": "scene0609_00",
+  "query": "the chair is next to the northeast - most table . the chair is black with four legs .",
+  "query_analysis": {
+    "raw_query": "the chair is next to the northeast - most table . the chair is black with four legs .",
+    "target_object": "chair",
+    "target_attributes": [
+      "black",
+      "four legs"
+    ],
+    "reference_object": "table",
+    "reference_attributes": [
+      "northeast-most"
+    ],
+    "relation": "next to"
+  },
+  "gt": {
+    "target_id": 1,
+    "gt_label": "chair",
+    "gt_bbox_3d": [
+      -0.154949,
+      1.195447,
+      0.475178,
+      0.638766,
+      0.667049,
+      0.879606
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 9,
+    "bbox_3d": [
+      -0.117574,
+      1.218218,
+      0.462289,
+      0.559257,
+      0.681453,
+      0.927736
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      1,
+      2,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 94,
+    "total_views": 28,
+    "total_object_views": 78,
+    "total_candidates": 30
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "the adjacent table is confirmed to be the northeast-most table in the scene"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        -0.1156,
+        1.1999,
+        0.4803,
+        0.548,
+        0.6378,
+        0.879
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            0.14,
+            594.58,
+            559.46,
+            965.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7043
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            0.0,
+            223.96,
+            707.13,
+            961.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7956
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            470.69,
+            41.88,
+            1045.5,
+            822.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9013
+        },
+        {
+          "object_view_id": "00006_1",
+          "view_id": "00006",
+          "bbox_2d": [
+            761.91,
+            394.32,
+            1295.52,
+            963.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8263
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            223.96,
+            707.13,
+            961.96
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            346.94,
+            89.46,
+            964.54,
+            909.19
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            641.0,
+            851.0,
+            976.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00008",
+          "view_id": "00008",
+          "bbox_2d": [
+            1132.0,
+            541.0,
+            1295.0,
+            868.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "the adjacent table is confirmed to be the northeast-most table in the scene",
+        "the green-boxed chair is confirmed as the chair next to that specific northeast-most table rather than another similar nearby table"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.0202,
+        0.4335,
+        0.4555,
+        0.3349,
+        0.5795,
+        0.877
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            367.8,
+            304.94,
+            777.05,
+            919.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8683
+        },
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            477.59,
+            349.6,
+            968.1,
+            962.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.773
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            477.59,
+            349.6,
+            968.1,
+            962.26
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00054",
+          "view_id": "00054",
+          "bbox_2d": [
+            1101.37,
+            294.8,
+            1296.0,
+            871.85
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00044",
+          "view_id": "00044",
+          "bbox_2d": [
+            600.07,
+            170.67,
+            958.71,
+            658.13
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            406.0,
+            527.0,
+            951.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the adjacent table is the northeast-most table in the scene",
+        "cannot fully verify all four legs from current views"
+      ],
+      "num_object_views": 10,
+      "bbox_3d": [
+        -0.2626,
+        -1.1147,
+        0.4294,
+        1.1533,
+        1.0114,
+        0.8706
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_2",
+          "view_id": "00006",
+          "bbox_2d": [
+            0.0,
+            227.88,
+            243.54,
+            639.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7882
+        },
+        {
+          "object_view_id": "00008_1",
+          "view_id": "00008",
+          "bbox_2d": [
+            0.0,
+            199.26,
+            361.88,
+            707.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.731
+        },
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            209.89,
+            241.8,
+            707.1,
+            878.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8534
+        },
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            469.14,
+            316.96,
+            1089.06,
+            964.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8424
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            469.14,
+            316.96,
+            1089.06,
+            964.87
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            341.82,
+            98.02,
+            819.33,
+            803.11
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            1280.0,
+            566.0,
+            1295.0,
+            611.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            66.4,
+            173.99,
+            398.0,
+            762.32
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00046_1",
+          "view_id": "00046",
+          "bbox_2d": [
+            138.31,
+            178.51,
+            497.63,
+            568.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.809
+        },
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            347.28,
+            236.07,
+            733.96,
+            713.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8884
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably verify that the adjacent table is the northeast-most table in the scene",
+        "full four-leg confirmation remains partially occluded"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -0.179,
+        -2.5507,
+        0.4259,
+        0.962,
+        2.7981,
+        0.8735
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_1",
+          "view_id": "00010",
+          "bbox_2d": [
+            38.73,
+            165.77,
+            251.18,
+            673.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6473
+        },
+        {
+          "object_view_id": "00012_1",
+          "view_id": "00012",
+          "bbox_2d": [
+            232.32,
+            167.92,
+            478.63,
+            812.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7166
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            460.51,
+            60.53,
+            700.17,
+            285.55
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            173.39,
+            141.4,
+            460.78,
+            857.96
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            353.38,
+            206.7,
+            533.76,
+            910.74
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00042_1",
+          "view_id": "00042",
+          "bbox_2d": [
+            332.59,
+            19.11,
+            494.08,
+            424.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7768
+        },
+        {
+          "object_view_id": "00054_1",
+          "view_id": "00054",
+          "bbox_2d": [
+            65.84,
+            193.81,
+            362.7,
+            627.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8678
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot confidently verify that the chair has four legs",
+        "cannot determine whether the adjacent table is the northeast-most table in the scene"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        0.1394,
+        -1.6999,
+        0.3991,
+        0.3242,
+        2.3048,
+        0.8991
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_2",
+          "view_id": "00012",
+          "bbox_2d": [
+            0.01,
+            10.28,
+            229.61,
+            473.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.568
+        },
+        {
+          "object_view_id": "00014_1",
+          "view_id": "00014",
+          "bbox_2d": [
+            47.85,
+            20.23,
+            361.11,
+            473.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6827
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            671.07,
+            0.0,
+            911.37,
+            185.72
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            5.0,
+            206.0,
+            182.0,
+            433.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00038",
+          "view_id": "00038",
+          "bbox_2d": [
+            1102.0,
+            0.0,
+            1295.0,
+            264.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_1",
+          "view_id": "00020",
+          "bbox_2d": [
+            6.43,
+            45.69,
+            267.58,
+            607.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4198
+        },
+        {
+          "object_view_id": "00028_4",
+          "view_id": "00028",
+          "bbox_2d": [
+            1126.28,
+            120.67,
+            1295.94,
+            580.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3014
+        },
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            0.0,
+            131.79,
+            291.2,
+            559.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7902
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "the adjacent table is reliably confirmed to be the northeast-most table in the scene"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        0.0179,
+        -0.9756,
+        0.4245,
+        0.5901,
+        0.7512,
+        0.8812
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            516.44,
+            399.96,
+            1080.02,
+            965.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.699
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            486.7,
+            28.64,
+            970.91,
+            896.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7508
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            137.28,
+            73.2,
+            611.64,
+            732.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8423
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            486.7,
+            28.64,
+            970.91,
+            896.4
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            341.82,
+            98.02,
+            819.33,
+            803.11
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00010",
+          "view_id": "00010",
+          "bbox_2d": [
+            209.89,
+            241.8,
+            707.1,
+            878.53
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            55.18,
+            185.69,
+            541.64,
+            736.69
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_3",
+          "view_id": "00040",
+          "bbox_2d": [
+            1004.11,
+            7.98,
+            1296.0,
+            645.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3832
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            489.86,
+            76.17,
+            834.36,
+            547.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8249
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm that the adjacent table is the northeast-most table in the scene"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.1613,
+        -2.6743,
+        0.4321,
+        0.8841,
+        2.7746,
+        0.8547
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_2",
+          "view_id": "00014",
+          "bbox_2d": [
+            353.38,
+            206.7,
+            533.76,
+            910.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5678
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            353.38,
+            206.7,
+            533.76,
+            910.74
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00038",
+          "view_id": "00038",
+          "bbox_2d": [
+            1280.0,
+            466.0,
+            1295.0,
+            504.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            462.0,
+            157.0,
+            575.0,
+            722.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            7.42,
+            264.71,
+            310.97,
+            834.65
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            900.98,
+            0.33,
+            1107.84,
+            427.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5657
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "four legs are not clearly visible/confirmed",
+        "cannot determine whether the referenced table is the northeast-most table in the scene",
+        "cannot fully rule out nearby alternative chair(s) that may better match the request"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.1245,
+        -4.7342,
+        0.4359,
+        1.0767,
+        4.0559,
+        0.831
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_1",
+          "view_id": "00016",
+          "bbox_2d": [
+            241.19,
+            0.31,
+            456.75,
+            157.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3298
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            47.85,
+            20.23,
+            361.11,
+            473.59
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            196.42,
+            0.45,
+            443.21,
+            319.56
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            139.75,
+            0.11,
+            320.24,
+            251.89
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00042_2",
+          "view_id": "00042",
+          "bbox_2d": [
+            14.12,
+            0.3,
+            276.78,
+            267.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6858
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the chair has four legs from current views",
+        "cannot verify that the adjacent table is the northeast-most table in the scene"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.0664,
+        -0.1592,
+        0.4483,
+        0.4693,
+        2.2665,
+        0.9227
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_1",
+          "view_id": "00018",
+          "bbox_2d": [
+            597.25,
+            541.34,
+            1257.61,
+            966.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2925
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            597.25,
+            541.34,
+            1257.61,
+            966.51
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00008",
+          "view_id": "00008",
+          "bbox_2d": [
+            477.59,
+            349.6,
+            968.1,
+            962.26
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00054",
+          "view_id": "00054",
+          "bbox_2d": [
+            1241.0,
+            299.0,
+            1295.0,
+            399.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            185.73,
+            323.21,
+            777.85,
+            965.37
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            185.73,
+            323.21,
+            777.85,
+            965.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6292
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "chair",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.1159,
+        1.2139,
+        0.4623,
+        0.556,
+        0.6728,
+        0.9277
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            189.44,
+            274.11,
+            767.02,
+            965.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7816
+        },
+        {
+          "object_view_id": "00026_2",
+          "view_id": "00026",
+          "bbox_2d": [
+            736.27,
+            294.85,
+            1148.73,
+            965.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.385
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            189.44,
+            274.11,
+            767.02,
+            965.22
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            428.0,
+            147.0,
+            958.0,
+            961.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            652.0,
+            834.0,
+            750.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00008",
+          "view_id": "00008",
+          "bbox_2d": [
+            1156.0,
+            528.0,
+            1295.0,
+            788.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot confirm that the adjacent table is the northeast-most table in the scene",
+        "candidate is not uniquely distinguished from other nearby similar chairs next to similar tables",
+        "four legs are only partially visible, not fully confirmed from current views"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        1.7452,
+        -3.3345,
+        0.3703,
+        0.6602,
+        0.5983,
+        1.0336
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_1",
+          "view_id": "00024",
+          "bbox_2d": [
+            7.01,
+            0.0,
+            194.37,
+            134.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3996
+        },
+        {
+          "object_view_id": "00028_2",
+          "view_id": "00028",
+          "bbox_2d": [
+            741.38,
+            0.0,
+            892.09,
+            190.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.651
+        },
+        {
+          "object_view_id": "00030_1",
+          "view_id": "00030",
+          "bbox_2d": [
+            770.24,
+            0.0,
+            939.16,
+            217.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.765
+        },
+        {
+          "object_view_id": "00032_3",
+          "view_id": "00032",
+          "bbox_2d": [
+            974.28,
+            2.47,
+            1188.23,
+            275.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3882
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            981.83,
+            0.0,
+            1226.74,
+            158.06
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5409
+        },
+        {
+          "object_view_id": "00036_5",
+          "view_id": "00036",
+          "bbox_2d": [
+            1092.3,
+            94.26,
+            1296.0,
+            417.42
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7105
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            1040.11,
+            99.74,
+            1292.77,
+            388.54
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00041",
+          "view_id": "00041",
+          "bbox_2d": [
+            0.0,
+            107.0,
+            26.0,
+            188.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot verify that the adjacent table is the northeast-most table in the scene",
+        "cannot fully confirm the chair has four legs from the current views",
+        "cannot rule out nearby alternative chairs as better matches"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.6351,
+        -0.2331,
+        0.4178,
+        0.5969,
+        0.6657,
+        0.8945
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            5.91,
+            15.31,
+            377.56,
+            427.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.86
+        },
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            239.94,
+            133.85,
+            631.12,
+            610.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7492
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            90.11,
+            215.17,
+            655.89,
+            898.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8712
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            209.13,
+            179.51,
+            664.99,
+            738.33
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            52.0,
+            522.0,
+            235.0,
+            957.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            59.0,
+            528.0,
+            557.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot confirm that the adjacent table is the northeast-most table in the scene",
+        "cannot rule out other nearby chairs as better matches relative to that table",
+        "four legs are not fully and clearly visible"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.7358,
+        -1.1036,
+        0.3851,
+        0.6865,
+        0.7047,
+        0.919
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_1",
+          "view_id": "00026",
+          "bbox_2d": [
+            273.52,
+            0.71,
+            449.07,
+            308.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5239
+        },
+        {
+          "object_view_id": "00028_1",
+          "view_id": "00028",
+          "bbox_2d": [
+            503.03,
+            42.94,
+            701.63,
+            464.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7133
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            562.0,
+            128.0,
+            860.0,
+            749.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            11.0,
+            43.0,
+            446.0,
+            608.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            457.0,
+            45.0,
+            778.0,
+            726.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the green-boxed object is the chair itself from these partial edge views",
+        "cannot clearly verify the chair has four legs",
+        "cannot determine whether the adjacent table is the northeast-most table in the scene",
+        "cannot rule out nearby blue-boxed chairs as better matches"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.4098,
+        -3.6048,
+        0.435,
+        0.448,
+        2.3915,
+        0.8374
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_3",
+          "view_id": "00028",
+          "bbox_2d": [
+            1076.86,
+            17.1,
+            1218.75,
+            275.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4747
+        },
+        {
+          "object_view_id": "00030_2",
+          "view_id": "00030",
+          "bbox_2d": [
+            1171.35,
+            3.87,
+            1296.0,
+            354.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3949
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            1132.37,
+            12.41,
+            1295.71,
+            305.29
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_2",
+          "view_id": "00040",
+          "bbox_2d": [
+            671.07,
+            0.0,
+            911.37,
+            185.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5165
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the chair has four visible legs",
+        "cannot determine whether the adjacent table is the northeast-most table in the scene"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        2.1991,
+        -1.9238,
+        0.4194,
+        1.9672,
+        2.6536,
+        0.8761
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_3",
+          "view_id": "00030",
+          "bbox_2d": [
+            487.41,
+            56.19,
+            745.43,
+            187.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3744
+        },
+        {
+          "object_view_id": "00032_4",
+          "view_id": "00032",
+          "bbox_2d": [
+            563.01,
+            104.42,
+            867.98,
+            282.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.292
+        },
+        {
+          "object_view_id": "00034_1",
+          "view_id": "00034",
+          "bbox_2d": [
+            484.06,
+            0.27,
+            817.23,
+            201.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3929
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            84.27,
+            7.49,
+            484.49,
+            215.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8407
+        },
+        {
+          "object_view_id": "bootstrap_00036",
+          "view_id": "00036",
+          "bbox_2d": [
+            514.65,
+            210.24,
+            839.1,
+            913.29
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            557.53,
+            220.83,
+            888.6,
+            434.53
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            219.38,
+            109.38,
+            605.07,
+            811.91
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_1",
+          "view_id": "00040",
+          "bbox_2d": [
+            0.0,
+            18.34,
+            324.39,
+            185.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5406
+        }
+      ]
+    },
+    {
+      "candidate_id": 15,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the chair has four legs",
+        "cannot determine whether the nearby table is the northeast-most table in the scene"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.6394,
+        -0.1641,
+        0.4278,
+        0.5737,
+        0.4519,
+        0.8734
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            0.0,
+            363.59,
+            595.35,
+            965.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8413
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            209.13,
+            179.51,
+            664.99,
+            738.33
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00041",
+          "view_id": "00041",
+          "bbox_2d": [
+            0.0,
+            504.5,
+            288.79,
+            964.33
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            58.0,
+            891.0,
+            463.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 16,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "black",
+        "confirmed as the chair next to the northeast-most table",
+        "four legs not clearly verified from current views"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        5.332,
+        -2.1344,
+        0.6082,
+        2.9632,
+        1.4138,
+        0.6335
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_1",
+          "view_id": "00032",
+          "bbox_2d": [
+            47.45,
+            0.0,
+            306.87,
+            266.49
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7994
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            131.16,
+            47.23,
+            399.25,
+            334.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8519
+        }
+      ]
+    },
+    {
+      "candidate_id": 17,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot clearly verify the chair has four legs from the current views",
+        "cannot verify that the adjacent table is the northeast-most table in the scene"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        4.4997,
+        -3.4901,
+        0.6252,
+        0.7655,
+        0.8866,
+        0.6071
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_2",
+          "view_id": "00032",
+          "bbox_2d": [
+            370.88,
+            0.0,
+            555.38,
+            150.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6627
+        },
+        {
+          "object_view_id": "00036_1",
+          "view_id": "00036",
+          "bbox_2d": [
+            521.77,
+            4.88,
+            693.0,
+            216.48
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8502
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            452.03,
+            15.61,
+            617.54,
+            234.48
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            231.0,
+            0.0,
+            407.0,
+            49.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00028",
+          "view_id": "00028",
+          "bbox_2d": [
+            240.0,
+            0.0,
+            360.0,
+            48.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 18,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "black",
+        "next to the northeast-most table",
+        "four legs not clearly confirmed from this view"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        4.9889,
+        -2.6841,
+        0.5197,
+        2.0891,
+        1.1233,
+        0.8296
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_2",
+          "view_id": "00036",
+          "bbox_2d": [
+            260.72,
+            6.0,
+            457.53,
+            179.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8094
+        }
+      ]
+    },
+    {
+      "candidate_id": 19,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "black",
+        "next to the northeast-most table"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        4.0655,
+        -4.7166,
+        0.6181,
+        1.3244,
+        0.7453,
+        0.6274
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_3",
+          "view_id": "00036",
+          "bbox_2d": [
+            790.99,
+            15.8,
+            948.67,
+            200.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7969
+        }
+      ]
+    },
+    {
+      "candidate_id": 20,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot confirm the chair has four visible legs",
+        "cannot verify that the adjacent table is the northeast-most table in the scene",
+        "insufficient surrounding context to rule out other nearby chairs/tables as better matches"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.7605,
+        -1.1542,
+        0.4115,
+        0.6454,
+        0.5711,
+        0.8852
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_4",
+          "view_id": "00036",
+          "bbox_2d": [
+            514.65,
+            210.24,
+            839.1,
+            913.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7273
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            568.0,
+            110.0,
+            871.0,
+            708.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            9.0,
+            24.0,
+            413.0,
+            544.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            561.0,
+            222.0,
+            887.0,
+            903.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 21,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the green-boxed object is a chair",
+        "cannot confirm the chair has four legs",
+        "cannot identify which table is the northeast-most table in the scene",
+        "cannot reliably confirm the candidate is next to that specific northeast-most table"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        1.851,
+        -3.7251,
+        0.1873,
+        0.7024,
+        0.7871,
+        0.3478
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00038_1",
+          "view_id": "00038",
+          "bbox_2d": [
+            630.01,
+            0.16,
+            835.82,
+            122.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3957
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            539.0,
+            0.0,
+            715.0,
+            132.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00041",
+          "view_id": "00041",
+          "bbox_2d": [
+            0.0,
+            121.0,
+            20.0,
+            166.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 22,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 7,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot determine which table in the scene is the northeast-most table",
+        "cannot reliably confirm this green-boxed chair is the one next to that specific northeast-most table",
+        "nearby alternative chairs remain insufficiently disambiguated"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        0.1312,
+        0.4454,
+        0.4457,
+        0.2197,
+        0.5859,
+        0.8982
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_1",
+          "view_id": "00044",
+          "bbox_2d": [
+            600.07,
+            170.67,
+            958.71,
+            658.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4391
+        },
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            806.0,
+            223.27,
+            1198.57,
+            683.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8169
+        },
+        {
+          "object_view_id": "00048_2",
+          "view_id": "00048",
+          "bbox_2d": [
+            1007.67,
+            13.79,
+            1296.0,
+            452.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4802
+        },
+        {
+          "object_view_id": "00052_3",
+          "view_id": "00052",
+          "bbox_2d": [
+            1159.63,
+            185.41,
+            1295.99,
+            604.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5403
+        },
+        {
+          "object_view_id": "00054_2",
+          "view_id": "00054",
+          "bbox_2d": [
+            1101.37,
+            294.8,
+            1296.0,
+            871.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7551
+        },
+        {
+          "object_view_id": "bootstrap_00045",
+          "view_id": "00045",
+          "bbox_2d": [
+            500.24,
+            196.27,
+            832.27,
+            659.18
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            1040.0,
+            239.0,
+            1295.0,
+            756.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            0.03,
+            54.94,
+            371.14,
+            716.68
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 23,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the chair has four legs",
+        "cannot identify which table is the northeast-most table",
+        "cannot reliably confirm the chair is next to that specific northeast-most table"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.1933,
+        1.2172,
+        0.4762,
+        0.7646,
+        0.6188,
+        0.8717
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_2",
+          "view_id": "00044",
+          "bbox_2d": [
+            992.43,
+            206.5,
+            1295.95,
+            722.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3566
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            346.94,
+            89.46,
+            964.54,
+            909.19
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            651.0,
+            906.0,
+            695.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            1016.81,
+            440.14,
+            1295.91,
+            964.74
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 24,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "four legs clearly visible/confirmed",
+        "the adjacent table is specifically the northeast-most table in the scene"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.1899,
+        -1.3419,
+        0.4703,
+        0.3357,
+        0.2499,
+        0.7568
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_2",
+          "view_id": "00046",
+          "bbox_2d": [
+            0.0,
+            156.84,
+            132.29,
+            505.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6057
+        },
+        {
+          "object_view_id": "00048_3",
+          "view_id": "00048",
+          "bbox_2d": [
+            180.72,
+            0.0,
+            428.37,
+            208.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3747
+        },
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            335.2,
+            166.45,
+            580.57,
+            420.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7998
+        },
+        {
+          "object_view_id": "bootstrap_00012",
+          "view_id": "00012",
+          "bbox_2d": [
+            232.32,
+            167.92,
+            478.63,
+            812.59
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            173.39,
+            141.4,
+            460.78,
+            857.96
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 25,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm that the adjacent table is the northeast-most table",
+        "cannot clearly confirm the chair has four legs from current views"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.6692,
+        -0.2543,
+        0.3733,
+        0.5042,
+        0.7282,
+        0.9807
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            199.69,
+            220.58,
+            897.48,
+            965.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8286
+        },
+        {
+          "object_view_id": "00050_1",
+          "view_id": "00050",
+          "bbox_2d": [
+            626.52,
+            104.81,
+            1296.0,
+            964.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7295
+        },
+        {
+          "object_view_id": "bootstrap_00053",
+          "view_id": "00053",
+          "bbox_2d": [
+            621.31,
+            614.83,
+            870.05,
+            965.79
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00049",
+          "view_id": "00049",
+          "bbox_2d": [
+            531.12,
+            168.43,
+            1206.1,
+            959.46
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00052",
+          "view_id": "00052",
+          "bbox_2d": [
+            318.0,
+            664.0,
+            955.0,
+            966.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 26,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the chair has four legs",
+        "cannot verify that the adjacent table is the northeast-most table",
+        "nearby alternative chairs next to tables are not fully disambiguated"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.217,
+        -0.8725,
+        0.4109,
+        0.2256,
+        0.5222,
+        0.8339
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00048_1",
+          "view_id": "00048",
+          "bbox_2d": [
+            429.36,
+            0.03,
+            715.82,
+            360.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5422
+        },
+        {
+          "object_view_id": "00052_2",
+          "view_id": "00052",
+          "bbox_2d": [
+            575.76,
+            181.42,
+            862.26,
+            534.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7215
+        },
+        {
+          "object_view_id": "bootstrap_00016",
+          "view_id": "00016",
+          "bbox_2d": [
+            486.7,
+            28.64,
+            970.91,
+            896.4
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            66.4,
+            173.99,
+            398.0,
+            762.32
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            341.82,
+            98.02,
+            819.33,
+            803.11
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 27,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably verify that the adjacent table is the northeast-most table in the scene",
+        "four legs are not fully confirmed from the current partial views"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.8469,
+        -1.0098,
+        0.3886,
+        0.5671,
+        0.6686,
+        0.91
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            0.0,
+            2.1,
+            572.73,
+            737.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8342
+        },
+        {
+          "object_view_id": "bootstrap_00049",
+          "view_id": "00049",
+          "bbox_2d": [
+            0.09,
+            40.98,
+            486.66,
+            795.39
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00052",
+          "view_id": "00052",
+          "bbox_2d": [
+            0.0,
+            175.0,
+            196.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            0.05,
+            222.5,
+            580.13,
+            963.34
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 28,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably verify the chair has four legs",
+        "cannot determine whether the adjacent table is the northeast-most table in the scene"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.7908,
+        0.0399,
+        0.4025,
+        0.2208,
+        0.1129,
+        0.9214
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_1",
+          "view_id": "00052",
+          "bbox_2d": [
+            697.23,
+            437.64,
+            1042.0,
+            965.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7733
+        },
+        {
+          "object_view_id": "bootstrap_00048",
+          "view_id": "00048",
+          "bbox_2d": [
+            199.69,
+            220.58,
+            897.48,
+            965.55
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00049",
+          "view_id": "00049",
+          "bbox_2d": [
+            531.12,
+            168.43,
+            1206.1,
+            959.46
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            592.19,
+            257.15,
+            1283.82,
+            966.55
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 29,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably verify the chair has four legs",
+        "cannot determine whether the adjacent table is the northeast-most table in the scene",
+        "cannot rule out nearby alternative chairs as equally plausible matches"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.4109,
+        -2.7544,
+        0.2653,
+        0.5907,
+        0.3059,
+        0.4183
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_4",
+          "view_id": "00052",
+          "bbox_2d": [
+            0.03,
+            158.28,
+            166.33,
+            460.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5118
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            671.07,
+            0.0,
+            911.37,
+            185.72
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00012",
+          "view_id": "00012",
+          "bbox_2d": [
+            0.01,
+            10.28,
+            229.61,
+            473.56
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            0.0,
+            224.0,
+            148.0,
+            346.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

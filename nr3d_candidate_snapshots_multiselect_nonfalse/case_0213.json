@@ -1,0 +1,1212 @@
+{
+  "case_id": 213,
+  "scene_id": "scene0222_00",
+  "query": "this desk is longer and located at the foot of the bed it is located on the opposite wall from the door",
+  "query_analysis": {
+    "raw_query": "this desk is longer and located at the foot of the bed it is located on the opposite wall from the door",
+    "target_object": "desk",
+    "target_attributes": [
+      "longer"
+    ],
+    "reference_object": "bed",
+    "reference_attributes": [],
+    "relation": "at the foot of"
+  },
+  "gt": {
+    "target_id": 13,
+    "gt_label": "desk",
+    "gt_bbox_3d": [
+      -1.18662,
+      0.230924,
+      0.417619,
+      0.752825,
+      1.858854,
+      0.970122
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      0.706309,
+      -0.431129,
+      0.384263,
+      0.655235,
+      1.200076,
+      0.963089
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 146,
+    "total_views": 135,
+    "total_object_views": 38,
+    "total_candidates": 14
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "desk",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 14,
+      "bbox_3d": [
+        0.7145,
+        -0.4316,
+        0.3687,
+        0.6376,
+        1.1882,
+        0.8633
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            383.98,
+            233.46,
+            1295.21,
+            964.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.547
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            281.58,
+            499.06,
+            1258.83,
+            965.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7413
+        },
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            0.11,
+            69.65,
+            591.03,
+            867.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7294
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            383.98,
+            233.46,
+            1295.21,
+            964.5
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00258",
+          "view_id": "00258",
+          "bbox_2d": [
+            542.82,
+            558.93,
+            1044.67,
+            811.12
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            62.0,
+            7.0,
+            1295.0,
+            902.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            0.02,
+            42.93,
+            350.41,
+            903.56
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_1",
+          "view_id": "00040",
+          "bbox_2d": [
+            1113.01,
+            257.55,
+            1296.0,
+            962.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3334
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            648.32,
+            306.19,
+            1295.84,
+            965.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7644
+        },
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            125.58,
+            673.09,
+            1195.63,
+            966.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4551
+        },
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            208.23,
+            243.77,
+            1296.0,
+            964.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4365
+        },
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            3.82,
+            371.19,
+            1235.65,
+            965.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4148
+        },
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            180.57,
+            668.27,
+            1148.21,
+            967.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6773
+        },
+        {
+          "object_view_id": "00070_0",
+          "view_id": "00070",
+          "bbox_2d": [
+            0.0,
+            6.63,
+            584.17,
+            936.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5431
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 5,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 9,
+      "bbox_3d": [
+        -1.1712,
+        0.1975,
+        0.4248,
+        0.5914,
+        1.5282,
+        0.9741
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            769.43,
+            322.84,
+            1296.0,
+            965.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2567
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            384.96,
+            144.3,
+            1294.42,
+            965.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5189
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            189.13,
+            31.77,
+            1167.17,
+            964.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3969
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            189.13,
+            31.77,
+            1167.17,
+            964.95
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            0.0,
+            42.88,
+            284.74,
+            965.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4087
+        },
+        {
+          "object_view_id": "00151_0",
+          "view_id": "00151",
+          "bbox_2d": [
+            8.41,
+            22.94,
+            1295.94,
+            963.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.588
+        },
+        {
+          "object_view_id": "00159_0",
+          "view_id": "00159",
+          "bbox_2d": [
+            18.88,
+            2.63,
+            1153.67,
+            954.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3241
+        },
+        {
+          "object_view_id": "00171_0",
+          "view_id": "00171",
+          "bbox_2d": [
+            0.06,
+            76.87,
+            649.43,
+            833.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4171
+        },
+        {
+          "object_view_id": "00235_0",
+          "view_id": "00235",
+          "bbox_2d": [
+            0.19,
+            230.84,
+            1097.61,
+            963.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3539
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a desk",
+        "candidate is the longer desk",
+        "candidate is the desk at the foot of the bed",
+        "candidate is the desk on the opposite wall from the door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.3877,
+        -1.0837,
+        1.0525,
+        1.6844,
+        2.1799,
+        0.6894
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            470.64,
+            363.12,
+            1296.0,
+            964.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.458
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            470.64,
+            363.12,
+            1296.0,
+            964.3
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a desk",
+        "candidate is the longer desk",
+        "candidate is located at the foot of the bed",
+        "candidate is on the wall opposite the door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.0528,
+        -1.708,
+        0.3466,
+        0.1057,
+        0.229,
+        0.334
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00097_0",
+          "view_id": "00097",
+          "bbox_2d": [
+            0.0,
+            786.82,
+            224.9,
+            965.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3158
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            786.82,
+            224.9,
+            965.23
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "is a desk",
+        "longer desk",
+        "located at the foot of the bed",
+        "located on the opposite wall from the door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.5117,
+        -2.445,
+        0.2708,
+        1.0664,
+        1.4052,
+        0.693
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00101_0",
+          "view_id": "00101",
+          "bbox_2d": [
+            27.42,
+            344.03,
+            1294.37,
+            965.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2577
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            27.42,
+            344.03,
+            1294.37,
+            965.88
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a desk",
+        "desk is longer",
+        "desk is at the foot of the bed",
+        "desk is on the opposite wall from the door"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.0497,
+        -0.2836,
+        0.3827,
+        0.9028,
+        1.8487,
+        0.854
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00123_0",
+          "view_id": "00123",
+          "bbox_2d": [
+            398.8,
+            0.72,
+            1105.45,
+            448.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2564
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "candidate must be a desk",
+        "candidate must be longer",
+        "candidate must be at the foot of the bed",
+        "candidate must be on the opposite wall from the door"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.195,
+        -0.2782,
+        0.3535,
+        0.6476,
+        0.7454,
+        0.6943
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00127_0",
+          "view_id": "00127",
+          "bbox_2d": [
+            350.44,
+            618.71,
+            905.62,
+            964.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3194
+        },
+        {
+          "object_view_id": "bootstrap_00152",
+          "view_id": "00152",
+          "bbox_2d": [
+            68.0,
+            169.0,
+            985.0,
+            961.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00239",
+          "view_id": "00239",
+          "bbox_2d": [
+            78.0,
+            79.0,
+            453.0,
+            752.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00154",
+          "view_id": "00154",
+          "bbox_2d": [
+            0.0,
+            124.0,
+            672.0,
+            916.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -1.4639,
+        0.6465,
+        1.0607,
+        0.5972,
+        1.0121,
+        0.6912
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00163_0",
+          "view_id": "00163",
+          "bbox_2d": [
+            153.23,
+            476.51,
+            987.02,
+            966.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6816
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            153.23,
+            476.51,
+            987.02,
+            966.91
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00235_1",
+          "view_id": "00235",
+          "bbox_2d": [
+            6.23,
+            0.0,
+            925.05,
+            328.49
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2721
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate must be a desk",
+        "candidate should be the longer desk",
+        "candidate should be on the opposite wall from the door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.6078,
+        0.8147,
+        0.3695,
+        0.6454,
+        0.8132,
+        0.6764
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00183_0",
+          "view_id": "00183",
+          "bbox_2d": [
+            74.29,
+            545.17,
+            767.76,
+            965.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2681
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            74.29,
+            545.17,
+            767.76,
+            965.54
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "located at the foot of the bed",
+        "located on the opposite wall from the door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.8915,
+        0.7538,
+        0.5735,
+        0.6123,
+        0.4618,
+        0.3586
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00205_0",
+          "view_id": "00205",
+          "bbox_2d": [
+            898.74,
+            146.52,
+            1296.0,
+            758.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2752
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            898.74,
+            146.52,
+            1296.0,
+            758.38
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -1.2342,
+        0.6082,
+        0.5523,
+        0.8123,
+        1.0159,
+        0.9959
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00217_0",
+          "view_id": "00217",
+          "bbox_2d": [
+            0.07,
+            310.14,
+            566.72,
+            964.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5718
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.07,
+            310.14,
+            566.72,
+            964.02
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00237_0",
+          "view_id": "00237",
+          "bbox_2d": [
+            0.0,
+            2.87,
+            1255.57,
+            963.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5606
+        },
+        {
+          "object_view_id": "00239_0",
+          "view_id": "00239",
+          "bbox_2d": [
+            338.71,
+            252.9,
+            1295.65,
+            965.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3136
+        },
+        {
+          "object_view_id": "00241_0",
+          "view_id": "00241",
+          "bbox_2d": [
+            599.59,
+            3.55,
+            1294.79,
+            965.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3786
+        },
+        {
+          "object_view_id": "00243_0",
+          "view_id": "00243",
+          "bbox_2d": [
+            625.86,
+            319.96,
+            1296.0,
+            964.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3847
+        },
+        {
+          "object_view_id": "00245_0",
+          "view_id": "00245",
+          "bbox_2d": [
+            494.01,
+            539.99,
+            1069.02,
+            967.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.788
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate must be a desk",
+        "candidate must be the longer desk",
+        "candidate must be located at the foot of the bed",
+        "candidate must be on the opposite wall from the door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.3367,
+        0.0013,
+        0.2315,
+        0.6236,
+        0.9495,
+        0.6842
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00245_1",
+          "view_id": "00245",
+          "bbox_2d": [
+            0.0,
+            702.65,
+            330.63,
+            965.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3486
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            702.65,
+            330.63,
+            965.99
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "desk",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm that the desk is on the opposite wall from the room door"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.1366,
+        0.3661,
+        0.691,
+        0.5083,
+        0.5327,
+        0.0775
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00247_0",
+          "view_id": "00247",
+          "bbox_2d": [
+            478.58,
+            773.35,
+            996.55,
+            966.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3762
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            478.58,
+            773.35,
+            996.55,
+            966.72
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00162",
+          "view_id": "00162",
+          "bbox_2d": [
+            521.0,
+            826.0,
+            677.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            598.41,
+            0.0,
+            888.12,
+            382.2
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00171",
+          "view_id": "00171",
+          "bbox_2d": [
+            0.06,
+            76.87,
+            649.43,
+            833.37
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "desk",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm this is the 'longer' desk",
+        "cannot reliably confirm the desk is at the foot of the bed",
+        "cannot reliably confirm the desk is on the opposite wall from the door"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.6842,
+        -0.3778,
+        0.5242,
+        0.6785,
+        1.1416,
+        0.5778
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00255_0",
+          "view_id": "00255",
+          "bbox_2d": [
+            344.29,
+            210.04,
+            852.37,
+            470.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7406
+        },
+        {
+          "object_view_id": "00257_0",
+          "view_id": "00257",
+          "bbox_2d": [
+            374.29,
+            409.98,
+            869.31,
+            663.49
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6876
+        },
+        {
+          "object_view_id": "00259_0",
+          "view_id": "00259",
+          "bbox_2d": [
+            808.69,
+            397.75,
+            1295.53,
+            638.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5845
+        },
+        {
+          "object_view_id": "bootstrap_00187",
+          "view_id": "00187",
+          "bbox_2d": [
+            1269.0,
+            413.0,
+            1295.0,
+            561.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            62.0,
+            91.0,
+            1295.0,
+            730.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            0.02,
+            42.93,
+            350.41,
+            903.56
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

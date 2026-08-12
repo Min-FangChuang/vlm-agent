@@ -34,6 +34,7 @@ class ProjectedView:
     visible_mask: np.ndarray | None = None
     occluded_mask: np.ndarray | None = None
     depth_missing_mask: np.ndarray | None = None
+    background_mismatch_mask: np.ndarray | None = None
     projected_depths: np.ndarray | None = None
     sampled_depths: np.ndarray | None = None
     selection_reason: str = ""
@@ -411,7 +412,15 @@ def _depth_visibility_stats(
     depth_image: np.ndarray,
     depth_scale: float,
     visibility_margin: float,
-) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, dict[str, Any]]:
+    background_margin: float = 0.10,
+) -> tuple[
+    np.ndarray,
+    np.ndarray,
+    np.ndarray,
+    np.ndarray,
+    np.ndarray,
+    dict[str, Any],
+]:
     points_xyz = np.asarray(points_xyz_aligned, dtype=np.float64)
     if world_to_axis_align_matrix is not None:
         axis_align = np.asarray(world_to_axis_align_matrix, dtype=np.float64)
@@ -436,14 +445,17 @@ def _depth_visibility_stats(
             np.zeros((0,), dtype=bool),
             np.zeros((0,), dtype=bool),
             np.zeros((0,), dtype=bool),
+            np.zeros((0,), dtype=bool),
             {
                 "projected_points_total": 0,
                 "projected_points_in_frame": 0,
                 "visible_projected_points": 0,
                 "occluded_projected_points": 0,
                 "depth_missing_points": 0,
+                "background_mismatch_points": 0,
                 "visible_ratio": 0.0,
                 "occluded_ratio": 0.0,
+                "background_mismatch_ratio": 0.0,
                 "projected_depths": np.empty((0,), dtype=np.float64),
                 "sampled_depths": np.empty((0,), dtype=np.float64),
             },
@@ -469,14 +481,17 @@ def _depth_visibility_stats(
             np.zeros((uv.shape[0],), dtype=bool),
             np.zeros((uv.shape[0],), dtype=bool),
             np.zeros((uv.shape[0],), dtype=bool),
+            np.zeros((uv.shape[0],), dtype=bool),
             {
                 "projected_points_total": int(uv.shape[0]),
                 "projected_points_in_frame": 0,
                 "visible_projected_points": 0,
                 "occluded_projected_points": 0,
                 "depth_missing_points": 0,
+                "background_mismatch_points": 0,
                 "visible_ratio": 0.0,
                 "occluded_ratio": 0.0,
+                "background_mismatch_ratio": 0.0,
                 "projected_depths": np.full((uv.shape[0],), np.nan, dtype=np.float64),
                 "sampled_depths": np.full((uv.shape[0],), np.nan, dtype=np.float64),
             },
@@ -509,20 +524,26 @@ def _depth_visibility_stats(
     )
     depth_missing = (~np.isfinite(depth_values)) | (depth_values <= 0)
     occluded = (~depth_missing) & (depth_values < (nearest_z - visibility_margin))
-    visible = (~depth_missing) & (~occluded)
+    background_mismatch = (~depth_missing) & (
+        depth_values > (nearest_z + float(background_margin))
+    )
+    visible = (~depth_missing) & (~occluded) & (~background_mismatch)
 
     in_frame_count = int(nearest_local_indices.shape[0])
     visible_count = int(np.count_nonzero(visible))
     occluded_count = int(np.count_nonzero(occluded))
     missing_count = int(np.count_nonzero(depth_missing))
+    background_count = int(np.count_nonzero(background_mismatch))
     visible_mask = np.zeros((uv.shape[0],), dtype=bool)
     occluded_mask = np.zeros((uv.shape[0],), dtype=bool)
     depth_missing_mask = np.zeros((uv.shape[0],), dtype=bool)
+    background_mismatch_mask = np.zeros((uv.shape[0],), dtype=bool)
     inside_indices = np.where(inside)[0]
     mapped_indices = inside_indices[nearest_local_indices]
     visible_mask[mapped_indices] = visible
     occluded_mask[mapped_indices] = occluded
     depth_missing_mask[mapped_indices] = depth_missing
+    background_mismatch_mask[mapped_indices] = background_mismatch
     sampled_depths = np.full((uv.shape[0],), np.nan, dtype=np.float64)
     sampled_depths[mapped_indices] = depth_values
     projected_depths = np.full((uv.shape[0],), np.nan, dtype=np.float64)
@@ -532,14 +553,19 @@ def _depth_visibility_stats(
         visible_mask,
         occluded_mask,
         depth_missing_mask,
+        background_mismatch_mask,
         {
             "projected_points_total": int(uv.shape[0]),
             "projected_points_in_frame": in_frame_count,
             "visible_projected_points": visible_count,
             "occluded_projected_points": occluded_count,
             "depth_missing_points": missing_count,
+            "background_mismatch_points": background_count,
             "visible_ratio": float(visible_count / max(in_frame_count, 1)),
             "occluded_ratio": float(occluded_count / max(in_frame_count, 1)),
+            "background_mismatch_ratio": float(
+                background_count / max(in_frame_count, 1)
+            ),
             "projected_depths": projected_depths,
             "sampled_depths": sampled_depths,
         },
@@ -558,23 +584,30 @@ def reproject_candidate_to_scene_views(
     min_visible_ratio: float = 0.3,
     depth_scale: float = 0.001,
     visibility_margin: float = 0.05,
+    background_margin: float = 0.10,
 ) -> list[ProjectedView]:
     projected_views: list[ProjectedView] = []
     for frame_id in frame_ids:
         view = build_view_fn(frame_id)
-        uv, visible_mask, occluded_mask, depth_missing_mask, visibility_stats = (
-            _depth_visibility_stats(
-                points_3d[:, :3],
-                intrinsic_matrix,
-                np.asarray(view.camera_to_world, dtype=np.float64),
-                None
-                if world_to_axis_align_matrix is None
-                else np.asarray(world_to_axis_align_matrix, dtype=np.float64),
-                tuple(view.rgb.shape),
-                np.asarray(view.depth, dtype=np.float64),
-                float(depth_scale),
-                float(visibility_margin),
-            )
+        (
+            uv,
+            visible_mask,
+            occluded_mask,
+            depth_missing_mask,
+            background_mismatch_mask,
+            visibility_stats,
+        ) = _depth_visibility_stats(
+            points_3d[:, :3],
+            intrinsic_matrix,
+            np.asarray(view.camera_to_world, dtype=np.float64),
+            None
+            if world_to_axis_align_matrix is None
+            else np.asarray(world_to_axis_align_matrix, dtype=np.float64),
+            tuple(view.rgb.shape),
+            np.asarray(view.depth, dtype=np.float64),
+            float(depth_scale),
+            float(visibility_margin),
+            float(background_margin),
         )
         visible_uv = uv[visible_mask]
         if int(visibility_stats["projected_points_in_frame"]) == 0:
@@ -615,6 +648,9 @@ def reproject_candidate_to_scene_views(
                 visible_mask=np.asarray(visible_mask, dtype=bool),
                 occluded_mask=np.asarray(occluded_mask, dtype=bool),
                 depth_missing_mask=np.asarray(depth_missing_mask, dtype=bool),
+                background_mismatch_mask=np.asarray(
+                    background_mismatch_mask, dtype=bool
+                ),
             )
         )
     return projected_views
@@ -720,73 +756,6 @@ def select_projected_views_forward(
             candidate for candidate in remaining if candidate.view_id != item.view_id
         ]
 
-    return selected
-
-
-def select_projected_views_yaw(
-    projected_views: list[ProjectedView],
-    num_views: int,
-    object_center_xy: np.ndarray,
-    existing_view_ids: set[str],
-    max_fallback_distance: float,
-) -> list[ProjectedView]:
-    filtered_views = [
-        item
-        for item in projected_views
-        if float(
-            np.linalg.norm(
-                np.asarray(item.camera_xy, dtype=np.float64)
-                - np.asarray(object_center_xy, dtype=np.float64)
-            )
-        )
-        <= float(max_fallback_distance)
-    ]
-    sorted_views = sorted(filtered_views or projected_views, key=_bbox_region_score)
-    selected: list[ProjectedView] = []
-    used_view_ids = set(existing_view_ids)
-    covered_regions: set[str] = set()
-    for item in sorted_views:
-        if len(selected) >= int(num_views):
-            break
-        if item.view_id in used_view_ids:
-            continue
-        region = _bbox_region(item)
-        if region in covered_regions:
-            continue
-        selected.append(
-            ProjectedView(
-                view_id=item.view_id,
-                image_file=item.image_file,
-                projected_bbox_2d=np.asarray(item.projected_bbox_2d, dtype=np.float32),
-                bbox_area=float(item.bbox_area),
-                camera_xy=np.asarray(item.camera_xy, dtype=np.float64),
-                image_size=(int(item.image_size[0]), int(item.image_size[1])),
-                selection_reason="yaw_region_priority",
-            )
-        )
-        used_view_ids.add(item.view_id)
-        covered_regions.add(region)
-
-    if len(selected) < int(num_views):
-        for item in sorted_views:
-            if len(selected) >= int(num_views):
-                break
-            if item.view_id in used_view_ids:
-                continue
-            selected.append(
-                ProjectedView(
-                    view_id=item.view_id,
-                    image_file=item.image_file,
-                    projected_bbox_2d=np.asarray(
-                        item.projected_bbox_2d, dtype=np.float32
-                    ),
-                    bbox_area=float(item.bbox_area),
-                    camera_xy=np.asarray(item.camera_xy, dtype=np.float64),
-                    image_size=(int(item.image_size[0]), int(item.image_size[1])),
-                    selection_reason="yaw_fallback",
-                )
-            )
-            used_view_ids.add(item.view_id)
     return selected
 
 
@@ -901,7 +870,7 @@ def complete_candidate_with_more_views(
     agent: Any,
     candidate: Any,
     num_bootstrap_views: int = 3,
-    max_fallback_distance: float = 1.5,
+    max_fallback_distance: float = 2.0,
     action_mode: str = "forward",
 ) -> Any:
     if (
@@ -1113,15 +1082,25 @@ def complete_candidate_with_turn_around_views(
     if best_view is None or getattr(best_view, "camera_to_world", None) is None:
         return candidate
 
+    axis_align_matrix = None
+    if getattr(agent, "world_to_axis_align_matrix", None) is not None:
+        axis_align_matrix = np.asarray(
+            agent.world_to_axis_align_matrix, dtype=np.float64
+        )
+
     frame_ids = getattr(agent.motion, "frame_ids", [])
     build_view_fn = getattr(agent.motion, "_build_view", None)
     if not frame_ids or build_view_fn is None:
         return candidate
 
-    reference_position = np.asarray(best_view.camera_to_world[:3, 3], dtype=np.float64)
+    reference_position = camera_xyz(best_view, axis_align_matrix)
     reference_forward = np.asarray(
         best_view.camera_to_world[:3, :3], dtype=np.float64
     ) @ np.asarray([0.0, 0.0, 1.0], dtype=np.float64)
+    if axis_align_matrix is not None:
+        reference_forward_h = np.zeros((4,), dtype=np.float64)
+        reference_forward_h[:3] = reference_forward
+        reference_forward = (axis_align_matrix @ reference_forward_h)[:3]
     forward_norm = float(np.linalg.norm(reference_forward))
     if forward_norm <= 1e-8:
         return candidate
@@ -1159,7 +1138,7 @@ def complete_candidate_with_turn_around_views(
             if view_id in used_view_ids:
                 continue
 
-            position = np.asarray(view.camera_to_world[:3, 3], dtype=np.float64)
+            position = camera_xyz(view, axis_align_matrix)
             distance_m = float(np.linalg.norm(position - reference_position))
             if distance_m > float(max_distance):
                 continue
@@ -1167,6 +1146,10 @@ def complete_candidate_with_turn_around_views(
             forward = np.asarray(
                 view.camera_to_world[:3, :3], dtype=np.float64
             ) @ np.asarray([0.0, 0.0, 1.0], dtype=np.float64)
+            if axis_align_matrix is not None:
+                forward_h = np.zeros((4,), dtype=np.float64)
+                forward_h[:3] = forward
+                forward = (axis_align_matrix @ forward_h)[:3]
             norm = float(np.linalg.norm(forward))
             if norm <= 1e-8:
                 continue

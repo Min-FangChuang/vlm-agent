@@ -1,0 +1,534 @@
+{
+  "case_id": 8,
+  "scene_id": "scene0633_00",
+  "query": "it is the large curtain on the window with a small white table in front of it",
+  "query_analysis": {
+    "raw_query": "it is the large curtain on the window with a small white table in front of it",
+    "target_object": "curtain",
+    "target_attributes": [
+      "large"
+    ],
+    "reference_object": "window",
+    "reference_attributes": [],
+    "relation": "on"
+  },
+  "gt": {
+    "target_id": 22,
+    "gt_label": "curtain",
+    "gt_bbox_3d": [
+      -0.049901,
+      1.143204,
+      0.721653,
+      1.509859,
+      0.384351,
+      1.448283
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 2,
+    "bbox_3d": [
+      -0.472713,
+      1.182005,
+      0.808871,
+      0.667848,
+      0.352919,
+      1.619076
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 53,
+    "total_views": 40,
+    "total_object_views": 9,
+    "total_candidates": 5
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "curtain",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.3773,
+        1.0589,
+        1.145,
+        0.4381,
+        0.3328,
+        2.1977
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            512.14,
+            2.32,
+            690.67,
+            845.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6227
+        },
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            84.58,
+            0.35,
+            265.93,
+            810.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3914
+        },
+        {
+          "object_view_id": "bootstrap_00047",
+          "view_id": "00047",
+          "bbox_2d": [
+            0.0,
+            296.0,
+            258.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00046",
+          "view_id": "00046",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            387.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00061",
+          "view_id": "00061",
+          "bbox_2d": [
+            0.0,
+            3.56,
+            293.98,
+            964.79
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "curtain",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "window behind/with the curtain is not clearly visible",
+        "the candidate is not shown clearly enough in full to verify it is the large curtain"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.3682,
+        1.1142,
+        0.5669,
+        0.3878,
+        0.3383,
+        1.15
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            0.02,
+            3.07,
+            136.29,
+            604.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4869
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            1231.0,
+            412.0,
+            1295.0,
+            664.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00045",
+          "view_id": "00045",
+          "bbox_2d": [
+            312.33,
+            0.0,
+            698.39,
+            963.1
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00062",
+          "view_id": "00062",
+          "bbox_2d": [
+            673.0,
+            602.0,
+            753.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            713.23,
+            0.01,
+            1029.14,
+            858.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6934
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "curtain",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -0.4618,
+        1.1037,
+        0.5294,
+        0.692,
+        0.5002,
+        1.0602
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            458.97,
+            0.0,
+            833.55,
+            551.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3059
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            458.97,
+            0.0,
+            833.55,
+            551.47
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            711.2,
+            0.0,
+            1189.45,
+            959.03
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00000",
+          "view_id": "00000",
+          "bbox_2d": [
+            990.0,
+            0.0,
+            1196.0,
+            456.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00006",
+          "view_id": "00006",
+          "bbox_2d": [
+            147.0,
+            234.0,
+            341.0,
+            717.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            468.97,
+            0.0,
+            1292.86,
+            817.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8167
+        },
+        {
+          "object_view_id": "00070_0",
+          "view_id": "00070",
+          "bbox_2d": [
+            582.04,
+            0.0,
+            1293.15,
+            600.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6845
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "curtain",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "candidate is not clearly a full curtain",
+        "candidate is not shown on a window",
+        "candidate does not have the small white table in front of it"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.8001,
+        0.2911,
+        1.5737,
+        0.3524,
+        1.0742,
+        0.2768
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            269.54,
+            0.0,
+            1293.38,
+            282.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4167
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            269.54,
+            0.0,
+            1293.38,
+            282.83
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            161.05,
+            0.0,
+            1234.9,
+            504.06
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00061",
+          "view_id": "00061",
+          "bbox_2d": [
+            574.0,
+            0.0,
+            1295.0,
+            223.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00056",
+          "view_id": "00056",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            610.0,
+            311.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "curtain",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "clear confirmation that the small white table is directly in front of this curtain/window",
+        "stronger target-centered confirmation that this boxed curtain is the specific requested one"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.0004,
+        1.2411,
+        1.0604,
+        0.2463,
+        0.1749,
+        0.4322
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            471.16,
+            1.43,
+            748.73,
+            522.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5441
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            471.16,
+            1.43,
+            748.73,
+            522.15
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00067",
+          "view_id": "00067",
+          "bbox_2d": [
+            540.38,
+            0.07,
+            811.99,
+            558.52
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00026",
+          "view_id": "00026",
+          "bbox_2d": [
+            673.0,
+            9.0,
+            868.0,
+            570.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00000",
+          "view_id": "00000",
+          "bbox_2d": [
+            864.0,
+            0.0,
+            988.0,
+            288.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

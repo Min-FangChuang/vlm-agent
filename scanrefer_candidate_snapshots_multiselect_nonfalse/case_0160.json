@@ -1,0 +1,132 @@
+{
+  "case_id": 160,
+  "scene_id": "scene0606_00",
+  "query": "this fridge is in the corner on the back right . it faces left and is behind the cabinet . there is a table to the left and in front .",
+  "query_analysis": {
+    "raw_query": "this fridge is in the corner on the back right . it faces left and is behind the cabinet . there is a table to the left and in front .",
+    "target_object": "fridge",
+    "target_attributes": [
+      "faces left"
+    ],
+    "reference_object": "cabinet",
+    "reference_attributes": [],
+    "relation": "behind"
+  },
+  "gt": {
+    "target_id": 25,
+    "gt_label": "refrigerator",
+    "gt_bbox_3d": [
+      2.196028,
+      -1.211402,
+      0.662786,
+      0.969961,
+      0.243555,
+      1.164542
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      2.155251,
+      -1.178136,
+      0.842177,
+      0.745945,
+      0.223603,
+      0.729636
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1
+    ],
+    "detector_call_count": 65,
+    "total_views": 63,
+    "total_object_views": 1,
+    "total_candidates": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "fridge",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "clear confirmation that the green-boxed object is truly a fridge",
+        "reliable evidence that the fridge faces left",
+        "reliable evidence that it is behind the cabinet",
+        "clear identification of the referenced cabinet"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        2.1624,
+        -1.1936,
+        0.8422,
+        0.7339,
+        0.1664,
+        0.7296
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00122_0",
+          "view_id": "00122",
+          "bbox_2d": [
+            926.6,
+            0.0,
+            1164.97,
+            306.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6804
+        },
+        {
+          "object_view_id": "bootstrap_00045",
+          "view_id": "00045",
+          "bbox_2d": [
+            1.0,
+            388.0,
+            10.0,
+            437.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00124",
+          "view_id": "00124",
+          "bbox_2d": [
+            992.0,
+            0.0,
+            1245.0,
+            248.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00123",
+          "view_id": "00123",
+          "bbox_2d": [
+            1078.0,
+            0.0,
+            1295.0,
+            304.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

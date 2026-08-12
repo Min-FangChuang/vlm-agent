@@ -1,0 +1,130 @@
+{
+  "case_id": 229,
+  "scene_id": "scene0549_00",
+  "query": "there is a circular wooden end table . it is next to a teal couch .",
+  "query_analysis": {
+    "raw_query": "there is a circular wooden end table . it is next to a teal couch .",
+    "target_object": "end table",
+    "target_attributes": [
+      "circular",
+      "wooden"
+    ],
+    "reference_object": "couch",
+    "reference_attributes": [
+      "teal"
+    ],
+    "relation": "next to"
+  },
+  "gt": {
+    "target_id": 6,
+    "gt_label": "end table",
+    "gt_bbox_3d": [
+      -2.362512,
+      1.788656,
+      0.49269,
+      0.612482,
+      0.660415,
+      0.698201
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      1.79452,
+      1.767761,
+      0.393738,
+      0.656005,
+      0.646218,
+      0.80913
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1
+    ],
+    "detector_call_count": 24,
+    "total_views": 21,
+    "total_object_views": 1,
+    "total_candidates": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "end table",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.7925,
+        1.7655,
+        0.3292,
+        0.6292,
+        0.616,
+        0.6582
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            758.76,
+            81.79,
+            1238.25,
+            617.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2679
+        },
+        {
+          "object_view_id": "bootstrap_00028",
+          "view_id": "00028",
+          "bbox_2d": [
+            543.0,
+            55.0,
+            903.0,
+            271.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            679.0,
+            97.0,
+            1070.0,
+            535.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            23.0,
+            365.0,
+            547.0,
+            949.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

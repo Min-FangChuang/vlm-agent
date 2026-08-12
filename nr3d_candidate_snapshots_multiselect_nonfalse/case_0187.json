@@ -1,0 +1,206 @@
+{
+  "case_id": 187,
+  "scene_id": "scene0645_00",
+  "query": "the artwork directly above the bed nearest the bathroom",
+  "query_analysis": {
+    "raw_query": "the artwork directly above the bed nearest the bathroom",
+    "target_object": "artwork",
+    "target_attributes": [],
+    "reference_object": "bed",
+    "reference_attributes": [
+      "nearest the bathroom"
+    ],
+    "relation": "directly above"
+  },
+  "gt": {
+    "target_id": 58,
+    "gt_label": "picture",
+    "gt_bbox_3d": [
+      -3.311185,
+      -0.731524,
+      1.823826,
+      0.07412,
+      0.675343,
+      0.633603
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -3.296179,
+      -0.729094,
+      1.807558,
+      0.144375,
+      0.607874,
+      0.533776
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 116,
+    "total_views": 113,
+    "total_object_views": 5,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "artwork",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot verify which bed is nearest the bathroom",
+        "cannot rule out another nearby bed/artwork pair as the correct match"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -3.2787,
+        -0.7452,
+        1.8113,
+        0.1121,
+        0.6111,
+        0.4998
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            591.82,
+            7.79,
+            857.78,
+            184.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3635
+        },
+        {
+          "object_view_id": "bootstrap_00148",
+          "view_id": "00148",
+          "bbox_2d": [
+            593.0,
+            7.0,
+            796.0,
+            79.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00002",
+          "view_id": "00002",
+          "bbox_2d": [
+            631.0,
+            162.0,
+            870.0,
+            370.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00012",
+          "view_id": "00012",
+          "bbox_2d": [
+            8.0,
+            43.0,
+            169.0,
+            287.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00150_0",
+          "view_id": "00150",
+          "bbox_2d": [
+            450.32,
+            164.27,
+            659.59,
+            353.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2752
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "artwork",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [
+        "directly above the bed",
+        "the bed identified as nearest the bathroom"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        2.8715,
+        1.3583,
+        1.53,
+        0.2556,
+        0.7782,
+        0.826
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            986.83,
+            8.76,
+            1287.5,
+            214.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.338
+        },
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            708.01,
+            7.31,
+            1043.61,
+            294.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2657
+        },
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            68.97,
+            35.09,
+            394.5,
+            398.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5634
+        }
+      ]
+    }
+  ]
+}

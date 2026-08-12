@@ -1,0 +1,271 @@
+{
+  "case_id": 91,
+  "scene_id": "scene0690_00",
+  "query": "this is a lamp . the lamp is at the corner of the room .",
+  "query_analysis": {
+    "raw_query": "this is a lamp . the lamp is at the corner of the room .",
+    "target_object": "lamp",
+    "target_attributes": [],
+    "reference_object": "corner of the room",
+    "reference_attributes": [],
+    "relation": "at"
+  },
+  "gt": {
+    "target_id": 10,
+    "gt_label": "lamp",
+    "gt_bbox_3d": [
+      -2.497947,
+      1.472159,
+      0.88837,
+      0.336923,
+      0.372594,
+      0.519127
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 2,
+    "bbox_3d": [
+      -0.335803,
+      -2.984033,
+      1.216457,
+      0.463992,
+      0.314834,
+      0.697584
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      3
+    ],
+    "detector_call_count": 28,
+    "total_views": 23,
+    "total_object_views": 4,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "lamp",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "lamp is at the corner of the room"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -4.1472,
+        -1.0264,
+        0.7997,
+        2.8652,
+        0.735,
+        0.6522
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            323.66,
+            11.78,
+            537.62,
+            251.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8788
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            476.56,
+            63.84,
+            726.69,
+            339.45
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            0.0,
+            32.33,
+            219.69,
+            302.58
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            1128.0,
+            0.0,
+            1295.0,
+            240.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            476.56,
+            63.84,
+            726.69,
+            339.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9198
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "lamp",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "not enough evidence that the lamp is at the corner of the room"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -2.5269,
+        1.4475,
+        0.7478,
+        0.2643,
+        0.3107,
+        0.789
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            584.01,
+            66.0,
+            800.95,
+            322.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8874
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            435.14,
+            5.47,
+            662.51,
+            267.77
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            1215.0,
+            42.0,
+            1295.0,
+            266.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            110.0,
+            3.0,
+            229.0,
+            145.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "lamp",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "not enough visual evidence to confirm that the lamp is at the corner of the room"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.3358,
+        -2.9428,
+        1.2165,
+        0.464,
+        0.2323,
+        0.6976
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            1009.9,
+            60.19,
+            1219.03,
+            335.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3353
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            1183.0,
+            3.0,
+            1295.0,
+            53.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

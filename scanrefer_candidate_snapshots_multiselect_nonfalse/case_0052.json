@@ -1,0 +1,273 @@
+{
+  "case_id": 52,
+  "scene_id": "scene0131_00",
+  "query": "the tiny mini fridge . the mini fridge on the corner by the whiteboard .",
+  "query_analysis": {
+    "raw_query": "the tiny mini fridge . the mini fridge on the corner by the whiteboard .",
+    "target_object": "mini fridge",
+    "target_attributes": [
+      "tiny"
+    ],
+    "reference_object": "whiteboard",
+    "reference_attributes": [
+      "white"
+    ],
+    "relation": "by"
+  },
+  "gt": {
+    "target_id": 33,
+    "gt_label": "mini fridge",
+    "gt_bbox_3d": [
+      -1.72869,
+      -1.147193,
+      0.38336,
+      0.51279,
+      0.500981,
+      0.766896
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -1.674363,
+      -1.105908,
+      0.371349,
+      0.418924,
+      0.480058,
+      0.727989
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      1
+    ],
+    "detector_call_count": 33,
+    "total_views": 27,
+    "total_object_views": 6,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "mini fridge",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "candidate is the specific mini fridge on the corner",
+        "candidate is the best match compared with the nearby white mini fridge"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -1.0963,
+        1.2309,
+        0.459,
+        0.5396,
+        0.638,
+        0.896
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            5.05,
+            162.79,
+            853.04,
+            965.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5055
+        },
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            439.41,
+            53.36,
+            1267.76,
+            964.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6008
+        },
+        {
+          "object_view_id": "00048_1",
+          "view_id": "00048",
+          "bbox_2d": [
+            818.17,
+            455.5,
+            1296.0,
+            965.24
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6076
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            439.41,
+            53.36,
+            1267.76,
+            964.04
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00045",
+          "view_id": "00045",
+          "bbox_2d": [
+            388.1,
+            187.99,
+            1296.0,
+            965.35
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00043",
+          "view_id": "00043",
+          "bbox_2d": [
+            0.0,
+            124.93,
+            435.73,
+            964.39
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00047",
+          "view_id": "00047",
+          "bbox_2d": [
+            562.49,
+            242.52,
+            1183.21,
+            965.2
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "mini fridge",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.6888,
+        -1.1074,
+        0.3729,
+        0.4454,
+        0.4775,
+        0.7248
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            507.54,
+            135.13,
+            709.11,
+            410.32
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7821
+        },
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            920.11,
+            402.02,
+            1193.46,
+            730.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6273
+        },
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            1027.64,
+            593.94,
+            1295.97,
+            965.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3505
+        },
+        {
+          "object_view_id": "bootstrap_00049",
+          "view_id": "00049",
+          "bbox_2d": [
+            837.59,
+            294.74,
+            1065.87,
+            582.62
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00046",
+          "view_id": "00046",
+          "bbox_2d": [
+            84.0,
+            17.0,
+            249.0,
+            49.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            966.81,
+            509.2,
+            1295.38,
+            906.6
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

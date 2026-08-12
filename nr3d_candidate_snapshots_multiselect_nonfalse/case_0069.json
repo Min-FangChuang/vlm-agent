@@ -1,0 +1,399 @@
+{
+  "case_id": 69,
+  "scene_id": "scene0353_00",
+  "query": "from under the room it is the shoes under the bed completely",
+  "query_analysis": {
+    "raw_query": "from under the room it is the shoes under the bed completely",
+    "target_object": "shoes",
+    "target_attributes": [],
+    "reference_object": "bed",
+    "reference_attributes": [],
+    "relation": "under"
+  },
+  "gt": {
+    "target_id": 33,
+    "gt_label": "shoes",
+    "gt_bbox_3d": [
+      1.260222,
+      0.619611,
+      0.085513,
+      0.407963,
+      0.425525,
+      0.242116
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 2,
+    "bbox_3d": [
+      0.505961,
+      0.71404,
+      0.026833,
+      0.247393,
+      0.27524,
+      0.189757
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 84,
+    "total_views": 75,
+    "total_object_views": 6,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "shoes",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.644,
+        0.0999,
+        -0.0222,
+        0.2181,
+        0.2716,
+        0.0991
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            503.47,
+            860.0,
+            761.34,
+            966.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2608
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            503.47,
+            860.0,
+            761.34,
+            966.17
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            715.0,
+            684.0,
+            968.0,
+            845.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00087",
+          "view_id": "00087",
+          "bbox_2d": [
+            672.0,
+            816.0,
+            858.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            1044.0,
+            778.0,
+            1295.0,
+            957.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "shoes",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "under the bed",
+        "bed reference object clearly associated with the candidate"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.5022,
+        0.771,
+        0.0385,
+        0.2659,
+        0.3937,
+        0.1886
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            719.87,
+            763.14,
+            911.69,
+            909.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2893
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            719.87,
+            763.14,
+            911.69,
+            909.1
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "shoes",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.4773,
+        0.7169,
+        0.0264,
+        0.1859,
+        0.2702,
+        0.1888
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00128_0",
+          "view_id": "00128",
+          "bbox_2d": [
+            542.22,
+            587.35,
+            807.5,
+            799.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4152
+        },
+        {
+          "object_view_id": "00130_0",
+          "view_id": "00130",
+          "bbox_2d": [
+            235.85,
+            692.69,
+            475.64,
+            938.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3834
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            235.85,
+            692.69,
+            475.64,
+            938.78
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00047",
+          "view_id": "00047",
+          "bbox_2d": [
+            20.0,
+            762.0,
+            127.0,
+            854.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00129",
+          "view_id": "00129",
+          "bbox_2d": [
+            346.84,
+            611.29,
+            597.53,
+            844.86
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00127",
+          "view_id": "00127",
+          "bbox_2d": [
+            832.0,
+            677.0,
+            1106.0,
+            874.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "shoes",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "the green-boxed candidate is not cleanly confirmed to be the shoes themselves rather than a mixed region",
+        "the shoes are not fully visible/fully isolated as a complete target"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.4498,
+        0.4924,
+        -0.0143,
+        0.4886,
+        0.3798,
+        0.1562
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00128_1",
+          "view_id": "00128",
+          "bbox_2d": [
+            714.86,
+            549.67,
+            1147.47,
+            964.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3244
+        },
+        {
+          "object_view_id": "00130_1",
+          "view_id": "00130",
+          "bbox_2d": [
+            412.99,
+            643.58,
+            825.51,
+            965.48
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2956
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            714.86,
+            549.67,
+            1147.47,
+            964.05
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00129",
+          "view_id": "00129",
+          "bbox_2d": [
+            527.0,
+            550.0,
+            939.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00047",
+          "view_id": "00047",
+          "bbox_2d": [
+            36.0,
+            832.0,
+            208.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00127",
+          "view_id": "00127",
+          "bbox_2d": [
+            1006.0,
+            661.0,
+            1295.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,747 @@
+{
+  "case_id": 193,
+  "scene_id": "scene0025_00",
+  "query": "the pillow is on a black couch that is placed in the northern corner of the room with a whiteboard above it . it has a dirty silver color and is shaped like a rectangular prism with one of the sides caved in .",
+  "query_analysis": {
+    "raw_query": "the pillow is on a black couch that is placed in the northern corner of the room with a whiteboard above it . it has a dirty silver color and is shaped like a rectangular prism with one of the sides caved in .",
+    "target_object": "pillow",
+    "target_attributes": [],
+    "reference_object": "couch",
+    "reference_attributes": [
+      "black"
+    ],
+    "relation": "on"
+  },
+  "gt": {
+    "target_id": 41,
+    "gt_label": "pillow",
+    "gt_bbox_3d": [
+      1.343252,
+      2.079841,
+      0.433999,
+      0.633375,
+      0.546634,
+      0.216236
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      1.272559,
+      2.033302,
+      0.444197,
+      0.516251,
+      0.49326,
+      0.230723
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      4
+    ],
+    "detector_call_count": 157,
+    "total_views": 142,
+    "total_object_views": 28,
+    "total_candidates": 5
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "pillow",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably verify that this is the northern corner of the room",
+        "dirty silver color is not strongly confirmed",
+        "rectangular-prism shape with one side caved in is not strongly confirmed"
+      ],
+      "num_object_views": 11,
+      "bbox_3d": [
+        1.2944,
+        2.0562,
+        0.4489,
+        0.5732,
+        0.5264,
+        0.2182
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            380.58,
+            597.02,
+            723.16,
+            825.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8691
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            608.67,
+            253.84,
+            953.82,
+            476.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3941
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            561.0,
+            370.0,
+            893.0,
+            582.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            34.09,
+            307.67,
+            417.93,
+            535.54
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00310",
+          "view_id": "00310",
+          "bbox_2d": [
+            228.24,
+            723.61,
+            591.42,
+            958.51
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            12.48,
+            438.49,
+            306.65,
+            609.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6162
+        },
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            528.6,
+            353.4,
+            771.98,
+            477.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2704
+        },
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            909.3,
+            414.94,
+            1161.46,
+            541.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8145
+        },
+        {
+          "object_view_id": "00300_0",
+          "view_id": "00300",
+          "bbox_2d": [
+            83.04,
+            840.58,
+            411.52,
+            957.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8178
+        },
+        {
+          "object_view_id": "00420_0",
+          "view_id": "00420",
+          "bbox_2d": [
+            34.09,
+            307.67,
+            417.93,
+            535.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6504
+        },
+        {
+          "object_view_id": "00460_0",
+          "view_id": "00460",
+          "bbox_2d": [
+            11.75,
+            488.44,
+            180.97,
+            674.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7528
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "pillow",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably verify that the couch is in the northern corner of the room",
+        "cannot clearly confirm the pillow has a dirty silver appearance",
+        "cannot clearly confirm the pillow is shaped like a rectangular prism with one side caved in"
+      ],
+      "num_object_views": 14,
+      "bbox_3d": [
+        1.2682,
+        2.0201,
+        0.4473,
+        0.5103,
+        0.4788,
+        0.2185
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            11.16,
+            353.38,
+            144.24,
+            546.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4846
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            557.88,
+            363.55,
+            805.42,
+            587.12
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00430",
+          "view_id": "00430",
+          "bbox_2d": [
+            11.37,
+            358.63,
+            212.39,
+            564.41
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00310",
+          "view_id": "00310",
+          "bbox_2d": [
+            228.24,
+            723.61,
+            591.42,
+            958.51
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00320_0",
+          "view_id": "00320",
+          "bbox_2d": [
+            380.58,
+            597.02,
+            723.16,
+            825.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8691
+        },
+        {
+          "object_view_id": "00360_0",
+          "view_id": "00360",
+          "bbox_2d": [
+            608.67,
+            253.84,
+            953.82,
+            476.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3941
+        },
+        {
+          "object_view_id": "00480_0",
+          "view_id": "00480",
+          "bbox_2d": [
+            12.48,
+            438.49,
+            306.65,
+            609.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6162
+        },
+        {
+          "object_view_id": "00500_0",
+          "view_id": "00500",
+          "bbox_2d": [
+            327.9,
+            335.78,
+            586.58,
+            475.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3968
+        },
+        {
+          "object_view_id": "00520_0",
+          "view_id": "00520",
+          "bbox_2d": [
+            528.6,
+            353.4,
+            771.98,
+            477.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2704
+        },
+        {
+          "object_view_id": "00540_0",
+          "view_id": "00540",
+          "bbox_2d": [
+            704.41,
+            398.94,
+            941.12,
+            523.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6639
+        },
+        {
+          "object_view_id": "00560_0",
+          "view_id": "00560",
+          "bbox_2d": [
+            909.3,
+            414.94,
+            1161.46,
+            541.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8145
+        },
+        {
+          "object_view_id": "01500_0",
+          "view_id": "01500",
+          "bbox_2d": [
+            1064.32,
+            592.45,
+            1282.69,
+            743.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.477
+        },
+        {
+          "object_view_id": "01540_0",
+          "view_id": "01540",
+          "bbox_2d": [
+            799.61,
+            479.7,
+            994.66,
+            628.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5201
+        },
+        {
+          "object_view_id": "01580_0",
+          "view_id": "01580",
+          "bbox_2d": [
+            1133.07,
+            735.1,
+            1287.92,
+            911.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8446
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot verify the couch is specifically in the northern corner of the room"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.3627,
+        2.0144,
+        0.4409,
+        0.2848,
+        0.4352,
+        0.1915
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_1",
+          "view_id": "00022",
+          "bbox_2d": [
+            43.61,
+            352.9,
+            251.12,
+            493.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4053
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            590.0,
+            208.0,
+            764.0,
+            363.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00310",
+          "view_id": "00310",
+          "bbox_2d": [
+            228.24,
+            723.61,
+            591.42,
+            958.51
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            34.09,
+            307.67,
+            417.93,
+            535.54
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "pillow",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm that the couch is in the northern corner of the room",
+        "cannot reliably confirm that the object above the couch is a whiteboard",
+        "cannot clearly verify the described caved-in side of the pillow"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        1.3641,
+        2.0261,
+        0.4431,
+        0.3269,
+        0.4744,
+        0.2187
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00078_0",
+          "view_id": "00078",
+          "bbox_2d": [
+            1071.25,
+            662.19,
+            1213.42,
+            839.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6622
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            721.0,
+            369.0,
+            878.0,
+            520.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00410",
+          "view_id": "00410",
+          "bbox_2d": [
+            301.0,
+            220.0,
+            503.0,
+            365.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00400",
+          "view_id": "00400",
+          "bbox_2d": [
+            431.04,
+            183.72,
+            652.04,
+            348.98
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00400_1",
+          "view_id": "00400",
+          "bbox_2d": [
+            431.04,
+            183.72,
+            652.04,
+            348.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3139
+        },
+        {
+          "object_view_id": "00440_1",
+          "view_id": "00440",
+          "bbox_2d": [
+            43.61,
+            352.9,
+            251.12,
+            493.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4053
+        },
+        {
+          "object_view_id": "01560_0",
+          "view_id": "01560",
+          "bbox_2d": [
+            1071.25,
+            662.19,
+            1213.42,
+            839.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6622
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "pillow",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably determine that this is the northern corner of the room"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        1.2515,
+        2.0265,
+        0.4564,
+        0.4714,
+        0.4555,
+        0.192
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00340_0",
+          "view_id": "00340",
+          "bbox_2d": [
+            557.88,
+            363.55,
+            805.42,
+            587.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6586
+        },
+        {
+          "object_view_id": "00380_0",
+          "view_id": "00380",
+          "bbox_2d": [
+            419.52,
+            205.64,
+            665.44,
+            429.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4859
+        },
+        {
+          "object_view_id": "00400_0",
+          "view_id": "00400",
+          "bbox_2d": [
+            277.01,
+            184.88,
+            544.08,
+            416.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4498
+        },
+        {
+          "object_view_id": "00440_0",
+          "view_id": "00440",
+          "bbox_2d": [
+            11.16,
+            353.38,
+            144.24,
+            546.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4846
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            557.88,
+            363.55,
+            805.42,
+            587.12
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            34.09,
+            307.67,
+            417.93,
+            535.54
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00310",
+          "view_id": "00310",
+          "bbox_2d": [
+            228.24,
+            723.61,
+            591.42,
+            958.51
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

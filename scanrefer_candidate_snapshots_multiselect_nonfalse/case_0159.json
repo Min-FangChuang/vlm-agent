@@ -1,0 +1,211 @@
+{
+  "case_id": 159,
+  "scene_id": "scene0552_00",
+  "query": "it is a gray trash can . the gray trash can sits at the bottom right of the long beige table behind the brown chairs .",
+  "query_analysis": {
+    "raw_query": "it is a gray trash can . the gray trash can sits at the bottom right of the long beige table behind the brown chairs .",
+    "target_object": "trash can",
+    "target_attributes": [
+      "gray"
+    ],
+    "reference_object": "table",
+    "reference_attributes": [
+      "long",
+      "beige"
+    ],
+    "relation": "at the bottom right of"
+  },
+  "gt": {
+    "target_id": 32,
+    "gt_label": "trash can",
+    "gt_bbox_3d": [
+      -1.808041,
+      1.04263,
+      0.375194,
+      0.535807,
+      0.34708,
+      0.676404
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "false",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -1.609266,
+      -0.25119,
+      0.191202,
+      0.332045,
+      0.36719,
+      0.406701
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      2,
+      2
+    ],
+    "detector_call_count": 23,
+    "total_views": 23,
+    "total_object_views": 7,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "trash can",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 5,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a trash can matching the requested gray appearance",
+        "candidate is gray"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.6628,
+        -0.1607,
+        0.1886,
+        0.4249,
+        0.4371,
+        0.3767
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            1141.8,
+            548.86,
+            1295.97,
+            776.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3945
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            753.67,
+            428.78,
+            903.57,
+            644.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6725
+        },
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            562.87,
+            592.4,
+            739.56,
+            859.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7068
+        },
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            179.0,
+            750.06,
+            390.8,
+            966.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6575
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            659.55,
+            494.22,
+            818.14,
+            724.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.541
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            386.69,
+            579.76,
+            590.24,
+            882.49
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6539
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "trash can",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "trash can",
+        "gray",
+        "sits at the bottom right of the long beige table",
+        "behind the brown chairs"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        2.0166,
+        -1.4482,
+        1.0781,
+        0.3754,
+        0.8186,
+        0.3278
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            199.15,
+            195.38,
+            542.2,
+            594.2
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7304
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            199.15,
+            195.38,
+            542.2,
+            594.2
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4843 @@
+{
+  "case_id": 108,
+  "scene_id": "scene0030_00",
+  "query": "this is a brown leather chair located under the first dark brown table immediately inside the door . it is on the middle side of the room , relative to the table .",
+  "query_analysis": {
+    "raw_query": "this is a brown leather chair located under the first dark brown table immediately inside the door . it is on the middle side of the room , relative to the table .",
+    "target_object": "chair",
+    "target_attributes": [
+      "brown",
+      "leather"
+    ],
+    "reference_object": "table",
+    "reference_attributes": [
+      "first",
+      "dark brown",
+      "immediately inside the door"
+    ],
+    "relation": "under"
+  },
+  "gt": {
+    "target_id": 5,
+    "gt_label": "chair",
+    "gt_bbox_3d": [
+      -0.423823,
+      0.504568,
+      0.417306,
+      0.582541,
+      0.491097,
+      0.758893
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 42,
+    "bbox_3d": [
+      1.913907,
+      1.143872,
+      0.405314,
+      0.541343,
+      0.427204,
+      0.836932
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      1,
+      2,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      14
+    ],
+    "detector_call_count": 130,
+    "total_views": 63,
+    "total_object_views": 142,
+    "total_candidates": 61
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "brown",
+        "leather",
+        "the requested brown leather chair specifically under the first dark brown table immediately inside the door"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        1.2403,
+        0.9405,
+        0.3706,
+        0.483,
+        1.0141,
+        0.8109
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            969.89,
+            668.3,
+            1286.56,
+            956.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4691
+        },
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            906.27,
+            634.11,
+            1284.86,
+            956.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8963
+        },
+        {
+          "object_view_id": "00012_1",
+          "view_id": "00012",
+          "bbox_2d": [
+            453.98,
+            325.78,
+            958.07,
+            954.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8815
+        },
+        {
+          "object_view_id": "00014_1",
+          "view_id": "00014",
+          "bbox_2d": [
+            319.78,
+            485.27,
+            835.76,
+            956.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7822
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            453.98,
+            325.78,
+            958.07,
+            954.15
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            811.15,
+            781.3,
+            1282.01,
+            956.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7967
+        },
+        {
+          "object_view_id": "00122_1",
+          "view_id": "00122",
+          "bbox_2d": [
+            433.27,
+            140.21,
+            664.28,
+            439.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.757
+        },
+        {
+          "object_view_id": "00124_0",
+          "view_id": "00124",
+          "bbox_2d": [
+            1015.23,
+            427.42,
+            1284.03,
+            806.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7996
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "under the first dark brown table",
+        "table immediately inside the door",
+        "on the middle side of the room relative to the table"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        2.3296,
+        2.4741,
+        0.5436,
+        1.4765,
+        1.0577,
+        0.9449
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            158.08,
+            444.01,
+            794.15,
+            957.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2889
+        },
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            7.53,
+            601.1,
+            308.17,
+            959.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2881
+        },
+        {
+          "object_view_id": "00084_0",
+          "view_id": "00084",
+          "bbox_2d": [
+            7.7,
+            630.98,
+            309.69,
+            960.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6104
+        },
+        {
+          "object_view_id": "00124_3",
+          "view_id": "00124",
+          "bbox_2d": [
+            345.75,
+            157.02,
+            730.92,
+            619.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5983
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "candidate is a chair",
+        "candidate is brown leather chair",
+        "candidate is under the first dark brown table immediately inside the door",
+        "candidate is on the middle side of the room relative to the table"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        2.1656,
+        1.1131,
+        0.6613,
+        0.1057,
+        0.3356,
+        0.3443
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            789.33,
+            771.99,
+            1020.93,
+            884.49
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8956
+        },
+        {
+          "object_view_id": "bootstrap_00080",
+          "view_id": "00080",
+          "bbox_2d": [
+            1166.0,
+            412.0,
+            1285.0,
+            494.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            639.0,
+            755.0,
+            835.0,
+            833.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00087",
+          "view_id": "00087",
+          "bbox_2d": [
+            41.0,
+            734.0,
+            89.0,
+            817.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "located under the table",
+        "the referenced table being the first dark brown table immediately inside the door",
+        "on the middle side of the room relative to the table"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        2.3419,
+        2.2294,
+        0.5018,
+        1.5006,
+        0.5627,
+        0.9997
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_1",
+          "view_id": "00010",
+          "bbox_2d": [
+            10.24,
+            248.83,
+            336.12,
+            957.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7808
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "chair is brown",
+        "chair is leather"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.135,
+        0.1325,
+        0.4185,
+        0.6707,
+        1.5424,
+        0.8748
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            930.27,
+            214.68,
+            1283.9,
+            795.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8892
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            809.26,
+            357.78,
+            1286.13,
+            957.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8296
+        },
+        {
+          "object_view_id": "00016_2",
+          "view_id": "00016",
+          "bbox_2d": [
+            384.24,
+            314.47,
+            927.35,
+            956.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7326
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            384.24,
+            314.47,
+            927.35,
+            956.14
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00100_0",
+          "view_id": "00100",
+          "bbox_2d": [
+            710.94,
+            541.63,
+            1147.22,
+            957.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7926
+        },
+        {
+          "object_view_id": "00122_0",
+          "view_id": "00122",
+          "bbox_2d": [
+            673.27,
+            111.63,
+            952.21,
+            356.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8335
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "brown",
+        "leather",
+        "the first dark brown table immediately inside the door",
+        "middle side of the room relative to the table"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.9257,
+        -0.9254,
+        0.4011,
+        0.7148,
+        2.3456,
+        0.9159
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            867.07,
+            249.0,
+            1244.31,
+            875.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7957
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            648.96,
+            439.86,
+            1064.54,
+            956.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8615
+        },
+        {
+          "object_view_id": "00098_3",
+          "view_id": "00098",
+          "bbox_2d": [
+            325.5,
+            537.87,
+            761.62,
+            958.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5695
+        },
+        {
+          "object_view_id": "00100_1",
+          "view_id": "00100",
+          "bbox_2d": [
+            891.9,
+            455.64,
+            1283.59,
+            958.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6207
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "chair is brown",
+        "chair is leather",
+        "candidate is the best match among nearby chairs for the described table/door relation"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.0691,
+        1.0662,
+        0.5786,
+        0.1462,
+        0.3876,
+        0.3809
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_1",
+          "view_id": "00016",
+          "bbox_2d": [
+            11.01,
+            548.55,
+            431.28,
+            958.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7401
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            11.01,
+            548.55,
+            431.28,
+            958.55
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "brown leather appearance is not confirmed",
+        "not under a dark brown table",
+        "cannot support that it is under the first dark brown table immediately inside the door",
+        "cannot support the middle-side-of-room relation relative to that table"
+      ],
+      "num_object_views": 12,
+      "bbox_3d": [
+        1.2211,
+        -1.7343,
+        0.3807,
+        0.5764,
+        1.8529,
+        0.8473
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_3",
+          "view_id": "00016",
+          "bbox_2d": [
+            1192.14,
+            113.54,
+            1285.71,
+            413.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5421
+        },
+        {
+          "object_view_id": "00018_3",
+          "view_id": "00018",
+          "bbox_2d": [
+            1002.76,
+            228.15,
+            1187.59,
+            562.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4114
+        },
+        {
+          "object_view_id": "bootstrap_00097",
+          "view_id": "00097",
+          "bbox_2d": [
+            548.45,
+            282.06,
+            862.4,
+            649.01
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            10.37,
+            376.37,
+            254.56,
+            836.11
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            262.72,
+            480.78,
+            715.44,
+            957.99
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_2",
+          "view_id": "00020",
+          "bbox_2d": [
+            650.8,
+            331.76,
+            1049.82,
+            828.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7601
+        },
+        {
+          "object_view_id": "00024_1",
+          "view_id": "00024",
+          "bbox_2d": [
+            988.84,
+            793.5,
+            1286.57,
+            958.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5978
+        },
+        {
+          "object_view_id": "00026_1",
+          "view_id": "00026",
+          "bbox_2d": [
+            647.28,
+            611.46,
+            956.92,
+            958.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7939
+        },
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            279.12,
+            432.44,
+            657.21,
+            956.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7351
+        },
+        {
+          "object_view_id": "00090_1",
+          "view_id": "00090",
+          "bbox_2d": [
+            961.94,
+            596.26,
+            1281.18,
+            958.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8859
+        },
+        {
+          "object_view_id": "00096_2",
+          "view_id": "00096",
+          "bbox_2d": [
+            753.5,
+            363.86,
+            1161.18,
+            804.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7022
+        },
+        {
+          "object_view_id": "00098_2",
+          "view_id": "00098",
+          "bbox_2d": [
+            420.85,
+            260.51,
+            676.07,
+            591.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6344
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "located under the first dark brown table",
+        "table immediately inside the door is not verified",
+        "middle side of the room relative to that table is not reliably supported"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.2804,
+        -0.9274,
+        0.3691,
+        0.868,
+        1.8718,
+        0.8339
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_4",
+          "view_id": "00016",
+          "bbox_2d": [
+            902.87,
+            178.96,
+            1229.37,
+            407.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4982
+        },
+        {
+          "object_view_id": "00018_2",
+          "view_id": "00018",
+          "bbox_2d": [
+            663.93,
+            336.83,
+            1070.36,
+            584.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7442
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            663.93,
+            336.83,
+            1070.36,
+            584.61
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00098_1",
+          "view_id": "00098",
+          "bbox_2d": [
+            229.73,
+            394.81,
+            638.07,
+            800.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6954
+        },
+        {
+          "object_view_id": "00100_2",
+          "view_id": "00100",
+          "bbox_2d": [
+            924.28,
+            370.65,
+            1185.52,
+            608.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5678
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a chair",
+        "brown leather attribute on the candidate",
+        "located under the first dark brown table immediately inside the door",
+        "on the middle side of the room relative to the table"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        2.4361,
+        -1.9958,
+        0.6722,
+        1.2277,
+        1.6283,
+        0.292
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_5",
+          "view_id": "00016",
+          "bbox_2d": [
+            832.24,
+            39.91,
+            1115.96,
+            265.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2837
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "brown",
+        "leather",
+        "the specific brown leather chair under the first dark brown table immediately inside the door",
+        "middle side of the room relative to the table"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.1115,
+        0.1823,
+        0.6043,
+        0.6203,
+        1.238,
+        0.5069
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_1",
+          "view_id": "00018",
+          "bbox_2d": [
+            13.61,
+            518.08,
+            703.2,
+            958.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8543
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            13.61,
+            518.08,
+            703.2,
+            958.03
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "chair is clearly brown",
+        "chair is clearly leather",
+        "chair is under the specified dark brown table",
+        "table immediately inside the door is not confirmed for this candidate",
+        "middle-side relation relative to the specified table is not satisfied/confirmed"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        1.2277,
+        -0.782,
+        0.3856,
+        0.7709,
+        1.124,
+        0.796
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            364.29,
+            503.49,
+            862.73,
+            916.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9085
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            364.29,
+            503.49,
+            862.73,
+            916.08
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00096_1",
+          "view_id": "00096",
+          "bbox_2d": [
+            394.02,
+            617.02,
+            1000.76,
+            956.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8428
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "brown",
+        "leather",
+        "under the first dark brown table immediately inside the door",
+        "middle side of the room relative to that table"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.0848,
+        -0.4517,
+        0.4215,
+        1.0206,
+        0.9004,
+        0.8842
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_1",
+          "view_id": "00020",
+          "bbox_2d": [
+            245.86,
+            774.2,
+            707.91,
+            958.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8653
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            245.86,
+            774.2,
+            707.91,
+            958.37
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [],
+      "missing_conditions": [
+        "reference table is dark brown",
+        "reference table is the first table immediately inside the door",
+        "chair is on the middle side of the room relative to that specific table"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        2.5364,
+        -1.8482,
+        0.4031,
+        1.2202,
+        1.4884,
+        0.8868
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            621.54,
+            414.55,
+            881.25,
+            549.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7957
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            426.68,
+            506.96,
+            742.88,
+            703.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8824
+        },
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            22.83,
+            413.32,
+            383.87,
+            682.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8688
+        },
+        {
+          "object_view_id": "00092_0",
+          "view_id": "00092",
+          "bbox_2d": [
+            197.67,
+            495.68,
+            614.34,
+            823.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9077
+        },
+        {
+          "object_view_id": "00094_0",
+          "view_id": "00094",
+          "bbox_2d": [
+            334.56,
+            339.68,
+            727.7,
+            600.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8993
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "brown",
+        "leather",
+        "under the first dark brown table immediately inside the door",
+        "middle-side position relative to that table"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.1523,
+        -1.5918,
+        0.3864,
+        0.4281,
+        1.0382,
+        0.8312
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_1",
+          "view_id": "00022",
+          "bbox_2d": [
+            957.17,
+            639.91,
+            1283.99,
+            956.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4462
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            957.17,
+            639.91,
+            1283.99,
+            956.76
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 15,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [
+        "brown",
+        "leather not reliably confirmed",
+        "under the first dark brown table",
+        "table immediately inside the door",
+        "on the middle side of the room relative to the table"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.3472,
+        -1.6492,
+        0.3834,
+        1.0593,
+        2.2035,
+        0.8524
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            887.32,
+            340.45,
+            1286.37,
+            957.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9567
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            691.23,
+            299.59,
+            1203.91,
+            953.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9493
+        },
+        {
+          "object_view_id": "00034_1",
+          "view_id": "00034",
+          "bbox_2d": [
+            408.07,
+            277.73,
+            927.8,
+            953.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9157
+        },
+        {
+          "object_view_id": "00098_0",
+          "view_id": "00098",
+          "bbox_2d": [
+            1036.52,
+            334.17,
+            1284.85,
+            931.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9042
+        },
+        {
+          "object_view_id": "00118_3",
+          "view_id": "00118",
+          "bbox_2d": [
+            220.29,
+            81.92,
+            429.37,
+            214.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6091
+        }
+      ]
+    },
+    {
+      "candidate_id": 16,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "under the first dark brown table",
+        "immediately inside the door",
+        "middle side of the room relative to that table"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.1002,
+        -0.9536,
+        0.3743,
+        0.5131,
+        0.9328,
+        0.826
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_1",
+          "view_id": "00030",
+          "bbox_2d": [
+            7.36,
+            650.38,
+            172.44,
+            959.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8196
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            7.36,
+            650.38,
+            172.44,
+            959.77
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 17,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "brown",
+        "leather",
+        "located under the first dark brown table immediately inside the door",
+        "on the middle side of the room relative to that table"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.9398,
+        -1.336,
+        0.3972,
+        0.9205,
+        0.689,
+        0.8896
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_1",
+          "view_id": "00032",
+          "bbox_2d": [
+            998.13,
+            181.51,
+            1284.7,
+            591.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7991
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            745.76,
+            154.9,
+            1062.3,
+            658.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9225
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            630.98,
+            414.95,
+            1064.44,
+            957.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9238
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            630.98,
+            414.95,
+            1064.44,
+            957.36
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00110_1",
+          "view_id": "00110",
+          "bbox_2d": [
+            372.53,
+            79.23,
+            539.98,
+            264.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7453
+        }
+      ]
+    },
+    {
+      "candidate_id": 18,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "brown",
+        "leather not clearly confirmed as brown leather",
+        "under the first dark brown table immediately inside the door",
+        "middle side of the room relative to that table"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.2796,
+        -1.6805,
+        0.3877,
+        0.9478,
+        1.5773,
+        0.8391
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_1",
+          "view_id": "00036",
+          "bbox_2d": [
+            244.32,
+            612.8,
+            581.47,
+            957.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8602
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            244.32,
+            612.8,
+            581.47,
+            957.5
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 19,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "brown",
+        "leather",
+        "located under the first dark brown table immediately inside the door",
+        "on the middle side of the room relative to that table"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -1.1636,
+        -0.9939,
+        0.3813,
+        1.4423,
+        1.146,
+        0.9301
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            732.81,
+            439.1,
+            1244.95,
+            895.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8501
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            732.81,
+            439.1,
+            1244.95,
+            895.9
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            787.56,
+            454.29,
+            1281.88,
+            955.43
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9269
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            353.4,
+            289.56,
+            754.64,
+            916.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.889
+        },
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            971.59,
+            596.63,
+            1285.84,
+            956.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9197
+        },
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            483.28,
+            649.79,
+            911.77,
+            958.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9276
+        },
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            6.88,
+            579.99,
+            415.0,
+            958.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9039
+        }
+      ]
+    },
+    {
+      "candidate_id": 20,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "brown",
+        "leather",
+        "located under the first dark brown table",
+        "on the middle side of the room relative to the table"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.4813,
+        -0.5033,
+        0.3959,
+        1.1987,
+        1.3966,
+        0.8245
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00042_1",
+          "view_id": "00042",
+          "bbox_2d": [
+            858.15,
+            481.19,
+            1285.74,
+            955.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8886
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            858.15,
+            481.19,
+            1285.74,
+            955.09
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 21,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "chair is brown",
+        "chair is leather",
+        "table is dark brown",
+        "this is the first table immediately inside the door",
+        "chair is on the middle side of the room relative to the table"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.3593,
+        -0.5469,
+        0.3677,
+        1.42,
+        1.0708,
+        0.7829
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00042_2",
+          "view_id": "00042",
+          "bbox_2d": [
+            500.74,
+            125.03,
+            820.04,
+            560.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6507
+        }
+      ]
+    },
+    {
+      "candidate_id": 22,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the chair is brown leather",
+        "cannot confirm this is the first dark brown table immediately inside the door",
+        "cannot reliably judge the middle-side room relation relative to the table"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.0371,
+        0.047,
+        0.375,
+        0.7769,
+        2.0708,
+        0.8035
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00042_3",
+          "view_id": "00042",
+          "bbox_2d": [
+            1122.03,
+            67.68,
+            1285.28,
+            449.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4281
+        },
+        {
+          "object_view_id": "00052_4",
+          "view_id": "00052",
+          "bbox_2d": [
+            781.63,
+            209.49,
+            969.57,
+            580.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.488
+        },
+        {
+          "object_view_id": "bootstrap_00119",
+          "view_id": "00119",
+          "bbox_2d": [
+            242.03,
+            384.64,
+            780.57,
+            957.48
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00113",
+          "view_id": "00113",
+          "bbox_2d": [
+            360.0,
+            281.0,
+            644.0,
+            667.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00058",
+          "view_id": "00058",
+          "bbox_2d": [
+            147.74,
+            398.33,
+            479.93,
+            477.02
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00118_0",
+          "view_id": "00118",
+          "bbox_2d": [
+            368.48,
+            433.59,
+            775.57,
+            957.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7995
+        }
+      ]
+    },
+    {
+      "candidate_id": 23,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a chair",
+        "candidate is brown leather",
+        "candidate is under the referenced table"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.0548,
+        -0.1091,
+        0.3696,
+        0.8412,
+        1.278,
+        0.8075
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00048_1",
+          "view_id": "00048",
+          "bbox_2d": [
+            1044.28,
+            393.74,
+            1287.11,
+            896.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.37
+        }
+      ]
+    },
+    {
+      "candidate_id": 24,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "brown color is not supported for the green candidate",
+        "leather material is not clearly supported",
+        "under the first dark brown table immediately inside the door is not clearly satisfied by the green candidate",
+        "another nearby chair appears to satisfy the description better"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.2999,
+        -0.5475,
+        0.4015,
+        1.0314,
+        1.3223,
+        0.819
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_1",
+          "view_id": "00052",
+          "bbox_2d": [
+            610.2,
+            803.56,
+            1291.07,
+            959.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.793
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            610.2,
+            803.56,
+            1291.07,
+            959.28
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 25,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably verify this is the first dark brown table immediately inside the door",
+        "cannot reliably verify the entry/door relationship from the room layout",
+        "cannot fully verify the chair is on the middle side of the room relative to the table"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.3884,
+        0.5102,
+        0.3901,
+        0.5352,
+        0.5682,
+        0.8444
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_2",
+          "view_id": "00052",
+          "bbox_2d": [
+            995.83,
+            391.38,
+            1284.5,
+            766.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.782
+        },
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            867.25,
+            312.2,
+            1281.78,
+            861.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6931
+        },
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            486.83,
+            416.18,
+            1048.18,
+            955.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8904
+        },
+        {
+          "object_view_id": "bootstrap_00057",
+          "view_id": "00057",
+          "bbox_2d": [
+            354.4,
+            506.14,
+            1054.42,
+            957.5
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00113",
+          "view_id": "00113",
+          "bbox_2d": [
+            11.03,
+            463.69,
+            368.92,
+            955.62
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            734.79,
+            352.59,
+            1268.47,
+            955.99
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 26,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a chair",
+        "brown leather appearance of the candidate",
+        "under the first dark brown table immediately inside the door",
+        "middle-side position relative to the table"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.7493,
+        -0.6914,
+        0.6334,
+        0.6635,
+        0.7811,
+        0.2438
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_3",
+          "view_id": "00052",
+          "bbox_2d": [
+            74.25,
+            322.88,
+            363.0,
+            414.42
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5474
+        }
+      ]
+    },
+    {
+      "candidate_id": 27,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 6,
+      "done_actions": [],
+      "missing_conditions": [
+        "not under the referenced dark brown table",
+        "does not best match the chair immediately inside the door relative to the table",
+        "middle-side-of-room relation relative to the table is not satisfied by the green-boxed chair"
+      ],
+      "num_object_views": 11,
+      "bbox_3d": [
+        -1.2712,
+        2.6493,
+        0.3989,
+        1.1835,
+        0.7757,
+        0.854
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00054_1",
+          "view_id": "00054",
+          "bbox_2d": [
+            1049.72,
+            99.64,
+            1286.85,
+            214.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.663
+        },
+        {
+          "object_view_id": "00056_1",
+          "view_id": "00056",
+          "bbox_2d": [
+            950.46,
+            80.72,
+            1256.76,
+            248.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4167
+        },
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            1042.12,
+            257.02,
+            1284.42,
+            522.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6962
+        },
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            941.18,
+            556.98,
+            1282.65,
+            908.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9343
+        },
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            397.75,
+            255.2,
+            734.49,
+            538.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9198
+        },
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            566.95,
+            252.31,
+            929.18,
+            585.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9495
+        },
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            654.84,
+            342.75,
+            1176.77,
+            954.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9433
+        },
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            366.57,
+            548.0,
+            834.04,
+            959.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9408
+        },
+        {
+          "object_view_id": "00070_0",
+          "view_id": "00070",
+          "bbox_2d": [
+            199.28,
+            549.21,
+            579.44,
+            954.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9482
+        },
+        {
+          "object_view_id": "00072_0",
+          "view_id": "00072",
+          "bbox_2d": [
+            13.54,
+            343.21,
+            369.81,
+            662.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9463
+        },
+        {
+          "object_view_id": "00074_2",
+          "view_id": "00074",
+          "bbox_2d": [
+            11.28,
+            329.85,
+            222.25,
+            690.49
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9242
+        }
+      ]
+    },
+    {
+      "candidate_id": 28,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a chair",
+        "candidate is brown leather",
+        "candidate is the chair under the first dark brown table immediately inside the door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.1471,
+        -0.6771,
+        0.3461,
+        1.0863,
+        0.4612,
+        0.7795
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00054_2",
+          "view_id": "00054",
+          "bbox_2d": [
+            10.57,
+            366.05,
+            237.32,
+            917.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3544
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            10.57,
+            366.05,
+            237.32,
+            917.63
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 29,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "brown appearance is not supported for the green-boxed candidate",
+        "leather material is not supported for the green-boxed candidate",
+        "cannot confirm this is the specific middle-side chair relative to the table",
+        "nearby chair alternatives appear to match the request better"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.372,
+        0.7227,
+        0.7548,
+        0.0976,
+        0.4581,
+        0.0656
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_1",
+          "view_id": "00058",
+          "bbox_2d": [
+            147.74,
+            398.33,
+            479.93,
+            477.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4564
+        },
+        {
+          "object_view_id": "bootstrap_00119",
+          "view_id": "00119",
+          "bbox_2d": [
+            242.03,
+            384.64,
+            780.57,
+            957.48
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00121",
+          "view_id": "00121",
+          "bbox_2d": [
+            1211.0,
+            613.0,
+            1285.0,
+            652.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00057",
+          "view_id": "00057",
+          "bbox_2d": [
+            199.0,
+            197.0,
+            484.0,
+            262.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 30,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "brown",
+        "leather",
+        "cannot confirm this is the requested brown leather chair under the first dark brown table immediately inside the door",
+        "cannot reliably confirm the 'middle side of the room' relation relative to the table"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.4133,
+        0.8013,
+        0.5079,
+        0.1069,
+        0.2972,
+        0.5629
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_1",
+          "view_id": "00060",
+          "bbox_2d": [
+            7.79,
+            843.66,
+            283.69,
+            959.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6112
+        },
+        {
+          "object_view_id": "bootstrap_00119",
+          "view_id": "00119",
+          "bbox_2d": [
+            242.03,
+            384.64,
+            780.57,
+            957.48
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00121",
+          "view_id": "00121",
+          "bbox_2d": [
+            1251.0,
+            639.0,
+            1285.0,
+            668.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00057",
+          "view_id": "00057",
+          "bbox_2d": [
+            199.0,
+            192.0,
+            488.0,
+            263.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 31,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 4,
+      "done_actions": [],
+      "missing_conditions": [
+        "brown",
+        "leather",
+        "located under the first dark brown table immediately inside the door",
+        "middle side of the room relative to that table"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -0.1233,
+        2.5916,
+        0.3437,
+        0.5997,
+        0.8341,
+        0.8287
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00062_1",
+          "view_id": "00062",
+          "bbox_2d": [
+            868.33,
+            419.14,
+            1204.38,
+            832.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8619
+        },
+        {
+          "object_view_id": "00064_1",
+          "view_id": "00064",
+          "bbox_2d": [
+            1100.7,
+            446.95,
+            1285.01,
+            709.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7148
+        },
+        {
+          "object_view_id": "00070_1",
+          "view_id": "00070",
+          "bbox_2d": [
+            727.43,
+            777.88,
+            1061.93,
+            957.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9228
+        },
+        {
+          "object_view_id": "00072_1",
+          "view_id": "00072",
+          "bbox_2d": [
+            491.05,
+            488.37,
+            805.31,
+            876.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9006
+        },
+        {
+          "object_view_id": "00074_1",
+          "view_id": "00074",
+          "bbox_2d": [
+            334.91,
+            485.71,
+            675.85,
+            897.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9287
+        },
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            198.4,
+            803.6,
+            541.41,
+            957.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8946
+        },
+        {
+          "object_view_id": "00078_1",
+          "view_id": "00078",
+          "bbox_2d": [
+            7.63,
+            676.67,
+            194.21,
+            956.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6159
+        }
+      ]
+    },
+    {
+      "candidate_id": 32,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "leather material is not reliably confirmed",
+        "not verified under the referenced first dark brown table",
+        "not verified immediately inside the door",
+        "not verified on the middle side of the room relative to the table"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.2879,
+        2.4323,
+        0.292,
+        0.0553,
+        0.4251,
+        0.6772
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00062_2",
+          "view_id": "00062",
+          "bbox_2d": [
+            1206.05,
+            520.75,
+            1284.88,
+            844.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4279
+        },
+        {
+          "object_view_id": "bootstrap_00078",
+          "view_id": "00078",
+          "bbox_2d": [
+            215.44,
+            566.13,
+            597.93,
+            954.8
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00073",
+          "view_id": "00073",
+          "bbox_2d": [
+            758.77,
+            376.38,
+            1112.3,
+            792.76
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00070",
+          "view_id": "00070",
+          "bbox_2d": [
+            1100.0,
+            904.0,
+            1148.0,
+            959.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 33,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "chair is clearly leather",
+        "chair is under the first dark brown table",
+        "table is immediately inside the door",
+        "middle side of the room relative to that table"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.6592,
+        2.5835,
+        0.37,
+        0.7703,
+        0.8384,
+        0.8194
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00072_2",
+          "view_id": "00072",
+          "bbox_2d": [
+            847.2,
+            469.33,
+            1196.54,
+            880.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8881
+        },
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            722.83,
+            463.08,
+            1072.59,
+            891.2
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9301
+        },
+        {
+          "object_view_id": "00076_1",
+          "view_id": "00076",
+          "bbox_2d": [
+            614.31,
+            759.8,
+            945.54,
+            957.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8693
+        },
+        {
+          "object_view_id": "00078_0",
+          "view_id": "00078",
+          "bbox_2d": [
+            215.44,
+            566.13,
+            597.93,
+            954.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6398
+        }
+      ]
+    },
+    {
+      "candidate_id": 34,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "is the specific chair under the first dark brown table immediately inside the door",
+        "is on the middle side of the room relative to that table",
+        "candidate is the correct target rather than the nearby larger leather armchair/recliner"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.0718,
+        1.3068,
+        0.6497,
+        0.0807,
+        0.2764,
+        0.2438
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00078_2",
+          "view_id": "00078",
+          "bbox_2d": [
+            1096.8,
+            747.2,
+            1288.98,
+            958.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5266
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1096.8,
+            747.2,
+            1288.98,
+            958.07
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 35,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the chair is leather",
+        "cannot verify this is the first dark brown table immediately inside the door",
+        "cannot verify relation to the door",
+        "cannot verify the chair is on the middle side of the room relative to the table"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        2.5853,
+        0.5887,
+        0.4032,
+        0.9441,
+        1.1137,
+        0.8434
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            235.62,
+            719.64,
+            450.07,
+            837.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8803
+        },
+        {
+          "object_view_id": "bootstrap_00080",
+          "view_id": "00080",
+          "bbox_2d": [
+            1158.0,
+            412.0,
+            1285.0,
+            493.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            637.0,
+            755.0,
+            833.0,
+            832.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00087",
+          "view_id": "00087",
+          "bbox_2d": [
+            41.0,
+            743.0,
+            85.0,
+            819.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00102_0",
+          "view_id": "00102",
+          "bbox_2d": [
+            5.96,
+            779.81,
+            259.68,
+            960.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.829
+        }
+      ]
+    },
+    {
+      "candidate_id": 36,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "chair is clearly brown",
+        "chair is clearly leather",
+        "the table is confirmed to be the first dark brown table immediately inside the door",
+        "chair is on the middle side of the room relative to the table"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        1.7759,
+        0.4052,
+        0.4179,
+        0.6783,
+        0.7935,
+        0.8674
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00088_0",
+          "view_id": "00088",
+          "bbox_2d": [
+            131.1,
+            652.51,
+            361.71,
+            798.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9005
+        },
+        {
+          "object_view_id": "bootstrap_00106",
+          "view_id": "00106",
+          "bbox_2d": [
+            722.1,
+            176.7,
+            1154.51,
+            816.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00102",
+          "view_id": "00102",
+          "bbox_2d": [
+            502.0,
+            523.0,
+            585.0,
+            640.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00105",
+          "view_id": "00105",
+          "bbox_2d": [
+            709.51,
+            330.81,
+            1170.85,
+            951.7
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00104_0",
+          "view_id": "00104",
+          "bbox_2d": [
+            730.47,
+            546.48,
+            1016.72,
+            957.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8712
+        },
+        {
+          "object_view_id": "00106_0",
+          "view_id": "00106",
+          "bbox_2d": [
+            722.1,
+            176.7,
+            1154.51,
+            816.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8838
+        },
+        {
+          "object_view_id": "00108_2",
+          "view_id": "00108",
+          "bbox_2d": [
+            409.52,
+            261.12,
+            797.12,
+            805.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7485
+        }
+      ]
+    },
+    {
+      "candidate_id": 37,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "reference table is dark brown",
+        "reference table is the first table immediately inside the door",
+        "door location is visible/confirmed",
+        "middle-side-of-room relation relative to the table",
+        "leather material is clearly confirmed"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        2.0285,
+        -1.4348,
+        0.5332,
+        0.1794,
+        0.5002,
+        0.6163
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00090_0",
+          "view_id": "00090",
+          "bbox_2d": [
+            489.95,
+            442.32,
+            732.7,
+            635.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9065
+        },
+        {
+          "object_view_id": "00096_0",
+          "view_id": "00096",
+          "bbox_2d": [
+            440.77,
+            223.88,
+            674.49,
+            371.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8755
+        },
+        {
+          "object_view_id": "bootstrap_00095",
+          "view_id": "00095",
+          "bbox_2d": [
+            447.83,
+            351.39,
+            734.73,
+            533.73
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00028",
+          "view_id": "00028",
+          "bbox_2d": [
+            35.0,
+            361.0,
+            127.0,
+            493.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00094",
+          "view_id": "00094",
+          "bbox_2d": [
+            334.56,
+            339.68,
+            727.7,
+            600.8
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 38,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "brown",
+        "leather",
+        "the specified brown leather chair under the first dark brown table immediately inside the door",
+        "middle-side placement relative to that table"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.2405,
+        -0.0283,
+        0.4309,
+        0.8973,
+        0.8374,
+        0.8495
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00098_4",
+          "view_id": "00098",
+          "bbox_2d": [
+            61.24,
+            793.79,
+            403.95,
+            957.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4653
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            61.24,
+            793.79,
+            403.95,
+            957.81
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 39,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "brown",
+        "leather",
+        "under the first dark brown table immediately inside the door",
+        "on the middle side of the room relative to the table"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.0804,
+        -1.8956,
+        0.5207,
+        0.2649,
+        1.6712,
+        0.5424
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00100_3",
+          "view_id": "00100",
+          "bbox_2d": [
+            1007.16,
+            277.57,
+            1181.27,
+            496.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5564
+        },
+        {
+          "object_view_id": "bootstrap_00028",
+          "view_id": "00028",
+          "bbox_2d": [
+            367.0,
+            388.0,
+            776.0,
+            889.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00026",
+          "view_id": "00026",
+          "bbox_2d": [
+            674.0,
+            530.0,
+            1102.0,
+            959.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00090",
+          "view_id": "00090",
+          "bbox_2d": [
+            961.94,
+            596.26,
+            1281.18,
+            958.12
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 40,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "chair clearly confirmed as leather",
+        "reference table confirmed as the first dark brown table immediately inside the door",
+        "door location visible and linked to this table",
+        "middle-side room relation relative to the table reliably established"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.8658,
+        -1.2872,
+        0.4219,
+        0.4388,
+        0.3647,
+        0.8563
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00104_1",
+          "view_id": "00104",
+          "bbox_2d": [
+            689.06,
+            278.63,
+            880.69,
+            629.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6184
+        },
+        {
+          "object_view_id": "00108_3",
+          "view_id": "00108",
+          "bbox_2d": [
+            163.13,
+            21.08,
+            422.29,
+            394.06
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5408
+        },
+        {
+          "object_view_id": "bootstrap_00093",
+          "view_id": "00093",
+          "bbox_2d": [
+            135.58,
+            481.28,
+            658.25,
+            869.83
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00092",
+          "view_id": "00092",
+          "bbox_2d": [
+            197.67,
+            495.68,
+            614.34,
+            823.41
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 41,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "chair clearly confirmed as leather",
+        "table confirmed as the first dark brown table immediately inside the door",
+        "candidate confirmed to be on the middle side of the room relative to the table",
+        "ambiguity with nearby chair under the same table area fully resolved"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.826,
+        -1.2005,
+        0.3498,
+        0.5221,
+        0.2161,
+        0.7796
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00106_1",
+          "view_id": "00106",
+          "bbox_2d": [
+            415.94,
+            7.68,
+            649.8,
+            306.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7336
+        },
+        {
+          "object_view_id": "bootstrap_00093",
+          "view_id": "00093",
+          "bbox_2d": [
+            135.58,
+            481.28,
+            658.25,
+            869.83
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 42,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "chair material is clearly leather",
+        "the referenced table is confirmed to be the first dark brown table immediately inside the door",
+        "chair is confirmed to be on the middle side of the room relative to that table"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.8909,
+        1.1491,
+        0.4082,
+        0.4953,
+        0.4167,
+        0.8289
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00106_2",
+          "view_id": "00106",
+          "bbox_2d": [
+            1079.2,
+            585.95,
+            1285.8,
+            955.43
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6926
+        },
+        {
+          "object_view_id": "00108_0",
+          "view_id": "00108",
+          "bbox_2d": [
+            669.45,
+            620.56,
+            1285.59,
+            956.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7673
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            669.45,
+            620.56,
+            1285.59,
+            956.46
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00109",
+          "view_id": "00109",
+          "bbox_2d": [
+            277.0,
+            777.0,
+            872.0,
+            960.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00107",
+          "view_id": "00107",
+          "bbox_2d": [
+            1037.78,
+            628.68,
+            1287.17,
+            958.38
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00102",
+          "view_id": "00102",
+          "bbox_2d": [
+            5.96,
+            779.81,
+            259.68,
+            960.33
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 43,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "brown",
+        "leather",
+        "under the first dark brown table immediately inside the door",
+        "on the middle side of the room relative to the table"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.1954,
+        -0.3735,
+        0.3986,
+        2.1982,
+        2.2962,
+        0.9184
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00108_1",
+          "view_id": "00108",
+          "bbox_2d": [
+            1089.1,
+            120.7,
+            1285.77,
+            260.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.764
+        },
+        {
+          "object_view_id": "00110_0",
+          "view_id": "00110",
+          "bbox_2d": [
+            405.59,
+            261.68,
+            684.12,
+            433.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.836
+        }
+      ]
+    },
+    {
+      "candidate_id": 44,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the chair is leather",
+        "cannot reliably confirm this is the first dark brown table immediately inside the door",
+        "cannot reliably confirm the chair is on the middle side of the room relative to the table"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.4132,
+        0.5204,
+        0.3845,
+        0.5273,
+        0.6631,
+        0.8673
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00110_2",
+          "view_id": "00110",
+          "bbox_2d": [
+            770.96,
+            166.21,
+            1027.07,
+            472.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6526
+        },
+        {
+          "object_view_id": "00112_0",
+          "view_id": "00112",
+          "bbox_2d": [
+            241.49,
+            287.4,
+            625.12,
+            723.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8865
+        },
+        {
+          "object_view_id": "00114_0",
+          "view_id": "00114",
+          "bbox_2d": [
+            10.25,
+            579.3,
+            447.44,
+            956.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8838
+        },
+        {
+          "object_view_id": "bootstrap_00063",
+          "view_id": "00063",
+          "bbox_2d": [
+            586.0,
+            868.0,
+            745.0,
+            959.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00056",
+          "view_id": "00056",
+          "bbox_2d": [
+            486.83,
+            416.18,
+            1048.18,
+            955.82
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00054",
+          "view_id": "00054",
+          "bbox_2d": [
+            867.25,
+            312.2,
+            1281.78,
+            861.3
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 45,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "brown leather material is not clearly confirmed",
+        "cannot verify this is the first dark brown table immediately inside the door",
+        "cannot reliably confirm the middle-side room relation relative to the table",
+        "nearby similar chairs/tables are present, so the exact target is not uniquely distinguished yet"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.2248,
+        -0.8796,
+        0.3585,
+        0.5965,
+        0.4929,
+        0.7767
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00110_3",
+          "view_id": "00110",
+          "bbox_2d": [
+            557.76,
+            64.78,
+            739.32,
+            301.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4754
+        },
+        {
+          "object_view_id": "bootstrap_00046",
+          "view_id": "00046",
+          "bbox_2d": [
+            925.0,
+            738.0,
+            1160.0,
+            758.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00111",
+          "view_id": "00111",
+          "bbox_2d": [
+            262.86,
+            121.75,
+            457.97,
+            399.82
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00034",
+          "view_id": "00034",
+          "bbox_2d": [
+            1082.0,
+            370.0,
+            1273.0,
+            485.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 46,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is clearly a chair",
+        "brown leather appearance is not confirmed for the green-boxed object",
+        "under-table relation is not cleanly established for the green-boxed object as a chair",
+        "cannot confirm this is the chair immediately inside the door",
+        "cannot confirm the middle-side placement relative to the table"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.1573,
+        0.6713,
+        0.3144,
+        1.543,
+        0.8832,
+        0.685
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00110_4",
+          "view_id": "00110",
+          "bbox_2d": [
+            983.57,
+            227.58,
+            1195.85,
+            436.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4152
+        }
+      ]
+    },
+    {
+      "candidate_id": 47,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "green-boxed object is clearly a chair across the views",
+        "brown attribute",
+        "leather material",
+        "confirmed to be under the first dark brown table immediately inside the door",
+        "confirmed middle-side-of-room relation relative to the table"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.9672,
+        0.0626,
+        0.3809,
+        0.9182,
+        1.9775,
+        0.8024
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00112_1",
+          "view_id": "00112",
+          "bbox_2d": [
+            566.81,
+            174.71,
+            839.04,
+            571.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7801
+        },
+        {
+          "object_view_id": "bootstrap_00120",
+          "view_id": "00120",
+          "bbox_2d": [
+            361.6,
+            512.6,
+            922.52,
+            957.41
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00052",
+          "view_id": "00052",
+          "bbox_2d": [
+            549.0,
+            217.0,
+            994.0,
+            529.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00058",
+          "view_id": "00058",
+          "bbox_2d": [
+            46.0,
+            402.0,
+            431.0,
+            470.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00120_0",
+          "view_id": "00120",
+          "bbox_2d": [
+            361.6,
+            512.6,
+            922.52,
+            957.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8488
+        }
+      ]
+    },
+    {
+      "candidate_id": 48,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is clearly brown",
+        "candidate is clearly leather",
+        "candidate is the chair under the referenced dark brown table that best matches the description",
+        "candidate is confirmed as the one on the middle side of the room relative to the table"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.8748,
+        -1.4944,
+        0.2159,
+        0.866,
+        1.0849,
+        0.6542
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00112_2",
+          "view_id": "00112",
+          "bbox_2d": [
+            11.59,
+            243.44,
+            137.12,
+            504.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7568
+        }
+      ]
+    },
+    {
+      "candidate_id": 49,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "is a brown chair",
+        "appears leather",
+        "is the correct chair under the referenced table",
+        "table immediately inside the door is not confirmed",
+        "middle-side-of-room relation relative to the table is not confirmed"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.3202,
+        -0.9852,
+        0.3296,
+        1.941,
+        2.0536,
+        0.8588
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00112_3",
+          "view_id": "00112",
+          "bbox_2d": [
+            138.28,
+            130.58,
+            338.96,
+            400.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.743
+        }
+      ]
+    },
+    {
+      "candidate_id": 50,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "chair is brown",
+        "chair is leather",
+        "reference table is the first dark brown table immediately inside the door",
+        "chair is on the middle side of the room relative to the table"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.3733,
+        0.6962,
+        0.4759,
+        0.1154,
+        0.4538,
+        0.6022
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00116_0",
+          "view_id": "00116",
+          "bbox_2d": [
+            718.58,
+            473.87,
+            943.83,
+            708.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8599
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            1122.03,
+            67.68,
+            1285.28,
+            449.14
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00120",
+          "view_id": "00120",
+          "bbox_2d": [
+            361.6,
+            512.6,
+            922.52,
+            957.41
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            9.66,
+            772.14,
+            359.24,
+            898.94
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 51,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "chair material/color as brown leather is not clearly visible",
+        "cannot verify this is the first dark brown table immediately inside the door",
+        "cannot verify the chair is on the middle side of the room relative to the table"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.1873,
+        -1.283,
+        0.384,
+        0.7224,
+        2.1764,
+        0.7906
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00118_1",
+          "view_id": "00118",
+          "bbox_2d": [
+            715.73,
+            148.56,
+            939.67,
+            533.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7768
+        },
+        {
+          "object_view_id": "bootstrap_00120",
+          "view_id": "00120",
+          "bbox_2d": [
+            960.46,
+            318.89,
+            1284.11,
+            674.57
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00117",
+          "view_id": "00117",
+          "bbox_2d": [
+            582.6,
+            181.67,
+            660.11,
+            541.73
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00119",
+          "view_id": "00119",
+          "bbox_2d": [
+            762.09,
+            114.32,
+            1091.42,
+            508.5
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00120_1",
+          "view_id": "00120",
+          "bbox_2d": [
+            960.46,
+            318.89,
+            1284.11,
+            674.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7847
+        }
+      ]
+    },
+    {
+      "candidate_id": 52,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.4392,
+        -1.8637,
+        0.4247,
+        1.2821,
+        1.4281,
+        0.848
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00118_2",
+          "view_id": "00118",
+          "bbox_2d": [
+            9.7,
+            44.49,
+            124.7,
+            306.48
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.756
+        },
+        {
+          "object_view_id": "bootstrap_00022",
+          "view_id": "00022",
+          "bbox_2d": [
+            957.17,
+            639.91,
+            1283.99,
+            956.76
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 53,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the chair material is leather",
+        "cannot fully verify this is the first dark brown table immediately inside the door",
+        "cannot confidently verify the 'middle side of the room, relative to the table' relation"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.1824,
+        0.5089,
+        0.5925,
+        0.0825,
+        0.4458,
+        0.4419
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00120_2",
+          "view_id": "00120",
+          "bbox_2d": [
+            102.81,
+            232.59,
+            364.7,
+            335.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7297
+        },
+        {
+          "object_view_id": "bootstrap_00053",
+          "view_id": "00053",
+          "bbox_2d": [
+            1239.0,
+            398.0,
+            1285.0,
+            450.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00113",
+          "view_id": "00113",
+          "bbox_2d": [
+            11.03,
+            463.69,
+            368.92,
+            955.62
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00056",
+          "view_id": "00056",
+          "bbox_2d": [
+            486.83,
+            416.18,
+            1048.18,
+            955.82
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 54,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "brown color",
+        "leather material",
+        "under the referenced first dark brown table",
+        "table immediately inside the door",
+        "middle side of the room relative to the table",
+        "best match among nearby chairs"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.035,
+        -1.2204,
+        0.4727,
+        0.3591,
+        0.5534,
+        0.6848
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00120_3",
+          "view_id": "00120",
+          "bbox_2d": [
+            402.52,
+            84.19,
+            574.25,
+            247.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5829
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            865.67,
+            462.07,
+            1168.88,
+            954.46
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            650.8,
+            331.76,
+            1049.82,
+            828.97
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            908.22,
+            295.07,
+            1109.14,
+            744.53
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 55,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "chair clearly shown to be brown",
+        "chair clearly shown to be leather",
+        "reference table verified as the first dark brown table immediately inside the door",
+        "middle-side room relation relative to the table"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.8075,
+        0.046,
+        0.4419,
+        0.5065,
+        0.4335,
+        0.8336
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00120_4",
+          "view_id": "00120",
+          "bbox_2d": [
+            91.14,
+            115.71,
+            282.79,
+            275.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5348
+        },
+        {
+          "object_view_id": "00122_2",
+          "view_id": "00122",
+          "bbox_2d": [
+            926.37,
+            123.96,
+            1149.45,
+            337.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.712
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            1221.0,
+            495.0,
+            1285.0,
+            608.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            381.06,
+            609.25,
+            887.16,
+            956.5
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            725.98,
+            324.64,
+            1054.4,
+            958.3
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 56,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "leather material is not confirmed",
+        "the referenced dark brown table is not reliably linked to the candidate",
+        "first table immediately inside the door cannot be verified because the door is not visible",
+        "middle side of the room relative to the table is not reliably established"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.0336,
+        2.2383,
+        0.3617,
+        1.5122,
+        0.2067,
+        0.8328
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00122_3",
+          "view_id": "00122",
+          "bbox_2d": [
+            51.46,
+            191.57,
+            133.13,
+            567.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.369
+        },
+        {
+          "object_view_id": "bootstrap_00075",
+          "view_id": "00075",
+          "bbox_2d": [
+            657.92,
+            614.27,
+            996.1,
+            956.54
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00074",
+          "view_id": "00074",
+          "bbox_2d": [
+            722.83,
+            463.08,
+            1072.59,
+            891.2
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00072",
+          "view_id": "00072",
+          "bbox_2d": [
+            847.2,
+            469.33,
+            1196.54,
+            880.38
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 57,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "candidate being brown",
+        "candidate being leather",
+        "candidate being the requested brown leather chair",
+        "reference table being the first dark brown table immediately inside the door is not confirmed for this candidate",
+        "middle-side room relation relative to the table is not reliably satisfied for this candidate"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        2.0735,
+        1.0998,
+        0.4188,
+        2.0502,
+        0.7693,
+        0.8177
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00122_4",
+          "view_id": "00122",
+          "bbox_2d": [
+            414.73,
+            49.45,
+            523.49,
+            331.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3599
+        },
+        {
+          "object_view_id": "00124_4",
+          "view_id": "00124",
+          "bbox_2d": [
+            982.06,
+            260.69,
+            1127.7,
+            691.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5203
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            509.0,
+            124.0,
+            820.0,
+            809.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            1116.0,
+            439.0,
+            1285.0,
+            571.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00008",
+          "view_id": "00008",
+          "bbox_2d": [
+            637.0,
+            688.0,
+            854.0,
+            817.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 58,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "candidate is reliably a chair",
+        "candidate is brown",
+        "candidate is leather",
+        "referenced door is visible/verified",
+        "the referenced table is confirmed as the first dark brown table immediately inside the door",
+        "candidate is under that specific table",
+        "candidate is on the middle side of the room relative to that table"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.9639,
+        -0.7506,
+        0.5325,
+        0.2211,
+        0.6466,
+        0.2777
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00122_5",
+          "view_id": "00122",
+          "bbox_2d": [
+            1113.49,
+            43.73,
+            1269.31,
+            258.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2587
+        },
+        {
+          "object_view_id": "bootstrap_00121",
+          "view_id": "00121",
+          "bbox_2d": [
+            820.0,
+            131.0,
+            980.0,
+            191.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            1202.0,
+            277.0,
+            1250.0,
+            311.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            464.0,
+            918.0,
+            501.0,
+            959.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 59,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "leather",
+        "under the first dark brown table",
+        "the referenced table being immediately inside the door",
+        "on the middle side of the room relative to that table"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.5061,
+        2.1848,
+        0.3599,
+        0.4519,
+        0.1126,
+        0.8433
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00124_1",
+          "view_id": "00124",
+          "bbox_2d": [
+            471.38,
+            481.07,
+            597.53,
+            953.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.711
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            471.38,
+            481.07,
+            597.53,
+            953.75
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00079",
+          "view_id": "00079",
+          "bbox_2d": [
+            10.88,
+            515.86,
+            388.32,
+            953.93
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00078",
+          "view_id": "00078",
+          "bbox_2d": [
+            215.44,
+            566.13,
+            597.93,
+            954.8
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00075",
+          "view_id": "00075",
+          "bbox_2d": [
+            657.92,
+            614.27,
+            996.1,
+            956.54
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 60,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "located under the first dark brown table immediately inside the door",
+        "middle-side-of-room relation relative to that table is not satisfied by the shown candidate"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.0703,
+        2.2013,
+        0.7177,
+        0.3542,
+        0.0891,
+        0.0702
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00124_2",
+          "view_id": "00124",
+          "bbox_2d": [
+            371.33,
+            739.26,
+            488.39,
+            958.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7071
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            371.33,
+            739.26,
+            488.39,
+            958.63
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

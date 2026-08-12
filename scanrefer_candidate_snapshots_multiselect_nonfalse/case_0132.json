@@ -1,0 +1,1277 @@
+{
+  "case_id": 132,
+  "scene_id": "scene0246_00",
+  "query": "this is a white cabinet . it is to the left of a toilet .",
+  "query_analysis": {
+    "raw_query": "this is a white cabinet . it is to the left of a toilet .",
+    "target_object": "cabinet",
+    "target_attributes": [
+      "white"
+    ],
+    "reference_object": "toilet",
+    "reference_attributes": [],
+    "relation": "to the left of"
+  },
+  "gt": {
+    "target_id": 11,
+    "gt_label": "cabinet",
+    "gt_bbox_3d": [
+      -0.800217,
+      1.269363,
+      1.116196,
+      0.432369,
+      0.30098,
+      1.909297
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 10,
+    "bbox_3d": [
+      -0.95879,
+      -0.207764,
+      0.414375,
+      0.51769,
+      0.780745,
+      1.013691
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 100,
+    "total_views": 74,
+    "total_object_views": 26,
+    "total_candidates": 16
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "toilet is not clearly visible",
+        "cannot verify that the cabinet is to the left of the toilet"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -1.0265,
+        -1.1711,
+        1.7747,
+        0.3388,
+        1.2966,
+        0.924
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            535.61,
+            229.44,
+            830.41,
+            345.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3108
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            165.7,
+            273.13,
+            486.91,
+            455.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3581
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            993.16,
+            49.53,
+            1295.99,
+            836.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3496
+        },
+        {
+          "object_view_id": "bootstrap_00046",
+          "view_id": "00046",
+          "bbox_2d": [
+            2.09,
+            98.93,
+            1294.64,
+            965.94
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00048",
+          "view_id": "00048",
+          "bbox_2d": [
+            0.0,
+            151.0,
+            471.0,
+            938.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00045",
+          "view_id": "00045",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            1094.0,
+            870.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            2.09,
+            98.93,
+            1294.64,
+            965.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4689
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "toilet is not visible",
+        "cannot verify that the cabinet is to the left of the toilet"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.2348,
+        2.493,
+        1.1323,
+        1.5521,
+        0.3609,
+        2.2155
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            736.0,
+            137.98,
+            1070.85,
+            842.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.681
+        },
+        {
+          "object_view_id": "00006_1",
+          "view_id": "00006",
+          "bbox_2d": [
+            527.94,
+            0.0,
+            811.01,
+            574.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3476
+        },
+        {
+          "object_view_id": "bootstrap_00113",
+          "view_id": "00113",
+          "bbox_2d": [
+            1110.0,
+            0.0,
+            1295.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00114",
+          "view_id": "00114",
+          "bbox_2d": [
+            962.0,
+            0.0,
+            1295.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00115",
+          "view_id": "00115",
+          "bbox_2d": [
+            930.0,
+            0.0,
+            1295.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "toilet is visible",
+        "candidate is to the left of the toilet"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.2237,
+        2.414,
+        0.7318,
+        1.307,
+        0.2569,
+        1.367
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            783.11,
+            188.61,
+            1254.93,
+            748.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7737
+        },
+        {
+          "object_view_id": "bootstrap_00109",
+          "view_id": "00109",
+          "bbox_2d": [
+            909.0,
+            0.0,
+            1295.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00105",
+          "view_id": "00105",
+          "bbox_2d": [
+            330.35,
+            0.25,
+            974.2,
+            606.7
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00108",
+          "view_id": "00108",
+          "bbox_2d": [
+            790.0,
+            0.0,
+            1295.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "object is a cabinet",
+        "object is white",
+        "object is to the left of a toilet"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.4756,
+        -0.2722,
+        0.2156,
+        0.631,
+        0.5038,
+        0.6621
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            68.29,
+            116.22,
+            295.32,
+            452.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3822
+        },
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            721.91,
+            223.4,
+            947.18,
+            562.2
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3543
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the green-boxed object is a cabinet",
+        "toilet is not clearly visible",
+        "cannot verify the candidate is to the left of the toilet"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        1.1528,
+        -1.9184,
+        1.8004,
+        0.3806,
+        0.1665,
+        0.1562
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            34.36,
+            24.27,
+            404.34,
+            210.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3269
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            34.36,
+            24.27,
+            404.34,
+            210.15
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            0.0,
+            184.93,
+            452.79,
+            367.49
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "candidate is not clearly a white cabinet",
+        "toilet is not visible",
+        "cannot satisfy the relation 'to the left of a toilet'"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.9987,
+        -1.5558,
+        1.7835,
+        0.3673,
+        0.6649,
+        0.8965
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_1",
+          "view_id": "00016",
+          "bbox_2d": [
+            992.65,
+            22.32,
+            1296.0,
+            511.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2647
+        },
+        {
+          "object_view_id": "bootstrap_00047",
+          "view_id": "00047",
+          "bbox_2d": [
+            0.0,
+            156.0,
+            333.0,
+            903.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00046",
+          "view_id": "00046",
+          "bbox_2d": [
+            2.09,
+            98.93,
+            1294.64,
+            965.94
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00045",
+          "view_id": "00045",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            738.0,
+            514.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "green-boxed object is not clearly a single cabinet",
+        "white cabinet identity is not reliably confirmed for the whole boxed candidate",
+        "left-of-toilet relation is not confirmed for a distinct cabinet object"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.3972,
+        -1.187,
+        1.8156,
+        1.6604,
+        1.2848,
+        0.6909
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            462.5,
+            97.64,
+            1069.59,
+            429.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3858
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            462.5,
+            97.64,
+            1069.59,
+            429.54
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "toilet is not visually confirmed",
+        "cannot verify that the cabinet is to the left of the toilet"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        1.0812,
+        2.5332,
+        0.6085,
+        1.478,
+        0.3646,
+        1.1802
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            597.95,
+            0.0,
+            1033.21,
+            356.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5983
+        },
+        {
+          "object_view_id": "bootstrap_00109",
+          "view_id": "00109",
+          "bbox_2d": [
+            908.0,
+            0.0,
+            1295.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00106",
+          "view_id": "00106",
+          "bbox_2d": [
+            608.0,
+            0.0,
+            1192.0,
+            940.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00108",
+          "view_id": "00108",
+          "bbox_2d": [
+            788.0,
+            0.0,
+            1295.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00100_0",
+          "view_id": "00100",
+          "bbox_2d": [
+            220.18,
+            0.0,
+            730.19,
+            296.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7759
+        },
+        {
+          "object_view_id": "00102_0",
+          "view_id": "00102",
+          "bbox_2d": [
+            352.7,
+            0.0,
+            931.5,
+            434.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8308
+        },
+        {
+          "object_view_id": "00104_0",
+          "view_id": "00104",
+          "bbox_2d": [
+            53.23,
+            0.0,
+            670.9,
+            440.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.716
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a cabinet",
+        "candidate is to the left of a toilet"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -0.7838,
+        -0.1462,
+        0.4622,
+        0.151,
+        0.6328,
+        0.5844
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            1056.21,
+            18.99,
+            1295.85,
+            487.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3423
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1056.21,
+            18.99,
+            1295.85,
+            487.72
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            349.49,
+            0.0,
+            793.26,
+            435.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2897
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a cabinet",
+        "object is white",
+        "object is to the left of a toilet"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.4758,
+        -0.1637,
+        0.2199,
+        0.4659,
+        0.5572,
+        0.6529
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            588.58,
+            352.86,
+            1190.76,
+            964.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3165
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            588.58,
+            352.86,
+            1190.76,
+            964.98
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "cabinet",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.9423,
+        -0.1988,
+        0.4397,
+        0.4866,
+        0.7632,
+        0.9413
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            9.61,
+            132.42,
+            913.36,
+            964.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4221
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            9.61,
+            132.42,
+            913.36,
+            964.39
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00073",
+          "view_id": "00073",
+          "bbox_2d": [
+            0.0,
+            4.0,
+            1295.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            268.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00087",
+          "view_id": "00087",
+          "bbox_2d": [
+            857.0,
+            0.0,
+            1295.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "toilet is not visible",
+        "left-of relation to the toilet cannot be confirmed"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        2.0041,
+        2.3142,
+        0.3965,
+        0.6418,
+        0.4989,
+        0.7145
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00100_1",
+          "view_id": "00100",
+          "bbox_2d": [
+            729.04,
+            0.0,
+            965.45,
+            280.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2501
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "candidate does not appear to be a cabinet",
+        "toilet is not visible",
+        "cannot verify that the object is to the left of a toilet"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.602,
+        1.4953,
+        0.4668,
+        0.3764,
+        0.2923,
+        0.3926
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00102_1",
+          "view_id": "00102",
+          "bbox_2d": [
+            63.21,
+            269.57,
+            343.09,
+            476.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2573
+        },
+        {
+          "object_view_id": "bootstrap_00106",
+          "view_id": "00106",
+          "bbox_2d": [
+            0.0,
+            361.0,
+            234.0,
+            662.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00121",
+          "view_id": "00121",
+          "bbox_2d": [
+            286.0,
+            92.0,
+            966.0,
+            612.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00133",
+          "view_id": "00133",
+          "bbox_2d": [
+            1032.0,
+            249.0,
+            1295.0,
+            856.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a cabinet",
+        "candidate is white",
+        "candidate is to the left of a toilet"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        2.9274,
+        2.4672,
+        0.252,
+        0.6353,
+        2.3074,
+        0.3132
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00104_1",
+          "view_id": "00104",
+          "bbox_2d": [
+            1072.36,
+            209.83,
+            1296.0,
+            964.42
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2599
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "candidate is not clearly a cabinet",
+        "no toilet is visible",
+        "left-of relation to a toilet is not satisfied"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.5086,
+        1.4587,
+        0.2996,
+        0.5894,
+        0.3978,
+        0.6815
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00110_0",
+          "view_id": "00110",
+          "bbox_2d": [
+            0.0,
+            662.0,
+            319.23,
+            965.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4556
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            662.0,
+            319.23,
+            965.29
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00118",
+          "view_id": "00118",
+          "bbox_2d": [
+            86.0,
+            147.0,
+            840.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00108",
+          "view_id": "00108",
+          "bbox_2d": [
+            0.0,
+            422.0,
+            186.0,
+            643.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00132",
+          "view_id": "00132",
+          "bbox_2d": [
+            1206.0,
+            178.0,
+            1295.0,
+            523.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00126_0",
+          "view_id": "00126",
+          "bbox_2d": [
+            798.25,
+            330.7,
+            1296.0,
+            965.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3663
+        }
+      ]
+    },
+    {
+      "candidate_id": 15,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "candidate is not reliably a cabinet",
+        "toilet is not visually confirmed",
+        "left-of relation to a toilet is not satisfied or supported"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.5363,
+        1.4654,
+        0.32,
+        0.5268,
+        0.3549,
+        0.7157
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00144_0",
+          "view_id": "00144",
+          "bbox_2d": [
+            776.31,
+            222.05,
+            1271.21,
+            963.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2531
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            776.31,
+            222.05,
+            1271.21,
+            963.41
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00135",
+          "view_id": "00135",
+          "bbox_2d": [
+            1172.0,
+            364.0,
+            1295.0,
+            596.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00119",
+          "view_id": "00119",
+          "bbox_2d": [
+            194.0,
+            241.0,
+            1167.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00105",
+          "view_id": "00105",
+          "bbox_2d": [
+            0.0,
+            240.0,
+            97.0,
+            490.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

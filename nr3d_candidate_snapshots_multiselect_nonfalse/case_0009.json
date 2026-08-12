@@ -1,0 +1,672 @@
+{
+  "case_id": 9,
+  "scene_id": "scene0063_00",
+  "query": "If you were standing in front of the sink, facing away from the sink, out of the two chairs closest to you it's the one on the right",
+  "query_analysis": {
+    "raw_query": "If you were standing in front of the sink, facing away from the sink, out of the two chairs closest to you it's the one on the right",
+    "target_object": "chair",
+    "target_attributes": [],
+    "reference_object": "sink",
+    "reference_attributes": [],
+    "relation": "to the right of the observer standing in front of and facing away from the sink"
+  },
+  "gt": {
+    "target_id": 7,
+    "gt_label": "chair",
+    "gt_bbox_3d": [
+      -0.40178,
+      0.988399,
+      0.846353,
+      0.448282,
+      0.534897,
+      0.356088
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 5,
+    "bbox_3d": [
+      -0.430716,
+      0.958535,
+      0.492415,
+      0.425706,
+      1.822633,
+      1.041026
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      8
+    ],
+    "detector_call_count": 28,
+    "total_views": 15,
+    "total_object_views": 11,
+    "total_candidates": 9
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "sink is not visible or confirmed",
+        "standing position in front of the sink cannot be established",
+        "the two chairs closest to that sink-based position cannot be determined",
+        "cannot determine whether the green chair is the right one when facing away from the sink"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -2.1141,
+        -1.56,
+        0.6088,
+        0.5165,
+        0.4887,
+        0.8744
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            123.14,
+            305.19,
+            529.44,
+            895.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9006
+        },
+        {
+          "object_view_id": "bootstrap_00001",
+          "view_id": "00001",
+          "bbox_2d": [
+            39.23,
+            378.8,
+            465.11,
+            957.76
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00002",
+          "view_id": "00002",
+          "bbox_2d": [
+            1.0,
+            778.0,
+            53.0,
+            947.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "sink is not visible, so the required reference viewpoint cannot be established",
+        "cannot determine which two chairs are the closest to a person standing in front of the sink",
+        "cannot verify that the green-boxed chair is the one on the right from the sink-facing-away orientation"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -2.9854,
+        -2.1285,
+        0.9059,
+        0.2775,
+        0.2381,
+        0.8539
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_1",
+          "view_id": "00000",
+          "bbox_2d": [
+            35.58,
+            133.95,
+            177.29,
+            510.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3231
+        },
+        {
+          "object_view_id": "bootstrap_00001",
+          "view_id": "00001",
+          "bbox_2d": [
+            0.0,
+            222.0,
+            87.0,
+            398.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "sink location is not visually confirmed",
+        "the viewpoint 'standing in front of the sink facing away from the sink' cannot be reconstructed",
+        "cannot reliably identify the two chairs closest to that sink-defined viewpoint",
+        "cannot reliably determine whether the candidate is the right one of those two chairs"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -2.671,
+        0.8627,
+        0.5624,
+        0.6276,
+        0.4765,
+        0.8021
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            880.56,
+            377.71,
+            1168.98,
+            725.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8438
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            414.94,
+            305.12,
+            702.82,
+            643.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7378
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            725.95,
+            477.2,
+            1014.26,
+            828.3
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            44.38,
+            240.07,
+            367.93,
+            598.23
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "sink location is not visible/confirmed",
+        "cannot determine the viewpoint of standing in front of the sink facing away from it",
+        "cannot verify which two chairs are closest to that sink-based position",
+        "cannot determine whether the green chair is the right one of those two"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -2.5336,
+        2.04,
+        0.5263,
+        0.4029,
+        0.2741,
+        0.7883
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00004_1",
+          "view_id": "00004",
+          "bbox_2d": [
+            738.86,
+            219.98,
+            885.19,
+            453.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2747
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            334.02,
+            132.74,
+            573.84,
+            370.99
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00006",
+          "view_id": "00006",
+          "bbox_2d": [
+            0.0,
+            172.0,
+            97.0,
+            297.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "sink is not visually confirmed",
+        "cannot establish the viewpoint of standing in front of the sink facing away from it",
+        "cannot reliably determine the two chairs closest to that position",
+        "cannot confirm the green chair is the one on the right among those two"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.4293,
+        0.9574,
+        0.4933,
+        0.4286,
+        1.8249,
+        1.0452
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            730.19,
+            193.15,
+            1043.47,
+            961.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6616
+        },
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            295.98,
+            145.39,
+            638.68,
+            966.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6881
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            1106.41,
+            150.81,
+            1295.98,
+            963.6
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            576.6,
+            233.02,
+            854.13,
+            968.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            0.0,
+            154.0,
+            292.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "sink is not visible or confirmed",
+        "cannot determine the standing position in front of the sink",
+        "cannot determine facing-away orientation from the sink",
+        "cannot identify the two chairs closest to that position",
+        "cannot verify whether the green-boxed chair is the right one of those two"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.4306,
+        0.9624,
+        0.7534,
+        0.4259,
+        1.817,
+        0.519
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_1",
+          "view_id": "00006",
+          "bbox_2d": [
+            693.84,
+            123.37,
+            985.43,
+            537.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.427
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            576.6,
+            233.02,
+            854.13,
+            968.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            23.0,
+            224.0,
+            107.0,
+            521.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            1235.0,
+            145.0,
+            1295.0,
+            441.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a chair",
+        "relation to the sink",
+        "being the right one of the two chairs closest when standing in front of the sink facing away"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -2.3611,
+        1.7575,
+        0.5282,
+        0.7053,
+        1.4608,
+        0.8177
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_2",
+          "view_id": "00006",
+          "bbox_2d": [
+            0.08,
+            155.2,
+            170.32,
+            529.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3451
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "sink is not visible or confirmed",
+        "cannot determine the standing position relative to the sink",
+        "cannot determine the two chairs closest to that position",
+        "cannot determine whether the green-boxed chair is the right one of the two",
+        "candidate remains only partially visible"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -0.4421,
+        1.6676,
+        0.7215,
+        0.3255,
+        1.8224,
+        0.5948
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_1",
+          "view_id": "00008",
+          "bbox_2d": [
+            272.77,
+            2.59,
+            483.41,
+            190.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3022
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            538.39,
+            86.06,
+            718.97,
+            271.37
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00006",
+          "view_id": "00006",
+          "bbox_2d": [
+            693.84,
+            123.37,
+            985.43,
+            537.3
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "Reliable confirmation that the green-boxed object is a chair",
+        "Clear identification of the sink",
+        "Scene layout from the sink-facing-away viewpoint",
+        "Verification that this is the right one of the two chairs closest to the sink-facing-away observer"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        4.4063,
+        -1.1243,
+        0.5284,
+        0.959,
+        0.4093,
+        0.8738
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            982.69,
+            124.65,
+            1120.4,
+            338.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6842
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            951.8,
+            157.66,
+            1072.0,
+            383.59
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            987.0,
+            108.0,
+            1063.0,
+            216.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

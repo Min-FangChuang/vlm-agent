@@ -1,0 +1,523 @@
+{
+  "case_id": 129,
+  "scene_id": "scene0583_00",
+  "query": "the door along the wall with the open door ( it is not the open door )",
+  "query_analysis": {
+    "raw_query": "the door along the wall with the open door ( it is not the open door )",
+    "target_object": "door",
+    "target_attributes": [],
+    "reference_object": "open door",
+    "reference_attributes": [
+      "open"
+    ],
+    "relation": "along the wall with"
+  },
+  "gt": {
+    "target_id": 12,
+    "gt_label": "door",
+    "gt_bbox_3d": [
+      -1.312202,
+      -0.502391,
+      0.656727,
+      0.920971,
+      0.267929,
+      1.311774
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -0.063204,
+      -0.017436,
+      1.917526,
+      0.205648,
+      0.77688,
+      1.755644
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 55,
+    "total_views": 49,
+    "total_object_views": 10,
+    "total_candidates": 6
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "door",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "clear full view of the green-boxed door itself",
+        "reliable confirmation of which door is the referenced open door",
+        "clear evidence that the candidate is the other door along the same wall, not the open door"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        -0.0616,
+        -0.0821,
+        1.6033,
+        0.2162,
+        0.8964,
+        1.0498
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            0.0,
+            34.36,
+            166.77,
+            965.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4697
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            34.36,
+            166.77,
+            965.68
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00081",
+          "view_id": "00081",
+          "bbox_2d": [
+            1050.88,
+            8.65,
+            1295.99,
+            965.89
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00066",
+          "view_id": "00066",
+          "bbox_2d": [
+            410.06,
+            226.57,
+            687.71,
+            965.19
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00008",
+          "view_id": "00008",
+          "bbox_2d": [
+            56.0,
+            7.0,
+            130.0,
+            625.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            896.41,
+            160.83,
+            1196.07,
+            965.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6223
+        },
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            410.06,
+            226.57,
+            687.71,
+            965.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4627
+        },
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            1081.37,
+            172.46,
+            1295.98,
+            965.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4848
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "door",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "candidate is not the best match for the door on the same wall as the referenced open door",
+        "another nearby door appears to better satisfy the relation to the open door"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.0171,
+        0.0351,
+        1.1522,
+        0.1609,
+        0.8065,
+        1.1898
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            68.23,
+            0.43,
+            538.03,
+            965.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2937
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            68.23,
+            0.43,
+            538.03,
+            965.97
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00085",
+          "view_id": "00085",
+          "bbox_2d": [
+            1046.0,
+            2.0,
+            1295.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            524.0,
+            11.0,
+            574.0,
+            58.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00068",
+          "view_id": "00068",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            219.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "requested object must be a door",
+        "relation to the open door is not relevant because the boxed object is not a door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.6264,
+        1.234,
+        1.9462,
+        1.3836,
+        2.0744,
+        1.1503
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            55.43,
+            114.74,
+            554.15,
+            962.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2624
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            592.31,
+            257.53,
+            1047.81,
+            965.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2567
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is not the open door",
+        "candidate is the other door along the wall with the open door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.5321,
+        0.3195,
+        2.1244,
+        0.8861,
+        0.2275,
+        0.7499
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            0.07,
+            62.89,
+            253.87,
+            963.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2845
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.07,
+            62.89,
+            253.87,
+            963.59
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "door along the wall with the open door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.1316,
+        0.0533,
+        0.6847,
+        0.4546,
+        1.0068,
+        1.2486
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            867.79,
+            0.55,
+            1237.42,
+            817.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2908
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            867.79,
+            0.55,
+            1237.42,
+            817.25
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "door",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "green-boxed object is not reliably a door",
+        "cannot satisfy 'the door along the wall with the open door' because the candidate is not a clear door"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.6084,
+        0.863,
+        0.5217,
+        0.0326,
+        0.6717,
+        0.306
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00072_0",
+          "view_id": "00072",
+          "bbox_2d": [
+            0.0,
+            215.06,
+            141.75,
+            959.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3964
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            215.06,
+            141.75,
+            959.76
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00000",
+          "view_id": "00000",
+          "bbox_2d": [
+            599.0,
+            366.0,
+            679.0,
+            686.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            548.0,
+            831.0,
+            590.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            0.0,
+            284.0,
+            280.0,
+            644.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

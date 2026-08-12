@@ -1,0 +1,1090 @@
+{
+  "case_id": 35,
+  "scene_id": "scene0231_00",
+  "query": "wooden cabinets are on the wall to the left of the kitchen sink . they are in the corner , to the left of the windows that sit above the sink .",
+  "query_analysis": {
+    "raw_query": "wooden cabinets are on the wall to the left of the kitchen sink . they are in the corner , to the left of the windows that sit above the sink .",
+    "target_object": "cabinets",
+    "target_attributes": [
+      "wooden"
+    ],
+    "reference_object": "kitchen sink",
+    "reference_attributes": [],
+    "relation": "to the left of"
+  },
+  "gt": {
+    "target_id": 77,
+    "gt_label": "kitchen cabinet",
+    "gt_bbox_3d": [
+      3.530858,
+      -2.484129,
+      1.69989,
+      0.92313,
+      0.399309,
+      0.829234
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 3,
+    "bbox_3d": [
+      3.689298,
+      -2.487655,
+      1.679991,
+      1.394438,
+      0.45517,
+      0.836977
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      3
+    ],
+    "detector_call_count": 128,
+    "total_views": 111,
+    "total_object_views": 30,
+    "total_candidates": 13
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "cabinets",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "not clearly the requested cabinets on the wall",
+        "not shown to be in the corner left of the sink",
+        "not shown to be left of the windows above the sink",
+        "candidate does not match the plural wall-cabinet target described"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.4922,
+        -2.0225,
+        0.3872,
+        1.1136,
+        0.3366,
+        0.8929
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            788.29,
+            94.13,
+            963.39,
+            378.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2738
+        },
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            828.66,
+            363.97,
+            1256.96,
+            899.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2862
+        },
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            106.18,
+            468.56,
+            389.01,
+            813.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2609
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "cabinets",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [],
+      "missing_conditions": [
+        "not located to the left of the kitchen sink",
+        "not located to the left of the windows above the sink",
+        "corner placement matching the request is not supported for this candidate"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        4.231,
+        -0.9629,
+        1.7214,
+        0.4666,
+        1.2898,
+        0.8262
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            1052.95,
+            137.74,
+            1295.88,
+            305.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3201
+        },
+        {
+          "object_view_id": "00112_0",
+          "view_id": "00112",
+          "bbox_2d": [
+            133.02,
+            54.92,
+            637.86,
+            393.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4063
+        },
+        {
+          "object_view_id": "00184_0",
+          "view_id": "00184",
+          "bbox_2d": [
+            569.78,
+            0.63,
+            1025.36,
+            269.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3021
+        },
+        {
+          "object_view_id": "00192_0",
+          "view_id": "00192",
+          "bbox_2d": [
+            135.43,
+            128.85,
+            675.27,
+            535.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6139
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "cabinets",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.7093,
+        -2.5395,
+        1.6547,
+        0.8863,
+        0.3747,
+        0.778
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            323.21,
+            0.08,
+            683.88,
+            310.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3328
+        },
+        {
+          "object_view_id": "bootstrap_00107",
+          "view_id": "00107",
+          "bbox_2d": [
+            830.0,
+            3.0,
+            1295.0,
+            757.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00105",
+          "view_id": "00105",
+          "bbox_2d": [
+            605.05,
+            0.0,
+            1085.55,
+            552.05
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00108",
+          "view_id": "00108",
+          "bbox_2d": [
+            1132.0,
+            0.0,
+            1295.0,
+            525.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00106_0",
+          "view_id": "00106",
+          "bbox_2d": [
+            710.76,
+            3.71,
+            1296.0,
+            821.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3779
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "cabinets",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 8,
+      "bbox_3d": [
+        3.7319,
+        -2.4824,
+        1.7112,
+        1.3481,
+        0.4562,
+        0.9129
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00104_0",
+          "view_id": "00104",
+          "bbox_2d": [
+            150.87,
+            33.71,
+            367.1,
+            281.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2946
+        },
+        {
+          "object_view_id": "00106_1",
+          "view_id": "00106",
+          "bbox_2d": [
+            187.36,
+            273.39,
+            407.33,
+            535.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2723
+        },
+        {
+          "object_view_id": "bootstrap_00182",
+          "view_id": "00182",
+          "bbox_2d": [
+            1213.0,
+            0.0,
+            1295.0,
+            64.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00194",
+          "view_id": "00194",
+          "bbox_2d": [
+            0.0,
+            247.52,
+            543.0,
+            651.11
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00193",
+          "view_id": "00193",
+          "bbox_2d": [
+            327.92,
+            106.19,
+            838.16,
+            505.87
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00190_0",
+          "view_id": "00190",
+          "bbox_2d": [
+            721.12,
+            0.0,
+            1162.34,
+            83.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2652
+        },
+        {
+          "object_view_id": "00192_1",
+          "view_id": "00192",
+          "bbox_2d": [
+            903.54,
+            277.16,
+            1295.97,
+            667.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.528
+        },
+        {
+          "object_view_id": "00194_0",
+          "view_id": "00194",
+          "bbox_2d": [
+            0.0,
+            247.52,
+            543.0,
+            651.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4929
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "cabinets",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "need a clearer continuous view showing this exact boxed cabinet together with the sink and windows",
+        "need stronger confirmation that this specific cabinet, not an adjacent similar cabinet, is the one left of the sink in the corner"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        4.0775,
+        -1.2748,
+        1.6701,
+        0.453,
+        0.2915,
+        0.7377
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00108_0",
+          "view_id": "00108",
+          "bbox_2d": [
+            0.0,
+            9.34,
+            108.46,
+            285.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2825
+        },
+        {
+          "object_view_id": "bootstrap_00113",
+          "view_id": "00113",
+          "bbox_2d": [
+            496.26,
+            64.05,
+            1004.75,
+            413.04
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00184",
+          "view_id": "00184",
+          "bbox_2d": [
+            569.78,
+            0.63,
+            1025.36,
+            269.69
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00048",
+          "view_id": "00048",
+          "bbox_2d": [
+            753.0,
+            0.0,
+            813.0,
+            151.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "cabinets",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        3.7602,
+        -0.6256,
+        0.4468,
+        0.1705,
+        0.706,
+        0.7513
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00110_0",
+          "view_id": "00110",
+          "bbox_2d": [
+            0.0,
+            278.06,
+            318.61,
+            545.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2532
+        },
+        {
+          "object_view_id": "bootstrap_00119",
+          "view_id": "00119",
+          "bbox_2d": [
+            510.0,
+            424.0,
+            894.0,
+            883.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00179",
+          "view_id": "00179",
+          "bbox_2d": [
+            1.0,
+            104.0,
+            95.0,
+            253.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00114",
+          "view_id": "00114",
+          "bbox_2d": [
+            815.0,
+            487.0,
+            1182.0,
+            879.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "cabinets",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm this is the set of cabinets to the left of the kitchen sink",
+        "cannot confirm the windows above the sink",
+        "cannot reliably verify the cabinets are left of those windows",
+        "corner relation is not clearly confirmed"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        3.8564,
+        1.5209,
+        1.6686,
+        0.9276,
+        1.515,
+        0.7019
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00114_0",
+          "view_id": "00114",
+          "bbox_2d": [
+            169.71,
+            0.44,
+            661.9,
+            237.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4442
+        },
+        {
+          "object_view_id": "bootstrap_00138",
+          "view_id": "00138",
+          "bbox_2d": [
+            1050.0,
+            78.0,
+            1295.0,
+            485.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00139",
+          "view_id": "00139",
+          "bbox_2d": [
+            1267.0,
+            214.0,
+            1295.0,
+            260.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "cabinets",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        3.1018,
+        1.92,
+        1.8968,
+        0.6811,
+        0.175,
+        0.4606
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00122_0",
+          "view_id": "00122",
+          "bbox_2d": [
+            0.0,
+            154.22,
+            235.72,
+            333.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2697
+        },
+        {
+          "object_view_id": "00136_1",
+          "view_id": "00136",
+          "bbox_2d": [
+            43.46,
+            149.04,
+            440.55,
+            409.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2553
+        },
+        {
+          "object_view_id": "00138_0",
+          "view_id": "00138",
+          "bbox_2d": [
+            705.09,
+            64.65,
+            1101.93,
+            315.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2678
+        },
+        {
+          "object_view_id": "bootstrap_00134",
+          "view_id": "00134",
+          "bbox_2d": [
+            384.0,
+            0.0,
+            711.0,
+            21.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00137",
+          "view_id": "00137",
+          "bbox_2d": [
+            407.0,
+            261.0,
+            761.0,
+            498.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00126",
+          "view_id": "00126",
+          "bbox_2d": [
+            1055.0,
+            0.0,
+            1295.0,
+            145.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "cabinets",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [
+        "on the wall",
+        "to the left of the kitchen sink",
+        "to the left of the windows above the sink",
+        "best match for the described corner wall cabinets"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        3.1599,
+        1.9511,
+        0.4856,
+        0.6398,
+        0.1344,
+        0.8132
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00126_0",
+          "view_id": "00126",
+          "bbox_2d": [
+            998.1,
+            472.76,
+            1295.93,
+            832.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3465
+        },
+        {
+          "object_view_id": "00134_0",
+          "view_id": "00134",
+          "bbox_2d": [
+            394.26,
+            409.63,
+            697.39,
+            730.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2946
+        },
+        {
+          "object_view_id": "00140_0",
+          "view_id": "00140",
+          "bbox_2d": [
+            950.04,
+            380.07,
+            1296.0,
+            885.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2852
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "cabinets",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot clearly confirm the candidate is the cabinet section in the corner",
+        "cannot clearly confirm it is to the left of the windows above the kitchen sink",
+        "nearby alternative upper cabinet sections are still not fully disambiguated"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        2.3136,
+        1.7288,
+        1.8939,
+        0.9383,
+        0.2497,
+        0.3262
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00126_1",
+          "view_id": "00126",
+          "bbox_2d": [
+            671.83,
+            0.0,
+            1056.16,
+            102.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.279
+        },
+        {
+          "object_view_id": "00138_1",
+          "view_id": "00138",
+          "bbox_2d": [
+            164.33,
+            18.24,
+            727.3,
+            217.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2621
+        },
+        {
+          "object_view_id": "bootstrap_00002",
+          "view_id": "00002",
+          "bbox_2d": [
+            398.0,
+            8.0,
+            593.0,
+            119.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00136",
+          "view_id": "00136",
+          "bbox_2d": [
+            11.0,
+            119.0,
+            55.0,
+            307.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00127",
+          "view_id": "00127",
+          "bbox_2d": [
+            1105.0,
+            0.0,
+            1295.0,
+            103.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "cabinets",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "not shown to be on the wall to the left of the referenced kitchen sink",
+        "not shown to be left of windows above that sink",
+        "candidate appears to be near the range hood/microwave instead of the sink/window wall"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        4.1913,
+        0.9577,
+        1.7521,
+        0.3583,
+        0.4609,
+        0.7316
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00136_0",
+          "view_id": "00136",
+          "bbox_2d": [
+            877.2,
+            100.65,
+            1296.0,
+            761.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.341
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            877.2,
+            100.65,
+            1296.0,
+            761.54
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00123",
+          "view_id": "00123",
+          "bbox_2d": [
+            803.0,
+            101.0,
+            1053.0,
+            479.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00186",
+          "view_id": "00186",
+          "bbox_2d": [
+            746.0,
+            0.0,
+            962.0,
+            117.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00122",
+          "view_id": "00122",
+          "bbox_2d": [
+            567.0,
+            144.0,
+            781.0,
+            502.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "cabinets",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [
+        "to the left of the kitchen sink",
+        "to the left of the windows above the sink",
+        "in the corner as described"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.5774,
+        -2.5403,
+        1.6544,
+        1.1426,
+        0.448,
+        0.7616
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00146_0",
+          "view_id": "00146",
+          "bbox_2d": [
+            619.84,
+            0.01,
+            940.82,
+            206.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.366
+        },
+        {
+          "object_view_id": "00170_0",
+          "view_id": "00170",
+          "bbox_2d": [
+            0.07,
+            243.41,
+            427.55,
+            614.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3039
+        },
+        {
+          "object_view_id": "00196_0",
+          "view_id": "00196",
+          "bbox_2d": [
+            626.55,
+            190.72,
+            1295.92,
+            690.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5161
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "cabinets",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "cabinets",
+        "on the wall",
+        "to the left of the kitchen sink",
+        "in the corner",
+        "to the left of the windows above the sink"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.4951,
+        -1.3199,
+        0.4382,
+        1.0108,
+        1.6178,
+        0.9124
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00158_0",
+          "view_id": "00158",
+          "bbox_2d": [
+            0.0,
+            224.62,
+            252.06,
+            584.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2647
+        }
+      ]
+    }
+  ]
+}

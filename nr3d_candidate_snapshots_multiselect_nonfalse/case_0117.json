@@ -1,0 +1,357 @@
+{
+  "case_id": 117,
+  "scene_id": "scene0645_00",
+  "query": "the correct trash can is not in the bathroom",
+  "query_analysis": {
+    "raw_query": "the correct trash can is not in the bathroom",
+    "target_object": "trash can",
+    "target_attributes": [
+      "correct"
+    ],
+    "reference_object": "bathroom",
+    "reference_attributes": [],
+    "relation": "not in"
+  },
+  "gt": {
+    "target_id": 29,
+    "gt_label": "trash can",
+    "gt_bbox_3d": [
+      2.658701,
+      -1.650642,
+      0.170572,
+      0.452921,
+      0.528859,
+      0.30477
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      2.657692,
+      -1.748335,
+      0.430047,
+      0.466756,
+      0.38044,
+      0.865681
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 119,
+    "total_views": 113,
+    "total_object_views": 7,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "trash can",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "need clearer confirmation that the green-boxed object is truly a trash can"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.2783,
+        3.0648,
+        0.4016,
+        0.4284,
+        0.3912,
+        0.5058
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            873.6,
+            774.91,
+            1162.56,
+            959.48
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6028
+        },
+        {
+          "object_view_id": "bootstrap_00052",
+          "view_id": "00052",
+          "bbox_2d": [
+            118.0,
+            389.0,
+            393.0,
+            644.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            935.0,
+            124.0,
+            1207.0,
+            357.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00047",
+          "view_id": "00047",
+          "bbox_2d": [
+            776.0,
+            412.0,
+            1030.0,
+            592.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "trash can",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        2.6399,
+        -1.7287,
+        0.1731,
+        0.4108,
+        0.3412,
+        0.3187
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00110_0",
+          "view_id": "00110",
+          "bbox_2d": [
+            342.07,
+            637.29,
+            670.19,
+            955.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.309
+        },
+        {
+          "object_view_id": "00112_0",
+          "view_id": "00112",
+          "bbox_2d": [
+            61.44,
+            594.18,
+            471.37,
+            953.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3821
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            61.44,
+            594.18,
+            471.37,
+            953.5
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00102",
+          "view_id": "00102",
+          "bbox_2d": [
+            680.0,
+            366.0,
+            1137.0,
+            877.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00127",
+          "view_id": "00127",
+          "bbox_2d": [
+            328.0,
+            162.0,
+            405.0,
+            319.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00100",
+          "view_id": "00100",
+          "bbox_2d": [
+            83.0,
+            305.0,
+            459.0,
+            771.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "trash can",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a trash can"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        2.5279,
+        -2.7396,
+        0.1179,
+        0.2366,
+        0.8226,
+        0.2181
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00118_0",
+          "view_id": "00118",
+          "bbox_2d": [
+            10.88,
+            520.61,
+            130.16,
+            890.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4698
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            10.88,
+            520.61,
+            130.16,
+            890.0
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "trash can",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.9264,
+        -3.3115,
+        0.1231,
+        0.2489,
+        0.5148,
+        0.3029
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00198_0",
+          "view_id": "00198",
+          "bbox_2d": [
+            475.52,
+            704.42,
+            701.27,
+            957.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7512
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            475.52,
+            704.42,
+            701.27,
+            957.66
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00200_0",
+          "view_id": "00200",
+          "bbox_2d": [
+            142.86,
+            425.13,
+            407.45,
+            734.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6526
+        },
+        {
+          "object_view_id": "00202_0",
+          "view_id": "00202",
+          "bbox_2d": [
+            178.42,
+            279.31,
+            392.09,
+            543.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6119
+        }
+      ]
+    }
+  ]
+}

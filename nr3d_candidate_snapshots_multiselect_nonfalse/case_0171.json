@@ -1,0 +1,2042 @@
+{
+  "case_id": 171,
+  "scene_id": "scene0593_00",
+  "query": "bottom cabinet with a printer next to the standing fan",
+  "query_analysis": {
+    "raw_query": "bottom cabinet with a printer next to the standing fan",
+    "target_object": "cabinet",
+    "target_attributes": [
+      "bottom"
+    ],
+    "reference_object": "printer",
+    "reference_attributes": [],
+    "relation": "with"
+  },
+  "gt": {
+    "target_id": 18,
+    "gt_label": "cabinet",
+    "gt_bbox_3d": [
+      1.773719,
+      1.885151,
+      0.500164,
+      0.624468,
+      1.19389,
+      0.947832
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 4,
+    "bbox_3d": [
+      1.494659,
+      1.81433,
+      0.476358,
+      0.059545,
+      0.878636,
+      0.877924
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      1,
+      3
+    ],
+    "detector_call_count": 86,
+    "total_views": 58,
+    "total_object_views": 51,
+    "total_candidates": 27
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate itself should be a cabinet",
+        "bottom cabinet with printer on/with it",
+        "next to the standing fan"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.3433,
+        1.5073,
+        0.548,
+        0.9117,
+        0.6721,
+        0.9392
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            479.59,
+            228.91,
+            960.24,
+            964.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3128
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            479.59,
+            228.91,
+            960.24,
+            964.76
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "printer next to the standing fan is not confirmed for this cabinet",
+        "other cabinets/printer locations in the scene fit the printer relation better than the green-boxed cabinet"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.7176,
+        2.3118,
+        0.4611,
+        0.287,
+        0.0678,
+        0.7032
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            1063.46,
+            465.94,
+            1295.91,
+            965.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7463
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1063.46,
+            465.94,
+            1295.91,
+            965.47
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "printer next to the cabinet is not confirmed",
+        "standing fan next to that printer/cabinet relation is not satisfied"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        0.2023,
+        2.4975,
+        0.4636,
+        1.443,
+        0.4509,
+        0.7604
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            556.71,
+            264.61,
+            1295.61,
+            965.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5495
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            556.71,
+            264.61,
+            1295.61,
+            965.17
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            0.0,
+            312.02,
+            1074.52,
+            964.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4862
+        },
+        {
+          "object_view_id": "00022_1",
+          "view_id": "00022",
+          "bbox_2d": [
+            0.5,
+            404.05,
+            790.52,
+            964.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5288
+        },
+        {
+          "object_view_id": "00098_0",
+          "view_id": "00098",
+          "bbox_2d": [
+            189.36,
+            222.45,
+            848.38,
+            525.2
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5148
+        },
+        {
+          "object_view_id": "00100_0",
+          "view_id": "00100",
+          "bbox_2d": [
+            0.37,
+            235.67,
+            710.17,
+            647.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7344
+        },
+        {
+          "object_view_id": "00108_0",
+          "view_id": "00108",
+          "bbox_2d": [
+            444.23,
+            255.85,
+            1296.0,
+            964.32
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7215
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "printer next to the candidate is not confirmed",
+        "candidate is not next to the standing fan",
+        "another nearby bottom cabinet appears to better satisfy 'with a printer next to the standing fan'"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.418,
+        2.3077,
+        0.4194,
+        0.7495,
+        0.0778,
+        0.6639
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            812.87,
+            535.2,
+            1296.0,
+            960.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2892
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            812.87,
+            535.2,
+            1296.0,
+            960.69
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00096_0",
+          "view_id": "00096",
+          "bbox_2d": [
+            764.64,
+            384.4,
+            1296.0,
+            702.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6303
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "cabinet",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.7674,
+        1.7817,
+        0.4773,
+        0.5927,
+        0.9252,
+        0.8831
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            1058.19,
+            264.49,
+            1295.92,
+            829.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7042
+        },
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            254.31,
+            240.45,
+            808.2,
+            669.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7368
+        },
+        {
+          "object_view_id": "bootstrap_00097",
+          "view_id": "00097",
+          "bbox_2d": [
+            1061.0,
+            382.0,
+            1167.0,
+            603.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00098",
+          "view_id": "00098",
+          "bbox_2d": [
+            1063.0,
+            409.0,
+            1190.0,
+            669.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            666.26,
+            561.18,
+            1292.32,
+            964.13
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00106_0",
+          "view_id": "00106",
+          "bbox_2d": [
+            942.24,
+            348.32,
+            1296.0,
+            963.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7542
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a cabinet",
+        "candidate is the bottom cabinet",
+        "candidate has a printer next to/on it near the standing fan"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.3466,
+        2.4139,
+        0.5866,
+        1.0525,
+        0.7418,
+        1.0074
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_2",
+          "view_id": "00022",
+          "bbox_2d": [
+            604.86,
+            98.81,
+            1210.58,
+            826.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2764
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            604.86,
+            98.81,
+            1210.58,
+            826.9
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00098_1",
+          "view_id": "00098",
+          "bbox_2d": [
+            863.2,
+            138.1,
+            1000.63,
+            552.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3485
+        },
+        {
+          "object_view_id": "00100_1",
+          "view_id": "00100",
+          "bbox_2d": [
+            720.5,
+            150.99,
+            1056.67,
+            685.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5452
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "bottom cabinet",
+        "cabinet next to the standing fan"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.894,
+        2.0351,
+        1.7826,
+        0.4009,
+        0.826,
+        0.7834
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            397.4,
+            87.94,
+            864.7,
+            577.32
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4563
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            397.4,
+            87.94,
+            864.7,
+            577.32
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00102_0",
+          "view_id": "00102",
+          "bbox_2d": [
+            643.77,
+            0.6,
+            1061.66,
+            282.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6122
+        },
+        {
+          "object_view_id": "00104_0",
+          "view_id": "00104",
+          "bbox_2d": [
+            460.34,
+            0.76,
+            896.7,
+            561.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5493
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a bottom cabinet"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        1.7028,
+        1.601,
+        1.7482,
+        0.0695,
+        0.7751,
+        0.7682
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_1",
+          "view_id": "00024",
+          "bbox_2d": [
+            627.75,
+            70.06,
+            1170.03,
+            585.43
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2756
+        },
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            0.0,
+            14.42,
+            336.32,
+            627.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5018
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            627.75,
+            70.06,
+            1170.03,
+            585.43
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "cabinet",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.4379,
+        0.2535,
+        0.6806,
+        0.246,
+        1.5148,
+        1.4464
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_1",
+          "view_id": "00028",
+          "bbox_2d": [
+            619.88,
+            520.68,
+            1296.0,
+            965.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3078
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            279.84,
+            264.75,
+            938.17,
+            964.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.553
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            152.89,
+            186.03,
+            802.82,
+            961.21
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00072",
+          "view_id": "00072",
+          "bbox_2d": [
+            666.76,
+            167.81,
+            986.86,
+            800.34
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00073",
+          "view_id": "00073",
+          "bbox_2d": [
+            357.97,
+            112.87,
+            669.49,
+            742.92
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "green-boxed object is not reliably a cabinet matching the requested bottom cabinet",
+        "no printer is clearly shown next to the green-boxed object",
+        "green-boxed object is not next to the standing fan"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        1.8007,
+        -1.1979,
+        0.457,
+        0.5727,
+        0.5844,
+        0.9807
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_1",
+          "view_id": "00030",
+          "bbox_2d": [
+            1002.53,
+            396.28,
+            1100.51,
+            761.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3753
+        },
+        {
+          "object_view_id": "00032_1",
+          "view_id": "00032",
+          "bbox_2d": [
+            708.39,
+            150.33,
+            803.16,
+            484.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3083
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            51.38,
+            364.06,
+            183.85,
+            750.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5839
+        },
+        {
+          "object_view_id": "bootstrap_00073",
+          "view_id": "00073",
+          "bbox_2d": [
+            867.0,
+            343.0,
+            1217.0,
+            853.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00077",
+          "view_id": "00077",
+          "bbox_2d": [
+            193.6,
+            281.82,
+            495.83,
+            774.86
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00074",
+          "view_id": "00074",
+          "bbox_2d": [
+            687.0,
+            254.0,
+            1005.0,
+            749.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00072_1",
+          "view_id": "00072",
+          "bbox_2d": [
+            1214.53,
+            475.35,
+            1295.98,
+            929.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5005
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [
+        "green-boxed object must itself be a cabinet",
+        "bottom cabinet is not visually established",
+        "printer relation is not satisfied by the green-boxed object itself"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        1.9211,
+        -2.0751,
+        0.7233,
+        0.2163,
+        0.8571,
+        1.4198
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            725.48,
+            2.45,
+            833.75,
+            350.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3492
+        },
+        {
+          "object_view_id": "00034_1",
+          "view_id": "00034",
+          "bbox_2d": [
+            20.76,
+            19.16,
+            219.86,
+            582.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2918
+        },
+        {
+          "object_view_id": "00076_1",
+          "view_id": "00076",
+          "bbox_2d": [
+            725.49,
+            0.0,
+            1115.56,
+            609.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2826
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "green-boxed object is a cabinet",
+        "green-boxed object is a bottom cabinet",
+        "printer next to the standing fan is not confirmed as the green-boxed object"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.6299,
+        -1.3402,
+        0.6952,
+        0.7345,
+        2.5591,
+        1.3228
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_2",
+          "view_id": "00032",
+          "bbox_2d": [
+            1001.17,
+            0.05,
+            1213.54,
+            383.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2989
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a cabinet",
+        "bottom cabinet",
+        "cabinet with a printer next to the standing fan"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.0606,
+        -0.1958,
+        1.0613,
+        0.3488,
+        0.3461,
+        0.568
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            915.12,
+            9.47,
+            1295.94,
+            921.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5526
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            915.12,
+            9.47,
+            1295.94,
+            921.35
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "standing fan next to the cabinet is not visible",
+        "printer next to the standing fan is not visible",
+        "cabinet next to the standing fan is not supported"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.2682,
+        -0.6213,
+        0.4129,
+        0.9168,
+        0.1047,
+        0.7768
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            1018.75,
+            370.15,
+            1296.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7315
+        },
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            48.14,
+            669.38,
+            480.2,
+            965.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2849
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1018.75,
+            370.15,
+            1296.0,
+            965.0
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00062",
+          "view_id": "00062",
+          "bbox_2d": [
+            520.64,
+            678.93,
+            1140.65,
+            967.66
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            91.0,
+            511.0,
+            624.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00067",
+          "view_id": "00067",
+          "bbox_2d": [
+            0.0,
+            661.0,
+            980.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "green-boxed object must be the bottom cabinet itself",
+        "nearby printer for this cabinet is not confirmed",
+        "standing fan is not visible",
+        "printer next to standing fan relation is not verified"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.4599,
+        -0.4853,
+        1.2971,
+        0.5437,
+        0.3502,
+        1.0733
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            953.03,
+            2.91,
+            1295.98,
+            965.06
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3019
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            953.03,
+            2.91,
+            1295.98,
+            965.06
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00063",
+          "view_id": "00063",
+          "bbox_2d": [
+            651.0,
+            4.0,
+            1141.0,
+            960.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00072",
+          "view_id": "00072",
+          "bbox_2d": [
+            14.0,
+            0.0,
+            230.0,
+            368.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00096",
+          "view_id": "00096",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            185.0,
+            894.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00094_1",
+          "view_id": "00094",
+          "bbox_2d": [
+            529.33,
+            1.53,
+            1179.67,
+            638.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3106
+        }
+      ]
+    },
+    {
+      "candidate_id": 15,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "standing fan is not visible or not clearly identifiable",
+        "cannot confirm which printer is the referenced printer for this cabinet",
+        "cannot verify the relation that the printer is next to the standing fan relative to this cabinet"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.1047,
+        -0.6088,
+        0.5106,
+        1.2268,
+        0.1386,
+        0.5838
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00062_1",
+          "view_id": "00062",
+          "bbox_2d": [
+            520.64,
+            678.93,
+            1140.65,
+            967.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2561
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            520.64,
+            678.93,
+            1140.65,
+            967.66
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00060",
+          "view_id": "00060",
+          "bbox_2d": [
+            1018.75,
+            370.15,
+            1296.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00067",
+          "view_id": "00067",
+          "bbox_2d": [
+            0.0,
+            654.0,
+            1295.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            88.0,
+            471.0,
+            808.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 16,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "requested object should be the bottom cabinet itself",
+        "printer next to the cabinet is not visually confirmed",
+        "standing fan next to the printer/cabinet is not visually confirmed"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.9199,
+        -0.4873,
+        1.0778,
+        0.4591,
+        0.3183,
+        0.6442
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            0.2,
+            2.86,
+            728.93,
+            879.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.294
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.2,
+            2.86,
+            728.93,
+            879.93
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 17,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "standing fan is not clearly identified",
+        "next-to relation between the cabinet and the standing fan is not reliably confirmed"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.0613,
+        -0.4845,
+        0.3499,
+        0.7766,
+        0.2989,
+        0.8147
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00072_0",
+          "view_id": "00072",
+          "bbox_2d": [
+            7.5,
+            663.94,
+            667.86,
+            966.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6369
+        },
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            0.0,
+            603.6,
+            204.53,
+            965.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7469
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            7.5,
+            663.94,
+            667.86,
+            966.28
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00071",
+          "view_id": "00071",
+          "bbox_2d": [
+            0.23,
+            2.12,
+            988.71,
+            965.05
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00093",
+          "view_id": "00093",
+          "bbox_2d": [
+            501.0,
+            418.0,
+            1107.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00068",
+          "view_id": "00068",
+          "bbox_2d": [
+            907.0,
+            660.0,
+            1295.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 18,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "green-boxed object is a cabinet",
+        "green-boxed object is the bottom cabinet",
+        "green-boxed cabinet has a printer next to/on it"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.934,
+        -0.1543,
+        0.6424,
+        1.2973,
+        0.9672,
+        1.406
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00072_2",
+          "view_id": "00072",
+          "bbox_2d": [
+            666.76,
+            167.81,
+            986.86,
+            800.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2939
+        },
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            0.07,
+            67.43,
+            203.75,
+            862.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3215
+        }
+      ]
+    },
+    {
+      "candidate_id": 19,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "standing fan is not visible",
+        "cannot verify that the cabinet is next to the standing fan",
+        "printer identity is not fully confirmed"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.9259,
+        -0.5177,
+        0.4359,
+        1.5589,
+        0.3664,
+        0.7343
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00090_0",
+          "view_id": "00090",
+          "bbox_2d": [
+            453.53,
+            615.65,
+            1197.31,
+            966.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3042
+        },
+        {
+          "object_view_id": "bootstrap_00070",
+          "view_id": "00070",
+          "bbox_2d": [
+            508.0,
+            840.0,
+            790.0,
+            966.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00092",
+          "view_id": "00092",
+          "bbox_2d": [
+            379.0,
+            289.0,
+            1018.0,
+            729.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00060",
+          "view_id": "00060",
+          "bbox_2d": [
+            1018.75,
+            370.15,
+            1296.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 20,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "printer clearly associated with this cabinet",
+        "printer next to the standing fan",
+        "cabinet identified as the one described by that printer-fan relation"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -0.6265,
+        -0.5767,
+        0.3744,
+        0.4337,
+        0.3429,
+        0.6888
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00092_0",
+          "view_id": "00092",
+          "bbox_2d": [
+            574.57,
+            415.03,
+            696.28,
+            869.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.271
+        },
+        {
+          "object_view_id": "00094_0",
+          "view_id": "00094",
+          "bbox_2d": [
+            518.23,
+            723.92,
+            646.58,
+            966.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3244
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            574.57,
+            415.03,
+            696.28,
+            869.04
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 21,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a cabinet",
+        "candidate is the bottom cabinet",
+        "printer relation for the green-boxed object",
+        "standing fan relation for the green-boxed object"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.2304,
+        -0.4971,
+        1.3446,
+        1.1029,
+        0.3529,
+        1.1576
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00094_2",
+          "view_id": "00094",
+          "bbox_2d": [
+            287.88,
+            1.43,
+            541.38,
+            673.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2615
+        }
+      ]
+    },
+    {
+      "candidate_id": 22,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "printer next to the cabinet is not clearly confirmed",
+        "standing fan is not visible/confirmed",
+        "spatial relation between the cabinet, printer, and standing fan cannot be reliably judged"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.2552,
+        -0.6489,
+        0.4117,
+        0.8762,
+        0.0485,
+        0.6925
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00094_3",
+          "view_id": "00094",
+          "bbox_2d": [
+            316.42,
+            585.77,
+            518.98,
+            963.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2581
+        },
+        {
+          "object_view_id": "bootstrap_00062",
+          "view_id": "00062",
+          "bbox_2d": [
+            520.64,
+            678.93,
+            1140.65,
+            967.66
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00060",
+          "view_id": "00060",
+          "bbox_2d": [
+            1018.75,
+            370.15,
+            1296.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00063",
+          "view_id": "00063",
+          "bbox_2d": [
+            215.97,
+            19.54,
+            679.56,
+            953.38
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 23,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "printer next to the candidate cabinet",
+        "candidate cabinet associated with the standing fan as described"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.2607,
+        -0.622,
+        0.6246,
+        0.3719,
+        0.0217,
+        0.1841
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00094_4",
+          "view_id": "00094",
+          "bbox_2d": [
+            647.2,
+            801.0,
+            832.02,
+            965.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2511
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            647.2,
+            801.0,
+            832.02,
+            965.19
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 24,
+      "label": "cabinet",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.4946,
+        2.0855,
+        0.5981,
+        0.0305,
+        0.4041,
+        0.5027
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00102_1",
+          "view_id": "00102",
+          "bbox_2d": [
+            541.09,
+            673.57,
+            727.06,
+            965.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3407
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            541.09,
+            673.57,
+            727.06,
+            965.31
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            1261.0,
+            491.0,
+            1295.0,
+            623.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00103",
+          "view_id": "00103",
+          "bbox_2d": [
+            457.0,
+            917.0,
+            567.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00101",
+          "view_id": "00101",
+          "bbox_2d": [
+            763.43,
+            342.23,
+            1204.97,
+            965.49
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 25,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "bottom cabinet",
+        "cabinet with a printer",
+        "cabinet next to the standing fan"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.5787,
+        1.4545,
+        1.6839,
+        0.3306,
+        0.4171,
+        0.631
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00104_1",
+          "view_id": "00104",
+          "bbox_2d": [
+            873.1,
+            0.51,
+            1175.77,
+            595.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4348
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            873.1,
+            0.51,
+            1175.77,
+            595.58
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 26,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a cabinet",
+        "bottom cabinet",
+        "printer next to the cabinet",
+        "standing fan near the printer/cabinet relation"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.7148,
+        -0.1599,
+        0.9471,
+        2.0749,
+        0.9574,
+        1.8442
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00114_0",
+          "view_id": "00114",
+          "bbox_2d": [
+            175.12,
+            0.0,
+            1293.16,
+            964.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3363
+        }
+      ]
+    }
+  ]
+}

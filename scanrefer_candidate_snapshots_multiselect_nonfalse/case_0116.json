@@ -1,0 +1,269 @@
+{
+  "case_id": 116,
+  "scene_id": "scene0208_00",
+  "query": "the bench is between two large bookshelves . the bench is rectangular and red brown in color .",
+  "query_analysis": {
+    "raw_query": "the bench is between two large bookshelves . the bench is rectangular and red brown in color .",
+    "target_object": "bench",
+    "target_attributes": [
+      "rectangular",
+      "red brown"
+    ],
+    "reference_object": "bookshelves",
+    "reference_attributes": [
+      "large",
+      "two"
+    ],
+    "relation": "between"
+  },
+  "gt": {
+    "target_id": 7,
+    "gt_label": "bench",
+    "gt_bbox_3d": [
+      -2.094024,
+      -1.454626,
+      0.552195,
+      3.006544,
+      3.980597,
+      1.079336
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -2.838888,
+      -0.718665,
+      0.533411,
+      1.922355,
+      2.518497,
+      1.087073
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      1,
+      1,
+      2,
+      2
+    ],
+    "detector_call_count": 62,
+    "total_views": 60,
+    "total_object_views": 4,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "bench",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "not enough clear evidence that the bench is between two large bookshelves",
+        "right-side large bookshelf relation to the candidate remains unclear"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.7223,
+        -2.7868,
+        0.7629,
+        0.763,
+        1.273,
+        0.5277
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            731.67,
+            99.65,
+            1296.0,
+            868.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3324
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            731.67,
+            99.65,
+            1296.0,
+            868.01
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            983.0,
+            345.0,
+            1295.0,
+            962.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            804.0,
+            0.0,
+            1295.0,
+            649.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "bench",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "not enough evidence that the bench is between two large bookshelves",
+        "second large bookshelf is not clearly visible/confirmed",
+        "overall nearby layout around the bench is still only partially shown"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -2.8733,
+        -0.9715,
+        0.4743,
+        1.9912,
+        2.0161,
+        0.9736
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            0.0,
+            184.94,
+            409.81,
+            963.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7526
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            1215.0,
+            924.0,
+            1295.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            1127.0,
+            936.0,
+            1209.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00116_0",
+          "view_id": "00116",
+          "bbox_2d": [
+            0.0,
+            286.38,
+            384.42,
+            730.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4983
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "bench",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate must actually be a bench",
+        "bench structure is not visible",
+        "between two large bookshelves is not reliably established for a bench object because no bench is confirmed"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.2596,
+        1.992,
+        0.1938,
+        0.9228,
+        2.3881,
+        0.4904
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00110_0",
+          "view_id": "00110",
+          "bbox_2d": [
+            5.89,
+            492.7,
+            1295.91,
+            964.32
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3099
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            5.89,
+            492.7,
+            1295.91,
+            964.32
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

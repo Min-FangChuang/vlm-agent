@@ -1,0 +1,274 @@
+{
+  "case_id": 198,
+  "scene_id": "scene0207_00",
+  "query": "this is the closet doors in the corner of the room . a bed is present in front of the closet .",
+  "query_analysis": {
+    "raw_query": "this is the closet doors in the corner of the room . a bed is present in front of the closet .",
+    "target_object": "closet doors",
+    "target_attributes": [],
+    "reference_object": "room",
+    "reference_attributes": [
+      "corner"
+    ],
+    "relation": "in"
+  },
+  "gt": {
+    "target_id": 20,
+    "gt_label": "door",
+    "gt_bbox_3d": [
+      1.435045,
+      -0.019461,
+      1.080736,
+      1.733437,
+      0.595984,
+      2.032535
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      0.638825,
+      -0.057283,
+      1.291133,
+      0.135756,
+      0.401611,
+      1.59744
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      2
+    ],
+    "detector_call_count": 53,
+    "total_views": 50,
+    "total_object_views": 7,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "closet doors",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot clearly confirm the green-boxed object is specifically the closet doors themselves",
+        "cannot confirm the closet doors are in the corner of the room",
+        "cannot confirm a bed is present in front of the closet"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.6361,
+        -0.0651,
+        1.5125,
+        0.1303,
+        0.3753,
+        1.037
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            71.07,
+            324.55,
+            823.33,
+            957.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3322
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            11.5,
+            59.73,
+            639.7,
+            958.56
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00026",
+          "view_id": "00026",
+          "bbox_2d": [
+            8.0,
+            8.0,
+            225.0,
+            504.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            772.0,
+            11.0,
+            1035.0,
+            954.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "closet doors",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "object is closet doors",
+        "closet doors are in the corner of the room",
+        "a bed is present in front of the closet"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.9935,
+        -3.4036,
+        1.1398,
+        0.9025,
+        0.1857,
+        1.6543
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            258.33,
+            381.53,
+            624.07,
+            954.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5605
+        },
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            671.59,
+            6.78,
+            1030.36,
+            439.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3395
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "closet doors",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is closet doors",
+        "located in the corner of the room",
+        "a bed is present in front of the closet"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.2867,
+        -1.4363,
+        0.4771,
+        0.9242,
+        0.6515,
+        0.901
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            191.36,
+            138.05,
+            499.9,
+            453.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5146
+        },
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            161.85,
+            407.41,
+            576.18,
+            735.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5231
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            161.85,
+            407.41,
+            576.18,
+            735.46
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            328.53,
+            7.15,
+            637.67,
+            247.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3265
+        },
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            830.95,
+            18.87,
+            1187.22,
+            323.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4803
+        }
+      ]
+    }
+  ]
+}

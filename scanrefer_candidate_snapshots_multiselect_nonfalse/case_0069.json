@@ -1,0 +1,769 @@
+{
+  "case_id": 69,
+  "scene_id": "scene0616_00",
+  "query": "this is a black door with a metal handle . it is the entrance to the room .",
+  "query_analysis": {
+    "raw_query": "this is a black door with a metal handle . it is the entrance to the room .",
+    "target_object": "door",
+    "target_attributes": [
+      "black"
+    ],
+    "reference_object": "room",
+    "reference_attributes": [],
+    "relation": "entrance to"
+  },
+  "gt": {
+    "target_id": 17,
+    "gt_label": "door",
+    "gt_bbox_3d": [
+      -3.062323,
+      -0.597479,
+      0.978255,
+      0.116471,
+      1.053752,
+      1.982779
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -3.032429,
+      -0.666747,
+      1.04815,
+      0.554509,
+      1.205448,
+      2.120983
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "detector_call_count": 93,
+    "total_views": 76,
+    "total_object_views": 15,
+    "total_candidates": 9
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "door",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "metal handle is not clearly visible",
+        "cannot reliably confirm it is the entrance to the room"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.2897,
+        -1.9094,
+        0.7659,
+        1.0604,
+        0.2451,
+        1.14
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            792.88,
+            5.64,
+            1053.79,
+            395.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5612
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            1195.0,
+            64.0,
+            1291.0,
+            467.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00137",
+          "view_id": "00137",
+          "bbox_2d": [
+            184.0,
+            8.0,
+            562.0,
+            493.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00136",
+          "view_id": "00136",
+          "bbox_2d": [
+            91.0,
+            6.0,
+            458.0,
+            314.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "door",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 10,
+      "bbox_3d": [
+        -3.043,
+        -0.6239,
+        0.677,
+        0.1161,
+        1.0661,
+        1.3896
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            492.16,
+            5.9,
+            1190.8,
+            816.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3839
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            3.68,
+            4.74,
+            568.88,
+            961.24
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3325
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            492.16,
+            5.9,
+            1190.8,
+            816.67
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00147",
+          "view_id": "00147",
+          "bbox_2d": [
+            103.0,
+            5.0,
+            419.0,
+            435.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00151",
+          "view_id": "00151",
+          "bbox_2d": [
+            131.0,
+            7.0,
+            408.0,
+            440.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00150",
+          "view_id": "00150",
+          "bbox_2d": [
+            52.36,
+            5.07,
+            388.5,
+            634.83
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            25.09,
+            160.05,
+            586.8,
+            960.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3976
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            574.44,
+            79.87,
+            1164.84,
+            958.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4973
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            878.24,
+            54.08,
+            1286.64,
+            959.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5749
+        },
+        {
+          "object_view_id": "00141_0",
+          "view_id": "00141",
+          "bbox_2d": [
+            793.06,
+            70.52,
+            1131.49,
+            621.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4174
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "door",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -3.0316,
+        0.0533,
+        0.6684,
+        0.1289,
+        0.5039,
+        1.4103
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_1",
+          "view_id": "00014",
+          "bbox_2d": [
+            993.81,
+            1.06,
+            1290.46,
+            900.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2615
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            993.81,
+            1.06,
+            1290.46,
+            900.96
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00016",
+          "view_id": "00016",
+          "bbox_2d": [
+            488.18,
+            6.6,
+            1288.01,
+            880.88
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00147",
+          "view_id": "00147",
+          "bbox_2d": [
+            394.0,
+            6.0,
+            506.0,
+            454.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            0.0,
+            3.0,
+            393.0,
+            500.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "door",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "clearer direct confirmation of the candidate door itself from a fuller view",
+        "clear confirmation that this door is specifically the entrance to the room"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -3.0335,
+        0.5615,
+        0.6981,
+        0.1287,
+        1.5556,
+        1.423
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_1",
+          "view_id": "00016",
+          "bbox_2d": [
+            488.18,
+            6.6,
+            1288.01,
+            880.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.302
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            488.18,
+            6.6,
+            1288.01,
+            880.88
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            0.0,
+            5.0,
+            827.0,
+            827.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00076",
+          "view_id": "00076",
+          "bbox_2d": [
+            217.0,
+            15.0,
+            418.0,
+            960.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00070",
+          "view_id": "00070",
+          "bbox_2d": [
+            8.0,
+            7.0,
+            664.0,
+            768.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a door",
+        "candidate is black",
+        "candidate is the entrance to the room"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -3.0677,
+        -1.4941,
+        1.145,
+        0.2477,
+        0.6454,
+        1.9087
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00038_1",
+          "view_id": "00038",
+          "bbox_2d": [
+            569.16,
+            32.84,
+            903.54,
+            934.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2783
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "door",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "not enough evidence that this door is the entrance to the room",
+        "room-entry relation is not established from current views"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.2011,
+        -1.8361,
+        1.049,
+        0.9887,
+        0.4472,
+        2.0925
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            950.84,
+            7.02,
+            1179.19,
+            630.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3921
+        },
+        {
+          "object_view_id": "bootstrap_00139",
+          "view_id": "00139",
+          "bbox_2d": [
+            169.63,
+            247.46,
+            530.71,
+            958.05
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00138",
+          "view_id": "00138",
+          "bbox_2d": [
+            338.64,
+            115.81,
+            696.86,
+            849.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00137",
+          "view_id": "00137",
+          "bbox_2d": [
+            184.0,
+            8.0,
+            561.0,
+            434.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00138_0",
+          "view_id": "00138",
+          "bbox_2d": [
+            338.64,
+            115.81,
+            696.86,
+            849.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6332
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "door",
+        "black",
+        "metal handle",
+        "entrance to the room"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.0018,
+        0.0804,
+        0.3561,
+        1.3051,
+        0.9654,
+        0.791
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_1",
+          "view_id": "00052",
+          "bbox_2d": [
+            197.9,
+            483.48,
+            504.38,
+            730.48
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2902
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "door",
+        "black",
+        "metal handle",
+        "entrance to the room"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.143,
+        1.9716,
+        0.4578,
+        0.5551,
+        0.1811,
+        0.5188
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00120_0",
+          "view_id": "00120",
+          "bbox_2d": [
+            7.16,
+            16.5,
+            458.85,
+            617.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3793
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            7.16,
+            16.5,
+            458.85,
+            617.85
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "door",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "metal handle is not clearly visible/confirmable",
+        "cannot reliably confirm this door is the entrance to the room"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -3.0434,
+        -0.4163,
+        1.0675,
+        0.4444,
+        0.7281,
+        2.043
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00149_0",
+          "view_id": "00149",
+          "bbox_2d": [
+            9.33,
+            164.04,
+            236.44,
+            822.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4323
+        },
+        {
+          "object_view_id": "bootstrap_00148",
+          "view_id": "00148",
+          "bbox_2d": [
+            1.86,
+            2.97,
+            263.63,
+            661.68
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            943.0,
+            4.0,
+            1295.0,
+            452.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00150",
+          "view_id": "00150",
+          "bbox_2d": [
+            52.36,
+            5.07,
+            388.5,
+            634.83
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

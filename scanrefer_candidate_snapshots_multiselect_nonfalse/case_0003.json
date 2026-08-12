@@ -1,0 +1,718 @@
+{
+  "case_id": 3,
+  "scene_id": "scene0334_00",
+  "query": "there is a long rectangular bench . it is next to another wide bench that 's closer to the pillar .",
+  "query_analysis": {
+    "raw_query": "there is a long rectangular bench . it is next to another wide bench that 's closer to the pillar .",
+    "target_object": "bench",
+    "target_attributes": [
+      "long",
+      "rectangular"
+    ],
+    "reference_object": "bench",
+    "reference_attributes": [
+      "wide"
+    ],
+    "relation": "next to"
+  },
+  "gt": {
+    "target_id": 8,
+    "gt_label": "bench",
+    "gt_bbox_3d": [
+      0.562452,
+      -1.066184,
+      0.373026,
+      0.697772,
+      1.918811,
+      0.252694
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 5,
+    "bbox_3d": [
+      0.547348,
+      -1.070136,
+      0.142198,
+      0.742609,
+      1.874771,
+      0.755785
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      3
+    ],
+    "detector_call_count": 47,
+    "total_views": 29,
+    "total_object_views": 17,
+    "total_candidates": 8
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "bench",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "clear visibility of another wide bench next to the candidate",
+        "confirmation that the other bench is closer to the pillar"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        0.9994,
+        -0.8148,
+        0.159,
+        1.5022,
+        2.584,
+        0.7007
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            11.36,
+            172.78,
+            322.3,
+            407.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8886
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            121.06,
+            303.45,
+            608.74,
+            551.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7941
+        },
+        {
+          "object_view_id": "bootstrap_00036",
+          "view_id": "00036",
+          "bbox_2d": [
+            234.0,
+            778.0,
+            948.0,
+            959.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            9.6,
+            701.19,
+            1048.0,
+            954.71
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            37.8,
+            636.69,
+            1061.52,
+            924.16
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            75.05,
+            823.03,
+            789.35,
+            958.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5368
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            37.8,
+            636.69,
+            1061.52,
+            924.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.848
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            509.29,
+            686.22,
+            1287.96,
+            955.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8603
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "bench",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "green-boxed candidate is not clearly the long rectangular bench",
+        "another nearby bench fits the requested long rectangular shape better"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.2661,
+        -0.3891,
+        0.1529,
+        1.631,
+        1.1158,
+        0.604
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_1",
+          "view_id": "00018",
+          "bbox_2d": [
+            10.77,
+            471.95,
+            148.66,
+            659.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3206
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "bench",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 7,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "the other nearby wide bench is not the one closer to the pillar relative to the green candidate",
+        "full relation 'target bench next to another wide bench that is closer to the pillar' is contradicted"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        0.5502,
+        -1.1298,
+        0.1347,
+        0.7945,
+        1.7974,
+        0.7721
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            10.25,
+            132.91,
+            419.31,
+            305.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6075
+        },
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            11.77,
+            244.07,
+            501.91,
+            415.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.444
+        },
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            356.27,
+            355.92,
+            815.17,
+            514.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8466
+        },
+        {
+          "object_view_id": "00030_1",
+          "view_id": "00030",
+          "bbox_2d": [
+            334.66,
+            365.32,
+            862.51,
+            604.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7174
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            64.43,
+            553.97,
+            821.6,
+            895.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.772
+        },
+        {
+          "object_view_id": "bootstrap_00036",
+          "view_id": "00036",
+          "bbox_2d": [
+            122.0,
+            781.0,
+            1146.0,
+            959.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00044",
+          "view_id": "00044",
+          "bbox_2d": [
+            951.33,
+            758.54,
+            1287.11,
+            957.32
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            9.6,
+            701.19,
+            1048.0,
+            954.71
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "bench",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "full long rectangular shape of the green-boxed bench is not clearly visible",
+        "cannot reliably confirm the neighboring bench is the 'wide' bench from current views",
+        "need a more centered target view to distinguish the green bench from the adjacent bench"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.6639,
+        0.3696,
+        0.1636,
+        0.6081,
+        0.8557,
+        0.7101
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_1",
+          "view_id": "00028",
+          "bbox_2d": [
+            11.09,
+            414.83,
+            322.22,
+            547.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5345
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            10.91,
+            496.82,
+            313.02,
+            681.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8076
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            11.17,
+            416.06,
+            338.72,
+            532.4
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            11.5,
+            410.06,
+            284.68,
+            516.38
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00018",
+          "view_id": "00018",
+          "bbox_2d": [
+            10.77,
+            471.95,
+            148.66,
+            659.77
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "bench",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.723,
+        1.0331,
+        0.3934,
+        0.5504,
+        1.8936,
+        0.6884
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00042_1",
+          "view_id": "00042",
+          "bbox_2d": [
+            12.25,
+            541.14,
+            535.26,
+            831.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8507
+        },
+        {
+          "object_view_id": "bootstrap_00041",
+          "view_id": "00041",
+          "bbox_2d": [
+            11.67,
+            380.37,
+            456.02,
+            630.02
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00044",
+          "view_id": "00044",
+          "bbox_2d": [
+            247.49,
+            585.45,
+            923.9,
+            827.59
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00043",
+          "view_id": "00043",
+          "bbox_2d": [
+            103.11,
+            718.33,
+            705.0,
+            950.16
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "bench",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "clear confirmation that the neighboring bench is the intended wide bench",
+        "clear confirmation that the neighboring bench is the one closer to the pillar",
+        "fully reliable view establishing the side-by-side/next-to relation between the green bench and that specific reference bench"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.6573,
+        -0.3969,
+        0.2853,
+        0.5187,
+        0.5084,
+        0.4666
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            951.33,
+            758.54,
+            1287.11,
+            957.32
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7508
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            64.43,
+            553.97,
+            821.6,
+            895.83
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            37.8,
+            636.69,
+            1061.52,
+            924.16
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            509.29,
+            686.22,
+            1287.96,
+            955.54
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "bench",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.7398,
+        1.019,
+        0.4406,
+        0.5546,
+        1.8869,
+        0.6496
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_1",
+          "view_id": "00044",
+          "bbox_2d": [
+            247.49,
+            585.45,
+            923.9,
+            827.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.729
+        },
+        {
+          "object_view_id": "bootstrap_00041",
+          "view_id": "00041",
+          "bbox_2d": [
+            11.67,
+            380.37,
+            456.02,
+            630.02
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00043",
+          "view_id": "00043",
+          "bbox_2d": [
+            103.11,
+            718.33,
+            705.0,
+            950.16
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00045",
+          "view_id": "00045",
+          "bbox_2d": [
+            477.21,
+            584.5,
+            1271.76,
+            914.63
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "bench",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "target is long",
+        "target is rectangular",
+        "reference bench is the one closer to the pillar",
+        "pillar relation is visible/confirmed"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -4.1729,
+        3.5237,
+        0.8913,
+        3.5256,
+        2.1177,
+        0.7095
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            11.76,
+            204.0,
+            460.48,
+            924.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2639
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,404 @@
+{
+  "case_id": 67,
+  "scene_id": "scene0249_00",
+  "query": "the window closest to the recycling bin",
+  "query_analysis": {
+    "raw_query": "the window closest to the recycling bin",
+    "target_object": "window",
+    "target_attributes": [],
+    "reference_object": "recycling bin",
+    "reference_attributes": [],
+    "relation": "closest to"
+  },
+  "gt": {
+    "target_id": 33,
+    "gt_label": "window",
+    "gt_bbox_3d": [
+      -4.015719,
+      -1.428202,
+      1.277342,
+      0.707984,
+      1.846446,
+      0.402631
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 3,
+    "bbox_3d": [
+      -3.97422,
+      -1.63707,
+      1.384267,
+      0.580734,
+      1.914347,
+      0.660863
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      4
+    ],
+    "detector_call_count": 77,
+    "total_views": 68,
+    "total_object_views": 7,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "window",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm which visible window is closest to the recycling bin",
+        "insufficient room context to compare the candidate against nearby alternative windows"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        4.4257,
+        3.8878,
+        1.3958,
+        0.814,
+        0.7407,
+        0.847
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            2.06,
+            0.0,
+            205.37,
+            222.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2914
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            416.0,
+            0.0,
+            600.0,
+            191.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            123.0,
+            40.0,
+            317.0,
+            289.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            1137.0,
+            0.0,
+            1295.0,
+            151.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "window",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "recycling bin is not clearly visible or identifiable",
+        "cannot determine whether this window is the closest window to the recycling bin compared with other windows"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.2708,
+        4.0905,
+        1.3756,
+        2.0327,
+        1.0598,
+        0.6174
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            58.23,
+            0.0,
+            480.72,
+            179.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3458
+        },
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            760.63,
+            0.0,
+            1144.75,
+            138.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2516
+        },
+        {
+          "object_view_id": "bootstrap_00061",
+          "view_id": "00061",
+          "bbox_2d": [
+            504.0,
+            7.0,
+            875.0,
+            36.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            25.0,
+            68.0,
+            213.0,
+            349.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00064",
+          "view_id": "00064",
+          "bbox_2d": [
+            1032.0,
+            0.0,
+            1295.0,
+            197.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "window",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "recycling bin is not clearly visible/confirmed",
+        "cannot reliably determine whether this is the window closest to the recycling bin"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -3.6852,
+        1.6188,
+        1.7371,
+        0.9065,
+        0.9407,
+        0.9505
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            491.7,
+            0.79,
+            652.14,
+            189.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2791
+        },
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            359.52,
+            0.0,
+            649.78,
+            180.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2679
+        },
+        {
+          "object_view_id": "bootstrap_00076",
+          "view_id": "00076",
+          "bbox_2d": [
+            452.0,
+            7.0,
+            716.0,
+            29.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00079",
+          "view_id": "00079",
+          "bbox_2d": [
+            1069.0,
+            0.0,
+            1295.0,
+            133.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00073",
+          "view_id": "00073",
+          "bbox_2d": [
+            431.0,
+            7.0,
+            679.0,
+            58.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "window",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm that this window is the closest window to the recycling bin compared with other nearby windows"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -3.9713,
+        -1.6059,
+        1.2935,
+        0.6642,
+        1.9149,
+        0.4793
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            523.94,
+            0.0,
+            801.3,
+            92.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3135
+        },
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            773.92,
+            0.0,
+            1052.87,
+            157.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3342
+        },
+        {
+          "object_view_id": "bootstrap_00120",
+          "view_id": "00120",
+          "bbox_2d": [
+            1147.0,
+            3.0,
+            1295.0,
+            521.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00112",
+          "view_id": "00112",
+          "bbox_2d": [
+            1194.0,
+            0.0,
+            1295.0,
+            495.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00111",
+          "view_id": "00111",
+          "bbox_2d": [
+            1126.0,
+            0.0,
+            1274.0,
+            293.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

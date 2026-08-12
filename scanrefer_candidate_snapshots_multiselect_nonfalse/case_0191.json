@@ -1,0 +1,625 @@
+{
+  "case_id": 191,
+  "scene_id": "scene0647_00",
+  "query": "this is a metallic round table with a base of one pole . it is below the picture on the wall and between two red stools .",
+  "query_analysis": {
+    "raw_query": "this is a metallic round table with a base of one pole . it is below the picture on the wall and between two red stools .",
+    "target_object": "table",
+    "target_attributes": [
+      "metallic",
+      "round",
+      "base of one pole"
+    ],
+    "reference_object": "picture on the wall; two red stools",
+    "reference_attributes": [
+      "on the wall",
+      "red"
+    ],
+    "relation": "below; between"
+  },
+  "gt": {
+    "target_id": 11,
+    "gt_label": "table",
+    "gt_bbox_3d": [
+      -1.23628,
+      2.646178,
+      0.632334,
+      0.708789,
+      0.695742,
+      1.032318
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -1.271709,
+      2.784497,
+      0.585493,
+      0.496013,
+      1.161997,
+      1.134186
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 34,
+    "total_views": 28,
+    "total_object_views": 20,
+    "total_candidates": 9
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a round table",
+        "candidate is metallic",
+        "candidate has a one-pole base",
+        "candidate is below the picture on the wall",
+        "candidate is between two red stools"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -0.9427,
+        0.9031,
+        0.4407,
+        2.3703,
+        5.0886,
+        0.9401
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            987.64,
+            655.9,
+            1295.97,
+            965.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4243
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            717.84,
+            508.85,
+            1296.0,
+            965.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5775
+        },
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            183.73,
+            325.27,
+            1227.05,
+            966.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.536
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "table",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -1.2836,
+        2.5548,
+        0.6076,
+        0.4722,
+        0.7032,
+        1.0899
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            743.49,
+            300.89,
+            905.58,
+            462.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5055
+        },
+        {
+          "object_view_id": "00014_1",
+          "view_id": "00014",
+          "bbox_2d": [
+            480.45,
+            337.73,
+            660.61,
+            593.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5479
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            468.59,
+            333.89,
+            696.25,
+            660.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6066
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            208.66,
+            386.15,
+            538.52,
+            822.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5415
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            300.48,
+            346.44,
+            573.03,
+            724.17
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            35.0,
+            456.0,
+            343.0,
+            960.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            15.0,
+            454.0,
+            283.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 4,
+      "done_actions": [],
+      "missing_conditions": [
+        "metallic",
+        "round",
+        "base of one pole",
+        "below the picture on the wall",
+        "between two red stools"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.6306,
+        2.4387,
+        0.3943,
+        1.4135,
+        1.1851,
+        0.778
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            1098.22,
+            397.3,
+            1296.0,
+            539.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5681
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            968.32,
+            382.34,
+            1296.0,
+            670.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6295
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            718.33,
+            441.14,
+            1121.6,
+            743.49
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6819
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            516.0,
+            412.6,
+            941.11,
+            741.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7234
+        },
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            184.08,
+            443.52,
+            783.02,
+            887.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6572
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.4711,
+        2.6995,
+        0.2965,
+        0.8409,
+        0.9176,
+        0.5954
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_1",
+          "view_id": "00018",
+          "bbox_2d": [
+            1115.34,
+            421.1,
+            1295.95,
+            686.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4233
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a table",
+        "candidate is metallic and round with a one-pole base",
+        "candidate is below the picture/screen on the wall",
+        "candidate is between two red stools"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.5399,
+        -4.1601,
+        0.3975,
+        0.9556,
+        3.0088,
+        0.669
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            1187.31,
+            323.36,
+            1295.99,
+            622.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3134
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "green-boxed object is a table",
+        "round shape",
+        "metallic single-pole base",
+        "below the picture on the wall",
+        "between two red stools"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.7442,
+        -4.7324,
+        0.5711,
+        2.4358,
+        3.1303,
+        1.0435
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            847.99,
+            302.09,
+            1101.36,
+            458.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.585
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            515.95,
+            273.58,
+            700.26,
+            433.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6673
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "table",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "clearly between two red stools",
+        "second red stool not visible enough to verify the between relation"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.7543,
+        -2.2148,
+        0.6354,
+        0.6583,
+        0.6832,
+        0.8496
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00040_1",
+          "view_id": "00040",
+          "bbox_2d": [
+            0.12,
+            419.62,
+            504.54,
+            833.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5101
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            276.37,
+            445.16,
+            733.55,
+            794.93
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00041",
+          "view_id": "00041",
+          "bbox_2d": [
+            0.01,
+            461.0,
+            284.3,
+            963.98
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            0.0,
+            500.0,
+            214.0,
+            716.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "table is round",
+        "table is metallic",
+        "table has a base of one pole",
+        "object is below the picture on the wall",
+        "object is between two red stools"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.2904,
+        -4.6016,
+        0.5022,
+        1.7368,
+        2.3899,
+        0.9008
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            332.86,
+            326.77,
+            542.5,
+            524.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3878
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "table is round",
+        "table is metallic",
+        "table has a base of one pole",
+        "table is between two red stools"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.2677,
+        -0.9037,
+        0.3668,
+        2.3404,
+        1.402,
+        0.7974
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            802.88,
+            422.62,
+            1296.0,
+            940.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2625
+        },
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            840.65,
+            492.69,
+            1296.0,
+            896.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4331
+        }
+      ]
+    }
+  ]
+}

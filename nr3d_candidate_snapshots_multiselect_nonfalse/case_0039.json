@@ -1,0 +1,542 @@
+{
+  "case_id": 39,
+  "scene_id": "scene0591_00",
+  "query": "the pillow is yellow and standing upright on the couch not laying down",
+  "query_analysis": {
+    "raw_query": "the pillow is yellow and standing upright on the couch not laying down",
+    "target_object": "pillow",
+    "target_attributes": [
+      "yellow",
+      "standing upright",
+      "not laying down"
+    ],
+    "reference_object": "couch",
+    "reference_attributes": [],
+    "relation": "on"
+  },
+  "gt": {
+    "target_id": 16,
+    "gt_label": "pillow",
+    "gt_bbox_3d": [
+      1.440149,
+      0.477312,
+      0.555421,
+      0.268254,
+      0.530544,
+      0.377111
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      1.416983,
+      0.520398,
+      0.783336,
+      0.280453,
+      0.512535,
+      0.84478
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      2
+    ],
+    "detector_call_count": 47,
+    "total_views": 44,
+    "total_object_views": 28,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "pillow",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 16,
+      "bbox_3d": [
+        1.439,
+        0.5114,
+        0.555,
+        0.2713,
+        0.4813,
+        0.3788
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            303.68,
+            478.59,
+            454.86,
+            648.84
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8973
+        },
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            670.47,
+            638.44,
+            857.49,
+            821.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9113
+        },
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            1133.38,
+            446.4,
+            1284.32,
+            626.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9032
+        },
+        {
+          "object_view_id": "bootstrap_00078",
+          "view_id": "00078",
+          "bbox_2d": [
+            826.04,
+            236.48,
+            1126.89,
+            560.88
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00044",
+          "view_id": "00044",
+          "bbox_2d": [
+            831.45,
+            509.9,
+            1125.33,
+            776.37
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00052",
+          "view_id": "00052",
+          "bbox_2d": [
+            276.36,
+            460.01,
+            677.68,
+            879.57
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            947.85,
+            140.24,
+            1194.74,
+            350.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7048
+        },
+        {
+          "object_view_id": "00042_1",
+          "view_id": "00042",
+          "bbox_2d": [
+            746.75,
+            160.55,
+            994.06,
+            387.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7594
+        },
+        {
+          "object_view_id": "00044_1",
+          "view_id": "00044",
+          "bbox_2d": [
+            831.45,
+            509.9,
+            1125.33,
+            776.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.838
+        },
+        {
+          "object_view_id": "00048_1",
+          "view_id": "00048",
+          "bbox_2d": [
+            1147.63,
+            724.93,
+            1287.48,
+            960.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8907
+        },
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            913.18,
+            466.64,
+            1246.41,
+            765.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6352
+        },
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            276.36,
+            460.01,
+            677.68,
+            879.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9115
+        },
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            9.13,
+            552.44,
+            214.93,
+            960.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4807
+        },
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            243.52,
+            491.23,
+            590.6,
+            858.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9105
+        },
+        {
+          "object_view_id": "00078_1",
+          "view_id": "00078",
+          "bbox_2d": [
+            826.04,
+            236.48,
+            1126.89,
+            560.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7589
+        },
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            887.38,
+            655.96,
+            1255.68,
+            959.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9239
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 13,
+      "done_actions": [],
+      "missing_conditions": [
+        "yellow",
+        "standing upright",
+        "not laying down"
+      ],
+      "num_object_views": 14,
+      "bbox_3d": [
+        1.2702,
+        1.1268,
+        0.49,
+        0.4707,
+        0.4057,
+        0.2186
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_1",
+          "view_id": "00024",
+          "bbox_2d": [
+            34.6,
+            512.89,
+            245.86,
+            633.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8349
+        },
+        {
+          "object_view_id": "00026_1",
+          "view_id": "00026",
+          "bbox_2d": [
+            449.35,
+            653.86,
+            654.75,
+            780.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8814
+        },
+        {
+          "object_view_id": "00028_1",
+          "view_id": "00028",
+          "bbox_2d": [
+            899.86,
+            447.77,
+            1116.45,
+            569.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8953
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            1069.12,
+            791.87,
+            1286.75,
+            927.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8376
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            1111.26,
+            302.97,
+            1283.66,
+            451.06
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8965
+        },
+        {
+          "object_view_id": "00040_1",
+          "view_id": "00040",
+          "bbox_2d": [
+            659.3,
+            187.42,
+            908.46,
+            349.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6839
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            415.86,
+            231.17,
+            702.22,
+            426.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8196
+        },
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            445.4,
+            575.42,
+            772.85,
+            843.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8677
+        },
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            764.86,
+            755.3,
+            1068.79,
+            958.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8994
+        },
+        {
+          "object_view_id": "00050_1",
+          "view_id": "00050",
+          "bbox_2d": [
+            534.7,
+            611.64,
+            860.06,
+            937.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6344
+        },
+        {
+          "object_view_id": "00076_1",
+          "view_id": "00076",
+          "bbox_2d": [
+            7.11,
+            855.55,
+            320.41,
+            958.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.324
+        },
+        {
+          "object_view_id": "00078_0",
+          "view_id": "00078",
+          "bbox_2d": [
+            491.7,
+            448.14,
+            884.15,
+            753.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8252
+        },
+        {
+          "object_view_id": "00080_1",
+          "view_id": "00080",
+          "bbox_2d": [
+            476.18,
+            847.41,
+            770.54,
+            958.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7723
+        },
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            929.0,
+            596.81,
+            1288.22,
+            959.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9339
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "yellow"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.5241,
+        1.4186,
+        0.6613,
+        0.3376,
+        0.2988,
+        0.2866
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00080_2",
+          "view_id": "00080",
+          "bbox_2d": [
+            181.96,
+            630.97,
+            467.56,
+            955.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5668
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            181.96,
+            630.97,
+            467.56,
+            955.53
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

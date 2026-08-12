@@ -11,8 +11,9 @@ import numpy as np
 try:
     from agent import Agent
     from agent_schema import CandidateObject, ObjectView
-    from module.detector import draw_bbox
-    from module.projection import TwoDToThreeDTool
+    from module.detector_yoloe import YOLOEDetector
+    from module.detector_yoloe import draw_bbox
+    from module.projection import PointFilterConfig, TwoDToThreeDTool
     from module.segmenter import SAMSegmenter
     from read import Read
     from read.scannet_more_view import (
@@ -22,8 +23,9 @@ try:
 except ImportError:
     from .agent import Agent
     from .agent_schema import CandidateObject, ObjectView
-    from .module.detector import draw_bbox
-    from .module.projection import TwoDToThreeDTool
+    from .module.detector_yoloe import YOLOEDetector
+    from .module.detector_yoloe import draw_bbox
+    from .module.projection import PointFilterConfig, TwoDToThreeDTool
     from .module.segmenter import SAMSegmenter
     from .read import Read
     from .read.scannet_more_view import (
@@ -120,8 +122,8 @@ def _build_candidate_from_json(
     candidate_data: dict[str, Any], reader: Read
 ) -> CandidateObject:
     candidate = CandidateObject(
-        object_id=int(candidate_data["candidate_id"]),
-        label=str(candidate_data["label"]),
+        object_id=int(candidate_data.get("candidate_id", 0)),
+        label=str(candidate_data.get("label", "object")),
         best_id=0,
     )
     view_lookup = {
@@ -131,9 +133,14 @@ def _build_candidate_from_json(
         view_id = str(object_view_data["view_id"])
         view = view_lookup[view_id]
         object_view = ObjectView(
-            object_id=str(object_view_data["object_view_id"]),
-            label=str(object_view_data["label"]),
-            score=float(object_view_data["score"]),
+            object_id=str(
+                object_view_data.get(
+                    "object_view_id",
+                    f"{view_id}_{int(object_view_data.get('index', 0))}",
+                )
+            ),
+            label=str(object_view_data.get("label", candidate.label)),
+            score=float(object_view_data.get("score", 1.0)),
             view=view,
             bbox_2d=np.asarray(object_view_data["bbox_2d"], dtype=np.float32),
             mask_2d=None,
@@ -163,9 +170,19 @@ def main() -> None:
         help="Path to one candidate JSON file",
     )
     parser.add_argument(
+        "--scene",
+        default=None,
+        help="Optional scene override. If omitted, read from candidate JSON.",
+    )
+    parser.add_argument(
         "--sam-checkpoint",
         default="checkpoints/SAM/sam_vit_h_4b8939.pth",
         help="Path to the SAM checkpoint file",
+    )
+    parser.add_argument(
+        "--detector-model",
+        default="yoloe-11s-seg.pt",
+        help="YOLOE checkpoint name or path",
     )
     parser.add_argument("--sam-model-type", default="vit_h", help="SAM model type")
     parser.add_argument(
@@ -203,12 +220,25 @@ def main() -> None:
         action="store_true",
         help="Visualize candidate 3D points and bbox using Open3D.",
     )
+    parser.add_argument(
+        "--visualize-raw-3d",
+        action="store_true",
+        help="Visualize raw projected 3D points before filtering.",
+    )
     args = parser.parse_args()
 
     candidate_data = json.loads(args.candidate_json.read_text(encoding="utf-8"))
-    scene = str(candidate_data["scene"])
+    scene_value = (
+        args.scene or candidate_data.get("scene") or candidate_data.get("scan_id")
+    )
+    if not scene_value:
+        raise ValueError(
+            "Scene must be provided via --scene or candidate JSON scene/scan_id"
+        )
+    scene = str(scene_value)
     reader = Read(scene, max_frames_per_find=999999, frame_skip=1)
     candidate = _build_candidate_from_json(candidate_data, reader)
+    detector = YOLOEDetector(model=args.detector_model)
 
     segmenter = SAMSegmenter(
         checkpoint_path=args.sam_checkpoint,
@@ -217,14 +247,29 @@ def main() -> None:
     )
     agent = Agent(
         motion=reader,
+        detector=detector,
         segmenter=segmenter,
-        mapper_2d3d=TwoDToThreeDTool(),
+        mapper_2d3d=TwoDToThreeDTool(point_filter=PointFilterConfig()),
         intrinsic_matrix=reader.intrinsic_matrix,
         world_to_axis_align_matrix=reader.world_to_axis_align_matrix,
         debug=True,
     )
+    if candidate_data.get("query"):
+        agent.reset(str(candidate_data.get("query", "")))
 
     agent.complete_candidate_masks(candidate)
+    if args.visualize_raw_3d:
+        projection_inputs = agent.mapper_2d3d.build_projection_inputs_from_candidate(
+            candidate,
+            intrinsic_matrix=reader.intrinsic_matrix,
+            world_to_axis_align_matrix=reader.world_to_axis_align_matrix,
+        )
+        raw_points = agent.mapper_2d3d.project_views_to_3d(projection_inputs)
+        raw_bbox = agent.mapper_2d3d.calculate_aabb(raw_points)
+        try:
+            TwoDToThreeDTool.visualize_points_and_aabb(raw_points, raw_bbox)
+        except ImportError as exc:
+            print(f"raw_visualization_skipped={exc}")
     points_3d, bbox_3d = agent.map_candidate_to_3d(candidate)
     if args.visualize_3d:
         try:
@@ -240,19 +285,24 @@ def main() -> None:
         if frame_id in existing_view_ids:
             continue
         view = reader._build_view(frame_id)
-        uv, visible_mask, occluded_mask, depth_missing_mask, visibility_stats = (
-            _depth_visibility_stats(
-                points_3d[:, :3],
-                reader.intrinsic_matrix,
-                np.asarray(view.camera_to_world, dtype=np.float64),
-                None
-                if reader.world_to_axis_align_matrix is None
-                else np.asarray(reader.world_to_axis_align_matrix, dtype=np.float64),
-                tuple(view.rgb.shape),
-                np.asarray(view.depth, dtype=np.float64),
-                0.001,
-                0.05,
-            )
+        (
+            uv,
+            visible_mask,
+            occluded_mask,
+            depth_missing_mask,
+            background_mismatch_mask,
+            visibility_stats,
+        ) = _depth_visibility_stats(
+            points_3d[:, :3],
+            reader.intrinsic_matrix,
+            np.asarray(view.camera_to_world, dtype=np.float64),
+            None
+            if reader.world_to_axis_align_matrix is None
+            else np.asarray(reader.world_to_axis_align_matrix, dtype=np.float64),
+            tuple(view.rgb.shape),
+            np.asarray(view.depth, dtype=np.float64),
+            0.001,
+            0.05,
         )
         visible_uv = uv[visible_mask]
         in_frame_points = int(visibility_stats["projected_points_in_frame"])
@@ -307,11 +357,13 @@ def main() -> None:
                 f"in_frame={int(visibility_stats['projected_points_in_frame'])} "
                 f"visible={int(visibility_stats['visible_projected_points'])} "
                 f"occluded={int(visibility_stats['occluded_projected_points'])} "
-                f"missing={int(visibility_stats['depth_missing_points'])}"
+                f"missing={int(visibility_stats['depth_missing_points'])} "
+                f"background_mismatch={int(visibility_stats['background_mismatch_points'])}"
             )
             print(
                 f"  visible_ratio={float(visibility_stats['visible_ratio']):.4f} "
-                f"occluded_ratio={float(visibility_stats['occluded_ratio']):.4f}"
+                f"occluded_ratio={float(visibility_stats['occluded_ratio']):.4f} "
+                f"background_mismatch_ratio={float(visibility_stats['background_mismatch_ratio']):.4f}"
             )
             print(f"  z_proj[{_stats(projected_depths)}]")
             print(f"  z_depth[{_stats(sampled_depths)}]")
@@ -348,6 +400,27 @@ def main() -> None:
                     mask=depth_missing_mask,
                     limit=int(args.debug_depth_samples),
                 )
+                _print_depth_samples(
+                    view_id=str(view.view_id),
+                    label="background_mismatch",
+                    uv=uv,
+                    projected_depths=projected_depths,
+                    sampled_depths=sampled_depths,
+                    mask=background_mismatch_mask,
+                    limit=int(args.debug_depth_samples),
+                )
+        reference_detections = []
+        if getattr(getattr(agent, "query", None), "reference_object", ""):
+            detected_references = agent.detect_reference_objects(view)
+            for detection in detected_references:
+                reference_detections.append(
+                    {
+                        "label": str(detection.label),
+                        "score": round(float(detection.score), 4),
+                        "bbox_2d": _bbox_to_list(detection.bbox),
+                    }
+                )
+
         visualization_file = None
         if args.save_images:
             image_output_dir = (
@@ -378,6 +451,14 @@ def main() -> None:
                     (int(round(point[0])), int(round(point[1]))),
                     2,
                     (255, 255, 0),
+                    -1,
+                )
+            for point in uv[background_mismatch_mask]:
+                vis = cv2.circle(
+                    vis,
+                    (int(round(point[0])), int(round(point[1]))),
+                    2,
+                    (255, 0, 255),
                     -1,
                 )
             for point in visible_uv:
@@ -411,6 +492,7 @@ def main() -> None:
                 "depth_missing_points": int(visibility_stats["depth_missing_points"]),
                 "visible_ratio": round(float(visibility_stats["visible_ratio"]), 4),
                 "occluded_ratio": round(float(visibility_stats["occluded_ratio"]), 4),
+                "reference_detections": reference_detections,
                 "visualization_file": visualization_file,
             }
         )

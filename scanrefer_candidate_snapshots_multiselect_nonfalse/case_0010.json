@@ -1,0 +1,215 @@
+{
+  "case_id": 10,
+  "scene_id": "scene0329_00",
+  "query": "the monitor is opposite the desk with two monitors , and is next to the white shelf / cabinet . there is a black , non - rolling chair at the same desk .",
+  "query_analysis": {
+    "raw_query": "the monitor is opposite the desk with two monitors , and is next to the white shelf / cabinet . there is a black , non - rolling chair at the same desk .",
+    "target_object": "monitor",
+    "target_attributes": [],
+    "reference_object": "desk; shelf / cabinet; chair",
+    "reference_attributes": [
+      "with two monitors",
+      "white",
+      "black",
+      "non-rolling",
+      "at the same desk"
+    ],
+    "relation": "opposite the desk; next to the shelf / cabinet"
+  },
+  "gt": {
+    "target_id": 12,
+    "gt_label": "monitor",
+    "gt_bbox_3d": [
+      -0.117416,
+      -2.141951,
+      1.155635,
+      0.537163,
+      0.431578,
+      0.395639
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -0.125998,
+      -2.120087,
+      1.12534,
+      0.503456,
+      0.397251,
+      0.435629
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 43,
+    "total_views": 39,
+    "total_object_views": 2,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "monitor",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the opposite desk has two monitors",
+        "cannot fully confirm the black non-rolling chair belongs to that same opposite desk with enough scene evidence"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.0272,
+        -2.1663,
+        1.1298,
+        0.3551,
+        0.2197,
+        0.3571
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            628.91,
+            68.09,
+            900.92,
+            261.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4841
+        },
+        {
+          "object_view_id": "bootstrap_00052",
+          "view_id": "00052",
+          "bbox_2d": [
+            7.0,
+            609.0,
+            37.0,
+            625.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00047",
+          "view_id": "00047",
+          "bbox_2d": [
+            1104.01,
+            260.09,
+            1295.99,
+            515.56
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00062",
+          "view_id": "00062",
+          "bbox_2d": [
+            249.0,
+            385.0,
+            522.0,
+            573.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "monitor",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably verify that this monitor is opposite the desk with two monitors",
+        "scene layout remains ambiguous because another monitor is visible at the same desk area"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.1237,
+        -2.1201,
+        1.1253,
+        0.4991,
+        0.3973,
+        0.4356
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            265.29,
+            13.6,
+            755.55,
+            465.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.849
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            265.29,
+            13.6,
+            755.55,
+            465.17
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            350.85,
+            0.0,
+            704.78,
+            294.03
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00067",
+          "view_id": "00067",
+          "bbox_2d": [
+            0.0,
+            34.66,
+            449.24,
+            480.47
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

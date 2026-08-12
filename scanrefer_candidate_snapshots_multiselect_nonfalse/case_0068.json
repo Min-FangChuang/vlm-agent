@@ -1,0 +1,113 @@
+{
+  "case_id": 68,
+  "scene_id": "scene0354_00",
+  "query": "this is a trash can that has a bag in it . it is left of the counter on the floor in the corner .",
+  "query_analysis": {
+    "raw_query": "this is a trash can that has a bag in it . it is left of the counter on the floor in the corner .",
+    "target_object": "trash can",
+    "target_attributes": [
+      "has a bag in it"
+    ],
+    "reference_object": "counter",
+    "reference_attributes": [],
+    "relation": "left of the counter; on the floor; in the corner"
+  },
+  "gt": {
+    "target_id": 15,
+    "gt_label": "trash can",
+    "gt_bbox_3d": [
+      1.54674,
+      -1.812125,
+      0.216688,
+      0.369525,
+      0.303756,
+      0.354402
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      1.494294,
+      -1.805961,
+      0.213515,
+      0.293987,
+      0.269129,
+      0.371021
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1
+    ],
+    "detector_call_count": 31,
+    "total_views": 29,
+    "total_object_views": 1,
+    "total_candidates": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "trash can",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 3,
+      "bbox_3d": [
+        1.5023,
+        -1.8078,
+        0.2104,
+        0.278,
+        0.2734,
+        0.3308
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            357.84,
+            133.91,
+            427.13,
+            228.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9294
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            420.14,
+            201.58,
+            501.56,
+            308.39
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            258.0,
+            132.0,
+            317.0,
+            214.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

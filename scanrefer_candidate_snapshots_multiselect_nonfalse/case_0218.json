@@ -1,0 +1,296 @@
+{
+  "case_id": 218,
+  "scene_id": "scene0700_00",
+  "query": "there is a rectangular radiator . it is next to a white chair .",
+  "query_analysis": {
+    "raw_query": "there is a rectangular radiator . it is next to a white chair .",
+    "target_object": "radiator",
+    "target_attributes": [
+      "rectangular"
+    ],
+    "reference_object": "chair",
+    "reference_attributes": [
+      "white"
+    ],
+    "relation": "next to"
+  },
+  "gt": {
+    "target_id": 31,
+    "gt_label": "radiator",
+    "gt_bbox_3d": [
+      0.129924,
+      -2.200716,
+      0.244173,
+      1.390754,
+      0.183046,
+      0.49977
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -0.115783,
+      -2.123476,
+      0.333827,
+      0.971029,
+      0.339058,
+      0.551167
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      2,
+      2
+    ],
+    "detector_call_count": 120,
+    "total_views": 114,
+    "total_object_views": 8,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "radiator",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 9,
+      "bbox_3d": [
+        -0.087,
+        -2.0397,
+        0.3867,
+        0.9155,
+        0.3961,
+        0.4723
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00094_0",
+          "view_id": "00094",
+          "bbox_2d": [
+            11.56,
+            176.25,
+            288.17,
+            408.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8771
+        },
+        {
+          "object_view_id": "00096_0",
+          "view_id": "00096",
+          "bbox_2d": [
+            12.82,
+            324.4,
+            349.3,
+            603.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7349
+        },
+        {
+          "object_view_id": "00098_0",
+          "view_id": "00098",
+          "bbox_2d": [
+            165.85,
+            774.73,
+            526.74,
+            954.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6604
+        },
+        {
+          "object_view_id": "bootstrap_00117",
+          "view_id": "00117",
+          "bbox_2d": [
+            806.0,
+            310.0,
+            1244.0,
+            517.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00116",
+          "view_id": "00116",
+          "bbox_2d": [
+            10.06,
+            10.1,
+            631.03,
+            250.69
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00095",
+          "view_id": "00095",
+          "bbox_2d": [
+            12.14,
+            329.34,
+            341.78,
+            578.47
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00116_0",
+          "view_id": "00116",
+          "bbox_2d": [
+            10.06,
+            10.1,
+            631.03,
+            250.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.704
+        },
+        {
+          "object_view_id": "00182_0",
+          "view_id": "00182",
+          "bbox_2d": [
+            966.06,
+            193.19,
+            1282.48,
+            360.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6894
+        },
+        {
+          "object_view_id": "00188_0",
+          "view_id": "00188",
+          "bbox_2d": [
+            983.42,
+            173.66,
+            1283.6,
+            369.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2864
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "radiator",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.3568,
+        -2.0577,
+        0.3582,
+        0.7628,
+        0.1829,
+        0.4716
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00118_0",
+          "view_id": "00118",
+          "bbox_2d": [
+            833.69,
+            384.77,
+            1058.51,
+            666.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2924
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            833.69,
+            384.77,
+            1058.51,
+            666.17
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00120",
+          "view_id": "00120",
+          "bbox_2d": [
+            954.85,
+            537.52,
+            1284.9,
+            956.33
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00119",
+          "view_id": "00119",
+          "bbox_2d": [
+            917.31,
+            417.84,
+            1285.14,
+            900.73
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00117",
+          "view_id": "00117",
+          "bbox_2d": [
+            443.0,
+            198.0,
+            666.0,
+            420.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00120_0",
+          "view_id": "00120",
+          "bbox_2d": [
+            954.85,
+            537.52,
+            1284.9,
+            956.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5366
+        }
+      ]
+    }
+  ]
+}

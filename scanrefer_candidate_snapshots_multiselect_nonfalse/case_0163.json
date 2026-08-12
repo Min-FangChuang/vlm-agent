@@ -1,0 +1,306 @@
+{
+  "case_id": 163,
+  "scene_id": "scene0658_00",
+  "query": "the shelf is black . there is a white lamp on top of it .",
+  "query_analysis": {
+    "raw_query": "the shelf is black . there is a white lamp on top of it .",
+    "target_object": "shelf",
+    "target_attributes": [
+      "black"
+    ],
+    "reference_object": "lamp",
+    "reference_attributes": [
+      "white"
+    ],
+    "relation": "under"
+  },
+  "gt": {
+    "target_id": 10,
+    "gt_label": "shelf",
+    "gt_bbox_3d": [
+      -1.684995,
+      0.539318,
+      0.627043,
+      0.364332,
+      0.582955,
+      1.222467
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 2,
+    "bbox_3d": [
+      -1.685766,
+      0.665706,
+      0.600693,
+      0.446494,
+      0.85894,
+      1.283116
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      1,
+      1
+    ],
+    "detector_call_count": 17,
+    "total_views": 14,
+    "total_object_views": 10,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "shelf",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [],
+      "missing_conditions": [
+        "there is a white lamp on top of the shelf"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.5058,
+        0.5319,
+        0.6351,
+        0.5809,
+        1.3688,
+        1.1587
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            239.22,
+            39.98,
+            607.34,
+            742.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9181
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            12.5,
+            175.9,
+            294.65,
+            952.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6658
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            11.91,
+            11.15,
+            184.1,
+            841.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3935
+        },
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            822.42,
+            213.22,
+            1236.48,
+            950.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7574
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "shelf",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "green-boxed object is a shelf",
+        "white lamp is on top of the shelf"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.4072,
+        -0.5662,
+        0.4336,
+        0.665,
+        1.1612,
+        0.8754
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_1",
+          "view_id": "00000",
+          "bbox_2d": [
+            606.74,
+            253.61,
+            1035.09,
+            761.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2936
+        },
+        {
+          "object_view_id": "00004_1",
+          "view_id": "00004",
+          "bbox_2d": [
+            109.91,
+            228.02,
+            576.54,
+            809.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3848
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "shelf",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 8,
+      "bbox_3d": [
+        -1.6769,
+        0.6474,
+        0.6006,
+        0.4345,
+        0.8246,
+        1.2829
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            952.14,
+            9.35,
+            1283.04,
+            642.32
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6209
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            564.76,
+            347.26,
+            940.14,
+            957.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9484
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            500.92,
+            431.22,
+            882.89,
+            956.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9291
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            243.22,
+            86.79,
+            586.68,
+            709.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9579
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            564.76,
+            347.26,
+            940.14,
+            957.05
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            697.94,
+            108.98,
+            1067.94,
+            790.23
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            292.17,
+            186.41,
+            661.27,
+            871.24
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            408.92,
+            440.07,
+            827.84,
+            957.89
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

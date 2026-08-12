@@ -1,0 +1,532 @@
+{
+  "case_id": 57,
+  "scene_id": "scene0077_00",
+  "query": "the printer directly in front of the window closest to the corner of the room",
+  "query_analysis": {
+    "raw_query": "the printer directly in front of the window closest to the corner of the room",
+    "target_object": "printer",
+    "target_attributes": [],
+    "reference_object": "window",
+    "reference_attributes": [],
+    "relation": "directly in front of"
+  },
+  "gt": {
+    "target_id": 1,
+    "gt_label": "printer",
+    "gt_bbox_3d": [
+      1.069988,
+      1.422507,
+      1.175477,
+      0.645829,
+      0.630894,
+      0.483164
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 2,
+    "bbox_3d": [
+      0.970281,
+      1.424724,
+      1.168077,
+      0.50893,
+      0.686543,
+      0.4873
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2
+    ],
+    "detector_call_count": 22,
+    "total_views": 13,
+    "total_object_views": 13,
+    "total_candidates": 6
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "printer",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot confidently determine which window is closest to the corner of the room",
+        "cannot reliably confirm that the green-boxed printer is directly in front of that specific window",
+        "cannot rule out the nearby blue-boxed beige printer/copier as a better match"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        0.2122,
+        1.4861,
+        1.0476,
+        0.7235,
+        0.6676,
+        0.2919
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            17.8,
+            419.41,
+            405.79,
+            633.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8152
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            579.86,
+            454.41,
+            928.5,
+            659.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5304
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            843.44,
+            776.68,
+            1253.47,
+            948.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4959
+        },
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            788.69,
+            336.75,
+            1196.2,
+            557.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3566
+        },
+        {
+          "object_view_id": "bootstrap_00030",
+          "view_id": "00030",
+          "bbox_2d": [
+            339.97,
+            354.91,
+            699.28,
+            563.02
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            976.0,
+            128.0,
+            1295.0,
+            376.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            127.69,
+            339.16,
+            507.59,
+            555.17
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00029_1",
+          "view_id": "00029",
+          "bbox_2d": [
+            127.69,
+            339.16,
+            507.59,
+            555.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6161
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "printer",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "which window is closest to the corner of the room is not reliably established",
+        "cannot reliably distinguish the green printer from the nearby blue-boxed printer/device as the intended match"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.9733,
+        1.3928,
+        1.1638,
+        0.4712,
+        0.6378,
+        0.4762
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_1",
+          "view_id": "00000",
+          "bbox_2d": [
+            485.17,
+            314.75,
+            803.39,
+            586.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7535
+        },
+        {
+          "object_view_id": "bootstrap_00002",
+          "view_id": "00002",
+          "bbox_2d": [
+            1029.0,
+            367.0,
+            1295.0,
+            651.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            550.16,
+            224.62,
+            899.11,
+            499.5
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            0.43,
+            208.15,
+            379.31,
+            512.05
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "printer",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.0889,
+        1.4454,
+        1.1645,
+        0.7215,
+        0.6864,
+        0.4825
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_1",
+          "view_id": "00002",
+          "bbox_2d": [
+            1014.35,
+            354.96,
+            1296.0,
+            551.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5222
+        },
+        {
+          "object_view_id": "bootstrap_00028",
+          "view_id": "00028",
+          "bbox_2d": [
+            136.15,
+            80.49,
+            525.45,
+            380.15
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00030",
+          "view_id": "00030",
+          "bbox_2d": [
+            741.14,
+            237.84,
+            1104.53,
+            517.1
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            550.16,
+            224.62,
+            899.11,
+            499.5
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00027_0",
+          "view_id": "00027",
+          "bbox_2d": [
+            0.43,
+            208.15,
+            379.31,
+            512.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8555
+        },
+        {
+          "object_view_id": "00029_0",
+          "view_id": "00029",
+          "bbox_2d": [
+            550.16,
+            224.62,
+            899.11,
+            499.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7505
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "printer",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "not the printer directly in front of the window",
+        "another printer/copier in the scene matches the window/corner relation better"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -0.7587,
+        0.2709,
+        1.0042,
+        0.6891,
+        1.1913,
+        0.1792
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            472.46,
+            164.67,
+            983.63,
+            396.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3313
+        },
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            919.89,
+            234.85,
+            1296.0,
+            511.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4429
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            472.46,
+            164.67,
+            983.63,
+            396.81
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "printer",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "not directly in front of the window",
+        "another nearby printer satisfies the window relation better"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.0514,
+        0.2126,
+        1.0991,
+        0.6885,
+        0.9779,
+        0.6147
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00027_1",
+          "view_id": "00027",
+          "bbox_2d": [
+            443.46,
+            209.88,
+            1177.99,
+            790.32
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6343
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            443.46,
+            209.88,
+            1177.99,
+            790.32
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "printer",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "printer identity is not clearly confirmed for the green-boxed object",
+        "not directly in front of the window",
+        "another nearby object matches the requested printer-window relation better"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.1096,
+        0.2973,
+        1.3189,
+        0.5348,
+        0.5397,
+        0.1151
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00029_2",
+          "view_id": "00029",
+          "bbox_2d": [
+            1114.28,
+            258.64,
+            1295.98,
+            405.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2838
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1114.28,
+            258.64,
+            1295.98,
+            405.35
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

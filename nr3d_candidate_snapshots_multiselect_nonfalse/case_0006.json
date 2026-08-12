@@ -1,0 +1,237 @@
+{
+  "case_id": 6,
+  "scene_id": "scene0208_00",
+  "query": "this is the angled bookshelf far away from the corner of bookshelves",
+  "query_analysis": {
+    "raw_query": "this is the angled bookshelf far away from the corner of bookshelves",
+    "target_object": "bookshelf",
+    "target_attributes": [
+      "angled"
+    ],
+    "reference_object": "corner of bookshelves",
+    "reference_attributes": [],
+    "relation": "far away from"
+  },
+  "gt": {
+    "target_id": 106,
+    "gt_label": "bookshelf",
+    "gt_bbox_3d": [
+      -2.15949,
+      2.28413,
+      1.160408,
+      2.259099,
+      3.602022,
+      2.294577
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 2,
+    "bbox_3d": [
+      3.260731,
+      1.222167,
+      0.959282,
+      1.664601,
+      3.254806,
+      1.787728
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      1,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 63,
+    "total_views": 60,
+    "total_object_views": 3,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "bookshelf",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.2703,
+        -1.6566,
+        0.5571,
+        0.3403,
+        0.1017,
+        1.1835
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            387.2,
+            1.3,
+            1001.55,
+            944.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.354
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            387.2,
+            1.3,
+            1001.55,
+            944.7
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00028",
+          "view_id": "00028",
+          "bbox_2d": [
+            427.0,
+            753.0,
+            661.0,
+            966.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            675.0,
+            2.0,
+            931.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            1203.0,
+            616.0,
+            1295.0,
+            828.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "bookshelf",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "clear confirmation that the green-boxed candidate itself is a bookshelf in all views",
+        "clear evidence that this bookshelf is angled",
+        "clear confirmation of the referenced corner of bookshelves",
+        "clear evidence that the candidate is far away from that corner"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -2.1237,
+        -0.5694,
+        0.7228,
+        2.6262,
+        2.5642,
+        1.4703
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            470.58,
+            0.0,
+            705.11,
+            425.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2791
+        },
+        {
+          "object_view_id": "bootstrap_00117",
+          "view_id": "00117",
+          "bbox_2d": [
+            313.0,
+            5.0,
+            422.0,
+            318.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "bookshelf",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "whether the green-boxed bookshelf itself is truly angled",
+        "whether it is far away from the referenced corner of bookshelves",
+        "whether another nearby bookshelf fits the description better"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        3.2607,
+        1.2222,
+        0.9593,
+        1.6646,
+        3.2548,
+        1.7877
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            132.57,
+            310.35,
+            280.86,
+            752.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2636
+        }
+      ]
+    }
+  ]
+}

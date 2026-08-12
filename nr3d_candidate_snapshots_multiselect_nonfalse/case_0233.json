@@ -1,0 +1,920 @@
+{
+  "case_id": 233,
+  "scene_id": "scene0568_00",
+  "query": "the blue toddler chair that does not have a disney cars theme it is right in front of the curtains",
+  "query_analysis": {
+    "raw_query": "the blue toddler chair that does not have a disney cars theme it is right in front of the curtains",
+    "target_object": "toddler chair",
+    "target_attributes": [
+      "blue",
+      "does not have a disney cars theme"
+    ],
+    "reference_object": "curtains",
+    "reference_attributes": [],
+    "relation": "right in front of"
+  },
+  "gt": {
+    "target_id": 2,
+    "gt_label": "chair",
+    "gt_bbox_3d": [
+      0.025944,
+      -2.795429,
+      0.245818,
+      0.386928,
+      0.436127,
+      0.522948
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 7,
+    "bbox_3d": [
+      0.05376,
+      -2.739932,
+      0.234165,
+      0.368882,
+      0.414296,
+      0.576398
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 58,
+    "total_views": 42,
+    "total_object_views": 31,
+    "total_candidates": 9
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "toddler chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "object is a toddler chair",
+        "object is blue",
+        "object does not have a Disney Cars theme",
+        "object is right in front of the curtains"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.2684,
+        1.4792,
+        0.6226,
+        0.3031,
+        0.7702,
+        0.5995
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            10.06,
+            251.99,
+            199.92,
+            880.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3669
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            567.0,
+            290.0,
+            1214.0,
+            874.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00004",
+          "view_id": "00004",
+          "bbox_2d": [
+            639.0,
+            63.0,
+            1192.0,
+            512.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            398.0,
+            197.0,
+            815.0,
+            631.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "toddler chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "blue",
+        "does not have a disney cars theme",
+        "right in front of the curtains"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.5281,
+        3.1084,
+        0.1934,
+        0.3289,
+        0.426,
+        0.3834
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            633.77,
+            320.78,
+            768.23,
+            520.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6858
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "toddler chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot verify that this chair is right in front of the curtains",
+        "another similar nearby blue chair is present, so exact intended chair remains ambiguous"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        2.3473,
+        2.1503,
+        0.2073,
+        0.4442,
+        0.6317,
+        0.6937
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            1047.02,
+            553.58,
+            1285.58,
+            948.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4439
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            833.71,
+            606.22,
+            1077.21,
+            956.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4715
+        },
+        {
+          "object_view_id": "bootstrap_00024",
+          "view_id": "00024",
+          "bbox_2d": [
+            491.48,
+            305.44,
+            713.37,
+            683.94
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00030",
+          "view_id": "00030",
+          "bbox_2d": [
+            13.0,
+            192.0,
+            240.0,
+            539.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            577.63,
+            628.79,
+            790.3,
+            956.29
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "toddler chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the green-boxed object is a toddler chair",
+        "cannot reliably confirm the object does not have a Disney Cars theme",
+        "cannot confirm it is right in front of the curtains because curtains are not visible"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.3077,
+        2.7546,
+        0.232,
+        0.2855,
+        0.5015,
+        0.4386
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_1",
+          "view_id": "00014",
+          "bbox_2d": [
+            42.56,
+            679.48,
+            237.74,
+            925.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2682
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            609.0,
+            401.0,
+            733.0,
+            531.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00006",
+          "view_id": "00006",
+          "bbox_2d": [
+            1241.0,
+            314.0,
+            1285.0,
+            390.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            17.0,
+            833.0,
+            95.0,
+            963.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "toddler chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot confirm the chair is right in front of the curtains",
+        "cannot fully rule out the nearby blue-boxed similar chair as the better match"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        2.319,
+        1.7949,
+        0.2042,
+        0.5394,
+        0.4136,
+        0.671
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_1",
+          "view_id": "00016",
+          "bbox_2d": [
+            996.57,
+            660.18,
+            1283.62,
+            957.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2678
+        },
+        {
+          "object_view_id": "bootstrap_00024",
+          "view_id": "00024",
+          "bbox_2d": [
+            715.35,
+            319.72,
+            946.02,
+            723.34
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            870.62,
+            283.89,
+            1101.12,
+            668.23
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            718.71,
+            467.91,
+            938.12,
+            866.38
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00022_1",
+          "view_id": "00022",
+          "bbox_2d": [
+            1043.27,
+            378.01,
+            1283.09,
+            773.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3347
+        },
+        {
+          "object_view_id": "00024_1",
+          "view_id": "00024",
+          "bbox_2d": [
+            715.35,
+            319.72,
+            946.02,
+            723.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4022
+        },
+        {
+          "object_view_id": "00026_1",
+          "view_id": "00026",
+          "bbox_2d": [
+            828.75,
+            568.18,
+            1042.24,
+            954.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3282
+        },
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            489.98,
+            400.28,
+            706.02,
+            765.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7021
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            177.12,
+            171.43,
+            417.49,
+            550.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.516
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "toddler chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm it is specifically a toddler chair",
+        "cannot verify it is right in front of curtains because curtains are not visible",
+        "cannot clearly distinguish it from the adjacent similar chair"
+      ],
+      "num_object_views": 10,
+      "bbox_3d": [
+        2.3369,
+        2.3115,
+        0.2047,
+        0.5386,
+        0.522,
+        0.7038
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            925.81,
+            701.29,
+            1140.48,
+            956.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.432
+        },
+        {
+          "object_view_id": "bootstrap_00024",
+          "view_id": "00024",
+          "bbox_2d": [
+            491.48,
+            305.44,
+            713.37,
+            683.94
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00030",
+          "view_id": "00030",
+          "bbox_2d": [
+            11.52,
+            165.85,
+            178.63,
+            541.53
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            577.63,
+            628.79,
+            790.3,
+            956.29
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            960.97,
+            492.98,
+            1195.67,
+            869.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4766
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            822.6,
+            335.97,
+            1060.65,
+            703.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6586
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            491.48,
+            305.44,
+            713.37,
+            683.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.508
+        },
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            629.49,
+            554.11,
+            827.62,
+            905.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5021
+        },
+        {
+          "object_view_id": "00028_1",
+          "view_id": "00028",
+          "bbox_2d": [
+            291.4,
+            390.85,
+            497.07,
+            737.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5754
+        },
+        {
+          "object_view_id": "00030_1",
+          "view_id": "00030",
+          "bbox_2d": [
+            11.52,
+            165.85,
+            178.63,
+            541.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4393
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "toddler chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 4,
+      "done_actions": [],
+      "missing_conditions": [
+        "does not have a disney cars theme"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.4011,
+        -2.1882,
+        0.2283,
+        0.7795,
+        0.6297,
+        0.4481
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            921.61,
+            458.53,
+            1157.72,
+            722.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4802
+        },
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            715.21,
+            454.04,
+            939.67,
+            716.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4625
+        },
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            779.46,
+            539.64,
+            1058.9,
+            873.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8078
+        },
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            801.44,
+            473.41,
+            1106.38,
+            831.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6751
+        },
+        {
+          "object_view_id": "00058_2",
+          "view_id": "00058",
+          "bbox_2d": [
+            527.15,
+            466.34,
+            851.22,
+            826.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4003
+        },
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            78.43,
+            490.87,
+            384.78,
+            847.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5585
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "toddler chair",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 9,
+      "bbox_3d": [
+        0.0493,
+        -2.7488,
+        0.242,
+        0.361,
+        0.4332,
+        0.5608
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_1",
+          "view_id": "00046",
+          "bbox_2d": [
+            771.45,
+            352.88,
+            900.58,
+            580.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3952
+        },
+        {
+          "object_view_id": "00048_1",
+          "view_id": "00048",
+          "bbox_2d": [
+            521.64,
+            373.92,
+            657.5,
+            604.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2916
+        },
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            731.19,
+            666.88,
+            869.46,
+            936.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2852
+        },
+        {
+          "object_view_id": "00054_1",
+          "view_id": "00054",
+          "bbox_2d": [
+            469.92,
+            474.85,
+            652.33,
+            773.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3145
+        },
+        {
+          "object_view_id": "00056_1",
+          "view_id": "00056",
+          "bbox_2d": [
+            392.64,
+            426.61,
+            622.0,
+            771.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3151
+        },
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            95.3,
+            487.68,
+            374.57,
+            830.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5389
+        },
+        {
+          "object_view_id": "bootstrap_00057",
+          "view_id": "00057",
+          "bbox_2d": [
+            248.96,
+            349.92,
+            522.58,
+            702.91
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            368.0,
+            462.0,
+            592.0,
+            771.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            23.0,
+            600.0,
+            239.0,
+            848.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "toddler chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -2.7574,
+        -1.6167,
+        0.4429,
+        2.0185,
+        0.505,
+        0.7326
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_1",
+          "view_id": "00058",
+          "bbox_2d": [
+            1035.4,
+            57.25,
+            1282.65,
+            427.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4084
+        }
+      ]
+    }
+  ]
+}

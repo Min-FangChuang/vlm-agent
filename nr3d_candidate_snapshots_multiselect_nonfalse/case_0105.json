@@ -1,0 +1,260 @@
+{
+  "case_id": 105,
+  "scene_id": "scene0578_00",
+  "query": "the smallest window above the door",
+  "query_analysis": {
+    "raw_query": "the smallest window above the door",
+    "target_object": "window",
+    "target_attributes": [
+      "smallest"
+    ],
+    "reference_object": "door",
+    "reference_attributes": [],
+    "relation": "above"
+  },
+  "gt": {
+    "target_id": 13,
+    "gt_label": "window",
+    "gt_bbox_3d": [
+      -0.807843,
+      1.965537,
+      2.280708,
+      0.17,
+      0.243785,
+      0.517166
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -4.47216,
+      0.832338,
+      1.395053,
+      5.457175,
+      4.534363,
+      0.687573
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 41,
+    "total_views": 38,
+    "total_object_views": 4,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "window",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "not above the door",
+        "cannot verify it is the smallest window"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -3.0479,
+        -1.3117,
+        1.4653,
+        2.6906,
+        2.2666,
+        0.9678
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            816.03,
+            0.0,
+            1210.56,
+            212.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3581
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            720.21,
+            0.0,
+            1244.87,
+            319.78
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00074",
+          "view_id": "00074",
+          "bbox_2d": [
+            22.0,
+            3.0,
+            111.0,
+            189.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            855.0,
+            0.0,
+            1295.0,
+            254.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            720.21,
+            0.0,
+            1244.87,
+            319.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4264
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "window",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "must clearly confirm the referenced door associated with this window",
+        "must clearly confirm the window is above that door rather than merely nearby",
+        "must verify this is the smallest relevant window among alternatives in the local scene"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -4.4722,
+        0.8321,
+        1.3951,
+        5.4572,
+        4.5348,
+        0.6876
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            31.93,
+            0.0,
+            902.29,
+            163.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2535
+        },
+        {
+          "object_view_id": "bootstrap_00028",
+          "view_id": "00028",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            138.0,
+            220.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            17.0,
+            1.0,
+            709.0,
+            54.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00074",
+          "view_id": "00074",
+          "bbox_2d": [
+            174.0,
+            3.0,
+            372.0,
+            49.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "window",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "window is above the door",
+        "candidate is the smallest such window above the door"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.9935,
+        0.7488,
+        1.1689,
+        0.5284,
+        1.8119,
+        0.2025
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            83.76,
+            0.0,
+            409.49,
+            156.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.275
+        }
+      ]
+    }
+  ]
+}

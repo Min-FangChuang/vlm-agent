@@ -1,0 +1,388 @@
+{
+  "case_id": 205,
+  "scene_id": "scene0011_00",
+  "query": "this trashcan is by a double door",
+  "query_analysis": {
+    "raw_query": "this trashcan is by a double door",
+    "target_object": "trashcan",
+    "target_attributes": [],
+    "reference_object": "door",
+    "reference_attributes": [
+      "double"
+    ],
+    "relation": "by"
+  },
+  "gt": {
+    "target_id": 32,
+    "gt_label": "trash can",
+    "gt_bbox_3d": [
+      -1.401682,
+      3.286193,
+      0.444189,
+      0.241725,
+      0.338606,
+      0.868738
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 2,
+    "bbox_3d": [
+      -1.385249,
+      -2.694181,
+      0.463444,
+      0.394653,
+      0.348309,
+      0.881836
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 69,
+    "total_views": 60,
+    "total_object_views": 8,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "trashcan",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "trashcan is by/next to the double door"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -1.4678,
+        -2.9539,
+        0.4426,
+        0.3678,
+        0.4412,
+        0.8866
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            1085.17,
+            584.28,
+            1218.69,
+            800.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6955
+        },
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            757.91,
+            460.54,
+            880.53,
+            675.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8007
+        },
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            552.36,
+            63.11,
+            681.39,
+            365.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7127
+        },
+        {
+          "object_view_id": "bootstrap_00063",
+          "view_id": "00063",
+          "bbox_2d": [
+            755.12,
+            394.24,
+            880.36,
+            602.93
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00054",
+          "view_id": "00054",
+          "bbox_2d": [
+            597.0,
+            159.0,
+            678.0,
+            249.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00098",
+          "view_id": "00098",
+          "bbox_2d": [
+            1167.4,
+            127.68,
+            1286.58,
+            374.6
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00104_0",
+          "view_id": "00104",
+          "bbox_2d": [
+            843.4,
+            407.27,
+            1023.89,
+            856.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6547
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "trashcan",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "clear visual confirmation that the nearby door is a double door",
+        "fully reliable confirmation of the spatial relation 'by' relative to that double door"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.4285,
+        3.294,
+        0.4387,
+        0.3218,
+        0.4379,
+        0.8676
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00088_0",
+          "view_id": "00088",
+          "bbox_2d": [
+            878.14,
+            8.1,
+            1058.9,
+            401.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8209
+        },
+        {
+          "object_view_id": "00090_0",
+          "view_id": "00090",
+          "bbox_2d": [
+            1006.82,
+            5.08,
+            1288.19,
+            534.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8614
+        },
+        {
+          "object_view_id": "bootstrap_00087",
+          "view_id": "00087",
+          "bbox_2d": [
+            547.46,
+            29.66,
+            695.3,
+            379.68
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00089",
+          "view_id": "00089",
+          "bbox_2d": [
+            1133.0,
+            25.0,
+            1288.0,
+            508.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "trashcan",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.4091,
+        -2.6716,
+        0.4314,
+        0.347,
+        0.3108,
+        0.8177
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00098_0",
+          "view_id": "00098",
+          "bbox_2d": [
+            1167.4,
+            127.68,
+            1286.58,
+            374.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6423
+        },
+        {
+          "object_view_id": "bootstrap_00063",
+          "view_id": "00063",
+          "bbox_2d": [
+            759.0,
+            398.0,
+            964.0,
+            602.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00060",
+          "view_id": "00060",
+          "bbox_2d": [
+            1084.0,
+            595.0,
+            1216.0,
+            801.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00062",
+          "view_id": "00062",
+          "bbox_2d": [
+            757.91,
+            460.54,
+            880.53,
+            675.61
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "trashcan",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "clear confirmation that the green-boxed object is a trashcan"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -0.9307,
+        3.1666,
+        0.4233,
+        0.2892,
+        0.4126,
+        0.8443
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00116_0",
+          "view_id": "00116",
+          "bbox_2d": [
+            10.94,
+            179.53,
+            127.93,
+            564.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8415
+        },
+        {
+          "object_view_id": "bootstrap_00117",
+          "view_id": "00117",
+          "bbox_2d": [
+            11.14,
+            181.48,
+            129.14,
+            630.53
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00115",
+          "view_id": "00115",
+          "bbox_2d": [
+            9.0,
+            147.0,
+            86.0,
+            478.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

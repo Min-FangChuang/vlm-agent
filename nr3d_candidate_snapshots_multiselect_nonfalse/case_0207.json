@@ -1,0 +1,739 @@
+{
+  "case_id": 207,
+  "scene_id": "scene0353_00",
+  "query": "this backpack is closer to the tall brown wardrobe cabinet '",
+  "query_analysis": {
+    "raw_query": "this backpack is closer to the tall brown wardrobe cabinet '",
+    "target_object": "backpack",
+    "target_attributes": [],
+    "reference_object": "wardrobe cabinet",
+    "reference_attributes": [
+      "tall",
+      "brown"
+    ],
+    "relation": "closer to"
+  },
+  "gt": {
+    "target_id": 32,
+    "gt_label": "backpack",
+    "gt_bbox_3d": [
+      0.888566,
+      0.625643,
+      0.021053,
+      0.737848,
+      0.720246,
+      0.153129
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 3,
+    "bbox_3d": [
+      0.684449,
+      0.74944,
+      0.04211,
+      0.551274,
+      0.440304,
+      0.149348
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3
+    ],
+    "detector_call_count": 90,
+    "total_views": 75,
+    "total_object_views": 12,
+    "total_candidates": 8
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "backpack",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate backpack is closer to the tall brown wardrobe cabinet than nearby alternative backpacks/bags"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.8845,
+        1.018,
+        0.9212,
+        0.9626,
+        1.5799,
+        0.3186
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            739.01,
+            0.0,
+            1035.47,
+            134.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3916
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            739.01,
+            0.0,
+            1035.47,
+            134.79
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "backpack",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "tall brown wardrobe cabinet is not clearly visually confirmed",
+        "cannot reliably verify the backpack's proximity relation to the wardrobe cabinet"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -0.6955,
+        1.1368,
+        0.2851,
+        0.3824,
+        0.6642,
+        0.6264
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            958.6,
+            791.38,
+            1116.81,
+            965.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3768
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            787.2,
+            544.53,
+            945.55,
+            776.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3972
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            1272.0,
+            371.0,
+            1295.0,
+            466.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            541.0,
+            879.0,
+            652.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00089",
+          "view_id": "00089",
+          "bbox_2d": [
+            622.0,
+            560.0,
+            786.0,
+            766.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00090_0",
+          "view_id": "00090",
+          "bbox_2d": [
+            467.01,
+            613.55,
+            639.94,
+            871.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.375
+        },
+        {
+          "object_view_id": "00102_0",
+          "view_id": "00102",
+          "bbox_2d": [
+            706.86,
+            603.79,
+            918.74,
+            891.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5549
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "backpack",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.4901,
+        0.3094,
+        1.1464,
+        0.2412,
+        0.1639,
+        0.3185
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_1",
+          "view_id": "00026",
+          "bbox_2d": [
+            640.81,
+            212.21,
+            916.23,
+            566.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2746
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            640.81,
+            212.21,
+            916.23,
+            566.19
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            145.4,
+            26.79,
+            452.07,
+            466.78
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            57.0,
+            286.0,
+            321.0,
+            745.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            531.16,
+            459.4,
+            841.86,
+            899.71
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "backpack",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.7456,
+        0.7589,
+        0.0421,
+        0.3807,
+        0.3867,
+        0.1493
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            331.57,
+            730.39,
+            554.52,
+            957.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5116
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            331.57,
+            730.39,
+            554.52,
+            957.59
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00126",
+          "view_id": "00126",
+          "bbox_2d": [
+            757.0,
+            621.0,
+            1144.0,
+            940.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00130",
+          "view_id": "00130",
+          "bbox_2d": [
+            64.0,
+            533.0,
+            479.0,
+            934.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00129",
+          "view_id": "00129",
+          "bbox_2d": [
+            200.0,
+            425.0,
+            612.0,
+            842.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "backpack",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "candidate being close to the tall brown wardrobe cabinet"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.6426,
+        0.629,
+        0.0203,
+        0.8671,
+        0.6713,
+        0.1991
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            100.6,
+            682.62,
+            321.89,
+            963.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2925
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            100.6,
+            682.62,
+            321.89,
+            963.81
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00129",
+          "view_id": "00129",
+          "bbox_2d": [
+            524.0,
+            648.0,
+            946.0,
+            933.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00128",
+          "view_id": "00128",
+          "bbox_2d": [
+            432.71,
+            323.5,
+            1145.5,
+            966.06
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00130",
+          "view_id": "00130",
+          "bbox_2d": [
+            410.0,
+            722.0,
+            826.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00128_0",
+          "view_id": "00128",
+          "bbox_2d": [
+            432.71,
+            323.5,
+            1145.5,
+            966.06
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2743
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "backpack",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.5244,
+        -2.5726,
+        1.0107,
+        0.2611,
+        0.1193,
+        0.1603
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            123.79,
+            30.82,
+            343.24,
+            201.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3509
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            123.79,
+            30.82,
+            343.24,
+            201.5
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00004",
+          "view_id": "00004",
+          "bbox_2d": [
+            20.0,
+            575.0,
+            190.0,
+            705.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            210.0,
+            651.0,
+            393.0,
+            771.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00075",
+          "view_id": "00075",
+          "bbox_2d": [
+            399.0,
+            92.0,
+            576.0,
+            215.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "backpack",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "green-boxed object must be a backpack",
+        "cannot verify the requested closeness relation for a backpack because the candidate itself is not a backpack"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.0117,
+        1.4353,
+        0.6906,
+        0.1804,
+        0.2793,
+        0.4481
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00106_0",
+          "view_id": "00106",
+          "bbox_2d": [
+            1068.4,
+            473.48,
+            1295.98,
+            965.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4051
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1068.4,
+            473.48,
+            1295.98,
+            965.87
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "backpack",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "clear spatial evidence that this specific backpack is the one closer to the tall brown wardrobe cabinet",
+        "reliable comparison against nearby alternative backpack/bag candidates"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.711,
+        0.8449,
+        0.0299,
+        0.4102,
+        0.227,
+        0.1045
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00112_0",
+          "view_id": "00112",
+          "bbox_2d": [
+            1107.01,
+            575.74,
+            1295.9,
+            842.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2574
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1107.01,
+            575.74,
+            1295.9,
+            842.22
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00125",
+          "view_id": "00125",
+          "bbox_2d": [
+            550.0,
+            926.0,
+            650.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00128",
+          "view_id": "00128",
+          "bbox_2d": [
+            432.71,
+            323.5,
+            1145.5,
+            966.06
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00046",
+          "view_id": "00046",
+          "bbox_2d": [
+            41.0,
+            483.0,
+            263.0,
+            659.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

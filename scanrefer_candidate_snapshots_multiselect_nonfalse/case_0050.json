@@ -1,0 +1,310 @@
+{
+  "case_id": 50,
+  "scene_id": "scene0278_00",
+  "query": "the chair is on the opposite side from the green paper cutter and has a chair to its right . the chair is gold and has four legs .",
+  "query_analysis": {
+    "raw_query": "the chair is on the opposite side from the green paper cutter and has a chair to its right . the chair is gold and has four legs .",
+    "target_object": "chair",
+    "target_attributes": [
+      "gold",
+      "four legs"
+    ],
+    "reference_object": "green paper cutter",
+    "reference_attributes": [
+      "green"
+    ],
+    "relation": "on the opposite side from"
+  },
+  "gt": {
+    "target_id": 11,
+    "gt_label": "chair",
+    "gt_bbox_3d": [
+      0.747624,
+      0.078367,
+      0.401794,
+      0.645578,
+      0.64107,
+      0.831804
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      0.743406,
+      0.100686,
+      0.404463,
+      0.661697,
+      0.608352,
+      0.843428
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 25,
+    "total_views": 20,
+    "total_object_views": 4,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "chair",
+        "gold",
+        "four legs",
+        "on the opposite side from the green paper cutter",
+        "has a chair to its right"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.9007,
+        -1.0918,
+        0.3849,
+        0.3359,
+        0.7215,
+        0.4854
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            0.14,
+            737.02,
+            346.68,
+            965.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3421
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.14,
+            737.02,
+            346.68,
+            965.99
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "four legs are not clearly visible",
+        "the opposite-side relation to the green paper cutter is not fully established with high certainty"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.7495,
+        0.1026,
+        0.409,
+        0.6531,
+        0.6125,
+        0.8257
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            534.78,
+            321.9,
+            1167.09,
+            966.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6103
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            135.94,
+            78.59,
+            758.77,
+            902.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8516
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            135.94,
+            78.59,
+            758.77,
+            902.73
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            2.22,
+            35.67,
+            632.31,
+            872.97
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            302.11,
+            131.05,
+            903.94,
+            931.86
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00024",
+          "view_id": "00024",
+          "bbox_2d": [
+            23.0,
+            76.0,
+            294.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the candidate has four legs",
+        "cannot reliably confirm the candidate is the specific chair intended among nearby similar chairs",
+        "cannot reliably confirm the candidate is on the opposite side from the green paper cutter"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.8133,
+        -0.259,
+        0.5997,
+        0.1521,
+        0.0931,
+        0.3254
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_1",
+          "view_id": "00020",
+          "bbox_2d": [
+            1190.8,
+            479.24,
+            1296.0,
+            965.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2919
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1190.8,
+            479.24,
+            1296.0,
+            965.65
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            681.48,
+            67.7,
+            1296.0,
+            965.83
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            948.0,
+            257.0,
+            1081.0,
+            645.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00000",
+          "view_id": "00000",
+          "bbox_2d": [
+            23.0,
+            930.0,
+            55.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

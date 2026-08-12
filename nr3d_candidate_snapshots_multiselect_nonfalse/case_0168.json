@@ -1,0 +1,414 @@
+{
+  "case_id": 168,
+  "scene_id": "scene0699_00",
+  "query": "the pillow on the side near the kitchen table",
+  "query_analysis": {
+    "raw_query": "the pillow on the side near the kitchen table",
+    "target_object": "pillow",
+    "target_attributes": [],
+    "reference_object": "table",
+    "reference_attributes": [
+      "kitchen"
+    ],
+    "relation": "on the side near"
+  },
+  "gt": {
+    "target_id": 26,
+    "gt_label": "pillow",
+    "gt_bbox_3d": [
+      -1.638332,
+      0.578288,
+      0.547223,
+      0.47934,
+      0.721245,
+      0.220055
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -1.656529,
+      0.550011,
+      0.537857,
+      0.444807,
+      0.676282,
+      0.247161
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 61,
+    "total_views": 55,
+    "total_object_views": 10,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "pillow",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 9,
+      "bbox_3d": [
+        -1.6543,
+        0.5454,
+        0.5633,
+        0.4427,
+        0.6667,
+        0.1873
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            259.74,
+            564.95,
+            773.41,
+            913.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.761
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            112.58,
+            477.72,
+            638.13,
+            827.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7358
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            7.58,
+            631.55,
+            259.98,
+            912.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3612
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            112.58,
+            477.72,
+            638.13,
+            827.34
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00001",
+          "view_id": "00001",
+          "bbox_2d": [
+            247.11,
+            544.2,
+            761.98,
+            884.94
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            9.35,
+            456.88,
+            486.47,
+            828.73
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            9.85,
+            132.35,
+            480.86,
+            501.59
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            9.85,
+            132.35,
+            480.86,
+            501.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7047
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            841.66,
+            117.21,
+            1284.63,
+            389.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8141
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "pillow",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "the nearby table is specifically identifiable as a kitchen table"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.6541,
+        1.1724,
+        0.5843,
+        0.4167,
+        0.5535,
+        0.1453
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_1",
+          "view_id": "00000",
+          "bbox_2d": [
+            613.97,
+            493.31,
+            983.37,
+            713.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3227
+        },
+        {
+          "object_view_id": "00004_1",
+          "view_id": "00004",
+          "bbox_2d": [
+            45.93,
+            451.45,
+            437.84,
+            709.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3231
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            45.93,
+            451.45,
+            437.84,
+            709.89
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00002",
+          "view_id": "00002",
+          "bbox_2d": [
+            472.0,
+            392.0,
+            834.0,
+            601.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00091",
+          "view_id": "00091",
+          "bbox_2d": [
+            8.91,
+            270.79,
+            232.43,
+            525.28
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            282.0,
+            53.0,
+            685.0,
+            280.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a pillow",
+        "object is on the side near the kitchen table"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -0.3259,
+        1.3088,
+        0.5569,
+        0.7617,
+        0.5164,
+        0.1864
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            195.47,
+            639.16,
+            984.39,
+            960.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2608
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            6.49,
+            640.55,
+            441.47,
+            960.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2572
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            195.47,
+            639.16,
+            984.39,
+            960.01
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a pillow",
+        "near a kitchen table"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.3016,
+        1.3629,
+        0.5336,
+        0.7493,
+        0.4077,
+        0.2192
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00084_0",
+          "view_id": "00084",
+          "bbox_2d": [
+            8.09,
+            671.69,
+            910.5,
+            959.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2773
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            8.09,
+            671.69,
+            910.5,
+            959.16
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

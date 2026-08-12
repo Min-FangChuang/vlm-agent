@@ -1,0 +1,838 @@
+{
+  "case_id": 128,
+  "scene_id": "scene0050_00",
+  "query": "the laptop by the chair with the floral pattern",
+  "query_analysis": {
+    "raw_query": "the laptop by the chair with the floral pattern",
+    "target_object": "laptop",
+    "target_attributes": [],
+    "reference_object": "chair",
+    "reference_attributes": [
+      "floral pattern"
+    ],
+    "relation": "by"
+  },
+  "gt": {
+    "target_id": 28,
+    "gt_label": "laptop",
+    "gt_bbox_3d": [
+      0.364225,
+      0.879609,
+      0.816603,
+      0.402566,
+      0.691277,
+      0.279089
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 3,
+    "bbox_3d": [
+      0.377943,
+      0.847978,
+      0.827715,
+      0.415944,
+      0.416135,
+      0.272434
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3
+    ],
+    "detector_call_count": 129,
+    "total_views": 117,
+    "total_object_views": 25,
+    "total_candidates": 8
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "laptop",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        0.4111,
+        0.8455,
+        0.8361,
+        0.4415,
+        0.3874,
+        0.2752
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            834.08,
+            180.94,
+            1241.4,
+            486.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8514
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            368.47,
+            248.25,
+            711.76,
+            561.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9083
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            834.08,
+            180.94,
+            1241.4,
+            486.72
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00210",
+          "view_id": "00210",
+          "bbox_2d": [
+            416.0,
+            23.0,
+            872.0,
+            323.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00187",
+          "view_id": "00187",
+          "bbox_2d": [
+            528.14,
+            105.17,
+            889.33,
+            391.44
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00204",
+          "view_id": "00204",
+          "bbox_2d": [
+            2.81,
+            326.0,
+            696.27,
+            966.14
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00202_0",
+          "view_id": "00202",
+          "bbox_2d": [
+            21.11,
+            112.46,
+            852.6,
+            964.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7615
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "laptop",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 5,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "by the chair with the floral pattern"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.8423,
+        0.6056,
+        0.823,
+        0.2238,
+        0.2483,
+        0.2283
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_1",
+          "view_id": "00014",
+          "bbox_2d": [
+            845.13,
+            251.8,
+            1169.08,
+            525.84
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8622
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            301.64,
+            291.53,
+            639.68,
+            578.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9443
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            301.64,
+            291.53,
+            639.68,
+            578.17
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00190_1",
+          "view_id": "00190",
+          "bbox_2d": [
+            898.71,
+            4.56,
+            1181.06,
+            311.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5543
+        },
+        {
+          "object_view_id": "00200_0",
+          "view_id": "00200",
+          "bbox_2d": [
+            706.2,
+            617.31,
+            1182.39,
+            968.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8099
+        },
+        {
+          "object_view_id": "00202_1",
+          "view_id": "00202",
+          "bbox_2d": [
+            1017.93,
+            239.61,
+            1296.0,
+            930.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6087
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "laptop",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "green-boxed object is a laptop",
+        "green-boxed object is the laptop by the floral-pattern chair"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.1959,
+        -2.1391,
+        0.5008,
+        1.4938,
+        0.7162,
+        1.0078
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            1.52,
+            184.53,
+            1292.55,
+            960.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6071
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1.52,
+            184.53,
+            1292.55,
+            960.69
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "laptop",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 7,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 11,
+      "bbox_3d": [
+        0.3937,
+        0.8688,
+        0.8182,
+        0.3784,
+        0.3189,
+        0.2865
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00186_0",
+          "view_id": "00186",
+          "bbox_2d": [
+            572.23,
+            0.0,
+            900.11,
+            104.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5951
+        },
+        {
+          "object_view_id": "00188_0",
+          "view_id": "00188",
+          "bbox_2d": [
+            420.81,
+            171.83,
+            788.04,
+            538.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7418
+        },
+        {
+          "object_view_id": "00190_0",
+          "view_id": "00190",
+          "bbox_2d": [
+            401.87,
+            110.69,
+            867.64,
+            606.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9592
+        },
+        {
+          "object_view_id": "00192_1",
+          "view_id": "00192",
+          "bbox_2d": [
+            342.5,
+            175.62,
+            911.32,
+            786.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9347
+        },
+        {
+          "object_view_id": "00194_0",
+          "view_id": "00194",
+          "bbox_2d": [
+            311.25,
+            393.73,
+            1077.06,
+            966.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8454
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            311.25,
+            393.73,
+            1077.06,
+            966.66
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00210",
+          "view_id": "00210",
+          "bbox_2d": [
+            397.0,
+            18.0,
+            872.0,
+            314.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00204",
+          "view_id": "00204",
+          "bbox_2d": [
+            2.81,
+            326.0,
+            696.27,
+            966.14
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00206",
+          "view_id": "00206",
+          "bbox_2d": [
+            178.0,
+            304.0,
+            756.0,
+            805.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00204_1",
+          "view_id": "00204",
+          "bbox_2d": [
+            2.81,
+            326.0,
+            696.27,
+            966.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4333
+        },
+        {
+          "object_view_id": "00208_0",
+          "view_id": "00208",
+          "bbox_2d": [
+            506.57,
+            382.53,
+            1056.91,
+            672.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6812
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "laptop",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "green-boxed laptop is not the best match for being the laptop by the floral-patterned chair"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.0387,
+        0.673,
+        0.8298,
+        1.0066,
+        0.3936,
+        0.2213
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00192_0",
+          "view_id": "00192",
+          "bbox_2d": [
+            992.34,
+            9.23,
+            1296.0,
+            444.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9518
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            992.34,
+            9.23,
+            1296.0,
+            444.52
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "laptop",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "clear confirmation that this specific green-boxed laptop is the laptop by the floral-patterned chair",
+        "clear disambiguation from the other nearby laptops on the same table/area"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.794,
+        0.8577,
+        0.8281,
+        0.3471,
+        0.2781,
+        0.2221
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00202_2",
+          "view_id": "00202",
+          "bbox_2d": [
+            784.06,
+            161.51,
+            1179.33,
+            607.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2851
+        },
+        {
+          "object_view_id": "00204_0",
+          "view_id": "00204",
+          "bbox_2d": [
+            761.39,
+            430.95,
+            1296.0,
+            896.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7075
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            761.39,
+            430.95,
+            1296.0,
+            896.1
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00211",
+          "view_id": "00211",
+          "bbox_2d": [
+            422.0,
+            258.0,
+            943.0,
+            459.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00200",
+          "view_id": "00200",
+          "bbox_2d": [
+            531.0,
+            627.0,
+            811.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00194",
+          "view_id": "00194",
+          "bbox_2d": [
+            997.0,
+            395.0,
+            1285.0,
+            778.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "laptop",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.4856,
+        0.8575,
+        0.8524,
+        0.1659,
+        0.3078,
+        0.2127
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00210_0",
+          "view_id": "00210",
+          "bbox_2d": [
+            545.66,
+            26.26,
+            869.72,
+            324.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3715
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            545.66,
+            26.26,
+            869.72,
+            324.21
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00187",
+          "view_id": "00187",
+          "bbox_2d": [
+            528.14,
+            105.17,
+            889.33,
+            391.44
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00201",
+          "view_id": "00201",
+          "bbox_2d": [
+            0.0,
+            294.4,
+            676.43,
+            965.71
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00203",
+          "view_id": "00203",
+          "bbox_2d": [
+            0.0,
+            270.5,
+            856.06,
+            965.95
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "laptop",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "the nearby chair has a floral pattern"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.9362,
+        0.6517,
+        0.8024,
+        0.2277,
+        0.3681,
+        0.1718
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00212_0",
+          "view_id": "00212",
+          "bbox_2d": [
+            0.0,
+            241.65,
+            376.53,
+            902.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4147
+        },
+        {
+          "object_view_id": "00214_0",
+          "view_id": "00214",
+          "bbox_2d": [
+            0.0,
+            141.79,
+            205.02,
+            798.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6452
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            241.65,
+            376.53,
+            902.08
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00220_0",
+          "view_id": "00220",
+          "bbox_2d": [
+            0.0,
+            154.8,
+            459.02,
+            694.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5632
+        },
+        {
+          "object_view_id": "00222_0",
+          "view_id": "00222",
+          "bbox_2d": [
+            85.16,
+            0.23,
+            574.08,
+            249.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7168
+        },
+        {
+          "object_view_id": "00224_0",
+          "view_id": "00224",
+          "bbox_2d": [
+            308.22,
+            0.0,
+            691.53,
+            175.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.906
+        }
+      ]
+    }
+  ]
+}

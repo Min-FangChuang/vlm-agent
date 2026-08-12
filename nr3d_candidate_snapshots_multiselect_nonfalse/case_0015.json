@@ -1,0 +1,172 @@
+{
+  "case_id": 15,
+  "scene_id": "scene0329_00",
+  "query": "the white monitor farthest from the trash cans which are in between the two doors",
+  "query_analysis": {
+    "raw_query": "the white monitor farthest from the trash cans which are in between the two doors",
+    "target_object": "monitor",
+    "target_attributes": [
+      "white"
+    ],
+    "reference_object": "trash cans",
+    "reference_attributes": [
+      "in between the two doors"
+    ],
+    "relation": "farthest from"
+  },
+  "gt": {
+    "target_id": 32,
+    "gt_label": "monitor",
+    "gt_bbox_3d": [
+      -1.010787,
+      -2.567677,
+      1.218733,
+      0.661625,
+      0.220483,
+      0.448095
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -0.125998,
+      -2.120087,
+      1.12534,
+      0.503456,
+      0.397251,
+      0.435629
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      2,
+      2
+    ],
+    "detector_call_count": 41,
+    "total_views": 39,
+    "total_object_views": 2,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "monitor",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "white",
+        "farthest from the trash cans",
+        "trash cans in between the two doors not visually confirmed"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.8185,
+        -2.3735,
+        1.1318,
+        0.7784,
+        0.6341,
+        0.3622
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            628.91,
+            68.09,
+            900.92,
+            261.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4841
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "monitor",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "trash cans are not visually confirmed",
+        "trash cans being in between two doors is not confirmed",
+        "cannot determine whether this monitor is farthest from those trash cans"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.1237,
+        -2.1201,
+        1.1253,
+        0.4991,
+        0.3973,
+        0.4356
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            265.29,
+            13.6,
+            755.55,
+            465.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.849
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            265.29,
+            13.6,
+            755.55,
+            465.17
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            350.85,
+            0.0,
+            704.78,
+            294.03
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00067",
+          "view_id": "00067",
+          "bbox_2d": [
+            0.0,
+            34.66,
+            449.24,
+            480.47
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,456 @@
+{
+  "case_id": 1,
+  "scene_id": "scene0221_00",
+  "query": "a counter / desk where a tv often sits . it is beside the black chair .",
+  "query_analysis": {
+    "raw_query": "a counter / desk where a tv often sits . it is beside the black chair .",
+    "target_object": "counter / desk",
+    "target_attributes": [],
+    "reference_object": "chair",
+    "reference_attributes": [
+      "black"
+    ],
+    "relation": "beside"
+  },
+  "gt": {
+    "target_id": 10,
+    "gt_label": "desk",
+    "gt_bbox_3d": [
+      1.246119,
+      1.018211,
+      0.326598,
+      0.736961,
+      1.652259,
+      0.804751
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      1.269522,
+      0.633574,
+      0.500462,
+      0.764223,
+      2.331803,
+      1.167343
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 34,
+    "total_views": 25,
+    "total_object_views": 8,
+    "total_candidates": 5
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "counter / desk",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "a clearly identifiable black chair is visible",
+        "the desk is shown to be beside that black chair"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.9618,
+        -1.8978,
+        0.9128,
+        1.5907,
+        0.6245,
+        0.1432
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            733.61,
+            502.45,
+            1296.0,
+            869.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4391
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            1.17,
+            156.17,
+            1003.74,
+            620.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4594
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1.17,
+            156.17,
+            1003.74,
+            620.34
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            308.5,
+            262.12,
+            1133.73,
+            730.67
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00006",
+          "view_id": "00006",
+          "bbox_2d": [
+            14.0,
+            369.0,
+            194.0,
+            556.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            23.0,
+            530.0,
+            762.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "counter / desk",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.2241,
+        1.0072,
+        0.5005,
+        0.8582,
+        1.5866,
+        1.1673
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            323.33,
+            182.54,
+            817.57,
+            551.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4481
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            577.62,
+            329.8,
+            1158.52,
+            950.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5906
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            1.54,
+            356.49,
+            867.0,
+            964.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.308
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            0.74,
+            489.13,
+            738.62,
+            965.2
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            375.7,
+            355.55,
+            1004.39,
+            964.53
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            763.55,
+            62.26,
+            1295.66,
+            638.01
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "counter / desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate does not appear to be a counter/desk",
+        "candidate is not the surface where the TV sits",
+        "another nearby object matches the requested desk/counter with TV beside black chair better"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.1928,
+        2.8361,
+        0.4031,
+        0.8809,
+        1.2318,
+        0.748
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            274.59,
+            149.35,
+            959.66,
+            852.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2555
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            274.59,
+            149.35,
+            959.66,
+            852.76
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "counter / desk",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "clear visual confirmation of a black chair",
+        "clear confirmation that the desk/counter is beside that black chair"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.2749,
+        -0.2767,
+        0.3963,
+        0.5494,
+        0.5365,
+        0.277
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            210.7,
+            768.53,
+            826.53,
+            967.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4495
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            210.7,
+            768.53,
+            826.53,
+            967.6
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            0.74,
+            489.13,
+            738.62,
+            965.2
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00036",
+          "view_id": "00036",
+          "bbox_2d": [
+            452.0,
+            477.0,
+            785.0,
+            679.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            79.91,
+            505.06,
+            677.81,
+            967.11
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "counter / desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a counter / desk",
+        "beside the black chair"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.2922,
+        -2.247,
+        0.5727,
+        0.6045,
+        1.2064,
+        0.9725
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            293.28,
+            724.3,
+            583.4,
+            965.84
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5459
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            293.28,
+            724.3,
+            583.4,
+            965.84
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

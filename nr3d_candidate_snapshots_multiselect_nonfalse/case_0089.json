@@ -1,0 +1,1523 @@
+{
+  "case_id": 89,
+  "scene_id": "scene0643_00",
+  "query": "the desk that has something teal light blue sitting on it",
+  "query_analysis": {
+    "raw_query": "the desk that has something teal light blue sitting on it",
+    "target_object": "desk",
+    "target_attributes": [],
+    "reference_object": "something",
+    "reference_attributes": [
+      "teal",
+      "light blue"
+    ],
+    "relation": "on"
+  },
+  "gt": {
+    "target_id": 0,
+    "gt_label": "desk",
+    "gt_bbox_3d": [
+      0.757015,
+      0.733257,
+      0.396284,
+      0.760156,
+      1.604639,
+      0.833596
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 7,
+    "bbox_3d": [
+      0.708832,
+      0.696362,
+      0.445593,
+      0.826312,
+      1.606273,
+      0.942965
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      4
+    ],
+    "detector_call_count": 64,
+    "total_views": 49,
+    "total_object_views": 54,
+    "total_candidates": 16
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is clearly the desk being referred to",
+        "something teal/light blue is visibly sitting on the green-boxed candidate"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.3525,
+        -0.1057,
+        0.7465,
+        0.5182,
+        0.3388,
+        0.1616
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            766.03,
+            633.5,
+            1286.68,
+            961.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8252
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            943.87,
+            680.98,
+            1288.34,
+            961.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6854
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            766.03,
+            633.5,
+            1286.68,
+            961.55
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00060_1",
+          "view_id": "00060",
+          "bbox_2d": [
+            948.66,
+            741.21,
+            1290.59,
+            961.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6248
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a desk",
+        "has something teal/light blue sitting on it"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -1.3276,
+        -0.5405,
+        0.5838,
+        0.8006,
+        0.5589,
+        0.5105
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_1",
+          "view_id": "00000",
+          "bbox_2d": [
+            273.71,
+            443.73,
+            953.69,
+            959.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4991
+        },
+        {
+          "object_view_id": "00002_1",
+          "view_id": "00002",
+          "bbox_2d": [
+            387.52,
+            458.26,
+            1113.37,
+            960.84
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6419
+        },
+        {
+          "object_view_id": "00004_1",
+          "view_id": "00004",
+          "bbox_2d": [
+            867.74,
+            769.84,
+            1291.67,
+            962.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7308
+        },
+        {
+          "object_view_id": "00006_1",
+          "view_id": "00006",
+          "bbox_2d": [
+            928.77,
+            572.42,
+            1289.99,
+            962.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2552
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            387.52,
+            458.26,
+            1113.37,
+            960.84
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00060_2",
+          "view_id": "00060",
+          "bbox_2d": [
+            481.28,
+            600.67,
+            1046.36,
+            960.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5057
+        },
+        {
+          "object_view_id": "00068_1",
+          "view_id": "00068",
+          "bbox_2d": [
+            60.65,
+            414.7,
+            665.29,
+            959.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6422
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 5,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "does not have a clearly teal/light-blue object sitting on it",
+        "another nearby desk appears to satisfy the teal/light-blue-on-top condition better"
+      ],
+      "num_object_views": 11,
+      "bbox_3d": [
+        -1.131,
+        -1.5392,
+        0.6659,
+        0.7629,
+        1.5159,
+        0.5086
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_2",
+          "view_id": "00000",
+          "bbox_2d": [
+            8.34,
+            296.75,
+            550.16,
+            951.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4851
+        },
+        {
+          "object_view_id": "00002_2",
+          "view_id": "00002",
+          "bbox_2d": [
+            34.67,
+            281.28,
+            651.4,
+            957.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5398
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            51.62,
+            540.96,
+            839.87,
+            959.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9443
+        },
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            9.32,
+            342.8,
+            868.85,
+            959.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8543
+        },
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            2.94,
+            637.35,
+            878.7,
+            961.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8175
+        },
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            119.26,
+            337.27,
+            1180.1,
+            962.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9432
+        },
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            280.39,
+            643.27,
+            1250.87,
+            960.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8113
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            551.65,
+            298.56,
+            1290.78,
+            963.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9338
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            119.26,
+            337.27,
+            1180.1,
+            962.01
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            736.36,
+            294.99,
+            1244.68,
+            956.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5322
+        },
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            88.9,
+            493.54,
+            691.76,
+            961.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6513
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is clearly a desk",
+        "teal/light-blue object sitting on the candidate"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.5589,
+        -0.6462,
+        0.7966,
+        0.2841,
+        0.2131,
+        0.1011
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_1",
+          "view_id": "00008",
+          "bbox_2d": [
+            1003.27,
+            799.11,
+            1285.78,
+            961.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5786
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1003.27,
+            799.11,
+            1285.78,
+            961.4
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "requested object is a desk",
+        "desk has something teal/light blue sitting on it"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.0619,
+        -2.4029,
+        0.3729,
+        1.4936,
+        0.6163,
+        0.7289
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            8.87,
+            116.99,
+            1126.92,
+            773.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4568
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            14.19,
+            382.08,
+            1283.27,
+            940.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4987
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            8.87,
+            116.99,
+            1126.92,
+            773.19
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            14.11,
+            149.25,
+            1289.45,
+            753.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3912
+        },
+        {
+          "object_view_id": "00022_1",
+          "view_id": "00022",
+          "bbox_2d": [
+            531.3,
+            527.95,
+            1290.82,
+            960.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3289
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "something teal/light blue sitting on the desk"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.9879,
+        -1.9979,
+        0.4478,
+        0.594,
+        0.5298,
+        0.9423
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_1",
+          "view_id": "00016",
+          "bbox_2d": [
+            961.79,
+            232.23,
+            1288.2,
+            705.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2885
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            961.79,
+            232.23,
+            1288.2,
+            705.47
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "clear teal/light-blue object sitting on the green-boxed desk"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        0.7206,
+        -1.5145,
+        0.6684,
+        0.7361,
+        1.5552,
+        0.591
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            4.42,
+            589.83,
+            808.2,
+            960.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6561
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            5.93,
+            523.36,
+            1060.45,
+            959.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6711
+        },
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            3.33,
+            419.62,
+            1230.48,
+            958.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8985
+        },
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            3.0,
+            528.53,
+            1286.42,
+            957.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5855
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            3.33,
+            419.62,
+            1230.48,
+            958.99
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            22.38,
+            641.13,
+            1289.61,
+            958.57
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            14.11,
+            149.25,
+            1289.45,
+            753.07
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            836.55,
+            462.41,
+            1287.37,
+            956.52
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "desk",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 10,
+      "bbox_3d": [
+        0.558,
+        0.6934,
+        0.4396,
+        0.8461,
+        1.6078,
+        0.9595
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            2.99,
+            715.76,
+            186.37,
+            962.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2624
+        },
+        {
+          "object_view_id": "bootstrap_00083",
+          "view_id": "00083",
+          "bbox_2d": [
+            6.3,
+            129.33,
+            1252.22,
+            691.05
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00049",
+          "view_id": "00049",
+          "bbox_2d": [
+            95.37,
+            509.77,
+            1289.72,
+            959.74
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00038",
+          "view_id": "00038",
+          "bbox_2d": [
+            74.34,
+            52.62,
+            851.51,
+            674.08
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            347.53,
+            98.88,
+            1287.04,
+            943.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7995
+        },
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            513.73,
+            385.26,
+            1288.04,
+            955.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8566
+        },
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            504.6,
+            559.43,
+            1279.76,
+            962.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6633
+        },
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            229.33,
+            335.54,
+            1287.89,
+            958.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6195
+        },
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            185.56,
+            113.05,
+            1288.85,
+            726.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8275
+        },
+        {
+          "object_view_id": "00088_0",
+          "view_id": "00088",
+          "bbox_2d": [
+            910.05,
+            90.05,
+            1288.0,
+            720.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.529
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "the green-boxed desk is the one that clearly has something teal/light blue sitting on it"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.7025,
+        -1.0029,
+        0.4569,
+        0.8754,
+        0.5564,
+        0.9657
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            639.58,
+            409.69,
+            1288.72,
+            956.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7149
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            639.58,
+            409.69,
+            1288.72,
+            956.8
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "desk",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 8,
+      "bbox_3d": [
+        0.5763,
+        0.448,
+        0.4335,
+        0.7996,
+        1.156,
+        0.964
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_1",
+          "view_id": "00034",
+          "bbox_2d": [
+            7.32,
+            119.26,
+            448.57,
+            493.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4191
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            173.6,
+            420.16,
+            747.88,
+            939.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8299
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            74.34,
+            52.62,
+            851.51,
+            674.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7019
+        },
+        {
+          "object_view_id": "bootstrap_00049",
+          "view_id": "00049",
+          "bbox_2d": [
+            95.37,
+            509.77,
+            1289.72,
+            959.74
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00056",
+          "view_id": "00056",
+          "bbox_2d": [
+            2.67,
+            657.67,
+            500.51,
+            960.66
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00083",
+          "view_id": "00083",
+          "bbox_2d": [
+            60.0,
+            137.0,
+            1223.0,
+            939.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00054_1",
+          "view_id": "00054",
+          "bbox_2d": [
+            124.43,
+            748.59,
+            865.98,
+            960.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3729
+        },
+        {
+          "object_view_id": "00056_1",
+          "view_id": "00056",
+          "bbox_2d": [
+            2.67,
+            657.67,
+            500.51,
+            960.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3029
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "there is something teal/light blue sitting on the desk"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.64,
+        -1.6827,
+        0.4607,
+        0.7006,
+        1.8233,
+        0.9795
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            800.62,
+            279.34,
+            1251.15,
+            838.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7276
+        },
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            339.26,
+            5.52,
+            707.68,
+            530.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7046
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "requested object must be a desk",
+        "the teal/light blue item should be confirmed as sitting on the desk candidate itself"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.4069,
+        -0.0186,
+        0.5512,
+        0.6237,
+        0.5162,
+        0.5233
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            6.43,
+            260.04,
+            646.04,
+            959.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5345
+        },
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            755.81,
+            504.22,
+            1291.29,
+            960.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7788
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            6.43,
+            260.04,
+            646.04,
+            959.62
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00092_0",
+          "view_id": "00092",
+          "bbox_2d": [
+            6.64,
+            313.54,
+            400.77,
+            960.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2821
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "the green-boxed desk does not have a clearly visible teal/light-blue object sitting on it",
+        "a nearby different desk appears to satisfy the teal/light-blue-on-top condition better"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.2151,
+        1.6892,
+        0.3701,
+        0.5978,
+        1.4079,
+        0.8185
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00072_0",
+          "view_id": "00072",
+          "bbox_2d": [
+            401.78,
+            416.28,
+            1160.48,
+            956.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6961
+        },
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            182.28,
+            687.86,
+            941.66,
+            962.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6929
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            401.78,
+            416.28,
+            1160.48,
+            956.51
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00090_0",
+          "view_id": "00090",
+          "bbox_2d": [
+            305.66,
+            529.09,
+            853.38,
+            957.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6387
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "desk",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.2623,
+        1.1683,
+        0.4155,
+        0.7609,
+        1.6201,
+        0.9023
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00072_1",
+          "view_id": "00072",
+          "bbox_2d": [
+            107.01,
+            587.35,
+            842.36,
+            959.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2768
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            107.01,
+            587.35,
+            842.36,
+            959.61
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00071",
+          "view_id": "00071",
+          "bbox_2d": [
+            542.83,
+            249.2,
+            1236.95,
+            599.35
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00091",
+          "view_id": "00091",
+          "bbox_2d": [
+            14.15,
+            493.24,
+            1222.9,
+            959.24
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00090",
+          "view_id": "00090",
+          "bbox_2d": [
+            305.66,
+            529.09,
+            853.38,
+            957.8
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00092_1",
+          "view_id": "00092",
+          "bbox_2d": [
+            344.26,
+            249.19,
+            1286.89,
+            954.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2675
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "desk",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "the green-boxed desk does not have a clearly visible teal/light-blue object sitting on it",
+        "another nearby desk appears to satisfy the teal/light-blue object condition better"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.145,
+        1.8674,
+        0.3975,
+        0.4478,
+        0.9923,
+        0.7497
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            8.92,
+            143.93,
+            471.85,
+            659.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3385
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            8.92,
+            143.93,
+            471.85,
+            659.28
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 15,
+      "label": "desk",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.8134,
+        0.457,
+        0.7612,
+        0.5364,
+        0.8894,
+        0.1047
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00084_0",
+          "view_id": "00084",
+          "bbox_2d": [
+            4.23,
+            641.84,
+            962.25,
+            960.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7936
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            4.23,
+            641.84,
+            962.25,
+            960.55
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00083",
+          "view_id": "00083",
+          "bbox_2d": [
+            6.3,
+            129.33,
+            1252.22,
+            691.05
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            2.99,
+            715.76,
+            186.37,
+            962.96
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00049",
+          "view_id": "00049",
+          "bbox_2d": [
+            95.37,
+            509.77,
+            1289.72,
+            959.74
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

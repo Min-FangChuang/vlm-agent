@@ -1,0 +1,739 @@
+{
+  "case_id": 224,
+  "scene_id": "scene0644_00",
+  "query": "closest cabinet to door",
+  "query_analysis": {
+    "raw_query": "closest cabinet to door",
+    "target_object": "cabinet",
+    "target_attributes": [],
+    "reference_object": "door",
+    "reference_attributes": [],
+    "relation": "closest to"
+  },
+  "gt": {
+    "target_id": 8,
+    "gt_label": "cabinet",
+    "gt_bbox_3d": [
+      2.047617,
+      -3.157125,
+      0.527529,
+      0.480227,
+      0.875673,
+      1.084517
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      1.759102,
+      -3.828688,
+      0.481472,
+      0.225732,
+      0.804755,
+      0.96624
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 65,
+    "total_views": 51,
+    "total_object_views": 24,
+    "total_candidates": 7
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "cabinet",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 8,
+      "bbox_3d": [
+        1.7581,
+        -3.7659,
+        0.5236,
+        0.2321,
+        0.7093,
+        0.8814
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            423.91,
+            213.18,
+            545.66,
+            626.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6169
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            470.77,
+            501.38,
+            577.7,
+            911.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7535
+        },
+        {
+          "object_view_id": "bootstrap_00001",
+          "view_id": "00001",
+          "bbox_2d": [
+            454.75,
+            334.85,
+            568.47,
+            738.42
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00043",
+          "view_id": "00043",
+          "bbox_2d": [
+            536.0,
+            595.0,
+            656.0,
+            959.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            924.09,
+            183.79,
+            1116.47,
+            490.5
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            717.8,
+            294.81,
+            874.59,
+            599.06
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8416
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            661.07,
+            547.95,
+            797.69,
+            915.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3005
+        },
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            333.65,
+            655.67,
+            447.68,
+            956.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5434
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a cabinet",
+        "candidate is the closest cabinet to a door"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.4666,
+        -2.366,
+        0.3726,
+        0.4262,
+        0.9347,
+        0.6948
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_1",
+          "view_id": "00000",
+          "bbox_2d": [
+            1002.83,
+            468.8,
+            1284.76,
+            958.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2796
+        },
+        {
+          "object_view_id": "00002_1",
+          "view_id": "00002",
+          "bbox_2d": [
+            1043.26,
+            800.65,
+            1287.3,
+            958.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4375
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1002.83,
+            468.8,
+            1284.76,
+            958.54
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably compare the green cabinet's distance to the door against the adjacent blue-boxed cabinet",
+        "insufficient broader room context to confirm this is the closest cabinet to the door overall"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        2.0757,
+        -3.2713,
+        0.6407,
+        0.5135,
+        1.4466,
+        1.046
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_2",
+          "view_id": "00002",
+          "bbox_2d": [
+            146.75,
+            514.79,
+            469.61,
+            957.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3763
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            492.09,
+            263.63,
+            746.37,
+            680.13
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00038",
+          "view_id": "00038",
+          "bbox_2d": [
+            1079.34,
+            139.05,
+            1284.94,
+            581.88
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            376.0,
+            531.0,
+            676.0,
+            959.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            1079.34,
+            139.05,
+            1284.94,
+            581.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4008
+        },
+        {
+          "object_view_id": "00040_1",
+          "view_id": "00040",
+          "bbox_2d": [
+            492.09,
+            263.63,
+            746.37,
+            680.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3671
+        },
+        {
+          "object_view_id": "00044_1",
+          "view_id": "00044",
+          "bbox_2d": [
+            54.95,
+            691.72,
+            339.33,
+            958.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.458
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "door is not visible, so the reference object cannot be confirmed",
+        "cannot judge whether this cabinet is the closest cabinet to the door",
+        "candidate is only partially visible"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        2.0182,
+        1.4952,
+        0.5708,
+        0.5104,
+        1.3355,
+        1.1519
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            970.13,
+            316.08,
+            1284.19,
+            880.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7365
+        },
+        {
+          "object_view_id": "bootstrap_00077",
+          "view_id": "00077",
+          "bbox_2d": [
+            999.84,
+            427.35,
+            1284.88,
+            959.45
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00076",
+          "view_id": "00076",
+          "bbox_2d": [
+            705.4,
+            395.93,
+            1285.73,
+            958.93
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            705.4,
+            395.93,
+            1285.73,
+            958.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7594
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [],
+      "missing_conditions": [
+        "cabinet",
+        "closest to door"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        2.0882,
+        2.7265,
+        0.6387,
+        0.613,
+        1.2808,
+        1.2615
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_1",
+          "view_id": "00032",
+          "bbox_2d": [
+            821.84,
+            256.31,
+            992.41,
+            706.2
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5988
+        },
+        {
+          "object_view_id": "00072_1",
+          "view_id": "00072",
+          "bbox_2d": [
+            12.68,
+            331.85,
+            189.25,
+            788.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3683
+        },
+        {
+          "object_view_id": "00074_1",
+          "view_id": "00074",
+          "bbox_2d": [
+            294.6,
+            284.37,
+            452.07,
+            762.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5014
+        },
+        {
+          "object_view_id": "00076_2",
+          "view_id": "00076",
+          "bbox_2d": [
+            667.48,
+            312.83,
+            838.71,
+            795.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3852
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 7,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot confirm this is the closest cabinet to the door among all nearby cabinets in the scene",
+        "need clearer room-level comparison between this cabinet and other possible cabinets near the door"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        2.1163,
+        1.35,
+        0.5692,
+        0.7584,
+        3.252,
+        1.1845
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            358.97,
+            472.54,
+            1288.95,
+            958.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8265
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            13.62,
+            312.64,
+            826.47,
+            956.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5766
+        },
+        {
+          "object_view_id": "bootstrap_00074",
+          "view_id": "00074",
+          "bbox_2d": [
+            390.5,
+            355.11,
+            1284.15,
+            960.38
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00076",
+          "view_id": "00076",
+          "bbox_2d": [
+            705.4,
+            395.93,
+            1285.73,
+            958.93
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00075",
+          "view_id": "00075",
+          "bbox_2d": [
+            654.81,
+            395.29,
+            1283.99,
+            958.48
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            17.41,
+            196.75,
+            636.31,
+            683.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6106
+        },
+        {
+          "object_view_id": "00070_0",
+          "view_id": "00070",
+          "bbox_2d": [
+            152.9,
+            233.77,
+            1048.73,
+            816.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.638
+        },
+        {
+          "object_view_id": "00072_0",
+          "view_id": "00072",
+          "bbox_2d": [
+            146.56,
+            407.91,
+            1170.22,
+            959.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7082
+        },
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            390.5,
+            355.11,
+            1284.15,
+            960.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7179
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "Green-boxed object is not visually a cabinet",
+        "Door is not visible, so closeness to the door cannot be evaluated"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.6919,
+        1.6589,
+        0.4588,
+        0.2573,
+        0.909,
+        0.6508
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00076_1",
+          "view_id": "00076",
+          "bbox_2d": [
+            7.95,
+            624.69,
+            210.44,
+            961.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4608
+        },
+        {
+          "object_view_id": "bootstrap_00077",
+          "view_id": "00077",
+          "bbox_2d": [
+            138.0,
+            597.0,
+            490.0,
+            956.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00034",
+          "view_id": "00034",
+          "bbox_2d": [
+            100.0,
+            826.0,
+            230.0,
+            959.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00075",
+          "view_id": "00075",
+          "bbox_2d": [
+            11.0,
+            623.0,
+            212.0,
+            961.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

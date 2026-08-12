@@ -1,0 +1,173 @@
+{
+  "case_id": 31,
+  "scene_id": "scene0328_00",
+  "query": "large larder style stainless steel fridge freezer . has a split upper and lower areas with large wide handle . located to the left of the large larder style kitchen unit .",
+  "query_analysis": {
+    "raw_query": "large larder style stainless steel fridge freezer . has a split upper and lower areas with large wide handle . located to the left of the large larder style kitchen unit .",
+    "target_object": "fridge freezer",
+    "target_attributes": [
+      "large",
+      "larder style",
+      "stainless steel",
+      "split upper and lower areas",
+      "large wide handle"
+    ],
+    "reference_object": "kitchen unit",
+    "reference_attributes": [
+      "large",
+      "larder style"
+    ],
+    "relation": "to the left of"
+  },
+  "gt": {
+    "target_id": 2,
+    "gt_label": "refrigerator",
+    "gt_bbox_3d": [
+      -1.073195,
+      -0.733154,
+      0.832916,
+      0.291195,
+      0.826713,
+      1.689777
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -1.060082,
+      -0.681477,
+      0.8348,
+      0.352755,
+      0.960804,
+      1.753246
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2
+    ],
+    "detector_call_count": 36,
+    "total_views": 34,
+    "total_object_views": 3,
+    "total_candidates": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "fridge freezer",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -1.0593,
+        -0.7526,
+        0.8956,
+        0.3541,
+        0.8185,
+        1.6317
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            194.99,
+            169.86,
+            509.26,
+            964.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5305
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            0.02,
+            313.64,
+            140.33,
+            965.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3801
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            7.49,
+            0.0,
+            585.77,
+            963.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4735
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            7.49,
+            0.0,
+            585.77,
+            963.95
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00049",
+          "view_id": "00049",
+          "bbox_2d": [
+            0.0,
+            3.0,
+            383.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00018",
+          "view_id": "00018",
+          "bbox_2d": [
+            1.0,
+            829.0,
+            29.0,
+            863.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            417.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

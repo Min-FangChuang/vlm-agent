@@ -1,0 +1,245 @@
+{
+  "case_id": 225,
+  "scene_id": "scene0552_00",
+  "query": "this toaster oven is black . it is on the far hard surface .",
+  "query_analysis": {
+    "raw_query": "this toaster oven is black . it is on the far hard surface .",
+    "target_object": "toaster oven",
+    "target_attributes": [
+      "black"
+    ],
+    "reference_object": "hard surface",
+    "reference_attributes": [
+      "far"
+    ],
+    "relation": "on"
+  },
+  "gt": {
+    "target_id": 20,
+    "gt_label": "toaster oven",
+    "gt_bbox_3d": [
+      2.071902,
+      -0.880287,
+      1.026632,
+      0.339646,
+      0.420964,
+      0.233558
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      2.044495,
+      -0.897414,
+      1.028684,
+      0.376239,
+      0.517189,
+      0.252917
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      1
+    ],
+    "detector_call_count": 26,
+    "total_views": 23,
+    "total_object_views": 7,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "toaster oven",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 9,
+      "bbox_3d": [
+        2.0606,
+        -1.0292,
+        1.0261,
+        0.3242,
+        0.5069,
+        0.2126
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            909.72,
+            336.88,
+            1157.85,
+            467.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8881
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            513.12,
+            491.9,
+            766.53,
+            639.32
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9438
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            513.12,
+            491.9,
+            766.53,
+            639.32
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            0.07,
+            129.72,
+            176.88,
+            340.39
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            0.0,
+            386.21,
+            309.16,
+            880.67
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            0.0,
+            423.9,
+            366.45,
+            821.58
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            76.66,
+            327.24,
+            491.16,
+            573.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.954
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            0.0,
+            412.83,
+            292.53,
+            928.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3435
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            37.93,
+            274.48,
+            297.13,
+            534.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8822
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "toaster oven",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "toaster oven",
+        "black",
+        "the green-boxed candidate is the requested object rather than a nearby alternative"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        2.0711,
+        -0.402,
+        1.0618,
+        0.5202,
+        0.5585,
+        0.3309
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_1",
+          "view_id": "00016",
+          "bbox_2d": [
+            623.58,
+            279.71,
+            933.04,
+            464.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3228
+        },
+        {
+          "object_view_id": "00018_1",
+          "view_id": "00018",
+          "bbox_2d": [
+            134.98,
+            446.01,
+            517.5,
+            690.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5943
+        }
+      ]
+    }
+  ]
+}

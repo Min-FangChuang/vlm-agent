@@ -1,0 +1,165 @@
+{
+  "case_id": 237,
+  "scene_id": "scene0329_00",
+  "query": "the blue trash can to the left of the grey trash can",
+  "query_analysis": {
+    "raw_query": "the blue trash can to the left of the grey trash can",
+    "target_object": "trash can",
+    "target_attributes": [
+      "blue"
+    ],
+    "reference_object": "trash can",
+    "reference_attributes": [
+      "grey"
+    ],
+    "relation": "to the left of"
+  },
+  "gt": {
+    "target_id": 14,
+    "gt_label": "trash can",
+    "gt_bbox_3d": [
+      3.666559,
+      -1.181375,
+      0.559363,
+      0.33569,
+      0.294701,
+      0.429767
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "false",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      3.605152,
+      -1.42572,
+      0.567142,
+      0.383055,
+      0.29514,
+      0.401089
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      3
+    ],
+    "detector_call_count": 39,
+    "total_views": 39,
+    "total_object_views": 3,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "trash can",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is blue",
+        "candidate is to the left of a grey trash can"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.9894,
+        4.126,
+        0.2817,
+        0.3636,
+        0.4613,
+        0.7472
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            1019.06,
+            3.13,
+            1150.19,
+            234.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9218
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "trash can",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is blue",
+        "candidate is the blue trash can that is left of the grey trash can"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        3.6863,
+        -1.7075,
+        0.5672,
+        0.5453,
+        0.8872,
+        0.4138
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            549.83,
+            459.61,
+            717.28,
+            674.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5906
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "trash can",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "requested trash can is blue",
+        "candidate is the blue trash can to the left of a grey trash can"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        3.6508,
+        -2.7756,
+        0.7735,
+        0.3848,
+        0.5998,
+        0.4245
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            199.04,
+            399.5,
+            346.21,
+            588.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9087
+        }
+      ]
+    }
+  ]
+}

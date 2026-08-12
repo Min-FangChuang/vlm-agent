@@ -1,0 +1,318 @@
+{
+  "case_id": 207,
+  "scene_id": "scene0607_00",
+  "query": "the sink is north of the table in the center . the sink is rectangular and metallic .",
+  "query_analysis": {
+    "raw_query": "the sink is north of the table in the center . the sink is rectangular and metallic .",
+    "target_object": "sink",
+    "target_attributes": [
+      "rectangular",
+      "metallic"
+    ],
+    "reference_object": "table",
+    "reference_attributes": [
+      "in the center"
+    ],
+    "relation": "north of"
+  },
+  "gt": {
+    "target_id": 17,
+    "gt_label": "sink",
+    "gt_bbox_3d": [
+      1.579402,
+      -0.143718,
+      0.852871,
+      0.475362,
+      0.453428,
+      0.21981
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 2,
+    "bbox_3d": [
+      1.61594,
+      -0.177249,
+      0.846088,
+      0.299189,
+      0.363451,
+      0.206047
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 30,
+    "total_views": 25,
+    "total_object_views": 5,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "sink",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot uniquely determine that the green-boxed basin is the requested sink rather than the adjacent blue-boxed basin or the full double-sink assembly",
+        "cannot reliably confirm the absolute spatial relation 'north of the table in the center'"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.7482,
+        -0.5857,
+        0.85,
+        0.0412,
+        0.3339,
+        0.1391
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            1.02,
+            353.53,
+            262.77,
+            500.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6133
+        },
+        {
+          "object_view_id": "00038_1",
+          "view_id": "00038",
+          "bbox_2d": [
+            555.11,
+            494.84,
+            839.7,
+            608.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4722
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1.02,
+            353.53,
+            262.77,
+            500.27
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            1225.0,
+            551.0,
+            1295.0,
+            668.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00037",
+          "view_id": "00037",
+          "bbox_2d": [
+            293.1,
+            376.18,
+            709.82,
+            552.41
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            846.78,
+            523.9,
+            1189.93,
+            653.09
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "sink",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "green-boxed object is a sink",
+        "green-boxed object is the rectangular metallic sink north of the center table"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.5457,
+        -0.4185,
+        0.8491,
+        0.4171,
+        0.1854,
+        0.1339
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_1",
+          "view_id": "00036",
+          "bbox_2d": [
+            0.0,
+            446.82,
+            157.84,
+            652.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2731
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            446.82,
+            157.84,
+            652.28
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "sink",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably verify that the sink is north of the table in the center"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.5465,
+        -0.1798,
+        0.8455,
+        0.4215,
+        0.3701,
+        0.2007
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            127.2,
+            515.2,
+            580.85,
+            733.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7797
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            127.2,
+            515.2,
+            580.85,
+            733.4
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            776.0,
+            184.0,
+            893.0,
+            246.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            709.61,
+            477.82,
+            1159.15,
+            739.37
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            408.0,
+            506.0,
+            802.0,
+            721.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            709.61,
+            477.82,
+            1159.15,
+            739.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4642
+        }
+      ]
+    }
+  ]
+}

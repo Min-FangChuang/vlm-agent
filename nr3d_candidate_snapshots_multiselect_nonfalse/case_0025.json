@@ -1,0 +1,1088 @@
+{
+  "case_id": 25,
+  "scene_id": "scene0652_00",
+  "query": "the only pillow that is not on the bed",
+  "query_analysis": {
+    "raw_query": "the only pillow that is not on the bed",
+    "target_object": "pillow",
+    "target_attributes": [
+      "only"
+    ],
+    "reference_object": "bed",
+    "reference_attributes": [],
+    "relation": "not on"
+  },
+  "gt": {
+    "target_id": 17,
+    "gt_label": "pillow",
+    "gt_bbox_3d": [
+      -0.024048,
+      1.265152,
+      0.522341,
+      0.598632,
+      0.450488,
+      0.278332
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -0.03363,
+      1.215869,
+      0.483784,
+      0.540279,
+      0.385659,
+      0.314749
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 37,
+    "total_views": 36,
+    "total_object_views": 40,
+    "total_candidates": 16
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate must be a pillow",
+        "candidate must be the only pillow not on the bed"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.4211,
+        1.2503,
+        0.542,
+        0.4343,
+        1.0817,
+        0.5584
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            157.35,
+            352.21,
+            370.08,
+            653.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3941
+        },
+        {
+          "object_view_id": "00050_1",
+          "view_id": "00050",
+          "bbox_2d": [
+            211.97,
+            346.13,
+            446.42,
+            703.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3559
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "pillow",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot confirm this is the only pillow in the room that is not on the bed",
+        "insufficient room-wide context to rule out other off-bed pillows"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -0.0311,
+        1.3911,
+        0.4584,
+        0.5489,
+        0.7203,
+        0.3358
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            486.61,
+            644.26,
+            732.41,
+            759.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9024
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            765.56,
+            449.72,
+            1045.33,
+            574.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.863
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            741.86,
+            393.27,
+            1067.04,
+            552.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.833
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            1129.04,
+            425.99,
+            1296.0,
+            671.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7185
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            841.21,
+            439.19,
+            1204.48,
+            621.52
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            393.08,
+            461.71,
+            659.43,
+            563.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8932
+        },
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            659.18,
+            266.26,
+            917.71,
+            381.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7789
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 5,
+      "done_actions": [],
+      "missing_conditions": [
+        "not on the bed",
+        "only pillow satisfying that condition"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -2.251,
+        -0.0412,
+        0.6455,
+        1.0544,
+        2.0492,
+        0.9294
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            154.74,
+            120.73,
+            504.36,
+            321.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7475
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            525.46,
+            123.31,
+            847.36,
+            309.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.702
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            438.86,
+            49.03,
+            790.48,
+            249.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7144
+        },
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            706.36,
+            0.0,
+            1010.93,
+            111.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8249
+        },
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            0.0,
+            612.96,
+            208.51,
+            965.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6752
+        },
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            211.92,
+            566.04,
+            563.0,
+            954.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9062
+        },
+        {
+          "object_view_id": "00060_3",
+          "view_id": "00060",
+          "bbox_2d": [
+            495.76,
+            253.21,
+            691.1,
+            490.06
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7042
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "not on the bed",
+        "the only pillow satisfying that condition"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -1.8878,
+        -1.0408,
+        0.9123,
+        0.6227,
+        0.3924,
+        0.2104
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_1",
+          "view_id": "00020",
+          "bbox_2d": [
+            0.11,
+            204.65,
+            235.32,
+            401.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.628
+        },
+        {
+          "object_view_id": "00022_1",
+          "view_id": "00022",
+          "bbox_2d": [
+            293.01,
+            178.35,
+            584.6,
+            322.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6729
+        },
+        {
+          "object_view_id": "00024_1",
+          "view_id": "00024",
+          "bbox_2d": [
+            201.71,
+            116.23,
+            502.29,
+            260.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7111
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -2.244,
+        -0.7545,
+        1.1614,
+        0.4039,
+        0.6292,
+        0.2034
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_2",
+          "view_id": "00020",
+          "bbox_2d": [
+            109.46,
+            55.28,
+            389.49,
+            171.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.485
+        },
+        {
+          "object_view_id": "00022_3",
+          "view_id": "00022",
+          "bbox_2d": [
+            498.42,
+            48.53,
+            753.48,
+            149.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4015
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is not on the bed",
+        "candidate is the only pillow satisfying that condition"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.9509,
+        -1.4758,
+        0.894,
+        0.9999,
+        0.9172,
+        0.5405
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_2",
+          "view_id": "00022",
+          "bbox_2d": [
+            151.07,
+            105.35,
+            490.66,
+            325.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.429
+        },
+        {
+          "object_view_id": "00024_3",
+          "view_id": "00024",
+          "bbox_2d": [
+            61.1,
+            65.26,
+            426.71,
+            264.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3285
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "not on the bed",
+        "the only such pillow in the scene"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -2.1188,
+        -1.4181,
+        1.0682,
+        0.7092,
+        0.8151,
+        0.214
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_2",
+          "view_id": "00024",
+          "bbox_2d": [
+            113.35,
+            40.26,
+            429.12,
+            133.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4307
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "pillow is not on the bed",
+        "candidate is the only such pillow"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.8214,
+        -2.2607,
+        0.5111,
+        0.9816,
+        2.5358,
+        0.6967
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            877.2,
+            109.51,
+            1212.1,
+            320.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3467
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "not on the bed",
+        "the only pillow that is not on the bed"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -2.1971,
+        -0.6809,
+        1.1332,
+        0.5548,
+        0.8916,
+        0.2691
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_1",
+          "view_id": "00058",
+          "bbox_2d": [
+            13.93,
+            525.7,
+            333.37,
+            871.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8289
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            13.93,
+            525.7,
+            333.37,
+            871.53
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00060_1",
+          "view_id": "00060",
+          "bbox_2d": [
+            313.2,
+            190.27,
+            521.5,
+            459.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8273
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "not on the bed",
+        "the only pillow satisfying that condition"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -2.031,
+        -1.0436,
+        1.0745,
+        0.3754,
+        0.335,
+        0.1803
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_2",
+          "view_id": "00058",
+          "bbox_2d": [
+            0.53,
+            721.85,
+            262.14,
+            965.42
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7367
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.53,
+            721.85,
+            262.14,
+            965.42
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "not on the bed",
+        "the only pillow satisfying that condition"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.818,
+        -0.94,
+        0.9138,
+        0.2327,
+        0.2902,
+        0.2105
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_3",
+          "view_id": "00058",
+          "bbox_2d": [
+            274.29,
+            792.32,
+            538.27,
+            966.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5151
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            274.29,
+            792.32,
+            538.27,
+            966.29
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "not on the bed",
+        "only pillow that is not on the bed"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -2.2147,
+        -1.1859,
+        1.173,
+        0.4034,
+        0.4583,
+        0.2515
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            127.58,
+            275.54,
+            366.01,
+            504.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8308
+        },
+        {
+          "object_view_id": "00062_3",
+          "view_id": "00062",
+          "bbox_2d": [
+            411.87,
+            40.0,
+            574.81,
+            279.2
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2661
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            127.58,
+            275.54,
+            366.01,
+            504.88
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "not on the bed",
+        "only pillow that satisfies this condition"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.7646,
+        -0.9739,
+        0.8845,
+        0.366,
+        0.8182,
+        0.353
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_2",
+          "view_id": "00060",
+          "bbox_2d": [
+            518.97,
+            398.87,
+            747.75,
+            809.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8248
+        },
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            710.45,
+            176.33,
+            885.37,
+            447.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5777
+        },
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            576.02,
+            134.02,
+            742.58,
+            392.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5528
+        },
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            0.0,
+            208.95,
+            149.59,
+            495.84
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2823
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            518.97,
+            398.87,
+            747.75,
+            809.96
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "not on the bed",
+        "the only pillow that is not on the bed"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -2.1043,
+        -1.4695,
+        0.9902,
+        0.3711,
+        0.3808,
+        0.3876
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_4",
+          "view_id": "00060",
+          "bbox_2d": [
+            0.0,
+            445.12,
+            326.48,
+            860.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5674
+        },
+        {
+          "object_view_id": "00062_2",
+          "view_id": "00062",
+          "bbox_2d": [
+            305.57,
+            182.19,
+            567.22,
+            477.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4124
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            445.12,
+            326.48,
+            860.44
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "not on the bed",
+        "only pillow that is not on the bed"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.9327,
+        -1.13,
+        1.0781,
+        0.3516,
+        0.5513,
+        0.1654
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_5",
+          "view_id": "00060",
+          "bbox_2d": [
+            342.46,
+            342.81,
+            546.33,
+            592.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5488
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            342.46,
+            342.81,
+            546.33,
+            592.9
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 15,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "pillow is not on the bed",
+        "it is the only pillow not on the bed"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.916,
+        -1.4618,
+        0.959,
+        0.3571,
+        0.4156,
+        0.3449
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_6",
+          "view_id": "00060",
+          "bbox_2d": [
+            139.27,
+            512.16,
+            566.74,
+            939.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.389
+        },
+        {
+          "object_view_id": "00062_1",
+          "view_id": "00062",
+          "bbox_2d": [
+            505.59,
+            111.13,
+            748.84,
+            522.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5237
+        },
+        {
+          "object_view_id": "00064_1",
+          "view_id": "00064",
+          "bbox_2d": [
+            367.02,
+            73.2,
+            614.47,
+            453.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5455
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            139.27,
+            512.16,
+            566.74,
+            939.11
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

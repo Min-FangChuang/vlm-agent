@@ -1,0 +1,1843 @@
+{
+  "case_id": 234,
+  "scene_id": "scene0608_00",
+  "query": "this sofa chair is in the middle . it is dark .",
+  "query_analysis": {
+    "raw_query": "this sofa chair is in the middle . it is dark .",
+    "target_object": "sofa chair",
+    "target_attributes": [
+      "dark"
+    ],
+    "reference_object": "",
+    "reference_attributes": [],
+    "relation": "in the middle"
+  },
+  "gt": {
+    "target_id": 29,
+    "gt_label": "sofa chair",
+    "gt_bbox_3d": [
+      -0.376659,
+      1.936217,
+      0.416042,
+      1.285585,
+      1.172122,
+      0.918499
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 12,
+    "bbox_3d": [
+      -1.080659,
+      -0.851091,
+      0.289098,
+      1.5015,
+      0.959138,
+      0.952891
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      4
+    ],
+    "detector_call_count": 113,
+    "total_views": 85,
+    "total_object_views": 64,
+    "total_candidates": 18
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "sofa chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "sofa chair identity is not well confirmed from the boxed partial view",
+        "candidate is not in the middle"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.3862,
+        -1.1216,
+        0.1462,
+        0.411,
+        1.2344,
+        0.5316
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            982.11,
+            271.03,
+            1296.0,
+            964.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2817
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            982.11,
+            271.03,
+            1296.0,
+            964.51
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "sofa chair",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.394,
+        -1.1494,
+        0.0725,
+        0.6777,
+        0.3498,
+        0.1357
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            59.29,
+            831.62,
+            620.89,
+            968.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3773
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            59.29,
+            831.62,
+            620.89,
+            968.0
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00161",
+          "view_id": "00161",
+          "bbox_2d": [
+            0.0,
+            516.0,
+            451.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00162",
+          "view_id": "00162",
+          "bbox_2d": [
+            104.0,
+            492.0,
+            615.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00163",
+          "view_id": "00163",
+          "bbox_2d": [
+            165.0,
+            646.0,
+            667.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "sofa chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the object is definitively a sofa chair from the current partial/dim views",
+        "cannot reliably judge whether this is the chair 'in the middle'"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.5096,
+        0.4003,
+        0.4162,
+        1.1433,
+        1.5743,
+        0.9237
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            0.1,
+            720.32,
+            240.9,
+            965.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4701
+        },
+        {
+          "object_view_id": "bootstrap_00041",
+          "view_id": "00041",
+          "bbox_2d": [
+            0.12,
+            21.94,
+            787.33,
+            753.41
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            0.0,
+            121.75,
+            891.33,
+            872.93
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00038",
+          "view_id": "00038",
+          "bbox_2d": [
+            0.22,
+            78.37,
+            603.59,
+            740.28
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            0.0,
+            121.75,
+            891.33,
+            872.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3173
+        },
+        {
+          "object_view_id": "00144_0",
+          "view_id": "00144",
+          "bbox_2d": [
+            574.6,
+            0.0,
+            1292.15,
+            445.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4835
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "sofa chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "in the middle"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        1.5184,
+        0.0619,
+        0.404,
+        1.1063,
+        1.4152,
+        0.8568
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            0.0,
+            589.95,
+            455.06,
+            965.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5882
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            0.0,
+            478.81,
+            704.44,
+            965.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7299
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            0.0,
+            286.14,
+            676.85,
+            963.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7187
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            0.11,
+            133.02,
+            793.02,
+            810.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3989
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            0.55,
+            68.51,
+            768.81,
+            690.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3048
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            0.22,
+            78.37,
+            603.59,
+            740.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7369
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.11,
+            133.02,
+            793.02,
+            810.96
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "sofa chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "sofa chair in the middle"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.5017,
+        1.3338,
+        0.4536,
+        1.0127,
+        1.2449,
+        0.8549
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            485.03,
+            288.7,
+            1295.44,
+            962.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4375
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            485.03,
+            288.7,
+            1295.44,
+            962.27
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            563.84,
+            243.87,
+            1296.0,
+            964.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5999
+        },
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            807.8,
+            244.85,
+            1296.0,
+            963.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6695
+        },
+        {
+          "object_view_id": "00066_1",
+          "view_id": "00066",
+          "bbox_2d": [
+            879.71,
+            234.28,
+            1296.0,
+            955.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4678
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "sofa chair",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 11,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 14,
+      "bbox_3d": [
+        -0.7047,
+        2.4579,
+        0.4211,
+        1.9357,
+        2.1693,
+        0.9029
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00064_1",
+          "view_id": "00064",
+          "bbox_2d": [
+            0.01,
+            351.25,
+            336.5,
+            962.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6078
+        },
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            0.1,
+            184.41,
+            441.47,
+            875.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6763
+        },
+        {
+          "object_view_id": "00068_1",
+          "view_id": "00068",
+          "bbox_2d": [
+            0.0,
+            220.04,
+            570.67,
+            905.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.418
+        },
+        {
+          "object_view_id": "00070_1",
+          "view_id": "00070",
+          "bbox_2d": [
+            0.08,
+            289.82,
+            641.06,
+            836.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5207
+        },
+        {
+          "object_view_id": "00072_0",
+          "view_id": "00072",
+          "bbox_2d": [
+            0.0,
+            274.76,
+            631.48,
+            795.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5676
+        },
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            0.85,
+            193.12,
+            619.35,
+            741.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6077
+        },
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            166.69,
+            146.04,
+            918.63,
+            744.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6719
+        },
+        {
+          "object_view_id": "00078_1",
+          "view_id": "00078",
+          "bbox_2d": [
+            332.24,
+            298.6,
+            1150.56,
+            960.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5966
+        },
+        {
+          "object_view_id": "bootstrap_00079",
+          "view_id": "00079",
+          "bbox_2d": [
+            383.28,
+            176.69,
+            1212.92,
+            903.7
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00077",
+          "view_id": "00077",
+          "bbox_2d": [
+            204.72,
+            209.22,
+            987.93,
+            835.85
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00082",
+          "view_id": "00082",
+          "bbox_2d": [
+            464.23,
+            155.4,
+            1295.67,
+            907.51
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            413.08,
+            5.37,
+            1270.92,
+            740.49
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6789
+        },
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            464.23,
+            155.4,
+            1295.67,
+            907.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5285
+        },
+        {
+          "object_view_id": "00084_1",
+          "view_id": "00084",
+          "bbox_2d": [
+            571.21,
+            543.17,
+            1295.82,
+            964.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5618
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "sofa chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "not enough scene context to confirm this is the chair 'in the middle'",
+        "nearby similar dark chair creates ambiguity about whether this green candidate is the intended one"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        1.1398,
+        1.4244,
+        0.4249,
+        0.3024,
+        0.7656,
+        0.7635
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            1021.22,
+            336.4,
+            1295.88,
+            963.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4184
+        },
+        {
+          "object_view_id": "00070_0",
+          "view_id": "00070",
+          "bbox_2d": [
+            1081.11,
+            468.82,
+            1295.98,
+            965.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.658
+        },
+        {
+          "object_view_id": "00072_1",
+          "view_id": "00072",
+          "bbox_2d": [
+            1090.33,
+            439.37,
+            1296.0,
+            965.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5565
+        },
+        {
+          "object_view_id": "00074_1",
+          "view_id": "00074",
+          "bbox_2d": [
+            1118.6,
+            490.76,
+            1296.0,
+            965.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.589
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            506.39,
+            219.37,
+            1295.68,
+            964.83
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00060",
+          "view_id": "00060",
+          "bbox_2d": [
+            563.84,
+            243.87,
+            1296.0,
+            964.78
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00066",
+          "view_id": "00066",
+          "bbox_2d": [
+            879.71,
+            234.28,
+            1296.0,
+            955.89
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "sofa chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 8,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is the sofa chair itself rather than just a partial side/arm view",
+        "candidate is the chair in the middle"
+      ],
+      "num_object_views": 11,
+      "bbox_3d": [
+        -1.0404,
+        0.6701,
+        0.3034,
+        1.2132,
+        1.2775,
+        0.8822
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00076_1",
+          "view_id": "00076",
+          "bbox_2d": [
+            0.0,
+            331.41,
+            140.92,
+            888.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2928
+        },
+        {
+          "object_view_id": "00078_0",
+          "view_id": "00078",
+          "bbox_2d": [
+            0.0,
+            332.61,
+            263.79,
+            963.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6998
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            332.61,
+            263.79,
+            963.7
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00080_1",
+          "view_id": "00080",
+          "bbox_2d": [
+            0.04,
+            77.73,
+            341.5,
+            743.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3575
+        },
+        {
+          "object_view_id": "00084_0",
+          "view_id": "00084",
+          "bbox_2d": [
+            0.03,
+            529.18,
+            471.16,
+            965.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6933
+        },
+        {
+          "object_view_id": "00088_1",
+          "view_id": "00088",
+          "bbox_2d": [
+            0.0,
+            353.52,
+            696.31,
+            964.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6029
+        },
+        {
+          "object_view_id": "00090_1",
+          "view_id": "00090",
+          "bbox_2d": [
+            63.85,
+            130.53,
+            916.2,
+            813.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.297
+        },
+        {
+          "object_view_id": "00092_1",
+          "view_id": "00092",
+          "bbox_2d": [
+            356.24,
+            172.04,
+            1172.04,
+            870.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5762
+        },
+        {
+          "object_view_id": "00094_1",
+          "view_id": "00094",
+          "bbox_2d": [
+            442.36,
+            157.61,
+            1295.74,
+            958.48
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4962
+        },
+        {
+          "object_view_id": "00096_1",
+          "view_id": "00096",
+          "bbox_2d": [
+            568.48,
+            182.35,
+            1296.0,
+            951.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4829
+        },
+        {
+          "object_view_id": "00098_0",
+          "view_id": "00098",
+          "bbox_2d": [
+            770.03,
+            289.7,
+            1295.93,
+            965.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7515
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "sofa chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "green-boxed object is a sofa chair",
+        "green-boxed object is the sofa chair in the middle"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -3.3366,
+        0.1266,
+        0.2107,
+        0.6484,
+        0.522,
+        0.3117
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            0.0,
+            589.37,
+            163.87,
+            863.32
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3304
+        },
+        {
+          "object_view_id": "bootstrap_00087",
+          "view_id": "00087",
+          "bbox_2d": [
+            0.0,
+            320.0,
+            213.26,
+            643.33
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00088",
+          "view_id": "00088",
+          "bbox_2d": [
+            11.38,
+            113.45,
+            266.75,
+            444.27
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00158",
+          "view_id": "00158",
+          "bbox_2d": [
+            1105.0,
+            75.0,
+            1147.0,
+            130.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "sofa chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "candidate is in the middle"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.5563,
+        1.7253,
+        0.4145,
+        0.6274,
+        0.6871,
+        0.8678
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00088_0",
+          "view_id": "00088",
+          "bbox_2d": [
+            809.36,
+            420.75,
+            1296.0,
+            964.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7317
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            809.36,
+            420.75,
+            1296.0,
+            964.86
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00083",
+          "view_id": "00083",
+          "bbox_2d": [
+            615.0,
+            288.0,
+            1295.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            13.0,
+            640.0,
+            63.0,
+            784.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00081",
+          "view_id": "00081",
+          "bbox_2d": [
+            417.85,
+            15.69,
+            1295.65,
+            793.4
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "sofa chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -3.6143,
+        -0.0676,
+        0.2779,
+        1.398,
+        0.8548,
+        0.8397
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00088_2",
+          "view_id": "00088",
+          "bbox_2d": [
+            0.07,
+            86.7,
+            205.74,
+            357.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5118
+        },
+        {
+          "object_view_id": "00088_3",
+          "view_id": "00088",
+          "bbox_2d": [
+            11.38,
+            113.45,
+            266.75,
+            444.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2952
+        },
+        {
+          "object_view_id": "00090_2",
+          "view_id": "00090",
+          "bbox_2d": [
+            301.82,
+            0.5,
+            501.04,
+            229.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2952
+        },
+        {
+          "object_view_id": "00094_2",
+          "view_id": "00094",
+          "bbox_2d": [
+            745.91,
+            0.0,
+            923.19,
+            160.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2975
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "sofa chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "in the middle",
+        "best match among nearby sofa chairs"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.6098,
+        1.599,
+        0.3439,
+        0.7029,
+        0.4297,
+        0.5988
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00090_0",
+          "view_id": "00090",
+          "bbox_2d": [
+            1029.15,
+            346.75,
+            1296.0,
+            956.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6649
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1029.15,
+            346.75,
+            1296.0,
+            956.03
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "sofa chair",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 12,
+      "bbox_3d": [
+        -1.5894,
+        -1.1882,
+        0.3078,
+        2.5021,
+        1.5715,
+        0.9155
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00092_0",
+          "view_id": "00092",
+          "bbox_2d": [
+            0.08,
+            37.33,
+            278.39,
+            650.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.742
+        },
+        {
+          "object_view_id": "00094_0",
+          "view_id": "00094",
+          "bbox_2d": [
+            0.0,
+            12.95,
+            392.41,
+            611.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7811
+        },
+        {
+          "object_view_id": "00096_0",
+          "view_id": "00096",
+          "bbox_2d": [
+            0.0,
+            19.0,
+            534.17,
+            586.49
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.615
+        },
+        {
+          "object_view_id": "00098_1",
+          "view_id": "00098",
+          "bbox_2d": [
+            141.79,
+            92.41,
+            757.21,
+            665.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5604
+        },
+        {
+          "object_view_id": "bootstrap_00158",
+          "view_id": "00158",
+          "bbox_2d": [
+            292.58,
+            0.0,
+            862.47,
+            808.08
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00133",
+          "view_id": "00133",
+          "bbox_2d": [
+            1214.0,
+            658.0,
+            1295.0,
+            879.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00102",
+          "view_id": "00102",
+          "bbox_2d": [
+            270.04,
+            204.96,
+            1096.59,
+            885.09
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00100_0",
+          "view_id": "00100",
+          "bbox_2d": [
+            202.96,
+            207.26,
+            891.16,
+            825.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7281
+        },
+        {
+          "object_view_id": "00102_0",
+          "view_id": "00102",
+          "bbox_2d": [
+            270.04,
+            204.96,
+            1096.59,
+            885.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6757
+        },
+        {
+          "object_view_id": "00114_0",
+          "view_id": "00114",
+          "bbox_2d": [
+            471.48,
+            608.45,
+            1296.0,
+            965.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6396
+        },
+        {
+          "object_view_id": "00158_0",
+          "view_id": "00158",
+          "bbox_2d": [
+            292.58,
+            0.0,
+            862.47,
+            808.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6656
+        },
+        {
+          "object_view_id": "00160_0",
+          "view_id": "00160",
+          "bbox_2d": [
+            686.52,
+            5.03,
+            1296.0,
+            783.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7623
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "sofa chair",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -2.018,
+        0.4555,
+        0.3107,
+        3.1629,
+        1.6427,
+        0.8586
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00102_1",
+          "view_id": "00102",
+          "bbox_2d": [
+            880.56,
+            730.35,
+            1295.79,
+            965.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3105
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            880.56,
+            730.35,
+            1295.79,
+            965.4
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00100",
+          "view_id": "00100",
+          "bbox_2d": [
+            854.0,
+            563.0,
+            1295.0,
+            959.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00155",
+          "view_id": "00155",
+          "bbox_2d": [
+            311.93,
+            0.0,
+            1021.77,
+            464.74
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00090",
+          "view_id": "00090",
+          "bbox_2d": [
+            63.85,
+            130.53,
+            916.2,
+            813.69
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00154_0",
+          "view_id": "00154",
+          "bbox_2d": [
+            240.06,
+            0.0,
+            918.27,
+            365.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7758
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "sofa chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "clearly verified as the intended sofa chair",
+        "in the middle"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.5674,
+        0.7202,
+        0.4195,
+        0.2594,
+        0.4796,
+        0.2768
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00130_0",
+          "view_id": "00130",
+          "bbox_2d": [
+            0.0,
+            538.08,
+            567.62,
+            965.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7427
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            538.08,
+            567.62,
+            965.71
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 15,
+      "label": "sofa chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "the 'in the middle' scene/location condition is not reliably verifiable from the current evidence"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.9712,
+        0.6221,
+        0.241,
+        1.1329,
+        1.0697,
+        0.7838
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00152_0",
+          "view_id": "00152",
+          "bbox_2d": [
+            136.64,
+            0.0,
+            721.15,
+            255.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6049
+        },
+        {
+          "object_view_id": "00156_0",
+          "view_id": "00156",
+          "bbox_2d": [
+            673.01,
+            8.75,
+            1295.76,
+            533.43
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8205
+        },
+        {
+          "object_view_id": "bootstrap_00093",
+          "view_id": "00093",
+          "bbox_2d": [
+            505.62,
+            172.16,
+            1296.0,
+            942.66
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00131",
+          "view_id": "00131",
+          "bbox_2d": [
+            0.0,
+            677.0,
+            402.0,
+            966.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00094",
+          "view_id": "00094",
+          "bbox_2d": [
+            442.36,
+            157.61,
+            1295.74,
+            958.48
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 16,
+      "label": "sofa chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "in the middle"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.0794,
+        -1.0651,
+        0.25,
+        1.525,
+        0.8571,
+        0.6751
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00162_0",
+          "view_id": "00162",
+          "bbox_2d": [
+            1008.58,
+            73.75,
+            1295.95,
+            664.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.415
+        },
+        {
+          "object_view_id": "00168_0",
+          "view_id": "00168",
+          "bbox_2d": [
+            975.91,
+            339.4,
+            1296.0,
+            965.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.653
+        }
+      ]
+    },
+    {
+      "candidate_id": 17,
+      "label": "sofa chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "candidate is in the middle"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.5406,
+        -0.9021,
+        0.1904,
+        0.4048,
+        0.4356,
+        0.5501
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00164_0",
+          "view_id": "00164",
+          "bbox_2d": [
+            1115.57,
+            313.85,
+            1295.99,
+            827.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2838
+        },
+        {
+          "object_view_id": "bootstrap_00157",
+          "view_id": "00157",
+          "bbox_2d": [
+            16.38,
+            0.43,
+            656.36,
+            729.22
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00107",
+          "view_id": "00107",
+          "bbox_2d": [
+            486.0,
+            571.0,
+            797.0,
+            942.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00116",
+          "view_id": "00116",
+          "bbox_2d": [
+            707.0,
+            84.0,
+            1152.0,
+            442.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

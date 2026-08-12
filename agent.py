@@ -440,9 +440,18 @@ class Agent:
                 best_view = getattr(object_views[best_id], "view", None)
                 best_camera_to_world = getattr(best_view, "camera_to_world", None)
                 if best_camera_to_world is not None:
-                    camera_position = np.asarray(
+                    camera_position_h = np.ones((4,), dtype=np.float64)
+                    camera_position_h[:3] = np.asarray(
                         best_camera_to_world[:3, 3], dtype=np.float64
                     )
+                    if self.world_to_axis_align_matrix is not None:
+                        camera_position_h = (
+                            np.asarray(
+                                self.world_to_axis_align_matrix, dtype=np.float64
+                            )
+                            @ camera_position_h
+                        )
+                    camera_position = camera_position_h[:3]
                     target_center = np.asarray(
                         candidate.bbox_3d, dtype=np.float64
                     ).reshape(-1)[:3]

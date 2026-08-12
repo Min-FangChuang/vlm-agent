@@ -1,0 +1,197 @@
+{
+  "case_id": 124,
+  "scene_id": "scene0648_00",
+  "query": "the door is open facing the inside of the small bedroom . it sits midway in the wall and has a closet on one side of it .",
+  "query_analysis": {
+    "raw_query": "the door is open facing the inside of the small bedroom . it sits midway in the wall and has a closet on one side of it .",
+    "target_object": "door",
+    "target_attributes": [
+      "open"
+    ],
+    "reference_object": "wall",
+    "reference_attributes": [],
+    "relation": "midway in"
+  },
+  "gt": {
+    "target_id": 3,
+    "gt_label": "door",
+    "gt_bbox_3d": [
+      -0.394795,
+      -1.763926,
+      0.338484,
+      0.694856,
+      0.24128,
+      0.825153
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -1.509952,
+      -1.184473,
+      1.298555,
+      0.39327,
+      0.202029,
+      1.334215
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 108,
+    "total_views": 105,
+    "total_object_views": 2,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is not clearly a door itself",
+        "candidate does not match the description of a door with a closet on one side; it appears to be the closet",
+        "cannot confirm the described wall placement for this candidate as a door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.2552,
+        -1.2107,
+        1.5659,
+        0.8903,
+        0.6593,
+        0.8108
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00088_0",
+          "view_id": "00088",
+          "bbox_2d": [
+            140.81,
+            3.29,
+            990.6,
+            962.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2986
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            140.81,
+            3.29,
+            990.6,
+            962.36
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "door",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "need clearer evidence that the door is positioned midway in the wall",
+        "need stronger confirmation of the door's open orientation relative to the bedroom interior"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.6549,
+        -1.2207,
+        1.169,
+        0.0885,
+        0.1291,
+        0.9478
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00098_0",
+          "view_id": "00098",
+          "bbox_2d": [
+            0.54,
+            6.2,
+            312.18,
+            965.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2514
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.54,
+            6.2,
+            312.18,
+            965.59
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00064",
+          "view_id": "00064",
+          "bbox_2d": [
+            0.0,
+            170.0,
+            154.0,
+            586.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00091",
+          "view_id": "00091",
+          "bbox_2d": [
+            269.0,
+            73.0,
+            436.0,
+            958.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            286.0,
+            181.0,
+            403.0,
+            959.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

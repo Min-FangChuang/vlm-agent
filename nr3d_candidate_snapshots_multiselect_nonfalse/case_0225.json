@@ -1,0 +1,389 @@
+{
+  "case_id": 225,
+  "scene_id": "scene0064_00",
+  "query": "the armchair facing the door",
+  "query_analysis": {
+    "raw_query": "the armchair facing the door",
+    "target_object": "armchair",
+    "target_attributes": [],
+    "reference_object": "door",
+    "reference_attributes": [],
+    "relation": "facing"
+  },
+  "gt": {
+    "target_id": 7,
+    "gt_label": "armchair",
+    "gt_bbox_3d": [
+      -0.4662,
+      -0.304449,
+      0.399668,
+      0.871463,
+      0.899084,
+      0.774535
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -0.456151,
+      -0.322525,
+      0.435034,
+      0.874066,
+      0.793781,
+      0.637587
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 43,
+    "total_views": 31,
+    "total_object_views": 5,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "armchair",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.4582,
+        -0.3196,
+        0.4491,
+        0.8702,
+        0.7853,
+        0.6093
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            670.91,
+            279.62,
+            1295.95,
+            965.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3914
+        },
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            106.89,
+            316.33,
+            852.73,
+            966.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2857
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            106.89,
+            316.33,
+            852.73,
+            966.07
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            484.1,
+            235.95,
+            1244.64,
+            965.06
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            0.0,
+            381.0,
+            601.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            819.0,
+            578.0,
+            1295.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "armchair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "door is not visible",
+        "cannot verify whether the green-boxed armchair is facing the door",
+        "nearby alternative armchair has not been ruled out relative to the door"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.4201,
+        -1.0962,
+        0.3481,
+        0.8269,
+        0.7469,
+        0.7856
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_1",
+          "view_id": "00010",
+          "bbox_2d": [
+            745.08,
+            284.64,
+            1296.0,
+            964.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2759
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            1097.0,
+            220.0,
+            1295.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            485.0,
+            334.0,
+            1240.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00012",
+          "view_id": "00012",
+          "bbox_2d": [
+            164.0,
+            552.0,
+            1045.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "armchair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "door is not visible",
+        "cannot verify whether the armchair is facing the door"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.499,
+        -1.0633,
+        0.4702,
+        0.8522,
+        0.8923,
+        0.3834
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            86.27,
+            0.0,
+            480.6,
+            210.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3185
+        },
+        {
+          "object_view_id": "bootstrap_00012",
+          "view_id": "00012",
+          "bbox_2d": [
+            299.0,
+            552.0,
+            1044.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            485.0,
+            334.0,
+            1237.0,
+            960.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00010",
+          "view_id": "00010",
+          "bbox_2d": [
+            745.08,
+            284.64,
+            1296.0,
+            964.91
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "armchair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "a clearly identifiable door associated with this candidate",
+        "confirmation that the armchair is facing the door"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.4779,
+        -0.374,
+        0.4379,
+        0.8992,
+        1.0657,
+        0.6749
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            575.98,
+            250.58,
+            993.08,
+            560.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2535
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            484.1,
+            235.95,
+            1244.64,
+            965.06
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00056",
+          "view_id": "00056",
+          "bbox_2d": [
+            19.0,
+            190.0,
+            602.0,
+            843.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00008",
+          "view_id": "00008",
+          "bbox_2d": [
+            670.91,
+            279.62,
+            1295.95,
+            965.78
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

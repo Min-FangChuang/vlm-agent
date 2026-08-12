@@ -1,0 +1,1157 @@
+{
+  "case_id": 189,
+  "scene_id": "scene0307_00",
+  "query": "in the room there is a cream colored door to the left of the wooden shelves and to the right of the water heater . the door is slightly open and has a door handle about half way up on the right side .",
+  "query_analysis": {
+    "raw_query": "in the room there is a cream colored door to the left of the wooden shelves and to the right of the water heater . the door is slightly open and has a door handle about half way up on the right side .",
+    "target_object": "door",
+    "target_attributes": [
+      "cream colored",
+      "slightly open",
+      "door handle about half way up on the right side"
+    ],
+    "reference_object": "wooden shelves; water heater",
+    "reference_attributes": [
+      "wooden"
+    ],
+    "relation": "to the left of the wooden shelves and to the right of the water heater"
+  },
+  "gt": {
+    "target_id": 33,
+    "gt_label": "door",
+    "gt_bbox_3d": [
+      -2.686664,
+      -1.831966,
+      1.013843,
+      0.419522,
+      0.934022,
+      1.974997
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 5,
+    "bbox_3d": [
+      -2.617695,
+      -1.799535,
+      1.075235,
+      0.368731,
+      0.8836,
+      2.055301
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 70,
+    "total_views": 52,
+    "total_object_views": 29,
+    "total_candidates": 15
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "not clearly cream colored",
+        "not the slightly open cream door",
+        "does not show the described handle on the right side",
+        "reference relation to the water heater is not satisfied for the boxed object",
+        "boxed object is not the best-matching door in the scene"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.1459,
+        1.3759,
+        0.6344,
+        0.889,
+        0.741,
+        1.2703
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            875.29,
+            7.58,
+            1284.73,
+            953.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3911
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "door",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the handle is on the right side as described",
+        "wooden shelves are not clearly identified",
+        "water heater is not clearly identified",
+        "spatial relation to the wooden shelves and water heater cannot be verified reliably"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.1596,
+        -0.7374,
+        0.6244,
+        0.9384,
+        1.6108,
+        1.3433
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_1",
+          "view_id": "00014",
+          "bbox_2d": [
+            10.16,
+            5.49,
+            377.54,
+            954.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2939
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            4.78,
+            7.43,
+            865.21,
+            956.42
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            5.0,
+            5.0,
+            263.0,
+            957.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            941.0,
+            10.0,
+            1184.0,
+            957.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            4.78,
+            7.43,
+            865.21,
+            956.42
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2845
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            13.04,
+            7.02,
+            333.37,
+            957.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6434
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "door",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the green-boxed object is a door from the current views",
+        "slightly open state not visible",
+        "door handle about half way up on the right side not visible",
+        "relation to the water heater not confirmed"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.2692,
+        0.9733,
+        0.5935,
+        0.5825,
+        0.2033,
+        1.1164
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            847.33,
+            6.01,
+            1042.99,
+            583.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3395
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            448.0,
+            810.0,
+            646.0,
+            959.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00073",
+          "view_id": "00073",
+          "bbox_2d": [
+            443.0,
+            14.0,
+            687.0,
+            479.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00072",
+          "view_id": "00072",
+          "bbox_2d": [
+            7.0,
+            6.0,
+            373.0,
+            150.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "door is to the left of the wooden shelves",
+        "door is to the right of the water heater",
+        "door is slightly open",
+        "door handle about halfway up on the right side",
+        "green-boxed object is clearly the actual room door rather than another panel/appliance door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.7591,
+        1.1917,
+        0.6994,
+        0.5523,
+        0.3056,
+        1.3301
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            957.06,
+            3.61,
+            1283.9,
+            955.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.279
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            957.06,
+            3.61,
+            1283.9,
+            955.92
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "door is to the left of the wooden shelves",
+        "door handle about half way up on the right side is clearly visible"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -0.7961,
+        1.0843,
+        1.4111,
+        0.5289,
+        0.0636,
+        1.1709
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            744.04,
+            4.73,
+            1132.86,
+            957.48
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4326
+        },
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            1033.76,
+            31.17,
+            1283.47,
+            958.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3843
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            744.04,
+            4.73,
+            1132.86,
+            957.48
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "door",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -2.6411,
+        -1.8066,
+        1.0114,
+        0.2466,
+        0.8557,
+        1.9275
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            622.2,
+            141.98,
+            931.28,
+            956.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2664
+        },
+        {
+          "object_view_id": "bootstrap_00061",
+          "view_id": "00061",
+          "bbox_2d": [
+            849.32,
+            79.02,
+            1211.56,
+            951.09
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            284.79,
+            188.82,
+            603.98,
+            956.08
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00058",
+          "view_id": "00058",
+          "bbox_2d": [
+            9.0,
+            151.0,
+            291.0,
+            961.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a door",
+        "cream colored",
+        "slightly open",
+        "door handle about half way up on the right side",
+        "to the left of the wooden shelves",
+        "to the right of the water heater"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.1793,
+        -1.5248,
+        1.5117,
+        0.6077,
+        1.0601,
+        0.8958
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            12.6,
+            12.61,
+            241.49,
+            959.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4294
+        },
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            10.86,
+            7.88,
+            371.99,
+            956.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4193
+        },
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            82.91,
+            310.33,
+            794.42,
+            957.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5192
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            82.91,
+            310.33,
+            794.42,
+            957.83
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "door",
+        "cream colored",
+        "slightly open",
+        "door handle about half way up on the right side",
+        "to the left of the wooden shelves",
+        "to the right of the water heater"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -0.2353,
+        -1.2495,
+        1.2452,
+        0.5081,
+        0.5097,
+        1.3609
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            603.28,
+            82.86,
+            1029.24,
+            955.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2534
+        },
+        {
+          "object_view_id": "00070_1",
+          "view_id": "00070",
+          "bbox_2d": [
+            952.11,
+            6.09,
+            1282.78,
+            847.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3082
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            603.28,
+            82.86,
+            1029.24,
+            955.63
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [
+        "to the right of the water heater",
+        "to the left of the wooden shelves"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        1.0289,
+        1.1952,
+        0.7532,
+        1.0678,
+        0.8994,
+        1.4102
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00070_0",
+          "view_id": "00070",
+          "bbox_2d": [
+            9.41,
+            7.64,
+            340.18,
+            541.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3273
+        },
+        {
+          "object_view_id": "00078_0",
+          "view_id": "00078",
+          "bbox_2d": [
+            445.42,
+            265.36,
+            821.57,
+            954.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2809
+        },
+        {
+          "object_view_id": "00082_2",
+          "view_id": "00082",
+          "bbox_2d": [
+            13.47,
+            7.4,
+            479.2,
+            857.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3183
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "is a room door",
+        "slightly open",
+        "door handle about half way up on the right side",
+        "left of the wooden shelves",
+        "right of the water heater"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.2251,
+        0.9926,
+        1.1045,
+        0.796,
+        0.1909,
+        0.7101
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            713.81,
+            389.86,
+            1064.08,
+            813.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3091
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "door",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "wooden shelves are not clearly identified",
+        "water heater is not clearly identified",
+        "cannot reliably verify the door is left of the wooden shelves and right of the water heater",
+        "slightly open state is not fully certain from current views"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        3.3439,
+        0.3666,
+        0.9505,
+        0.5186,
+        0.9781,
+        1.884
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            899.57,
+            12.03,
+            1123.15,
+            450.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4603
+        },
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            697.61,
+            7.47,
+            972.62,
+            419.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5365
+        },
+        {
+          "object_view_id": "00084_1",
+          "view_id": "00084",
+          "bbox_2d": [
+            516.13,
+            7.27,
+            839.83,
+            418.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.334
+        },
+        {
+          "object_view_id": "00088_0",
+          "view_id": "00088",
+          "bbox_2d": [
+            1062.21,
+            78.39,
+            1282.47,
+            939.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2985
+        },
+        {
+          "object_view_id": "00090_0",
+          "view_id": "00090",
+          "bbox_2d": [
+            663.02,
+            320.19,
+            1108.65,
+            956.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2614
+        },
+        {
+          "object_view_id": "bootstrap_00024",
+          "view_id": "00024",
+          "bbox_2d": [
+            257.0,
+            23.0,
+            937.0,
+            883.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            31.0,
+            27.0,
+            197.0,
+            961.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            1158.0,
+            259.0,
+            1289.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "The green-boxed candidate itself is the requested door"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.6618,
+        -0.3288,
+        0.7461,
+        0.4027,
+        0.6195,
+        1.4376
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00080_1",
+          "view_id": "00080",
+          "bbox_2d": [
+            988.79,
+            7.9,
+            1288.16,
+            855.32
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2657
+        },
+        {
+          "object_view_id": "00082_1",
+          "view_id": "00082",
+          "bbox_2d": [
+            890.23,
+            10.77,
+            1286.8,
+            954.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4765
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            890.23,
+            10.77,
+            1286.8,
+            954.28
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is the actual door",
+        "cream colored door",
+        "slightly open",
+        "door handle about half way up on the right side",
+        "door is left of the wooden shelves and right of the water heater"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        1.6887,
+        1.229,
+        0.6151,
+        1.3435,
+        0.5375,
+        1.1534
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00084_0",
+          "view_id": "00084",
+          "bbox_2d": [
+            10.06,
+            5.33,
+            284.14,
+            955.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4127
+        },
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            9.73,
+            4.94,
+            320.36,
+            957.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3083
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            9.73,
+            4.94,
+            320.36,
+            957.26
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "door",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot clearly confirm the nearby wooden shelves as the referenced shelves",
+        "cannot clearly identify a water heater near the door",
+        "cannot reliably verify the door is left of the wooden shelves and right of the water heater",
+        "cannot clearly verify a door handle about halfway up on the right side"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        2.0646,
+        -3.5868,
+        1.1036,
+        1.366,
+        0.3968,
+        2.0773
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00098_0",
+          "view_id": "00098",
+          "bbox_2d": [
+            316.29,
+            151.74,
+            780.17,
+            894.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2799
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            255.39,
+            59.92,
+            739.92,
+            949.1
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00036",
+          "view_id": "00036",
+          "bbox_2d": [
+            550.0,
+            15.0,
+            944.0,
+            258.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00099",
+          "view_id": "00099",
+          "bbox_2d": [
+            9.74,
+            173.0,
+            406.55,
+            946.27
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "door",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "to the left of the wooden shelves",
+        "to the right of the water heater"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.1688,
+        0.0066,
+        0.631,
+        0.8909,
+        0.104,
+        1.247
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00102_0",
+          "view_id": "00102",
+          "bbox_2d": [
+            954.25,
+            7.41,
+            1285.26,
+            953.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2763
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            4.78,
+            7.43,
+            865.21,
+            956.42
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            941.0,
+            7.0,
+            1287.0,
+            957.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00043",
+          "view_id": "00043",
+          "bbox_2d": [
+            7.0,
+            7.0,
+            306.0,
+            961.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

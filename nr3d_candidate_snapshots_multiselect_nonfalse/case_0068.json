@@ -1,0 +1,244 @@
+{
+  "case_id": 68,
+  "scene_id": "scene0208_00",
+  "query": "find the box with the longest set of bookcases then choose the smaller one in the corner next to it on the left",
+  "query_analysis": {
+    "raw_query": "find the box with the longest set of bookcases then choose the smaller one in the corner next to it on the left",
+    "target_object": "bookshelf",
+    "target_attributes": [
+      "smaller"
+    ],
+    "reference_object": "bookshelf",
+    "reference_attributes": [
+      "the longer one"
+    ],
+    "relation": "in the corner to the left of"
+  },
+  "gt": {
+    "target_id": 1,
+    "gt_label": "bookshelf",
+    "gt_bbox_3d": [
+      2.573909,
+      -1.472162,
+      1.060097,
+      0.501548,
+      2.555547,
+      2.170001
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -3.236356,
+      0.484262,
+      0.722833,
+      0.401011,
+      0.456958,
+      1.470337
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      3
+    ],
+    "detector_call_count": 63,
+    "total_views": 60,
+    "total_object_views": 3,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "bookshelf",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably identify which nearby bookshelf run is the 'longest set of bookcases'",
+        "cannot reliably confirm that this exact small corner bookshelf is the one next to that longest set",
+        "left/right relation is still not resolved from current scene perspective",
+        "nearby alternative small endcap/corner bookshelves are not fully ruled out"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.2703,
+        -1.6566,
+        0.5571,
+        0.3403,
+        0.1017,
+        1.1835
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            387.2,
+            1.3,
+            1001.55,
+            944.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.354
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            387.2,
+            1.3,
+            1001.55,
+            944.7
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00028",
+          "view_id": "00028",
+          "bbox_2d": [
+            427.0,
+            753.0,
+            661.0,
+            966.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            675.0,
+            2.0,
+            931.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            1203.0,
+            616.0,
+            1295.0,
+            828.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "bookshelf",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot confirm the adjacent long bookshelf set is the longest set of bookcases in the scene",
+        "cannot fully verify the intended left-side relation relative to the longer bookshelf set in scene context",
+        "cannot rule out other nearby bookshelf candidates that may better satisfy the request"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -2.1237,
+        -0.5694,
+        0.7228,
+        2.6262,
+        2.5642,
+        1.4703
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            470.58,
+            0.0,
+            705.11,
+            425.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2791
+        },
+        {
+          "object_view_id": "bootstrap_00117",
+          "view_id": "00117",
+          "bbox_2d": [
+            313.0,
+            5.0,
+            422.0,
+            318.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "bookshelf",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot confirm the adjacent longer bookshelf run is the longest set of bookcases in the scene",
+        "cannot fully verify the corner relationship from the current partial view",
+        "cannot rule out other nearby bookcases that may better satisfy the description"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        3.2607,
+        1.2222,
+        0.9593,
+        1.6646,
+        3.2548,
+        1.7877
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            132.57,
+            310.35,
+            280.86,
+            752.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2636
+        }
+      ]
+    }
+  ]
+}

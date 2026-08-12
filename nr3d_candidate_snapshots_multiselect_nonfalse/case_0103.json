@@ -1,0 +1,327 @@
+{
+  "case_id": 103,
+  "scene_id": "scene0207_00",
+  "query": "the only office style chair in the room",
+  "query_analysis": {
+    "raw_query": "the only office style chair in the room",
+    "target_object": "chair",
+    "target_attributes": [
+      "office style",
+      "only"
+    ],
+    "reference_object": "room",
+    "reference_attributes": [],
+    "relation": "in"
+  },
+  "gt": {
+    "target_id": 11,
+    "gt_label": "chair",
+    "gt_bbox_3d": [
+      -1.213099,
+      1.74038,
+      0.416666,
+      0.595564,
+      0.680893,
+      0.900604
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -1.216243,
+      1.718458,
+      0.214402,
+      0.676385,
+      0.697944,
+      0.582129
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      3
+    ],
+    "detector_call_count": 59,
+    "total_views": 50,
+    "total_object_views": 6,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot confirm with full reliability that it is specifically the only office-style chair in the entire room",
+        "room is not sufficiently surveyed to rule out other office-style chairs"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.2854,
+        2.1568,
+        0.4194,
+        0.6808,
+        0.6396,
+        0.8995
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            10.08,
+            580.71,
+            277.64,
+            944.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6156
+        },
+        {
+          "object_view_id": "bootstrap_00086",
+          "view_id": "00086",
+          "bbox_2d": [
+            12.08,
+            454.54,
+            301.63,
+            814.68
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00010",
+          "view_id": "00010",
+          "bbox_2d": [
+            237.0,
+            587.0,
+            540.0,
+            881.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            603.0,
+            248.0,
+            904.0,
+            555.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            12.08,
+            454.54,
+            301.63,
+            814.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3057
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "only office style chair in the room"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.1816,
+        1.6842,
+        0.207,
+        0.5768,
+        0.5804,
+        0.5023
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            737.73,
+            277.96,
+            1175.45,
+            742.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4985
+        },
+        {
+          "object_view_id": "bootstrap_00085",
+          "view_id": "00085",
+          "bbox_2d": [
+            503.52,
+            327.5,
+            885.72,
+            675.14
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            1105.0,
+            405.0,
+            1285.0,
+            750.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            23.0,
+            584.0,
+            140.0,
+            909.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot confirm it is the only office-style chair in the entire room from the current views"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.2413,
+        2.2264,
+        0.4113,
+        0.7514,
+        1.7162,
+        0.9634
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            1059.48,
+            424.31,
+            1283.39,
+            834.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3411
+        },
+        {
+          "object_view_id": "bootstrap_00085",
+          "view_id": "00085",
+          "bbox_2d": [
+            503.52,
+            327.5,
+            885.72,
+            675.14
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            1098.0,
+            392.0,
+            1284.0,
+            659.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00016",
+          "view_id": "00016",
+          "bbox_2d": [
+            743.0,
+            822.0,
+            1176.0,
+            961.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            929.9,
+            658.9,
+            1143.95,
+            956.06
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4804
+        },
+        {
+          "object_view_id": "00084_0",
+          "view_id": "00084",
+          "bbox_2d": [
+            768.75,
+            78.79,
+            1096.05,
+            601.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.696
+        }
+      ]
+    }
+  ]
+}

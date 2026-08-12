@@ -1,0 +1,254 @@
+{
+  "case_id": 76,
+  "scene_id": "scene0084_00",
+  "query": "this is a white soap dispenser . it is above the sink .",
+  "query_analysis": {
+    "raw_query": "this is a white soap dispenser . it is above the sink .",
+    "target_object": "soap dispenser",
+    "target_attributes": [
+      "white"
+    ],
+    "reference_object": "sink",
+    "reference_attributes": [],
+    "relation": "above"
+  },
+  "gt": {
+    "target_id": 19,
+    "gt_label": "soap dispenser",
+    "gt_bbox_3d": [
+      0.772287,
+      -0.475825,
+      1.106528,
+      0.140205,
+      0.167042,
+      0.278312
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      0.768386,
+      -0.463066,
+      1.093403,
+      0.151502,
+      0.147673,
+      0.304392
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      1
+    ],
+    "detector_call_count": 53,
+    "total_views": 50,
+    "total_object_views": 5,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "soap dispenser",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        0.7672,
+        -0.4693,
+        1.0934,
+        0.1493,
+        0.1594,
+        0.3044
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            1005.88,
+            7.35,
+            1246.46,
+            211.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8108
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            971.57,
+            89.78,
+            1244.91,
+            467.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7771
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            905.77,
+            7.9,
+            1140.71,
+            146.24
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5146
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            971.57,
+            89.78,
+            1244.91,
+            467.77
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            709.0,
+            25.0,
+            889.0,
+            121.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00001",
+          "view_id": "00001",
+          "bbox_2d": [
+            1045.03,
+            5.62,
+            1286.6,
+            298.75
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            1042.47,
+            6.32,
+            1286.49,
+            259.77
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "soap dispenser",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "green-boxed candidate is not the physical soap dispenser itself"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.792,
+        -1.5409,
+        1.0901,
+        0.1477,
+        0.2988,
+        0.2431
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_1",
+          "view_id": "00002",
+          "bbox_2d": [
+            290.36,
+            8.94,
+            420.53,
+            228.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.736
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            290.36,
+            8.94,
+            420.53,
+            228.75
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "soap dispenser",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "soap dispenser is white",
+        "object is clearly the requested white soap dispenser rather than a different dark wall-mounted dispenser"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        2.1536,
+        -0.692,
+        1.1402,
+        0.3201,
+        0.6029,
+        0.2863
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00098_0",
+          "view_id": "00098",
+          "bbox_2d": [
+            610.17,
+            6.76,
+            827.03,
+            174.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3981
+        }
+      ]
+    }
+  ]
+}

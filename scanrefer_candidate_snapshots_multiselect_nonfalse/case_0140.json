@@ -1,0 +1,962 @@
+{
+  "case_id": 140,
+  "scene_id": "scene0222_00",
+  "query": "the pillow is on top of a bed that is to the left of a desk and a drawer . the pillow is a white rectangle .",
+  "query_analysis": {
+    "raw_query": "the pillow is on top of a bed that is to the left of a desk and a drawer . the pillow is a white rectangle .",
+    "target_object": "pillow",
+    "target_attributes": [
+      "white",
+      "rectangle"
+    ],
+    "reference_object": "bed",
+    "reference_attributes": [],
+    "relation": "on top of"
+  },
+  "gt": {
+    "target_id": 20,
+    "gt_label": "pillow",
+    "gt_bbox_3d": [
+      1.641438,
+      1.533071,
+      0.819485,
+      0.452466,
+      0.756115,
+      0.13355
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 8,
+    "bbox_3d": [
+      1.64277,
+      1.479267,
+      0.82425,
+      0.469287,
+      0.649413,
+      0.146581
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1
+    ],
+    "detector_call_count": 145,
+    "total_views": 135,
+    "total_object_views": 26,
+    "total_candidates": 11
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -1.2313,
+        -2.7808,
+        0.8422,
+        0.8193,
+        0.5959,
+        0.1475
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            797.76,
+            63.86,
+            1296.0,
+            231.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8734
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            389.07,
+            175.43,
+            876.04,
+            357.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8729
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            0.0,
+            70.91,
+            451.65,
+            321.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.766
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            70.91,
+            451.65,
+            321.87
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00115_0",
+          "view_id": "00115",
+          "bbox_2d": [
+            502.91,
+            154.98,
+            995.64,
+            442.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8743
+        },
+        {
+          "object_view_id": "00117_0",
+          "view_id": "00117",
+          "bbox_2d": [
+            337.99,
+            149.75,
+            774.22,
+            435.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8591
+        },
+        {
+          "object_view_id": "00119_0",
+          "view_id": "00119",
+          "bbox_2d": [
+            0.03,
+            459.42,
+            258.92,
+            794.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7269
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "pillow is white",
+        "pillow matches the requested white rectangular appearance"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.2136,
+        -2.9735,
+        0.8412,
+        0.7725,
+        0.4366,
+        0.1609
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_1",
+          "view_id": "00020",
+          "bbox_2d": [
+            791.68,
+            26.05,
+            1069.3,
+            218.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4877
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            791.68,
+            26.05,
+            1069.3,
+            218.71
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "green-boxed object is a pillow",
+        "green-boxed object is white",
+        "green-boxed object is rectangular",
+        "green-boxed object is on top of the bed"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.0018,
+        -1.0999,
+        0.6401,
+        0.4754,
+        0.0891,
+        0.2376
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            138.38,
+            745.81,
+            359.44,
+            968.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5057
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            138.38,
+            745.81,
+            359.44,
+            968.0
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "pillow is clearly white",
+        "pillow is clearly a white rectangle",
+        "the bed is to the left of a desk",
+        "the bed is to the left of a drawer"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.107,
+        -2.7139,
+        0.8358,
+        0.578,
+        0.5005,
+        0.1362
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00133_0",
+          "view_id": "00133",
+          "bbox_2d": [
+            354.27,
+            160.63,
+            642.99,
+            249.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8404
+        },
+        {
+          "object_view_id": "bootstrap_00113",
+          "view_id": "00113",
+          "bbox_2d": [
+            688.0,
+            7.0,
+            867.0,
+            85.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00116",
+          "view_id": "00116",
+          "bbox_2d": [
+            453.04,
+            160.29,
+            942.5,
+            483.05
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00119",
+          "view_id": "00119",
+          "bbox_2d": [
+            0.03,
+            459.42,
+            258.92,
+            794.67
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a pillow",
+        "object is white",
+        "object is rectangular pillow-shaped",
+        "object is on top of a bed",
+        "bed is the one to the left of a desk and a drawer"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -1.0638,
+        -0.3897,
+        0.6894,
+        0.3843,
+        0.213,
+        0.0664
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00151_0",
+          "view_id": "00151",
+          "bbox_2d": [
+            0.0,
+            425.05,
+            327.69,
+            891.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.664
+        },
+        {
+          "object_view_id": "00153_0",
+          "view_id": "00153",
+          "bbox_2d": [
+            26.47,
+            0.0,
+            591.3,
+            250.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6864
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            425.05,
+            327.69,
+            891.02
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 5,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "is a pillow",
+        "white",
+        "on top of a bed",
+        "bed is to the left of a desk and a drawer"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.5185,
+        1.6358,
+        0.1576,
+        0.6008,
+        0.6686,
+        0.3882
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00169_0",
+          "view_id": "00169",
+          "bbox_2d": [
+            851.97,
+            336.45,
+            1183.02,
+            694.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.466
+        },
+        {
+          "object_view_id": "00171_0",
+          "view_id": "00171",
+          "bbox_2d": [
+            861.88,
+            164.13,
+            1225.03,
+            549.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4029
+        },
+        {
+          "object_view_id": "00173_0",
+          "view_id": "00173",
+          "bbox_2d": [
+            339.31,
+            155.91,
+            696.46,
+            570.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4175
+        },
+        {
+          "object_view_id": "00175_0",
+          "view_id": "00175",
+          "bbox_2d": [
+            0.2,
+            211.54,
+            316.17,
+            710.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3149
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.2,
+            211.54,
+            316.17,
+            710.79
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00215_0",
+          "view_id": "00215",
+          "bbox_2d": [
+            678.1,
+            181.15,
+            1101.83,
+            640.2
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4431
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "is a pillow matching the requested appearance",
+        "white",
+        "rectangle",
+        "on top of the bed left of a desk and a drawer"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.1068,
+        1.0785,
+        0.671,
+        0.1984,
+        0.1089,
+        0.2278
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00177_0",
+          "view_id": "00177",
+          "bbox_2d": [
+            0.0,
+            51.96,
+            272.4,
+            371.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3217
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            51.96,
+            272.4,
+            371.66
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "pillow",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 8,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot clearly confirm a desk near the bed",
+        "cannot clearly confirm a separate drawer near the bed",
+        "cannot fully verify that the bed is to the left of both the desk and the drawer"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        1.7884,
+        1.5349,
+        0.7458,
+        0.7646,
+        0.7669,
+        0.2956
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00181_0",
+          "view_id": "00181",
+          "bbox_2d": [
+            575.25,
+            158.21,
+            977.73,
+            289.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9309
+        },
+        {
+          "object_view_id": "00183_0",
+          "view_id": "00183",
+          "bbox_2d": [
+            40.17,
+            27.64,
+            501.95,
+            169.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9318
+        },
+        {
+          "object_view_id": "00195_0",
+          "view_id": "00195",
+          "bbox_2d": [
+            0.02,
+            126.21,
+            193.37,
+            365.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9051
+        },
+        {
+          "object_view_id": "00197_0",
+          "view_id": "00197",
+          "bbox_2d": [
+            0.01,
+            245.18,
+            158.7,
+            545.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8369
+        },
+        {
+          "object_view_id": "bootstrap_00204",
+          "view_id": "00204",
+          "bbox_2d": [
+            733.0,
+            11.0,
+            816.0,
+            48.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00206",
+          "view_id": "00206",
+          "bbox_2d": [
+            297.59,
+            185.58,
+            871.58,
+            470.61
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00196",
+          "view_id": "00196",
+          "bbox_2d": [
+            0.0,
+            222.23,
+            181.65,
+            486.38
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00205_0",
+          "view_id": "00205",
+          "bbox_2d": [
+            262.75,
+            0.0,
+            902.1,
+            258.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9053
+        },
+        {
+          "object_view_id": "00207_0",
+          "view_id": "00207",
+          "bbox_2d": [
+            586.55,
+            223.06,
+            1172.92,
+            533.84
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9053
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "pillow",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.5644,
+        1.5533,
+        0.8214,
+        0.3048,
+        0.4631,
+        0.1375
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00209_0",
+          "view_id": "00209",
+          "bbox_2d": [
+            1020.79,
+            169.82,
+            1296.0,
+            510.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.836
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1020.79,
+            169.82,
+            1296.0,
+            510.87
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00208",
+          "view_id": "00208",
+          "bbox_2d": [
+            820.12,
+            172.37,
+            1296.0,
+            531.2
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00206",
+          "view_id": "00206",
+          "bbox_2d": [
+            297.59,
+            185.58,
+            871.58,
+            470.61
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00207",
+          "view_id": "00207",
+          "bbox_2d": [
+            586.55,
+            223.06,
+            1172.92,
+            533.84
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "candidate is a pillow",
+        "candidate is white",
+        "candidate is rectangular"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.5147,
+        1.6565,
+        0.8316,
+        0.9946,
+        0.5915,
+        0.1906
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00211_0",
+          "view_id": "00211",
+          "bbox_2d": [
+            434.61,
+            33.84,
+            1296.0,
+            396.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3175
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            434.61,
+            33.84,
+            1296.0,
+            396.65
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00175",
+          "view_id": "00175",
+          "bbox_2d": [
+            633.0,
+            7.0,
+            666.0,
+            20.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00182",
+          "view_id": "00182",
+          "bbox_2d": [
+            0.0,
+            281.0,
+            167.0,
+            488.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00210",
+          "view_id": "00210",
+          "bbox_2d": [
+            256.0,
+            77.0,
+            1295.0,
+            463.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "pillow",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably identify a drawer in the current views",
+        "cannot reliably confirm that the bed is to the left of the drawer"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.5847,
+        1.3654,
+        0.8615,
+        0.4506,
+        0.4549,
+        0.2157
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00259_0",
+          "view_id": "00259",
+          "bbox_2d": [
+            0.0,
+            419.45,
+            273.59,
+            539.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8732
+        },
+        {
+          "object_view_id": "bootstrap_00198",
+          "view_id": "00198",
+          "bbox_2d": [
+            0.0,
+            66.0,
+            214.0,
+            286.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

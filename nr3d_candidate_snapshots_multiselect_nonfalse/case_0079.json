@@ -1,0 +1,218 @@
+{
+  "case_id": 79,
+  "scene_id": "scene0149_00",
+  "query": "the kitchen cabinets sink and counter plus part of the floor",
+  "query_analysis": {
+    "raw_query": "the kitchen cabinets sink and counter plus part of the floor",
+    "target_object": "counter",
+    "target_attributes": [
+      "kitchen"
+    ],
+    "reference_object": "sink",
+    "reference_attributes": [],
+    "relation": ""
+  },
+  "gt": {
+    "target_id": 0,
+    "gt_label": "kitchen counter",
+    "gt_bbox_3d": [
+      0.227415,
+      0.685265,
+      0.885365,
+      1.832722,
+      2.653507,
+      0.328916
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      0.749567,
+      0.086641,
+      0.783054,
+      0.762004,
+      1.404324,
+      0.368585
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2
+    ],
+    "detector_call_count": 38,
+    "total_views": 35,
+    "total_object_views": 4,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "counter",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is the kitchen counter",
+        "candidate is the counter associated with the visible sink/cabinets"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.6248,
+        -1.039,
+        0.3821,
+        1.107,
+        1.2397,
+        0.8091
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            435.53,
+            236.16,
+            1295.54,
+            965.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2839
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            435.53,
+            236.16,
+            1295.54,
+            965.98
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "counter",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        0.7236,
+        -0.0715,
+        0.7618,
+        0.7125,
+        1.8059,
+        0.343
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            0.24,
+            64.22,
+            796.74,
+            289.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4123
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.24,
+            64.22,
+            796.74,
+            289.63
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00028",
+          "view_id": "00028",
+          "bbox_2d": [
+            457.0,
+            159.0,
+            1295.0,
+            408.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00061",
+          "view_id": "00061",
+          "bbox_2d": [
+            562.0,
+            312.0,
+            1224.0,
+            463.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            5.8,
+            1.64,
+            949.3,
+            238.57
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00065_0",
+          "view_id": "00065",
+          "bbox_2d": [
+            2.02,
+            703.07,
+            1082.04,
+            968.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4907
+        },
+        {
+          "object_view_id": "00067_0",
+          "view_id": "00067",
+          "bbox_2d": [
+            0.06,
+            242.99,
+            710.89,
+            477.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4347
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,440 @@
+{
+  "case_id": 50,
+  "scene_id": "scene0629_00",
+  "query": "pick the door that is slightly open and is closer to the red an yellow painting",
+  "query_analysis": {
+    "raw_query": "pick the door that is slightly open and is closer to the red an yellow painting",
+    "target_object": "door",
+    "target_attributes": [
+      "slightly open"
+    ],
+    "reference_object": "painting",
+    "reference_attributes": [
+      "red",
+      "yellow"
+    ],
+    "relation": "closer to"
+  },
+  "gt": {
+    "target_id": 0,
+    "gt_label": "door",
+    "gt_bbox_3d": [
+      1.720597,
+      0.14718,
+      1.041274,
+      0.564625,
+      0.769153,
+      2.022088
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      1.713774,
+      0.158986,
+      1.025624,
+      0.619614,
+      0.755609,
+      2.03077
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      2,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 73,
+    "total_views": 69,
+    "total_object_views": 16,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "door",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot clearly identify a nearby red-and-yellow painting",
+        "cannot reliably verify that this door is closer to that painting than other doors"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        -2.2459,
+        0.1124,
+        0.9847,
+        0.199,
+        0.8199,
+        2.0189
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            767.68,
+            164.81,
+            1169.98,
+            965.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6889
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            566.26,
+            0.48,
+            941.55,
+            666.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5335
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            358.98,
+            61.17,
+            763.97,
+            965.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6003
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            53.99,
+            0.02,
+            459.53,
+            831.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6294
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            0.0,
+            214.0,
+            103.0,
+            783.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            1067.0,
+            9.0,
+            1295.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00041",
+          "view_id": "00041",
+          "bbox_2d": [
+            0.0,
+            512.0,
+            86.0,
+            934.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00104_0",
+          "view_id": "00104",
+          "bbox_2d": [
+            719.04,
+            657.33,
+            1102.21,
+            966.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4752
+        },
+        {
+          "object_view_id": "00106_0",
+          "view_id": "00106",
+          "bbox_2d": [
+            244.04,
+            216.54,
+            634.24,
+            966.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6515
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "door",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        2.2806,
+        0.2624,
+        0.7421,
+        1.4576,
+        0.8633,
+        1.4761
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            826.09,
+            101.69,
+            1090.29,
+            890.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6317
+        },
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            372.11,
+            88.36,
+            622.57,
+            880.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6881
+        },
+        {
+          "object_view_id": "bootstrap_00119",
+          "view_id": "00119",
+          "bbox_2d": [
+            1277.0,
+            173.0,
+            1295.0,
+            967.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            920.34,
+            49.73,
+            1214.37,
+            877.45
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00069",
+          "view_id": "00069",
+          "bbox_2d": [
+            89.49,
+            126.52,
+            401.5,
+            918.26
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00126_0",
+          "view_id": "00126",
+          "bbox_2d": [
+            825.49,
+            188.55,
+            1102.54,
+            965.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5801
+        },
+        {
+          "object_view_id": "00130_0",
+          "view_id": "00130",
+          "bbox_2d": [
+            17.74,
+            0.17,
+            449.61,
+            654.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4458
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 4,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a door",
+        "candidate is slightly open",
+        "candidate is the door closer to the red and yellow painting"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        3.2641,
+        -1.1155,
+        0.51,
+        4.2554,
+        1.924,
+        2.5225
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00066_1",
+          "view_id": "00066",
+          "bbox_2d": [
+            1156.55,
+            222.02,
+            1296.0,
+            949.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3205
+        },
+        {
+          "object_view_id": "00068_1",
+          "view_id": "00068",
+          "bbox_2d": [
+            686.2,
+            231.11,
+            996.8,
+            878.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5488
+        },
+        {
+          "object_view_id": "00070_0",
+          "view_id": "00070",
+          "bbox_2d": [
+            125.6,
+            178.91,
+            489.65,
+            885.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4939
+        },
+        {
+          "object_view_id": "00126_1",
+          "view_id": "00126",
+          "bbox_2d": [
+            1151.71,
+            319.75,
+            1296.0,
+            965.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2548
+        },
+        {
+          "object_view_id": "00132_0",
+          "view_id": "00132",
+          "bbox_2d": [
+            0.0,
+            18.0,
+            413.53,
+            831.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3032
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a door",
+        "slightly open",
+        "closer to the red and yellow painting"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.0647,
+        -2.4704,
+        0.9364,
+        0.9235,
+        0.3453,
+        1.224
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            760.74,
+            292.21,
+            1296.0,
+            960.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3233
+        }
+      ]
+    }
+  ]
+}

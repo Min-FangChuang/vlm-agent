@@ -1,0 +1,696 @@
+{
+  "case_id": 242,
+  "scene_id": "scene0221_00",
+  "query": "the bed is on the left side of the room . it has a green cover .",
+  "query_analysis": {
+    "raw_query": "the bed is on the left side of the room . it has a green cover .",
+    "target_object": "bed",
+    "target_attributes": [
+      "green cover"
+    ],
+    "reference_object": "room",
+    "reference_attributes": [],
+    "relation": "on the left side of"
+  },
+  "gt": {
+    "target_id": 7,
+    "gt_label": "bed",
+    "gt_bbox_3d": [
+      -0.751422,
+      -0.06564,
+      0.479433,
+      2.131009,
+      1.642272,
+      1.14589
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 3,
+    "bbox_3d": [
+      -0.864846,
+      0.109485,
+      0.40736,
+      1.88638,
+      1.340288,
+      0.988417
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      4
+    ],
+    "detector_call_count": 46,
+    "total_views": 25,
+    "total_object_views": 11,
+    "total_candidates": 7
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "bed",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.2168,
+        -0.3441,
+        0.6564,
+        1.0734,
+        1.0329,
+        0.6447
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            678.9,
+            268.47,
+            1295.82,
+            965.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4995
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            678.9,
+            268.47,
+            1295.82,
+            965.98
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            54.0,
+            361.0,
+            896.0,
+            962.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            637.0,
+            66.0,
+            1295.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00008",
+          "view_id": "00008",
+          "bbox_2d": [
+            177.32,
+            4.13,
+            1295.32,
+            964.04
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "bed",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 8,
+      "bbox_3d": [
+        -0.5963,
+        1.1645,
+        0.3914,
+        1.5913,
+        3.3301,
+        0.3998
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            177.32,
+            4.13,
+            1295.32,
+            964.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7694
+        },
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            0.71,
+            254.82,
+            1290.35,
+            964.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5311
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            177.32,
+            4.13,
+            1295.32,
+            964.04
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00024",
+          "view_id": "00024",
+          "bbox_2d": [
+            0.0,
+            9.26,
+            1192.66,
+            964.27
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            0.0,
+            279.0,
+            660.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00035",
+          "view_id": "00035",
+          "bbox_2d": [
+            990.94,
+            426.03,
+            1296.0,
+            964.36
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            0.0,
+            534.37,
+            945.66,
+            964.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2583
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            0.0,
+            9.26,
+            1192.66,
+            964.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2765
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "bed",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.5338,
+        1.9951,
+        0.2355,
+        1.6444,
+        1.432,
+        0.7029
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            599.33,
+            385.99,
+            1296.0,
+            965.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5837
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            99.33,
+            125.04,
+            1295.27,
+            962.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4065
+        },
+        {
+          "object_view_id": "bootstrap_00024",
+          "view_id": "00024",
+          "bbox_2d": [
+            0.0,
+            9.26,
+            1192.66,
+            964.27
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            194.0,
+            517.0,
+            1295.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            0.0,
+            70.23,
+            415.32,
+            964.21
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "bed",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.1817,
+        0.416,
+        0.4266,
+        1.2059,
+        0.4428,
+        0.9499
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_1",
+          "view_id": "00012",
+          "bbox_2d": [
+            0.0,
+            405.6,
+            572.9,
+            965.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3328
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            405.6,
+            572.9,
+            965.77
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00010",
+          "view_id": "00010",
+          "bbox_2d": [
+            0.71,
+            254.82,
+            1290.35,
+            964.89
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            450.0,
+            205.0,
+            1040.0,
+            443.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            426.0,
+            168.0,
+            1081.0,
+            772.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "bed",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "bed is on the left side of the room"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.0398,
+        2.6098,
+        0.5094,
+        1.329,
+        0.4802,
+        0.8402
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            0.0,
+            70.23,
+            415.32,
+            964.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5448
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            70.23,
+            415.32,
+            964.21
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00016",
+          "view_id": "00016",
+          "bbox_2d": [
+            0.0,
+            205.0,
+            773.0,
+            959.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            0.0,
+            766.0,
+            1295.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00018",
+          "view_id": "00018",
+          "bbox_2d": [
+            0.0,
+            570.0,
+            416.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "bed",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "on the left side of the room"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.3474,
+        2.0648,
+        0.3332,
+        1.0478,
+        1.4263,
+        0.4909
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            339.69,
+            412.74,
+            1296.0,
+            964.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.527
+        },
+        {
+          "object_view_id": "bootstrap_00016",
+          "view_id": "00016",
+          "bbox_2d": [
+            0.0,
+            499.0,
+            1295.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            99.33,
+            125.04,
+            1295.27,
+            962.19
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            521.95,
+            3.7,
+            1295.61,
+            938.89
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "bed",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "insufficient confirmation that this bed is on the left side of the room",
+        "need clearer distinction between the green-boxed bed and the other nearby bed-like candidate"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.1957,
+        0.2308,
+        0.4031,
+        0.7542,
+        1.0145,
+        0.3875
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_1",
+          "view_id": "00026",
+          "bbox_2d": [
+            985.02,
+            259.32,
+            1296.0,
+            540.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3962
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            449.62,
+            208.28,
+            1035.44,
+            443.15
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00008",
+          "view_id": "00008",
+          "bbox_2d": [
+            177.32,
+            4.13,
+            1295.32,
+            964.04
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            398.0,
+            541.0,
+            997.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

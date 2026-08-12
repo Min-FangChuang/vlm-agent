@@ -1,0 +1,1955 @@
+{
+  "case_id": 120,
+  "scene_id": "scene0011_00",
+  "query": "cabinet closest to the tv",
+  "query_analysis": {
+    "raw_query": "cabinet closest to the tv",
+    "target_object": "cabinet",
+    "target_attributes": [],
+    "reference_object": "tv",
+    "reference_attributes": [],
+    "relation": "closest to"
+  },
+  "gt": {
+    "target_id": 20,
+    "gt_label": "cabinet",
+    "gt_bbox_3d": [
+      1.699543,
+      -2.606292,
+      1.56534,
+      0.678415,
+      1.07315,
+      1.573044
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 13,
+    "bbox_3d": [
+      0.93036,
+      -1.582469,
+      0.484006,
+      1.592826,
+      1.092113,
+      1.068802
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      1,
+      2,
+      2,
+      2,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 100,
+    "total_views": 60,
+    "total_object_views": 60,
+    "total_candidates": 18
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 12,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "tv is not visually confirmed",
+        "cannot determine whether this cabinet is the closest cabinet to the tv",
+        "other nearby cabinets are visible and cannot be distinguished by tv distance"
+      ],
+      "num_object_views": 18,
+      "bbox_3d": [
+        1.3564,
+        2.4003,
+        0.4175,
+        0.1029,
+        0.4748,
+        0.7586
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            228.51,
+            8.1,
+            449.78,
+            227.48
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3732
+        },
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            124.71,
+            177.15,
+            367.66,
+            512.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7224
+        },
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            375.78,
+            91.71,
+            578.18,
+            394.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7251
+        },
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            590.88,
+            337.36,
+            801.94,
+            649.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5746
+        },
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            715.48,
+            740.3,
+            978.47,
+            959.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7651
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            809.46,
+            861.64,
+            1106.61,
+            957.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3637
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            794.41,
+            582.98,
+            1057.22,
+            951.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7597
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            452.78,
+            384.99,
+            736.02,
+            810.9
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00030",
+          "view_id": "00030",
+          "bbox_2d": [
+            10.42,
+            290.01,
+            307.88,
+            827.77
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            729.62,
+            788.56,
+            1012.54,
+            959.04
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_1",
+          "view_id": "00020",
+          "bbox_2d": [
+            848.83,
+            190.44,
+            1144.77,
+            611.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6953
+        },
+        {
+          "object_view_id": "00022_1",
+          "view_id": "00022",
+          "bbox_2d": [
+            674.0,
+            231.72,
+            963.05,
+            634.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6401
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            284.87,
+            406.37,
+            623.72,
+            887.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8553
+        },
+        {
+          "object_view_id": "00028_1",
+          "view_id": "00028",
+          "bbox_2d": [
+            9.39,
+            447.49,
+            188.1,
+            960.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5641
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            10.42,
+            290.01,
+            307.88,
+            827.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8851
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            83.55,
+            253.75,
+            348.4,
+            606.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8018
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            11.69,
+            404.33,
+            221.75,
+            835.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8395
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            10.99,
+            441.24,
+            196.88,
+            962.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7559
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "tv is not visible or confirmed in the current views",
+        "cannot verify whether this cabinet is the one closest to the tv",
+        "other nearby cabinets are present and cannot be compared against the tv location"
+      ],
+      "num_object_views": 16,
+      "bbox_3d": [
+        1.357,
+        1.7763,
+        0.4488,
+        0.0645,
+        0.8335,
+        0.6516
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_1",
+          "view_id": "00006",
+          "bbox_2d": [
+            351.34,
+            167.31,
+            547.31,
+            432.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2809
+        },
+        {
+          "object_view_id": "00008_1",
+          "view_id": "00008",
+          "bbox_2d": [
+            581.12,
+            91.41,
+            902.25,
+            366.2
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6342
+        },
+        {
+          "object_view_id": "00010_1",
+          "view_id": "00010",
+          "bbox_2d": [
+            806.1,
+            334.56,
+            1156.09,
+            617.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4606
+        },
+        {
+          "object_view_id": "00012_1",
+          "view_id": "00012",
+          "bbox_2d": [
+            980.9,
+            734.2,
+            1286.66,
+            959.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7567
+        },
+        {
+          "object_view_id": "00018_1",
+          "view_id": "00018",
+          "bbox_2d": [
+            1042.37,
+            591.56,
+            1285.32,
+            946.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6705
+        },
+        {
+          "object_view_id": "bootstrap_00026",
+          "view_id": "00026",
+          "bbox_2d": [
+            411.9,
+            322.47,
+            938.53,
+            950.5
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00038",
+          "view_id": "00038",
+          "bbox_2d": [
+            9.71,
+            340.13,
+            199.44,
+            959.11
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            1014.83,
+            795.73,
+            1287.76,
+            960.39
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            1117.82,
+            190.99,
+            1284.2,
+            584.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7496
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            931.86,
+            235.49,
+            1283.44,
+            572.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6529
+        },
+        {
+          "object_view_id": "00024_1",
+          "view_id": "00024",
+          "bbox_2d": [
+            612.92,
+            332.41,
+            1052.88,
+            777.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7556
+        },
+        {
+          "object_view_id": "00026_2",
+          "view_id": "00026",
+          "bbox_2d": [
+            411.9,
+            322.47,
+            938.53,
+            950.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5229
+        },
+        {
+          "object_view_id": "00030_1",
+          "view_id": "00030",
+          "bbox_2d": [
+            240.27,
+            196.74,
+            621.7,
+            630.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8192
+        },
+        {
+          "object_view_id": "00032_1",
+          "view_id": "00032",
+          "bbox_2d": [
+            326.34,
+            226.91,
+            673.18,
+            541.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7922
+        },
+        {
+          "object_view_id": "00034_1",
+          "view_id": "00034",
+          "bbox_2d": [
+            174.04,
+            332.6,
+            547.83,
+            720.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8276
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            9.71,
+            340.13,
+            199.44,
+            959.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.405
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 10,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "tv is not visible or confirmed in the current evidence",
+        "cannot determine whether this cabinet is the one closest to the tv among nearby cabinet alternatives"
+      ],
+      "num_object_views": 11,
+      "bbox_3d": [
+        1.363,
+        0.3961,
+        0.4145,
+        0.0716,
+        1.245,
+        0.7413
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_2",
+          "view_id": "00024",
+          "bbox_2d": [
+            1018.79,
+            477.84,
+            1282.64,
+            674.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.458
+        },
+        {
+          "object_view_id": "00026_3",
+          "view_id": "00026",
+          "bbox_2d": [
+            905.11,
+            457.38,
+            1142.26,
+            693.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3824
+        },
+        {
+          "object_view_id": "00028_2",
+          "view_id": "00028",
+          "bbox_2d": [
+            539.3,
+            380.26,
+            711.6,
+            613.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5467
+        },
+        {
+          "object_view_id": "00030_2",
+          "view_id": "00030",
+          "bbox_2d": [
+            627.45,
+            308.41,
+            817.76,
+            495.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4397
+        },
+        {
+          "object_view_id": "00034_2",
+          "view_id": "00034",
+          "bbox_2d": [
+            549.92,
+            439.92,
+            734.95,
+            610.02
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.624
+        },
+        {
+          "object_view_id": "00036_2",
+          "view_id": "00036",
+          "bbox_2d": [
+            512.05,
+            394.41,
+            670.64,
+            612.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5466
+        },
+        {
+          "object_view_id": "00038_2",
+          "view_id": "00038",
+          "bbox_2d": [
+            165.47,
+            420.51,
+            317.11,
+            740.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.365
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            626.04,
+            389.06,
+            783.25,
+            632.65
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00046",
+          "view_id": "00046",
+          "bbox_2d": [
+            435.0,
+            759.0,
+            680.0,
+            959.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            10.91,
+            85.69,
+            137.9,
+            783.05
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            9.84,
+            244.57,
+            150.78,
+            956.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3714
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "tv is not visually confirmed",
+        "cannot determine whether this is the cabinet closest to the tv",
+        "no reliable comparison against other cabinets relative to the tv"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.3442,
+        2.3877,
+        0.4846,
+        0.0539,
+        0.4236,
+        0.6218
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            10.77,
+            502.41,
+            455.0,
+            958.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8201
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            10.77,
+            502.41,
+            455.0,
+            958.93
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            452.78,
+            384.99,
+            736.02,
+            810.9
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00030",
+          "view_id": "00030",
+          "bbox_2d": [
+            10.42,
+            290.01,
+            307.88,
+            827.77
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00012",
+          "view_id": "00012",
+          "bbox_2d": [
+            715.48,
+            740.3,
+            978.47,
+            959.07
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [
+        "green-boxed object is not clearly a cabinet",
+        "green-boxed object is not the cabinet closest to the tv"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.9225,
+        0.7394,
+        0.505,
+        1.0132,
+        1.9057,
+        0.989
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_1",
+          "view_id": "00026",
+          "bbox_2d": [
+            1146.22,
+            207.03,
+            1283.32,
+            553.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.526
+        },
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            716.21,
+            124.17,
+            886.11,
+            471.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6279
+        },
+        {
+          "object_view_id": "00030_3",
+          "view_id": "00030",
+          "bbox_2d": [
+            800.41,
+            90.97,
+            1016.47,
+            401.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3196
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "tv is not visually confirmed",
+        "cannot determine whether this cabinet is the closest cabinet to the tv",
+        "nearby alternative cabinets remain possible because the tv location is unknown"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.3631,
+        1.9951,
+        0.4573,
+        0.0491,
+        0.3708,
+        0.643
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_3",
+          "view_id": "00028",
+          "bbox_2d": [
+            78.83,
+            364.01,
+            365.48,
+            874.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2883
+        },
+        {
+          "object_view_id": "00036_3",
+          "view_id": "00036",
+          "bbox_2d": [
+            110.43,
+            369.02,
+            369.81,
+            845.97
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3722
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            78.83,
+            364.01,
+            365.48,
+            874.69
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00001",
+          "view_id": "00001",
+          "bbox_2d": [
+            11.0,
+            111.0,
+            131.0,
+            324.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            170.27,
+            390.77,
+            464.42,
+            948.68
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00026",
+          "view_id": "00026",
+          "bbox_2d": [
+            411.9,
+            322.47,
+            938.53,
+            950.5
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably determine that this cabinet is the one closest to the tv",
+        "nearby alternative cabinets remain insufficiently distinguished by distance to the tv"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        1.413,
+        0.3186,
+        0.4136,
+        0.1385,
+        1.0286,
+        0.7344
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_1",
+          "view_id": "00036",
+          "bbox_2d": [
+            669.38,
+            158.39,
+            821.78,
+            480.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.643
+        },
+        {
+          "object_view_id": "00038_1",
+          "view_id": "00038",
+          "bbox_2d": [
+            270.29,
+            100.32,
+            427.21,
+            503.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3941
+        },
+        {
+          "object_view_id": "bootstrap_00044",
+          "view_id": "00044",
+          "bbox_2d": [
+            580.44,
+            197.75,
+            749.36,
+            664.87
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            9.84,
+            244.57,
+            150.78,
+            956.96
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00050",
+          "view_id": "00050",
+          "bbox_2d": [
+            550.78,
+            517.78,
+            888.83,
+            955.3
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            669.84,
+            663.67,
+            1013.34,
+            960.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5437
+        },
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            550.78,
+            517.78,
+            888.83,
+            955.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4921
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "tv is not visually confirmed",
+        "cannot determine whether this cabinet is the closest cabinet to the tv",
+        "cannot rule out other nearby cabinets being closer to the tv"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.3549,
+        1.5372,
+        0.5229,
+        0.0541,
+        0.3622,
+        0.5402
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            10.37,
+            540.37,
+            363.08,
+            957.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5153
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            10.37,
+            540.37,
+            363.08,
+            957.98
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00038",
+          "view_id": "00038",
+          "bbox_2d": [
+            9.71,
+            340.13,
+            199.44,
+            959.11
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            408.75,
+            282.92,
+            622.4,
+            754.34
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00026",
+          "view_id": "00026",
+          "bbox_2d": [
+            411.9,
+            322.47,
+            938.53,
+            950.5
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "tv is not visible",
+        "cannot verify which cabinet is closest to the tv",
+        "nearby alternative cabinets are present and not fully disambiguated relative to the tv"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.3737,
+        0.2812,
+        0.4169,
+        0.0512,
+        0.8805,
+        0.6402
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_1",
+          "view_id": "00044",
+          "bbox_2d": [
+            580.44,
+            197.75,
+            749.36,
+            664.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4024
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            9.84,
+            244.57,
+            150.78,
+            956.96
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00046",
+          "view_id": "00046",
+          "bbox_2d": [
+            666.0,
+            311.0,
+            922.0,
+            800.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00050",
+          "view_id": "00050",
+          "bbox_2d": [
+            550.78,
+            517.78,
+            888.83,
+            955.3
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "tv is not visually identified",
+        "cannot verify distance relation 'closest to the tv'",
+        "cannot compare this cabinet against other cabinets relative to the tv"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.3479,
+        1.0821,
+        0.2572,
+        0.0579,
+        0.5615,
+        0.222
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_2",
+          "view_id": "00044",
+          "bbox_2d": [
+            363.26,
+            577.38,
+            578.52,
+            954.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2695
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            363.26,
+            577.38,
+            578.52,
+            954.33
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            626.04,
+            389.06,
+            783.25,
+            632.65
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00046",
+          "view_id": "00046",
+          "bbox_2d": [
+            241.36,
+            525.48,
+            607.27,
+            953.82
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            973.61,
+            463.66,
+            1221.26,
+            675.34
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "reference object tv is not visually confirmed",
+        "cannot verify closest-to-tv relation"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.4117,
+        1.0261,
+        0.5654,
+        0.1343,
+        0.634,
+        0.4241
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            241.36,
+            525.48,
+            607.27,
+            953.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3316
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            241.36,
+            525.48,
+            607.27,
+            953.82
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "TV is not visible or identifiable in the current evidence",
+        "cannot verify the distance relation 'closest to the TV'",
+        "cannot rule out other nearby cabinets as being closer to the TV"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.3411,
+        -0.2771,
+        0.4236,
+        0.0876,
+        0.2906,
+        0.6911
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_1",
+          "view_id": "00046",
+          "bbox_2d": [
+            911.93,
+            251.51,
+            997.8,
+            612.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3299
+        },
+        {
+          "object_view_id": "bootstrap_00112",
+          "view_id": "00112",
+          "bbox_2d": [
+            1084.19,
+            159.15,
+            1285.28,
+            296.16
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00067",
+          "view_id": "00067",
+          "bbox_2d": [
+            310.94,
+            435.68,
+            597.77,
+            958.77
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00066",
+          "view_id": "00066",
+          "bbox_2d": [
+            258.94,
+            283.23,
+            547.29,
+            951.82
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            258.94,
+            283.23,
+            547.29,
+            951.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5402
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "reference TV is not visible, so 'closest to the tv' cannot be checked"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.3693,
+        -0.8872,
+        0.3494,
+        0.1671,
+        0.965,
+        0.7946
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00046_2",
+          "view_id": "00046",
+          "bbox_2d": [
+            970.57,
+            183.66,
+            1092.08,
+            548.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2857
+        },
+        {
+          "object_view_id": "00048_1",
+          "view_id": "00048",
+          "bbox_2d": [
+            1077.97,
+            538.71,
+            1180.64,
+            917.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3723
+        },
+        {
+          "object_view_id": "bootstrap_00068",
+          "view_id": "00068",
+          "bbox_2d": [
+            507.0,
+            931.0,
+            695.0,
+            958.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00066",
+          "view_id": "00066",
+          "bbox_2d": [
+            533.0,
+            397.0,
+            843.0,
+            765.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00067",
+          "view_id": "00067",
+          "bbox_2d": [
+            588.26,
+            226.28,
+            997.72,
+            937.06
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            164.16,
+            508.6,
+            730.26,
+            957.24
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4159
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "cabinet",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.4871,
+        -1.7176,
+        0.3803,
+        0.4793,
+        0.8206,
+        0.8615
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            13.16,
+            385.32,
+            229.63,
+            957.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4514
+        },
+        {
+          "object_view_id": "bootstrap_00067",
+          "view_id": "00067",
+          "bbox_2d": [
+            947.0,
+            39.0,
+            1245.0,
+            613.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00109",
+          "view_id": "00109",
+          "bbox_2d": [
+            12.0,
+            174.0,
+            429.0,
+            414.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            428.0,
+            75.0,
+            616.0,
+            664.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm this cabinet is the closest cabinet to the TV",
+        "insufficient comparison with furniture directly around/beneath the TV"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.3738,
+        -0.0182,
+        0.431,
+        0.0482,
+        0.2678,
+        0.6712
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00066_1",
+          "view_id": "00066",
+          "bbox_2d": [
+            11.33,
+            425.31,
+            354.05,
+            955.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4145
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            11.33,
+            425.31,
+            354.05,
+            955.66
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            269.34,
+            405.85,
+            614.88,
+            952.98
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00052",
+          "view_id": "00052",
+          "bbox_2d": [
+            76.0,
+            283.0,
+            253.0,
+            804.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00048",
+          "view_id": "00048",
+          "bbox_2d": [
+            944.0,
+            661.0,
+            1015.0,
+            959.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 15,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "is a cabinet"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.3169,
+        -3.0401,
+        0.6046,
+        1.8768,
+        0.5055,
+        0.545
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00106_0",
+          "view_id": "00106",
+          "bbox_2d": [
+            12.12,
+            703.35,
+            937.45,
+            955.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4354
+        }
+      ]
+    },
+    {
+      "candidate_id": 16,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "candidate is not confirmed as a cabinet",
+        "tv is not visible",
+        "cannot verify that this is the cabinet closest to the tv"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.3392,
+        -0.4472,
+        0.6994,
+        0.1154,
+        0.4399,
+        0.2346
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00112_0",
+          "view_id": "00112",
+          "bbox_2d": [
+            1084.19,
+            159.15,
+            1285.28,
+            296.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3805
+        },
+        {
+          "object_view_id": "bootstrap_00067",
+          "view_id": "00067",
+          "bbox_2d": [
+            604.0,
+            331.0,
+            977.0,
+            686.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            10.91,
+            85.69,
+            137.9,
+            783.05
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00066",
+          "view_id": "00066",
+          "bbox_2d": [
+            531.0,
+            193.0,
+            885.0,
+            483.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 17,
+      "label": "cabinet",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "TV is not visible",
+        "cannot verify which cabinet is closest to the TV",
+        "cannot compare this candidate against other nearby cabinets",
+        "candidate itself is only partially visible"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.6289,
+        1.7847,
+        0.6847,
+        0.1324,
+        0.4252,
+        0.2446
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00118_0",
+          "view_id": "00118",
+          "bbox_2d": [
+            1080.22,
+            155.97,
+            1284.85,
+            315.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5385
+        },
+        {
+          "object_view_id": "bootstrap_00117",
+          "view_id": "00117",
+          "bbox_2d": [
+            1223.0,
+            240.0,
+            1285.0,
+            345.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

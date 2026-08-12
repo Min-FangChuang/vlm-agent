@@ -1,0 +1,653 @@
+{
+  "case_id": 188,
+  "scene_id": "scene0221_00",
+  "query": "the pillow is directly to the right of the lamp",
+  "query_analysis": {
+    "raw_query": "the pillow is directly to the right of the lamp",
+    "target_object": "pillow",
+    "target_attributes": [],
+    "reference_object": "lamp",
+    "reference_attributes": [],
+    "relation": "directly to the right of"
+  },
+  "gt": {
+    "target_id": 45,
+    "gt_label": "pillow",
+    "gt_bbox_3d": [
+      -1.627763,
+      1.737526,
+      0.743911,
+      0.275571,
+      0.663517,
+      0.394859
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 6,
+    "bbox_3d": [
+      -1.560963,
+      1.343309,
+      0.68705,
+      0.583529,
+      1.267926,
+      0.558629
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2,
+      4
+    ],
+    "detector_call_count": 36,
+    "total_views": 25,
+    "total_object_views": 15,
+    "total_candidates": 9
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "pillow",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.6282,
+        -0.2995,
+        0.8087,
+        0.2504,
+        0.6527,
+        0.3488
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            767.26,
+            291.03,
+            1183.54,
+            546.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7917
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            767.26,
+            291.03,
+            1183.54,
+            546.21
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            57.26,
+            197.18,
+            447.07,
+            481.8
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            756.92,
+            62.46,
+            1164.85,
+            316.4
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00010",
+          "view_id": "00010",
+          "bbox_2d": [
+            57.68,
+            310.02,
+            502.87,
+            643.98
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "pillow is directly to the right of the lamp"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.5116,
+        -0.0624,
+        0.7757,
+        0.5271,
+        0.6085,
+        0.3653
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_1",
+          "view_id": "00006",
+          "bbox_2d": [
+            971.48,
+            318.52,
+            1295.81,
+            618.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7352
+        },
+        {
+          "object_view_id": "00010_2",
+          "view_id": "00010",
+          "bbox_2d": [
+            57.68,
+            310.02,
+            502.87,
+            643.98
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6703
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "pillow is directly to the right of the lamp"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.5855,
+        0.39,
+        0.7089,
+        0.5344,
+        0.7095,
+        0.4418
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            288.02,
+            259.68,
+            618.24,
+            505.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6796
+        },
+        {
+          "object_view_id": "00012_1",
+          "view_id": "00012",
+          "bbox_2d": [
+            0.02,
+            438.59,
+            134.13,
+            738.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.553
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "green-boxed object is a pillow",
+        "full request match: pillow directly to the right of the lamp"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.4301,
+        2.1141,
+        0.7307,
+        0.3518,
+        0.5796,
+        0.3387
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_1",
+          "view_id": "00010",
+          "bbox_2d": [
+            1058.14,
+            130.37,
+            1269.35,
+            351.24
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6757
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            327.7,
+            348.42,
+            693.39,
+            679.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7265
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "pillow is directly to the right of the lamp"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.506,
+        -0.436,
+        0.7773,
+        0.352,
+        0.1555,
+        0.3331
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_3",
+          "view_id": "00010",
+          "bbox_2d": [
+            0.0,
+            359.33,
+            113.06,
+            660.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.539
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            359.33,
+            113.06,
+            660.38
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "pillow",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.9381,
+        1.7505,
+        0.2707,
+        0.7488,
+        0.9118,
+        0.6176
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_4",
+          "view_id": "00010",
+          "bbox_2d": [
+            982.75,
+            310.14,
+            1295.95,
+            849.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3815
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            193.0,
+            146.0,
+            820.0,
+            604.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            1147.0,
+            399.0,
+            1295.0,
+            715.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            14.0,
+            427.0,
+            295.0,
+            524.0
+          ],
+          "status": "support_only",
+          "source": "projected_bootstrap_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "pillow",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.5678,
+        1.6084,
+        0.7263,
+        0.4542,
+        0.5077,
+        0.48
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00010_5",
+          "view_id": "00010",
+          "bbox_2d": [
+            882.07,
+            166.76,
+            1078.61,
+            345.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3631
+        },
+        {
+          "object_view_id": "00012_2",
+          "view_id": "00012",
+          "bbox_2d": [
+            475.31,
+            297.8,
+            712.18,
+            543.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4458
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            402.0,
+            135.0,
+            733.0,
+            409.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            130.0,
+            379.0,
+            428.0,
+            725.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00022",
+          "view_id": "00022",
+          "bbox_2d": [
+            178.0,
+            256.0,
+            503.0,
+            532.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "pillow",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.4823,
+        2.1194,
+        0.7582,
+        0.4448,
+        1.1194,
+        0.3797
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            692.22,
+            229.82,
+            905.49,
+            440.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6512
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            0.02,
+            207.93,
+            576.63,
+            645.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4121
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            470.0,
+            247.0,
+            1224.0,
+            786.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00022",
+          "view_id": "00022",
+          "bbox_2d": [
+            274.0,
+            352.0,
+            959.0,
+            795.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            19.0,
+            127.0,
+            723.0,
+            486.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            0.09,
+            58.24,
+            231.57,
+            348.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9134
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "pillow",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "green-boxed pillow is directly to the right of the lamp"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.5826,
+        2.3539,
+        0.7641,
+        0.2769,
+        0.6529,
+        0.3774
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_1",
+          "view_id": "00022",
+          "bbox_2d": [
+            556.52,
+            343.37,
+            922.04,
+            683.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6405
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            556.52,
+            343.37,
+            922.04,
+            683.04
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1125 @@
+{
+  "case_id": 12,
+  "scene_id": "scene0663_00",
+  "query": "choose the monitor that is closest to the windows",
+  "query_analysis": {
+    "raw_query": "choose the monitor that is closest to the windows",
+    "target_object": "monitor",
+    "target_attributes": [],
+    "reference_object": "windows",
+    "reference_attributes": [],
+    "relation": "closest to"
+  },
+  "gt": {
+    "target_id": 10,
+    "gt_label": "monitor",
+    "gt_bbox_3d": [
+      -1.273757,
+      -1.32932,
+      0.954939,
+      0.275927,
+      0.673518,
+      0.395802
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -1.255123,
+      -1.374803,
+      0.887727,
+      0.346189,
+      0.594598,
+      0.54772
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "detector_call_count": 83,
+    "total_views": 74,
+    "total_object_views": 43,
+    "total_candidates": 11
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "monitor",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object must be a monitor",
+        "cannot verify it is the monitor closest to the windows because the boxed object is not a monitor"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.0959,
+        -1.313,
+        0.864,
+        0.1677,
+        0.1035,
+        0.2057
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            553.06,
+            117.35,
+            699.01,
+            299.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2772
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            553.06,
+            117.35,
+            699.01,
+            299.04
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "monitor",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 11,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 15,
+      "bbox_3d": [
+        -1.2663,
+        -1.4807,
+        0.8437,
+        0.3587,
+        0.7395,
+        0.4414
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            678.16,
+            0.0,
+            1110.18,
+            175.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2754
+        },
+        {
+          "object_view_id": "00010_0",
+          "view_id": "00010",
+          "bbox_2d": [
+            447.59,
+            0.0,
+            846.59,
+            229.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6301
+        },
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            355.38,
+            229.0,
+            736.11,
+            576.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7418
+        },
+        {
+          "object_view_id": "00014_1",
+          "view_id": "00014",
+          "bbox_2d": [
+            645.67,
+            33.34,
+            1054.1,
+            399.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7303
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            645.67,
+            33.34,
+            1054.1,
+            399.96
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            494.34,
+            114.83,
+            905.92,
+            493.24
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            309.29,
+            86.94,
+            671.71,
+            437.88
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00082",
+          "view_id": "00082",
+          "bbox_2d": [
+            555.87,
+            98.43,
+            914.46,
+            431.33
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            918.16,
+            344.97,
+            1296.0,
+            669.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6944
+        },
+        {
+          "object_view_id": "00030_1",
+          "view_id": "00030",
+          "bbox_2d": [
+            541.59,
+            594.95,
+            839.89,
+            884.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6136
+        },
+        {
+          "object_view_id": "00034_1",
+          "view_id": "00034",
+          "bbox_2d": [
+            1.28,
+            85.79,
+            304.07,
+            428.64
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4998
+        },
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            760.57,
+            0.0,
+            1225.55,
+            344.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6358
+        },
+        {
+          "object_view_id": "00082_1",
+          "view_id": "00082",
+          "bbox_2d": [
+            555.87,
+            98.43,
+            914.46,
+            431.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6516
+        },
+        {
+          "object_view_id": "00084_1",
+          "view_id": "00084",
+          "bbox_2d": [
+            614.26,
+            4.05,
+            971.44,
+            264.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.495
+        },
+        {
+          "object_view_id": "00086_1",
+          "view_id": "00086",
+          "bbox_2d": [
+            615.87,
+            175.3,
+            956.16,
+            411.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6046
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "monitor",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 13,
+      "bbox_3d": [
+        -1.2817,
+        -0.8479,
+        0.8786,
+        0.3559,
+        0.6236,
+        0.5082
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_1",
+          "view_id": "00012",
+          "bbox_2d": [
+            735.44,
+            225.97,
+            1179.42,
+            613.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6877
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            1028.78,
+            29.04,
+            1295.69,
+            463.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8027
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            735.44,
+            225.97,
+            1179.42,
+            613.47
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            837.68,
+            598.43,
+            1194.78,
+            943.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.78
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            622.9,
+            711.8,
+            959.45,
+            965.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2998
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            297.41,
+            77.38,
+            669.13,
+            422.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7119
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            0.03,
+            150.86,
+            367.89,
+            543.4
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4933
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            0.0,
+            314.42,
+            336.21,
+            769.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7575
+        },
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            876.46,
+            151.74,
+            1292.51,
+            507.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6923
+        },
+        {
+          "object_view_id": "00084_0",
+          "view_id": "00084",
+          "bbox_2d": [
+            935.21,
+            57.02,
+            1295.69,
+            401.42
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6674
+        },
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            939.85,
+            200.52,
+            1296.0,
+            534.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7232
+        },
+        {
+          "object_view_id": "00088_0",
+          "view_id": "00088",
+          "bbox_2d": [
+            671.42,
+            270.21,
+            992.31,
+            550.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6003
+        },
+        {
+          "object_view_id": "00090_0",
+          "view_id": "00090",
+          "bbox_2d": [
+            0.0,
+            287.8,
+            257.81,
+            620.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6219
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "monitor",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate must be a monitor",
+        "candidate must be the monitor closest to the windows"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.6044,
+        -1.7249,
+        0.7069,
+        1.4015,
+        1.0625,
+        0.5856
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_2",
+          "view_id": "00014",
+          "bbox_2d": [
+            36.06,
+            290.86,
+            563.06,
+            961.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2568
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            36.06,
+            290.86,
+            563.06,
+            961.37
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "monitor",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.3054,
+        -0.7949,
+        0.9001,
+        0.2901,
+        0.508,
+        0.4736
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            0.43,
+            560.84,
+            357.57,
+            890.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4257
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.43,
+            560.84,
+            357.57,
+            890.65
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "monitor",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "candidate is not verified as a monitor",
+        "cannot evaluate which monitor is closest to the windows using this non-monitor candidate"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.3271,
+        1.4472,
+        0.7909,
+        0.4012,
+        0.2545,
+        0.4828
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            986.29,
+            6.59,
+            1243.17,
+            292.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3154
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            1274.0,
+            402.0,
+            1295.0,
+            596.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00134",
+          "view_id": "00134",
+          "bbox_2d": [
+            480.0,
+            132.0,
+            802.0,
+            865.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00129",
+          "view_id": "00129",
+          "bbox_2d": [
+            0.0,
+            323.0,
+            187.0,
+            780.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "monitor",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "windows are not visible",
+        "cannot determine this monitor's distance to the windows",
+        "cannot compare this monitor against other monitors in the room"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.4425,
+        1.3249,
+        0.9658,
+        0.0338,
+        0.092,
+        0.2944
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            601.64,
+            0.0,
+            784.56,
+            177.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5469
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            628.0,
+            14.0,
+            646.0,
+            174.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "monitor",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "requested object must be a monitor"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.3332,
+        -1.8077,
+        0.7126,
+        0.822,
+        1.2739,
+        0.5955
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00080_1",
+          "view_id": "00080",
+          "bbox_2d": [
+            0.06,
+            178.61,
+            535.82,
+            959.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3904
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.06,
+            178.61,
+            535.82,
+            959.35
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "monitor",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably determine whether this monitor is the closest monitor to the windows",
+        "nearby alternative monitor on the same desk is not ruled out as equally or better matching",
+        "insufficient room-level comparison with other monitors"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.2212,
+        -1.3874,
+        0.9747,
+        0.2018,
+        0.5005,
+        0.3347
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00088_1",
+          "view_id": "00088",
+          "bbox_2d": [
+            341.3,
+            264.03,
+            671.76,
+            482.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4448
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            309.29,
+            86.94,
+            671.71,
+            437.88
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            494.34,
+            114.83,
+            905.92,
+            493.24
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            645.67,
+            33.34,
+            1054.1,
+            399.96
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "monitor",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 8,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "windows are not visible, so closeness to the windows cannot be judged",
+        "other monitors are not shown well enough to compare which monitor is closest to the windows"
+      ],
+      "num_object_views": 11,
+      "bbox_3d": [
+        1.3455,
+        1.2755,
+        1.0064,
+        0.2938,
+        0.7328,
+        0.5234
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00116_0",
+          "view_id": "00116",
+          "bbox_2d": [
+            1036.45,
+            78.31,
+            1295.55,
+            421.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.297
+        },
+        {
+          "object_view_id": "bootstrap_00143",
+          "view_id": "00143",
+          "bbox_2d": [
+            199.0,
+            553.0,
+            429.0,
+            576.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00120_0",
+          "view_id": "00120",
+          "bbox_2d": [
+            865.19,
+            200.04,
+            1262.92,
+            496.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4929
+        },
+        {
+          "object_view_id": "00122_0",
+          "view_id": "00122",
+          "bbox_2d": [
+            434.97,
+            0.31,
+            767.95,
+            296.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4048
+        },
+        {
+          "object_view_id": "00124_0",
+          "view_id": "00124",
+          "bbox_2d": [
+            396.44,
+            0.0,
+            669.07,
+            248.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5582
+        },
+        {
+          "object_view_id": "00126_0",
+          "view_id": "00126",
+          "bbox_2d": [
+            245.08,
+            0.27,
+            488.27,
+            265.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6578
+        },
+        {
+          "object_view_id": "00128_0",
+          "view_id": "00128",
+          "bbox_2d": [
+            335.81,
+            215.68,
+            620.46,
+            517.39
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5425
+        },
+        {
+          "object_view_id": "00130_1",
+          "view_id": "00130",
+          "bbox_2d": [
+            624.82,
+            183.38,
+            1043.01,
+            503.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.357
+        },
+        {
+          "object_view_id": "00132_0",
+          "view_id": "00132",
+          "bbox_2d": [
+            560.42,
+            219.44,
+            1123.82,
+            692.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7692
+        },
+        {
+          "object_view_id": "00134_0",
+          "view_id": "00134",
+          "bbox_2d": [
+            692.57,
+            0.25,
+            1170.87,
+            277.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4137
+        },
+        {
+          "object_view_id": "00138_0",
+          "view_id": "00138",
+          "bbox_2d": [
+            1189.81,
+            208.41,
+            1296.0,
+            479.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3257
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "monitor",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate must be a monitor",
+        "candidate must be evaluated for closeness to the windows"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.8562,
+        2.3524,
+        0.9797,
+        1.1055,
+        0.1065,
+        0.3733
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00130_0",
+          "view_id": "00130",
+          "bbox_2d": [
+            0.0,
+            253.5,
+            388.2,
+            519.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4633
+        },
+        {
+          "object_view_id": "00132_1",
+          "view_id": "00132",
+          "bbox_2d": [
+            0.0,
+            306.26,
+            86.63,
+            597.66
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4173
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            253.5,
+            388.2,
+            519.99
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00140_0",
+          "view_id": "00140",
+          "bbox_2d": [
+            400.97,
+            664.23,
+            791.37,
+            964.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3816
+        }
+      ]
+    }
+  ]
+}

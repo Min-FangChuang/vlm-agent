@@ -1,0 +1,894 @@
+{
+  "case_id": 27,
+  "scene_id": "scene0329_00",
+  "query": "the chair is black and pushed into a desk . it is the chair furthest to the left . that is on the left .",
+  "query_analysis": {
+    "raw_query": "the chair is black and pushed into a desk . it is the chair furthest to the left . that is on the left .",
+    "target_object": "chair",
+    "target_attributes": [
+      "black"
+    ],
+    "reference_object": "desk",
+    "reference_attributes": [],
+    "relation": "pushed into; furthest to the left; on the left"
+  },
+  "gt": {
+    "target_id": 34,
+    "gt_label": "chair",
+    "gt_bbox_3d": [
+      -0.420048,
+      -1.766218,
+      0.771013,
+      0.589488,
+      0.587269,
+      0.453371
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 9,
+    "bbox_3d": [
+      -0.473377,
+      -1.864562,
+      0.588115,
+      0.879217,
+      0.931479,
+      0.938285
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      4
+    ],
+    "detector_call_count": 48,
+    "total_views": 39,
+    "total_object_views": 21,
+    "total_candidates": 13
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "chair",
+        "black",
+        "pushed into a desk",
+        "furthest to the left chair on the left"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.0911,
+        0.3845,
+        0.4002,
+        1.8834,
+        1.0773,
+        0.9131
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            57.56,
+            0.0,
+            1007.18,
+            961.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4486
+        },
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            0.0,
+            145.83,
+            880.17,
+            965.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7035
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            57.56,
+            0.0,
+            1007.18,
+            961.81
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "chair",
+        "black chair",
+        "pushed into a desk",
+        "furthest to the left"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.2237,
+        2.5722,
+        0.5607,
+        0.8637,
+        0.8789,
+        0.4697
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            507.41,
+            474.57,
+            1295.35,
+            965.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3279
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            507.41,
+            474.57,
+            1295.35,
+            965.44
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "chair is black",
+        "pushed into a desk",
+        "furthest to the left"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.4925,
+        0.6881,
+        0.4307,
+        0.7336,
+        0.2638,
+        0.1622
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            749.0,
+            688.38,
+            1294.84,
+            965.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3216
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            749.0,
+            688.38,
+            1294.84,
+            965.9
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a chair",
+        "chair is black",
+        "chair is pushed into a desk",
+        "chair is the furthest to the left"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.9172,
+        2.5689,
+        0.3814,
+        1.5943,
+        1.075,
+        0.8942
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            0.0,
+            183.9,
+            914.48,
+            964.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6377
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            183.9,
+            914.48,
+            964.17
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "black",
+        "best match for the leftmost black chair on the left"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.3046,
+        -1.4105,
+        0.6579,
+        0.8447,
+        0.8469,
+        0.9156
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            590.74,
+            339.07,
+            1165.65,
+            966.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8525
+        },
+        {
+          "object_view_id": "00050_1",
+          "view_id": "00050",
+          "bbox_2d": [
+            258.33,
+            90.23,
+            835.16,
+            886.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2883
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            258.33,
+            90.23,
+            835.16,
+            886.8
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            0.0,
+            457.49,
+            500.76,
+            965.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8284
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "reliable confirmation that this is the leftmost relevant chair on the left",
+        "clear comparison against other nearby chair candidates"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -0.9226,
+        -2.055,
+        0.5998,
+        1.6033,
+        1.3092,
+        0.9113
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00050_0",
+          "view_id": "00050",
+          "bbox_2d": [
+            928.18,
+            0.0,
+            1206.08,
+            265.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6653
+        },
+        {
+          "object_view_id": "00054_1",
+          "view_id": "00054",
+          "bbox_2d": [
+            0.07,
+            73.29,
+            178.22,
+            455.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3458
+        },
+        {
+          "object_view_id": "bootstrap_00063",
+          "view_id": "00063",
+          "bbox_2d": [
+            943.89,
+            125.12,
+            1295.95,
+            806.3
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00066",
+          "view_id": "00066",
+          "bbox_2d": [
+            588.48,
+            569.0,
+            1296.0,
+            965.01
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            675.88,
+            247.44,
+            1294.77,
+            941.41
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            754.71,
+            263.02,
+            1275.36,
+            893.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8235
+        },
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            588.48,
+            569.0,
+            1296.0,
+            965.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8508
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "not enough evidence that this is the chair furthest to the left among relevant chairs",
+        "scene context is incomplete for comparing the candidate against other nearby left-side chairs"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -2.0734,
+        -1.5516,
+        0.3554,
+        1.9995,
+        0.6786,
+        0.5414
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            785.24,
+            309.42,
+            1026.98,
+            633.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8487
+        },
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            99.1,
+            0.0,
+            361.13,
+            342.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6112
+        },
+        {
+          "object_view_id": "bootstrap_00069",
+          "view_id": "00069",
+          "bbox_2d": [
+            598.0,
+            521.0,
+            1021.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00068",
+          "view_id": "00068",
+          "bbox_2d": [
+            831.0,
+            495.0,
+            1172.0,
+            967.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00070",
+          "view_id": "00070",
+          "bbox_2d": [
+            923.0,
+            742.0,
+            1019.0,
+            860.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "black",
+        "pushed into a desk",
+        "furthest to the left black chair pushed into a desk / left-side target"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.1573,
+        -1.6411,
+        0.9491,
+        0.2175,
+        0.4764,
+        0.2513
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_1",
+          "view_id": "00052",
+          "bbox_2d": [
+            0.0,
+            747.99,
+            172.32,
+            965.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3725
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            747.99,
+            172.32,
+            965.35
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "furthest to the left",
+        "on the left"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.9437,
+        -1.7909,
+        0.3254,
+        2.3424,
+        1.1124,
+        0.5544
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_1",
+          "view_id": "00060",
+          "bbox_2d": [
+            680.5,
+            81.93,
+            888.63,
+            401.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.819
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "confirm that this is the chair furthest to the left among the relevant chairs in the scene"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.5053,
+        -1.9002,
+        0.5578,
+        0.8655,
+        0.8695,
+        0.8777
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_2",
+          "view_id": "00060",
+          "bbox_2d": [
+            487.22,
+            144.22,
+            708.08,
+            509.09
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4457
+        },
+        {
+          "object_view_id": "00062_2",
+          "view_id": "00062",
+          "bbox_2d": [
+            1053.84,
+            351.1,
+            1296.0,
+            911.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3496
+        },
+        {
+          "object_view_id": "bootstrap_00068",
+          "view_id": "00068",
+          "bbox_2d": [
+            25.0,
+            186.0,
+            247.0,
+            785.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00067",
+          "view_id": "00067",
+          "bbox_2d": [
+            161.0,
+            339.0,
+            920.0,
+            966.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            632.0,
+            121.0,
+            1151.0,
+            652.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "black",
+        "furthest to the left"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.1823,
+        -1.8398,
+        0.7008,
+        0.7729,
+        0.8815,
+        0.8362
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            43.99,
+            744.34,
+            575.62,
+            965.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7878
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            43.99,
+            744.34,
+            575.62,
+            965.85
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "chair identity is not clearly confirmed",
+        "not reliably confirmed to be pushed into a desk",
+        "cannot reliably verify it is the furthest-left chair among relevant chairs"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.3396,
+        -2.9932,
+        1.1423,
+        0.2045,
+        0.0986,
+        0.1123
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00062_1",
+          "view_id": "00062",
+          "bbox_2d": [
+            0.39,
+            246.53,
+            193.77,
+            450.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.641
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "clearly pushed into a desk",
+        "is the chair furthest to the left"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.5611,
+        -1.9071,
+        0.5279,
+        1.465,
+        1.4244,
+        0.8489
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            389.71,
+            169.65,
+            1017.54,
+            964.24
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8155
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            389.71,
+            169.65,
+            1017.54,
+            964.24
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

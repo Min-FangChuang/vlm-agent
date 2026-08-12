@@ -1,0 +1,376 @@
+{
+  "case_id": 233,
+  "scene_id": "scene0474_00",
+  "query": "this is a closed door . it is wooden and has a handle .",
+  "query_analysis": {
+    "raw_query": "this is a closed door . it is wooden and has a handle .",
+    "target_object": "door",
+    "target_attributes": [
+      "closed",
+      "wooden",
+      "has a handle"
+    ],
+    "reference_object": "",
+    "reference_attributes": [],
+    "relation": ""
+  },
+  "gt": {
+    "target_id": 19,
+    "gt_label": "door",
+    "gt_bbox_3d": [
+      -0.560524,
+      -2.420022,
+      1.078431,
+      1.07894,
+      0.134496,
+      2.183155
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -0.621261,
+      -2.440826,
+      1.054095,
+      0.912275,
+      0.148738,
+      2.089219
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 47,
+    "total_views": 41,
+    "total_object_views": 10,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "door",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.6342,
+        -2.441,
+        0.6362,
+        0.9098,
+        0.1324,
+        1.3469
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            5.5,
+            4.55,
+            528.76,
+            960.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3818
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            5.5,
+            4.55,
+            528.76,
+            960.91
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00081",
+          "view_id": "00081",
+          "bbox_2d": [
+            579.2,
+            6.35,
+            1185.39,
+            893.49
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00077",
+          "view_id": "00077",
+          "bbox_2d": [
+            695.0,
+            9.0,
+            1047.0,
+            487.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00001",
+          "view_id": "00001",
+          "bbox_2d": [
+            9.15,
+            6.69,
+            611.26,
+            957.49
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            880.53,
+            8.21,
+            1286.07,
+            786.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4164
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "door",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        -0.6279,
+        -2.442,
+        0.9372,
+        0.918,
+        0.147,
+        1.7798
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            6.65,
+            5.42,
+            573.61,
+            957.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5227
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            6.65,
+            5.42,
+            573.61,
+            957.16
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00047",
+          "view_id": "00047",
+          "bbox_2d": [
+            0.0,
+            6.0,
+            116.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            626.0,
+            146.0,
+            1130.0,
+            958.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00044",
+          "view_id": "00044",
+          "bbox_2d": [
+            3.79,
+            6.62,
+            589.12,
+            955.19
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            830.2,
+            6.35,
+            1285.39,
+            937.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3969
+        },
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            3.79,
+            6.62,
+            589.12,
+            955.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5607
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "is a door",
+        "wooden",
+        "has a handle"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.0807,
+        -2.005,
+        0.8431,
+        0.4823,
+        1.0802,
+        1.6701
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00040_1",
+          "view_id": "00040",
+          "bbox_2d": [
+            591.07,
+            9.95,
+            868.79,
+            892.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3059
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            342.4,
+            128.56,
+            604.12,
+            957.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.314
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            591.07,
+            9.95,
+            868.79,
+            892.95
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            416.62,
+            6.81,
+            601.58,
+            403.88
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4673
+        },
+        {
+          "object_view_id": "00078_0",
+          "view_id": "00078",
+          "bbox_2d": [
+            942.15,
+            6.5,
+            1158.2,
+            551.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6114
+        },
+        {
+          "object_view_id": "00080_1",
+          "view_id": "00080",
+          "bbox_2d": [
+            661.96,
+            9.04,
+            900.24,
+            765.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3061
+        }
+      ]
+    }
+  ]
+}

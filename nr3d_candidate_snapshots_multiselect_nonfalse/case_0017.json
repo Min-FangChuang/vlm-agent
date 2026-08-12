@@ -1,0 +1,585 @@
+{
+  "case_id": 17,
+  "scene_id": "scene0435_00",
+  "query": "the shoes farthest from the front door",
+  "query_analysis": {
+    "raw_query": "the shoes farthest from the front door",
+    "target_object": "shoes",
+    "target_attributes": [],
+    "reference_object": "front door",
+    "reference_attributes": [],
+    "relation": "farthest from"
+  },
+  "gt": {
+    "target_id": 16,
+    "gt_label": "shoes",
+    "gt_bbox_3d": [
+      -1.277685,
+      -2.4633,
+      0.036043,
+      0.315551,
+      0.346186,
+      0.084175
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -1.272347,
+      -2.433808,
+      0.054923,
+      0.283854,
+      0.300182,
+      0.108191
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1
+    ],
+    "detector_call_count": 100,
+    "total_views": 82,
+    "total_object_views": 6,
+    "total_candidates": 6
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "shoes",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "front door is not reliably identified",
+        "cannot determine whether this pair is farther from the front door than other shoes in the scene"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.2701,
+        -2.4317,
+        0.0506,
+        0.2819,
+        0.296,
+        0.0988
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00098_0",
+          "view_id": "00098",
+          "bbox_2d": [
+            782.94,
+            756.32,
+            952.88,
+            964.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3496
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            782.94,
+            756.32,
+            952.88,
+            964.91
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00100",
+          "view_id": "00100",
+          "bbox_2d": [
+            786.0,
+            691.0,
+            1010.0,
+            925.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00099",
+          "view_id": "00099",
+          "bbox_2d": [
+            758.0,
+            670.0,
+            955.0,
+            893.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00150",
+          "view_id": "00150",
+          "bbox_2d": [
+            810.0,
+            717.0,
+            980.0,
+            958.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "shoes",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.3184,
+        -2.4408,
+        0.055,
+        0.1483,
+        0.2865,
+        0.1081
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00100_0",
+          "view_id": "00100",
+          "bbox_2d": [
+            883.34,
+            689.8,
+            1009.75,
+            922.13
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4513
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            883.34,
+            689.8,
+            1009.75,
+            922.13
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00099",
+          "view_id": "00099",
+          "bbox_2d": [
+            851.0,
+            682.0,
+            942.0,
+            879.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00150",
+          "view_id": "00150",
+          "bbox_2d": [
+            900.0,
+            726.0,
+            976.0,
+            928.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00098",
+          "view_id": "00098",
+          "bbox_2d": [
+            782.94,
+            756.32,
+            952.88,
+            964.91
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "shoes",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "confirmation that no other shoes elsewhere in the scene are farther from the front door than this pair"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.2133,
+        -2.4193,
+        0.0523,
+        0.1678,
+        0.2754,
+        0.0952
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00100_1",
+          "view_id": "00100",
+          "bbox_2d": [
+            785.32,
+            714.4,
+            927.23,
+            926.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4401
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            785.32,
+            714.4,
+            927.23,
+            926.95
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00099",
+          "view_id": "00099",
+          "bbox_2d": [
+            762.0,
+            700.0,
+            871.0,
+            891.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00097",
+          "view_id": "00097",
+          "bbox_2d": [
+            735.98,
+            704.53,
+            897.62,
+            896.75
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00151",
+          "view_id": "00151",
+          "bbox_2d": [
+            806.1,
+            608.42,
+            962.38,
+            804.48
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "shoes",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "front door is not confirmed with high confidence",
+        "cannot compare this shoe pair against other shoes in the environment to verify it is the farthest from the front door"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.1298,
+        -2.72,
+        0.0405,
+        0.1975,
+        0.2509,
+        0.1189
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00102_0",
+          "view_id": "00102",
+          "bbox_2d": [
+            788.49,
+            783.74,
+            990.7,
+            961.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4824
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            788.49,
+            783.74,
+            990.7,
+            961.65
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00101",
+          "view_id": "00101",
+          "bbox_2d": [
+            753.21,
+            618.43,
+            916.52,
+            778.54
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00100",
+          "view_id": "00100",
+          "bbox_2d": [
+            708.0,
+            562.0,
+            855.0,
+            708.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00099",
+          "view_id": "00099",
+          "bbox_2d": [
+            668.0,
+            566.0,
+            795.0,
+            706.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "shoes",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "front door is not definitively identified",
+        "cannot reliably verify that these are the shoes farthest from the front door compared with other visible shoes"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -1.2376,
+        -2.7229,
+        0.0635,
+        0.1709,
+        0.2529,
+        0.1034
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00102_1",
+          "view_id": "00102",
+          "bbox_2d": [
+            891.27,
+            796.05,
+            1068.02,
+            966.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3551
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            891.27,
+            796.05,
+            1068.02,
+            966.65
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00101",
+          "view_id": "00101",
+          "bbox_2d": [
+            845.42,
+            622.65,
+            984.25,
+            806.84
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00100",
+          "view_id": "00100",
+          "bbox_2d": [
+            793.0,
+            564.0,
+            916.0,
+            727.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00099",
+          "view_id": "00099",
+          "bbox_2d": [
+            748.0,
+            563.0,
+            854.0,
+            717.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "shoes",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.2027,
+        -2.5646,
+        0.0458,
+        0.3642,
+        0.554,
+        0.0912
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00154_0",
+          "view_id": "00154",
+          "bbox_2d": [
+            770.15,
+            261.19,
+            975.88,
+            434.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.424
+        },
+        {
+          "object_view_id": "bootstrap_00100",
+          "view_id": "00100",
+          "bbox_2d": [
+            709.0,
+            571.0,
+            990.0,
+            920.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00150",
+          "view_id": "00150",
+          "bbox_2d": [
+            682.0,
+            630.0,
+            970.0,
+            949.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00099",
+          "view_id": "00099",
+          "bbox_2d": [
+            669.0,
+            573.0,
+            936.0,
+            886.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

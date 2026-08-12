@@ -1,0 +1,468 @@
+{
+  "case_id": 28,
+  "scene_id": "scene0353_00",
+  "query": "the bookshelf has a white board leaning on it . the bookshelf has 3 layers .",
+  "query_analysis": {
+    "raw_query": "the bookshelf has a white board leaning on it . the bookshelf has 3 layers .",
+    "target_object": "bookshelf",
+    "target_attributes": [
+      "3 layers"
+    ],
+    "reference_object": "board",
+    "reference_attributes": [
+      "white"
+    ],
+    "relation": "leaning on"
+  },
+  "gt": {
+    "target_id": 8,
+    "gt_label": "bookshelf",
+    "gt_bbox_3d": [
+      -0.848529,
+      -2.606312,
+      0.442807,
+      0.836356,
+      0.274899,
+      1.186788
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -0.857195,
+      -2.548944,
+      0.436938,
+      0.8224,
+      0.411933,
+      1.069824
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      1,
+      1,
+      2,
+      1,
+      2
+    ],
+    "detector_call_count": 84,
+    "total_views": 75,
+    "total_object_views": 13,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "bookshelf",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 14,
+      "bbox_3d": [
+        -0.9863,
+        -2.4608,
+        0.4687,
+        1.1153,
+        0.5991,
+        0.9805
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            356.45,
+            299.16,
+            850.66,
+            835.42
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5069
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            419.71,
+            578.93,
+            899.52,
+            968.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4533
+        },
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            59.01,
+            0.0,
+            485.85,
+            331.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4589
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            356.45,
+            299.16,
+            850.66,
+            835.42
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00076",
+          "view_id": "00076",
+          "bbox_2d": [
+            151.36,
+            96.81,
+            690.38,
+            813.18
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00075",
+          "view_id": "00075",
+          "bbox_2d": [
+            413.78,
+            185.91,
+            913.22,
+            751.07
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00001",
+          "view_id": "00001",
+          "bbox_2d": [
+            379.43,
+            313.39,
+            872.04,
+            850.25
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00072_0",
+          "view_id": "00072",
+          "bbox_2d": [
+            626.36,
+            330.6,
+            1070.38,
+            678.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.519
+        },
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            483.69,
+            277.12,
+            934.69,
+            728.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7191
+        },
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            151.36,
+            96.81,
+            690.38,
+            813.18
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7523
+        },
+        {
+          "object_view_id": "00078_0",
+          "view_id": "00078",
+          "bbox_2d": [
+            0.0,
+            16.37,
+            326.25,
+            919.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6958
+        },
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            0.07,
+            57.11,
+            282.86,
+            942.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6532
+        },
+        {
+          "object_view_id": "00144_0",
+          "view_id": "00144",
+          "bbox_2d": [
+            1023.63,
+            41.49,
+            1296.0,
+            377.36
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3805
+        },
+        {
+          "object_view_id": "00146_0",
+          "view_id": "00146",
+          "bbox_2d": [
+            596.27,
+            127.55,
+            972.96,
+            443.32
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5138
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "bookshelf",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the candidate is specifically the requested bookshelf",
+        "cannot reliably confirm the bookshelf has 3 layers",
+        "cannot clearly verify a white board leaning on the bookshelf"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.9881,
+        0.3218,
+        0.727,
+        1.0433,
+        0.1948,
+        1.3881
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            616.44,
+            9.2,
+            1251.12,
+            960.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2542
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            311.0,
+            0.0,
+            904.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            908.0,
+            0.0,
+            1295.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            55.0,
+            0.0,
+            416.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "bookshelf",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a bookshelf",
+        "candidate has 3 layers",
+        "white board is leaning on the candidate"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.0264,
+        1.5531,
+        1.028,
+        1.1573,
+        1.9149,
+        1.3962
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00094_0",
+          "view_id": "00094",
+          "bbox_2d": [
+            22.2,
+            54.37,
+            1261.51,
+            962.95
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2554
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            22.2,
+            54.37,
+            1261.51,
+            962.95
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "bookshelf",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.8507,
+        -2.6147,
+        0.5992,
+        0.7881,
+        0.2983,
+        0.7136
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00148_0",
+          "view_id": "00148",
+          "bbox_2d": [
+            434.78,
+            447.95,
+            837.45,
+            781.72
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6152
+        },
+        {
+          "object_view_id": "bootstrap_00082",
+          "view_id": "00082",
+          "bbox_2d": [
+            0.07,
+            57.11,
+            282.86,
+            942.45
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00076",
+          "view_id": "00076",
+          "bbox_2d": [
+            151.36,
+            96.81,
+            690.38,
+            813.18
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00075",
+          "view_id": "00075",
+          "bbox_2d": [
+            413.78,
+            185.91,
+            913.22,
+            751.07
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "case_id": 224,
+  "scene_id": "scene0377_00",
+  "query": "this is a rack object with different surfaces atop each other . there are objects on top of them .",
+  "query_analysis": {
+    "raw_query": "this is a rack object with different surfaces atop each other . there are objects on top of them .",
+    "target_object": "rack",
+    "target_attributes": [
+      "different surfaces atop each other"
+    ],
+    "reference_object": "",
+    "reference_attributes": [],
+    "relation": ""
+  },
+  "gt": {
+    "target_id": 4,
+    "gt_label": "shelf",
+    "gt_bbox_3d": [
+      0.273803,
+      2.732258,
+      1.069934,
+      0.650143,
+      0.922183,
+      0.523621
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      0.711065,
+      0.971655,
+      1.133856,
+      0.26302,
+      0.70428,
+      1.029239
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1
+    ],
+    "detector_call_count": 26,
+    "total_views": 23,
+    "total_object_views": 2,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "rack",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "is a rack",
+        "has different surfaces atop each other",
+        "has objects on top of those surfaces"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.077,
+        -0.917,
+        1.3052,
+        0.3719,
+        2.059,
+        1.2989
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            1066.94,
+            127.58,
+            1284.54,
+            958.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4928
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "rack",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.7092,
+        0.9801,
+        1.1695,
+        0.2447,
+        0.6897,
+        0.958
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            779.85,
+            268.79,
+            1176.97,
+            854.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.321
+        },
+        {
+          "object_view_id": "bootstrap_00016",
+          "view_id": "00016",
+          "bbox_2d": [
+            167.0,
+            23.0,
+            588.0,
+            709.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            534.0,
+            21.0,
+            937.0,
+            624.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00018",
+          "view_id": "00018",
+          "bbox_2d": [
+            729.0,
+            19.0,
+            1153.0,
+            511.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

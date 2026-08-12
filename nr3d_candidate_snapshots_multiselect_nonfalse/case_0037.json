@@ -1,0 +1,1356 @@
+{
+  "case_id": 37,
+  "scene_id": "scene0643_00",
+  "query": "the tall shelf behind the door",
+  "query_analysis": {
+    "raw_query": "the tall shelf behind the door",
+    "target_object": "shelf",
+    "target_attributes": [
+      "tall"
+    ],
+    "reference_object": "door",
+    "reference_attributes": [],
+    "relation": "behind"
+  },
+  "gt": {
+    "target_id": 38,
+    "gt_label": "shelf",
+    "gt_bbox_3d": [
+      0.952257,
+      1.918235,
+      1.08781,
+      0.396025,
+      0.927578,
+      2.179631
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 6,
+    "bbox_3d": [
+      0.963021,
+      1.917999,
+      1.221133,
+      0.350048,
+      0.938239,
+      1.872696
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      1,
+      2
+    ],
+    "detector_call_count": 66,
+    "total_views": 49,
+    "total_object_views": 38,
+    "total_candidates": 16
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "shelf",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "tall",
+        "behind the door"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -1.3276,
+        -0.5405,
+        0.5838,
+        0.8006,
+        0.5589,
+        0.5105
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            274.19,
+            444.64,
+            954.39,
+            960.5
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7419
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            387.09,
+            458.57,
+            1112.04,
+            960.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6999
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            387.09,
+            458.57,
+            1112.04,
+            960.33
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            996.86,
+            510.64,
+            1288.43,
+            959.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4595
+        },
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            479.51,
+            601.21,
+            1047.2,
+            960.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5377
+        },
+        {
+          "object_view_id": "00068_0",
+          "view_id": "00068",
+          "bbox_2d": [
+            61.92,
+            415.38,
+            665.59,
+            961.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7183
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "shelf",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a shelf",
+        "object is tall",
+        "object is behind the door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.5735,
+        -0.9578,
+        0.7903,
+        0.2645,
+        0.3949,
+        0.1967
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_1",
+          "view_id": "00000",
+          "bbox_2d": [
+            485.41,
+            287.86,
+            767.39,
+            500.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2916
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            485.41,
+            287.86,
+            767.39,
+            500.91
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "shelf",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [
+        "candidate is a shelf",
+        "candidate is tall",
+        "candidate is behind the door"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.4922,
+        -2.0549,
+        0.3671,
+        0.3048,
+        0.5461,
+        0.7406
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            5.8,
+            530.19,
+            163.42,
+            963.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7095
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            5.8,
+            530.19,
+            163.42,
+            963.56
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            8.22,
+            233.07,
+            394.79,
+            959.6
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00057",
+          "view_id": "00057",
+          "bbox_2d": [
+            617.0,
+            393.0,
+            647.0,
+            649.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            7.0,
+            629.0,
+            128.0,
+            872.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            8.22,
+            233.07,
+            394.79,
+            959.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8925
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "shelf",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a shelf",
+        "object is tall",
+        "object is behind the door"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.3251,
+        -2.2274,
+        0.3507,
+        1.3904,
+        0.258,
+        0.6749
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_1",
+          "view_id": "00018",
+          "bbox_2d": [
+            33.47,
+            574.42,
+            1277.81,
+            940.38
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2504
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            33.47,
+            574.42,
+            1277.81,
+            940.38
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            808.95,
+            790.8,
+            1218.06,
+            959.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3028
+        },
+        {
+          "object_view_id": "00058_1",
+          "view_id": "00058",
+          "bbox_2d": [
+            96.31,
+            279.51,
+            656.25,
+            614.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.356
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "shelf",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "door is clearly identified near the candidate",
+        "spatial relation that the shelf is behind the door is confirmed"
+      ],
+      "num_object_views": 9,
+      "bbox_3d": [
+        0.9519,
+        -0.7301,
+        1.2828,
+        0.3701,
+        1.4159,
+        1.2522
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            6.52,
+            4.41,
+            219.67,
+            652.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5718
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            475.69,
+            5.4,
+            1084.49,
+            531.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4949
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            475.69,
+            5.4,
+            1084.49,
+            531.8
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            253.8,
+            5.28,
+            861.77,
+            762.5
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00057",
+          "view_id": "00057",
+          "bbox_2d": [
+            8.88,
+            22.65,
+            156.31,
+            685.5
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00053",
+          "view_id": "00053",
+          "bbox_2d": [
+            478.82,
+            6.62,
+            1030.09,
+            960.25
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            779.25,
+            104.6,
+            1292.16,
+            957.74
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9424
+        },
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            166.27,
+            5.46,
+            797.95,
+            801.43
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.56
+        },
+        {
+          "object_view_id": "00084_0",
+          "view_id": "00084",
+          "bbox_2d": [
+            901.54,
+            4.06,
+            1290.69,
+            920.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7051
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "shelf",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is behind the door"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.9351,
+        -0.3457,
+        1.3647,
+        0.3031,
+        0.7262,
+        1.1335
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            165.42,
+            5.55,
+            619.1,
+            813.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3324
+        },
+        {
+          "object_view_id": "00036_1",
+          "view_id": "00036",
+          "bbox_2d": [
+            773.58,
+            0.0,
+            1290.35,
+            616.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5268
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            165.42,
+            5.55,
+            619.1,
+            813.65
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "shelf",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 8,
+      "bbox_3d": [
+        0.9585,
+        1.9341,
+        1.3582,
+        0.3592,
+        0.9063,
+        1.7331
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            188.51,
+            4.35,
+            448.65,
+            419.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6824
+        },
+        {
+          "object_view_id": "bootstrap_00080",
+          "view_id": "00080",
+          "bbox_2d": [
+            426.96,
+            13.77,
+            923.05,
+            960.41
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00086",
+          "view_id": "00086",
+          "bbox_2d": [
+            509.89,
+            5.84,
+            964.12,
+            871.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00043",
+          "view_id": "00043",
+          "bbox_2d": [
+            321.32,
+            7.5,
+            750.77,
+            916.97
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            314.09,
+            206.39,
+            700.41,
+            960.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7772
+        },
+        {
+          "object_view_id": "00046_0",
+          "view_id": "00046",
+          "bbox_2d": [
+            231.42,
+            3.56,
+            839.59,
+            650.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4818
+        },
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            426.96,
+            13.77,
+            923.05,
+            960.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6959
+        },
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            509.89,
+            5.84,
+            964.12,
+            871.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5738
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "shelf",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a shelf",
+        "candidate is tall shelf",
+        "candidate is the shelf behind the door"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.4367,
+        2.0396,
+        0.6049,
+        0.7006,
+        0.6613,
+        1.2049
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            85.27,
+            3.42,
+            367.77,
+            461.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4508
+        },
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            118.84,
+            3.75,
+            448.24,
+            804.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4549
+        },
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            6.39,
+            3.79,
+            158.76,
+            611.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4549
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "shelf",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "green-boxed object is a shelf",
+        "green-boxed object is the tall shelf behind the door"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.6519,
+        0.9936,
+        0.3635,
+        0.8699,
+        1.0175,
+        0.7443
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_1",
+          "view_id": "00044",
+          "bbox_2d": [
+            514.05,
+            385.29,
+            1289.01,
+            956.76
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3879
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            514.05,
+            385.29,
+            1289.01,
+            956.76
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00088_0",
+          "view_id": "00088",
+          "bbox_2d": [
+            910.3,
+            90.77,
+            1288.9,
+            721.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7314
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "shelf",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 7,
+      "bbox_3d": [
+        0.8289,
+        1.9284,
+        0.9204,
+        0.5965,
+        0.9005,
+        1.2337
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_2",
+          "view_id": "00044",
+          "bbox_2d": [
+            421.19,
+            6.45,
+            734.7,
+            415.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2515
+        },
+        {
+          "object_view_id": "00048_0",
+          "view_id": "00048",
+          "bbox_2d": [
+            7.78,
+            1.37,
+            449.87,
+            586.26
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6246
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            7.78,
+            1.37,
+            449.87,
+            586.26
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00047",
+          "view_id": "00047",
+          "bbox_2d": [
+            82.86,
+            3.33,
+            788.84,
+            870.38
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00046",
+          "view_id": "00046",
+          "bbox_2d": [
+            231.42,
+            3.56,
+            839.59,
+            650.47
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00079",
+          "view_id": "00079",
+          "bbox_2d": [
+            745.56,
+            4.51,
+            1287.04,
+            923.64
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00078_1",
+          "view_id": "00078",
+          "bbox_2d": [
+            1004.13,
+            6.26,
+            1290.73,
+            876.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5792
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "shelf",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "clear confirmation that this shelf is behind the door"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.117,
+        0.3612,
+        1.6788,
+        0.0335,
+        0.8768,
+        1.0199
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_1",
+          "view_id": "00052",
+          "bbox_2d": [
+            6.79,
+            9.47,
+            808.61,
+            960.27
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2737
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            6.79,
+            9.47,
+            808.61,
+            960.27
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00084",
+          "view_id": "00084",
+          "bbox_2d": [
+            8.0,
+            6.0,
+            928.0,
+            152.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            4.0,
+            5.0,
+            1006.0,
+            960.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            826.0,
+            8.0,
+            1289.0,
+            960.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "shelf",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "object is a shelf",
+        "object is tall",
+        "referenced door is clearly visible",
+        "candidate is behind the door"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.3117,
+        -1.6876,
+        0.4904,
+        0.1567,
+        0.8202,
+        0.8862
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_2",
+          "view_id": "00058",
+          "bbox_2d": [
+            60.98,
+            360.84,
+            159.67,
+            775.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2906
+        },
+        {
+          "object_view_id": "bootstrap_00022",
+          "view_id": "00022",
+          "bbox_2d": [
+            593.0,
+            883.0,
+            708.0,
+            961.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            8.22,
+            233.07,
+            394.79,
+            959.6
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            666.37,
+            698.23,
+            1002.95,
+            960.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "shelf",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a shelf",
+        "candidate is tall",
+        "candidate is behind the door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.4124,
+        -0.0166,
+        0.6827,
+        0.6312,
+        0.5264,
+        0.3007
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00068_1",
+          "view_id": "00068",
+          "bbox_2d": [
+            754.48,
+            501.11,
+            1293.91,
+            960.8
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3333
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            754.48,
+            501.11,
+            1293.91,
+            960.8
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "shelf",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "green-boxed object is a shelf",
+        "green-boxed object is tall",
+        "green-boxed object is behind the door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.2315,
+        2.3342,
+        1.149,
+        0.7551,
+        0.1277,
+        0.2482
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00072_0",
+          "view_id": "00072",
+          "bbox_2d": [
+            809.57,
+            3.18,
+            1291.18,
+            169.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4595
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            809.57,
+            3.18,
+            1291.18,
+            169.75
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "shelf",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "green-boxed object is a shelf",
+        "green-boxed object is the tall shelf behind the door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.4535,
+        1.3474,
+        0.4748,
+        0.1471,
+        0.2451,
+        0.5063
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00078_0",
+          "view_id": "00078",
+          "bbox_2d": [
+            1116.03,
+            591.12,
+            1289.42,
+            962.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7339
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1116.03,
+            591.12,
+            1289.42,
+            962.22
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 15,
+      "label": "shelf",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate must be a shelf",
+        "candidate must be the tall shelf behind the door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.5285,
+        3.0184,
+        1.1845,
+        0.9188,
+        2.4958,
+        2.3121
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00078_2",
+          "view_id": "00078",
+          "bbox_2d": [
+            463.88,
+            5.88,
+            809.03,
+            375.42
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2629
+        },
+        {
+          "object_view_id": "00080_1",
+          "view_id": "00080",
+          "bbox_2d": [
+            9.16,
+            133.7,
+            196.11,
+            956.41
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.25
+        }
+      ]
+    }
+  ]
+}

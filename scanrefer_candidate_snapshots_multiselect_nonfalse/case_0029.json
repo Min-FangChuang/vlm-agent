@@ -1,0 +1,350 @@
+{
+  "case_id": 29,
+  "scene_id": "scene0608_00",
+  "query": "the door is rectangular and white . it is located to the left of the world map on the wall .",
+  "query_analysis": {
+    "raw_query": "the door is rectangular and white . it is located to the left of the world map on the wall .",
+    "target_object": "door",
+    "target_attributes": [
+      "rectangular",
+      "white"
+    ],
+    "reference_object": "world map",
+    "reference_attributes": [
+      "on the wall"
+    ],
+    "relation": "to the left of"
+  },
+  "gt": {
+    "target_id": 12,
+    "gt_label": "door",
+    "gt_bbox_3d": [
+      1.864105,
+      2.805269,
+      1.516844,
+      0.161936,
+      0.903357,
+      1.59466
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      1.849034,
+      2.920236,
+      1.25132,
+      0.280225,
+      1.024001,
+      2.035022
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "detector_call_count": 92,
+    "total_views": 85,
+    "total_object_views": 8,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "door",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 9,
+      "bbox_3d": [
+        1.6042,
+        2.8362,
+        1.3842,
+        0.7585,
+        0.9649,
+        1.7841
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            77.48,
+            0.58,
+            332.5,
+            436.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6456
+        },
+        {
+          "object_view_id": "00054_0",
+          "view_id": "00054",
+          "bbox_2d": [
+            61.26,
+            0.0,
+            321.0,
+            570.35
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6165
+        },
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            125.9,
+            144.46,
+            397.52,
+            832.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4712
+        },
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            234.42,
+            0.0,
+            524.77,
+            369.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5788
+        },
+        {
+          "object_view_id": "bootstrap_00055",
+          "view_id": "00055",
+          "bbox_2d": [
+            54.62,
+            12.61,
+            337.81,
+            700.99
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00057",
+          "view_id": "00057",
+          "bbox_2d": [
+            240.66,
+            0.0,
+            501.24,
+            517.7
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00053",
+          "view_id": "00053",
+          "bbox_2d": [
+            145.63,
+            0.36,
+            383.05,
+            539.83
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            291.2,
+            0.03,
+            572.09,
+            385.06
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5575
+        },
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            445.42,
+            0.0,
+            729.17,
+            479.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6636
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "door",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.9162,
+        2.8854,
+        0.929,
+        0.1393,
+        0.8652,
+        0.6562
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            712.05,
+            0.51,
+            992.37,
+            244.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3222
+        },
+        {
+          "object_view_id": "bootstrap_00047",
+          "view_id": "00047",
+          "bbox_2d": [
+            0.0,
+            327.0,
+            63.0,
+            519.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00070",
+          "view_id": "00070",
+          "bbox_2d": [
+            1253.0,
+            266.0,
+            1295.0,
+            432.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00063",
+          "view_id": "00063",
+          "bbox_2d": [
+            561.55,
+            0.01,
+            814.26,
+            283.28
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "door",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "world map on the wall is not clearly visible/identifiable",
+        "cannot verify that the door is to the left of the world map"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.8696,
+        4.671,
+        1.244,
+        0.9578,
+        0.5533,
+        1.4978
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00070_0",
+          "view_id": "00070",
+          "bbox_2d": [
+            973.98,
+            0.0,
+            1276.78,
+            376.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4391
+        },
+        {
+          "object_view_id": "bootstrap_00071",
+          "view_id": "00071",
+          "bbox_2d": [
+            1107.0,
+            0.0,
+            1295.0,
+            372.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00069",
+          "view_id": "00069",
+          "bbox_2d": [
+            869.0,
+            0.0,
+            1138.0,
+            274.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00072",
+          "view_id": "00072",
+          "bbox_2d": [
+            1101.0,
+            0.0,
+            1295.0,
+            333.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "case_id": 102,
+  "scene_id": "scene0671_00",
+  "query": "choose the black backpack hanging on the wall",
+  "query_analysis": {
+    "raw_query": "choose the black backpack hanging on the wall",
+    "target_object": "backpack",
+    "target_attributes": [
+      "black"
+    ],
+    "reference_object": "wall",
+    "reference_attributes": [],
+    "relation": "hanging on"
+  },
+  "gt": {
+    "target_id": 16,
+    "gt_label": "backpack",
+    "gt_bbox_3d": [
+      0.771089,
+      1.863012,
+      0.703228,
+      0.432396,
+      0.187692,
+      0.503288
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      0.773964,
+      1.824849,
+      0.68736,
+      0.339668,
+      0.232864,
+      0.449196
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 23,
+    "total_views": 20,
+    "total_object_views": 3,
+    "total_candidates": 2
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "backpack",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "black color"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.1153,
+        1.9175,
+        0.6918,
+        0.4072,
+        0.1839,
+        0.4478
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            755.78,
+            22.13,
+            907.24,
+            234.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4326
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            776.36,
+            2.64,
+            963.34,
+            272.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3633
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "backpack",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the green-boxed object is actually a backpack",
+        "cannot clearly verify the object is hanging on the wall"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.7706,
+        1.8276,
+        0.6822,
+        0.3262,
+        0.2086,
+        0.4389
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_1",
+          "view_id": "00016",
+          "bbox_2d": [
+            1046.75,
+            60.75,
+            1232.69,
+            287.01
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3432
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            955.0,
+            60.0,
+            1149.0,
+            307.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            1062.73,
+            47.94,
+            1240.63,
+            247.58
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            962.0,
+            111.0,
+            1065.0,
+            253.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

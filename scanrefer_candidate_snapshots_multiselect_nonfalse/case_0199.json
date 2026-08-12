@@ -1,0 +1,596 @@
+{
+  "case_id": 199,
+  "scene_id": "scene0019_00",
+  "query": "there are two black chairs situated between six brown chairs and a black couch . this black chair is next to the black couch . it appears to be leather . it is black . there is a snack machine on the opposite wall .",
+  "query_analysis": {
+    "raw_query": "there are two black chairs situated between six brown chairs and a black couch . this black chair is next to the black couch . it appears to be leather . it is black . there is a snack machine on the opposite wall .",
+    "target_object": "chair",
+    "target_attributes": [
+      "black",
+      "leather"
+    ],
+    "reference_object": "black couch",
+    "reference_attributes": [
+      "black"
+    ],
+    "relation": "next to"
+  },
+  "gt": {
+    "target_id": 23,
+    "gt_label": "chair",
+    "gt_bbox_3d": [
+      1.637732,
+      -0.346208,
+      0.443601,
+      0.862478,
+      0.779105,
+      0.684606
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 6,
+    "bbox_3d": [
+      1.316707,
+      -0.145434,
+      0.3849,
+      0.251859,
+      1.169929,
+      0.845251
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "detector_call_count": 24,
+    "total_views": 15,
+    "total_object_views": 10,
+    "total_candidates": 9
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a black chair",
+        "candidate appears leather in black upholstery",
+        "candidate is the specific black chair next to the black couch"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        1.6781,
+        1.2369,
+        0.5862,
+        0.8721,
+        0.8876,
+        1.1839
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            0.02,
+            53.15,
+            302.11,
+            875.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3757
+        },
+        {
+          "object_view_id": "00006_2",
+          "view_id": "00006",
+          "bbox_2d": [
+            292.94,
+            216.76,
+            993.54,
+            965.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3216
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            292.94,
+            216.76,
+            993.54,
+            965.37
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "black",
+        "appears to be leather",
+        "the requested black chair among the two black chairs between the brown chairs and the black couch"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.5085,
+        2.0085,
+        0.5751,
+        0.4368,
+        1.0389,
+        1.159
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            0.0,
+            173.07,
+            328.66,
+            886.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.517
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "candidate itself is clearly visible as a chair",
+        "candidate is reliably distinguishable from the other similar black chair",
+        "need stronger confirmation that this specific chair is the one next to the black couch"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.2829,
+        0.5446,
+        0.619,
+        0.1098,
+        0.4869,
+        0.3977
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_1",
+          "view_id": "00006",
+          "bbox_2d": [
+            781.78,
+            637.59,
+            1296.0,
+            964.83
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3937
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            781.78,
+            637.59,
+            1296.0,
+            964.83
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            4.03,
+            351.37,
+            999.36,
+            947.57
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            525.24,
+            492.23,
+            1238.0,
+            965.34
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            928.0,
+            676.0,
+            1295.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "black",
+        "appears to be leather",
+        "the specific black chair among the two black chairs between six brown chairs and a black couch",
+        "snack machine on the opposite wall not confirmed"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.4493,
+        2.0856,
+        0.5717,
+        0.3003,
+        0.9176,
+        1.1678
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            410.46,
+            157.76,
+            678.47,
+            874.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2793
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "candidate must be clearly confirmed as a chair",
+        "candidate must be confirmed black",
+        "candidate must be confirmed leather",
+        "black couch must be visible and the candidate's adjacency to it must be verified",
+        "layout involving two black chairs and six brown chairs must be verified",
+        "snack machine on the opposite wall must be verified"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.5245,
+        5.2768,
+        0.6506,
+        0.2782,
+        1.0147,
+        0.9438
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            1163.61,
+            68.35,
+            1295.99,
+            382.1
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2804
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a black chair",
+        "candidate appears leather",
+        "there are two black chairs",
+        "the two black chairs are situated between six brown chairs and a black couch",
+        "snack machine on the opposite wall"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.5502,
+        -3.8467,
+        0.9987,
+        1.0026,
+        3.705,
+        1.1212
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            558.06,
+            39.39,
+            855.04,
+            374.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3075
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "chair",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        1.3143,
+        -0.3542,
+        0.3854,
+        0.243,
+        0.7862,
+        0.8057
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            225.21,
+            418.67,
+            1070.41,
+            964.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6399
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            225.21,
+            418.67,
+            1070.41,
+            964.52
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            4.03,
+            351.37,
+            999.36,
+            947.57
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            0.0,
+            523.0,
+            594.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00002",
+          "view_id": "00002",
+          "bbox_2d": [
+            0.0,
+            461.0,
+            625.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the referenced black couch within the full scene layout",
+        "cannot confirm there are two black chairs situated between six brown chairs and the black couch",
+        "cannot verify the six brown chairs",
+        "cannot verify a snack machine on the opposite wall"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        1.541,
+        -1.1669,
+        0.3814,
+        0.7546,
+        0.8911,
+        0.718
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_1",
+          "view_id": "00028",
+          "bbox_2d": [
+            674.51,
+            321.1,
+            1295.84,
+            951.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4199
+        },
+        {
+          "object_view_id": "bootstrap_00002",
+          "view_id": "00002",
+          "bbox_2d": [
+            482.0,
+            291.0,
+            931.0,
+            898.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00027",
+          "view_id": "00027",
+          "bbox_2d": [
+            448.0,
+            356.0,
+            1020.0,
+            929.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00000",
+          "view_id": "00000",
+          "bbox_2d": [
+            294.0,
+            342.0,
+            766.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "the green-boxed black chair is the one next to the black couch"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        1.6182,
+        0.2413,
+        0.55,
+        0.8019,
+        0.4066,
+        0.4798
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_2",
+          "view_id": "00028",
+          "bbox_2d": [
+            0.38,
+            552.43,
+            472.01,
+            965.15
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2926
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.38,
+            552.43,
+            472.01,
+            965.15
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

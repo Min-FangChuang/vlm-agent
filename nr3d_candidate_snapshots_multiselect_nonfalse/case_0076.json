@@ -1,0 +1,583 @@
+{
+  "case_id": 76,
+  "scene_id": "scene0231_00",
+  "query": "the trash can that has some multicolored folder things on the wall above it",
+  "query_analysis": {
+    "raw_query": "the trash can that has some multicolored folder things on the wall above it",
+    "target_object": "trash can",
+    "target_attributes": [],
+    "reference_object": "folder things",
+    "reference_attributes": [
+      "multicolored",
+      "on the wall"
+    ],
+    "relation": "below"
+  },
+  "gt": {
+    "target_id": 31,
+    "gt_label": "trash can",
+    "gt_bbox_3d": [
+      -0.465603,
+      1.201088,
+      0.1327,
+      0.266462,
+      0.24279,
+      0.29587
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 3,
+    "bbox_3d": [
+      -0.505315,
+      1.186481,
+      0.130054,
+      0.224926,
+      0.284016,
+      0.373422
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "detector_call_count": 122,
+    "total_views": 111,
+    "total_object_views": 15,
+    "total_candidates": 6
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "trash can",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.4449,
+        1.1694,
+        0.18,
+        0.3504,
+        0.358,
+        0.2488
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            809.6,
+            766.59,
+            983.41,
+            963.82
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7534
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            809.6,
+            766.59,
+            983.41,
+            963.82
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            201.0,
+            576.0,
+            330.0,
+            807.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00096",
+          "view_id": "00096",
+          "bbox_2d": [
+            0.0,
+            674.0,
+            152.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            933.0,
+            670.0,
+            1111.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "trash can",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "multicolored folder things visible on the wall above the green-boxed trash can",
+        "the green-boxed candidate being the best match for the described trash can"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -2.5705,
+        1.7109,
+        0.2309,
+        0.6516,
+        0.8185,
+        0.4221
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            362.78,
+            571.01,
+            513.99,
+            806.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5923
+        },
+        {
+          "object_view_id": "00018_1",
+          "view_id": "00018",
+          "bbox_2d": [
+            902.27,
+            271.79,
+            1041.57,
+            469.07
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6767
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            813.86,
+            684.1,
+            961.74,
+            899.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7082
+        },
+        {
+          "object_view_id": "00092_0",
+          "view_id": "00092",
+          "bbox_2d": [
+            151.46,
+            464.66,
+            295.74,
+            658.84
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6989
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "trash can",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "multicolored folder things on the wall above the green-boxed trash can",
+        "green-boxed trash can is not the best match because another nearby trash can appears below the multicolored wall folders"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -2.0211,
+        -0.0114,
+        0.1256,
+        0.6398,
+        0.3499,
+        0.3047
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            258.15,
+            409.24,
+            527.33,
+            696.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7947
+        },
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            177.04,
+            667.53,
+            442.93,
+            965.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.864
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            177.04,
+            667.53,
+            442.93,
+            965.44
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00076_0",
+          "view_id": "00076",
+          "bbox_2d": [
+            523.56,
+            441.71,
+            769.04,
+            731.6
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5207
+        },
+        {
+          "object_view_id": "00162_0",
+          "view_id": "00162",
+          "bbox_2d": [
+            65.21,
+            561.8,
+            222.81,
+            733.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3608
+        },
+        {
+          "object_view_id": "00210_0",
+          "view_id": "00210",
+          "bbox_2d": [
+            517.82,
+            467.42,
+            712.26,
+            664.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4198
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "trash can",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.3769,
+        1.2172,
+        0.1416,
+        0.516,
+        0.2623,
+        0.3305
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00052_0",
+          "view_id": "00052",
+          "bbox_2d": [
+            988.48,
+            661.79,
+            1128.27,
+            863.77
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7419
+        },
+        {
+          "object_view_id": "bootstrap_00211",
+          "view_id": "00211",
+          "bbox_2d": [
+            1153.0,
+            444.0,
+            1229.0,
+            520.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00059",
+          "view_id": "00059",
+          "bbox_2d": [
+            201.89,
+            575.61,
+            330.22,
+            803.81
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            911.0,
+            673.0,
+            1020.0,
+            833.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            95.49,
+            789.15,
+            254.57,
+            962.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8611
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "trash can",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "multicolored folder-like items are not clearly visible",
+        "cannot reliably confirm those items are on the wall above the trash can"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -2.5917,
+        1.6346,
+        0.2372,
+        0.6814,
+        0.6997,
+        0.414
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00078_0",
+          "view_id": "00078",
+          "bbox_2d": [
+            743.05,
+            319.04,
+            900.46,
+            555.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7053
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            536.98,
+            408.64,
+            669.82,
+            599.77
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00089",
+          "view_id": "00089",
+          "bbox_2d": [
+            1285.0,
+            596.0,
+            1295.0,
+            798.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00079",
+          "view_id": "00079",
+          "bbox_2d": [
+            640.06,
+            633.87,
+            797.3,
+            904.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00090_0",
+          "view_id": "00090",
+          "bbox_2d": [
+            891.23,
+            437.54,
+            1059.68,
+            662.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6188
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "trash can",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "candidate is not confirmed as a trash can",
+        "multicolored folder-like items on the wall above the candidate are not visible",
+        "required spatial relation between the trash can and wall items is not satisfied"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.5949,
+        -0.0036,
+        0.5024,
+        0.3504,
+        0.4723,
+        0.5344
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00130_0",
+          "view_id": "00130",
+          "bbox_2d": [
+            403.42,
+            0.0,
+            577.02,
+            163.79
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2522
+        },
+        {
+          "object_view_id": "bootstrap_00153",
+          "view_id": "00153",
+          "bbox_2d": [
+            75.0,
+            391.0,
+            261.0,
+            566.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00143",
+          "view_id": "00143",
+          "bbox_2d": [
+            79.0,
+            205.0,
+            322.0,
+            372.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00127",
+          "view_id": "00127",
+          "bbox_2d": [
+            133.0,
+            496.0,
+            321.0,
+            647.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

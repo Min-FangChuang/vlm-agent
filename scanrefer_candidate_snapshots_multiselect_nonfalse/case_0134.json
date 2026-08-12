@@ -1,0 +1,450 @@
+{
+  "case_id": 134,
+  "scene_id": "scene0593_00",
+  "query": "the trash can is on the floor to the left of the cabinet . there is a small white bin beside it , to the right .",
+  "query_analysis": {
+    "raw_query": "the trash can is on the floor to the left of the cabinet . there is a small white bin beside it , to the right .",
+    "target_object": "trash can",
+    "target_attributes": [
+      "on the floor"
+    ],
+    "reference_object": "cabinet",
+    "reference_attributes": [],
+    "relation": "to the left of"
+  },
+  "gt": {
+    "target_id": 8,
+    "gt_label": "trash can",
+    "gt_bbox_3d": [
+      -1.183484,
+      2.276628,
+      0.301332,
+      0.3589,
+      0.348019,
+      0.393395
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -1.184464,
+      2.283774,
+      0.300927,
+      0.414343,
+      0.412968,
+      0.414281
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      1,
+      1,
+      2,
+      1,
+      2
+    ],
+    "detector_call_count": 67,
+    "total_views": 58,
+    "total_object_views": 9,
+    "total_candidates": 5
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "trash can",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 8,
+      "bbox_3d": [
+        -1.1902,
+        2.2741,
+        0.4472,
+        0.4329,
+        0.9837,
+        0.6879
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            978.3,
+            508.98,
+            1217.87,
+            788.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8948
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            726.48,
+            543.25,
+            997.88,
+            883.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8922
+        },
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            109.47,
+            574.67,
+            442.97,
+            919.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8962
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            109.47,
+            574.67,
+            442.97,
+            919.68
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            420.15,
+            547.11,
+            720.05,
+            908.21
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            854.09,
+            509.21,
+            1111.97,
+            813.77
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00109",
+          "view_id": "00109",
+          "bbox_2d": [
+            483.6,
+            491.73,
+            720.63,
+            781.84
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00108_0",
+          "view_id": "00108",
+          "bbox_2d": [
+            155.67,
+            392.72,
+            392.36,
+            660.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9103
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "trash can",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "green-boxed object is a trash can",
+        "green-boxed object is the trash can on the floor to the left of the cabinet"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -1.1893,
+        2.0123,
+        0.5516,
+        0.5002,
+        0.6173,
+        0.6908
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_1",
+          "view_id": "00016",
+          "bbox_2d": [
+            0.0,
+            444.23,
+            177.8,
+            839.43
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2993
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            444.23,
+            177.8,
+            839.43
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "trash can",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "green-boxed object is a trash can",
+        "small white bin is to the right of the green-boxed object"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.0922,
+        2.5667,
+        0.4053,
+        0.3055,
+        0.4857,
+        0.553
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            0.0,
+            688.83,
+            141.21,
+            965.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.295
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            920.0,
+            517.0,
+            1135.0,
+            889.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            0.0,
+            571.0,
+            231.0,
+            891.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            631.0,
+            481.0,
+            835.0,
+            814.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "trash can",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        1.2083,
+        2.3714,
+        0.5766,
+        0.5907,
+        0.6424,
+        0.9838
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            942.13,
+            180.72,
+            1295.97,
+            829.2
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.394
+        },
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            0.0,
+            113.56,
+            311.18,
+            906.51
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4596
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            113.56,
+            311.18,
+            906.51
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00100",
+          "view_id": "00100",
+          "bbox_2d": [
+            713.0,
+            159.0,
+            1008.0,
+            677.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00022",
+          "view_id": "00022",
+          "bbox_2d": [
+            622.0,
+            121.0,
+            1197.0,
+            835.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00106",
+          "view_id": "00106",
+          "bbox_2d": [
+            569.0,
+            148.0,
+            1065.0,
+            865.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "trash can",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "to the left of the cabinet",
+        "small white bin beside it, to the right"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.1846,
+        2.2654,
+        0.2898,
+        0.4049,
+        0.3442,
+        0.4085
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00110_0",
+          "view_id": "00110",
+          "bbox_2d": [
+            1130.42,
+            646.84,
+            1295.99,
+            965.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9364
+        }
+      ]
+    }
+  ]
+}

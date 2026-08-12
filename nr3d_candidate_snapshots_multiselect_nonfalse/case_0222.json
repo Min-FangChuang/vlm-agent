@@ -1,0 +1,1037 @@
+{
+  "case_id": 222,
+  "scene_id": "scene0535_00",
+  "query": "the chair between the desks in the middle of the room",
+  "query_analysis": {
+    "raw_query": "the chair between the desks in the middle of the room",
+    "target_object": "chair",
+    "target_attributes": [],
+    "reference_object": "desks",
+    "reference_attributes": [],
+    "relation": "between"
+  },
+  "gt": {
+    "target_id": 26,
+    "gt_label": "chair",
+    "gt_bbox_3d": [
+      0.160879,
+      -0.102116,
+      0.907922,
+      0.562447,
+      0.566518,
+      0.606555
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 13,
+    "bbox_3d": [
+      -0.080397,
+      -0.727379,
+      0.50352,
+      0.487078,
+      0.57396,
+      1.107782
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      6
+    ],
+    "detector_call_count": 37,
+    "total_views": 18,
+    "total_object_views": 20,
+    "total_candidates": 15
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "chair is between the desks",
+        "chair is in the middle of the room"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.4405,
+        -1.9445,
+        0.1749,
+        0.9346,
+        1.1435,
+        0.9184
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            1005.4,
+            338.27,
+            1286.07,
+            945.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8463
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 5,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the chair is between two desks",
+        "cannot verify that it is in the middle of the room",
+        "cannot rule out nearby alternative chairs as a better match"
+      ],
+      "num_object_views": 6,
+      "bbox_3d": [
+        -0.6006,
+        -1.4705,
+        0.0793,
+        0.3689,
+        0.7682,
+        0.556
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_1",
+          "view_id": "00000",
+          "bbox_2d": [
+            472.17,
+            276.47,
+            703.22,
+            617.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7644
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            605.51,
+            229.27,
+            830.98,
+            553.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2567
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            682.0,
+            306.0,
+            929.0,
+            752.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            35.0,
+            223.0,
+            302.0,
+            664.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00006",
+          "view_id": "00006",
+          "bbox_2d": [
+            991.0,
+            316.0,
+            1287.0,
+            802.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00032_1",
+          "view_id": "00032",
+          "bbox_2d": [
+            7.49,
+            357.43,
+            307.87,
+            883.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3771
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the chair is in the middle of the room",
+        "cannot fully rule out nearby alternative chairs as better matches"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -0.3794,
+        -0.7989,
+        0.5251,
+        0.3506,
+        0.5435,
+        0.9295
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_2",
+          "view_id": "00000",
+          "bbox_2d": [
+            586.04,
+            31.45,
+            853.96,
+            462.29
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5392
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            178.65,
+            7.81,
+            1255.99,
+            956.08
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00011",
+          "view_id": "00011",
+          "bbox_2d": [
+            996.0,
+            367.0,
+            1276.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the candidate itself due to partial/distant visibility",
+        "cannot confidently verify that it is the chair in the middle of the room",
+        "nearby alternative chair-like objects are not fully ruled out"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.0479,
+        -0.5339,
+        0.8238,
+        0.642,
+        1.0223,
+        0.3555
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_3",
+          "view_id": "00000",
+          "bbox_2d": [
+            661.67,
+            7.16,
+            853.54,
+            173.16
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5296
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "between the desks",
+        "in the middle of the room"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.7379,
+        -1.1483,
+        0.4439,
+        0.8178,
+        0.5509,
+        0.6555
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            430.67,
+            9.83,
+            1283.71,
+            918.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3278
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            430.67,
+            9.83,
+            1283.71,
+            918.11
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            178.65,
+            7.81,
+            1255.99,
+            956.08
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            937.0,
+            7.0,
+            1287.0,
+            682.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            9.0,
+            134.0,
+            342.0,
+            484.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "chair is between desks",
+        "chair is in the middle of the room",
+        "current candidate is the best matching chair among nearby alternatives"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.6651,
+        -1.4162,
+        0.1924,
+        0.4632,
+        0.0574,
+        0.6276
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_1",
+          "view_id": "00008",
+          "bbox_2d": [
+            646.3,
+            549.84,
+            1096.71,
+            958.24
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3091
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            646.3,
+            549.84,
+            1096.71,
+            958.24
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00033",
+          "view_id": "00033",
+          "bbox_2d": [
+            594.0,
+            459.0,
+            878.0,
+            748.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00005",
+          "view_id": "00005",
+          "bbox_2d": [
+            1059.0,
+            473.0,
+            1286.0,
+            672.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            7.49,
+            357.43,
+            307.87,
+            883.14
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 4,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "whether the candidate is between two desks",
+        "whether the candidate is in the middle of the room",
+        "whether a nearby alternative chair better matches the description"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.0339,
+        -0.1663,
+        0.6646,
+        0.2748,
+        0.1608,
+        0.9445
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00012_0",
+          "view_id": "00012",
+          "bbox_2d": [
+            1077.24,
+            163.6,
+            1285.7,
+            593.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6897
+        },
+        {
+          "object_view_id": "00014_0",
+          "view_id": "00014",
+          "bbox_2d": [
+            947.76,
+            4.0,
+            1289.11,
+            211.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5094
+        },
+        {
+          "object_view_id": "bootstrap_00015",
+          "view_id": "00015",
+          "bbox_2d": [
+            1167.0,
+            52.0,
+            1290.0,
+            607.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            3.51,
+            617.02,
+            413.49,
+            961.13
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            878.16,
+            6.12,
+            1286.6,
+            361.11
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate itself is a chair",
+        "chair is between desks",
+        "chair is in the middle of the room"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.2775,
+        0.7568,
+        0.7361,
+        0.6855,
+        1.6741,
+        0.9491
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            1085.48,
+            673.84,
+            1286.96,
+            961.08
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5327
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            1085.48,
+            673.84,
+            1286.96,
+            961.08
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "not shown to be between desks",
+        "not shown to be in the middle of the room"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        0.3265,
+        0.8225,
+        0.7782,
+        0.8135,
+        1.8401,
+        0.9885
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            434.77,
+            415.01,
+            817.94,
+            950.0
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8839
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            19.61,
+            653.12,
+            449.96,
+            960.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.9204
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            434.77,
+            415.01,
+            817.94,
+            950.0
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "chair identity is not supported for the green-boxed object",
+        "between the desks relation is not satisfied",
+        "middle of the room location is not satisfied"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.4376,
+        1.604,
+        0.6635,
+        0.6208,
+        0.3652,
+        0.6977
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_1",
+          "view_id": "00020",
+          "bbox_2d": [
+            7.72,
+            502.48,
+            393.51,
+            928.67
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6185
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "not consistent with being in the middle of the room",
+        "not clearly the chair between the desks as opposed to beside the left desk"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.3923,
+        1.1809,
+        0.6521,
+        0.5438,
+        1.2055,
+        0.6657
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            92.09,
+            528.54,
+            326.92,
+            804.33
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3816
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "yaw"
+      ],
+      "missing_conditions": [
+        "between the desks",
+        "in the middle of the room"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.2708,
+        -2.3889,
+        0.1903,
+        0.4337,
+        0.4185,
+        0.9982
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            472.92,
+            367.61,
+            1286.6,
+            957.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4935
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            767.81,
+            456.77,
+            1286.87,
+            958.34
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4755
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            472.92,
+            367.61,
+            1286.6,
+            957.59
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00029",
+          "view_id": "00029",
+          "bbox_2d": [
+            394.0,
+            412.0,
+            1289.0,
+            963.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            538.99,
+            399.63,
+            1279.4,
+            958.32
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "between the desks",
+        "in the middle of the room"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.7307,
+        -1.1771,
+        0.3467,
+        0.8363,
+        1.0566,
+        0.9631
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            453.82,
+            40.89,
+            1160.71,
+            760.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6129
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            453.82,
+            40.89,
+            1160.71,
+            760.45
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot confidently confirm the green-boxed object itself due to partial/inconsistent views",
+        "cannot verify the chair is between two desks",
+        "cannot verify it is in the middle of the room",
+        "nearby alternative chair is not ruled out"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.058,
+        0.2402,
+        0.3655,
+        0.6571,
+        2.3947,
+        0.8317
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_1",
+          "view_id": "00034",
+          "bbox_2d": [
+            1037.12,
+            7.22,
+            1286.94,
+            574.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4509
+        },
+        {
+          "object_view_id": "bootstrap_00012",
+          "view_id": "00012",
+          "bbox_2d": [
+            1063.0,
+            549.0,
+            1285.0,
+            615.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00013",
+          "view_id": "00013",
+          "bbox_2d": [
+            408.06,
+            5.08,
+            1255.23,
+            907.38
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00014",
+          "view_id": "00014",
+          "bbox_2d": [
+            621.0,
+            13.0,
+            1285.0,
+            772.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 14,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a chair",
+        "candidate is between the desks",
+        "candidate is in the middle of the room"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -1.535,
+        -1.2761,
+        0.701,
+        1.0195,
+        1.6637,
+        0.583
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00034_2",
+          "view_id": "00034",
+          "bbox_2d": [
+            152.65,
+            5.88,
+            380.56,
+            282.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2596
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,936 @@
+{
+  "case_id": 144,
+  "scene_id": "scene0678_00",
+  "query": "a white laundry basket is on top of a laundry machine . it is located at the far left machine , across from the door .",
+  "query_analysis": {
+    "raw_query": "a white laundry basket is on top of a laundry machine . it is located at the far left machine , across from the door .",
+    "target_object": "laundry basket",
+    "target_attributes": [
+      "white"
+    ],
+    "reference_object": "laundry machine",
+    "reference_attributes": [],
+    "relation": "on top of"
+  },
+  "gt": {
+    "target_id": 4,
+    "gt_label": "laundry basket",
+    "gt_bbox_3d": [
+      2.409249,
+      -1.340016,
+      1.195008,
+      0.498546,
+      0.660203,
+      0.30586
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 6,
+    "bbox_3d": [
+      2.426596,
+      -1.325007,
+      1.169265,
+      0.471087,
+      0.644215,
+      0.371782
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 68,
+    "total_views": 62,
+    "total_object_views": 32,
+    "total_candidates": 14
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "laundry basket",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "object is a laundry basket",
+        "object is on top of a laundry machine",
+        "object is at the far left machine across from the door"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -1.4344,
+        2.7126,
+        0.8625,
+        1.1745,
+        0.9356,
+        0.6212
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            471.71,
+            394.13,
+            872.5,
+            865.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4649
+        },
+        {
+          "object_view_id": "00002_1",
+          "view_id": "00002",
+          "bbox_2d": [
+            308.83,
+            226.23,
+            737.92,
+            697.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3818
+        },
+        {
+          "object_view_id": "00082_0",
+          "view_id": "00082",
+          "bbox_2d": [
+            859.81,
+            159.49,
+            1234.52,
+            481.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3797
+        },
+        {
+          "object_view_id": "00084_0",
+          "view_id": "00084",
+          "bbox_2d": [
+            610.55,
+            257.17,
+            992.66,
+            677.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5886
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "laundry basket",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "candidate is a laundry basket",
+        "candidate is white",
+        "candidate is the basket at the far left machine",
+        "candidate matches the 'across from the door' scene relation"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.8465,
+        2.7408,
+        0.6689,
+        0.4119,
+        0.3579,
+        0.7666
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_1",
+          "view_id": "00000",
+          "bbox_2d": [
+            771.05,
+            379.87,
+            949.41,
+            648.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2947
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            29.0,
+            311.0,
+            353.0,
+            676.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00020",
+          "view_id": "00020",
+          "bbox_2d": [
+            35.0,
+            449.0,
+            279.0,
+            867.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00018",
+          "view_id": "00018",
+          "bbox_2d": [
+            315.0,
+            315.0,
+            543.0,
+            638.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "laundry basket",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "requested object is a laundry basket",
+        "requested object is white",
+        "object is on top of the specified laundry machine",
+        "object is at the far left machine across from the door"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -2.0238,
+        2.9163,
+        0.9085,
+        0.5036,
+        0.4972,
+        0.387
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            46.23,
+            259.86,
+            315.45,
+            527.57
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5969
+        },
+        {
+          "object_view_id": "00080_3",
+          "view_id": "00080",
+          "bbox_2d": [
+            1105.68,
+            307.79,
+            1258.27,
+            477.43
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2654
+        },
+        {
+          "object_view_id": "00082_1",
+          "view_id": "00082",
+          "bbox_2d": [
+            716.88,
+            168.02,
+            882.5,
+            360.06
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3789
+        },
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            11.87,
+            348.99,
+            147.55,
+            718.63
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3123
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "laundry basket",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 4,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a white laundry basket",
+        "candidate is located at the far left machine",
+        "candidate matches the described basket across from the door"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        2.2388,
+        -0.8929,
+        1.2931,
+        2.1495,
+        4.4237,
+        0.5116
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00016_0",
+          "view_id": "00016",
+          "bbox_2d": [
+            985.42,
+            44.42,
+            1159.85,
+            208.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.64
+        },
+        {
+          "object_view_id": "00092_0",
+          "view_id": "00092",
+          "bbox_2d": [
+            780.8,
+            7.35,
+            1084.69,
+            218.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4728
+        },
+        {
+          "object_view_id": "00094_0",
+          "view_id": "00094",
+          "bbox_2d": [
+            733.88,
+            7.37,
+            1078.28,
+            145.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6384
+        },
+        {
+          "object_view_id": "00096_0",
+          "view_id": "00096",
+          "bbox_2d": [
+            796.76,
+            7.14,
+            1221.43,
+            302.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8878
+        },
+        {
+          "object_view_id": "00098_0",
+          "view_id": "00098",
+          "bbox_2d": [
+            11.41,
+            8.85,
+            448.52,
+            610.59
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4004
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "laundry basket",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is white",
+        "candidate is convincingly the requested white laundry basket"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        1.2991,
+        1.1156,
+        1.2046,
+        0.2767,
+        0.4287,
+        0.3077
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            848.06,
+            8.24,
+            1054.15,
+            180.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3847
+        }
+      ]
+    },
+    {
+      "candidate_id": 5,
+      "label": "laundry basket",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "is a laundry basket on top of a laundry machine",
+        "is located at the far left machine"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        2.0075,
+        2.7538,
+        0.1948,
+        0.8584,
+        0.2723,
+        0.4254
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            299.55,
+            525.05,
+            448.23,
+            744.31
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2529
+        },
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            378.01,
+            775.92,
+            570.99,
+            959.12
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3755
+        }
+      ]
+    },
+    {
+      "candidate_id": 6,
+      "label": "laundry basket",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot confirm it is located at the far left machine",
+        "cannot confirm it is across from the door"
+      ],
+      "num_object_views": 7,
+      "bbox_3d": [
+        2.0433,
+        -1.9893,
+        1.1685,
+        1.2281,
+        1.9727,
+        0.3648
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            816.27,
+            10.33,
+            1074.64,
+            170.85
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7197
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            801.72,
+            252.78,
+            1174.98,
+            475.45
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7372
+        },
+        {
+          "object_view_id": "bootstrap_00045",
+          "view_id": "00045",
+          "bbox_2d": [
+            1063.0,
+            260.0,
+            1285.0,
+            751.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            596.27,
+            352.67,
+            1235.15,
+            752.49
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00044",
+          "view_id": "00044",
+          "bbox_2d": [
+            899.0,
+            257.0,
+            1285.0,
+            777.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            768.21,
+            430.95,
+            1283.69,
+            790.21
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3196
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            596.27,
+            352.67,
+            1235.15,
+            752.49
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2743
+        }
+      ]
+    },
+    {
+      "candidate_id": 7,
+      "label": "laundry basket",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "candidate is a laundry basket",
+        "candidate is white",
+        "candidate is on top of a laundry machine",
+        "candidate is on the far left machine"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -3.9075,
+        -2.3377,
+        0.376,
+        0.7176,
+        0.3789,
+        0.8068
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            544.06,
+            168.81,
+            667.05,
+            472.91
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3022
+        }
+      ]
+    },
+    {
+      "candidate_id": 8,
+      "label": "laundry basket",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [],
+      "missing_conditions": [
+        "basket is on top of a laundry machine",
+        "basket is located at the far left machine",
+        "basket matches the described machine across from the door"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -3.9246,
+        1.8606,
+        0.9571,
+        0.6851,
+        0.5936,
+        0.3446
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00070_0",
+          "view_id": "00070",
+          "bbox_2d": [
+            34.42,
+            315.92,
+            253.58,
+            450.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6799
+        },
+        {
+          "object_view_id": "00072_0",
+          "view_id": "00072",
+          "bbox_2d": [
+            621.84,
+            172.97,
+            844.52,
+            385.14
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3744
+        },
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            272.03,
+            277.49,
+            541.97,
+            461.53
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6929
+        }
+      ]
+    },
+    {
+      "candidate_id": 9,
+      "label": "laundry basket",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object must be a laundry basket",
+        "must be on top of a laundry machine",
+        "must be the far left machine across from the door"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -3.8812,
+        0.7549,
+        0.9736,
+        0.5306,
+        0.8864,
+        0.3575
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            788.06,
+            213.69,
+            1227.97,
+            536.22
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8247
+        },
+        {
+          "object_view_id": "00078_0",
+          "view_id": "00078",
+          "bbox_2d": [
+            650.25,
+            8.11,
+            1116.01,
+            252.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6489
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            788.06,
+            213.69,
+            1227.97,
+            536.22
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00080_1",
+          "view_id": "00080",
+          "bbox_2d": [
+            10.79,
+            379.74,
+            177.91,
+            766.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5956
+        }
+      ]
+    },
+    {
+      "candidate_id": 10,
+      "label": "laundry basket",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "is a laundry basket",
+        "on top of a laundry machine",
+        "located at the far left machine",
+        "across from the door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -4.0809,
+        -0.4881,
+        0.9619,
+        0.4816,
+        0.5539,
+        0.3089
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00074_1",
+          "view_id": "00074",
+          "bbox_2d": [
+            12.09,
+            304.92,
+            494.89,
+            668.78
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2894
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            12.09,
+            304.92,
+            494.89,
+            668.78
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 11,
+      "label": "laundry basket",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "is a laundry basket",
+        "is white",
+        "is on top of a laundry machine",
+        "is the far left machine across from the door"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -2.2574,
+        2.7383,
+        0.3666,
+        0.4753,
+        0.787,
+        0.7423
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00080_2",
+          "view_id": "00080",
+          "bbox_2d": [
+            988.3,
+            440.13,
+            1220.53,
+            711.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2901
+        }
+      ]
+    },
+    {
+      "candidate_id": 12,
+      "label": "laundry basket",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "object is a laundry basket",
+        "object is white laundry basket on top of a laundry machine",
+        "object is at the far left machine",
+        "object is across from the door"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.0518,
+        2.5859,
+        0.5403,
+        2.0418,
+        0.7416,
+        1.1374
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00090_0",
+          "view_id": "00090",
+          "bbox_2d": [
+            9.21,
+            525.13,
+            259.81,
+            958.04
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7931
+        }
+      ]
+    },
+    {
+      "candidate_id": 13,
+      "label": "laundry basket",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "object is a laundry basket",
+        "object is on top of a laundry machine",
+        "located at the far left machine"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -3.9688,
+        -0.8141,
+        0.9551,
+        0.2872,
+        0.5455,
+        0.3092
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00122_0",
+          "view_id": "00122",
+          "bbox_2d": [
+            1022.6,
+            147.4,
+            1283.93,
+            306.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4421
+        }
+      ]
+    }
+  ]
+}

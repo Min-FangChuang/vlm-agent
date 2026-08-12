@@ -1,0 +1,306 @@
+{
+  "case_id": 208,
+  "scene_id": "scene0063_00",
+  "query": "this is a brown table . it sets along the wall , with a microwave on top of it .",
+  "query_analysis": {
+    "raw_query": "this is a brown table . it sets along the wall , with a microwave on top of it .",
+    "target_object": "table",
+    "target_attributes": [
+      "brown"
+    ],
+    "reference_object": "wall",
+    "reference_attributes": [],
+    "relation": "along"
+  },
+  "gt": {
+    "target_id": 13,
+    "gt_label": "table",
+    "gt_bbox_3d": [
+      -2.339753,
+      -0.827598,
+      0.923549,
+      0.956329,
+      1.017299,
+      0.24817
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -2.272464,
+      -0.856627,
+      0.38907,
+      0.840334,
+      1.00654,
+      1.198209
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 21,
+    "total_views": 15,
+    "total_object_views": 6,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "table",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -2.2772,
+        -0.8424,
+        0.5635,
+        0.832,
+        0.9764,
+        0.8494
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            478.23,
+            243.78,
+            1151.7,
+            767.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5908
+        },
+        {
+          "object_view_id": "00002_1",
+          "view_id": "00002",
+          "bbox_2d": [
+            5.95,
+            466.07,
+            709.0,
+            965.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4319
+        },
+        {
+          "object_view_id": "bootstrap_00001",
+          "view_id": "00001",
+          "bbox_2d": [
+            400.7,
+            297.97,
+            1069.83,
+            822.23
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            4.0,
+            594.0,
+            515.0,
+            893.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00004",
+          "view_id": "00004",
+          "bbox_2d": [
+            7.0,
+            517.0,
+            225.0,
+            706.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "microwave on top of the green-boxed table"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -2.5769,
+        1.5361,
+        0.5746,
+        1.0241,
+        1.0541,
+        0.7611
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            1002.37,
+            334.7,
+            1295.98,
+            836.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.446
+        },
+        {
+          "object_view_id": "00004_0",
+          "view_id": "00004",
+          "bbox_2d": [
+            487.84,
+            229.09,
+            908.58,
+            540.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5163
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "table",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "object should be a brown table",
+        "table should be along the wall",
+        "microwave should be on top of it"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.3049,
+        -0.1743,
+        0.8167,
+        0.1927,
+        0.4104,
+        0.3871
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00006_0",
+          "view_id": "00006",
+          "bbox_2d": [
+            773.03,
+            29.82,
+            1296.0,
+            383.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2904
+        },
+        {
+          "object_view_id": "bootstrap_00028",
+          "view_id": "00028",
+          "bbox_2d": [
+            115.0,
+            587.0,
+            612.0,
+            960.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00008",
+          "view_id": "00008",
+          "bbox_2d": [
+            610.0,
+            209.0,
+            980.0,
+            346.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00007",
+          "view_id": "00007",
+          "bbox_2d": [
+            613.83,
+            39.91,
+            1294.8,
+            454.05
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "table",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [],
+      "missing_conditions": [
+        "is a table",
+        "brown table appearance is not supported for the boxed object",
+        "has a microwave on top"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        3.5512,
+        -1.5993,
+        0.5578,
+        2.5516,
+        0.6404,
+        0.8727
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            933.51,
+            106.66,
+            1053.22,
+            320.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3983
+        }
+      ]
+    }
+  ]
+}

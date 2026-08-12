@@ -1,0 +1,402 @@
+{
+  "case_id": 37,
+  "scene_id": "scene0553_00",
+  "query": "there is a rectangular brown door . it is next to a light switch .",
+  "query_analysis": {
+    "raw_query": "there is a rectangular brown door . it is next to a light switch .",
+    "target_object": "door",
+    "target_attributes": [
+      "rectangular",
+      "brown"
+    ],
+    "reference_object": "light switch",
+    "reference_attributes": [],
+    "relation": "next to"
+  },
+  "gt": {
+    "target_id": 11,
+    "gt_label": "door",
+    "gt_bbox_3d": [
+      0.152186,
+      -1.479068,
+      0.918699,
+      1.58038,
+      0.096213,
+      1.834312
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 2,
+    "bbox_3d": [
+      0.335592,
+      -1.462079,
+      0.918001,
+      0.929671,
+      0.187403,
+      1.81956
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "detector_call_count": 41,
+    "total_views": 38,
+    "total_object_views": 12,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 2,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a door",
+        "candidate is brown and rectangular as a door",
+        "candidate is next to a light switch"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.8816,
+        -0.297,
+        0.7057,
+        0.2868,
+        0.4923,
+        0.8976
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            892.53,
+            219.49,
+            1296.0,
+            965.61
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2971
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            892.53,
+            219.49,
+            1296.0,
+            965.61
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            588.11,
+            106.2,
+            1177.19,
+            964.81
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3009
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            510.59,
+            1.14,
+            1018.12,
+            929.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4528
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            499.44,
+            0.81,
+            893.57,
+            853.71
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3087
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is a door",
+        "candidate is brown and rectangular",
+        "candidate is next to a light switch"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.9207,
+        0.0538,
+        0.8525,
+        0.0544,
+        0.1219,
+        0.5541
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_0",
+          "view_id": "00028",
+          "bbox_2d": [
+            0.05,
+            35.43,
+            156.58,
+            964.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6068
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.05,
+            35.43,
+            156.58,
+            964.93
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "door",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 10,
+      "bbox_3d": [
+        0.3355,
+        -1.4308,
+        1.0709,
+        0.9373,
+        0.2077,
+        1.4971
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00028_1",
+          "view_id": "00028",
+          "bbox_2d": [
+            797.72,
+            2.75,
+            1296.0,
+            761.89
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4493
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            622.33,
+            0.18,
+            1181.43,
+            553.05
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3104
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            897.58,
+            2.38,
+            1296.0,
+            965.32
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.542
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            484.07,
+            1.25,
+            1185.15,
+            961.9
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7047
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            484.07,
+            1.25,
+            1185.15,
+            961.9
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00051",
+          "view_id": "00051",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            154.0,
+            755.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00039",
+          "view_id": "00039",
+          "bbox_2d": [
+            239.68,
+            0.83,
+            892.83,
+            962.18
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00043",
+          "view_id": "00043",
+          "bbox_2d": [
+            0.0,
+            0.0,
+            639.0,
+            964.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            217.75,
+            0.0,
+            817.81,
+            915.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5314
+        },
+        {
+          "object_view_id": "00042_0",
+          "view_id": "00042",
+          "bbox_2d": [
+            203.41,
+            0.78,
+            785.2,
+            893.52
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.5694
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "door",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "The green-boxed object itself is not the door"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.3698,
+        -1.5129,
+        0.908,
+        0.5573,
+        0.0554,
+        1.5828
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00044_0",
+          "view_id": "00044",
+          "bbox_2d": [
+            508.49,
+            0.0,
+            808.03,
+            963.48
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2509
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            508.49,
+            0.0,
+            808.03,
+            963.48
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

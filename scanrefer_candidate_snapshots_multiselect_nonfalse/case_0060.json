@@ -1,0 +1,493 @@
+{
+  "case_id": 60,
+  "scene_id": "scene0356_00",
+  "query": "a small wooden cabinet . there is three small bins near it .",
+  "query_analysis": {
+    "raw_query": "a small wooden cabinet . there is three small bins near it .",
+    "target_object": "cabinet",
+    "target_attributes": [
+      "small",
+      "wooden"
+    ],
+    "reference_object": "bins",
+    "reference_attributes": [
+      "small"
+    ],
+    "relation": "near"
+  },
+  "gt": {
+    "target_id": 9,
+    "gt_label": "shelf",
+    "gt_bbox_3d": [
+      -0.826304,
+      1.552244,
+      1.153156,
+      0.352423,
+      0.817649,
+      0.785075
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -0.818029,
+      1.526804,
+      1.197695,
+      0.381638,
+      0.804064,
+      0.907113
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "detector_call_count": 40,
+    "total_views": 34,
+    "total_object_views": 18,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "cabinet",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 6,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 11,
+      "bbox_3d": [
+        -0.8207,
+        1.6926,
+        1.1455,
+        0.3676,
+        1.1449,
+        0.8026
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00000_0",
+          "view_id": "00000",
+          "bbox_2d": [
+            255.14,
+            8.25,
+            628.07,
+            552.68
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7813
+        },
+        {
+          "object_view_id": "00002_0",
+          "view_id": "00002",
+          "bbox_2d": [
+            203.72,
+            8.41,
+            578.13,
+            574.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6151
+        },
+        {
+          "object_view_id": "bootstrap_00067",
+          "view_id": "00067",
+          "bbox_2d": [
+            183.86,
+            66.9,
+            682.56,
+            736.2
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00032",
+          "view_id": "00032",
+          "bbox_2d": [
+            305.61,
+            6.99,
+            789.22,
+            403.28
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00041",
+          "view_id": "00041",
+          "bbox_2d": [
+            8.65,
+            5.38,
+            255.7,
+            574.43
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00032_0",
+          "view_id": "00032",
+          "bbox_2d": [
+            305.61,
+            6.99,
+            789.22,
+            403.28
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2754
+        },
+        {
+          "object_view_id": "00034_0",
+          "view_id": "00034",
+          "bbox_2d": [
+            12.98,
+            12.34,
+            602.98,
+            955.25
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4077
+        },
+        {
+          "object_view_id": "00036_0",
+          "view_id": "00036",
+          "bbox_2d": [
+            10.87,
+            239.89,
+            676.54,
+            956.19
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7296
+        },
+        {
+          "object_view_id": "00038_0",
+          "view_id": "00038",
+          "bbox_2d": [
+            233.36,
+            8.41,
+            699.55,
+            562.24
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8066
+        },
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            124.49,
+            7.5,
+            492.93,
+            381.23
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4423
+        },
+        {
+          "object_view_id": "00066_0",
+          "view_id": "00066",
+          "bbox_2d": [
+            311.67,
+            8.65,
+            764.82,
+            460.11
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6084
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 3,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "three small bins near the cabinet"
+      ],
+      "num_object_views": 8,
+      "bbox_3d": [
+        -0.6772,
+        -1.4344,
+        0.384,
+        0.7233,
+        0.6408,
+        0.7812
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00020_0",
+          "view_id": "00020",
+          "bbox_2d": [
+            1066.09,
+            269.31,
+            1282.67,
+            858.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8501
+        },
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            778.83,
+            219.25,
+            1282.88,
+            837.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8553
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            565.73,
+            134.07,
+            1260.85,
+            882.17
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7749
+        },
+        {
+          "object_view_id": "00026_0",
+          "view_id": "00026",
+          "bbox_2d": [
+            108.67,
+            111.39,
+            965.35,
+            954.94
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4048
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            108.67,
+            111.39,
+            965.35,
+            954.94
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00056_0",
+          "view_id": "00056",
+          "bbox_2d": [
+            1067.56,
+            296.09,
+            1284.89,
+            839.46
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8667
+        },
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            549.64,
+            241.78,
+            1063.75,
+            831.03
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8548
+        },
+        {
+          "object_view_id": "00060_0",
+          "view_id": "00060",
+          "bbox_2d": [
+            77.31,
+            281.78,
+            765.99,
+            956.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7167
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "object is a cabinet",
+        "three small bins near it"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.6083,
+        1.2171,
+        0.3815,
+        0.7883,
+        0.6571,
+        0.8292
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00030_0",
+          "view_id": "00030",
+          "bbox_2d": [
+            1028.44,
+            60.91,
+            1286.13,
+            585.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6691
+        },
+        {
+          "object_view_id": "bootstrap_00003",
+          "view_id": "00003",
+          "bbox_2d": [
+            13.0,
+            284.0,
+            683.0,
+            937.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00040",
+          "view_id": "00040",
+          "bbox_2d": [
+            131.0,
+            345.0,
+            747.0,
+            941.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00031",
+          "view_id": "00031",
+          "bbox_2d": [
+            667.83,
+            168.51,
+            1285.55,
+            878.3
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00064_0",
+          "view_id": "00064",
+          "bbox_2d": [
+            1066.31,
+            112.85,
+            1285.4,
+            594.3
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.6129
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "cabinet",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "three small bins near the cabinet"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -0.3442,
+        -1.3614,
+        0.4649,
+        0.0478,
+        0.4697,
+        0.5812
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            9.63,
+            571.32,
+            439.07,
+            958.43
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4171
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            9.63,
+            571.32,
+            439.07,
+            958.43
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

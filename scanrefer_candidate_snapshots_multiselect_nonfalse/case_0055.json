@@ -1,0 +1,138 @@
+{
+  "case_id": 55,
+  "scene_id": "scene0535_00",
+  "query": "the book shelf is in the back corner of the room . there is a window to the right of it on the adjoining wall and a desk in front of it .",
+  "query_analysis": {
+    "raw_query": "the book shelf is in the back corner of the room . there is a window to the right of it on the adjoining wall and a desk in front of it .",
+    "target_object": "book shelf",
+    "target_attributes": [],
+    "reference_object": "room",
+    "reference_attributes": [],
+    "relation": "in the back corner of"
+  },
+  "gt": {
+    "target_id": 13,
+    "gt_label": "bookshelf",
+    "gt_bbox_3d": [
+      -0.885352,
+      0.968119,
+      0.995035,
+      0.491204,
+      1.080481,
+      1.583332
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      -0.908719,
+      0.890314,
+      1.08647,
+      0.498277,
+      0.95351,
+      1.790308
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2
+    ],
+    "detector_call_count": 21,
+    "total_views": 18,
+    "total_object_views": 1,
+    "total_candidates": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "book shelf",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 5,
+      "bbox_3d": [
+        -0.9425,
+        0.7304,
+        1.0259,
+        0.4308,
+        0.6336,
+        1.374
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00018_0",
+          "view_id": "00018",
+          "bbox_2d": [
+            6.05,
+            7.16,
+            551.97,
+            958.87
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2742
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            6.05,
+            7.16,
+            551.97,
+            958.87
+          ],
+          "status": "active",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            437.0,
+            8.0,
+            898.0,
+            933.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00019",
+          "view_id": "00019",
+          "bbox_2d": [
+            4.0,
+            53.0,
+            283.0,
+            962.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00016",
+          "view_id": "00016",
+          "bbox_2d": [
+            550.0,
+            8.0,
+            867.0,
+            687.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

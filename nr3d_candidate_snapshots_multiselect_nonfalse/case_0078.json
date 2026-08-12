@@ -1,0 +1,409 @@
+{
+  "case_id": 78,
+  "scene_id": "scene0207_00",
+  "query": "look for the window that is closer to the olive green sofa",
+  "query_analysis": {
+    "raw_query": "look for the window that is closer to the olive green sofa",
+    "target_object": "window",
+    "target_attributes": [],
+    "reference_object": "sofa",
+    "reference_attributes": [
+      "olive green"
+    ],
+    "relation": "closer to"
+  },
+  "gt": {
+    "target_id": 12,
+    "gt_label": "window",
+    "gt_bbox_3d": [
+      -0.861687,
+      3.059515,
+      1.465224,
+      0.853441,
+      0.330043,
+      1.724571
+    ],
+    "unique": false,
+    "easy": true,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "unsure",
+    "selected_candidate_id": 2,
+    "bbox_3d": [
+      -0.911905,
+      3.064076,
+      0.821612,
+      0.791853,
+      0.294899,
+      0.625682
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      5
+    ],
+    "detector_call_count": 61,
+    "total_views": 50,
+    "total_object_views": 6,
+    "total_candidates": 5
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "window",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "olive green sofa is not clearly identified",
+        "cannot determine this window's distance to the olive green sofa",
+        "cannot compare this window against other nearby windows to confirm it is the closer one"
+      ],
+      "num_object_views": 3,
+      "bbox_3d": [
+        -0.9022,
+        3.0844,
+        1.1583,
+        0.7567,
+        0.3908,
+        1.1273
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00008_0",
+          "view_id": "00008",
+          "bbox_2d": [
+            224.06,
+            12.23,
+            577.9,
+            537.37
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3041
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            764.96,
+            7.74,
+            1283.47,
+            478.49
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00018",
+          "view_id": "00018",
+          "bbox_2d": [
+            7.0,
+            6.0,
+            616.0,
+            463.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "window",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the boxed window is the one closer to the olive green sofa compared with other visible windows",
+        "need stronger joint evidence showing the sofa and multiple candidate windows in the same local layout"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.94,
+        3.0002,
+        1.2598,
+        0.6254,
+        0.4261,
+        0.9468
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00074_0",
+          "view_id": "00074",
+          "bbox_2d": [
+            1065.5,
+            418.87,
+            1251.14,
+            677.54
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2675
+        },
+        {
+          "object_view_id": "bootstrap_00073",
+          "view_id": "00073",
+          "bbox_2d": [
+            1169.0,
+            190.0,
+            1285.0,
+            320.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00010",
+          "view_id": "00010",
+          "bbox_2d": [
+            639.0,
+            38.0,
+            944.0,
+            367.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00087",
+          "view_id": "00087",
+          "bbox_2d": [
+            40.0,
+            146.0,
+            401.0,
+            485.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "window",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 1,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "insufficient evidence to determine whether this is the window closer to the olive green sofa compared with other possible windows"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        -0.9376,
+        3.1096,
+        0.7413,
+        0.7036,
+        0.2094,
+        0.2907
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00084_0",
+          "view_id": "00084",
+          "bbox_2d": [
+            1017.05,
+            4.48,
+            1289.17,
+            113.69
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2874
+        },
+        {
+          "object_view_id": "bootstrap_00017",
+          "view_id": "00017",
+          "bbox_2d": [
+            764.96,
+            7.74,
+            1283.47,
+            478.49
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00018",
+          "view_id": "00018",
+          "bbox_2d": [
+            12.0,
+            125.0,
+            600.0,
+            454.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00010",
+          "view_id": "00010",
+          "bbox_2d": [
+            645.0,
+            361.0,
+            908.0,
+            557.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "window",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "olive green sofa is not clearly visible/confirmed",
+        "cannot determine this window's distance to the olive green sofa",
+        "cannot compare this window against other visible windows to decide which is closer"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        -0.742,
+        3.0887,
+        1.0414,
+        0.2885,
+        0.1816,
+        0.6651
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00086_0",
+          "view_id": "00086",
+          "bbox_2d": [
+            224.97,
+            7.66,
+            538.38,
+            355.65
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3058
+        }
+      ]
+    },
+    {
+      "candidate_id": 4,
+      "label": "window",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 3,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "olive green sofa is not clearly identified in the current evidence",
+        "cannot verify whether this window is closer to the olive green sofa than the other visible window candidate"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.7749,
+        3.1174,
+        1.4313,
+        0.7562,
+        0.435,
+        1.6714
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00090_0",
+          "view_id": "00090",
+          "bbox_2d": [
+            505.91,
+            512.25,
+            771.13,
+            957.55
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3347
+        },
+        {
+          "object_view_id": "00092_0",
+          "view_id": "00092",
+          "bbox_2d": [
+            14.14,
+            61.22,
+            312.11,
+            799.62
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3278
+        },
+        {
+          "object_view_id": "bootstrap_00006",
+          "view_id": "00006",
+          "bbox_2d": [
+            465.0,
+            17.0,
+            746.0,
+            274.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00009",
+          "view_id": "00009",
+          "bbox_2d": [
+            932.0,
+            15.0,
+            1289.0,
+            793.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00089",
+          "view_id": "00089",
+          "bbox_2d": [
+            536.79,
+            417.81,
+            793.67,
+            948.82
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

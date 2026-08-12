@@ -1,0 +1,324 @@
+{
+  "case_id": 19,
+  "scene_id": "scene0678_00",
+  "query": "when facing the long grey counter it is the window in the middle",
+  "query_analysis": {
+    "raw_query": "when facing the long grey counter it is the window in the middle",
+    "target_object": "window",
+    "target_attributes": [],
+    "reference_object": "counter",
+    "reference_attributes": [
+      "long",
+      "grey"
+    ],
+    "relation": "in the middle"
+  },
+  "gt": {
+    "target_id": 25,
+    "gt_label": "window",
+    "gt_bbox_3d": [
+      -4.209129,
+      0.014295,
+      1.165439,
+      0.351525,
+      0.833349,
+      0.720892
+    ],
+    "unique": false,
+    "easy": false,
+    "view_dep": true
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 1,
+    "bbox_3d": [
+      -5.542783,
+      -1.252997,
+      1.377892,
+      2.996305,
+      1.625916,
+      1.176464
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "detector_call_count": 66,
+    "total_views": 62,
+    "total_object_views": 9,
+    "total_candidates": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "window",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 2,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm the boxed object is truly a window",
+        "long grey counter is not visible/confirmed",
+        "cannot determine the facing orientation relative to the counter",
+        "cannot verify that this is the middle window among multiple windows"
+      ],
+      "num_object_views": 5,
+      "bbox_3d": [
+        0.8663,
+        -3.6718,
+        2.4413,
+        1.757,
+        1.4923,
+        1.1061
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00040_0",
+          "view_id": "00040",
+          "bbox_2d": [
+            659.88,
+            8.28,
+            1087.9,
+            170.44
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2906
+        },
+        {
+          "object_view_id": "bootstrap_00042",
+          "view_id": "00042",
+          "bbox_2d": [
+            399.0,
+            15.0,
+            790.0,
+            69.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00108",
+          "view_id": "00108",
+          "bbox_2d": [
+            8.47,
+            7.36,
+            518.74,
+            312.73
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00105",
+          "view_id": "00105",
+          "bbox_2d": [
+            349.0,
+            15.0,
+            771.0,
+            99.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00108_0",
+          "view_id": "00108",
+          "bbox_2d": [
+            8.47,
+            7.36,
+            518.74,
+            312.73
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2557
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "window",
+      "status": "true",
+      "verification_round": 2,
+      "best_id": 7,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 8,
+      "bbox_3d": [
+        -5.6316,
+        -1.2985,
+        1.0604,
+        3.1329,
+        1.5284,
+        0.5514
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00058_0",
+          "view_id": "00058",
+          "bbox_2d": [
+            798.75,
+            7.86,
+            1038.21,
+            292.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4098
+        },
+        {
+          "object_view_id": "bootstrap_00120",
+          "view_id": "00120",
+          "bbox_2d": [
+            449.04,
+            5.2,
+            771.16,
+            195.7
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00062",
+          "view_id": "00062",
+          "bbox_2d": [
+            7.04,
+            5.42,
+            418.79,
+            239.86
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00119",
+          "view_id": "00119",
+          "bbox_2d": [
+            551.57,
+            6.52,
+            838.32,
+            218.03
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "00062_0",
+          "view_id": "00062",
+          "bbox_2d": [
+            7.04,
+            5.42,
+            418.79,
+            239.86
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2866
+        },
+        {
+          "object_view_id": "00116_0",
+          "view_id": "00116",
+          "bbox_2d": [
+            831.13,
+            7.36,
+            1113.75,
+            163.92
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2528
+        },
+        {
+          "object_view_id": "00120_0",
+          "view_id": "00120",
+          "bbox_2d": [
+            449.04,
+            5.2,
+            771.16,
+            195.7
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2812
+        },
+        {
+          "object_view_id": "00122_0",
+          "view_id": "00122",
+          "bbox_2d": [
+            571.24,
+            6.75,
+            978.46,
+            271.75
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.2561
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "window",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 1,
+      "done_actions": [],
+      "missing_conditions": [
+        "boxed object is a window",
+        "boxed object is the middle window relative to the counter-facing view"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        -3.7428,
+        2.1134,
+        1.3664,
+        0.5996,
+        0.139,
+        0.6149
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00072_0",
+          "view_id": "00072",
+          "bbox_2d": [
+            706.84,
+            8.24,
+            947.77,
+            250.43
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3301
+        },
+        {
+          "object_view_id": "00080_0",
+          "view_id": "00080",
+          "bbox_2d": [
+            391.01,
+            7.56,
+            648.42,
+            307.56
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3532
+        }
+      ]
+    }
+  ]
+}

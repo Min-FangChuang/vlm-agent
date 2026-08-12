@@ -1,0 +1,326 @@
+{
+  "case_id": 169,
+  "scene_id": "scene0149_00",
+  "query": "the kitchen table chair . the chair is on the right under the table .",
+  "query_analysis": {
+    "raw_query": "the kitchen table chair . the chair is on the right under the table .",
+    "target_object": "chair",
+    "target_attributes": [],
+    "reference_object": "table",
+    "reference_attributes": [
+      "kitchen"
+    ],
+    "relation": "on the right under"
+  },
+  "gt": {
+    "target_id": 12,
+    "gt_label": "chair",
+    "gt_bbox_3d": [
+      0.412214,
+      -1.627643,
+      0.483367,
+      0.380148,
+      0.267648,
+      0.859728
+    ],
+    "unique": true,
+    "easy": false,
+    "view_dep": false
+  },
+  "result": {
+    "final_decision": "true",
+    "selected_candidate_id": 0,
+    "bbox_3d": [
+      0.361295,
+      -1.628952,
+      0.450537,
+      0.416876,
+      0.274854,
+      0.943407
+    ],
+    "vlm_used": true,
+    "vlm_image_counts": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "detector_call_count": 39,
+    "total_views": 35,
+    "total_object_views": 5,
+    "total_candidates": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": 0,
+      "label": "chair",
+      "status": "expanded",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around",
+        "forward"
+      ],
+      "missing_conditions": [],
+      "num_object_views": 6,
+      "bbox_3d": [
+        0.3938,
+        -1.6289,
+        0.4602,
+        0.346,
+        0.275,
+        0.9241
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00022_0",
+          "view_id": "00022",
+          "bbox_2d": [
+            710.45,
+            261.74,
+            1293.2,
+            965.47
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.4884
+        },
+        {
+          "object_view_id": "00024_0",
+          "view_id": "00024",
+          "bbox_2d": [
+            468.17,
+            368.65,
+            985.91,
+            964.99
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.8219
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            710.45,
+            261.74,
+            1293.2,
+            965.47
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00023",
+          "view_id": "00023",
+          "bbox_2d": [
+            586.83,
+            227.73,
+            1139.99,
+            956.15
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00025",
+          "view_id": "00025",
+          "bbox_2d": [
+            586.81,
+            471.03,
+            1127.07,
+            964.8
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00021",
+          "view_id": "00021",
+          "bbox_2d": [
+            859.0,
+            683.0,
+            1295.0,
+            965.0
+          ],
+          "status": "active",
+          "source": "projected_bootstrap_segmented",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 1,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "yaw"
+      ],
+      "missing_conditions": [
+        "cannot reliably confirm this is the specific chair on the right relative to the table/chair set",
+        "cannot reliably confirm the chair is under the table rather than beside it",
+        "nearby alternative chairs are still not clearly ruled out"
+      ],
+      "num_object_views": 4,
+      "bbox_3d": [
+        0.2087,
+        -1.7923,
+        0.3035,
+        0.4933,
+        1.7412,
+        0.7767
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00067_0",
+          "view_id": "00067",
+          "bbox_2d": [
+            833.96,
+            163.55,
+            1161.11,
+            706.96
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.7234
+        },
+        {
+          "object_view_id": "bootstrap_00066",
+          "view_id": "00066",
+          "bbox_2d": [
+            972.0,
+            325.0,
+            1276.0,
+            894.0
+          ],
+          "status": "active",
+          "source": "projected_yaw_refined",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00068",
+          "view_id": "00068",
+          "bbox_2d": [
+            1265.0,
+            249.0,
+            1289.0,
+            289.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        },
+        {
+          "object_view_id": "bootstrap_00065",
+          "view_id": "00065",
+          "bbox_2d": [
+            1274.0,
+            881.0,
+            1295.0,
+            915.0
+          ],
+          "status": "support_only",
+          "source": "projected_yaw_support_only",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "candidate_id": 2,
+      "label": "chair",
+      "status": "unsure",
+      "verification_round": 2,
+      "best_id": 0,
+      "done_actions": [
+        "forward"
+      ],
+      "missing_conditions": [
+        "candidate itself is not clearly visible enough to confirm it is definitely a chair",
+        "need stronger confirmation that the chair is under the table"
+      ],
+      "num_object_views": 1,
+      "bbox_3d": [
+        0.0869,
+        -2.4446,
+        0.4475,
+        0.1739,
+        0.3358,
+        0.893
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00067_1",
+          "view_id": "00067",
+          "bbox_2d": [
+            1164.59,
+            96.36,
+            1275.59,
+            443.58
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3883
+        }
+      ]
+    },
+    {
+      "candidate_id": 3,
+      "label": "chair",
+      "status": "false",
+      "verification_round": 1,
+      "best_id": 0,
+      "done_actions": [
+        "turn_around"
+      ],
+      "missing_conditions": [
+        "candidate is clearly a chair",
+        "candidate is under the table",
+        "candidate is the chair on the right of the kitchen table"
+      ],
+      "num_object_views": 2,
+      "bbox_3d": [
+        0.2426,
+        1.4226,
+        0.5077,
+        0.4154,
+        0.0627,
+        0.4375
+      ],
+      "object_views": [
+        {
+          "object_view_id": "00069_0",
+          "view_id": "00069",
+          "bbox_2d": [
+            0.0,
+            332.01,
+            102.98,
+            843.93
+          ],
+          "status": "active",
+          "source": "detected",
+          "score": 0.3459
+        },
+        {
+          "object_view_id": "turn_around_stitched",
+          "view_id": "turn_around_stitched",
+          "bbox_2d": [
+            0.0,
+            332.01,
+            102.98,
+            843.93
+          ],
+          "status": "support_only",
+          "source": "turn_around",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}
