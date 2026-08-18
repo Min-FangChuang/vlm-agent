@@ -9,12 +9,14 @@ try:
     from ..agent_schema import View
     from .scannet_more_view import (
         complete_candidate_with_more_views as _complete_candidate_with_more_views,
+        complete_candidate_with_yaw_views as _complete_candidate_with_yaw_views,
         complete_candidate_with_turn_around_views as _complete_candidate_with_turn_around_views,
     )
 except ImportError:
     from agent_schema import View  # type: ignore
     from read.scannet_more_view import (
         complete_candidate_with_more_views as _complete_candidate_with_more_views,
+        complete_candidate_with_yaw_views as _complete_candidate_with_yaw_views,
         complete_candidate_with_turn_around_views as _complete_candidate_with_turn_around_views,
     )  # type: ignore
 
@@ -170,8 +172,14 @@ class Read:
         candidate: object,
         action_mode: str = "forward",
     ):
-        if str(action_mode).strip().lower() == "turn_around":
+        normalized_action_mode = str(action_mode).strip().lower()
+        if normalized_action_mode == "turn_around":
             return _complete_candidate_with_turn_around_views(
+                agent=agent,
+                candidate=candidate,
+            )
+        if normalized_action_mode == "yaw":
+            return _complete_candidate_with_yaw_views(
                 agent=agent,
                 candidate=candidate,
             )
