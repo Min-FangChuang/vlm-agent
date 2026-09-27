@@ -703,6 +703,81 @@ def reproject_candidate_to_scene_views(
     return projected_views
 
 
+def reproject_candidate_to_single_view(
+    *,
+    view: Any,
+    intrinsic_matrix: np.ndarray,
+    world_to_axis_align_matrix: np.ndarray | None,
+    points_3d: np.ndarray,
+    min_inside_points: int = 20,
+    min_visible_points: int = 50,
+    min_visible_ratio: float = 0.3,
+    depth_scale: float = 0.001,
+    visibility_margin: float = 0.05,
+    background_margin: float = 0.10,
+) -> ProjectedView | None:
+    (
+        uv,
+        visible_mask,
+        occluded_mask,
+        depth_missing_mask,
+        background_mismatch_mask,
+        visibility_stats,
+    ) = _depth_visibility_stats(
+        np.asarray(points_3d, dtype=np.float64)[:, :3],
+        intrinsic_matrix,
+        np.asarray(view.camera_to_world, dtype=np.float64),
+        None
+        if world_to_axis_align_matrix is None
+        else np.asarray(world_to_axis_align_matrix, dtype=np.float64),
+        tuple(view.rgb.shape),
+        np.asarray(view.depth, dtype=np.float64),
+        float(depth_scale),
+        float(visibility_margin),
+        float(background_margin),
+    )
+    visible_uv = uv[visible_mask]
+    if int(visibility_stats["projected_points_in_frame"]) == 0:
+        return None
+    if int(visibility_stats["visible_projected_points"]) == 0:
+        return None
+    if int(visibility_stats["visible_projected_points"]) < int(min_visible_points):
+        return None
+    if float(visibility_stats["visible_ratio"]) < float(min_visible_ratio):
+        return None
+    bbox = bbox_from_projected_points(
+        visible_uv,
+        view.rgb.shape,
+        min_inside_points=min_inside_points,
+    )
+    if bbox is None:
+        return None
+    return ProjectedView(
+        view_id=str(view.view_id),
+        image_file=f"{view.view_id}.jpg",
+        projected_bbox_2d=np.asarray(bbox, dtype=np.float32),
+        bbox_area=bbox_area(bbox),
+        camera_xy=camera_xy(view, world_to_axis_align_matrix),
+        image_size=(int(view.rgb.shape[1]), int(view.rgb.shape[0])),
+        projected_points_total=int(visibility_stats["projected_points_total"]),
+        projected_points_in_frame=int(visibility_stats["projected_points_in_frame"]),
+        visible_projected_points=int(visibility_stats["visible_projected_points"]),
+        occluded_projected_points=int(visibility_stats["occluded_projected_points"]),
+        depth_missing_points=int(visibility_stats["depth_missing_points"]),
+        visible_ratio=float(visibility_stats["visible_ratio"]),
+        occluded_ratio=float(visibility_stats["occluded_ratio"]),
+        uv=np.asarray(uv, dtype=np.float64),
+        visible_mask=np.asarray(visible_mask, dtype=bool),
+        occluded_mask=np.asarray(occluded_mask, dtype=bool),
+        depth_missing_mask=np.asarray(depth_missing_mask, dtype=bool),
+        background_mismatch_mask=np.asarray(background_mismatch_mask, dtype=bool),
+        projected_depths=np.asarray(
+            visibility_stats["projected_depths"], dtype=np.float64
+        ),
+        sampled_depths=np.asarray(visibility_stats["sampled_depths"], dtype=np.float64),
+    )
+
+
 def select_projected_views_forward(
     projected_views: list[ProjectedView],
     num_views: int,
@@ -1072,33 +1147,14 @@ def project_candidate_to_yaw_view(
     agent: Any,
     candidate: Any,
     view: Any,
+    projected_view: ProjectedView,
     object_view_type: type,
     original_missing_edges: set[str],
     should_segment_bootstrap_views: bool,
 ) -> Any | None:
-    projected_bbox = project_bbox3d_to_view(
-        bbox_3d=np.asarray(candidate.bbox_3d, dtype=np.float64),
-        view=view,
-        intrinsic_matrix=np.asarray(agent.intrinsic_matrix, dtype=np.float64),
-        world_to_axis_align_matrix=None
-        if agent.world_to_axis_align_matrix is None
-        else np.asarray(agent.world_to_axis_align_matrix, dtype=np.float64),
-    )
-    if projected_bbox is None:
-        return None
-    projected_view = ProjectedView(
-        view_id=str(getattr(view, "view_id", "")),
-        image_file=f"{getattr(view, 'view_id', '')}.jpg",
-        projected_bbox_2d=np.asarray(projected_bbox, dtype=np.float32),
-        bbox_area=float(bbox_area(projected_bbox)),
-        camera_xy=camera_xy(
-            view,
-            None
-            if agent.world_to_axis_align_matrix is None
-            else np.asarray(agent.world_to_axis_align_matrix, dtype=np.float64),
-        ),
-        image_size=(int(view.rgb.shape[1]), int(view.rgb.shape[0])),
-    )
+    projected_bbox = np.asarray(
+        projected_view.projected_bbox_2d, dtype=np.float32
+    ).reshape(4)
     is_support_only = _is_edge_touching_small_bbox(projected_view)
     if is_support_only:
         final_bbox = np.asarray(projected_bbox, dtype=np.float32).reshape(4)
@@ -1235,6 +1291,7 @@ def complete_candidate_with_yaw_views(
     original_missing_edges = {"left", "right", "top", "bottom"} - covered_edges
     should_segment_bootstrap_views = bool(original_missing_edges)
     projected_bboxes_by_view_id: dict[str, np.ndarray] = {}
+    projected_views_by_view_id: dict[str, ProjectedView] = {}
     for target_center, view, _yaw_delta, _distance_m in chosen_views:
         view_id = str(getattr(view, "view_id", ""))
         if abs(float(target_center)) < 1e-6:
@@ -1243,15 +1300,16 @@ def complete_candidate_with_yaw_views(
                 dtype=np.float32,
             ).reshape(4)
             continue
-        projected_bbox = project_bbox3d_to_view(
-            bbox_3d=np.asarray(candidate.bbox_3d, dtype=np.float64),
+        projected_view = reproject_candidate_to_single_view(
             view=view,
             intrinsic_matrix=np.asarray(agent.intrinsic_matrix, dtype=np.float64),
             world_to_axis_align_matrix=axis_align_matrix,
+            points_3d=np.asarray(candidate.points_3d, dtype=np.float64),
         )
-        if projected_bbox is not None:
+        if projected_view is not None:
+            projected_views_by_view_id[view_id] = projected_view
             projected_bboxes_by_view_id[view_id] = np.asarray(
-                projected_bbox, dtype=np.float32
+                projected_view.projected_bbox_2d, dtype=np.float32
             ).reshape(4)
     stitched_bboxes_by_view_id = dict(projected_bboxes_by_view_id)
     for target_center, view, _yaw_delta, _distance_m in chosen_views:
@@ -1260,10 +1318,14 @@ def complete_candidate_with_yaw_views(
         view_id = str(getattr(view, "view_id", ""))
         if view_id in existing_view_ids:
             continue
+        projected_view = projected_views_by_view_id.get(view_id)
+        if projected_view is None:
+            continue
         object_view = project_candidate_to_yaw_view(
             agent=agent,
             candidate=candidate,
             view=view,
+            projected_view=projected_view,
             object_view_type=object_view_type,
             original_missing_edges=original_missing_edges,
             should_segment_bootstrap_views=should_segment_bootstrap_views,

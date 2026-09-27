@@ -30,7 +30,7 @@ class PointFilterConfig:
     debug_raw_points: bool = False
     keep_clusters_above_ratio: bool = True
     cluster_keep_ratio: float = 0.1
-    debug_cluster_filter: bool = True
+    debug_cluster_filter: bool = False
     cluster_eps: float = 0.08
     cluster_min_points: int = 20
     max_cluster_points: int = 30000
@@ -540,7 +540,7 @@ class TwoDToThreeDTool:
         raw_points: ArrayLike,
     ) -> ArrayLike:
         if filtered_points.shape[0] == 0:
-            raise ValueError("Cannot calculate bbox from empty filtered point cloud")
+            filtered_points = raw_points
         if raw_points.shape[0] == 0:
             raise ValueError("Cannot calculate bbox from empty raw point cloud")
 
